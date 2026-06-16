@@ -1,0 +1,643 @@
+{
+  "meta": {
+    "title": "Mikita Lashytski — digital builder i operator pełnego cyklu",
+    "description": "Systemy cyfrowe dla małego biznesu: strony, e-commerce, marketplace, boty, automatyzacja, SEO i widoczność w AI.",
+    "ogTagline": "Strony · E-commerce · Boty · Automatyzacja · SEO · Widoczność w AI"
+  },
+  "nav": {
+    "home": "Start",
+    "projects": "Projekty",
+    "about": "Podejście",
+    "contact": "Kontakt",
+    "menu": "Menu"
+  },
+  "common": {
+    "viewCase": "Otwórz case",
+    "visitSite": "Wejdź na stronę",
+    "allProjects": "Wszystkie projekty",
+    "backToProjects": "Wróć do projektów",
+    "placeholder": "placeholder — do zastąpienia realnymi danymi",
+    "screenshotPlaceholder": "Screenshot wkrótce — dodaj plik do public/cases/",
+    "sources": {
+      "gsc": "Google Search Console",
+      "lighthouse": "Lighthouse",
+      "allegro": "Marketplace Allegro",
+      "ops": "operacje",
+      "schema": "dane strukturalne",
+      "analytics": "analityka"
+    }
+  },
+  "theme": {
+    "toggle": "Zmień motyw",
+    "light": "Jasny",
+    "dark": "Ciemny"
+  },
+  "home": {
+    "hero": {
+      "badge": "Otwarty na nowe projekty",
+      "titleTop": "To nie strona.",
+      "titleAccent": "To system.",
+      "subtitle": "Vibe-coder i operator pełnego cyklu. Prowadzę projekt od pomysłu do przychodu: zakupy i operacje, kod, widoczność w wyszukiwarce, odpowiedzi AI i dane strukturalne. Ładna okładka to łatwe 10%.",
+      "ctaPrimary": "Zobacz prace",
+      "ctaSecondary": "Jak pracuję",
+      "stat1": "działających projektów",
+      "stat2": "uruchomionych domen",
+      "stat3": "zamówień Allegro w 2025"
+    },
+    "manifesto": {
+      "tag": "Teza",
+      "title": "Strona to powierzchnia. Wartość jest pod spodem.",
+      "body": "Szablon może kupić każdy. Pieniądze robi to, czego nie widać: czyste operacje, techniczne SEO, dane czytelne dla maszyn i bycie odpowiedzią, którą daje AI — a nie linkiem na drugiej stronie wyników.",
+      "points": [
+        {
+          "title": "Operacje, nie tylko piksele",
+          "text": "Zakupy, EAN/GTIN, karty produktów, listingi na marketplace, płatności i dostawa — prowadzę cały cykl, nie tylko front-end."
+        },
+        {
+          "title": "Widoczność w wyszukiwarce",
+          "text": "Techniczne SEO, indeksacja, Core Web Vitals i pozycje, które widać w Search Console, a nie tylko obietnice."
+        },
+        {
+          "title": "Widoczność w AI (AEO/GEO)",
+          "text": "Strukturyzacja pod ChatGPT, Perplexity i AI Overviews — llms.txt, czysty schema i treści, które są cytowane."
+        },
+        {
+          "title": "Dane strukturalne",
+          "text": "Schema.org na wszystkim: Product, Offer, Review, Course, Event, FAQ — kwalifikacja do rich results w całym katalogu."
+        }
+      ]
+    },
+    "projects": {
+      "tag": "Wybrane prace",
+      "title": "Cztery systemy. Cztery rynki.",
+      "subtitle": "E-commerce, B2B, rezerwacje i płatności — każdy z odpowiednim zapleczem."
+    },
+    "metrics": {
+      "tag": "Dowody, nie słowa",
+      "title": "Liczby, których źródło mogę pokazać",
+      "subtitle": "Każda metryka ma oznaczone źródło — marketplace, operacje, Lighthouse lub Search Console."
+    },
+    "underHood": {
+      "tag": "Pod maską",
+      "title": "Czego nie widać na okładce",
+      "subtitle": "Ta strona sama jest demem: idealny Lighthouse, JSON-LD na sobie, hreflang między lokalizacjami, sitemap i llms.txt.",
+      "cards": [
+        {
+          "title": "Dane strukturalne na sobie",
+          "text": "Ta strona serwuje JSON-LD Organization + Person + WebSite. Sprawdź źródło — znajdziesz je."
+        },
+        {
+          "title": "Zbudowane pod odpowiedzi AI",
+          "text": "Publiczny llms.txt i czyste reguły robots, by GPTBot i PerplexityBot czytały i cytowały prace."
+        },
+        {
+          "title": "Wielojęzyczność w architekturze",
+          "text": "EN / PL / RU / UA z pełnym hreflang — a routing skaluje się na każdy język UE po dodaniu jednego pliku."
+        },
+        {
+          "title": "Szybkość jako funkcja",
+          "text": "Statyczny rendering, bez zbędnego balastu, Core Web Vitals na zielono. Szybkość to sygnał rankingowy i UX."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Masz projekt, który potrzebuje całego stacku?",
+      "subtitle": "Nie tylko designer, nie tylko koder — ktoś, kto bierze odpowiedzialność za wynik od początku do końca.",
+      "button": "Zacznij rozmowę"
+    }
+  },
+  "projectPage": {
+    "overview": "Обзор",
+    "role": "Моя роль / внутрянка",
+    "ops": "Операционный цикл",
+    "stack": "Стек",
+    "integrations": "Интеграции",
+    "seo": "Поисковая выдача",
+    "ai": "AI-выдача",
+    "schema": "Структурированные данные",
+    "schemaNote": "Wdrożone typy Schema.org z prawem do rich results.",
+    "next": "Następny projekt",
+    "live": "Online",
+    "problem": "Co było",
+    "whatIDid": "Co zrobiłem",
+    "result": "Efekt",
+    "nextSteps": "Co dalej",
+    "beforeAfter": "Było / Jest",
+    "before": "Było",
+    "after": "Jest",
+    "systemFlow": "Pipeline automatyzacji",
+    "screenshots": "Screenshoty projektu",
+    "relatedModule": "Powiązany moduł",
+    "eventBotNote": "Bot Gemini do automatycznej publikacji wydarzeń — moduł w tej samej infrastrukturze.",
+    "eventBotLink": "Otwórz Event Bot",
+    "metrics": "Metryki"
+  },
+  "projects": {
+    "kayer": {
+      "category": "E-commerce · B2B · Multi-rynek",
+      "tagline": "Migracja i automatyzacja e-commerce dla wielojęzycznej marki beauty: Shopify, BaseLinker, workflow treści OpenAI, skrypty Python i adaptacja pod rynek ukraiński.",
+      "summary": "KAYER to dwurynkowy system ecommerce dla profesjonalnej kosmetyki do paznokci (Akzentz / Luxio). KAYER.PL: migracja WooCommerce/WordPress → Shopify, synchronizacja katalogu przez BaseLinker, automation-first pipeline treści (Python + OpenAI) w PL/UA/EN i szybsze wdrażanie promocji. KAYER.UA: dedykowana ukraińska wersja na tej samej logice Shopify — lokalna treść, UX „powiadom o dostępności”, motywacja wykonawców oraz integracje dostawy/księgowości (Flu.io, Dilovod, Nova Poshta).",
+      "beforeAfter": {
+        "before": [
+          "WooCommerce / WordPress — legacy sklep na KAYER.PL",
+          "Ręczna edycja produktów, opisów i promocji",
+          "Ciężki proces aktualizacji — brak jednolitego obiegu PL / UA / EN"
+        ],
+        "after": [
+          "Shopify z synchronizacją BaseLinker",
+          "Treść wspierana AI: skrypty Python + OpenAI API",
+          "Szybsze promocje, agentic ops, rynek UA z Flu.io / Dilovod / Nova Poshta"
+        ]
+      },
+      "systemFlow": {
+        "title": "Pipeline automatyzacji",
+        "steps": [
+          "Surowy pomysł / dane produktu",
+          "Skrypty Python / OpenAI",
+          "Strukturyzowana treść PL / UA / EN",
+          "Shopify / BaseLinker",
+          "Strona / produkty / promocje / integracje"
+        ]
+      },
+      "problem": "KAYER.PL działał na WooCommerce/WordPress: każda aktualizacja produktu, promocji i tłumaczenia wymagała ręcznej pracy w panelu — bez automation-first workflow w trzech językach. KAYER.UA potrzebował gotowego ukraińskiego systemu — nie kopii PL — z lokalną dostawą, księgowością i procesami partnerskimi.",
+      "whatIDid": "KAYER.PL: migracja WooCommerce → Shopify, customizacja motywu przez AI-assisted development, sync produktów BaseLinker, wielojęzyczny pipeline treści PL/UA/EN (OpenAI + Python), skrypty redukujące powtarzalne ops. KAYER.UA: osobny rynek ukraiński na Shopify — UX „powiadom o dostępności”, motywacja wykonawców/partnerów, Dilovod + Nova Poshta przez Flu.io oraz ten sam automation-first content dostosowany do UA.",
+      "result": "Dwie żywe domeny — kayer.pl i kayer.ua. PL: Shopify z BaseLinker sync, ustrukturyzowaną treścią wielojęzyczną i pipeline promocji zamiast ręcznej administracji. UA: osobny, gotowy do rynku system z lokalnymi integracjami, subskrypcją dostępności i motywacją partnerów — nie przetłumaczony klon PL.",
+      "nextSteps": [
+        "Zrzut: legacy WooCommerce admin vs nowy Shopify",
+        "Zrzut: strona główna i karta produktu Shopify (PL + UA)",
+        "Zrzut: BaseLinker sync i mapowanie katalogu",
+        "Zrzut: wielojęzyczne opisy produktów (PL / UA / EN)",
+        "Zrzut: skrypty Python i flow „pomysł promocji → treść”",
+        "Zrzut: UA UX „powiadom o dostępności”",
+        "Zrzut: integracje Nova Poshta, Flu.io i Dilovod",
+        "Zrzut: system motywacji wykonawców i wersja mobilna",
+        "Dodać realny ruch GSC, zamówienia i konwersję (placeholder do eksportu)",
+        "Uruchomić i opublikować Lighthouse dla obu domen"
+      ],
+      "role": [
+        "Migracja KAYER.PL: WooCommerce/WordPress → Shopify, customizacja motywu i product/content workflows.",
+        "BaseLinker sync, automatyzacja ops w Pythonie i wielojęzyczna treść PL/UA/EN przez OpenAI.",
+        "Zbudowałem KAYER.UA jako osobną ukraińską wersję ecommerce na logice KAYER.PL (Shopify).",
+        "Dostosowałem treść i UX pod rynek ukraiński: „powiadom o dostępności”, motywacja wykonawców.",
+        "Połączyłem sklep UA z Dilovod, Nova Poshta (Flu.io) i automatyzacjami AI."
+      ],
+      "ops": [
+        "PL: automation-first workflow produktów, treści i promocji — od pomysłu do publikacji.",
+        "PL: synchronizacja katalogu i danych produktowych przez BaseLinker.",
+        "PL: weryfikacja salonu/uprawnień B2B — profesjonalny kanał Akzentz/Luxio.",
+        "UA: logika dostępności z subskrypcją „powiadom po pojawieniu się” zamiast martwego out-of-stock.",
+        "UA: wewnętrzny system motywacji wykonawców i partnerów."
+      ],
+      "integrations": [
+        "PL: Shopify + BaseLinker + WooCommerce (legacy migration)",
+        "PL: InPost Paczkomaty + kurierzy (DHL, DPD, Orlen, Poczta) i płatności online",
+        "UA: Dilovod + Nova Poshta przez Flu.io",
+        "OpenAI API + Python do treści, promocji i automatyzacji ops",
+        "Architektura cross-domenowa kayer.pl / kayer.ua"
+      ],
+      "seo": [
+        "Strony produktów i kategorii strukturyzowane pod wyszukiwarkę na obu rynkach.",
+        "Wielojęzyczna treść PL/UA/EN z hreflang i czystą indeksacją.",
+        "Treści tutorialowe Luxio jako long-tail SEO dla PL.",
+        "Ukraińska treść i lokalna prezentacja produktów dla UA."
+      ],
+      "ai": [
+        "Pipeline OpenAI dla wielojęzycznych opisów i treści promocyjnych PL/UA/EN.",
+        "AI-assisted development i customizacja motywu Shopify — nie ad-hoc edycje.",
+        "Agentic workflow: surowy pomysł promocji → ustrukturyzowana treść → wdrożenie na stronie.",
+        "Schema Product + Offer + Review — katalog czytelny dla maszyn i odpowiedzi AI."
+      ],
+      "metrics": {
+        "markets": "rynki (PL + UA)",
+        "langs": "języki treści (PL/UA/EN)",
+        "integrations": "integracji operacyjnych",
+        "skus": "SKU w katalogu",
+        "pages": "stron sklepu (szac.)",
+        "migration": "migracja PL (szac.)",
+        "manual": "mniej pracy ręcznej (szac.)",
+        "lighthouse": "Lighthouse Performance"
+      }
+    },
+    "mnsk7-tools": {
+      "category": "E-commerce · Marketplace · B2B",
+      "tagline": "Sklep z frezami CNC z szybką dostawą w Polsce — z pełną operacją od zakupu do listingu w tle.",
+      "summary": "To więcej niż strona: prowadziłem całą operację. Sprowadzaliśmy frezy z Chin, nadawaliśmy kody EAN/GTIN, tworzyliśmy karty produktów i listowaliśmy w sklepie i na Allegro — z blokiem zaufania z realnych opinii marketplace.",
+      "beforeAfter": {
+        "before": [
+          "Tylko marketplace lub rozproszone listingi bez jednego katalogu",
+          "Ręczny import z Chin bez standaryzacji EAN/GTIN",
+          "Brak programu lojalnościowego i architektury SEO kategorii na stronie"
+        ],
+        "after": [
+          "mnsk7-tools.pl + Allegro z 3500+ zamówieniami i 383 opiniami",
+          "425 SKU z EAN/GTIN i jednolitym konturem zakupów",
+          "Kategorie wg materiału/zastosowania, lojalność 5/10/15%, Super Sprzedawca"
+        ]
+      },
+      "systemFlow": {
+        "title": "Kontur marketplace ops",
+        "steps": [
+          "Import z Chin",
+          "EAN/GTIN + karty produktów",
+          "Strona + listing Allegro",
+          "Zamówienia i opinie → zaufanie",
+          "Analityka i powtórne sprzedaże"
+        ]
+      },
+      "role": [
+        "Zbudowałem sklep z kategoriami wg materiału, zastosowania i typu narzędzia.",
+        "Stworzyłem karty produktów i program rabatowy dla stałych klientów.",
+        "Zbudowałem warstwę zaufania na realnych opiniach Allegro i statusie sprzedawcy.",
+        "Ustawiłem szybką wysyłkę i zakupy B2B."
+      ],
+      "ops": [
+        "Zakup frezów bezpośrednio z Chin.",
+        "Nadanie kodów EAN/GTIN każdemu produktowi.",
+        "Stworzenie i standaryzacja 400+ kart produktów.",
+        "Listing w sklepie i na Allegro jako Super Sprzedawca."
+      ],
+      "integrations": [
+        "Marketplace Allegro + profil sprzedawcy",
+        "Program rabatowy lojalnościowy (5% / 10% / 15%)",
+        "Szybka wysyłka w całej Polsce"
+      ],
+      "seo": [
+        "Architektura kategorii pod intencję kupującego (materiał + zastosowanie).",
+        "Schema Product z ocenami i opiniami pod rich results.",
+        "Szybkie strony i czysta indeksacja pod komercyjne zapytania CNC."
+      ],
+      "ai": [
+        "Schema Product / Offer / Review zasila odpowiedzi AI o zakupach.",
+        "Parametry (średnica, trzpień, materiał) strukturyzowane pod precyzyjny odczyt maszynowy."
+      ],
+      "metrics": {
+        "orders": "zamówień na Allegro w 2025",
+        "reviews": "opinii, 100% pozytywnych",
+        "skus": "produktów w katalogu",
+        "ean": "kart z nadanym EAN/GTIN"
+      },
+      "problem": "Potrzebny był sklep z frezami CNC z pełnym cyklem: import z Chin, EAN/GTIN, karty, Allegro + strona — nie tylko witryna.",
+      "whatIDid": "Zbudowałem stronę, operacje zakupów, 425 SKU z EAN, integrację Allegro, program lojalnościowy i strukturę SEO kategorii.",
+      "result": "3500+ zamówień na Allegro, 383 opinie, żywy sklep + marketplace, pełny cykl ops.",
+      "nextSteps": "Publiczne screenshoty analityki, metryki GSC strony, automatyzacja raportów."
+    },
+    "popular": {
+      "category": "Sprzedaż · Bilety · Automatyzacja",
+      "tagline": "Dwudomenowy system sprzedaży: witryna + własna kasa, admin, check-in, PL/UA/RU i18n — plus bot Gemini (~4 publikacje/tydz.). Ruch z AI → sprzedaż w 2 tygodnie.",
+      "tagline": "Pełna infrastruktura cyfrowa dla emigracyjnego studia teatralnego w Polsce: witryna kursów, własna kasa bez prowizji, panel admin i check-in — plus automatyzacja afisz Gemini (~4 wydarzenia tygodniowo).",
+      "summary": "Popular Poet to studio teatralne dla ukraińskojęzycznej i rosyjskojęzycznej społeczności emigracyjnej w Polsce. Przed startem jedyna obecność w internecie to Instagram. Zbudowałem popularpoet.pl jako witrynę kursów i populartickets.pl jako własną kasę — bez prowizyjnych platform biletowych, które nie generują ruchu dla niszowej emigracyjnej publiczności teatralnej. Stack: Next.js, Supabase, Vercel, Resend, trzy języki PL/UA/RU, panel admin i check-in przy wejściu. Skonfigurowałem Google Business Profile. Co tydzień ~4 wydarzenia — ręczny wpis w CMS był wolny, więc dodałem bota na darmowym Gemini: wrzucasz zdjęcia + tekst → ustrukturyzowane wydarzenia → gotowe strony → ping Bing do indeksacji. Realny wynik: w ciągu 2 tygodni po starcie organiczny ruch z wyszukiwania AI przekonwertował się w sprzedaż biletów.",
+      "beforeAfter": {
+        "before": [
+          "Tylko Instagram — brak własnej strony i śladów w wyszukiwarce",
+          "Prowizyjne platformy biletowe: biorą procent i nie dają ruchu niszowej publiczności emigracyjnej",
+          "Brak witryny kursów, brak własnej lejka sprzedażowego, brak weryfikacji biletów przy wejściu",
+          "~4 wydarzenia tygodniowo ręcznie — powolna, powtarzalna praca w CMS co tydzień"
+        ],
+        "after": [
+          "Dwie strony: popularpoet.pl (witryna kursów) + populartickets.pl (własna kasa)",
+          "Backend Supabase, panel admin, powiadomienia Resend i check-in przy wejściu",
+          "Bot Gemini: zdjęcie + tekst → ustrukturyzowane wydarzenia → gotowe strony → ping Bing",
+          "Google Business Profile, trzy języki PL/UA/RU, AI organic → sprzedaż biletów w 2 tygodnie"
+        ]
+      },
+      "systemFlow": {
+        "title": "Przepływ infrastruktury cyfrowej",
+        "steps": [
+          "Tylko Instagram / popyt na kursy wśród emigracyjnej publiczności",
+          "popularpoet.pl — witryna kursów i lejek zapisów",
+          "~4 wydarzenia tygodniowo — ręczny wpis wolny; potrzebna automatyzacja publikacji afisz",
+          "Zdjęcie + tekst → Gemini (free tier) parsuje ustrukturyzowane wydarzenia",
+          "Gotowe strony wydarzeń → ping Bing IndexNow / wyszukiwarek",
+          "Potrzeba biletów → populartickets.pl (własna kasa, bez prowizji)",
+          "Supabase + Resend + check-in + panel admin",
+          "Google / AI visibility → ruch organiczny → sprzedaż biletów"
+        ]
+      },
+      "problem": "Popular Poet to studio teatralne dla ukraińskojęzycznej i rosyjskojęzycznej emigracji w Polsce. Cała obecność w internecie to Instagram — brak własnej strony, indeksacji w wyszukiwarce, infrastruktury sprzedaży. Prowizyjne platformy biletowe pobierają opłaty i nie kierują ruchu do niszowego emigracyjnego teatru. Potrzebna witryna kursów, własna kasa i widoczność w Google i wyszukiwaniu AI — nie kolejny lejek tylko przez social media. Dodatkowo ~4 wydarzenia tygodniowo tworzone ręcznie — rutynowy wpis danych, który zjadał godziny co tydzień.",
+      "whatIDid": "Zbudowałem popularpoet.pl jako trójjęzyczną witrynę kursów (PL/UA/RU) i populartickets.pl jako własną kasę na Next.js + Supabase + Vercel. Wdrożyłem panel admin dla wydarzeń i kursów, Resend do maili transakcyjnych, check-in do weryfikacji biletów przy wejściu oraz structured data pod lokalne + wielojęzyczne SEO. Skonfigurowałem Google Business Profile. Żeby wyeliminować tygodniową rutynę publikacji, zbudowałem bota wydarzeń na darmowym Gemini: wrzucasz zdjęcia i surowy tekst — bot parsuje ustrukturyzowane wydarzenia, generuje gotowe strony i pinguje Bing (i podobne) o nowych URL. System zastępuje platformy prowizyjne własną infrastrukturą, którą można znaleźć, cytować i utrzymywać aktualną w wyszukiwaniu AI — bez ręcznego wpisywania wydarzeń.",
+      "result": "Dwa żywe domeny — popularpoet.pl i populartickets.pl — z pełnym operacyjnym stackiem: admin, check-in, Resend, trójjęzyczny content i GBP. Publikacja ~4 wydarzeń tygodniowo zautomatyzowana: zdjęcie/tekst → Gemini → strony → ping Bing — godziny zaoszczędzone w tygodniowej ops. Realny wynik: w ciągu 2 tygodni po starcie organiczny ruch z wyszukiwania AI przekonwertował się w sprzedaż biletów. Nie wizytówka — infrastruktura cyfrowa dla emigracyjnego teatru z automatyzacją tygodniowych publikacji.",
+      "nextSteps": [
+        "Screenshot: tylko Instagram przed vs witryna kursów popularpoet.pl",
+        "Screenshot: checkout populartickets.pl i potwierdzenie biletu (Resend email)",
+        "Screenshot: panel admin — wydarzenia, kursy, inwentarz biletów",
+        "Screenshot: bot Gemini — zdjęcie + tekst → podgląd sparsowanego wydarzenia",
+        "Screenshot: opublikowana strona wydarzenia + potwierdzenie pingu Bing/indeksacji",
+        "Screenshot: check-in przy wejściu / weryfikacja biletu",
+        "Screenshot: trójjęzyczne strony PL / UA / RU i routing językowy",
+        "Screenshot: Google Business Profile i lokalna widoczność",
+        "Screenshot: wyszukiwanie AI / GSC — ruch organiczny po starcie",
+        "Dodać szczegółowe metryki GSC i konwersji (placeholder do eksportu)",
+        "Uruchomić i opublikować Lighthouse dla obu domen"
+      ],
+      "role": [
+        "Zaprojektowałem dwustronną infrastrukturę cyfrową: popularpoet.pl (kursy) + populartickets.pl (bilety).",
+        "Zbudowałem stack Next.js + Supabase + Vercel z panelem admin i check-in przy wejściu.",
+        "Zbudowałem bota Gemini dla ~4 wydarzeń tygodniowo — zdjęcie + tekst → ustrukturyzowane wydarzenia → strony.",
+        "Wdrożyłem trójjęzyczny content PL/UA/RU i routing językowy dla emigracyjnej publiczności.",
+        "Zintegrowałem Resend do maili transakcyjnych i dostarczania biletów.",
+        "Podłączyłem Bing IndexNow / ping wyszukiwarek po automatycznej publikacji wydarzeń.",
+        "Skonfigurowałem Google Business Profile i structured data pod lokalne + AI search."
+      ],
+      "ops": [
+        "Witryna kursów z lejkiem zapisów — impro, aktorstwo, PLAYBACK.",
+        "Własna kasa na populartickets.pl — bez prowizji platformom biletowym.",
+        "~4 wydarzenia tygodniowo przez bota Gemini zamiast ręcznego wpisu w CMS — godziny zaoszczędzone co tydzień.",
+        "Panel admin: wydarzenia, kursy, limity miejsc i inwentarz biletów.",
+        "Check-in przy wejściu do weryfikacji biletów na spektaklach.",
+        "Trójjęzyczne ops dla emigracyjnej społeczności PL / UA / RU w Polsce."
+      ],
+      "integrations": [
+        "Supabase (baza danych, auth, realtime danych biletów)",
+        "Resend (maile transakcyjne, potwierdzenia biletów)",
+        "Gemini API (free tier) — zdjęcie + tekst → parsowanie ustrukturyzowanych wydarzeń",
+        "Event parsing bot → pipeline publikacji w CMS",
+        "Bing IndexNow / ping wyszukiwarek dla nowych stron wydarzeń",
+        "Vercel (deployment i edge delivery)",
+        "Google Business Profile (lokalne discovery)",
+        "Architektura cross-domain popularpoet.pl / populartickets.pl"
+      ],
+      "seo": [
+        "LocalBusiness + Course + Event schema pod rich results i entity recognition.",
+        "Wielojęzyczny content PL/UA/RU z hreflang pod zapytania emigracyjnej publiczności.",
+        "Schema FAQ pod docelowe pytania o teatr i kursy.",
+        "Google Business Profile w lokalnej widoczności w wyszukiwarce.",
+        "Automatyczne strony wydarzeń + ping Bing dla szybszej indeksacji tygodniowych afisz."
+      ],
+      "ai": [
+        "Course / Event / LocalBusiness schema — machine-readable offering dla odpowiedzi AI.",
+        "Gemini (free tier) parsuje nieustrukturyzowane zdjęcie + tekst w ustrukturyzowane wydarzenia dla strony.",
+        "Strukturyzowany wielojęzyczny content pod cytowanie w wyszukiwaniu AI.",
+        "Realny wynik: AI organic → sprzedaż biletów w 2 tygodnie po starcie.",
+        "Własna infrastruktura zamiast platform prowizyjnych, których AI nie rekomenduje jako primary source."
+      ],
+      "metrics": {
+        "sites": "połączone strony (witryna + kasa)",
+        "eventsPerWeek": "wydarzeń tygodniowo (autopublikacja)",
+        "langs": "języki contentu (PL/UA/RU)",
+        "aiSales": "AI organic → sprzedaż biletów po starcie",
+        "ticketing": "kasa (bez prowizji)",
+        "checkin": "check-in biletów przy wejściu",
+        "lighthouse": "Lighthouse Performance"
+      }
+    },
+    "alesyatakun": {
+      "category": "Marka osobista · Płatności",
+      "tagline": "Strona psycholożki z bezpieczną płatnością online i elastyczną kwotą „wolnej płatności”.",
+      "summary": "Skupiona strona marki osobistej terapeutki Gestalt: jasny opis usług, format indywidualny i grupowy oraz bezpieczna płatność online przez Alfa-Bank (3-D Secure) z elastyczną kwotą „wolnej płatności”.",
+      "beforeAfter": {
+        "before": [
+          "Zapisy i płatności przez DM — bez struktury",
+          "Brak strony budującej zaufanie z FAQ i schema.org",
+          "Brak bezpiecznej płatności online z elastyczną kwotą"
+        ],
+        "after": [
+          "alesyatakun.by — spokojna strona marki osobistej",
+          "Płatność 3-D Secure + elastyczna „wolna płatność” w BYN",
+          "Zapis przez Telegram + FAQ/schema pod wyszukiwarkę i AI"
+        ]
+      },
+      "systemFlow": {
+        "title": "Lejek klienta",
+        "steps": [
+          "Strona: usługi i zaufanie",
+          "Zapis przez Telegram",
+          "Płatność 3-D Secure",
+          "Potwierdzenie email",
+          "Powroty i lokalne SEO"
+        ]
+      },
+      "role": [
+        "Zbudowałem stronę marki osobistej w spokojnym, opartym na zaufaniu designie.",
+        "Wdrożyłem bezpieczną płatność online z kwotą „ile pasuje”.",
+        "Ustrukturyzowałem usługi, cennik i proces zapisu.",
+        "Napisałem FAQ i treści o procesie — dla jasności i SEO."
+      ],
+      "ops": [
+        "Bezpieczne płatności przez Alfa-Bank (bez przechowywania danych karty).",
+        "Sesje indywidualne i formaty grupowe z jasnym cennikiem.",
+        "Lejek zapisu przez Telegram + potwierdzenie e-mail."
+      ],
+      "integrations": [
+        "Bramka płatności Alfa-Bank (3-D Secure)",
+        "Lejek zapisu przez Telegram",
+        "Potwierdzenie e-mail"
+      ],
+      "seo": [
+        "Schema Person + Service do rozpoznawania encji.",
+        "Schema FAQ pod zapytania terapeutyczne o wysokiej intencji.",
+        "Lokalna trafność dla Mińska + klientów online."
+      ],
+      "ai": [
+        "Schema Person / MedicalBusiness / Service pod odpowiedzi AI o encji.",
+        "Treść FAQ strukturyzowana tak, by asystenci cytowali ją wprost."
+      ],
+      "metrics": {
+        "payments": "bezpieczna płatność online",
+        "freepay": "elastyczna „wolna płatność”",
+        "formats": "formaty: indywidualny + grupowy",
+        "lighthouse": "Lighthouse Performance"
+      },
+      "problem": "Специалисту нужен был доверительный сайт с онлайн-оплатой и записью — без сложной CRM и с понятным UX.",
+      "whatIDid": "Собрал сайт личного бренда, оплату 3-D Secure, FAQ, schema.org и воронку записи через Telegram.",
+      "result": "Живой сайт с оплатой, двумя форматами услуг и структурой под поиск и AI-выдачу.",
+      "nextSteps": "Скрины мобильной версии, GSC, расширение контента под локальные запросы."
+    },
+    "event-bot": {
+      "category": "Popular Poet · Gemini · Automatyzacja",
+      "tagline": "Część Popular Poet: zdjęcie + tekst → Gemini → strony wydarzeń → ping Bing.",
+      "summary": "Warstwa automatyzacji afisz w case Popular Poet (~4 wydarzenia tygodniowo). Zamiast ręcznego wpisu w CMS zespół wrzuca zdjęcia i surowy tekst do bota na darmowym Gemini — parsuje ustrukturyzowane wydarzenia, publikuje gotowe strony na popularpoet.pl / populartickets.pl i pinguje Bing do indeksacji. Pełny case: /projects/popular.",
+      "problem": "Popular Poet publikuje ~4 wydarzenia tygodniowo. Każde wpisywano ręcznie w CMS — powolna, powtarzalna praca, która zjadała godziny co tydzień.",
+      "whatIDid": "Zbudowałem bota wydarzeń na Gemini (free tier) dla Popular Poet: zdjęcie + tekst → sparsowane pola wydarzenia → publikacja w CMS → ping Bing IndexNow. Zintegrowany ze stackiem Next.js + Supabase.",
+      "result": "Tygodniowa publikacja afisz zautomatyzowana — godziny zaoszczędzone w ops. Świeże strony wydarzeń wychodzą szybciej i są indeksowane wcześniej. Część infrastruktury cyfrowej Popular Poet, nie osobny toy-project.",
+      "nextSteps": "Screenshoty wejścia/wyjścia bota, metryki zaoszczędzonego czasu, link do pełnego case Popular Poet.",
+      "role": [
+        "Zaprojektowałem pipeline zdjęcie + tekst → Gemini → ustrukturyzowane wydarzenie dla Popular Poet.",
+        "Zintegrowałem output bota z Next.js CMS i flow publikacji.",
+        "Podłączyłem Bing IndexNow / ping wyszukiwarek po każdej nowej stronie wydarzenia."
+      ],
+      "ops": [
+        "~4 wydarzenia tygodniowo bez ręcznego wpisu w CMS.",
+        "Zdjęcie + tekst jako jedyne wejście ops.",
+        "Autopublikacja na popularpoet.pl / populartickets.pl."
+      ],
+      "integrations": [
+        "Gemini API (free tier)",
+        "Next.js CMS",
+        "Bing IndexNow / ping",
+        "Webhooks"
+      ],
+      "seo": [
+        "Nowe strony wydarzeń automatycznie trafiają do struktury strony.",
+        "Event schema + ping Bing dla szybszej indeksacji tygodniowych afisz."
+      ],
+      "ai": [
+        "Gemini parsuje nieustrukturyzowane zdjęcie + tekst w machine-readable wydarzenia.",
+        "Ustrukturyzowane wydarzenia zasilają cytowania w wyszukiwaniu AI na domenach Popular Poet."
+      ],
+      "metrics": {
+        "eventsPerWeek": "wydarzeń tygodniowo",
+        "flow": "autopublikacja",
+        "steps": "kroków w pipeline",
+        "manual": "mniej ręcznej pracy"
+      }
+    },
+    "baselinker-reports": {
+      "category": "Аналитика · BaseLinker · AI",
+      "tagline": "Дашборд аналитики продаж: ABC/XYZ, deadstock, AI-рекомендации, прогноз.",
+      "summary": "Внутренний инструмент для e-commerce: отчёты по продажам, классификация ABC/XYZ, выявление deadstock, AI-рекомендации и экспорт в Excel.",
+      "problem": "BaseLinker даёт данные, но не даёт нормальную аналитику с рекомендациями и прогнозом.",
+      "whatIDid": "Собрал дашборд с отчётами ABC/XYZ, deadstock-анализом, AI-рекомендациями и экспортом.",
+      "result": "Рабочий инструмент принятия решений по ассортименту и закупкам.",
+      "nextSteps": "Скрины дашборда, кейс с цифрами экономии, публичная демо-версия.",
+      "role": [
+        "Спроектировал модель отчётов ABC/XYZ.",
+        "Интегрировал BaseLinker API.",
+        "Добавил AI-слой рекомендаций."
+      ],
+      "ops": [
+        "Автоматический сбор данных продаж.",
+        "Классификация deadstock.",
+        "Экспорт XLSX для команды."
+      ],
+      "integrations": [
+        "BaseLinker API",
+        "OpenAI",
+        "Excel export",
+        "Pandas"
+      ],
+      "seo": [
+        "Внутренний инструмент — SEO не применимо."
+      ],
+      "ai": [
+        "AI-рекомендации по ассортименту и закупкам.",
+        "Прогноз на основе истории продаж."
+      ],
+      "metrics": {
+        "reports": "типы отчётов",
+        "ai": "рекомендации",
+        "export": "формат",
+        "forecast": "прогноз"
+      }
+    },
+    "lead-scraping": {
+      "category": "Лиды · Аудит · Outreach",
+      "tagline": "Поиск слабых сайтов, автоматический аудит, скоринг и письма.",
+      "summary": "Пайплайн поиска потенциальных клиентов: находит слабые сайты, делает аудит, скорит и готовит outreach.",
+      "problem": "Нужен был системный способ находить бизнесы со слабыми сайтами и предлагать улучшения.",
+      "whatIDid": "Собрал скрапер, Lighthouse-аудит, скоринг 0–100 и шаблоны email-outreach.",
+      "result": "Рабочий pipeline лидогенерации с автоматическим аудитом.",
+      "nextSteps": "Кейс с конверсией outreach, скрины аудита до/после.",
+      "role": [
+        "Спроектировал скоринговую модель.",
+        "Автоматизировал аудит сайтов.",
+        "Подготовил outreach-шаблоны."
+      ],
+      "ops": [
+        "Скрапинг локальных бизнесов.",
+        "Lighthouse + SEO-чеклист.",
+        "Email-пайплайн."
+      ],
+      "integrations": [
+        "Web scraping",
+        "Lighthouse API",
+        "Email"
+      ],
+      "seo": [
+        "Аудит включает технический SEO и скорость."
+      ],
+      "ai": [
+        "Скоринг можно обогатить AI-анализом контента."
+      ],
+      "metrics": {
+        "audit": "автоаудит",
+        "score": "скоринг",
+        "outreach": "канал",
+        "pipeline": "статус"
+      }
+    },
+    "astrologichnaya": {
+      "category": "Брендинг · Дизайн · Web",
+      "tagline": "Брендинг, визуальная стилистика и сайт для креативного проекта.",
+      "summary": "Комплексный digital-проект: брендинг, визуальный язык и сайт. В процессе запуска.",
+      "problem": "Проекту нужен был цельный визуальный образ и digital-присутствие, а не разрозненные элементы.",
+      "whatIDid": "Разработал брендинг, визуальную стилистику и структуру сайта.",
+      "result": "Готовый визуальный язык, сайт в разработке.",
+      "nextSteps": "Публичный запуск, скрины финального сайта, кейс брендинга.",
+      "role": [
+        "Брендинг и визуальный язык.",
+        "Структура сайта.",
+        "UI-концепт."
+      ],
+      "ops": [
+        "Согласование стилистики.",
+        "Итерации дизайна."
+      ],
+      "integrations": [
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "seo": [
+        "Структура под запуск SEO после публикации."
+      ],
+      "ai": [
+        "Планируется schema.org после запуска."
+      ],
+      "metrics": {
+        "brand": "брендинг",
+        "web": "сайт",
+        "style": "стилистика",
+        "launch": "запуск"
+      }
+    }
+  },
+  "about": {
+    "tag": "Jak pracuję",
+    "title": "Pełny cykl, nie fragment",
+    "intro": "Jestem digital builderem i operatorem pełnego cyklu dla małego biznesu. Nie oddaję projektu i nie znikam — biorę odpowiedzialność za wynik: od zakupów i operacji do momentu, gdy projekt pojawia się w Google i odpowiedziach AI. Oto cykl, który prowadzę w każdym projekcie.",
+    "steps": [
+      {
+        "title": "Pomysł i operacje",
+        "text": "Definiuję ofertę, sprowadzam produkt, robię niewdzięczną część — zakupy, EAN/GTIN, karty produktów, logistyka."
+      },
+      {
+        "title": "Budowa",
+        "text": "Uruchamiam szybką, nowoczesną stronę z właściwą architekturą: czyste URL, routing wielojęzyczny, płatności i integracje."
+      },
+      {
+        "title": "Widoczność w wyszukiwarce",
+        "text": "Techniczne SEO, indeksacja, Core Web Vitals i pozycje — mierzone w Search Console, nie zgadywane."
+      },
+      {
+        "title": "Widoczność w AI",
+        "text": "Dane strukturalne, llms.txt i treść tak ukształtowana, by ChatGPT, Perplexity i AI Overviews cytowały markę."
+      },
+      {
+        "title": "Pomiar i iteracja",
+        "text": "Śledzę istotne metryki, oznaczam ich źródło i poprawiam to, co wskazują liczby."
+      }
+    ],
+    "valuesTitle": "Co otrzymujesz",
+    "values": [
+      "Jedna osoba odpowiedzialna za operacje, kod i wzrost.",
+      "Uczciwe metryki z oznaczonym źródłem — bez liczb na pokaz.",
+      "Strony szybkie, ustrukturyzowane i gotowe na erę AI.",
+      "Architekturę wielojęzyczną, która skaluje się na nowe rynki."
+    ]
+  },
+  "contact": {
+    "tag": "Porozmawiajmy",
+    "title": "Potrzebujesz całego stacku, nie tylko okładki?",
+    "subtitle": "Opowiedz o projekcie. Jeśli potrzebuje operacji, kodu, widoczności w wyszukiwarce i AI pod jednym dachem — to dokładnie to, co robię.",
+    "telegram": "Telegram",
+    "email": "E-mail",
+    "github": "GitHub",
+    "note": "Dane kontaktowe to na razie placeholdery — zmień je w src/content/site.ts."
+  },
+  "footer": {
+    "tagline": "Vibe-coder i operator pełnego cyklu",
+    "built": "Zbudowane na Next.js — z JSON-LD, hreflang i llms.txt.",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "nav": "Nawigacja",
+    "projects": "Projekty"
+  }
+}
