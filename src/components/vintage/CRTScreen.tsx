@@ -108,7 +108,7 @@ function GridScreen() {
 function TeletextScreen() {
   return (
     <div className="teletext-grid h-full p-2 font-mono text-[9px] leading-tight sm:text-[10px]">
-      <div className="bg-[#00f] px-1 text-white">P100 VIBE CODER</div>
+      <div className="bg-[#00f] px-1 text-white">P100 DIGITAL BUILDER</div>
       <div className="mt-1 text-[#ff0]">▶ SITES</div>
       <div className="text-[#0f0]">▶ BOTS</div>
       <div className="text-[#f0f]">▶ AUTO</div>

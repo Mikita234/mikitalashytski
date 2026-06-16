@@ -28,11 +28,33 @@ import {
   type AccentKey,
 } from "@/content/projects";
 
+const beforeAfterStyle: Record<
+  AccentKey,
+  { dot: string; label: string }
+> = {
+  violet: {
+    dot: "bg-[var(--vhs-terminal)]",
+    label: "text-[var(--vhs-terminal)]",
+  },
+  amber: {
+    dot: "bg-[var(--vhs-acid)]",
+    label: "text-[var(--vhs-acid)]",
+  },
+  cyan: {
+    dot: "bg-[#00bfff]",
+    label: "text-[#00bfff]",
+  },
+  rose: {
+    dot: "bg-[var(--vhs-terminal)]",
+    label: "text-[var(--vhs-terminal)]",
+  },
+};
+
 const accentMap: Record<AccentKey, string> = {
-  violet: "bg-[var(--vhs-terminal)]",
-  amber: "bg-[var(--vhs-acid)]",
-  cyan: "bg-[#00bfff]",
-  rose: "bg-[var(--vhs-red)]",
+  violet: beforeAfterStyle.violet.dot,
+  amber: beforeAfterStyle.amber.dot,
+  cyan: beforeAfterStyle.cyan.dot,
+  rose: beforeAfterStyle.rose.dot,
 };
 
 const accentText: Record<AccentKey, string> = {
@@ -76,6 +98,7 @@ export function VintageProjectContent({ project }: { project: Project }) {
   const next = projects[(idx + 1) % projects.length];
   const nextWork = vintageWorks.find((w) => w.slug === next.slug);
   const dot = accentMap[project.accent];
+  const baStyle = beforeAfterStyle[project.accent];
   const textAccent = accentText[project.accent];
 
   const role = t.raw("role") as string[];
@@ -248,7 +271,8 @@ export function VintageProjectContent({ project }: { project: Project }) {
               afterLabel={pp("after")}
               before={beforeAfter.before}
               after={beforeAfter.after}
-              accent={dot}
+              accent={baStyle.dot}
+              afterLabelClass={baStyle.label}
             />
           </div>
         )}

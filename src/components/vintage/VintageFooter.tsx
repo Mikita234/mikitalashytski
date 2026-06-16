@@ -14,7 +14,7 @@ export function VintageFooter() {
             {site.name}
           </p>
           <p className="mt-1 text-sm text-[var(--vhs-muted)]">
-            Vibe-coder · sites · bots · chaos
+            Digital builder · sites · e-commerce · automation
           </p>
         </div>
 

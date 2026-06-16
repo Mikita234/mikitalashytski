@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Mikita Lashytski — VIBE CODER";
+export const alt = "Mikita Lashytski — Digital Builder";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

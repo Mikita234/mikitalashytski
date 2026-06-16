@@ -9,6 +9,7 @@ type Props = {
   before: string[];
   after: string[];
   accent?: string;
+  afterLabelClass?: string;
 };
 
 export function BeforeAfterBlock({
@@ -17,7 +18,8 @@ export function BeforeAfterBlock({
   afterLabel,
   before,
   after,
-  accent = "bg-[var(--vhs-acid)]",
+  accent = "bg-[var(--vhs-terminal)]",
+  afterLabelClass = "text-[var(--vhs-terminal)]",
 }: Props) {
   return (
     <div className="border-2 border-[var(--vhs-dirt)] bg-[#121216]">
@@ -32,7 +34,7 @@ export function BeforeAfterBlock({
           <VintageBulletList items={before} accent="bg-[var(--vhs-red)]" />
         </div>
         <div className="p-5 sm:p-6">
-          <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-terminal)]">
+          <p className={`mb-4 font-mono text-[10px] uppercase tracking-[0.3em] ${afterLabelClass}`}>
             {afterLabel}
           </p>
           <VintageBulletList items={after} accent={accent} />

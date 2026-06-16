@@ -5,7 +5,7 @@ export function TeletextPanel() {
       aria-label="Teletext info"
     >
       <div className="bg-[#00f] px-2 py-1 text-center text-white font-bold">
-        P404 VIBE CODER INFO
+        P404 DIGITAL BUILDER INFO
       </div>
       <div className="mt-2 space-y-0.5">
         <p className="bg-[#f00] px-1 text-white">▶ WHAT: sites / bots / auto</p>
