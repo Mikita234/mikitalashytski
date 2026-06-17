@@ -133,91 +133,6 @@
     "metrics": "Metryki"
   },
   "projects": {
-    "kayer": {
-      "category": "E-commerce · B2B · Multi-rynek",
-      "tagline": "Migracja i automatyzacja e-commerce dla wielojęzycznej marki beauty: Shopify, BaseLinker, workflow treści OpenAI, skrypty Python i adaptacja pod rynek ukraiński.",
-      "summary": "KAYER to dwurynkowy system ecommerce dla profesjonalnej kosmetyki do paznokci (Akzentz / Luxio). KAYER.PL: migracja WooCommerce/WordPress → Shopify, synchronizacja katalogu przez BaseLinker, automation-first pipeline treści (Python + OpenAI) w PL/UA/EN i szybsze wdrażanie promocji. KAYER.UA: dedykowana ukraińska wersja na tej samej logice Shopify — lokalna treść, UX „powiadom o dostępności”, motywacja wykonawców oraz integracje dostawy/księgowości (Flu.io, Dilovod, Nova Poshta).",
-      "beforeAfter": {
-        "before": [
-          "WooCommerce / WordPress — legacy sklep na KAYER.PL",
-          "Ręczna edycja produktów, opisów i promocji",
-          "Ciężki proces aktualizacji — brak jednolitego obiegu PL / UA / EN"
-        ],
-        "after": [
-          "Shopify z synchronizacją BaseLinker",
-          "Treść wspierana AI: skrypty Python + OpenAI API",
-          "Szybsze promocje, agentic ops, rynek UA z Flu.io / Dilovod / Nova Poshta"
-        ]
-      },
-      "systemFlow": {
-        "title": "Pipeline automatyzacji",
-        "steps": [
-          "Surowy pomysł / dane produktu",
-          "Skrypty Python / OpenAI",
-          "Strukturyzowana treść PL / UA / EN",
-          "Shopify / BaseLinker",
-          "Strona / produkty / promocje / integracje"
-        ]
-      },
-      "problem": "KAYER.PL działał na WooCommerce/WordPress: każda aktualizacja produktu, promocji i tłumaczenia wymagała ręcznej pracy w panelu — bez automation-first workflow w trzech językach. KAYER.UA potrzebował gotowego ukraińskiego systemu — nie kopii PL — z lokalną dostawą, księgowością i procesami partnerskimi.",
-      "whatIDid": "KAYER.PL: migracja WooCommerce → Shopify, customizacja motywu przez AI-assisted development, sync produktów BaseLinker, wielojęzyczny pipeline treści PL/UA/EN (OpenAI + Python), skrypty redukujące powtarzalne ops. KAYER.UA: osobny rynek ukraiński na Shopify — UX „powiadom o dostępności”, motywacja wykonawców/partnerów, Dilovod + Nova Poshta przez Flu.io oraz ten sam automation-first content dostosowany do UA.",
-      "result": "Dwie żywe domeny — kayer.pl i kayer.ua. PL: Shopify z BaseLinker sync, ustrukturyzowaną treścią wielojęzyczną i pipeline promocji zamiast ręcznej administracji. UA: osobny, gotowy do rynku system z lokalnymi integracjami, subskrypcją dostępności i motywacją partnerów — nie przetłumaczony klon PL.",
-      "nextSteps": [
-        "Zrzut: legacy WooCommerce admin vs nowy Shopify",
-        "Zrzut: strona główna i karta produktu Shopify (PL + UA)",
-        "Zrzut: BaseLinker sync i mapowanie katalogu",
-        "Zrzut: wielojęzyczne opisy produktów (PL / UA / EN)",
-        "Zrzut: skrypty Python i flow „pomysł promocji → treść”",
-        "Zrzut: UA UX „powiadom o dostępności”",
-        "Zrzut: integracje Nova Poshta, Flu.io i Dilovod",
-        "Zrzut: system motywacji wykonawców i wersja mobilna",
-        "Dodać realny ruch GSC, zamówienia i konwersję (placeholder do eksportu)",
-        "Uruchomić i opublikować Lighthouse dla obu domen"
-      ],
-      "role": [
-        "Migracja KAYER.PL: WooCommerce/WordPress → Shopify, customizacja motywu i product/content workflows.",
-        "BaseLinker sync, automatyzacja ops w Pythonie i wielojęzyczna treść PL/UA/EN przez OpenAI.",
-        "Zbudowałem KAYER.UA jako osobną ukraińską wersję ecommerce na logice KAYER.PL (Shopify).",
-        "Dostosowałem treść i UX pod rynek ukraiński: „powiadom o dostępności”, motywacja wykonawców.",
-        "Połączyłem sklep UA z Dilovod, Nova Poshta (Flu.io) i automatyzacjami AI."
-      ],
-      "ops": [
-        "PL: automation-first workflow produktów, treści i promocji — od pomysłu do publikacji.",
-        "PL: synchronizacja katalogu i danych produktowych przez BaseLinker.",
-        "PL: weryfikacja salonu/uprawnień B2B — profesjonalny kanał Akzentz/Luxio.",
-        "UA: logika dostępności z subskrypcją „powiadom po pojawieniu się” zamiast martwego out-of-stock.",
-        "UA: wewnętrzny system motywacji wykonawców i partnerów."
-      ],
-      "integrations": [
-        "PL: Shopify + BaseLinker + WooCommerce (legacy migration)",
-        "PL: InPost Paczkomaty + kurierzy (DHL, DPD, Orlen, Poczta) i płatności online",
-        "UA: Dilovod + Nova Poshta przez Flu.io",
-        "OpenAI API + Python do treści, promocji i automatyzacji ops",
-        "Architektura cross-domenowa kayer.pl / kayer.ua"
-      ],
-      "seo": [
-        "Strony produktów i kategorii strukturyzowane pod wyszukiwarkę na obu rynkach.",
-        "Wielojęzyczna treść PL/UA/EN z hreflang i czystą indeksacją.",
-        "Treści tutorialowe Luxio jako long-tail SEO dla PL.",
-        "Ukraińska treść i lokalna prezentacja produktów dla UA."
-      ],
-      "ai": [
-        "Pipeline OpenAI dla wielojęzycznych opisów i treści promocyjnych PL/UA/EN.",
-        "AI-assisted development i customizacja motywu Shopify — nie ad-hoc edycje.",
-        "Agentic workflow: surowy pomysł promocji → ustrukturyzowana treść → wdrożenie na stronie.",
-        "Schema Product + Offer + Review — katalog czytelny dla maszyn i odpowiedzi AI."
-      ],
-      "metrics": {
-        "markets": "rynki (PL + UA)",
-        "langs": "języki treści (PL/UA/EN)",
-        "integrations": "integracji operacyjnych",
-        "skus": "SKU w katalogu",
-        "pages": "stron sklepu (szac.)",
-        "migration": "migracja PL (szac.)",
-        "manual": "mniej pracy ręcznej (szac.)",
-        "lighthouse": "Lighthouse Performance"
-      }
-    },
     "mnsk7-tools": {
       "category": "E-commerce · Marketplace · B2B",
       "tagline": "Sklep z frezami CNC z szybką dostawą w Polsce — z pełną operacją od zakupu do listingu w tle.",
@@ -279,13 +194,14 @@
       "problem": "Potrzebny był sklep z frezami CNC z pełnym cyklem: import z Chin, EAN/GTIN, karty, Allegro + strona — nie tylko witryna.",
       "whatIDid": "Zbudowałem stronę, operacje zakupów, 425 SKU z EAN, integrację Allegro, program lojalnościowy i strukturę SEO kategorii.",
       "result": "3500+ zamówień na Allegro, 383 opinie, żywy sklep + marketplace, pełny cykl ops.",
-      "nextSteps": "Publiczne screenshoty analityki, metryki GSC strony, automatyzacja raportów."
+      "nextSteps": "Publiczne screenshoty analityki, metryki GSC strony, automatyzacja raportów.",
+      "cardTitle": "MNSK7-TOOLS",
+      "cardDesc": "Sklep CNC + Allegro: 3500+ zamówień, 425 SKU, pipeline EAN/GTIN."
     },
     "popular": {
       "category": "Sprzedaż · Bilety · Automatyzacja",
-      "tagline": "Dwudomenowy system sprzedaży: witryna + własna kasa, admin, check-in, PL/UA/RU i18n — plus bot Gemini (~4 publikacje/tydz.). Ruch z AI → sprzedaż w 2 tygodnie.",
-      "tagline": "Pełna infrastruktura cyfrowa dla emigracyjnego studia teatralnego w Polsce: witryna kursów, własna kasa bez prowizji, panel admin i check-in — plus automatyzacja afisz Gemini (~4 wydarzenia tygodniowo).",
-      "summary": "Popular Poet to studio teatralne dla ukraińskojęzycznej i rosyjskojęzycznej społeczności emigracyjnej w Polsce. Przed startem jedyna obecność w internecie to Instagram. Zbudowałem popularpoet.pl jako witrynę kursów i populartickets.pl jako własną kasę — bez prowizyjnych platform biletowych, które nie generują ruchu dla niszowej emigracyjnej publiczności teatralnej. Stack: Next.js, Supabase, Vercel, Resend, trzy języki PL/UA/RU, panel admin i check-in przy wejściu. Skonfigurowałem Google Business Profile. Co tydzień ~4 wydarzenia — ręczny wpis w CMS był wolny, więc dodałem bota na darmowym Gemini: wrzucasz zdjęcia + tekst → ustrukturyzowane wydarzenia → gotowe strony → ping Bing do indeksacji. Realny wynik: w ciągu 2 tygodni po starcie organiczny ruch z wyszukiwania AI przekonwertował się w sprzedaż biletów.",
+      "tagline": "Dowód sprzedażowy: system dwóch domen z własną kasą i botem Gemini — AI organic → sprzedaż biletów w 2 tygodnie.",
+      "summary": "Dla studia teatralnego: witryna kursów + własna kasa, admin, check-in, PL/UA/RU. Bot Gemini automatyzuje ~4 wydarzeń/tydz. (zdjęcie+tekst → strony → ping Bing). Wynik: ruch z AI → sprzedaż biletów w 2 tyg. od startu.",
       "beforeAfter": {
         "before": [
           "Tylko Instagram — brak własnej strony i śladów w wyszukiwarce",
@@ -378,7 +294,9 @@
         "ticketing": "kasa (bez prowizji)",
         "checkin": "check-in biletów przy wejściu",
         "lighthouse": "Lighthouse Performance"
-      }
+      },
+      "cardTitle": "Popular Poet — system sprzedaży",
+      "cardDesc": "Witryna kursów + własna kasa + bot Gemini (~4 wydarzeń/tydz.). AI organic → sprzedaż biletów w 2 tyg."
     },
     "alesyatakun": {
       "category": "Marka osobista · Płatności",
@@ -440,7 +358,9 @@
       "problem": "Специалисту нужен был доверительный сайт с онлайн-оплатой и записью — без сложной CRM и с понятным UX.",
       "whatIDid": "Собрал сайт личного бренда, оплату 3-D Secure, FAQ, schema.org и воронку записи через Telegram.",
       "result": "Живой сайт с оплатой, двумя форматами услуг и структурой под поиск и AI-выдачу.",
-      "nextSteps": "Скрины мобильной версии, GSC, расширение контента под локальные запросы."
+      "nextSteps": "Скрины мобильной версии, GSC, расширение контента под локальные запросы.",
+      "cardTitle": "Alesya Takun",
+      "cardDesc": "Strona psychologa z płatnościami 3-D Secure i elastyczną rezerwacją."
     },
     "event-bot": {
       "category": "Popular Poet · Gemini · Automatyzacja",
@@ -479,15 +399,17 @@
         "flow": "autopublikacja",
         "steps": "kroków w pipeline",
         "manual": "mniej ręcznej pracy"
-      }
+      },
+      "cardTitle": "Popular Poet Event Bot",
+      "cardDesc": "Zdjęcie + tekst → Gemini → strony wydarzeń → ping Bing. ~4 spektakli/tydz. automatycznie."
     },
     "baselinker-reports": {
-      "category": "Аналитика · BaseLinker · AI",
-      "tagline": "Дашборд аналитики продаж: ABC/XYZ, deadstock, AI-рекомендации, прогноз.",
-      "summary": "Внутренний инструмент для e-commerce: отчёты по продажам, классификация ABC/XYZ, выявление deadstock, AI-рекомендации и экспорт в Excel.",
-      "problem": "BaseLinker даёт данные, но не даёт нормальную аналитику с рекомендациями и прогнозом.",
-      "whatIDid": "Собрал дашборд с отчётами ABC/XYZ, deadstock-анализом, AI-рекомендациями и экспортом.",
-      "result": "Рабочий инструмент принятия решений по ассортименту и закупкам.",
+      "category": "Analityka e-commerce · BaseLinker · AI",
+      "tagline": "Narzędzie wewnętrzne: dane BaseLinker → raporty ABC/XYZ, deadstock i rekomendacje AI zakupów.",
+      "summary": "Dla zespołów e-commerce: automatyczna klasyfikacja ABC/XYZ, wykrywanie deadstock, rekomendacje AI, prognoza i eksport Excel pod decyzje zakupowe.",
+      "problem": "BaseLinker ma dane, ale bez analityki z rekomendacjami i prognozą.",
+      "whatIDid": "Dashboard Python: ABC/XYZ, deadstock, warstwa OpenAI, eksport XLSX.",
+      "result": "Działające narzędzie decyzyjne dla asortymentu i zakupów.",
       "nextSteps": "Скрины дашборда, кейс с цифрами экономии, публичная демо-версия.",
       "role": [
         "Спроектировал модель отчётов ABC/XYZ.",
@@ -517,7 +439,9 @@
         "ai": "рекомендации",
         "export": "формат",
         "forecast": "прогноз"
-      }
+      },
+      "cardTitle": "BaseLinker Reports Pro",
+      "cardDesc": "Analityka ABC/XYZ, deadstock, rekomendacje AI zakupów — eksport Excel."
     },
     "lead-scraping": {
       "category": "Лиды · Аудит · Outreach",
@@ -553,7 +477,9 @@
         "score": "скоринг",
         "outreach": "канал",
         "pipeline": "статус"
-      }
+      },
+      "cardTitle": "Lead Hunting",
+      "cardDesc": "Wyszukiwanie słabych stron lokalnych, auto-audyt, scoring 0–100, outreach email."
     },
     "astrologichnaya": {
       "category": "Брендинг · Дизайн · Web",
@@ -587,7 +513,177 @@
         "web": "сайт",
         "style": "стилистика",
         "launch": "запуск"
-      }
+      },
+      "cardTitle": "Astrologichnaya",
+      "cardDesc": "Branding i strona projektu kreatywnego — w trakcie."
+    },
+    "kayer-pl": {
+      "category": "E-commerce · B2B · Multi-rynek",
+      "tagline": "Migracja i automatyzacja e-commerce dla wielojęzycznej marki beauty: Shopify, BaseLinker, workflow treści OpenAI, skrypty Python i adaptacja pod rynek ukraiński.",
+      "summary": "KAYER to dwurynkowy system ecommerce dla profesjonalnej kosmetyki do paznokci (Akzentz / Luxio). KAYER.PL: migracja WooCommerce/WordPress → Shopify, synchronizacja katalogu przez BaseLinker, automation-first pipeline treści (Python + OpenAI) w PL/UA/EN i szybsze wdrażanie promocji. KAYER.UA: dedykowana ukraińska wersja na tej samej logice Shopify — lokalna treść, UX „powiadom o dostępności”, motywacja wykonawców oraz integracje dostawy/księgowości (Flu.io, Dilovod, Nova Poshta).",
+      "beforeAfter": {
+        "before": [
+          "WooCommerce / WordPress — legacy sklep na KAYER.PL",
+          "Ręczna edycja produktów, opisów i promocji",
+          "Ciężki proces aktualizacji — brak jednolitego obiegu PL / UA / EN"
+        ],
+        "after": [
+          "Shopify z synchronizacją BaseLinker",
+          "Treść wspierana AI: skrypty Python + OpenAI API",
+          "Szybsze promocje, agentic ops, rynek UA z Flu.io / Dilovod / Nova Poshta"
+        ]
+      },
+      "systemFlow": {
+        "title": "Pipeline automatyzacji",
+        "steps": [
+          "Surowy pomysł / dane produktu",
+          "Skrypty Python / OpenAI",
+          "Strukturyzowana treść PL / UA / EN",
+          "Shopify / BaseLinker",
+          "Strona / produkty / promocje / integracje"
+        ]
+      },
+      "problem": "KAYER.PL działał na WooCommerce/WordPress: każda aktualizacja produktu, promocji i tłumaczenia wymagała ręcznej pracy w panelu — bez automation-first workflow w trzech językach. KAYER.UA potrzebował gotowego ukraińskiego systemu — nie kopii PL — z lokalną dostawą, księgowością i procesami partnerskimi.",
+      "whatIDid": "KAYER.PL: migracja WooCommerce → Shopify, customizacja motywu przez AI-assisted development, sync produktów BaseLinker, wielojęzyczny pipeline treści PL/UA/EN (OpenAI + Python), skrypty redukujące powtarzalne ops. KAYER.UA: osobny rynek ukraiński na Shopify — UX „powiadom o dostępności”, motywacja wykonawców/partnerów, Dilovod + Nova Poshta przez Flu.io oraz ten sam automation-first content dostosowany do UA.",
+      "result": "Dwie żywe domeny — kayer.pl i kayer.ua. PL: Shopify z BaseLinker sync, ustrukturyzowaną treścią wielojęzyczną i pipeline promocji zamiast ręcznej administracji. UA: osobny, gotowy do rynku system z lokalnymi integracjami, subskrypcją dostępności i motywacją partnerów — nie przetłumaczony klon PL.",
+      "nextSteps": [
+        "Zrzut: legacy WooCommerce admin vs nowy Shopify",
+        "Zrzut: strona główna i karta produktu Shopify (PL + UA)",
+        "Zrzut: BaseLinker sync i mapowanie katalogu",
+        "Zrzut: wielojęzyczne opisy produktów (PL / UA / EN)",
+        "Zrzut: skrypty Python i flow „pomysł promocji → treść”",
+        "Zrzut: UA UX „powiadom o dostępności”",
+        "Zrzut: integracje Nova Poshta, Flu.io i Dilovod",
+        "Zrzut: system motywacji wykonawców i wersja mobilna",
+        "Dodać realny ruch GSC, zamówienia i konwersję (placeholder do eksportu)",
+        "Uruchomić i opublikować Lighthouse dla obu domen"
+      ],
+      "role": [
+        "Migracja KAYER.PL: WooCommerce/WordPress → Shopify, customizacja motywu i product/content workflows.",
+        "BaseLinker sync, automatyzacja ops w Pythonie i wielojęzyczna treść PL/UA/EN przez OpenAI.",
+        "Zbudowałem KAYER.UA jako osobną ukraińską wersję ecommerce na logice KAYER.PL (Shopify).",
+        "Dostosowałem treść i UX pod rynek ukraiński: „powiadom o dostępności”, motywacja wykonawców.",
+        "Połączyłem sklep UA z Dilovod, Nova Poshta (Flu.io) i automatyzacjami AI."
+      ],
+      "ops": [
+        "PL: automation-first workflow produktów, treści i promocji — od pomysłu do publikacji.",
+        "PL: synchronizacja katalogu i danych produktowych przez BaseLinker.",
+        "PL: weryfikacja salonu/uprawnień B2B — profesjonalny kanał Akzentz/Luxio.",
+        "UA: logika dostępności z subskrypcją „powiadom po pojawieniu się” zamiast martwego out-of-stock.",
+        "UA: wewnętrzny system motywacji wykonawców i partnerów."
+      ],
+      "integrations": [
+        "PL: Shopify + BaseLinker + WooCommerce (legacy migration)",
+        "PL: InPost Paczkomaty + kurierzy (DHL, DPD, Orlen, Poczta) i płatności online",
+        "UA: Dilovod + Nova Poshta przez Flu.io",
+        "OpenAI API + Python do treści, promocji i automatyzacji ops",
+        "Architektura cross-domenowa kayer.pl / kayer.ua"
+      ],
+      "seo": [
+        "Strony produktów i kategorii strukturyzowane pod wyszukiwarkę na obu rynkach.",
+        "Wielojęzyczna treść PL/UA/EN z hreflang i czystą indeksacją.",
+        "Treści tutorialowe Luxio jako long-tail SEO dla PL.",
+        "Ukraińska treść i lokalna prezentacja produktów dla UA."
+      ],
+      "ai": [
+        "Pipeline OpenAI dla wielojęzycznych opisów i treści promocyjnych PL/UA/EN.",
+        "AI-assisted development i customizacja motywu Shopify — nie ad-hoc edycje.",
+        "Agentic workflow: surowy pomysł promocji → ustrukturyzowana treść → wdrożenie na stronie.",
+        "Schema Product + Offer + Review — katalog czytelny dla maszyn i odpowiedzi AI."
+      ],
+      "metrics": {
+        "migration": "PL migration time (est.)",
+        "integrations": "operational integrations",
+        "skus": "SKUs in catalog",
+        "manual": "manual ops reduced (est.)",
+        "lighthouse": "Lighthouse performance"
+      },
+      "cardTitle": "KAYER.PL — migracja Shopify",
+      "cardDesc": "WooCommerce → Shopify, sync BaseLinker, pipeline treści AI dla rynku PL B2B."
+    },
+    "kayer-ua": {
+      "category": "E-commerce · B2B · Multi-rynek",
+      "tagline": "Migracja i automatyzacja e-commerce dla wielojęzycznej marki beauty: Shopify, BaseLinker, workflow treści OpenAI, skrypty Python i adaptacja pod rynek ukraiński.",
+      "summary": "KAYER to dwurynkowy system ecommerce dla profesjonalnej kosmetyki do paznokci (Akzentz / Luxio). KAYER.PL: migracja WooCommerce/WordPress → Shopify, synchronizacja katalogu przez BaseLinker, automation-first pipeline treści (Python + OpenAI) w PL/UA/EN i szybsze wdrażanie promocji. KAYER.UA: dedykowana ukraińska wersja na tej samej logice Shopify — lokalna treść, UX „powiadom o dostępności”, motywacja wykonawców oraz integracje dostawy/księgowości (Flu.io, Dilovod, Nova Poshta).",
+      "beforeAfter": {
+        "before": [
+          "WooCommerce / WordPress — legacy sklep na KAYER.PL",
+          "Ręczna edycja produktów, opisów i promocji",
+          "Ciężki proces aktualizacji — brak jednolitego obiegu PL / UA / EN"
+        ],
+        "after": [
+          "Shopify z synchronizacją BaseLinker",
+          "Treść wspierana AI: skrypty Python + OpenAI API",
+          "Szybsze promocje, agentic ops, rynek UA z Flu.io / Dilovod / Nova Poshta"
+        ]
+      },
+      "systemFlow": {
+        "title": "Pipeline automatyzacji",
+        "steps": [
+          "Surowy pomysł / dane produktu",
+          "Skrypty Python / OpenAI",
+          "Strukturyzowana treść PL / UA / EN",
+          "Shopify / BaseLinker",
+          "Strona / produkty / promocje / integracje"
+        ]
+      },
+      "problem": "KAYER.PL działał na WooCommerce/WordPress: każda aktualizacja produktu, promocji i tłumaczenia wymagała ręcznej pracy w panelu — bez automation-first workflow w trzech językach. KAYER.UA potrzebował gotowego ukraińskiego systemu — nie kopii PL — z lokalną dostawą, księgowością i procesami partnerskimi.",
+      "whatIDid": "KAYER.PL: migracja WooCommerce → Shopify, customizacja motywu przez AI-assisted development, sync produktów BaseLinker, wielojęzyczny pipeline treści PL/UA/EN (OpenAI + Python), skrypty redukujące powtarzalne ops. KAYER.UA: osobny rynek ukraiński na Shopify — UX „powiadom o dostępności”, motywacja wykonawców/partnerów, Dilovod + Nova Poshta przez Flu.io oraz ten sam automation-first content dostosowany do UA.",
+      "result": "Dwie żywe domeny — kayer.pl i kayer.ua. PL: Shopify z BaseLinker sync, ustrukturyzowaną treścią wielojęzyczną i pipeline promocji zamiast ręcznej administracji. UA: osobny, gotowy do rynku system z lokalnymi integracjami, subskrypcją dostępności i motywacją partnerów — nie przetłumaczony klon PL.",
+      "nextSteps": [
+        "Zrzut: legacy WooCommerce admin vs nowy Shopify",
+        "Zrzut: strona główna i karta produktu Shopify (PL + UA)",
+        "Zrzut: BaseLinker sync i mapowanie katalogu",
+        "Zrzut: wielojęzyczne opisy produktów (PL / UA / EN)",
+        "Zrzut: skrypty Python i flow „pomysł promocji → treść”",
+        "Zrzut: UA UX „powiadom o dostępności”",
+        "Zrzut: integracje Nova Poshta, Flu.io i Dilovod",
+        "Zrzut: system motywacji wykonawców i wersja mobilna",
+        "Dodać realny ruch GSC, zamówienia i konwersję (placeholder do eksportu)",
+        "Uruchomić i opublikować Lighthouse dla obu domen"
+      ],
+      "role": [
+        "Migracja KAYER.PL: WooCommerce/WordPress → Shopify, customizacja motywu i product/content workflows.",
+        "BaseLinker sync, automatyzacja ops w Pythonie i wielojęzyczna treść PL/UA/EN przez OpenAI.",
+        "Zbudowałem KAYER.UA jako osobną ukraińską wersję ecommerce na logice KAYER.PL (Shopify).",
+        "Dostosowałem treść i UX pod rynek ukraiński: „powiadom o dostępności”, motywacja wykonawców.",
+        "Połączyłem sklep UA z Dilovod, Nova Poshta (Flu.io) i automatyzacjami AI."
+      ],
+      "ops": [
+        "PL: automation-first workflow produktów, treści i promocji — od pomysłu do publikacji.",
+        "PL: synchronizacja katalogu i danych produktowych przez BaseLinker.",
+        "PL: weryfikacja salonu/uprawnień B2B — profesjonalny kanał Akzentz/Luxio.",
+        "UA: logika dostępności z subskrypcją „powiadom po pojawieniu się” zamiast martwego out-of-stock.",
+        "UA: wewnętrzny system motywacji wykonawców i partnerów."
+      ],
+      "integrations": [
+        "PL: Shopify + BaseLinker + WooCommerce (legacy migration)",
+        "PL: InPost Paczkomaty + kurierzy (DHL, DPD, Orlen, Poczta) i płatności online",
+        "UA: Dilovod + Nova Poshta przez Flu.io",
+        "OpenAI API + Python do treści, promocji i automatyzacji ops",
+        "Architektura cross-domenowa kayer.pl / kayer.ua"
+      ],
+      "seo": [
+        "Strony produktów i kategorii strukturyzowane pod wyszukiwarkę na obu rynkach.",
+        "Wielojęzyczna treść PL/UA/EN z hreflang i czystą indeksacją.",
+        "Treści tutorialowe Luxio jako long-tail SEO dla PL.",
+        "Ukraińska treść i lokalna prezentacja produktów dla UA."
+      ],
+      "ai": [
+        "Pipeline OpenAI dla wielojęzycznych opisów i treści promocyjnych PL/UA/EN.",
+        "AI-assisted development i customizacja motywu Shopify — nie ad-hoc edycje.",
+        "Agentic workflow: surowy pomysł promocji → ustrukturyzowana treść → wdrożenie na stronie.",
+        "Schema Product + Offer + Review — katalog czytelny dla maszyn i odpowiedzi AI."
+      ],
+      "metrics": {
+        "market": "target market",
+        "integrations": "local integrations",
+        "notify": "notify-when-available",
+        "partners": "partner motivation",
+        "lighthouse": "Lighthouse performance"
+      },
+      "cardTitle": "KAYER.UA — rynek ukraiński",
+      "cardDesc": "Osobny sklep UA: Nova Poshta, Dilovod, powiadomienia o dostępności — nie klon PL."
     }
   },
   "about": {
@@ -596,24 +692,24 @@
     "intro": "Jestem digital builderem i operatorem pełnego cyklu dla małego biznesu. Nie oddaję projektu i nie znikam — biorę odpowiedzialność za wynik: od zakupów i operacji do momentu, gdy projekt pojawia się w Google i odpowiedziach AI. Oto cykl, który prowadzę w każdym projekcie.",
     "steps": [
       {
-        "title": "Pomysł i operacje",
-        "text": "Definiuję ofertę, sprowadzam produkt, robię niewdzięczną część — zakupy, EAN/GTIN, karty produktów, logistyka."
+        "title": "Wysyłasz pomysł",
+        "text": "Surowy tekst wystarczy: landing, sklep, bot, migracja lub audyt."
       },
       {
-        "title": "Budowa",
-        "text": "Uruchamiam szybką, nowoczesną stronę z właściwą architekturą: czyste URL, routing wielojęzyczny, płatności i integracje."
+        "title": "Strukturyzuję",
+        "text": "Strony, funkcje, dane, integracje, harmonogram i plan tech."
       },
       {
-        "title": "Widoczność w wyszukiwarce",
-        "text": "Techniczne SEO, indeksacja, Core Web Vitals i pozycje — mierzone w Search Console, nie zgadywane."
+        "title": "Szybka walidacja",
+        "text": "Prototyp lub szkic audytu — kształt przed deckiem na 40 slajdów."
       },
       {
-        "title": "Widoczność w AI",
-        "text": "Dane strukturalne, llms.txt i treść tak ukształtowana, by ChatGPT, Perplexity i AI Overviews cytowały markę."
+        "title": "Budowa i deploy",
+        "text": "Strona, formularze, płatności, boty, baza SEO, domena, instrukcje."
       },
       {
-        "title": "Pomiar i iteracja",
-        "text": "Śledzę istotne metryki, oznaczam ich źródło i poprawiam to, co wskazują liczby."
+        "title": "Iteracja pod wynik",
+        "text": "Metryki, content, automatyzacja, SEO/GEO — co daje leady i sprzedaż."
       }
     ],
     "valuesTitle": "Co otrzymujesz",

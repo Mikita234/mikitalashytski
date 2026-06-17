@@ -1,12 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState, type FC } from "react";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import {
   crtStates,
   crtProjectChannels,
-  terminalLines,
 } from "@/content/home-vintage";
 import { projectVisuals } from "@/content/project-visuals";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -14,10 +14,13 @@ import { ProjectMiniPreview } from "./ProjectMiniPreview";
 import { ScanlineOverlay } from "./ScanlineOverlay";
 
 function TerminalScreen() {
+  const t = useTranslations("home");
+  const lines = t.raw("terminal") as string[];
+
   return (
     <div className="p-3 font-mono text-[10px] leading-relaxed text-[var(--vhs-terminal)] sm:p-4 sm:text-xs">
-      {terminalLines.map((line, i) => (
-        <div key={i} className={i === terminalLines.length - 1 ? "animate-pulse" : ""}>
+      {lines.map((line, i) => (
+        <div key={i} className={i === lines.length - 1 ? "animate-pulse" : ""}>
           {line}
         </div>
       ))}
@@ -51,7 +54,7 @@ function BuildingScreen() {
 function OrderScreen() {
   return (
     <Link
-      href="/contact"
+      href="/order"
       className="flex h-full flex-col items-center justify-center bg-[var(--vhs-red)] p-4 text-center transition-filter hover:brightness-110"
     >
       <p className="font-display text-2xl uppercase text-white sm:text-4xl">

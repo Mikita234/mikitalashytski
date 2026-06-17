@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "HOME",
+    "works": "WORKS",
+    "packages": "PACKAGES",
+    "approach": "APPROACH",
+    "order": "ORDER"
+  },
+  "hero": {
+    "broadcast": "LIVE BROADCAST",
+    "title": "Websites, automations and AI workflows for small business",
+    "subtitle": "Landing pages, e-commerce, bots, payment flows, BaseLinker integrations, multilingual content and internal tools — from idea to working deployment.",
+    "body": "Digital builder for small business, e-commerce and event projects. I build working systems — not just pages.",
+    "stack": ["Shopify", "WordPress", "BaseLinker", "Payments", "Bots", "AI content", "SEO"],
+    "ctaOrder": "Order build",
+    "ctaWorks": "View works",
+    "ctaAudit": "Request audit",
+    "tvLabel": "BUILDER-TV 2001"
+  },
+  "packages": {
+    "tag": "PACKAGES",
+    "title": "What I build",
+    "subtitle": "Five packages with clear scope. Prices are starting points — exact quote after we review your task.",
+    "from": "from",
+    "timeline": "Timeline",
+    "order": "Order this",
+    "details": "Details",
+    "items": {
+      "landing": {
+        "title": "Fast landing",
+        "desc": "One strong page to test an idea, service or campaign.",
+        "forWho": ["Idea validation", "Local services", "Events", "Lead capture", "Ads landing"],
+        "includes": ["1 page", "Offer structure", "Contact form", "Basic SEO", "Mobile", "Deploy"]
+      },
+      "business": {
+        "title": "Project website",
+        "desc": "Multi-page site for a business, studio or service brand.",
+        "forWho": ["Studios", "Services", "Small business", "Theatre", "Multi-page projects"],
+        "includes": ["Site structure", "Multiple pages", "CMS/content", "Contact form", "SEO base", "i18n if needed"]
+      },
+      "ecommerce": {
+        "title": "E-commerce setup / migration",
+        "desc": "Shopify, WooCommerce, catalog structure, payments and sync.",
+        "forWho": ["Shopify", "WooCommerce", "Migration", "Marketplaces", "Catalog ops"],
+        "includes": ["Store setup", "Product pages", "Collections", "Payments", "Shipping", "Base automations", "SEO/GEO base"]
+      },
+      "automation": {
+        "title": "Automation / bots / internal tools",
+        "desc": "Scripts, bots, panels and API workflows that remove manual work.",
+        "forWho": ["Telegram bots", "Publishing automation", "Content generation", "Reports", "Internal panels"],
+        "includes": ["Scripts", "Integrations", "Database", "Admin/panel", "Documentation"]
+      },
+      "audit": {
+        "title": "Website rescue / audit",
+        "desc": "Quick audit for old sites — UX, SEO, speed, AI visibility.",
+        "forWho": ["Old websites", "Low conversions", "Cold outreach leads", "Before rebuild"],
+        "includes": ["Site check", "UX review", "SEO", "Speed", "Mobile", "AI visibility", "Quick fixes list", "Impact estimate"]
+      }
+    },
+    "timelines": {
+      "landing": "3–7 days",
+      "business": "1–3 weeks",
+      "ecommerce": "2–6 weeks",
+      "automation": "3–14 days",
+      "audit": "2–5 days"
+    }
+  },
+  "trust": {
+    "tag": "TRUST SIGNAL",
+    "title": "Built with real business constraints",
+    "facts": [
+      "E-commerce logistics and marketplace ops",
+      "Shopify / WordPress / BaseLinker integrations",
+      "Payments and ticketing flows",
+      "Multilingual content workflows",
+      "AI-assisted development and automation",
+      "SEO and AI-search visibility"
+    ]
+  },
+  "stack": {
+    "tag": "STACK",
+    "title": "Tools I work with"
+  },
+  "proof": {
+    "tag": "PROOF",
+    "title": "Real projects, real constraints",
+    "items": [
+      { "label": "KAYER", "value": "2 markets · 3 langs" },
+      { "label": "Popular", "value": "AI → sales in 2 wks" },
+      { "label": "MNSK7", "value": "3500+ Allegro orders" },
+      { "label": "BaseLinker", "value": "ABC/XYZ + AI recs" }
+    ]
+  },
+  "works": {
+    "tag": "OPEN SIGNALS",
+    "title": "Selected work",
+    "subtitle": "From e-commerce and marketplaces to automation and service sites.",
+    "viewAll": "All works",
+    "filters": {
+      "all": "All",
+      "ecommerce": "E-commerce",
+      "automation": "Automation",
+      "websites": "Websites",
+      "bots": "Bots",
+      "internal": "Internal tools",
+      "ai": "AI workflows"
+    }
+  },
+  "pricing": {
+    "tag": "PRICE LIST",
+    "title": "Starting prices",
+    "subtitle": "Ranges, not fixed quotes. Exact price after task review. Audit: 500–900 PLN.",
+    "service": "Service",
+    "from": "From",
+    "to": "To",
+    "tiers": [
+      { "service": "Fast landing", "from": "1 500", "to": "3 000" },
+      { "service": "Project website", "from": "3 000", "to": "7 000" },
+      { "service": "E-commerce / store", "from": "5 000", "to": "15 000" },
+      { "service": "Automation / bots", "from": "2 000", "to": "8 000" },
+      { "service": "Website audit", "from": "500", "to": "900" }
+    ],
+    "cta": "Order build"
+  },
+  "process": {
+    "tag": "INSTRUCTION MANUAL",
+    "title": "Process",
+    "more": "More about approach",
+    "steps": [
+      { "title": "You send the idea", "desc": "Raw text is fine: landing, store, bot, migration or audit." },
+      { "title": "I structure it", "desc": "Pages, features, data, integrations, timeline and tech plan." },
+      { "title": "We validate fast", "desc": "Prototype or audit draft — shape before a 40-slide deck." },
+      { "title": "Build and deploy", "desc": "Site, forms, payments, bots, SEO base, domain, instructions." },
+      { "title": "Iterate for results", "desc": "Metrics, content, automation, SEO/GEO — what brings leads and sales." }
+    ]
+  },
+  "underHood": {
+    "tag": "UNDER THE HOOD",
+    "title": "What you don't see on the cover",
+    "subtitle": "This site demos itself: JSON-LD, hreflang, sitemap, llms.txt, static SSG.",
+    "cards": [
+      { "title": "Structured data", "text": "Organization + Person + WebSite JSON-LD on every page." },
+      { "title": "Built for AI answers", "text": "Public llms.txt and robots.txt for GPTBot, PerplexityBot, ClaudeBot." },
+      { "title": "Multilingual architecture", "text": "EN / PL / RU / UA with full hreflang." },
+      { "title": "Performance as feature", "text": "SSG, minimal JS, Core Web Vitals in the green." }
+    ],
+    "viewSource": "View source → JSON-LD"
+  },
+  "contact": {
+    "headline": "Got an idea, project or digital chaos?",
+    "subline": "Show me the task — we'll map what to build and for how much.",
+    "stickers": ["CALL NOW", "FROM 500 PLN", "FAST LAUNCH"],
+    "ctaOrder": "Order build",
+    "ctaTelegram": "Telegram",
+    "ctaEmail": "Email",
+    "startFrom": "START FROM THE IDEA — NOT A TEMPLATE"
+  },
+  "form": {
+    "services": {
+      "landing": "Landing page",
+      "business": "Business website",
+      "ecommerce": "E-commerce",
+      "automation": "Automation",
+      "bot": "Bot",
+      "audit": "Website audit",
+      "internal": "Internal tool",
+      "notSure": "Not sure yet"
+    },
+    "budgets": {
+      "up1500": "up to 1 500 PLN",
+      "1500_3000": "1 500 – 3 000 PLN",
+      "3000_7000": "3 000 – 7 000 PLN",
+      "7000plus": "7 000+ PLN",
+      "monthly": "Monthly support",
+      "unknown": "Not sure yet"
+    },
+    "timelines": {
+      "urgent": "Urgent (up to 1 week)",
+      "1_2weeks": "1–2 weeks",
+      "2_4weeks": "2–4 weeks",
+      "flexible": "Flexible"
+    },
+    "success": "Request received. I'll check the task and reply with next steps.",
+    "submit": "ORDER BUILD",
+    "submitting": "SENDING..."
+  },
+  "marquee": "LANDINGS / ECOMMERCE / AUTOMATION / BOTS / SEO / AI VISIBILITY / SMALL BUSINESS / WEBSITES /",
+  "terminal": [
+    "> npm run build",
+    "> launching landing...",
+    "> bot connected",
+    "> status: ONLINE",
+    "> mode: small_business"
+  ]
+}

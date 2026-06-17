@@ -1,8 +1,13 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { site } from "@/content/site";
 import { Link } from "@/i18n/navigation";
-import { vintageNav } from "@/content/home-vintage";
+import { sellNav } from "@/content/selling";
 
 export function VintageFooter() {
+  const t = useTranslations("home.nav");
+
   return (
     <footer className="border-t-2 border-[var(--vhs-dirt)] bg-[#0a0a0a]">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-start sm:justify-between sm:px-6">
@@ -19,13 +24,13 @@ export function VintageFooter() {
         </div>
 
         <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2">
-          {vintageNav.map((item) => (
+          {sellNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className="font-mono text-[10px] uppercase tracking-widest text-[var(--vhs-muted)] transition-colors hover:text-[var(--vhs-acid)]"
             >
-              {item.label}
+              {t(item.key)}
             </Link>
           ))}
         </nav>

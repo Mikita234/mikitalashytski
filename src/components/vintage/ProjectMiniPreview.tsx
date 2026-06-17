@@ -50,7 +50,9 @@ function ProjectMiniPreviewInner({ slug, className }: { slug: ProjectSlug; class
         <span className="browser-chrome__live rec-blink">● LIVE</span>
       </div>
       <div className="browser-chrome__screen">
-        {slug === "kayer" && <KayerPreview accent={v.accent} />}
+        {(slug === "kayer-pl" || slug === "kayer-ua") && (
+          <KayerPreview accent={v.accent} market={slug === "kayer-ua" ? "UA" : "PL"} />
+        )}
         {slug === "mnsk7-tools" && <Mnsk7Preview accent={v.accent} />}
         {slug === "popular" && <PopularPreview accent={v.accent} />}
         {slug === "alesyatakun" && <AlesyaPreview accent={v.accent} />}
@@ -60,12 +62,12 @@ function ProjectMiniPreviewInner({ slug, className }: { slug: ProjectSlug; class
   );
 }
 
-function KayerPreview({ accent }: { accent: string }) {
+function KayerPreview({ accent, market }: { accent: string; market: "PL" | "UA" }) {
   return (
     <div className="preview-ui preview-ui--shop" style={{ background: `linear-gradient(160deg, #1a1028 0%, #0f0f14 60%)` }}>
       <div className="preview-ui__nav" style={{ borderColor: `${accent}44` }}>
         <span style={{ color: accent }}>KAYER</span>
-        <span>PL / UA</span>
+        <span>{market}</span>
         <span className="preview-ui__cta" style={{ background: accent }}>B2B</span>
       </div>
       <div className="preview-ui__hero" style={{ background: `linear-gradient(135deg, ${accent}33, transparent)` }}>

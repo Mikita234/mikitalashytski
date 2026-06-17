@@ -14,6 +14,13 @@
   --vhs-white: #f0f0f0;
   --vhs-muted: #8a8a94;
 
+  /* Doom accent layer (~20%) */
+  --doom-red: #8b0000;
+  --doom-panel: #1a0a0a;
+  --doom-health: #55ff55;
+  --doom-ammo: #ffcc00;
+  --doom-border: #662222;
+
   --background: var(--vhs-black);
   --foreground: var(--vhs-white);
   --muted: var(--vhs-muted);
@@ -21,7 +28,7 @@
   --border: rgba(255, 255, 255, 0.12);
 }
 
-@theme inline {
+  @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
@@ -35,6 +42,7 @@
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;
   --font-display: var(--font-display), var(--font-sans), sans-serif;
+  --font-doom: var(--font-doom), var(--font-mono), monospace;
 }
 
 * {
@@ -683,6 +691,44 @@ button:focus-visible {
   pointer-events: none;
   position: absolute;
   opacity: 0.15;
+}
+
+/* Doom accent frames (~20%) */
+.doom-frame__corner {
+  pointer-events: none;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--doom-red);
+  border-style: solid;
+}
+
+.doom-frame__corner--tl {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+
+.doom-frame__corner--tr {
+  top: 0;
+  right: 0;
+  border-width: 2px 2px 0 0;
+}
+
+.doom-frame__corner--bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 2px 2px;
+}
+
+.doom-frame__corner--br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
+
+.doom-hud {
+  box-shadow: inset 0 0 0 1px var(--doom-border);
 }
 
 /* Section ambient glow */

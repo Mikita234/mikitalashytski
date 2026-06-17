@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Link } from "@/i18n/navigation";
-import { vintageNav } from "@/content/home-vintage";
+import { useTranslations } from "next-intl";
+import { sellNav } from "@/content/selling";
 import { site } from "@/content/site";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { Link } from "@/i18n/navigation";
+import { useState } from "react";
 
 function NavItem({
   href,
@@ -61,6 +62,7 @@ function NavItem({
 }
 
 export function VHSNav() {
+  const t = useTranslations("home.nav");
   const [open, setOpen] = useState(false);
 
   return (
@@ -79,8 +81,8 @@ export function VHSNav() {
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
-          {vintageNav.map((item) => (
-            <NavItem key={item.href} href={item.href} label={item.label} />
+          {sellNav.map((item) => (
+            <NavItem key={item.href} href={item.href} label={t(item.key)} />
           ))}
         </nav>
 
@@ -103,11 +105,11 @@ export function VHSNav() {
           className="border-t border-white/10 px-4 py-3 md:hidden"
           aria-label="Mobile"
         >
-          {vintageNav.map((item) => (
+          {sellNav.map((item) => (
             <NavItem
               key={item.href}
               href={item.href}
-              label={item.label}
+              label={t(item.key)}
               onClick={() => setOpen(false)}
             />
           ))}

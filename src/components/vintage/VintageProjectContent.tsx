@@ -72,7 +72,8 @@ const accentGlow: Record<AccentKey, string> = {
 };
 
 const cardStyle: Record<string, "vhs" | "tv" | "teletext" | "ad" | "win98"> = {
-  kayer: "vhs",
+  "kayer-pl": "vhs",
+  "kayer-ua": "vhs",
   "mnsk7-tools": "tv",
   popular: "teletext",
   alesyatakun: "ad",
@@ -84,6 +85,7 @@ const cardStyle: Record<string, "vhs" | "tv" | "teletext" | "ad" | "win98"> = {
 
 export function VintageProjectContent({ project }: { project: Project }) {
   const t = useTranslations(`projects.${project.slug}`);
+  const tProjects = useTranslations("projects");
   const pp = useTranslations("projectPage");
   const common = useTranslations("common");
 
@@ -418,7 +420,7 @@ export function VintageProjectContent({ project }: { project: Project }) {
             <VintageProjectCard
               slug={next.slug}
               title={next.name}
-              desc={nextWork.desc}
+              desc={tProjects(`${next.slug}.cardDesc`)}
               tags={nextWork.tags}
               status={nextWork.status}
               href={`/projects/${next.slug}`}
@@ -429,8 +431,8 @@ export function VintageProjectContent({ project }: { project: Project }) {
         )}
 
         <div className="mt-10 text-center">
-          <VHSButton href="/contact" variant="primary">
-            Разобрать идею →
+          <VHSButton href="/order" variant="primary">
+            Order build →
           </VHSButton>
         </div>
       </div>

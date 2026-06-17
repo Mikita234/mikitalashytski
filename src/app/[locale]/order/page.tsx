@@ -12,35 +12,34 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "contact" });
+  const t = await getTranslations({ locale, namespace: "home.contact" });
   return {
-    title: t("title"),
-    description: t("subtitle"),
-    alternates: buildAlternates(locale, "/contact"),
+    title: t("ctaOrder"),
+    description: t("subline"),
+    alternates: buildAlternates(locale, "/order"),
   };
 }
 
-export default async function ContactPage({
+export default async function OrderPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "contact" });
-  const th = await getTranslations({ locale, namespace: "home.contact" });
+  const t = await getTranslations({ locale, namespace: "home.contact" });
 
   return (
     <>
       <VintagePageHeader
         tag="ORDER CHANNEL"
-        title={th("headline")}
-        subtitle={th("subline")}
+        title={t("headline")}
+        subtitle={t("subline")}
       />
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="mb-8 flex flex-wrap justify-center gap-2">
-          {(th.raw("stickers") as string[]).map((s) => (
+          {(t.raw("stickers") as string[]).map((s) => (
             <span
               key={s}
               className={`border-2 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest ${
@@ -55,10 +54,6 @@ export default async function ContactPage({
         </div>
 
         <OrderForm />
-
-        <p className="mx-auto mt-8 max-w-md text-center font-mono text-xs text-[var(--vhs-muted)]">
-          {t("note")}
-        </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <VHSButton href={site.telegram} variant="secondary" external>

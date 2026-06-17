@@ -57,6 +57,7 @@ export function VHSButton({
         <a
           href={href}
           className={cls}
+          onClick={onClick}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           target={href.startsWith("http") ? "_blank" : undefined}
@@ -70,6 +71,7 @@ export function VHSButton({
       <Link
         href={href}
         className={cls}
+        onClick={onClick}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >

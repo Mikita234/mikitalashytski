@@ -1,7 +1,11 @@
-import { vintageMarquee } from "@/content/home-vintage";
+"use client";
 
-export function MarqueeTicker({ text = vintageMarquee }: { text?: string }) {
-  const items = text.split("/").map((s) => s.trim()).filter(Boolean);
+import { useTranslations } from "next-intl";
+
+export function MarqueeTicker({ text }: { text?: string }) {
+  const t = useTranslations("home");
+  const source = text ?? t("marquee");
+  const items = source.split("/").map((s) => s.trim()).filter(Boolean);
 
   return (
     <div

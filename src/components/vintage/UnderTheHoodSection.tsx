@@ -1,6 +1,12 @@
-import { vintageUnderHood } from "@/content/home-vintage";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { vintageUnderHoodSpecs } from "@/content/home-vintage";
 
 export function UnderTheHoodSection() {
+  const t = useTranslations("home.underHood");
+  const cards = t.raw("cards") as { title: string; text: string }[];
+
   return (
     <section
       id="under-the-hood"
@@ -10,17 +16,17 @@ export function UnderTheHoodSection() {
         <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-terminal)]">
-              ● {vintageUnderHood.tag}
+              ● {t("tag")}
             </p>
             <h2 className="mt-2 font-display text-3xl uppercase text-[var(--vhs-white)] sm:text-4xl">
-              {vintageUnderHood.title}
+              {t("title")}
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
-              {vintageUnderHood.subtitle}
+              {t("subtitle")}
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {vintageUnderHood.cards.map((card, i) => (
+              {cards.map((card, i) => (
                 <article
                   key={card.title}
                   className="tech-spec-card group border-2 border-[var(--vhs-dirt)] bg-[#0e0e12] p-4 transition-colors hover:border-[var(--vhs-terminal)]/50 sm:p-5"
@@ -34,9 +40,6 @@ export function UnderTheHoodSection() {
                   <p className="mt-2 text-xs leading-relaxed text-[var(--vhs-muted)] sm:text-sm">
                     {card.text}
                   </p>
-                  <span className="mt-3 inline-block font-mono text-[8px] uppercase text-[var(--vhs-terminal)] opacity-0 transition-opacity group-hover:opacity-100">
-                    ▶ verified on this site
-                  </span>
                 </article>
               ))}
             </div>
@@ -47,7 +50,7 @@ export function UnderTheHoodSection() {
               P300 TECH SPECS
             </div>
             <div className="mt-2 space-y-0.5">
-              {vintageUnderHood.specs.map((line) => (
+              {vintageUnderHoodSpecs.map((line) => (
                 <p
                   key={line.label}
                   className="px-1"
@@ -58,7 +61,7 @@ export function UnderTheHoodSection() {
               ))}
             </div>
             <div className="mt-3 border-t border-white/20 pt-2 text-[#ccc]">
-              <p>VIEW SOURCE → JSON-LD</p>
+              <p>{t("viewSource")}</p>
               <p>/robots.txt → AI BOTS OK</p>
               <p>/llms.txt → PUBLIC</p>
               <p>/sitemap.xml → 4 LOCALES</p>

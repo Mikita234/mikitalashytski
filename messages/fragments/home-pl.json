@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "GŁÓWNA",
+    "works": "REALIZACJE",
+    "packages": "PAKIETY",
+    "approach": "PROCES",
+    "order": "ZAMÓW"
+  },
+  "hero": {
+    "broadcast": "TRANSMISJA NA ŻYWO",
+    "title": "Strony, automatyzacje i workflow AI dla małego biznesu",
+    "subtitle": "Landingi, e-commerce, boty, płatności, integracje BaseLinker, treści wielojęzyczne i narzędzia wewnętrzne — od pomysłu do działającego wdrożenia.",
+    "body": "Digital builder dla małego biznesu, e-commerce i projektów eventowych. Buduję działające systemy — nie tylko strony.",
+    "stack": ["Shopify", "WordPress", "BaseLinker", "Płatności", "Boty", "AI content", "SEO"],
+    "ctaOrder": "Zamów build",
+    "ctaWorks": "Zobacz realizacje",
+    "ctaAudit": "Zamów audyt",
+    "tvLabel": "BUILDER-TV 2001"
+  },
+  "packages": {
+    "tag": "PAKIETY",
+    "title": "Co buduję",
+    "subtitle": "Pięć pakietów z jasnym zakresem. Ceny to punkty startowe — dokładna wycena po omówieniu zadania.",
+    "from": "od",
+    "timeline": "Termin",
+    "order": "Zamów",
+    "details": "Szczegóły",
+    "items": {
+      "landing": {
+        "title": "Szybki landing",
+        "desc": "Jedna mocna strona do testu pomysłu, usługi lub kampanii.",
+        "forWho": ["Walidacja pomysłu", "Usługi lokalne", "Eventy", "Lead capture", "Landing pod reklamy"],
+        "includes": ["1 strona", "Struktura oferty", "Formularz", "Podstawowe SEO", "Mobile", "Deploy"]
+      },
+      "business": {
+        "title": "Strona projektowa",
+        "desc": "Wielostronicowy serwis dla biznesu, studia lub marki usługowej.",
+        "forWho": ["Studia", "Usługi", "Mały biznes", "Teatr", "Projekty wielostronicowe"],
+        "includes": ["Struktura serwisu", "Wiele stron", "CMS/treści", "Formularz", "Baza SEO", "i18n jeśli potrzeba"]
+      },
+      "ecommerce": {
+        "title": "E-commerce / migracja",
+        "desc": "Shopify, WooCommerce, katalog, płatności i synchronizacja.",
+        "forWho": ["Shopify", "WooCommerce", "Migracja", "Marketplace", "Operacje katalogowe"],
+        "includes": ["Setup sklepu", "Karty produktów", "Kolekcje", "Płatności", "Dostawa", "Automatyzacje Base", "Baza SEO/GEO"]
+      },
+      "automation": {
+        "title": "Automatyzacja / boty / narzędzia",
+        "desc": "Skrypty, boty, panele i workflow API usuwające ręczną pracę.",
+        "forWho": ["Boty Telegram", "Automatyzacja publikacji", "Generowanie treści", "Raporty", "Panele wewnętrzne"],
+        "includes": ["Skrypty", "Integracje", "Baza danych", "Panel admin", "Dokumentacja"]
+      },
+      "audit": {
+        "title": "Ratunek strony / audyt",
+        "desc": "Szybki audyt starych stron — UX, SEO, szybkość, widoczność AI.",
+        "forWho": ["Stare strony", "Niska konwersja", "Cold outreach", "Przed przebudową"],
+        "includes": ["Przegląd strony", "UX", "SEO", "Szybkość", "Mobile", "Widoczność AI", "Lista quick fixes", "Szacunek wpływu"]
+      }
+    },
+    "timelines": {
+      "landing": "3–7 dni",
+      "business": "1–3 tygodnie",
+      "ecommerce": "2–6 tygodni",
+      "automation": "3–14 dni",
+      "audit": "2–5 dni"
+    }
+  },
+  "trust": {
+    "tag": "ZAUFAJ",
+    "title": "Budowane z realnych ograniczeń biznesowych",
+    "facts": [
+      "Logistyka e-commerce i operacje marketplace",
+      "Integracje Shopify / WordPress / BaseLinker",
+      "Płatności i flow biletowe",
+      "Workflow treści wielojęzycznych",
+      "Development wspomagany AI i automatyzacja",
+      "SEO i widoczność w AI-search"
+    ]
+  },
+  "stack": {
+    "tag": "STACK",
+    "title": "Narzędzia, z którymi pracuję"
+  },
+  "proof": {
+    "tag": "DOWODY",
+    "title": "Prawdziwe projekty, prawdziwe ograniczenia",
+    "items": [
+      { "label": "KAYER", "value": "2 rynki · 3 języki" },
+      { "label": "Popular", "value": "AI → sprzedaż w 2 tyg." },
+      { "label": "MNSK7", "value": "3500+ zamówień Allegro" },
+      { "label": "BaseLinker", "value": "ABC/XYZ + AI recs" }
+    ]
+  },
+  "works": {
+    "tag": "SYGNAŁY",
+    "title": "Wybrane realizacje",
+    "subtitle": "Od e-commerce i marketplace po automatyzację i strony usługowe.",
+    "viewAll": "Wszystkie realizacje",
+    "filters": {
+      "all": "Wszystko",
+      "ecommerce": "E-commerce",
+      "automation": "Automatyzacja",
+      "websites": "Strony",
+      "bots": "Boty",
+      "internal": "Narzędzia wewn.",
+      "ai": "Workflow AI"
+    }
+  },
+  "pricing": {
+    "tag": "CENNIK",
+    "title": "Ceny startowe",
+    "subtitle": "Zakresy, nie stałe kwoty. Dokładna cena po omówieniu zadania. Audyt: 500–900 PLN.",
+    "service": "Usługa",
+    "from": "Od",
+    "to": "Do",
+    "tiers": [
+      { "service": "Szybki landing", "from": "1 500", "to": "3 000" },
+      { "service": "Strona projektowa", "from": "3 000", "to": "7 000" },
+      { "service": "E-commerce / sklep", "from": "5 000", "to": "15 000" },
+      { "service": "Automatyzacja / boty", "from": "2 000", "to": "8 000" },
+      { "service": "Audyt strony", "from": "500", "to": "900" }
+    ],
+    "cta": "Zamów build"
+  },
+  "process": {
+    "tag": "INSTRUKCJA",
+    "title": "Proces",
+    "more": "Więcej o podejściu",
+    "steps": [
+      { "title": "Wysyłasz pomysł", "desc": "Surowy tekst wystarczy: landing, sklep, bot, migracja lub audyt." },
+      { "title": "Strukturyzuję", "desc": "Strony, funkcje, dane, integracje, terminy i plan techniczny." },
+      { "title": "Szybka walidacja", "desc": "Prototyp lub draft audytu — kształt przed 40 slajdami." },
+      { "title": "Build i deploy", "desc": "Strona, formularze, płatności, boty, baza SEO, domena, instrukcje." },
+      { "title": "Iteracja pod wynik", "desc": "Metryki, treści, automatyzacja, SEO/GEO — co przynosi leady i sprzedaż." }
+    ]
+  },
+  "underHood": {
+    "tag": "POD MASKĄ",
+    "title": "Czego nie widać na okładce",
+    "subtitle": "Ta strona sama się demonstruje: JSON-LD, hreflang, sitemap, llms.txt, statyczny SSG.",
+    "cards": [
+      { "title": "Structured data", "text": "Organization + Person + WebSite JSON-LD na każdej stronie." },
+      { "title": "Pod AI-odpowiedzi", "text": "Publiczny llms.txt i robots.txt dla GPTBot, PerplexityBot, ClaudeBot." },
+      { "title": "Architektura wielojęzyczna", "text": "EN / PL / RU / UA z pełnym hreflang." },
+      { "title": "Performance jako feature", "text": "SSG, minimalny JS, Core Web Vitals w zieleni." }
+    ],
+    "viewSource": "View source → JSON-LD"
+  },
+  "contact": {
+    "headline": "Masz pomysł, projekt lub cyfrowy chaos?",
+    "subline": "Pokaż zadanie — ułożymy co budować i za ile.",
+    "stickers": ["DZWOŃ TERAZ", "OD 500 PLN", "SZYBKI START"],
+    "ctaOrder": "Zamów build",
+    "ctaTelegram": "Telegram",
+    "ctaEmail": "Email",
+    "startFrom": "START OD POMYSŁU — NIE OD SZABLONU"
+  },
+  "form": {
+    "services": {
+      "landing": "Landing page",
+      "business": "Strona biznesowa",
+      "ecommerce": "E-commerce",
+      "automation": "Automatyzacja",
+      "bot": "Bot",
+      "audit": "Audyt strony",
+      "internal": "Narzędzie wewnętrzne",
+      "notSure": "Jeszcze nie wiem"
+    },
+    "budgets": {
+      "up1500": "do 1 500 PLN",
+      "1500_3000": "1 500 – 3 000 PLN",
+      "3000_7000": "3 000 – 7 000 PLN",
+      "7000plus": "7 000+ PLN",
+      "monthly": "Miesięczne wsparcie",
+      "unknown": "Jeszcze nie wiem"
+    },
+    "timelines": {
+      "urgent": "Pilnie (do tygodnia)",
+      "1_2weeks": "1–2 tygodnie",
+      "2_4weeks": "2–4 tygodnie",
+      "flexible": "Elastycznie"
+    },
+    "success": "Zgłoszenie przyjęte. Sprawdzę zadanie i odpowiem z kolejnymi krokami.",
+    "submit": "ZAMÓW BUILD",
+    "submitting": "WYSYŁAM..."
+  },
+  "marquee": "LANDINGI / E-COMMERCE / AUTOMATYZACJA / BOTY / SEO / AI VISIBILITY / MAŁY BIZNES / STRONY /",
+  "terminal": [
+    "> npm run build",
+    "> launching landing...",
+    "> bot connected",
+    "> status: ONLINE",
+    "> mode: small_business"
+  ]
+}

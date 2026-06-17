@@ -1,20 +1,36 @@
 import { Link } from "@/i18n/navigation";
 import type { servicePages } from "@/content/services";
+import { JsonLd } from "@/components/json-ld";
 import { VintageBlock } from "./VintagePage";
 import { VHSButton } from "./VHSButton";
 
 type Service = (typeof servicePages)[number];
 
 export function ServicePageContent({ service }: { service: Service }) {
+  const faq = "faq" in service ? service.faq : [];
+  const faqLd = faq.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      }
+    : null;
+
   return (
     <>
+      {faqLd && <JsonLd data={faqLd} />}
+
       <header className="border-b-2 border-[var(--vhs-dirt)] bg-[#0c0c0e] px-4 py-10 sm:px-6 sm:py-14">
         <div className="mx-auto max-w-5xl">
           <Link
-            href="/#services"
+            href="/#packages"
             className="font-mono text-[10px] uppercase tracking-widest text-[var(--vhs-muted)] hover:text-[var(--vhs-acid)]"
           >
-            ← Все пакеты
+            ← All packages
           </Link>
           <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-terminal)]">
             ● SERVICE CHANNEL
@@ -27,7 +43,7 @@ export function ServicePageContent({ service }: { service: Service }) {
           </p>
           <div className="mt-6 flex flex-wrap gap-4 font-mono text-sm">
             <span className="border border-[var(--vhs-acid)] px-3 py-1 text-[var(--vhs-acid)]">
-              от {service.priceFrom}
+              from {service.priceFrom}
             </span>
             <span className="border border-white/20 px-3 py-1 text-[var(--vhs-muted)]">
               {service.timeline}
@@ -38,12 +54,12 @@ export function ServicePageContent({ service }: { service: Service }) {
 
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="grid gap-4 lg:grid-cols-2">
-          <VintageBlock title="Проблема клиента">
+          <VintageBlock title="Client problem">
             <p className="text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
               {service.problem}
             </p>
           </VintageBlock>
-          <VintageBlock title="Что я делаю">
+          <VintageBlock title="What I do">
             <p className="text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
               {service.solution}
             </p>
@@ -51,7 +67,7 @@ export function ServicePageContent({ service }: { service: Service }) {
         </div>
 
         <div className="mt-4">
-          <VintageBlock title="Что входит">
+          <VintageBlock title="What's included">
             <ul className="space-y-2">
               {service.includes.map((item) => (
                 <li
@@ -67,7 +83,7 @@ export function ServicePageContent({ service }: { service: Service }) {
         </div>
 
         <div className="mt-4">
-          <VintageBlock title="Примеры из портфолио">
+          <VintageBlock title="Portfolio examples">
             <div className="flex flex-wrap gap-2">
               {service.examples.map((ex) => (
                 <span
@@ -81,8 +97,27 @@ export function ServicePageContent({ service }: { service: Service }) {
           </VintageBlock>
         </div>
 
+        {faq.length > 0 && (
+          <div className="mt-4">
+            <VintageBlock title="FAQ">
+              <dl className="space-y-4">
+                {faq.map((item) => (
+                  <div key={item.q}>
+                    <dt className="font-display text-base uppercase text-[var(--vhs-white)]">
+                      {item.q}
+                    </dt>
+                    <dd className="mt-1 text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
+                      {item.a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </VintageBlock>
+          </div>
+        )}
+
         <div className="mt-10 text-center">
-          <VHSButton href="/contact" variant="primary">
+          <VHSButton href="/order" variant="primary">
             {service.cta} →
           </VHSButton>
         </div>

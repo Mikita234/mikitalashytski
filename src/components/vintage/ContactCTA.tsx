@@ -1,8 +1,13 @@
-import { vintageContact } from "@/content/home-vintage";
+"use client";
+
+import { useTranslations } from "next-intl";
 import { site } from "@/content/site";
 import { VHSButton } from "./VHSButton";
 
 export function ContactCTA() {
+  const t = useTranslations("home.contact");
+  const stickers = t.raw("stickers") as string[];
+
   return (
     <section
       id="contact"
@@ -13,7 +18,6 @@ export function ContactCTA() {
         aria-hidden
       />
 
-      {/* Decorative phone */}
       <div
         className="pointer-events-none absolute -left-8 bottom-8 hidden opacity-10 lg:block"
         aria-hidden
@@ -26,7 +30,7 @@ export function ContactCTA() {
 
       <div className="relative mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20">
         <div className="mb-6 flex flex-wrap items-center justify-center gap-2">
-          {vintageContact.stickers.map((s) => (
+          {stickers.map((s) => (
             <span
               key={s}
               className={`border-2 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest sm:text-xs ${
@@ -40,30 +44,26 @@ export function ContactCTA() {
           ))}
         </div>
 
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-muted)]">
-          CHANNEL {vintageContact.channel}
-        </p>
-
-        <h2 className="mt-4 font-display text-3xl uppercase leading-tight text-[var(--vhs-white)] sm:text-4xl md:text-5xl">
-          {vintageContact.headline}
+        <h2 className="font-display text-3xl uppercase leading-tight text-[var(--vhs-white)] sm:text-4xl md:text-5xl">
+          {t("headline")}
         </h2>
         <p className="mx-auto mt-4 max-w-lg text-base text-[var(--vhs-beige)] sm:text-lg">
-          {vintageContact.subline}
+          {t("subline")}
         </p>
 
         <div className="mx-auto mt-6 inline-block rotate-[-2deg] border-2 border-[var(--vhs-yellow)] bg-[var(--vhs-yellow)] px-4 py-2 font-mono text-sm font-bold text-black shadow-[4px_4px_0_#000]">
-          СТАРТ ОТ ИДЕИ — НЕ ОТ ШАБЛОНА
+          {t("startFrom")}
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <VHSButton href="/contact" variant="primary">
-            {vintageContact.ctaOrder}
+          <VHSButton href="/order" variant="primary">
+            {t("ctaOrder")}
           </VHSButton>
           <VHSButton href={site.telegram} variant="secondary" external>
-            {vintageContact.ctaTelegram}
+            {t("ctaTelegram")}
           </VHSButton>
           <VHSButton href={`mailto:${site.email}`} variant="secondary" external>
-            {vintageContact.ctaEmail}
+            {t("ctaEmail")}
           </VHSButton>
         </div>
 

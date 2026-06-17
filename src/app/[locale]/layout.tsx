@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
+import { Bebas_Neue, Barlow_Condensed, IBM_Plex_Mono, Press_Start_2P } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -28,6 +28,13 @@ const ibmMono = IBM_Plex_Mono({
 const bebas = Bebas_Neue({
   variable: "--font-display",
   subsets: ["latin", "latin-ext"],
+  weight: "400",
+  display: "swap",
+});
+
+const pressStart = Press_Start_2P({
+  variable: "--font-doom",
+  subsets: ["latin", "cyrillic"],
   weight: "400",
   display: "swap",
 });
@@ -127,17 +134,34 @@ export default async function LocaleLayout({
     inLanguage: routing.locales,
   };
 
+  const professionalServiceLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: site.name,
+    url: site.url,
+    description: t("description"),
+    areaServed: ["PL", "UA", "EU"],
+    priceRange: "$$",
+    serviceType: [
+      "Web development",
+      "E-commerce",
+      "Automation",
+      "SEO",
+      "Website audit",
+    ],
+  };
+
   return (
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${barlow.variable} ${ibmMono.variable} ${bebas.variable}`}
+      className={`${barlow.variable} ${ibmMono.variable} ${bebas.variable} ${pressStart.variable}`}
     >
       <body className="min-h-dvh">
         <PlausibleScript />
         <Providers>
           <NextIntlClientProvider>
-            <JsonLd data={[orgLd, personLd, websiteLd]} />
+            <JsonLd data={[orgLd, personLd, websiteLd, professionalServiceLd]} />
             <VintageShell>{children}</VintageShell>
           </NextIntlClientProvider>
         </Providers>

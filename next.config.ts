@@ -17,6 +17,36 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:locale(en|pl|ru|uk)/projects/kayer",
+        destination: "/:locale/projects/kayer-pl",
+        permanent: true,
+      },
+      {
+        source: "/projects/kayer",
+        destination: "/projects/kayer-pl",
+        permanent: true,
+      },
+      {
+        source: "/:locale(en|pl|ru|uk)/services/bots",
+        destination: "/:locale/services/automation",
+        permanent: true,
+      },
+      {
+        source: "/services/bots",
+        destination: "/services/automation",
+        permanent: true,
+      },
+      {
+        source: "/:locale(en|pl|ru|uk)/services/seo",
+        destination: "/:locale/services/audit",
+        permanent: true,
+      },
+      {
+        source: "/services/seo",
+        destination: "/services/audit",
+        permanent: true,
+      },
+      {
         source: "/:locale(en|pl|ru|uk)/services/events",
         destination: "/:locale/services/creative",
         permanent: true,

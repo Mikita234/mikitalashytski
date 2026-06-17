@@ -33,6 +33,7 @@ export default async function AboutPage({
 
 function AboutContent() {
   const t = useTranslations("about");
+  const tOrder = useTranslations("home.contact");
   const steps = t.raw("steps") as { title: string; text: string }[];
   const values = t.raw("values") as string[];
 
@@ -72,8 +73,8 @@ function AboutContent() {
         </div>
 
         <div className="mt-12 text-center">
-          <VHSButton href="/contact" variant="primary">
-            Заказать проект →
+          <VHSButton href="/order" variant="primary">
+            {t("valuesTitle")} →
           </VHSButton>
         </div>
       </div>

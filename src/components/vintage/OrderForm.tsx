@@ -1,24 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import {
-  orderFormServices,
-  orderBudgets,
-  orderTimelines,
-} from "@/content/home-vintage";
+  orderServiceKeys,
+  orderBudgetKeys,
+  orderTimelineKeys,
+} from "@/content/selling";
 import { site } from "@/content/site";
+import { trackEvent } from "@/lib/analytics";
 import { VHSButton } from "./VHSButton";
 
 type FormState = "idle" | "sent" | "error";
 
 export function OrderForm() {
+  const t = useTranslations("home.form");
   const [state, setState] = useState<FormState>("idle");
   const [submitting, setSubmitting] = useState(false);
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const [service, setService] = useState<string>(orderFormServices[0]);
-  const [budget, setBudget] = useState<string>(orderBudgets[4]);
-  const [timeline, setTimeline] = useState<string>(orderTimelines[3]);
+  const [service, setService] = useState<string>(orderServiceKeys[0]);
+  const [budget, setBudget] = useState<string>(orderBudgetKeys[5]);
+  const [timeline, setTimeline] = useState<string>(orderTimelineKeys[3]);
   const [website, setWebsite] = useState("");
   const [message, setMessage] = useState("");
 
@@ -26,13 +29,18 @@ export function OrderForm() {
     e.preventDefault();
     setSubmitting(true);
     setState("idle");
+    trackEvent("Order Submit", { service, budget, timeline });
+
+    const serviceLabel = t(`services.${service}`);
+    const budgetLabel = t(`budgets.${budget}`);
+    const timelineLabel = t(`timelines.${timeline}`);
 
     const payload = {
       name,
       contact,
-      service,
-      budget,
-      timeline,
+      service: serviceLabel,
+      budget: budgetLabel,
+      timeline: timelineLabel,
       website,
       message,
     };
@@ -46,6 +54,7 @@ export function OrderForm() {
 
       if (res.ok) {
         setState("sent");
+        trackEvent("Order Success", { service });
         return;
       }
     } catch {
@@ -54,15 +63,15 @@ export function OrderForm() {
       setSubmitting(false);
     }
 
-    const subject = encodeURIComponent(`[ORDER] ${service}`);
+    const subject = encodeURIComponent(`[ORDER] ${serviceLabel}`);
     const body = encodeURIComponent(
       [
-        `Имя: ${name}`,
-        `Контакт: ${contact}`,
-        `Что нужно: ${service}`,
-        `Бюджет: ${budget}`,
-        `Срок: ${timeline}`,
-        website ? `Текущий сайт: ${website}` : "",
+        `Name: ${name}`,
+        `Contact: ${contact}`,
+        `Service: ${serviceLabel}`,
+        `Budget: ${budgetLabel}`,
+        `Timeline: ${timelineLabel}`,
+        website ? `Website: ${website}` : "",
         "",
         message,
       ]
@@ -88,12 +97,7 @@ export function OrderForm() {
       <form onSubmit={handleSubmit} className="space-y-4 p-4">
         {state === "sent" ? (
           <div className="space-y-3 text-center">
-            <p className="font-mono text-sm font-bold text-black">
-              Заявка отправлена!
-            </p>
-            <p className="font-mono text-xs text-[#333]">
-              Если Telegram не настроен — откроется почта. Или напиши напрямую:
-            </p>
+            <p className="font-mono text-sm font-bold text-black">{t("success")}</p>
             <VHSButton href={site.telegram} variant="primary" external>
               {site.telegramHandle}
             </VHSButton>
@@ -102,25 +106,27 @@ export function OrderForm() {
           <>
             <div>
               <label htmlFor="order-name" className="mb-1 block font-mono text-xs font-bold text-black">
-                Имя *
+                Name *
               </label>
-              <input id="order-name" required value={name} onChange={(e) => setName(e.target.value)} className={inputCls} placeholder="Как к тебе обращаться" />
+              <input id="order-name" required value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
             </div>
 
             <div>
               <label htmlFor="order-contact" className="mb-1 block font-mono text-xs font-bold text-black">
                 Telegram / Email *
               </label>
-              <input id="order-contact" required value={contact} onChange={(e) => setContact(e.target.value)} className={inputCls} placeholder="@username или email" />
+              <input id="order-contact" required value={contact} onChange={(e) => setContact(e.target.value)} className={inputCls} />
             </div>
 
             <div>
               <label htmlFor="order-service" className="mb-1 block font-mono text-xs font-bold text-black">
-                Что нужно *
+                Service *
               </label>
               <select id="order-service" value={service} onChange={(e) => setService(e.target.value)} className={inputCls}>
-                {orderFormServices.map((s) => (
-                  <option key={s} value={s}>{s}</option>
+                {orderServiceKeys.map((key) => (
+                  <option key={key} value={key}>
+                    {t(`services.${key}`)}
+                  </option>
                 ))}
               </select>
             </div>
@@ -128,21 +134,25 @@ export function OrderForm() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="order-budget" className="mb-1 block font-mono text-xs font-bold text-black">
-                  Бюджет
+                  Budget
                 </label>
                 <select id="order-budget" value={budget} onChange={(e) => setBudget(e.target.value)} className={inputCls}>
-                  {orderBudgets.map((b) => (
-                    <option key={b} value={b}>{b}</option>
+                  {orderBudgetKeys.map((key) => (
+                    <option key={key} value={key}>
+                      {t(`budgets.${key}`)}
+                    </option>
                   ))}
                 </select>
               </div>
               <div>
                 <label htmlFor="order-timeline" className="mb-1 block font-mono text-xs font-bold text-black">
-                  Срок
+                  Timeline
                 </label>
                 <select id="order-timeline" value={timeline} onChange={(e) => setTimeline(e.target.value)} className={inputCls}>
-                  {orderTimelines.map((t) => (
-                    <option key={t} value={t}>{t}</option>
+                  {orderTimelineKeys.map((key) => (
+                    <option key={key} value={key}>
+                      {t(`timelines.${key}`)}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -150,21 +160,21 @@ export function OrderForm() {
 
             <div>
               <label htmlFor="order-website" className="mb-1 block font-mono text-xs font-bold text-black">
-                Текущий сайт (если есть)
+                Current website
               </label>
               <input id="order-website" value={website} onChange={(e) => setWebsite(e.target.value)} className={inputCls} placeholder="https://..." />
             </div>
 
             <div>
               <label htmlFor="order-message" className="mb-1 block font-mono text-xs font-bold text-black">
-                Описание задачи
+                Task description
               </label>
-              <textarea id="order-message" rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputCls} resize-y`} placeholder="Расскажи про идею, аудиторию, что должно работать..." />
+              <textarea id="order-message" rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputCls} resize-y`} />
             </div>
 
             {state === "error" && (
               <p className="font-mono text-xs text-red-700">
-                Не удалось отправить. Попробуй Telegram или email.
+                Send failed — try Telegram or email.
               </p>
             )}
 
@@ -173,7 +183,7 @@ export function OrderForm() {
               disabled={submitting}
               className="w-full border-2 border-t-white border-l-white border-b-[#404040] border-r-[#404040] bg-[#c0c0c0] px-4 py-2 font-mono text-sm font-bold text-black transition-transform hover:translate-x-0.5 active:translate-y-0.5 disabled:opacity-60"
             >
-              {submitting ? "▶ ОТПРАВКА..." : "▶ РАЗОБРАТЬ ИДЕЮ"}
+              {submitting ? t("submitting") : t("submit")}
             </button>
           </>
         )}

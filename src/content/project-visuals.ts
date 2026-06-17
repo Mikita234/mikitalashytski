@@ -1,4 +1,10 @@
-export type ProjectSlug = "kayer" | "mnsk7-tools" | "popular" | "alesyatakun";
+export type ProjectSlug =
+  | "kayer-pl"
+  | "kayer-ua"
+  | "mnsk7-tools"
+  | "popular"
+  | "alesyatakun"
+  | "baselinker-reports";
 
 export const projectVisuals: Record<
   ProjectSlug,
@@ -10,12 +16,19 @@ export const projectVisuals: Record<
     channel: string;
   }
 > = {
-  kayer: {
+  "kayer-pl": {
     domain: "kayer.pl",
     url: "https://kayer.pl",
     accent: "#8b5cf6",
     accentGlow: "rgba(139,92,246,0.35)",
     channel: "CH-01",
+  },
+  "kayer-ua": {
+    domain: "kayer.ua",
+    url: "https://kayer.ua",
+    accent: "#a78bfa",
+    accentGlow: "rgba(167,139,250,0.35)",
+    channel: "CH-01B",
   },
   "mnsk7-tools": {
     domain: "mnsk7-tools.pl",
@@ -37,6 +50,13 @@ export const projectVisuals: Record<
     accent: "#f43f5e",
     accentGlow: "rgba(244,63,94,0.35)",
     channel: "CH-04",
+  },
+  "baselinker-reports": {
+    domain: "internal",
+    url: "",
+    accent: "#f59e0b",
+    accentGlow: "rgba(245,158,11,0.35)",
+    channel: "CH-05",
   },
 };
 

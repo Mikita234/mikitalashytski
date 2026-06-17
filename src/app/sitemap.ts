@@ -2,11 +2,15 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { site } from "@/content/site";
 import { projectSlugs } from "@/content/projects";
+import { serviceSlugs } from "@/content/services";
 
 const paths = [
   "",
   "/about",
   "/contact",
+  "/order",
+  "/works",
+  ...serviceSlugs.map((slug) => `/services/${slug}`),
   ...projectSlugs.map((slug) => `/projects/${slug}`),
 ];
 
