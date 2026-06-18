@@ -1,7 +1,8 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { ServiceSlug } from "@/content/services";
 import { getServiceMeta } from "@/content/services";
+import { formatPriceFrom } from "@/lib/pricing";
 import { JsonLd } from "@/components/json-ld";
 import { VintageBlock } from "./VintagePage";
 import { VHSButton } from "./VHSButton";
@@ -10,6 +11,7 @@ type FaqItem = { q: string; a: string };
 
 export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
   const meta = getServiceMeta(slug)!;
+  const locale = await getLocale();
   const t = await getTranslations(`services.${slug}`);
   const tc = await getTranslations("services.common");
   const tCase = await getTranslations(`projects.${meta.caseSlug}`);
@@ -48,7 +50,7 @@ export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
           <p className="type-subtitle mt-4 max-w-2xl">{t("headline")}</p>
           <div className="mt-6 flex flex-wrap gap-4 font-mono text-sm">
             <span className="border border-[var(--vhs-acid)] px-3 py-1 text-[var(--vhs-acid)]">
-              {tc("from")} {meta.priceFrom}
+              {tc("from")} {formatPriceFrom(meta.priceFromPln, locale)}
             </span>
             <span className="border border-white/20 px-3 py-1 text-[var(--vhs-muted)]">
               {meta.timeline}

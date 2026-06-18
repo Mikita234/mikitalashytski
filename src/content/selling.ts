@@ -20,36 +20,36 @@ export type PackageId = (typeof packageIds)[number];
 
 export const packageMeta: Record<
   PackageId,
-  { tag: string; href: string; priceFrom: string; timelineKey: string }
+  { tag: string; href: string; priceFromPln: number; timelineKey: string }
 > = {
   landing: {
     tag: "PKG-01",
     href: "/services/landing",
-    priceFrom: "1 500 PLN",
+    priceFromPln: 1500,
     timelineKey: "landing",
   },
   business: {
     tag: "PKG-02",
     href: "/services/business",
-    priceFrom: "3 000 PLN",
+    priceFromPln: 3000,
     timelineKey: "business",
   },
   ecommerce: {
     tag: "PKG-03",
     href: "/services/ecommerce",
-    priceFrom: "5 000 PLN",
+    priceFromPln: 5000,
     timelineKey: "ecommerce",
   },
   automation: {
     tag: "PKG-04",
     href: "/services/automation",
-    priceFrom: "2 000 PLN",
+    priceFromPln: 2000,
     timelineKey: "automation",
   },
   audit: {
     tag: "PKG-05",
     href: "/services/audit",
-    priceFrom: "500 PLN",
+    priceFromPln: 500,
     timelineKey: "audit",
   },
 };

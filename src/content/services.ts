@@ -6,42 +6,42 @@ export const servicePackages = packageIds.map((id) => ({
 }));
 
 export const pricingTiers = [
-  { service: "Fast landing", from: "1 500", to: "3 000", unit: "PLN" },
-  { service: "Project website", from: "3 000", to: "7 000", unit: "PLN" },
-  { service: "E-commerce / store", from: "5 000", to: "15 000", unit: "PLN" },
-  { service: "Automation / bots", from: "2 000", to: "8 000", unit: "PLN" },
-  { service: "Website audit", from: "500", to: "900", unit: "PLN" },
+  { service: "Fast landing", from: "1 500", to: "3 000", fromPln: 1500, toPln: 3000 },
+  { service: "Project website", from: "3 000", to: "7 000", fromPln: 3000, toPln: 7000 },
+  { service: "E-commerce / store", from: "5 000", to: "15 000", fromPln: 5000, toPln: 15000 },
+  { service: "Automation / bots", from: "2 000", to: "8 000", fromPln: 2000, toPln: 8000 },
+  { service: "Website audit", from: "500", to: "900", fromPln: 500, toPln: 900 },
 ] as const;
 
 /** Structural metadata — all copy lives in messages/fragments/services-{locale}.json */
 export const serviceMeta = {
   landing: {
-    priceFrom: "1 500 PLN",
+    priceFromPln: 1500,
     timeline: "3–7 days",
     caseSlug: "alesyatakun",
   },
   business: {
-    priceFrom: "3 000 PLN",
+    priceFromPln: 3000,
     timeline: "1–3 weeks",
     caseSlug: "popular",
   },
   ecommerce: {
-    priceFrom: "5 000 PLN",
+    priceFromPln: 5000,
     timeline: "2–6 weeks",
     caseSlug: "kayer-pl",
   },
   automation: {
-    priceFrom: "2 000 PLN",
+    priceFromPln: 2000,
     timeline: "3–14 days",
     caseSlug: "event-bot",
   },
   audit: {
-    priceFrom: "500 PLN",
+    priceFromPln: 500,
     timeline: "2–5 days",
     caseSlug: "lead-scraping",
   },
   creative: {
-    priceFrom: "3 000 PLN",
+    priceFromPln: 3000,
     timeline: "1–4 weeks",
     caseSlug: "popular",
   },

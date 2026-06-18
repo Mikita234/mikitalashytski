@@ -110,6 +110,7 @@
     "tag": "CENNIK",
     "title": "Ceny startowe",
     "subtitle": "Zakresy, nie stałe kwoty. Dokładna cena po omówieniu zadania. Audyt: 500–900 PLN.",
+    "caption": "Ceny startowe — dokładna wycena po krótkim briefie.",
     "service": "Usługa",
     "from": "Od",
     "to": "Do",

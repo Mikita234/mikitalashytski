@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState, type FC } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { site } from "@/content/site";
@@ -10,17 +10,19 @@ import {
   crtProjectChannels,
 } from "@/content/home-vintage";
 import { projectVisuals } from "@/content/project-visuals";
+import { formatPriceFrom } from "@/lib/pricing";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { ProjectMiniPreview } from "./ProjectMiniPreview";
 import { ScanlineOverlay } from "./ScanlineOverlay";
 import { DoomStatusFace } from "./DoomStatusFace";
+import { DoomCorridorOverlay } from "./DoomCorridorOverlay";
 
 function TerminalScreen() {
   const t = useTranslations("home");
   const lines = t.raw("terminal") as string[];
 
   return (
-    <div className="p-3 font-mono text-[10px] leading-relaxed text-[var(--vhs-terminal)] sm:p-4 sm:text-xs">
+    <div className="relative z-[2] h-full bg-black/75 p-3 font-mono text-[10px] leading-relaxed text-[var(--vhs-terminal)] sm:p-4 sm:text-xs">
       {lines.map((line, i) => (
         <div key={i} className={i === lines.length - 1 ? "animate-pulse" : ""}>
           {line}
@@ -33,7 +35,7 @@ function TerminalScreen() {
 
 function NoSignalScreen() {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-2">
+    <div className="relative z-[2] flex h-full flex-col items-center justify-center gap-2 bg-black/70">
       <p className="font-mono text-lg font-bold tracking-widest text-white sm:text-2xl">
         NO SIGNAL
       </p>
@@ -45,7 +47,7 @@ function NoSignalScreen() {
 
 function BuildingScreen() {
   return (
-    <div className="flex h-full items-center justify-center p-4">
+    <div className="relative z-[2] flex h-full items-center justify-center bg-black/70 p-4">
       <p className="animate-pulse font-mono text-xs uppercase tracking-[0.2em] text-[var(--vhs-beige)] sm:text-sm">
         BUILDING WEBSITE…
       </p>
@@ -54,10 +56,13 @@ function BuildingScreen() {
 }
 
 function OrderScreen() {
+  const locale = useLocale();
+  const crossedPrice = formatPriceFrom(5000, locale);
+
   return (
     <Link
       href="/order"
-      className="flex h-full flex-col items-center justify-center bg-[var(--vhs-red)] p-4 text-center transition-filter hover:brightness-110"
+      className="relative z-[2] flex h-full flex-col items-center justify-center bg-[var(--vhs-red)]/85 p-4 text-center transition-filter hover:brightness-110"
     >
       <p className="font-display text-2xl uppercase text-white sm:text-4xl">
         ORDER NOW
@@ -66,7 +71,7 @@ function OrderScreen() {
         ☎ {site.telegramHandle}
       </p>
       <p className="mt-1 font-mono text-[9px] text-white/60 line-through">
-        9999 PLN
+        {crossedPrice}
       </p>
       <p className="font-mono text-sm font-bold text-[var(--vhs-acid)]">
         VIBE BUILD
@@ -77,7 +82,7 @@ function OrderScreen() {
 
 function GridScreen() {
   return (
-    <div className="grid h-full grid-cols-2 gap-1 p-1.5">
+    <div className="relative z-[2] grid h-full grid-cols-2 gap-1 bg-black/50 p-1.5">
       {crtProjectChannels.map((ch) => {
         const v = projectVisuals[ch.slug];
         return (
@@ -211,10 +216,11 @@ export function CRTScreen({ label }: { label: string }) {
 
         <div className="crt-tv-frame__bezel crt-flicker">
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-black">
+            <DoomCorridorOverlay />
             <AnimatePresence mode="wait">
               <motion.div
                 key={state.id}
-                className="absolute inset-0"
+                className="absolute inset-0 z-[2]"
                 initial={{ opacity: 0, filter: "brightness(1.5)" }}
                 animate={{ opacity: 1, filter: "brightness(1)" }}
                 exit={{ opacity: 0 }}
@@ -226,12 +232,12 @@ export function CRTScreen({ label }: { label: string }) {
             <ScanlineOverlay />
             {!reduced && (
               <div
-                className="vhs-tracking-line pointer-events-none absolute left-0 right-0 h-px bg-white/30"
+                className="vhs-tracking-line pointer-events-none absolute left-0 right-0 z-[3] h-px bg-white/30"
                 aria-hidden
               />
             )}
             <div
-              className="pointer-events-none absolute inset-0 shadow-[inset_0_0_40px_rgba(51,255,102,0.08)]"
+              className="pointer-events-none absolute inset-0 z-[3] shadow-[inset_0_0_40px_rgba(51,255,102,0.08)]"
               aria-hidden
             />
           </div>

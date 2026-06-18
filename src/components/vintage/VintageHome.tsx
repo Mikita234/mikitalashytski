@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { formatPriceFrom } from "@/lib/pricing";
 import {
   vintageWorksHome,
   vintagePopups,
@@ -28,6 +29,7 @@ import type { PackageId } from "@/content/selling";
 export function VintageHome() {
   const [introDone, setIntroDone] = useState(false);
   const handleIntroDone = useCallback(() => setIntroDone(true), []);
+  const locale = useLocale();
   const t = useTranslations("home");
   const tProjects = useTranslations("projects");
   const processSteps = t.raw("process.steps") as { title: string; desc: string }[];
@@ -80,7 +82,7 @@ export function VintageHome() {
                 <PackageCard
                   key={p.id}
                   id={p.id as PackageId}
-                  priceFrom={p.priceFrom}
+                  priceFrom={formatPriceFrom(p.priceFromPln, locale)}
                   timeline={t(`packages.timelines.${p.timelineKey}`)}
                   tag={p.tag}
                   href={p.href}

@@ -1,3 +1,7 @@
+"use client";
+
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
+
 type Pixel = "on" | "blood" | "off";
 
 const FACE: Pixel[][] = [
@@ -9,8 +13,14 @@ const FACE: Pixel[][] = [
 ];
 
 export function DoomStatusFace() {
+  const reduced = useReducedMotion();
+
   return (
-    <div className="doom-status-face" aria-hidden title="STATUS">
+    <div
+      className={`doom-status-face${reduced ? "" : " doom-status-face--pulse"}`}
+      aria-hidden
+      title="STATUS"
+    >
       {FACE.flat().map((pixel, i) => (
         <span
           key={i}

@@ -109,7 +109,8 @@
   "pricing": {
     "tag": "PRICE LIST",
     "title": "Starting prices",
-    "subtitle": "Ranges, not fixed quotes. Exact price after task review. Audit: 500–900 PLN.",
+    "subtitle": "Ranges, not fixed quotes. Exact price after task review. Audit: €115–€205.",
+    "caption": "Prices are starting points — exact quote after a quick brief.",
     "service": "Service",
     "from": "From",
     "to": "To",
@@ -149,7 +150,7 @@
   "contact": {
     "headline": "Got an idea, project or digital chaos?",
     "subline": "Show me the task — we'll map what to build and for how much.",
-    "stickers": ["CALL NOW", "FROM 500 PLN", "FAST LAUNCH"],
+    "stickers": ["CALL NOW", "FROM €115", "FAST LAUNCH"],
     "ctaOrder": "Order build",
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
@@ -167,10 +168,10 @@
       "notSure": "Not sure yet"
     },
     "budgets": {
-      "up1500": "up to 1 500 PLN",
-      "1500_3000": "1 500 – 3 000 PLN",
-      "3000_7000": "3 000 – 7 000 PLN",
-      "7000plus": "7 000+ PLN",
+      "up1500": "up to €350",
+      "1500_3000": "€350 – €700",
+      "3000_7000": "€700 – €1 610",
+      "7000plus": "€1 610+",
       "monthly": "Monthly support",
       "unknown": "Not sure yet"
     },

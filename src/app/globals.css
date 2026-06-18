@@ -878,6 +878,33 @@ button:focus-visible {
   background: var(--doom-red);
 }
 
+.doom-status-face--pulse {
+  animation: doom-face-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes doom-face-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.15);
+    transform: scale(1.05);
+  }
+}
+
+.doom-corridor-overlay {
+  opacity: 0.45;
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doom-status-face--pulse {
+    animation: none;
+  }
+}
+
 .doom-metric {
   font-family: var(--font-doom), var(--font-mono), monospace;
   font-size: 0.625rem;
