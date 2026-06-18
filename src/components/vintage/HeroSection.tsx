@@ -4,7 +4,22 @@ import { useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 import { GlitchText } from "./GlitchText";
 import { VHSButton } from "./VHSButton";
-import { CRTScreen } from "./CRTScreen";
+import dynamic from "next/dynamic";
+
+const VhsWorkstation = dynamic(
+  () =>
+    import("@/components/animations/VhsWorkstation").then((m) => ({
+      default: m.VhsWorkstation,
+    })),
+  {
+    loading: () => (
+      <div
+        className="mx-auto aspect-[4/3] w-full max-w-md animate-pulse rounded-2xl bg-[#1a1a1e]"
+        aria-hidden
+      />
+    ),
+  },
+);
 import { MarqueeTicker } from "./MarqueeTicker";
 import { DoomCornerFrame } from "./DoomCornerFrame";
 
@@ -95,7 +110,7 @@ export function HeroSection() {
           </DoomCornerFrame>
 
           <div className="flex-1 lg:flex lg:justify-end">
-            <CRTScreen label={t("tvLabel")} />
+            <VhsWorkstation />
           </div>
         </div>
       </div>

@@ -17,6 +17,28 @@
     "ctaAudit": "Request audit",
     "tvLabel": "BUILDER-TV 2001"
   },
+  "workstation": {
+    "workstationLabel": "Case tape archive workstation",
+    "crtLabel": "CASE MONITOR",
+    "deckLabel": "CASE DECK VHS-2001",
+    "archiveLabel": "CASE TAPE ARCHIVE",
+    "insertTape": "INSERT TAPE",
+    "selectTape": "Select a case tape below",
+    "pressPlay": "TAPE LOADED — PRESS PLAY",
+    "loadingCase": "LOADING CASE...",
+    "playCase": "PLAY CASE",
+    "play": "PLAY",
+    "stop": "STOP",
+    "rewind": "REWIND",
+    "eject": "EJECT",
+    "noCase": "NO TAPE LOADED",
+    "flowSchema": "SYSTEM FLOW",
+    "terminalTitle": "BUILDER.LOG",
+    "terminalLabel": "Terminal output",
+    "stackDll": "STACK.DLL",
+    "outputLog": "OUTPUT.LOG",
+    "systemDll": "SYSTEM.DLL"
+  },
   "packages": {
     "tag": "PACKAGES",
     "title": "What I build",
@@ -94,8 +116,9 @@
   "works": {
     "tag": "PROJECTS",
     "title": "Selected work",
-    "subtitle": "From e-commerce and marketplaces to automation and service sites.",
+    "subtitle": "From e-commerce and marketplaces to automation and service sites. Same cases on tape in the hero ↑",
     "viewAll": "All works",
+    "browseArchive": "Browse tape archive",
     "openCase": "View case",
     "filters": {
       "all": "All",

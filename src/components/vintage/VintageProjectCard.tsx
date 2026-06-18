@@ -105,7 +105,9 @@ export function VintageProjectCard({
     </>
   );
 
-  const cls = `group block overflow-hidden border-2 transition-transform hover:-translate-y-1 ${styleClasses[style]}`;
+  const cls = `group block overflow-hidden border-2 transition-transform hover:-translate-y-1 ${styleClasses[style]} ${
+    style === "vhs" ? "vhs-card-tape" : ""
+  }`;
 
   const body = (
     <div className="p-4 sm:p-5">{inner}</div>

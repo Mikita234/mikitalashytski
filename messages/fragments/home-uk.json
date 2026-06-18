@@ -17,6 +17,28 @@
     "ctaAudit": "Запросити аудит",
     "tvLabel": "BUILDER-TV 2001"
   },
+  "workstation": {
+    "workstationLabel": "Архів кейсів на VHS",
+    "crtLabel": "МОНІТОР КЕЙСА",
+    "deckLabel": "CASE DECK VHS-2001",
+    "archiveLabel": "АРХІВ КАСЕТ",
+    "insertTape": "ВСТАВТЕ КАСЕТУ",
+    "selectTape": "Оберіть касету кейса нижче",
+    "pressPlay": "КАСЕТА ЗАВАНТАЖЕНА — PLAY",
+    "loadingCase": "ЗАВАНТАЖЕННЯ КЕЙСА...",
+    "playCase": "PLAY CASE",
+    "play": "PLAY",
+    "stop": "STOP",
+    "rewind": "REWIND",
+    "eject": "EJECT",
+    "noCase": "КАСЕТА НЕ ЗАВАНТАЖЕНА",
+    "flowSchema": "СХЕМА СИСТЕМИ",
+    "terminalTitle": "BUILDER.LOG",
+    "terminalLabel": "Вивід терміналу",
+    "stackDll": "STACK.DLL",
+    "outputLog": "OUTPUT.LOG",
+    "systemDll": "SYSTEM.DLL"
+  },
   "packages": {
     "tag": "ПАКЕТИ",
     "title": "Що я збираю",
@@ -94,8 +116,9 @@
   "works": {
     "tag": "ПРОЄКТИ",
     "title": "Обрані роботи",
-    "subtitle": "Від e-commerce і маркетплейсів до автоматизації та сервісних сайтів.",
+    "subtitle": "Від e-commerce і маркетплейсів до автоматизації та сервісних сайтів. Ті самі кейси на касетах у hero ↑",
     "viewAll": "Усі роботи",
+    "browseArchive": "Архів касет",
     "openCase": "Дивитись кейс",
     "filters": {
       "all": "Усі",

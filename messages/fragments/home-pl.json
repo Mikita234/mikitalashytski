@@ -17,6 +17,28 @@
     "ctaAudit": "Zamów audyt",
     "tvLabel": "BUILDER-TV 2001"
   },
+  "workstation": {
+    "workstationLabel": "Archiwum kaset z case'ami",
+    "crtLabel": "MONITOR CASE",
+    "deckLabel": "CASE DECK VHS-2001",
+    "archiveLabel": "ARCHIWUM KASET",
+    "insertTape": "WŁÓŻ KASETĘ",
+    "selectTape": "Wybierz kasetę case poniżej",
+    "pressPlay": "KASETA ZAŁADOWANA — PLAY",
+    "loadingCase": "ŁADOWANIE CASE...",
+    "playCase": "PLAY CASE",
+    "play": "PLAY",
+    "stop": "STOP",
+    "rewind": "REWIND",
+    "eject": "EJECT",
+    "noCase": "BRAK KASETY",
+    "flowSchema": "SCHEMAT SYSTEMU",
+    "terminalTitle": "BUILDER.LOG",
+    "terminalLabel": "Wyjście terminala",
+    "stackDll": "STACK.DLL",
+    "outputLog": "OUTPUT.LOG",
+    "systemDll": "SYSTEM.DLL"
+  },
   "packages": {
     "tag": "PAKIETY",
     "title": "Co buduję",
@@ -94,8 +116,9 @@
   "works": {
     "tag": "PROJEKTY",
     "title": "Wybrane realizacje",
-    "subtitle": "Od e-commerce i marketplace po automatyzację i strony usługowe.",
+    "subtitle": "Od e-commerce i marketplace po automatyzację i strony usługowe. Te same case'y na kasetach w hero ↑",
     "viewAll": "Wszystkie realizacje",
+    "browseArchive": "Archiwum kaset",
     "openCase": "Zobacz case",
     "filters": {
       "all": "Wszystko",

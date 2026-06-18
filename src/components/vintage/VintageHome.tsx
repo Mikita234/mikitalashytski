@@ -122,9 +122,12 @@ export function VintageHome() {
                 />
               ))}
             </div>
-            <div className="mt-8 text-center">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <VHSButton href="/works" variant="secondary">
                 {t("works.viewAll")} →
+              </VHSButton>
+              <VHSButton href="#case-archive" variant="secondary">
+                {t("works.browseArchive")} ↑
               </VHSButton>
             </div>
           </div>
