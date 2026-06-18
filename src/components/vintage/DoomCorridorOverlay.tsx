@@ -6,14 +6,70 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 const FPS_DESKTOP = 20;
 const FPS_MOBILE = 12;
 
-const MARS_SKY = "200, 70, 25";
-const MARS_HORIZON = "120, 35, 12";
-const MARS_STONE = "82, 62, 48";
-const MARS_STONE_LT = "118, 92, 68";
-const MARS_LAVA = "255, 90, 0";
-const MARS_FIRE = "255, 170, 40";
-const MARS_GLOW = "220, 60, 20";
-const MARS_BLOOD = "170, 34, 34";
+/** Doom E1M1 / Mars base palette */
+const SKY_TOP = [210, 175, 125];
+const SKY_MID = [175, 130, 85];
+const SKY_HORIZON = [130, 90, 58];
+const MOUNTAIN_FAR = [75, 52, 36];
+const MOUNTAIN_NEAR = [55, 36, 24];
+const CEILING = [48, 32, 22];
+const FLOOR_FAR = [108, 82, 62];
+const FLOOR_NEAR = [78, 58, 44];
+const WALL_DARK = [68, 50, 38];
+const WALL_MID = [88, 66, 50];
+const WALL_LIGHT = [108, 82, 62];
+const MORTAR = [42, 30, 22];
+const LAVA = [200, 70, 20];
+const LAVA_GLOW = [255, 140, 40];
+
+type PistolPixel = "." | "M" | "D" | "S" | "H";
+
+const PISTOL: PistolPixel[][] = [
+  ["M","M","M","M",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","."],
+  [".","M","M","M","M","M",".",".",".",".",".",".",".",".",".",".",".",".",".","."],
+  [".",".","M","M","M","M","M","M","M",".",".",".",".",".",".",".",".",".",".","."],
+  [".",".",".","M","M","M","M","M","M","M","M","M",".",".",".",".",".",".",".","."],
+  [".",".",".",".","M","M","M","M","M","M","M","M","M","M","M",".",".",".",".","."],
+  [".",".",".",".",".","M","M","M","M","M","M","M","M","M","M","M","M",".",".","."],
+  [".",".",".",".",".",".","D","M","M","M","M","M","M","M","M","M","M","M",".","."],
+  [".",".",".",".",".","D","D","M","M","M","M","M","M","M","M","M","M","M","M","."],
+  [".",".",".",".","S","S","D","D","M","M","M","M","M","M","M","M","M","M","M","M"],
+  [".",".",".","S","S","S","S","D","D","M","M","M","M","M","M","M","M","M","M","M"],
+  [".",".","S","S","S","S","S","S","D","D","M","M","M","M","M","M","M","M","M","M"],
+  [".",".","S","S","S","S","S","S","S","D","D","M","M","M","M","M","M","M","M","."],
+  [".",".",".","S","S","S","S","S","S","S","D","D","M","M","M","M","M",".",".","."],
+  [".",".",".",".","S","S","S","S","S","S","S","D","D","M","M",".",".",".",".","."],
+  [".",".",".",".",".","S","S","S","S","S","S","S","D","D",".",".",".",".",".","."],
+];
+
+const PISTOL_COLORS: Record<Exclude<PistolPixel, ".">, string> = {
+  M: "rgb(118, 108, 92)",
+  D: "rgb(58, 48, 40)",
+  S: "rgb(168, 128, 96)",
+  H: "rgb(148, 138, 118)",
+};
+
+const MOUNTAIN_PROFILE = [
+  0.52, 0.48, 0.55, 0.44, 0.58, 0.5, 0.62, 0.46, 0.56, 0.42, 0.6, 0.48, 0.54, 0.4,
+  0.58, 0.45, 0.52, 0.38, 0.55, 0.44, 0.5, 0.42, 0.56, 0.48, 0.53, 0.46, 0.57, 0.5,
+  0.54, 0.47, 0.59, 0.43,
+];
+
+function lerp(a: number, b: number, t: number) {
+  return a + (b - a) * t;
+}
+
+function rgb(c: number[]) {
+  return `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
+}
+
+function lerpRgb(a: number[], b: number[], t: number) {
+  return [
+    Math.round(lerp(a[0], b[0], t)),
+    Math.round(lerp(a[1], b[1], t)),
+    Math.round(lerp(a[2], b[2], t)),
+  ];
+}
 
 export function DoomCorridorOverlay({ active = true }: { active?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -50,93 +106,194 @@ export function DoomCorridorOverlay({ active = true }: { active?: boolean }) {
     const ro = new ResizeObserver(resize);
     ro.observe(canvas.parentElement!);
 
-    const drawMarsSky = (w: number, h: number, flicker: number) => {
-      const horizonY = h * 0.38;
+    const drawSky = (w: number, h: number) => {
+      const horizonY = h * 0.36;
       const grad = ctx.createLinearGradient(0, 0, 0, horizonY);
-      grad.addColorStop(0, `rgb(${MARS_SKY})`);
-      grad.addColorStop(0.55, `rgb(${MARS_HORIZON})`);
-      grad.addColorStop(1, `rgb(40, 15, 8)`);
+      grad.addColorStop(0, rgb(SKY_TOP));
+      grad.addColorStop(0.45, rgb(SKY_MID));
+      grad.addColorStop(1, rgb(SKY_HORIZON));
       ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, w, horizonY);
+      ctx.fillRect(0, 0, w, horizonY + 2);
 
-      ctx.fillStyle = `rgba(${MARS_GLOW}, ${0.08 + flicker * 0.04})`;
-      ctx.fillRect(0, horizonY - 8, w, 16);
-
-      ctx.fillStyle = `rgba(40, 15, 8, 0.95)`;
-      ctx.fillRect(0, horizonY, w, h - horizonY);
-    };
-
-    const drawFireStrip = (w: number, h: number, flicker: number) => {
-      const baseY = h - 2;
-      const flameCount = Math.max(6, Math.floor(w / 18));
-
-      for (let i = 0; i < flameCount; i++) {
-        const x = (i / flameCount) * w + w / flameCount / 2;
-        const phase = frame * 0.22 + i * 1.7;
-        const fh = 14 + Math.sin(phase) * 8 + flicker * 10;
-        const fw = 10 + Math.sin(phase * 0.7) * 4;
-
-        const fg = ctx.createLinearGradient(x, baseY - fh, x, baseY);
-        fg.addColorStop(0, `rgba(${MARS_FIRE}, 0)`);
-        fg.addColorStop(0.35, `rgba(${MARS_FIRE}, ${0.55 + flicker * 0.25})`);
-        fg.addColorStop(0.7, `rgba(${MARS_LAVA}, ${0.75 + flicker * 0.2})`);
-        fg.addColorStop(1, `rgba(${MARS_BLOOD}, 0.9)`);
-        ctx.fillStyle = fg;
-        ctx.beginPath();
-        ctx.moveTo(x - fw / 2, baseY);
-        ctx.quadraticCurveTo(x - fw * 0.3, baseY - fh * 0.6, x, baseY - fh);
-        ctx.quadraticCurveTo(x + fw * 0.3, baseY - fh * 0.6, x + fw / 2, baseY);
-        ctx.closePath();
-        ctx.fill();
+      const step = Math.max(3, Math.floor(w / 64));
+      for (let x = 0; x < w; x += step) {
+        const idx = Math.floor((x / w) * MOUNTAIN_PROFILE.length);
+        const profile = MOUNTAIN_PROFILE[idx] ?? 0.5;
+        const peakH = profile * h * 0.14 + 6;
+        const peakY = horizonY - peakH;
+        const isNear = profile > 0.52;
+        ctx.fillStyle = rgb(isNear ? MOUNTAIN_NEAR : MOUNTAIN_FAR);
+        ctx.fillRect(x, peakY, step, peakH + 2);
       }
 
-      ctx.fillStyle = `rgba(${MARS_LAVA}, ${0.35 + flicker * 0.15})`;
-      ctx.fillRect(0, h - 4, w, 4);
+      ctx.fillStyle = rgb(SKY_HORIZON);
+      ctx.fillRect(0, horizonY - 1, w, 3);
     };
 
-    const drawSideGlow = (w: number, h: number, flicker: number) => {
-      const lg = ctx.createLinearGradient(0, 0, w * 0.18, 0);
-      lg.addColorStop(0, `rgba(${MARS_LAVA}, ${0.25 + flicker * 0.12})`);
-      lg.addColorStop(1, "rgba(0,0,0,0)");
-      ctx.fillStyle = lg;
-      ctx.fillRect(0, h * 0.3, w * 0.18, h * 0.7);
+    const drawBrickFill = (
+      x: number,
+      y: number,
+      bw: number,
+      bh: number,
+      base: number[],
+      scroll: number,
+      depth: number
+    ) => {
+      const shade = lerpRgb(base, [base[0] * 0.55, base[1] * 0.55, base[2] * 0.55], depth * 0.55);
+      ctx.fillStyle = rgb(shade);
+      ctx.fillRect(x, y, bw, bh);
 
-      const rg = ctx.createLinearGradient(w, 0, w * 0.82, 0);
-      rg.addColorStop(0, `rgba(${MARS_LAVA}, ${0.25 + flicker * 0.12})`);
-      rg.addColorStop(1, "rgba(0,0,0,0)");
-      ctx.fillStyle = rg;
-      ctx.fillRect(w * 0.82, h * 0.3, w * 0.18, h * 0.7);
+      const brickH = Math.max(4, Math.floor(8 - depth * 3));
+      const brickW = Math.max(6, Math.floor(14 - depth * 4));
+      const offset = Math.floor(scroll * 40) % brickW;
+
+      ctx.strokeStyle = rgb(MORTAR);
+      ctx.lineWidth = 1;
+      ctx.globalAlpha = 0.55 + depth * 0.25;
+
+      for (let by = y; by < y + bh; by += brickH) {
+        ctx.beginPath();
+        ctx.moveTo(x, by);
+        ctx.lineTo(x + bw, by);
+        ctx.stroke();
+      }
+
+      const row = Math.floor((y - scroll * 20) / brickH);
+      const rowOffset = (row % 2) * (brickW / 2);
+
+      for (let bx = x - offset + rowOffset; bx < x + bw; bx += brickW) {
+        ctx.beginPath();
+        ctx.moveTo(bx, y);
+        ctx.lineTo(bx, y + bh);
+        ctx.stroke();
+      }
+
+      ctx.globalAlpha = 1;
+
+      const specks = Math.floor(bw * bh / 120);
+      for (let s = 0; s < specks; s++) {
+        const sx = x + ((s * 17 + frame) % bw);
+        const sy = y + ((s * 13 + frame * 2) % bh);
+        const lighter = lerpRgb(shade, WALL_LIGHT, 0.25);
+        ctx.fillStyle = rgb(lighter);
+        ctx.fillRect(sx, sy, 1, 1);
+      }
     };
 
-    const drawPistol = (cx: number, h: number, bob: number) => {
-      const baseY = h - 4 + bob;
-      const s = Math.max(1, h / 200);
+    const drawTexturedQuad = (
+      x1: number,
+      y1: number,
+      x2: number,
+      y2: number,
+      x3: number,
+      y3: number,
+      x4: number,
+      y4: number,
+      base: number[],
+      scroll: number,
+      depth: number
+    ) => {
+      const minX = Math.min(x1, x2, x3, x4);
+      const maxX = Math.max(x1, x2, x3, x4);
+      const minY = Math.min(y1, y2, y3, y4);
+      const maxY = Math.max(y1, y2, y3, y4);
 
-      ctx.fillStyle = `rgba(160, 150, 130, 0.75)`;
-      ctx.strokeStyle = `rgba(90, 70, 55, 0.9)`;
-      ctx.lineWidth = 1.2 * s;
-
+      ctx.save();
       ctx.beginPath();
-      ctx.moveTo(cx - 8 * s, baseY - 2 * s);
-      ctx.lineTo(cx - 6 * s, baseY - 28 * s);
-      ctx.lineTo(cx - 2 * s, baseY - 32 * s);
-      ctx.lineTo(cx + 14 * s, baseY - 30 * s);
-      ctx.lineTo(cx + 38 * s, baseY - 22 * s);
-      ctx.lineTo(cx + 48 * s, baseY - 14 * s);
-      ctx.lineTo(cx + 52 * s, baseY - 6 * s);
-      ctx.lineTo(cx + 48 * s, baseY);
-      ctx.lineTo(cx + 20 * s, baseY - 4 * s);
-      ctx.lineTo(cx + 4 * s, baseY - 8 * s);
-      ctx.lineTo(cx - 4 * s, baseY - 6 * s);
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.lineTo(x3, y3);
+      ctx.lineTo(x4, y4);
       ctx.closePath();
-      ctx.fill();
-      ctx.stroke();
+      ctx.clip();
+      drawBrickFill(minX, minY, maxX - minX, maxY - minY, base, scroll, depth);
+      ctx.restore();
+    };
 
-      ctx.fillStyle = `rgba(60, 50, 42, 0.85)`;
-      ctx.fillRect(cx - 10 * s, baseY - 10 * s, 18 * s, 12 * s);
+    const drawCorridor = (w: number, h: number, scroll: number) => {
+      const cx = w / 2;
+      const horizonY = h * 0.36;
+      const cy = h * 0.52;
+      const slices = 10;
 
-      ctx.fillStyle = `rgba(${MARS_BLOOD}, 0.9)`;
-      ctx.fillRect(cx + 30 * s, baseY - 20 * s, 10 * s, 5 * s);
+      for (let i = slices - 1; i >= 0; i--) {
+        const t = (i / slices + scroll) % 1;
+        const scale = 0.1 + t * 0.9;
+        const hw = w * scale * 0.46;
+        const hh = h * scale * 0.38;
+        const top = cy - hh;
+        const bottom = cy + hh;
+        const depth = 1 - t;
+        const wallBase = depth > 0.55 ? WALL_DARK : depth > 0.3 ? WALL_MID : WALL_LIGHT;
+
+        const ceilColor = lerpRgb(CEILING, WALL_DARK, t * 0.4);
+        ctx.fillStyle = rgb(ceilColor);
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(w, 0);
+        ctx.lineTo(cx + hw, top);
+        ctx.lineTo(cx - hw, top);
+        ctx.closePath();
+        ctx.fill();
+
+        const floorColor = lerpRgb(FLOOR_FAR, FLOOR_NEAR, t);
+        ctx.fillStyle = rgb(floorColor);
+        ctx.beginPath();
+        ctx.moveTo(0, h);
+        ctx.lineTo(w, h);
+        ctx.lineTo(cx + hw, bottom);
+        ctx.lineTo(cx - hw, bottom);
+        ctx.closePath();
+        ctx.fill();
+
+        drawTexturedQuad(
+          0, top, cx - hw, top, cx - hw, bottom, 0, bottom,
+          wallBase, scroll + i * 0.1, depth
+        );
+        drawTexturedQuad(
+          cx + hw, top, w, top, w, bottom, cx + hw, bottom,
+          wallBase, scroll + i * 0.1 + 0.5, depth
+        );
+
+        if (t > 0.72 && i % 2 === 0) {
+          const lavaAlpha = 0.18 + 0.08 * Math.sin(frame * 0.25 + i);
+          ctx.fillStyle = `rgba(${LAVA.join(",")}, ${lavaAlpha})`;
+          ctx.fillRect(cx - hw + 6, bottom - hh * 0.22, hw * 0.35, hh * 0.12);
+          ctx.fillRect(cx + hw * 0.55, bottom - hh * 0.22, hw * 0.35, hh * 0.12);
+        }
+
+        if (i === 0) {
+          ctx.fillStyle = `rgba(${LAVA_GLOW.join(",")}, 0.12)`;
+          ctx.fillRect(cx - hw, top, hw * 2, 2);
+        }
+      }
+
+      ctx.fillStyle = rgb(SKY_HORIZON);
+      ctx.fillRect(0, horizonY - 1, w, 2);
+    };
+
+    const drawPistol = (w: number, h: number, bob: number) => {
+      const px = Math.max(2, Math.floor(h / 90));
+      const rows = PISTOL.length;
+      const cols = PISTOL[0].length;
+      const totalW = cols * px;
+      const totalH = rows * px;
+      const originX = w * 0.52 - totalW * 0.35;
+      const originY = h - totalH - 8 + bob;
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const cell = PISTOL[r][c];
+          if (cell === ".") continue;
+          ctx.fillStyle = PISTOL_COLORS[cell];
+          ctx.fillRect(
+            Math.floor(originX + c * px),
+            Math.floor(originY + r * px),
+            px,
+            px
+          );
+        }
+      }
     };
 
     const draw = (now: number) => {
@@ -147,74 +304,13 @@ export function DoomCorridorOverlay({ active = true }: { active?: boolean }) {
 
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
-      const cx = w / 2;
-      const cy = h * 0.52;
-      const scroll = (frame * 0.045) % 1;
-      const flicker = 0.5 + 0.5 * Math.sin(frame * 0.31);
+      const scroll = (frame * 0.035) % 1;
+      const bob = Math.sin(frame * 0.14) * 2;
 
       ctx.clearRect(0, 0, w, h);
-      drawMarsSky(w, h, flicker);
-      drawSideGlow(w, h, flicker);
-
-      const depth = 12;
-      ctx.lineWidth = 2;
-
-      for (let i = 0; i < depth; i++) {
-        const t = (i / depth + scroll) % 1;
-        const scale = 0.12 + t * 0.88;
-        const hw = w * scale * 0.44;
-        const hh = h * scale * 0.4;
-        const top = cy - hh;
-        const alpha = 0.32 + t * 0.58;
-        const isNear = t > 0.68;
-
-        const wallColor = isNear ? MARS_STONE_LT : MARS_STONE;
-        const glowBoost = isNear ? flicker * 0.15 : 0;
-
-        ctx.strokeStyle = `rgba(${wallColor}, ${alpha})`;
-        ctx.strokeRect(cx - hw, top, hw * 2, hh * 2);
-
-        ctx.fillStyle = `rgba(${MARS_GLOW}, ${alpha * 0.08 + glowBoost})`;
-        ctx.fillRect(cx - hw + 2, top + 2, hw * 2 - 4, hh * 2 - 4);
-
-        ctx.beginPath();
-        ctx.moveTo(cx - hw, top);
-        ctx.lineTo(cx, cy - hh * 0.12);
-        ctx.lineTo(cx + hw, top);
-        ctx.strokeStyle = `rgba(${MARS_STONE_LT}, ${alpha * 0.85})`;
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(cx - hw, top + hh * 2);
-        ctx.lineTo(cx, cy + hh * 0.32);
-        ctx.lineTo(cx + hw, top + hh * 2);
-        ctx.stroke();
-
-        const gridStep = hw / 3;
-        for (let g = 1; g < 3; g++) {
-          const gx = cx - hw + gridStep * g;
-          ctx.beginPath();
-          ctx.moveTo(gx, top);
-          ctx.lineTo(cx + (gx - cx) * 0.12, cy);
-          ctx.lineTo(gx, top + hh * 2);
-          ctx.strokeStyle = `rgba(${MARS_STONE_LT}, ${alpha * 0.45})`;
-          ctx.stroke();
-        }
-
-        if (isNear && i % 2 === 0) {
-          ctx.fillStyle = `rgba(${MARS_LAVA}, ${0.12 + flicker * 0.08})`;
-          ctx.fillRect(cx - hw + 4, top + hh * 1.6, hw * 0.3, hh * 0.35);
-          ctx.fillRect(cx + hw * 0.55, top + hh * 1.6, hw * 0.3, hh * 0.35);
-        }
-      }
-
-      drawFireStrip(w, h, flicker);
-
-      const bob = Math.sin(frame * 0.14) * 4;
-      drawPistol(cx + w * 0.08, h, bob);
-
-      ctx.fillStyle = `rgba(${MARS_GLOW}, ${0.06 + flicker * 0.04})`;
-      ctx.fillRect(0, 0, w, h);
+      drawSky(w, h);
+      drawCorridor(w, h, scroll);
+      drawPistol(w, h, bob);
     };
 
     raf = requestAnimationFrame(draw);

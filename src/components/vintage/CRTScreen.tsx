@@ -15,7 +15,6 @@ import { ProjectMiniPreview } from "./ProjectMiniPreview";
 import { ScanlineOverlay } from "./ScanlineOverlay";
 import { DoomStatusFace } from "./DoomStatusFace";
 import { DoomCorridorOverlay } from "./DoomCorridorOverlay";
-import { DoomHudBar } from "./DoomHudBar";
 
 function TerminalChannel() {
   const t = useTranslations("home");
@@ -176,10 +175,7 @@ export function CRTScreen({ label }: { label: string }) {
       <div className="crt-tv-frame">
         <div className="crt-tv-frame__label">
           <span>{label}</span>
-          <div className="flex items-center gap-2">
-            <DoomStatusFace />
-            <span className="rec-blink text-[var(--vhs-red)]">● ON AIR</span>
-          </div>
+          <span className="rec-blink text-[var(--vhs-red)]">● ON AIR</span>
         </div>
 
         <div className="crt-tv-frame__bezel crt-flicker">
@@ -189,16 +185,10 @@ export function CRTScreen({ label }: { label: string }) {
             }`}
           >
             {isDoom && !reduced && (
-              <>
-                <div
-                  className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_90%_60%_at_50%_40%,rgba(220,80,30,0.22),transparent_65%)]"
-                  aria-hidden
-                />
-                <div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-1/3 bg-gradient-to-t from-[rgba(255,90,0,0.18)] to-transparent"
-                  aria-hidden
-                />
-              </>
+              <div
+                className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_85%_55%_at_50%_42%,rgba(180,130,80,0.14),transparent_68%)]"
+                aria-hidden
+              />
             )}
 
             <AnimatePresence mode="wait">
@@ -219,9 +209,16 @@ export function CRTScreen({ label }: { label: string }) {
             </AnimatePresence>
 
             {isDoom && !reduced && (
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] flex gap-1 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-1.5 pt-6">
-                <DoomHudBar label="HP" value="100%" fill={100} className="flex-1" />
-                <DoomHudBar label="AMMO" value="∞" fill={88} variant="ammo" className="flex-1" />
+              <div className="doom-status-bar pointer-events-none absolute inset-x-0 bottom-0 z-[3]" aria-hidden>
+                <div className="doom-status-bar__section doom-status-bar__section--left">
+                  <span className="doom-status-bar__label">AMMO</span>
+                  <span className="doom-status-bar__value doom-status-bar__value--ammo">∞</span>
+                </div>
+                <DoomStatusFace variant="hud" />
+                <div className="doom-status-bar__section doom-status-bar__section--right">
+                  <span className="doom-status-bar__label">ARMR</span>
+                  <span className="doom-status-bar__value">100%</span>
+                </div>
               </div>
             )}
 
@@ -236,7 +233,7 @@ export function CRTScreen({ label }: { label: string }) {
             <div
               className={`pointer-events-none absolute inset-0 z-[4] ${
                 isDoom
-                  ? "shadow-[inset_0_0_50px_rgba(170,34,34,0.2),inset_0_-20px_40px_rgba(255,90,0,0.12)]"
+                  ? "shadow-[inset_0_0_40px_rgba(60,40,28,0.35),inset_0_-12px_24px_rgba(130,90,55,0.1)]"
                   : "shadow-[inset_0_0_40px_rgba(0,0,0,0.5)]"
               }`}
               aria-hidden

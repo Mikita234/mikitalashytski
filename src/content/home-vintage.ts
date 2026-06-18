@@ -110,7 +110,7 @@ export const vintagePopups = [
 
 /** CRT channel rotation — one full scene at a time, weighted durations */
 export const crtChannels = [
-  { id: "doom", type: "doom" as const, durationMs: 6000, chLabel: "DOOM" },
+  { id: "doom", type: "doom" as const, durationMs: 6000, chLabel: "E1M1" },
   { id: "terminal", type: "terminal" as const, durationMs: 1500, chLabel: "SYS" },
   { id: "project", type: "project" as const, durationMs: 1500, chLabel: "WORKS" },
   { id: "nosignal", type: "nosignal" as const, durationMs: 500, chLabel: "NO SIG" },

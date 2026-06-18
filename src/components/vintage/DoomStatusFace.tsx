@@ -3,35 +3,45 @@
 import { useEffect, useState } from "react";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
-type Pixel = "on" | "blood" | "off";
+type Pixel = "on" | "blood" | "off" | "skin" | "hair";
 
 const FACES: Record<string, Pixel[][]> = {
   idle: [
-    ["off", "on", "on", "on", "off"],
-    ["on", "blood", "on", "blood", "on"],
-    ["on", "on", "on", "on", "on"],
-    ["on", "blood", "on", "blood", "on"],
-    ["off", "on", "off", "on", "off"],
+    ["off", "hair", "hair", "hair", "hair", "hair", "off"],
+    ["hair", "skin", "skin", "skin", "skin", "skin", "hair"],
+    ["hair", "skin", "on", "skin", "on", "skin", "hair"],
+    ["hair", "skin", "skin", "skin", "skin", "skin", "hair"],
+    ["hair", "skin", "on", "on", "on", "skin", "hair"],
+    ["hair", "skin", "skin", "off", "skin", "skin", "hair"],
+    ["off", "hair", "hair", "hair", "hair", "hair", "off"],
   ],
   grunt: [
-    ["off", "on", "on", "on", "off"],
-    ["on", "blood", "on", "blood", "on"],
-    ["on", "on", "on", "on", "on"],
-    ["on", "on", "on", "on", "on"],
-    ["on", "off", "off", "off", "on"],
+    ["off", "hair", "hair", "hair", "hair", "hair", "off"],
+    ["hair", "skin", "skin", "skin", "skin", "skin", "hair"],
+    ["hair", "skin", "blood", "skin", "blood", "skin", "hair"],
+    ["hair", "skin", "skin", "skin", "skin", "skin", "hair"],
+    ["hair", "skin", "on", "on", "on", "skin", "hair"],
+    ["hair", "skin", "skin", "skin", "skin", "skin", "hair"],
+    ["off", "hair", "hair", "hair", "hair", "hair", "off"],
   ],
   hurt: [
-    ["blood", "on", "on", "on", "blood"],
-    ["on", "blood", "on", "blood", "on"],
-    ["on", "on", "on", "on", "on"],
-    ["on", "off", "on", "off", "on"],
-    ["off", "on", "off", "on", "off"],
+    ["blood", "hair", "hair", "hair", "hair", "hair", "blood"],
+    ["hair", "skin", "blood", "skin", "blood", "skin", "hair"],
+    ["hair", "skin", "skin", "skin", "skin", "skin", "hair"],
+    ["hair", "skin", "on", "on", "on", "skin", "hair"],
+    ["hair", "skin", "off", "skin", "off", "skin", "hair"],
+    ["hair", "skin", "skin", "off", "skin", "skin", "hair"],
+    ["off", "hair", "hair", "hair", "hair", "hair", "off"],
   ],
 };
 
 const FACE_CYCLE = ["idle", "grunt", "idle", "hurt", "idle"] as const;
 
-export function DoomStatusFace() {
+type DoomStatusFaceProps = {
+  variant?: "bezel" | "hud";
+};
+
+export function DoomStatusFace({ variant = "hud" }: DoomStatusFaceProps) {
   const reduced = useReducedMotion();
   const [faceIndex, setFaceIndex] = useState(0);
 
@@ -47,7 +57,9 @@ export function DoomStatusFace() {
 
   return (
     <div
-      className={`doom-status-face${reduced ? "" : " doom-status-face--pulse"}`}
+      className={`doom-status-face doom-status-face--${variant}${
+        reduced ? "" : " doom-status-face--pulse"
+      }`}
       aria-hidden
       title="STATUS"
     >
@@ -59,7 +71,11 @@ export function DoomStatusFace() {
               ? " doom-status-face__pixel--on"
               : pixel === "blood"
                 ? " doom-status-face__pixel--blood"
-                : ""
+                : pixel === "skin"
+                  ? " doom-status-face__pixel--skin"
+                  : pixel === "hair"
+                    ? " doom-status-face__pixel--hair"
+                    : ""
           }`}
         />
       ))}
