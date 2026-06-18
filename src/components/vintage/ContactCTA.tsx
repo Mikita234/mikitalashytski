@@ -30,7 +30,7 @@ export function ContactCTA() {
       </div>
 
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
-        <DoomHudBar label="SIGNAL" value="OPEN" fill={100} className="mx-auto mb-8 max-w-[200px]" />
+        <DoomHudBar label="HP" value="100%" fill={100} className="mx-auto mb-8 max-w-[200px]" />
 
         <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
           {stickers.map((s) => (

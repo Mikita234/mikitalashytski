@@ -159,7 +159,9 @@ export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
             <dl className="space-y-4">
               {faq.map((item) => (
                 <div key={item.q}>
-                  <dt className="type-h3">{item.q}</dt>
+                  <dt className="font-sans text-base font-semibold leading-snug text-[var(--vhs-white)] sm:text-lg">
+                    {item.q}
+                  </dt>
                   <dd className="type-body mt-1">{item.a}</dd>
                 </div>
               ))}

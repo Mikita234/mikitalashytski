@@ -16,13 +16,14 @@ import { ProjectMiniPreview } from "./ProjectMiniPreview";
 import { ScanlineOverlay } from "./ScanlineOverlay";
 import { DoomStatusFace } from "./DoomStatusFace";
 import { DoomCorridorOverlay } from "./DoomCorridorOverlay";
+import { DoomHudBar } from "./DoomHudBar";
 
 function TerminalScreen() {
   const t = useTranslations("home");
   const lines = t.raw("terminal") as string[];
 
   return (
-    <div className="relative z-[2] h-full bg-black/75 p-3 font-mono text-[10px] leading-relaxed text-[var(--vhs-terminal)] sm:p-4 sm:text-xs">
+    <div className="relative z-[2] h-full bg-black/45 p-3 font-mono text-[10px] leading-relaxed text-[var(--vhs-terminal)] sm:p-4 sm:text-xs">
       {lines.map((line, i) => (
         <div key={i} className={i === lines.length - 1 ? "animate-pulse" : ""}>
           {line}
@@ -35,7 +36,7 @@ function TerminalScreen() {
 
 function NoSignalScreen() {
   return (
-    <div className="relative z-[2] flex h-full flex-col items-center justify-center gap-2 bg-black/70">
+    <div className="relative z-[2] flex h-full flex-col items-center justify-center gap-2 bg-black/40">
       <p className="font-mono text-lg font-bold tracking-widest text-white sm:text-2xl">
         NO SIGNAL
       </p>
@@ -47,7 +48,7 @@ function NoSignalScreen() {
 
 function BuildingScreen() {
   return (
-    <div className="relative z-[2] flex h-full items-center justify-center bg-black/70 p-4">
+    <div className="relative z-[2] flex h-full items-center justify-center bg-black/40 p-4">
       <p className="animate-pulse font-mono text-xs uppercase tracking-[0.2em] text-[var(--vhs-beige)] sm:text-sm">
         BUILDING WEBSITE…
       </p>
@@ -62,7 +63,7 @@ function OrderScreen() {
   return (
     <Link
       href="/order"
-      className="relative z-[2] flex h-full flex-col items-center justify-center bg-[var(--vhs-red)]/85 p-4 text-center transition-filter hover:brightness-110"
+      className="relative z-[2] flex h-full flex-col items-center justify-center bg-[var(--vhs-red)]/70 p-4 text-center transition-filter hover:brightness-110"
     >
       <p className="font-display text-2xl uppercase text-white sm:text-4xl">
         ORDER NOW
@@ -82,7 +83,7 @@ function OrderScreen() {
 
 function GridScreen() {
   return (
-    <div className="relative z-[2] grid h-full grid-cols-2 gap-1 bg-black/50 p-1.5">
+    <div className="relative z-[2] grid h-full grid-cols-2 gap-1 bg-black/30 p-1.5">
       {crtProjectChannels.map((ch) => {
         const v = projectVisuals[ch.slug];
         return (
@@ -215,8 +216,8 @@ export function CRTScreen({ label }: { label: string }) {
         </div>
 
         <div className="crt-tv-frame__bezel crt-flicker">
-          <div className="relative aspect-[4/3] w-full overflow-hidden bg-black">
-            <DoomCorridorOverlay />
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0a0806]">
+            <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_80%_70%_at_50%_55%,rgba(74,124,35,0.12),transparent_70%)]" aria-hidden />
             <AnimatePresence mode="wait">
               <motion.div
                 key={state.id}
@@ -229,15 +230,20 @@ export function CRTScreen({ label }: { label: string }) {
                 <Screen />
               </motion.div>
             </AnimatePresence>
+            <DoomCorridorOverlay />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] flex gap-1 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-1.5 pt-6">
+              <DoomHudBar label="HP" value="100%" fill={100} className="flex-1" />
+              <DoomHudBar label="AMMO" value="∞" fill={88} variant="ammo" className="flex-1" />
+            </div>
             <ScanlineOverlay />
             {!reduced && (
               <div
-                className="vhs-tracking-line pointer-events-none absolute left-0 right-0 z-[3] h-px bg-white/30"
+                className="vhs-tracking-line pointer-events-none absolute left-0 right-0 z-[5] h-px bg-white/30"
                 aria-hidden
               />
             )}
             <div
-              className="pointer-events-none absolute inset-0 z-[3] shadow-[inset_0_0_40px_rgba(51,255,102,0.08)]"
+              className="pointer-events-none absolute inset-0 z-[5] shadow-[inset_0_0_40px_rgba(74,124,35,0.15)]"
               aria-hidden
             />
           </div>

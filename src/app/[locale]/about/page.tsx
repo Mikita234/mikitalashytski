@@ -63,8 +63,8 @@ function AboutContent() {
           <h2 className="type-h2">{t("valuesTitle")}</h2>
           <div className="doom-stone-divider mt-5 max-w-xs" aria-hidden />
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {values.map((v) => (
-              <VintageBlock key={v} title="✓ SIGNAL">
+            {values.map((v, i) => (
+              <VintageBlock key={v} title={`${String(i + 1).padStart(2, "0")}`}>
                 <p className="type-body">{v}</p>
               </VintageBlock>
             ))}

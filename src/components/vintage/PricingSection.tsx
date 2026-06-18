@@ -24,7 +24,7 @@ export function PricingSection() {
         <div className="mt-2 overflow-hidden border-2 border-[var(--doom-stone)]">
           <table className="w-full font-mono text-xs sm:text-sm">
             <thead>
-              <tr className="border-b border-[var(--doom-stone)] bg-[#141418] text-left type-caption uppercase">
+              <tr className="border-b border-[var(--doom-stone)] bg-[#141418] text-left font-mono text-[10px] uppercase tracking-wider text-[var(--vhs-beige)] sm:text-xs">
                 <th className="p-3 sm:p-4">{t("service")}</th>
                 <th className="p-3 sm:p-4">{t("from")}</th>
                 <th className="hidden p-3 sm:table-cell sm:p-4">{t("to")}</th>

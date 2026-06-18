@@ -54,7 +54,7 @@ export function PackageCard({
             </span>
           </div>
           <h3 className="type-h3">{title}</h3>
-          <p className="type-body mt-3 text-sm">{desc}</p>
+          <p className="type-body mt-3">{desc}</p>
           <DoomHudBar
             label="ETA"
             value={timeline}

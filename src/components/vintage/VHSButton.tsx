@@ -28,7 +28,7 @@ export function VHSButton({
     primary:
       "border-[var(--doom-red)] bg-[var(--vhs-acid)] text-black shadow-[4px_4px_0_var(--doom-blood)] hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--doom-blood)] active:translate-x-1 active:translate-y-0 active:shadow-[2px_2px_0_var(--doom-blood)]",
     secondary:
-      "border-[var(--doom-stone-light)] bg-[var(--doom-panel)] text-[var(--vhs-white)] hover:border-[var(--doom-red)] hover:bg-[var(--doom-blood)]/30 hover:text-[var(--vhs-beige)]",
+      "border-[var(--doom-stone-light)] bg-[var(--doom-panel)] text-[var(--vhs-beige)] hover:border-[var(--doom-red)] hover:bg-[var(--doom-blood)]/30 hover:text-[var(--vhs-white)]",
   };
 
   const hoverLabel = variant === "primary" ? "PICK UP" : "PLAY";

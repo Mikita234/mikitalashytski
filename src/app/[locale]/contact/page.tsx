@@ -33,7 +33,7 @@ export default async function ContactPage({
   return (
     <>
       <VintagePageHeader
-        tag="ORDER CHANNEL"
+        tag={th("orderTag")}
         title={th("headline")}
         subtitle={th("subline")}
       />

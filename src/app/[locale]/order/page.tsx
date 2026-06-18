@@ -32,7 +32,7 @@ export default async function OrderPage({
   return (
     <>
       <VintagePageHeader
-        tag="ORDER CHANNEL"
+        tag={t("orderTag")}
         title={t("headline")}
         subtitle={t("subline")}
       />

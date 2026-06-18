@@ -13,6 +13,7 @@
   --vhs-yellow: #ffd700;
   --vhs-white: #f0f0f0;
   --vhs-muted: #8a8a94;
+  --vhs-body: #b8b8c4;
 
   /* Doom accent layer (~20–30%, layered on VHS) */
   --doom-red: #aa2222;
@@ -80,13 +81,13 @@ body {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 4;
   background: repeating-linear-gradient(
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
   );
 }
 
@@ -732,7 +733,7 @@ button:focus-visible {
   line-height: 1.05;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--vhs-white);
+  color: var(--vhs-beige);
 }
 
 .type-subtitle {
@@ -747,7 +748,7 @@ button:focus-visible {
   font-family: var(--font-sans), ui-sans-serif, sans-serif;
   font-size: 0.9375rem;
   line-height: 1.75;
-  color: var(--vhs-muted);
+  color: var(--vhs-body);
 }
 
 .type-caption {
@@ -755,7 +756,7 @@ button:focus-visible {
   font-size: 0.6875rem;
   line-height: 1.5;
   letter-spacing: 0.06em;
-  color: var(--vhs-muted);
+  color: #9a9aa8;
 }
 
 .section-spacing {
@@ -855,18 +856,19 @@ button:focus-visible {
 
 .doom-status-face {
   display: grid;
-  grid-template-columns: repeat(5, 4px);
-  grid-template-rows: repeat(5, 4px);
+  grid-template-columns: repeat(5, 5px);
+  grid-template-rows: repeat(5, 5px);
   gap: 1px;
-  padding: 3px;
+  padding: 4px;
   background: var(--doom-stone);
   border: 2px solid var(--doom-border);
+  box-shadow: 0 0 8px rgba(170, 34, 34, 0.45);
   image-rendering: pixelated;
 }
 
 .doom-status-face__pixel {
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   background: transparent;
 }
 
@@ -895,7 +897,7 @@ button:focus-visible {
 }
 
 .doom-corridor-overlay {
-  opacity: 0.45;
+  opacity: 0.92;
   mix-blend-mode: screen;
 }
 

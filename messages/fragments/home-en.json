@@ -148,6 +148,7 @@
     "viewSource": "View source → JSON-LD"
   },
   "contact": {
+    "orderTag": "ORDER",
     "headline": "Got an idea, project or digital chaos?",
     "subline": "Show me the task — we'll map what to build and for how much.",
     "stickers": ["CALL NOW", "FROM €115", "FAST LAUNCH"],
