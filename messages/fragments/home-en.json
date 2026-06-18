@@ -17,6 +17,14 @@
     "ctaAudit": "Request audit",
     "tvLabel": "BUILDER-TV 2001"
   },
+  "tv": {
+    "label": "Philips CRT television with retro commercials",
+    "onAir": "● ON AIR",
+    "channel": "CH",
+    "chUp": "CH+",
+    "chDown": "CH−",
+    "mute": "MUTE"
+  },
   "workstation": {
     "workstationLabel": "Case tape archive workstation",
     "crtLabel": "CASE MONITOR",

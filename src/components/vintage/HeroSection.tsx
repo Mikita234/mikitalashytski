@@ -15,12 +15,10 @@ const HeroWorkstation = dynamic(
     ssr: false,
     loading: () => (
       <div
-        className="hero-workstation-placeholder mx-auto w-full max-w-md space-y-4"
+        className="hero-workstation-placeholder mx-auto w-full max-w-md"
         aria-hidden
       >
-        <div className="aspect-[4/3] animate-pulse rounded-2xl bg-[#1a1a1e]" />
-        <div className="h-16 animate-pulse rounded bg-[#111]" />
-        <div className="h-24 animate-pulse rounded bg-[#151518]" />
+        <div className="aspect-[4/3] animate-pulse rounded-[1.25rem] bg-gradient-to-b from-[#3a3a42] to-[#1a1a1e]" />
       </div>
     ),
   },

@@ -17,6 +17,14 @@
     "ctaAudit": "Запросити аудит",
     "tvLabel": "BUILDER-TV 2001"
   },
+  "tv": {
+    "label": "Телевізор Philips з ретро-рекламою",
+    "onAir": "● В ЕФІРІ",
+    "channel": "КАН.",
+    "chUp": "КАН+",
+    "chDown": "КАН−",
+    "mute": "БЕЗ ЗВУКУ"
+  },
   "workstation": {
     "workstationLabel": "Архів кейсів на VHS",
     "crtLabel": "МОНІТОР КЕЙСА",

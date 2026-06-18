@@ -703,7 +703,535 @@ button:focus-visible {
 }
 
 .hero-workstation-placeholder {
-  min-height: 28rem;
+  min-height: 22rem;
+}
+
+/* ─── Philips CRT TV (hero) ─── */
+.philips-tv {
+  position: relative;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.75));
+}
+
+.philips-tv__cabinet {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 20px 14px 14px;
+  background: linear-gradient(
+    165deg,
+    #5a5a62 0%,
+    #3d3d44 18%,
+    #2a2a30 55%,
+    #1e1e24 100%
+  );
+  padding: 14px 16px 12px;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.45),
+    0 8px 0 #141418,
+    0 16px 40px rgba(0, 0, 0, 0.65);
+}
+
+.philips-tv__bezel-highlight {
+  pointer-events: none;
+  position: absolute;
+  top: 6px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  z-index: 3;
+}
+
+.philips-tv__top-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 6px;
+}
+
+.philips-tv__brand {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: #c8c8d0;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.philips-tv__model {
+  font-family: var(--font-mono), monospace;
+  font-size: 7px;
+  letter-spacing: 0.2em;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.philips-tv__screen-frame {
+  position: relative;
+}
+
+.philips-tv__screen-bezel {
+  overflow: hidden;
+  border-radius: 18px 18px 14px 14px;
+  border: 5px solid #0c0c0e;
+  background: #050505;
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.95),
+    inset 0 4px 12px rgba(255, 255, 255, 0.04);
+}
+
+.crt-screen-convex {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: 14px 14px 10px 10px;
+  background: radial-gradient(
+    ellipse 85% 75% at 50% 42%,
+    #0a1a0a 0%,
+    #020402 55%,
+    #000 100%
+  );
+  box-shadow:
+    inset 0 0 40px rgba(51, 255, 102, 0.05),
+    inset 0 -20px 50px rgba(0, 0, 0, 0.8),
+    inset 0 8px 24px rgba(255, 255, 255, 0.03);
+}
+
+.crt-screen-convex__inner {
+  position: absolute;
+  inset: 3% 4% 5%;
+  overflow: hidden;
+  border-radius: 12px 12px 8px 8px;
+  background: #000;
+}
+
+.crt-screen-convex__vignette {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 50px rgba(0, 0, 0, 0.7),
+    inset 0 0 80px rgba(51, 255, 102, 0.04);
+}
+
+.crt-screen-convex__phosphor {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  mix-blend-mode: screen;
+  opacity: 0.12;
+  background: radial-gradient(circle at 50% 45%, rgba(51, 255, 102, 0.35), transparent 65%);
+}
+
+.crt-screen-convex__tracking-line {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 7;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  animation: vhs-tracking 5s linear infinite;
+}
+
+.philips-tv__indicator-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding: 0 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.philips-tv__on-air {
+  color: var(--vhs-red);
+}
+
+.philips-tv__channel {
+  color: var(--vhs-terminal);
+  text-shadow: 0 0 6px rgba(51, 255, 102, 0.35);
+}
+
+.philips-tv__grille {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 3px 4px;
+  margin: 10px 8px 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #222228, #16161a);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.philips-tv__grille span {
+  display: block;
+  height: 3px;
+  border-radius: 1px;
+  background: #0a0a0c;
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.philips-tv__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 8px 2px;
+}
+
+.philips-tv__knobs {
+  display: flex;
+  gap: 10px;
+}
+
+.philips-tv__knob {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  background: radial-gradient(circle at 35% 30%, #4a4a52, #1a1a1e 70%);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.philips-tv__knob i {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  width: 2px;
+  height: 6px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: #888;
+}
+
+.philips-tv__knob--bright {
+  width: 18px;
+  height: 18px;
+}
+
+.philips-tv__buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.philips-tv__btn {
+  min-width: 2.5rem;
+  padding: 5px 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #aaa;
+  background: linear-gradient(180deg, #3a3a42, #222228);
+  border: 1px solid #555;
+  border-radius: 3px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 2px 0 #111;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.philips-tv__btn:hover {
+  color: var(--vhs-acid);
+  border-color: var(--vhs-acid);
+}
+
+.philips-tv__btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.philips-tv__btn--mute {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.philips-tv__btn--mute:hover {
+  color: #aaa;
+  border-color: #555;
+}
+
+.philips-tv__power {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.philips-tv__led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px currentColor;
+}
+
+.philips-tv__led--on {
+  background: #33cc33;
+  color: #33cc33;
+  box-shadow: 0 0 6px rgba(51, 204, 51, 0.8);
+}
+
+.philips-tv__power-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 6px;
+  letter-spacing: 0.1em;
+  color: #666;
+}
+
+.philips-tv__dust {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.philips-tv__scratches {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.07;
+  background: repeating-linear-gradient(
+    -18deg,
+    transparent,
+    transparent 8px,
+    rgba(255, 255, 255, 0.15) 8px,
+    rgba(255, 255, 255, 0.15) 9px
+  );
+}
+
+.philips-tv__stand {
+  width: 55%;
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 0 0 6px 6px;
+  background: linear-gradient(180deg, #2a2a30, #1a1a1e);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Retro TV commercials */
+.retro-ad {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.retro-ad--80s {
+  background: linear-gradient(180deg, #0a2463 0%, #1a3a8e 40%, #0a2463 100%);
+}
+
+.retro-ad--90s {
+  background: linear-gradient(135deg, #4a0080 0%, #0066cc 50%, #cc0099 100%);
+}
+
+.retro-ad--2000s {
+  background: linear-gradient(180deg, #001a33 0%, #003366 30%, #006699 60%, #ff6600 100%);
+}
+
+.retro-ad__starburst {
+  pointer-events: none;
+  position: absolute;
+  inset: -20%;
+  opacity: 0.15;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.4) 0deg 8deg,
+    transparent 8deg 16deg
+  );
+  animation: retro-starburst-spin 20s linear infinite;
+}
+
+@keyframes retro-starburst-spin {
+  to { transform: rotate(360deg); }
+}
+
+.retro-ad--gradient-90s .retro-ad__starburst,
+.retro-ad--y2k-chrome .retro-ad__starburst,
+.retro-ad--case-spot .retro-ad__starburst {
+  opacity: 0.08;
+}
+
+.retro-ad__price {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0.35rem;
+  padding: 2px 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(8px, 2vw, 10px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #000;
+  background: var(--vhs-yellow);
+  border: 2px solid #fff;
+  transform: rotate(-2deg);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.retro-ad__headline {
+  position: relative;
+  z-index: 2;
+  max-width: 95%;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(11px, 3.2vw, 16px);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow:
+    2px 2px 0 #000,
+    -1px -1px 0 var(--vhs-red),
+    0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+.retro-ad--90s .retro-ad__headline {
+  background: linear-gradient(180deg, #fff 0%, #ff0 50%, #f80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(2px 2px 0 #000);
+  text-shadow: none;
+}
+
+.retro-ad--2000s .retro-ad__headline {
+  color: #fff;
+  text-shadow:
+    0 0 8px rgba(0, 255, 255, 0.6),
+    2px 2px 0 #003366;
+}
+
+.retro-ad__headline--animate {
+  animation: retro-headline-in 0.6s ease-out;
+}
+
+@keyframes retro-headline-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.retro-ad__subline {
+  position: relative;
+  z-index: 2;
+  max-width: 92%;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(7px, 2vw, 10px);
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+.retro-ad__subline--animate {
+  animation: retro-type-in 0.8s ease-out 0.25s both;
+}
+
+@keyframes retro-type-in {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.retro-ad__cta {
+  position: relative;
+  z-index: 3;
+  margin-top: 0.65rem;
+  padding: 4px 12px;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(8px, 2.2vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #000;
+  text-decoration: none;
+  background: linear-gradient(180deg, #ff4444, #cc0000);
+  border: 2px solid #fff;
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 2px #000,
+    3px 3px 0 rgba(0, 0, 0, 0.5);
+  animation: retro-cta-pulse 1.5s ease-in-out infinite;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.retro-ad__cta:hover {
+  filter: brightness(1.15);
+  transform: scale(1.04);
+}
+
+@keyframes retro-cta-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.retro-ad--infomercial .retro-ad__cta {
+  background: linear-gradient(180deg, var(--vhs-yellow), #ff8800);
+}
+
+.retro-ad--case-spot .retro-ad__cta {
+  background: linear-gradient(180deg, var(--vhs-terminal), #22aa44);
+  color: #001a00;
+}
+
+.retro-ad__vhs-glitch {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.08) 0,
+    rgba(255, 255, 255, 0.08) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: crt-noise-flash 0.35s ease-out;
+}
+
+@media (max-width: 640px) {
+  .philips-tv {
+    max-width: 100%;
+  }
+
+  .philips-tv__brand {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+  }
+
+  .philips-tv__btn {
+    min-width: 2.25rem;
+    padding: 4px 6px;
+    font-size: 8px;
+  }
 }
 
 /* Phosphor CRT text */
@@ -1039,7 +1567,12 @@ button:focus-visible {
   .vhs-cassette__spool--spin,
   .crt-flicker,
   .crt-shell__tracking-line,
-  .crt-shell__tracking-noise {
+  .crt-shell__tracking-noise,
+  .crt-screen-convex__tracking-line,
+  .retro-ad__starburst,
+  .retro-ad__headline--animate,
+  .retro-ad__subline--animate,
+  .retro-ad__cta {
     animation: none !important;
   }
 

@@ -17,6 +17,14 @@
     "ctaAudit": "Zamów audyt",
     "tvLabel": "BUILDER-TV 2001"
   },
+  "tv": {
+    "label": "Telewizor Philips z reklamami retro",
+    "onAir": "● NA ANTENIE",
+    "channel": "KANAŁ",
+    "chUp": "KAN+",
+    "chDown": "KAN−",
+    "mute": "WYCISZ"
+  },
   "workstation": {
     "workstationLabel": "Archiwum kaset z case'ami",
     "crtLabel": "MONITOR CASE",
