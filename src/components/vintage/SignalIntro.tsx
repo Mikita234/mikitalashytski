@@ -3,14 +3,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { vintagePopups } from "@/content/home-vintage";
-import { PopupWindow } from "./PopupWindow";
 
 export function SignalIntro({ onDone }: { onDone: () => void }) {
   const reduced = useReducedMotion();
   const [active, setActive] = useState(true);
-  const [phase, setPhase] = useState<"search" | "flash" | "popups">("search");
-  const [showPopups, setShowPopups] = useState(false);
+  const [phase, setPhase] = useState<"search" | "flash">("search");
 
   useEffect(() => {
     if (reduced) {
@@ -28,19 +25,14 @@ export function SignalIntro({ onDone }: { onDone: () => void }) {
 
     const t1 = setTimeout(() => setPhase("flash"), 700);
     const t2 = setTimeout(() => {
-      setPhase("popups");
-      setShowPopups(true);
-    }, 1100);
-    const t3 = setTimeout(() => {
       sessionStorage.setItem("vhs-intro-seen", "1");
       setActive(false);
       onDone();
-    }, 4200);
+    }, 1100);
 
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
-      clearTimeout(t3);
     };
   }, [reduced, onDone]);
 
@@ -71,24 +63,6 @@ export function SignalIntro({ onDone }: { onDone: () => void }) {
             animate={{ opacity: [0, 0.9, 0] }}
             transition={{ duration: 0.35 }}
           />
-        )}
-        {showPopups && (
-          <>
-            <PopupWindow
-              title={vintagePopups[0].title}
-              text={vintagePopups[0].text}
-              position="bottom-right"
-              delay={0}
-              storageKey={vintagePopups[0].id}
-            />
-            <PopupWindow
-              title={vintagePopups[1].title}
-              text={vintagePopups[1].text}
-              position="bottom-left"
-              delay={200}
-              storageKey={vintagePopups[1].id}
-            />
-          </>
         )}
       </motion.div>
     </AnimatePresence>

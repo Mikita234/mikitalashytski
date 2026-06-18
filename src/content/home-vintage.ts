@@ -108,16 +108,16 @@ export const vintagePopups = [
   { id: "2", title: "vibe.sys", text: "old internet mode enabled" },
 ] as const;
 
-export const crtStates = [
-  { id: "terminal", type: "terminal" as const },
-  { id: "nosignal", type: "nosignal" as const },
-  { id: "building", type: "building" as const },
-  { id: "order", type: "order" as const },
-  { id: "grid", type: "grid" as const },
-  { id: "teletext", type: "teletext" as const },
-  { id: "win98", type: "win98" as const },
-  { id: "rewind", type: "rewind" as const },
+/** CRT channel rotation — one full scene at a time, weighted durations */
+export const crtChannels = [
+  { id: "doom", type: "doom" as const, durationMs: 6000, chLabel: "DOOM" },
+  { id: "terminal", type: "terminal" as const, durationMs: 1500, chLabel: "SYS" },
+  { id: "project", type: "project" as const, durationMs: 1500, chLabel: "WORKS" },
+  { id: "nosignal", type: "nosignal" as const, durationMs: 500, chLabel: "NO SIG" },
+  { id: "win98", type: "win98" as const, durationMs: 500, chLabel: "WIN98" },
 ] as const;
+
+export type CRTChannelType = typeof crtChannels[number]["type"];
 
 export const vintageUnderHoodSpecs = [
   { label: "RENDER", value: "STATIC SSG", bg: "#f00", fg: "#fff" },

@@ -5,7 +5,9 @@ import { useLocale, useTranslations } from "next-intl";
 import { formatPriceFrom } from "@/lib/pricing";
 import {
   vintageWorksHome,
+  vintagePopups,
 } from "@/content/home-vintage";
+import { PopupWindow } from "./PopupWindow";
 import { servicePackages } from "@/content/services";
 import { SignalIntro } from "./SignalIntro";
 import { HeroSection } from "./HeroSection";
@@ -47,6 +49,19 @@ export function VintageHome() {
           introDone ? "opacity-100" : "opacity-0"
         }`}
       >
+        <PopupWindow
+          title={vintagePopups[0].title}
+          text={vintagePopups[0].text}
+          position="bottom-right"
+          delay={2000}
+        />
+        <PopupWindow
+          title={vintagePopups[1].title}
+          text={vintagePopups[1].text}
+          position="bottom-left"
+          delay={3500}
+        />
+
         <HeroSection />
 
         <section

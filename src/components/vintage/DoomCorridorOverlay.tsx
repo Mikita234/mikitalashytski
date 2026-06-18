@@ -15,12 +15,12 @@ const MARS_FIRE = "255, 170, 40";
 const MARS_GLOW = "220, 60, 20";
 const MARS_BLOOD = "170, 34, 34";
 
-export function DoomCorridorOverlay() {
+export function DoomCorridorOverlay({ active = true }: { active?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reduced = useReducedMotion();
 
   useEffect(() => {
-    if (reduced) return;
+    if (reduced || !active) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -223,9 +223,9 @@ export function DoomCorridorOverlay() {
       cancelAnimationFrame(raf);
       ro.disconnect();
     };
-  }, [reduced]);
+  }, [reduced, active]);
 
-  if (reduced) return null;
+  if (reduced || !active) return null;
 
   return (
     <canvas
