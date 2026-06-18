@@ -6,7 +6,6 @@ import { GlitchText } from "./GlitchText";
 import { VHSButton } from "./VHSButton";
 import { CRTScreen } from "./CRTScreen";
 import { MarqueeTicker } from "./MarqueeTicker";
-import { DoomHudBar } from "./DoomHudBar";
 import { DoomCornerFrame } from "./DoomCornerFrame";
 
 export function HeroSection() {
@@ -35,12 +34,6 @@ export function HeroSection() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 sm:pb-14 sm:pt-14">
-        <div className="mb-5 flex flex-wrap gap-3">
-          <DoomHudBar label="HP" value="100%" fill={100} className="max-w-[140px]" />
-          <DoomHudBar label="AMMO" value="∞" fill={85} variant="ammo" className="max-w-[140px]" />
-          <DoomHudBar label="STATUS" value="READY" fill={100} className="max-w-[160px]" />
-        </div>
-
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
           <DoomCornerFrame className="flex-1 lg:max-w-xl">
             <div className="p-2 sm:p-3">

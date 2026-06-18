@@ -897,8 +897,7 @@ button:focus-visible {
 }
 
 .doom-corridor-overlay {
-  opacity: 0.88;
-  mix-blend-mode: lighten;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {

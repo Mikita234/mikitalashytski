@@ -230,7 +230,7 @@ export function DoomCorridorOverlay() {
   return (
     <canvas
       ref={canvasRef}
-      className="doom-corridor-overlay pointer-events-none absolute inset-0 z-[3]"
+      className="doom-corridor-overlay pointer-events-none absolute inset-0 z-[2]"
       aria-hidden
     />
   );

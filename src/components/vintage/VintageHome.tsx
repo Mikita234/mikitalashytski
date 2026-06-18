@@ -5,7 +5,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { formatPriceFrom } from "@/lib/pricing";
 import {
   vintageWorksHome,
-  vintagePopups,
 } from "@/content/home-vintage";
 import { servicePackages } from "@/content/services";
 import { SignalIntro } from "./SignalIntro";
@@ -15,7 +14,6 @@ import { PricingSection } from "./PricingSection";
 import { VintageProjectCard } from "./VintageProjectCard";
 import { ProcessTimeline } from "./ProcessTimeline";
 import { ContactCTA } from "./ContactCTA";
-import { PopupWindow } from "./PopupWindow";
 import { TeletextPanel } from "./TeletextPanel";
 import { UnderTheHoodSection } from "./UnderTheHoodSection";
 import { TrustFactsSection } from "./TrustFactsSection";
@@ -49,19 +47,6 @@ export function VintageHome() {
           introDone ? "opacity-100" : "opacity-0"
         }`}
       >
-        <PopupWindow
-          title={vintagePopups[0].title}
-          text={vintagePopups[0].text}
-          position="bottom-right"
-          delay={2000}
-        />
-        <PopupWindow
-          title={vintagePopups[1].title}
-          text="old internet mode enabled"
-          position="bottom-left"
-          delay={3500}
-        />
-
         <HeroSection />
 
         <section
