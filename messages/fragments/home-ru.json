@@ -22,7 +22,7 @@
     "crtLabel": "МОНИТОР КЕЙСА",
     "deckLabel": "CASE DECK VHS-2001",
     "archiveLabel": "АРХИВ КАССЕТ",
-    "insertTape": "ВСТАВЬТЕ КАССЕТУ",
+    "selectTapeIdle": "ВЫБЕРИТЕ КАССЕТУ",
     "selectTape": "Выберите кассету кейса ниже",
     "pressPlay": "КАССЕТА ЗАГРУЖЕНА — PLAY",
     "loadingCase": "ЗАГРУЗКА КЕЙСА...",

@@ -6,17 +6,22 @@ import { GlitchText } from "./GlitchText";
 import { VHSButton } from "./VHSButton";
 import dynamic from "next/dynamic";
 
-const VhsWorkstation = dynamic(
+const HeroWorkstation = dynamic(
   () =>
-    import("@/components/animations/VhsWorkstation").then((m) => ({
-      default: m.VhsWorkstation,
+    import("@/components/animations/HeroWorkstation").then((m) => ({
+      default: m.HeroWorkstation,
     })),
   {
+    ssr: false,
     loading: () => (
       <div
-        className="mx-auto aspect-[4/3] w-full max-w-md animate-pulse rounded-2xl bg-[#1a1a1e]"
+        className="hero-workstation-placeholder mx-auto w-full max-w-md space-y-4"
         aria-hidden
-      />
+      >
+        <div className="aspect-[4/3] animate-pulse rounded-2xl bg-[#1a1a1e]" />
+        <div className="h-16 animate-pulse rounded bg-[#111]" />
+        <div className="h-24 animate-pulse rounded bg-[#151518]" />
+      </div>
     ),
   },
 );
@@ -37,16 +42,6 @@ export function HeroSection() {
         className="pointer-events-none absolute -right-10 top-20 h-48 w-48 rounded-full bg-[var(--doom-red)] opacity-15 blur-[80px]"
         aria-hidden
       />
-
-      <div className="vhs-tape-deco absolute right-4 top-8 hidden lg:block" aria-hidden>
-        <div className="w-24 border-2 border-[var(--vhs-dirt)] bg-[#1a1a1e] p-2">
-          <div className="h-8 border border-white/10 bg-[#111]" />
-          <div className="mt-1 flex justify-between px-1">
-            <span className="font-mono text-[6px] text-[var(--vhs-red)]">● REC</span>
-            <span className="font-mono text-[6px] text-[var(--vhs-muted)]">SP</span>
-          </div>
-        </div>
-      </div>
 
       <div className="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 sm:pb-14 sm:pt-14">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
@@ -110,7 +105,7 @@ export function HeroSection() {
           </DoomCornerFrame>
 
           <div className="flex-1 lg:flex lg:justify-end">
-            <VhsWorkstation />
+            <HeroWorkstation />
           </div>
         </div>
       </div>

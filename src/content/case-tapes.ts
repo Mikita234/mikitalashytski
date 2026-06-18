@@ -39,11 +39,6 @@ export interface CaseTape {
   flowNodes: FlowNode[];
   flowEdges: FlowEdge[];
   terminalLines: string[];
-  windowsPanels: {
-    stack: string[];
-    output: string[];
-    system: string[];
-  };
 }
 
 const popular = getProject("popular")!;
@@ -58,7 +53,7 @@ export const caseTapes: CaseTape[] = [
     label: "POPULAR POET",
     shortLabel: "POET",
     type: "TICKETS / EVENTS / AI BOT",
-    input: "Event posts · Telegram · ticket orders · 3 langs",
+    input: "Event posts · Telegram · ticket orders · 3 languages",
     system: "Next.js · Supabase · Gemini bot · check-in · Resend",
     output: "Live ticketing · AI-assisted sales · weekly events",
     status: "LIVE",
@@ -82,18 +77,13 @@ export const caseTapes: CaseTape[] = [
       { from: "e", to: "f" },
     ],
     terminalLines: [
-      "> CASE: popular",
-      "> loading event pipeline...",
-      "> bot: Gemini connected",
-      "> tickets: own stack live",
-      "> check-in: armed",
+      "> case: Popular Poet",
+      "> events pipeline online",
+      "> Gemini bot connected",
+      "> own ticket stack live",
+      "> check-in ready",
       "> status: LIVE",
     ],
-    windowsPanels: {
-      stack: ["Next.js", "Supabase", "Gemini", "Resend", "Tailwind"],
-      output: ["2 sites live", "4 events/wk", "3 langs", "AI sales: 2 wks"],
-      system: ["Event → parse → publish", "Order → email → check-in"],
-    },
   },
   {
     slug: "kayer-pl",
@@ -102,7 +92,7 @@ export const caseTapes: CaseTape[] = [
     type: "E-COMMERCE / SHOPIFY / OPS",
     input: "Supplier feeds · legacy WooCommerce · product cards",
     system: "Shopify · BaseLinker · Python · OpenAI · carriers",
-    output: "PL storefront · automated catalog · −70% manual ops",
+    output: "PL storefront · automated catalog · −70% manual work",
     status: "LIVE",
     accent: "#8b5cf6",
     stack: kayerPl.stack.slice(0, 6),
@@ -124,18 +114,13 @@ export const caseTapes: CaseTape[] = [
       { from: "c", to: "f" },
     ],
     terminalLines: [
-      "> CASE: kayer-pl",
-      "> sync BaseLinker...",
-      "> Shopify theme: live",
-      "> OpenAI cards: batch ok",
-      "> carriers: InPost DHL DPD",
+      "> case: KAYER.PL",
+      "> catalog sync running",
+      "> Shopify theme live",
+      "> AI product cards batch ok",
+      "> carriers: InPost · DHL · DPD",
       "> status: LIVE",
     ],
-    windowsPanels: {
-      stack: ["Shopify", "BaseLinker", "Python", "OpenAI", "Liquid"],
-      output: ["300+ SKUs", "5+ integrations", "PL + EN", "Schema: Product"],
-      system: ["Feed → normalize → publish", "Order → carrier → notify"],
-    },
   },
   {
     slug: "kayer-ua",
@@ -166,18 +151,13 @@ export const caseTapes: CaseTape[] = [
       { from: "e", to: "f" },
     ],
     terminalLines: [
-      "> CASE: kayer-ua",
-      "> market: UA",
-      "> Flu.io bridge: ok",
-      "> Nova Poshta: linked",
-      "> notify: live",
+      "> case: KAYER.UA",
+      "> market: Ukraine",
+      "> Flu.io bridge ok",
+      "> Nova Poshta linked",
+      "> stock alerts live",
       "> status: LIVE",
     ],
-    windowsPanels: {
-      stack: ["Shopify", "BaseLinker", "Flu.io", "Dilovod", "i18n UA"],
-      output: ["4 integrations", "stock alerts", "partners active"],
-      system: ["SKU → sync → storefront", "Order → NP → SMS"],
-    },
   },
   {
     slug: "mnsk7-tools",
@@ -208,18 +188,13 @@ export const caseTapes: CaseTape[] = [
       { from: "d", to: "f" },
     ],
     terminalLines: [
-      "> CASE: mnsk7-tools",
-      "> Allegro API: connected",
-      "> EAN scan: 100%",
-      "> orders: 3500+",
-      "> reviews: 383",
+      "> case: MNSK7-Tools",
+      "> Allegro API connected",
+      "> EAN coverage 100%",
+      "> 3500+ orders processed",
+      "> 383 reviews synced",
       "> status: LIVE",
     ],
-    windowsPanels: {
-      stack: ["Next.js", "PostgreSQL", "Allegro API", "Tailwind", "Vercel"],
-      output: ["425 SKUs", "383 reviews", "Allegro + site"],
-      system: ["Source → EAN → list", "Order → fulfill → rate"],
-    },
   },
   {
     slug: "astrologichnaya",
@@ -250,18 +225,13 @@ export const caseTapes: CaseTape[] = [
       { from: "c", to: "f" },
     ],
     terminalLines: [
-      "> CASE: astrologichnaya",
-      "> brand: compiling...",
-      "> palette: custom",
-      "> web: WIP",
-      "> launch: soon",
-      "> contact: " + site.telegramHandle,
+      "> case: Astrologichnaya",
+      "> brand kit compiling",
+      "> custom palette locked",
+      "> website in progress",
+      "> launch soon",
+      `> contact: ${site.telegramHandle}`,
     ],
-    windowsPanels: {
-      stack: ["Next.js", "Branding", "Tailwind", "Visual design"],
-      output: ["Brand: full", "Web: WIP", "Style: custom"],
-      system: ["Brief → identity → pages", "Design → build → launch"],
-    },
   },
 ];
 

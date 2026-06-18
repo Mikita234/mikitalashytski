@@ -22,7 +22,7 @@
     "crtLabel": "CASE MONITOR",
     "deckLabel": "CASE DECK VHS-2001",
     "archiveLabel": "CASE TAPE ARCHIVE",
-    "insertTape": "INSERT TAPE",
+    "selectTapeIdle": "SELECT A TAPE",
     "selectTape": "Select a case tape below",
     "pressPlay": "TAPE LOADED — PRESS PLAY",
     "loadingCase": "LOADING CASE...",
