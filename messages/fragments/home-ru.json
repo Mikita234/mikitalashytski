@@ -23,7 +23,61 @@
     "channel": "КАН.",
     "chUp": "КАН+",
     "chDown": "КАН−",
-    "mute": "БЕЗ ЗВУКА"
+    "mute": "БЕЗ ЗВУКА",
+    "previewLoading": "загрузка…",
+    "previewUnavailable": "превью недоступно",
+    "commercials": {
+      "priceFrom": "ОТ {price}",
+      "priceOnly": "ВСЕГО {price}",
+      "badges": {
+        "freeConsult": "БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ"
+      },
+      "landing": {
+        "headline": "НУЖЕН САЙТ ДЛЯ БИЗНЕСА?",
+        "subline": "Профессиональные лендинги — онлайн за дни, не месяцы.",
+        "cta": "ЗВОНИТЕ"
+      },
+      "ecommerce": {
+        "headline": "УСТАЛИ ОТ РУЧНОГО E-COMMERCE?",
+        "subline": "Shopify · BaseLinker · платежи — одна связанная система.",
+        "cta": "ЗАКАЗАТЬ BUILD"
+      },
+      "bots": {
+        "headline": "TELEGRAM-БОТЫ, ПОКА ВЫ СПИТЕ",
+        "subline": "Заказы, поддержка, уведомления — автоматизация 24/7.",
+        "cta": "ПОЛУЧИТЬ БОТА"
+      },
+      "multilingual": {
+        "headline": "ВАШ МАГАЗИН ГОВОРИТ НА 3 ЯЗЫКАХ",
+        "subline": "PL · UA · EN — контент, SEO и checkout на одном сайте.",
+        "cta": "НАЧАТЬ"
+      },
+      "audit": {
+        "headline": "СПАСАТЕЛЬНЫЙ АУДИТ САЙТА",
+        "subline": "Сломанный checkout? Медленные страницы? Найду, что не так.",
+        "cta": "ЗАКАЗАТЬ АУДИТ"
+      },
+      "kayer": {
+        "headline": "КЕЙС: МИГРАЦИЯ KAYER",
+        "subline": "Полная перестройка магазина — Shopify, Allegro, новый сайт бренда.",
+        "cta": "СМОТРЕТЬ КЕЙС"
+      },
+      "popular": {
+        "headline": "КЕЙС: POPULAR POET TICKETS",
+        "subline": "Билеты онлайн · AI-бот · 3 языка · еженедельные ивенты.",
+        "cta": "СМОТРЕТЬ ПРОЕКТ"
+      },
+      "mnsk7": {
+        "headline": "КЕЙС: MNSK7-TOOLS",
+        "subline": "Промышленный каталог · sync Allegro · быстрый B2B checkout.",
+        "cta": "СМОТРЕТЬ ПРОЕКТ"
+      },
+      "telegram-cta": {
+        "headline": "ЗВОНИТЕ СЕЙЧАС — НЕ ЖДИТЕ!",
+        "subline": "Telegram {telegram} · Быстрый ответ · Реальные build'ы.",
+        "cta": "НАПИСАТЬ"
+      }
+    }
   },
   "workstation": {
     "workstationLabel": "Архив кейсов на VHS",

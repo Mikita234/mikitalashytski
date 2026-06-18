@@ -41,6 +41,11 @@ export function formatUahApprox(eur: number): string {
   return `~${formatNumber(uah)} ₴`;
 }
 
+/** Locale-aware display price (same as formatPriceFrom) */
+export function getLocalizedPrice(pln: number, locale: string): string {
+  return formatPriceFrom(pln, locale);
+}
+
 /** Single "from" price for packages and service headers */
 export function formatPriceFrom(pln: number, locale: string): string {
   if (locale === "pl") return formatPln(pln);

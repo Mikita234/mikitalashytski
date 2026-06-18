@@ -23,7 +23,61 @@
     "channel": "KANAŁ",
     "chUp": "KAN+",
     "chDown": "KAN−",
-    "mute": "WYCISZ"
+    "mute": "WYCISZ",
+    "previewLoading": "ładowanie…",
+    "previewUnavailable": "brak podglądu",
+    "commercials": {
+      "priceFrom": "OD {price}",
+      "priceOnly": "TYLKO {price}",
+      "badges": {
+        "freeConsult": "BEZPŁATNA KONSULTACJA"
+      },
+      "landing": {
+        "headline": "POTRZEBUJESZ STRONY DLA BIZNESU?",
+        "subline": "Profesjonalne landingi — online w dni, nie miesiące.",
+        "cta": "ZADZWOŃ"
+      },
+      "ecommerce": {
+        "headline": "DOŚĆ RĘCZNEGO E-COMMERCE?",
+        "subline": "Shopify · BaseLinker · płatności — jeden połączony system.",
+        "cta": "ZAMÓW BUILD"
+      },
+      "bots": {
+        "headline": "BOTY TELEGRAM, KTÓRE PRACUJĄ GDY ŚPISZ",
+        "subline": "Zamówienia, support, powiadomienia — automatyzacja 24/7.",
+        "cta": "WEŹ BOTA"
+      },
+      "multilingual": {
+        "headline": "TWÓJ SKLEP MÓWI 3 JĘZYKAMI",
+        "subline": "PL · UA · EN — treści, SEO i checkout w jednym serwisie.",
+        "cta": "START TERAZ"
+      },
+      "audit": {
+        "headline": "AUDYT RATUNKOWY STRONY",
+        "subline": "Zepsuty checkout? Wolne strony? Znajdę co nie gra.",
+        "cta": "ZAMÓW AUDYT"
+      },
+      "kayer": {
+        "headline": "CASE: MIGRACJA KAYER",
+        "subline": "Pełna przebudowa sklepu — Shopify, Allegro, nowa strona marki.",
+        "cta": "ZOBACZ CASE"
+      },
+      "popular": {
+        "headline": "CASE: POPULAR POET TICKETS",
+        "subline": "Bilety online · bot AI · 3 języki · cotygodniowe eventy.",
+        "cta": "ZOBACZ PROJEKT"
+      },
+      "mnsk7": {
+        "headline": "CASE: MNSK7-TOOLS",
+        "subline": "Katalog przemysłowy · sync Allegro · szybki checkout B2B.",
+        "cta": "ZOBACZ PROJEKT"
+      },
+      "telegram-cta": {
+        "headline": "DZWOŃ TERAZ — NIE CZEKAJ!",
+        "subline": "Telegram {telegram} · Szybka odpowiedź · Prawdziwe buildy.",
+        "cta": "NAPISZ TERAZ"
+      }
+    }
   },
   "workstation": {
     "workstationLabel": "Archiwum kaset z case'ami",

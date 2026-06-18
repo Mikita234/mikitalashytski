@@ -23,7 +23,61 @@
     "channel": "CH",
     "chUp": "CH+",
     "chDown": "CH−",
-    "mute": "MUTE"
+    "mute": "MUTE",
+    "previewLoading": "loading…",
+    "previewUnavailable": "preview unavailable",
+    "commercials": {
+      "priceFrom": "FROM {price}",
+      "priceOnly": "ONLY {price}",
+      "badges": {
+        "freeConsult": "FREE CONSULT"
+      },
+      "landing": {
+        "headline": "NEED A WEBSITE FOR YOUR BUSINESS?",
+        "subline": "Professional landing pages — live in days, not months.",
+        "cta": "CALL NOW"
+      },
+      "ecommerce": {
+        "headline": "TIRED OF MANUAL E-COMMERCE?",
+        "subline": "Shopify · BaseLinker · payments — one connected system.",
+        "cta": "ORDER BUILD"
+      },
+      "bots": {
+        "headline": "TELEGRAM BOTS THAT WORK WHILE YOU SLEEP",
+        "subline": "Orders, support, notifications — 24/7 automation.",
+        "cta": "GET YOUR BOT"
+      },
+      "multilingual": {
+        "headline": "YOUR SHOP SPEAKS 3 LANGUAGES",
+        "subline": "PL · UA · EN content, SEO and checkout — one site.",
+        "cta": "START NOW"
+      },
+      "audit": {
+        "headline": "WEBSITE RESCUE AUDIT",
+        "subline": "Broken checkout? Slow pages? I'll find what's wrong.",
+        "cta": "BOOK AUDIT"
+      },
+      "kayer": {
+        "headline": "CASE SPOT: KAYER MIGRATION",
+        "subline": "Full store rebuild — Shopify, Allegro sync, new brand site.",
+        "cta": "SEE CASE"
+      },
+      "popular": {
+        "headline": "CASE SPOT: POPULAR POET TICKETS",
+        "subline": "Live ticketing · AI bot · 3 languages · weekly events.",
+        "cta": "VIEW PROJECT"
+      },
+      "mnsk7": {
+        "headline": "CASE SPOT: MNSK7-TOOLS",
+        "subline": "Industrial catalog · Allegro sync · fast B2B checkout.",
+        "cta": "VIEW PROJECT"
+      },
+      "telegram-cta": {
+        "headline": "CALL NOW — DON'T WAIT!",
+        "subline": "Telegram {telegram} · Fast reply · Real builds.",
+        "cta": "MESSAGE NOW"
+      }
+    }
   },
   "workstation": {
     "workstationLabel": "Case tape archive workstation",

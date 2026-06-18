@@ -1,16 +1,58 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import { retroCommercials, type RetroCommercial } from "@/content/retro-commercials";
+import {
+  retroCommercials,
+  type RetroCommercial,
+} from "@/content/retro-commercials";
+import { site } from "@/content/site";
 import { screenshotUrl } from "@/content/project-visuals";
 import { ScanlineOverlay } from "@/components/vintage/ScanlineOverlay";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { trackEvent } from "@/lib/analytics";
+import { getLocalizedPrice } from "@/lib/pricing";
 import { useTvChannel } from "./tv-channel-context";
+
+type ResolvedAd = {
+  headline: string;
+  subline: string;
+  cta: string;
+  price?: string;
+};
+
+function useResolvedAd(ad: RetroCommercial): ResolvedAd {
+  const locale = useLocale();
+  const t = useTranslations("home.tv.commercials");
+
+  return useMemo(() => {
+    const sublineValues =
+      ad.id === "telegram-cta" ? { telegram: site.telegramHandle } : undefined;
+
+    let price: string | undefined;
+    if (ad.priceFromPln) {
+      price = t("priceFrom", {
+        price: getLocalizedPrice(ad.priceFromPln, locale),
+      });
+    } else if (ad.priceOnlyPln) {
+      price = t("priceOnly", {
+        price: getLocalizedPrice(ad.priceOnlyPln, locale),
+      });
+    } else if (ad.priceBadge) {
+      price = t(`badges.${ad.priceBadge}`);
+    }
+
+    return {
+      headline: t(`${ad.id}.headline`),
+      subline: t(`${ad.id}.subline`, sublineValues),
+      cta: t(`${ad.id}.cta`),
+      price,
+    };
+  }, [ad, locale, t]);
+}
 
 function RetroAdSitePreview({
   ad,
@@ -19,6 +61,7 @@ function RetroAdSitePreview({
   ad: RetroCommercial;
   reduced: boolean;
 }) {
+  const t = useTranslations("home.tv");
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const label = ad.sitePreviewLabel ?? ad.sitePreviewUrl ?? "";
@@ -44,7 +87,7 @@ function RetroAdSitePreview({
         <div className="retro-ad__preview-placeholder">
           <span className="retro-ad__preview-domain">{label}</span>
           <span className="retro-ad__preview-status">
-            {failed ? "preview unavailable" : "loading…"}
+            {failed ? t("previewUnavailable") : t("previewLoading")}
           </span>
         </div>
       )}
@@ -83,31 +126,38 @@ function RetroAdSitePreview({
 
 function RetroAdSlide({
   ad,
+  copy,
   reduced,
   glitch,
 }: {
   ad: RetroCommercial;
+  copy: ResolvedAd;
   reduced: boolean;
   glitch: boolean;
 }) {
   const hasPreview = Boolean(ad.sitePreviewUrl);
+  const longCopy = copy.headline.length > 28 || copy.subline.length > 55;
 
   return (
     <>
       <div className={`retro-ad__layout ${hasPreview ? "retro-ad__layout--split" : ""}`}>
         <div className="retro-ad__copy">
-          {ad.price && (
+          {copy.price && (
             <p className="retro-ad__price" aria-hidden>
-              {ad.price}
+              {copy.price}
             </p>
           )}
 
-          <h3 className={`retro-ad__headline ${reduced ? "" : "retro-ad__headline--animate"}`}>
-            {ad.headline}
+          <h3
+            className={`retro-ad__headline ${reduced ? "" : "retro-ad__headline--animate"}${longCopy ? " retro-ad__headline--compact" : ""}`}
+          >
+            {copy.headline}
           </h3>
 
-          <p className={`retro-ad__subline ${reduced ? "" : "retro-ad__subline--animate"}`}>
-            {ad.subline}
+          <p
+            className={`retro-ad__subline ${reduced ? "" : "retro-ad__subline--animate"}${longCopy ? " retro-ad__subline--compact" : ""}`}
+          >
+            {copy.subline}
           </p>
 
           <Link
@@ -117,7 +167,7 @@ function RetroAdSlide({
               trackEvent("CTA Click", { location: "hero-tv", type: ad.id })
             }
           >
-            ☎ {ad.cta}
+            ☎ {copy.cta}
           </Link>
         </div>
 
@@ -148,6 +198,7 @@ export function PhilipsCrtTv() {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const ad = retroCommercials[index];
+  const copy = useResolvedAd(ad);
   const channel = String(index + 1).padStart(2, "0");
 
   const goTo = useCallback(
@@ -180,6 +231,8 @@ export function PhilipsCrtTv() {
       aria-label={t("label")}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onTouchStart={() => setPaused(true)}
+      onTouchEnd={() => setPaused(false)}
     >
       <div className="philips-tv__cabinet">
         <div className="philips-tv__bezel-highlight" aria-hidden />
@@ -204,7 +257,12 @@ export function PhilipsCrtTv() {
                     exit={reduced ? undefined : { opacity: 0, filter: "brightness(1.4)" }}
                     transition={{ duration: reduced ? 0 : 0.45 }}
                   >
-                    <RetroAdSlide ad={ad} reduced={reduced} glitch={glitch} />
+                    <RetroAdSlide
+                      ad={ad}
+                      copy={copy}
+                      reduced={reduced}
+                      glitch={glitch}
+                    />
                   </motion.div>
                 </AnimatePresence>
 
