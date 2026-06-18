@@ -102,7 +102,7 @@ export function HeroSection() {
             </div>
           </DoomCornerFrame>
 
-          <div className="flex-1 lg:flex lg:justify-end">
+          <div className="relative flex-1 lg:flex lg:justify-end">
             <HeroWorkstation />
           </div>
         </div>

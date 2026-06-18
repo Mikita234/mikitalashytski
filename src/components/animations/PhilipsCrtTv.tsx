@@ -10,6 +10,7 @@ import { screenshotUrl } from "@/content/project-visuals";
 import { ScanlineOverlay } from "@/components/vintage/ScanlineOverlay";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { trackEvent } from "@/lib/analytics";
+import { useTvChannel } from "./tv-channel-context";
 
 function RetroAdSitePreview({
   ad,
@@ -141,7 +142,7 @@ function RetroAdSlide({
 export function PhilipsCrtTv() {
   const t = useTranslations("home.tv");
   const reduced = useReducedMotion();
-  const [index, setIndex] = useState(0);
+  const { index, setIndex } = useTvChannel();
   const [paused, setPaused] = useState(false);
   const [glitch, setGlitch] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -149,11 +150,14 @@ export function PhilipsCrtTv() {
   const ad = retroCommercials[index];
   const channel = String(index + 1).padStart(2, "0");
 
-  const goTo = useCallback((next: number) => {
-    setGlitch(true);
-    setIndex((next + retroCommercials.length) % retroCommercials.length);
-    window.setTimeout(() => setGlitch(false), 350);
-  }, []);
+  const goTo = useCallback(
+    (next: number) => {
+      setGlitch(true);
+      setIndex((next + retroCommercials.length) % retroCommercials.length);
+      window.setTimeout(() => setGlitch(false), 350);
+    },
+    [setIndex],
+  );
 
   const channelUp = useCallback(() => goTo(index + 1), [goTo, index]);
   const channelDown = useCallback(() => goTo(index - 1), [goTo, index]);
