@@ -9,7 +9,7 @@
   "hero": {
     "broadcast": "LIVE BROADCAST",
     "title": "Websites, automations and AI workflows for small business",
-    "subtitle": "Landing pages, e-commerce, bots, payment flows, BaseLinker integrations, multilingual content and internal tools — from idea to working deployment.",
+    "subtitle": "Landing pages, e-commerce, bots, payment flows, BaseLinker integrations, multilingual content and internal tools — from idea to a live website that works.",
     "body": "Digital builder for small business, e-commerce and event projects. I build working systems — not just pages.",
     "stack": ["Shopify", "WordPress", "BaseLinker", "Payments", "Bots", "AI content", "SEO"],
     "ctaOrder": "Order build",
@@ -30,7 +30,7 @@
         "title": "Fast landing",
         "desc": "One strong page to test an idea, service or campaign.",
         "forWho": ["Idea validation", "Local services", "Events", "Lead capture", "Ads landing"],
-        "includes": ["1 page", "Offer structure", "Contact form", "Basic SEO", "Mobile", "Deploy"]
+        "includes": ["1 page", "Offer structure", "Contact form", "Basic SEO", "Mobile", "Go live on your domain"]
       },
       "business": {
         "title": "Project website",
@@ -88,7 +88,7 @@
       { "label": "KAYER", "value": "2 markets · 3 langs" },
       { "label": "Popular", "value": "AI → sales in 2 wks" },
       { "label": "MNSK7", "value": "3500+ Allegro orders" },
-      { "label": "BaseLinker", "value": "ABC/XYZ + AI recs" }
+      { "label": "Alesya Takun", "value": "Payments · booking live" }
     ]
   },
   "works": {
@@ -130,7 +130,7 @@
       { "title": "You send the idea", "desc": "Raw text is fine: landing, store, bot, migration or audit." },
       { "title": "I structure it", "desc": "Pages, features, data, integrations, timeline and tech plan." },
       { "title": "We validate fast", "desc": "Prototype or audit draft — shape before a 40-slide deck." },
-      { "title": "Build and deploy", "desc": "Site, forms, payments, bots, SEO base, domain, instructions." },
+      { "title": "Build and go live", "desc": "Site, forms, payments, bots, SEO base, domain, instructions." },
       { "title": "Iterate for results", "desc": "Metrics, content, automation, SEO/GEO — what brings leads and sales." }
     ]
   },
@@ -181,6 +181,7 @@
       "flexible": "Flexible"
     },
     "success": "Request received. I'll check the task and reply with next steps.",
+    "error": "Could not send automatically — try Telegram or email below.",
     "submit": "ORDER BUILD",
     "submitting": "SENDING..."
   },

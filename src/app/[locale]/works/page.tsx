@@ -34,7 +34,7 @@ export default async function WorksPage({
         title={t("title")}
         subtitle={t("subtitle")}
       />
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <WorksGrid />
       </div>
     </>

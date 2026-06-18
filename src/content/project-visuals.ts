@@ -3,8 +3,7 @@ export type ProjectSlug =
   | "kayer-ua"
   | "mnsk7-tools"
   | "popular"
-  | "alesyatakun"
-  | "baselinker-reports";
+  | "alesyatakun";
 
 export const projectVisuals: Record<
   ProjectSlug,
@@ -50,13 +49,6 @@ export const projectVisuals: Record<
     accent: "#f43f5e",
     accentGlow: "rgba(244,63,94,0.35)",
     channel: "CH-04",
-  },
-  "baselinker-reports": {
-    domain: "internal",
-    url: "",
-    accent: "#f59e0b",
-    accentGlow: "rgba(245,158,11,0.35)",
-    channel: "CH-05",
   },
 };
 

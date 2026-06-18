@@ -78,7 +78,6 @@ const cardStyle: Record<string, "vhs" | "tv" | "teletext" | "ad" | "win98"> = {
   popular: "teletext",
   alesyatakun: "ad",
   "event-bot": "win98",
-  "baselinker-reports": "ad",
   "lead-scraping": "vhs",
   astrologichnaya: "teletext",
 };
@@ -196,10 +195,11 @@ export function VintageProjectContent({ project }: { project: Project }) {
               </div>
 
               <h1 className="deathcore-title mt-4 text-[clamp(2.5rem,10vw,4.5rem)] text-[var(--vhs-white)]">
+                <span className="sr-only">{project.name}</span>
                 <span className="deathcore-title__spikes" aria-hidden>
                   {project.name}
                 </span>
-                <GlitchText as="span" className="relative z-10 block">
+                <GlitchText decorative as="span" className="relative z-10 block">
                   {project.name}
                 </GlitchText>
               </h1>
@@ -229,9 +229,16 @@ export function VintageProjectContent({ project }: { project: Project }) {
                     key={m.key}
                     className="border border-white/10 bg-[#141418]/80 p-3"
                   >
-                    <p className="font-display text-xl font-bold text-[var(--vhs-white)]">
-                      {m.value}
-                    </p>
+                    <div className="flex items-baseline justify-between gap-1">
+                      <p className="font-display text-xl font-bold text-[var(--vhs-white)]">
+                        {m.value}
+                      </p>
+                      {m.isPlaceholder && (
+                        <span className="font-mono text-[7px] uppercase text-[var(--vhs-yellow)]">
+                          {common("estimated")}
+                        </span>
+                      )}
+                    </div>
                     <p className="mt-1 font-mono text-[8px] uppercase text-[var(--vhs-muted)]">
                       {t(`metrics.${m.key}`)}
                     </p>
@@ -348,8 +355,9 @@ export function VintageProjectContent({ project }: { project: Project }) {
         </div>
 
         <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-red)]">
-          ● CASE STUDY DATA
+          ● {pp("metrics")}
         </p>
+        <p className="mt-2 type-caption">{pp("metricsNote")}</p>
 
         <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {project.metrics.map((m) => (
@@ -359,6 +367,7 @@ export function VintageProjectContent({ project }: { project: Project }) {
               label={t(`metrics.${m.key}`)}
               source={common(`sources.${m.source}`)}
               isPlaceholder={m.isPlaceholder}
+              estimatedLabel={common("estimated")}
             />
           ))}
         </div>

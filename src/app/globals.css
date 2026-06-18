@@ -14,12 +14,15 @@
   --vhs-white: #f0f0f0;
   --vhs-muted: #8a8a94;
 
-  /* Doom accent layer (~20%) */
-  --doom-red: #8b0000;
-  --doom-panel: #1a0a0a;
-  --doom-health: #55ff55;
+  /* Doom accent layer (~20–30%, layered on VHS) */
+  --doom-red: #aa2222;
+  --doom-blood: #6b1010;
+  --doom-stone: #3a3028;
+  --doom-stone-light: #5a4a38;
+  --doom-panel: #1c0e0c;
+  --doom-health: #44dd44;
   --doom-ammo: #ffcc00;
-  --doom-border: #662222;
+  --doom-border: #884444;
 
   --background: var(--vhs-black);
   --foreground: var(--vhs-white);
@@ -693,14 +696,99 @@ button:focus-visible {
   opacity: 0.15;
 }
 
-/* Doom accent frames (~20%) */
+/* ─── Typography scale ─── */
+.type-tag {
+  font-family: var(--font-doom), var(--font-mono), monospace;
+  font-size: 0.625rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+}
+
+.type-h1 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.25rem, 7vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--vhs-white);
+}
+
+.type-h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.875rem, 4.5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--vhs-white);
+}
+
+.type-h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--vhs-white);
+}
+
+.type-subtitle {
+  font-family: var(--font-sans), ui-sans-serif, sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--vhs-beige);
+}
+
+.type-body {
+  font-family: var(--font-sans), ui-sans-serif, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--vhs-muted);
+}
+
+.type-caption {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  color: var(--vhs-muted);
+}
+
+.section-spacing {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 640px) {
+  .section-spacing {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Doom accent frames (~20–30%) */
+.doom-frame {
+  border: 1px solid var(--doom-border);
+  background: linear-gradient(
+    135deg,
+    rgba(107, 16, 16, 0.12) 0%,
+    transparent 50%,
+    rgba(58, 48, 40, 0.08) 100%
+  );
+}
+
 .doom-frame__corner {
   pointer-events: none;
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 14px;
+  height: 14px;
   border-color: var(--doom-red);
   border-style: solid;
+  box-shadow: 0 0 6px rgba(170, 34, 34, 0.35);
 }
 
 .doom-frame__corner--tl {
@@ -728,7 +816,74 @@ button:focus-visible {
 }
 
 .doom-hud {
-  box-shadow: inset 0 0 0 1px var(--doom-border);
+  box-shadow:
+    inset 0 0 0 1px var(--doom-border),
+    inset 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.doom-hud__bar {
+  flex: 1;
+  height: 6px;
+  background: var(--doom-blood);
+  border: 1px solid var(--doom-stone);
+}
+
+.doom-hud__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--doom-health), #88ff88);
+  box-shadow: 0 0 4px rgba(68, 221, 68, 0.5);
+}
+
+.doom-hud__bar-fill--ammo {
+  background: linear-gradient(90deg, var(--doom-ammo), #ffee88);
+  box-shadow: 0 0 4px rgba(255, 204, 0, 0.4);
+}
+
+.doom-stone-divider {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--doom-stone) 0,
+    var(--doom-stone) 8px,
+    var(--doom-stone-light) 8px,
+    var(--doom-stone-light) 10px,
+    var(--doom-blood) 10px,
+    var(--doom-blood) 12px
+  );
+  opacity: 0.85;
+}
+
+.doom-status-face {
+  display: grid;
+  grid-template-columns: repeat(5, 4px);
+  grid-template-rows: repeat(5, 4px);
+  gap: 1px;
+  padding: 3px;
+  background: var(--doom-stone);
+  border: 2px solid var(--doom-border);
+  image-rendering: pixelated;
+}
+
+.doom-status-face__pixel {
+  width: 4px;
+  height: 4px;
+  background: transparent;
+}
+
+.doom-status-face__pixel--on {
+  background: var(--doom-health);
+}
+
+.doom-status-face__pixel--blood {
+  background: var(--doom-red);
+}
+
+.doom-metric {
+  font-family: var(--font-doom), var(--font-mono), monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--doom-ammo);
 }
 
 /* Section ambient glow */

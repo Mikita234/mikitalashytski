@@ -57,8 +57,13 @@ export function OrderForm() {
         trackEvent("Order Success", { service });
         return;
       }
+
+      if (res.status === 503) {
+        setState("error");
+        return;
+      }
     } catch {
-      // fall through to mailto
+      // network error — fall through to mailto
     } finally {
       setSubmitting(false);
     }
@@ -174,7 +179,7 @@ export function OrderForm() {
 
             {state === "error" && (
               <p className="font-mono text-xs text-red-700">
-                Send failed — try Telegram or email.
+                {t("error")}
               </p>
             )}
 

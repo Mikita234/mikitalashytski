@@ -11,9 +11,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const base = (await import(`../../messages/${locale}.json`)).default;
   const home = (await import(`../../messages/fragments/home-${locale}.json`))
     .default;
+  const services = (
+    await import(`../../messages/fragments/services-${locale}.json`)
+  ).default;
 
   return {
     locale,
-    messages: { ...base, home },
+    messages: { ...base, home, services },
   };
 });

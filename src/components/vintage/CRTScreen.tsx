@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState, type FC } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
+import { site } from "@/content/site";
 import {
   crtStates,
   crtProjectChannels,
@@ -12,6 +13,7 @@ import { projectVisuals } from "@/content/project-visuals";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { ProjectMiniPreview } from "./ProjectMiniPreview";
 import { ScanlineOverlay } from "./ScanlineOverlay";
+import { DoomStatusFace } from "./DoomStatusFace";
 
 function TerminalScreen() {
   const t = useTranslations("home");
@@ -61,7 +63,7 @@ function OrderScreen() {
         ORDER NOW
       </p>
       <p className="mt-2 font-mono text-[10px] text-[var(--vhs-yellow)]">
-        ☎ CALL CH-404
+        ☎ {site.telegramHandle}
       </p>
       <p className="mt-1 font-mono text-[9px] text-white/60 line-through">
         9999 PLN
@@ -201,7 +203,10 @@ export function CRTScreen({ label }: { label: string }) {
       <div className="crt-tv-frame">
         <div className="crt-tv-frame__label">
           <span>{label}</span>
-          <span className="rec-blink text-[var(--vhs-red)]">● ON AIR</span>
+          <div className="flex items-center gap-2">
+            <DoomStatusFace />
+            <span className="rec-blink text-[var(--vhs-red)]">● ON AIR</span>
+          </div>
         </div>
 
         <div className="crt-tv-frame__bezel crt-flicker">

@@ -61,15 +61,6 @@ const vintageWorkEntries: VintageWorkEntry[] = [
     domain: "alesyatakun.by",
   },
   {
-    slug: "baselinker-reports",
-    category: "internal",
-    tags: ["Analytics", "AI", "BaseLinker", "Python"],
-    status: "LIVE",
-    href: "/projects/baselinker-reports",
-    style: "ad",
-    domain: "internal tool",
-  },
-  {
     slug: "event-bot",
     category: "bots",
     tags: ["Gemini", "Automation", "Bing ping", "Popular Poet"],
@@ -100,7 +91,7 @@ const vintageWorkEntries: VintageWorkEntry[] = [
 
 /** Featured on homepage — 4 flagships */
 export const vintageWorksHome = vintageWorkEntries.filter((w) =>
-  ["kayer-pl", "kayer-ua", "popular", "baselinker-reports"].includes(w.slug),
+  ["kayer-pl", "kayer-ua", "popular", "mnsk7-tools"].includes(w.slug),
 );
 
 export const vintageWorks = vintageWorkEntries;
@@ -109,7 +100,7 @@ export const crtProjectChannels = [
   { slug: "kayer-pl" as const, label: "KAYER PL", href: "/projects/kayer-pl" },
   { slug: "kayer-ua" as const, label: "KAYER UA", href: "/projects/kayer-ua" },
   { slug: "popular" as const, label: "POET", href: "/projects/popular" },
-  { slug: "baselinker-reports" as const, label: "BL REPORTS", href: "/projects/baselinker-reports" },
+  { slug: "mnsk7-tools" as const, label: "MNSK7", href: "/projects/mnsk7-tools" },
 ] as const;
 
 export const vintagePopups = [

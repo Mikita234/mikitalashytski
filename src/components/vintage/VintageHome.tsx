@@ -22,6 +22,7 @@ import { StackGrid } from "./StackGrid";
 import { ProofStrip } from "./ProofStrip";
 import { DVDLogoBouncer } from "./DVDLogoBouncer";
 import { VHSButton } from "./VHSButton";
+import { VintageSectionHeader } from "./VintagePage";
 import type { PackageId } from "@/content/selling";
 
 export function VintageHome() {
@@ -63,21 +64,15 @@ export function VintageHome() {
 
         <section
           id="packages"
-          className="scroll-mt-20 border-t border-white/10 py-14 sm:py-20"
+          className="scroll-mt-20 border-t border-[var(--doom-stone)]/40 section-spacing"
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-red)]">
-                  ● {t("packages.tag")}
-                </p>
-                <h2 className="mt-2 font-display text-3xl uppercase text-[var(--vhs-white)] sm:text-4xl">
-                  {t("packages.title")}
-                </h2>
-                <p className="mt-2 max-w-lg text-sm text-[var(--vhs-muted)]">
-                  {t("packages.subtitle")}
-                </p>
-              </div>
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+              <VintageSectionHeader
+                tag={t("packages.tag")}
+                title={t("packages.title")}
+                subtitle={t("packages.subtitle")}
+              />
               <TeletextPanel />
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -101,18 +96,15 @@ export function VintageHome() {
 
         <section
           id="works"
-          className="scroll-mt-20 border-t border-white/10 bg-[#0c0c0e] py-14 section-glow-terminal sm:py-20"
+          className="scroll-mt-20 border-t border-[var(--doom-stone)]/40 bg-[#0c0c0e] section-glow-terminal section-spacing"
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-terminal)]">
-              ● {t("works.tag")}
-            </p>
-            <h2 className="mt-2 font-display text-3xl uppercase text-[var(--vhs-white)] sm:text-4xl">
-              {t("works.title")}
-            </h2>
-            <p className="mt-2 max-w-lg text-sm text-[var(--vhs-muted)]">
-              {t("works.subtitle")}
-            </p>
+            <VintageSectionHeader
+              tag={t("works.tag")}
+              title={t("works.title")}
+              subtitle={t("works.subtitle")}
+              tagClassName="text-[var(--vhs-terminal)]"
+            />
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {vintageWorksHome.map((w) => (
                 <VintageProjectCard
@@ -141,15 +133,14 @@ export function VintageHome() {
 
         <section
           id="process"
-          className="scroll-mt-20 border-t border-white/10 py-14 sm:py-20"
+          className="scroll-mt-20 border-t border-[var(--doom-stone)]/40 section-spacing"
         >
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-beige)]">
-              ● {t("process.tag")}
-            </p>
-            <h2 className="mt-2 font-display text-3xl uppercase text-[var(--vhs-white)] sm:text-4xl">
-              {t("process.title")}
-            </h2>
+            <VintageSectionHeader
+              tag={t("process.tag")}
+              title={t("process.title")}
+              tagClassName="text-[var(--vhs-beige)]"
+            />
             <div className="mt-10">
               <ProcessTimeline steps={timelineSteps} />
             </div>

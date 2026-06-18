@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { vintageUnderHoodSpecs } from "@/content/home-vintage";
+import { VintageSectionHeader } from "./VintagePage";
 
 export function UnderTheHoodSection() {
   const t = useTranslations("home.underHood");
@@ -10,36 +11,29 @@ export function UnderTheHoodSection() {
   return (
     <section
       id="under-the-hood"
-      className="scroll-mt-20 border-t border-white/10 bg-[#08080a] py-14 sm:py-20"
+      className="scroll-mt-20 border-t border-[var(--doom-stone)]/40 bg-[#08080a] section-spacing"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
+        <div className="grid gap-10 lg:grid-cols-[1fr_340px]">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-terminal)]">
-              ● {t("tag")}
-            </p>
-            <h2 className="mt-2 font-display text-3xl uppercase text-[var(--vhs-white)] sm:text-4xl">
-              {t("title")}
-            </h2>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
-              {t("subtitle")}
-            </p>
+            <VintageSectionHeader
+              tag={t("tag")}
+              title={t("title")}
+              subtitle={t("subtitle")}
+              tagClassName="text-[var(--vhs-terminal)]"
+            />
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-2 grid gap-3 sm:grid-cols-2">
               {cards.map((card, i) => (
                 <article
                   key={card.title}
-                  className="tech-spec-card group border-2 border-[var(--vhs-dirt)] bg-[#0e0e12] p-4 transition-colors hover:border-[var(--vhs-terminal)]/50 sm:p-5"
+                  className="tech-spec-card group border-2 border-[var(--doom-stone)] bg-[#0e0e12] p-4 transition-colors hover:border-[var(--doom-red)]/50 sm:p-5"
                 >
-                  <span className="font-mono text-[9px] text-[var(--vhs-red)]">
+                  <span className="font-[family-name:var(--font-doom)] text-[8px] text-[var(--doom-red)]">
                     P{200 + i * 10}
                   </span>
-                  <h3 className="mt-2 font-display text-lg uppercase text-[var(--vhs-white)]">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-[var(--vhs-muted)] sm:text-sm">
-                    {card.text}
-                  </p>
+                  <h3 className="type-h3 mt-2">{card.title}</h3>
+                  <p className="type-body mt-2 text-sm">{card.text}</p>
                 </article>
               ))}
             </div>
@@ -66,7 +60,7 @@ export function UnderTheHoodSection() {
               <p>/llms.txt → PUBLIC</p>
               <p>/sitemap.xml → 4 LOCALES</p>
             </div>
-            <p className="mt-2 animate-pulse text-[#0f0]">█ SIGNAL LOCKED</p>
+            <p className="mt-2 text-[8px] text-[var(--vhs-muted)]">● ONLINE</p>
           </aside>
         </div>
       </div>

@@ -25,7 +25,9 @@
       "ops": "операційка",
       "schema": "структуровані дані",
       "analytics": "аналітика"
-    }
+    },
+    "estimated": "оцінка",
+    "confirmed": "підтверджено"
   },
   "theme": {
     "toggle": "Змінити тему",
@@ -130,7 +132,8 @@
     "relatedModule": "Пов’язаний модуль",
     "eventBotNote": "Gemini-бот для автопублікації афіш — модуль у тій самій інфраструктурі.",
     "eventBotLink": "Відкрити Event Bot",
-    "metrics": "Метрики"
+    "metrics": "Метрики",
+    "metricsNote": "Мітка джерела показує звідки цифра. Жовтий бейдж = оцінка, не перевірено."
   },
   "projects": {
     "mnsk7-tools": {
@@ -402,46 +405,6 @@
       },
       "cardTitle": "Popular Poet Event Bot",
       "cardDesc": "Фото + текст → Gemini → сторінки подій → ping Bing. ~4 шоу/тиж. автоматично."
-    },
-    "baselinker-reports": {
-      "category": "E-commerce аналітика · BaseLinker · AI",
-      "tagline": "Внутрішній інструмент: дані BaseLinker → ABC/XYZ, deadstock і AI-рекомендації закупівель.",
-      "summary": "Для e-commerce ops: ABC/XYZ класифікація, deadstock, AI-рекомендації, прогноз і Excel-експорт для рішень по закупівлях.",
-      "problem": "BaseLinker зберігає дані, але без аналітики з рекомендаціями та прогнозом.",
-      "whatIDid": "Python-дашборд: ABC/XYZ, deadstock, шар OpenAI, експорт XLSX.",
-      "result": "Робочий інструмент рішень по асортименту та закупівлях.",
-      "nextSteps": "Скрины дашборда, кейс с цифрами экономии, публичная демо-версия.",
-      "role": [
-        "Спроектировал модель отчётов ABC/XYZ.",
-        "Интегрировал BaseLinker API.",
-        "Добавил AI-слой рекомендаций."
-      ],
-      "ops": [
-        "Автоматический сбор данных продаж.",
-        "Классификация deadstock.",
-        "Экспорт XLSX для команды."
-      ],
-      "integrations": [
-        "BaseLinker API",
-        "OpenAI",
-        "Excel export",
-        "Pandas"
-      ],
-      "seo": [
-        "Внутренний инструмент — SEO не применимо."
-      ],
-      "ai": [
-        "AI-рекомендации по ассортименту и закупкам.",
-        "Прогноз на основе истории продаж."
-      ],
-      "metrics": {
-        "reports": "типы отчётов",
-        "ai": "рекомендации",
-        "export": "формат",
-        "forecast": "прогноз"
-      },
-      "cardTitle": "BaseLinker Reports Pro",
-      "cardDesc": "ABC/XYZ аналітика, deadstock, AI-рекомендації закупівель — експорт Excel."
     },
     "lead-scraping": {
       "category": "Лиды · Аудит · Outreach",

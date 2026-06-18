@@ -9,7 +9,7 @@
   "hero": {
     "broadcast": "TRANSMISJA NA ŻYWO",
     "title": "Strony, automatyzacje i workflow AI dla małego biznesu",
-    "subtitle": "Landingi, e-commerce, boty, płatności, integracje BaseLinker, treści wielojęzyczne i narzędzia wewnętrzne — od pomysłu do działającego wdrożenia.",
+    "subtitle": "Landingi, e-commerce, boty, płatności, integracje BaseLinker, treści wielojęzyczne i narzędzia wewnętrzne — od pomysłu do działającej strony online.",
     "body": "Digital builder dla małego biznesu, e-commerce i projektów eventowych. Buduję działające systemy — nie tylko strony.",
     "stack": ["Shopify", "WordPress", "BaseLinker", "Płatności", "Boty", "AI content", "SEO"],
     "ctaOrder": "Zamów build",
@@ -30,7 +30,7 @@
         "title": "Szybki landing",
         "desc": "Jedna mocna strona do testu pomysłu, usługi lub kampanii.",
         "forWho": ["Walidacja pomysłu", "Usługi lokalne", "Eventy", "Lead capture", "Landing pod reklamy"],
-        "includes": ["1 strona", "Struktura oferty", "Formularz", "Podstawowe SEO", "Mobile", "Deploy"]
+        "includes": ["1 strona", "Struktura oferty", "Formularz", "Podstawowe SEO", "Mobile", "Publikacja na Twojej domenie"]
       },
       "business": {
         "title": "Strona projektowa",
@@ -88,7 +88,7 @@
       { "label": "KAYER", "value": "2 rynki · 3 języki" },
       { "label": "Popular", "value": "AI → sprzedaż w 2 tyg." },
       { "label": "MNSK7", "value": "3500+ zamówień Allegro" },
-      { "label": "BaseLinker", "value": "ABC/XYZ + AI recs" }
+      { "label": "Alesya Takun", "value": "Płatności · rezerwacje" }
     ]
   },
   "works": {
@@ -130,7 +130,7 @@
       { "title": "Wysyłasz pomysł", "desc": "Surowy tekst wystarczy: landing, sklep, bot, migracja lub audyt." },
       { "title": "Strukturyzuję", "desc": "Strony, funkcje, dane, integracje, terminy i plan techniczny." },
       { "title": "Szybka walidacja", "desc": "Prototyp lub draft audytu — kształt przed 40 slajdami." },
-      { "title": "Build i deploy", "desc": "Strona, formularze, płatności, boty, baza SEO, domena, instrukcje." },
+      { "title": "Build i publikacja", "desc": "Strona, formularze, płatności, boty, baza SEO, domena, instrukcje." },
       { "title": "Iteracja pod wynik", "desc": "Metryki, treści, automatyzacja, SEO/GEO — co przynosi leady i sprzedaż." }
     ]
   },
@@ -181,6 +181,7 @@
       "flexible": "Elastycznie"
     },
     "success": "Zgłoszenie przyjęte. Sprawdzę zadanie i odpowiem z kolejnymi krokami.",
+    "error": "Nie udało się wysłać automatycznie — spróbuj Telegram lub e-mail.",
     "submit": "ZAMÓW BUILD",
     "submitting": "WYSYŁAM..."
   },

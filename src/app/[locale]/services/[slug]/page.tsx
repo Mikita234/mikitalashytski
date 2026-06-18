@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildAlternates } from "@/lib/seo";
-import { getService, serviceSlugs } from "@/content/services";
+import { getServiceMeta, serviceSlugs, type ServiceSlug } from "@/content/services";
 import { ServicePageContent } from "@/components/vintage/ServicePageContent";
 
 export function generateStaticParams() {
@@ -15,11 +15,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const service = getService(slug);
-  if (!service) return {};
+  const meta = getServiceMeta(slug);
+  if (!meta) return {};
+  const t = await getTranslations({ locale, namespace: `services.${slug}` });
   return {
-    title: service.title,
-    description: service.headline,
+    title: t("title"),
+    description: t("headline"),
     alternates: buildAlternates(locale, `/services/${slug}`),
   };
 }
@@ -31,7 +32,7 @@ export default async function ServicePage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const service = getService(slug);
-  if (!service) notFound();
-  return <ServicePageContent service={service} />;
+  const meta = getServiceMeta(slug);
+  if (!meta) notFound();
+  return <ServicePageContent slug={slug as ServiceSlug} />;
 }

@@ -51,30 +51,29 @@ function AboutContent() {
         subtitle={t("intro")}
       />
 
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
-        <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
           <div>
             <ProcessTimeline steps={timelineSteps} />
           </div>
           <TeletextPanel />
         </div>
 
-        <div className="mt-16">
-          <h2 className="font-display text-2xl uppercase text-[var(--vhs-white)] sm:text-3xl">
-            {t("valuesTitle")}
-          </h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-20">
+          <h2 className="type-h2">{t("valuesTitle")}</h2>
+          <div className="doom-stone-divider mt-5 max-w-xs" aria-hidden />
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {values.map((v) => (
               <VintageBlock key={v} title="✓ SIGNAL">
-                <p className="text-sm text-[var(--vhs-muted)] sm:text-base">{v}</p>
+                <p className="type-body">{v}</p>
               </VintageBlock>
             ))}
           </div>
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-16 text-center">
           <VHSButton href="/order" variant="primary">
-            {t("valuesTitle")} →
+            {tOrder("ctaOrder")} →
           </VHSButton>
         </div>
       </div>

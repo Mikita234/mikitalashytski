@@ -17,6 +17,8 @@
     "allProjects": "All projects",
     "backToProjects": "Back to projects",
     "placeholder": "placeholder — to be replaced with real data",
+    "estimated": "estimated",
+    "confirmed": "confirmed",
     "screenshotPlaceholder": "Screenshot coming — add file to public/cases/",
     "sources": {
       "gsc": "Google Search Console",
@@ -107,15 +109,15 @@
     }
   },
   "projectPage": {
-    "overview": "Обзор",
-    "role": "Моя роль / внутрянка",
-    "ops": "Операционный цикл",
-    "stack": "Стек",
-    "integrations": "Интеграции",
-    "seo": "Поисковая выдача",
-    "ai": "AI-выдача",
-    "schema": "Структурированные данные",
-    "schemaNote": "Внедрённые типы Schema.org с правом на rich results.",
+    "overview": "Overview",
+    "role": "My role / internals",
+    "ops": "Operations loop",
+    "stack": "Stack",
+    "integrations": "Integrations",
+    "seo": "Search visibility",
+    "ai": "AI visibility",
+    "schema": "Structured data",
+    "schemaNote": "Schema.org types implemented with rich-result eligibility.",
     "next": "Next project",
     "live": "Live",
     "problem": "What was wrong",
@@ -130,7 +132,8 @@
     "relatedModule": "Related module",
     "eventBotNote": "Gemini bot for automated event publishing — a module inside the same infrastructure.",
     "eventBotLink": "Open Event Bot",
-    "metrics": "Metrics"
+    "metrics": "Metrics",
+    "metricsNote": "Source tags show where each number comes from. Yellow badge = estimated, not verified."
   },
   "projects": {
     "mnsk7-tools": {
@@ -402,46 +405,6 @@
       },
       "cardTitle": "Popular Poet Event Bot",
       "cardDesc": "Photo + text → Gemini → live event pages → Bing ping. ~4 shows/week automated."
-    },
-    "baselinker-reports": {
-      "category": "E-commerce analytics · BaseLinker · AI",
-      "tagline": "Internal tool that turns BaseLinker sales data into ABC/XYZ reports, deadstock alerts and AI purchasing recommendations.",
-      "summary": "Built for e-commerce ops teams who need more than raw BaseLinker exports: automated ABC/XYZ classification, deadstock detection, AI recommendations, forecast and Excel export for buying decisions.",
-      "problem": "BaseLinker stores orders and inventory but does not give actionable analytics with recommendations and forecast.",
-      "whatIDid": "Built a Python dashboard with ABC/XYZ reports, deadstock analysis, OpenAI recommendation layer and XLSX export.",
-      "result": "Working decision tool for assortment and purchasing — used in live e-commerce ops.",
-      "nextSteps": "Скрины дашборда, кейс с цифрами экономии, публичная демо-версия.",
-      "role": [
-        "Спроектировал модель отчётов ABC/XYZ.",
-        "Интегрировал BaseLinker API.",
-        "Добавил AI-слой рекомендаций."
-      ],
-      "ops": [
-        "Автоматический сбор данных продаж.",
-        "Классификация deadstock.",
-        "Экспорт XLSX для команды."
-      ],
-      "integrations": [
-        "BaseLinker API",
-        "OpenAI",
-        "Excel export",
-        "Pandas"
-      ],
-      "seo": [
-        "Внутренний инструмент — SEO не применимо."
-      ],
-      "ai": [
-        "AI-рекомендации по ассортименту и закупкам.",
-        "Прогноз на основе истории продаж."
-      ],
-      "metrics": {
-        "reports": "типы отчётов",
-        "ai": "рекомендации",
-        "export": "формат",
-        "forecast": "прогноз"
-      },
-      "cardTitle": "BaseLinker Reports Pro",
-      "cardDesc": "ABC/XYZ sales analytics, deadstock alerts, AI purchasing recommendations — Excel export included."
     },
     "lead-scraping": {
       "category": "Лиды · Аудит · Outreach",

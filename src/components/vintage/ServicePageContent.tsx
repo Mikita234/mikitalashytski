@@ -1,28 +1,39 @@
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import type { servicePages } from "@/content/services";
+import type { ServiceSlug } from "@/content/services";
+import { getServiceMeta } from "@/content/services";
 import { JsonLd } from "@/components/json-ld";
 import { VintageBlock } from "./VintagePage";
 import { VHSButton } from "./VHSButton";
 
-type Service = (typeof servicePages)[number];
+type FaqItem = { q: string; a: string };
 
-export function ServicePageContent({ service }: { service: Service }) {
-  const faq = "faq" in service ? service.faq : [];
-  const faqLd = faq.length
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faq.map((item) => ({
-          "@type": "Question",
-          name: item.q,
-          acceptedAnswer: { "@type": "Answer", text: item.a },
-        })),
-      }
-    : null;
+export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
+  const meta = getServiceMeta(slug)!;
+  const t = await getTranslations(`services.${slug}`);
+  const tc = await getTranslations("services.common");
+  const tCase = await getTranslations(`projects.${meta.caseSlug}`);
+
+  const faq = t.raw("faq") as FaqItem[];
+  const forWho = t.raw("forWho") as string[];
+  const notForWho = t.raw("notForWho") as string[];
+  const processSteps = t.raw("processSteps") as string[];
+  const clientProvides = t.raw("clientProvides") as string[];
+  const deliverables = t.raw("deliverables") as string[];
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
 
   return (
     <>
-      {faqLd && <JsonLd data={faqLd} />}
+      <JsonLd data={faqLd} />
 
       <header className="border-b-2 border-[var(--vhs-dirt)] bg-[#0c0c0e] px-4 py-10 sm:px-6 sm:py-14">
         <div className="mx-auto max-w-5xl">
@@ -30,23 +41,17 @@ export function ServicePageContent({ service }: { service: Service }) {
             href="/#packages"
             className="font-mono text-[10px] uppercase tracking-widest text-[var(--vhs-muted)] hover:text-[var(--vhs-acid)]"
           >
-            ← All packages
+            {tc("backToPackages")}
           </Link>
-          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-terminal)]">
-            ● SERVICE CHANNEL
-          </p>
-          <h1 className="mt-4 font-display text-4xl uppercase leading-[0.95] text-[var(--vhs-white)] sm:text-5xl">
-            {service.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-[var(--vhs-beige)]">
-            {service.headline}
-          </p>
+          <p className="mt-6 type-tag text-[var(--vhs-terminal)]">● {t("title")}</p>
+          <h1 className="type-h1 mt-4">{t("title")}</h1>
+          <p className="type-subtitle mt-4 max-w-2xl">{t("headline")}</p>
           <div className="mt-6 flex flex-wrap gap-4 font-mono text-sm">
             <span className="border border-[var(--vhs-acid)] px-3 py-1 text-[var(--vhs-acid)]">
-              from {service.priceFrom}
+              {tc("from")} {meta.priceFrom}
             </span>
             <span className="border border-white/20 px-3 py-1 text-[var(--vhs-muted)]">
-              {service.timeline}
+              {meta.timeline}
             </span>
           </div>
         </div>
@@ -54,27 +59,30 @@ export function ServicePageContent({ service }: { service: Service }) {
 
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="grid gap-4 lg:grid-cols-2">
-          <VintageBlock title="Client problem">
-            <p className="text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
-              {service.problem}
-            </p>
+          <VintageBlock title={tc("problem")}>
+            <p className="type-body">{t("problem")}</p>
           </VintageBlock>
-          <VintageBlock title="What I do">
-            <p className="text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
-              {service.solution}
-            </p>
+          <VintageBlock title={tc("solution")}>
+            <p className="type-body">{t("solution")}</p>
           </VintageBlock>
         </div>
 
-        <div className="mt-4">
-          <VintageBlock title="What's included">
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          <VintageBlock title={tc("forWho")}>
             <ul className="space-y-2">
-              {service.includes.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-sm text-[var(--vhs-muted)] sm:text-base"
-                >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[var(--vhs-terminal)]" />
+              {forWho.map((item) => (
+                <li key={item} className="flex gap-3 type-body">
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-[var(--vhs-terminal)]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </VintageBlock>
+          <VintageBlock title={tc("notForWho")}>
+            <ul className="space-y-2">
+              {notForWho.map((item) => (
+                <li key={item} className="flex gap-3 type-body text-[var(--vhs-muted)]">
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-[var(--vhs-muted)]" />
                   {item}
                 </li>
               ))}
@@ -83,42 +91,83 @@ export function ServicePageContent({ service }: { service: Service }) {
         </div>
 
         <div className="mt-4">
-          <VintageBlock title="Portfolio examples">
-            <div className="flex flex-wrap gap-2">
-              {service.examples.map((ex) => (
-                <span
-                  key={ex}
-                  className="border border-white/15 px-2 py-1 font-mono text-[10px] text-[var(--vhs-muted)]"
-                >
-                  {ex}
-                </span>
+          <VintageBlock title={tc("exampleResult")}>
+            <p className="type-body">{t("exampleResult")}</p>
+          </VintageBlock>
+        </div>
+
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          <VintageBlock title={tc("process")}>
+            <ol className="space-y-3">
+              {processSteps.map((step, i) => (
+                <li key={step} className="flex gap-3 type-body">
+                  <span className="font-mono text-xs text-[var(--vhs-acid)]">{i + 1}.</span>
+                  {step}
+                </li>
               ))}
+            </ol>
+          </VintageBlock>
+          <VintageBlock title={tc("clientProvides")}>
+            <ul className="space-y-2">
+              {clientProvides.map((item) => (
+                <li key={item} className="flex gap-3 type-body">
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-[var(--vhs-acid)]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </VintageBlock>
+        </div>
+
+        <div className="mt-4">
+          <VintageBlock title={tc("deliverables")}>
+            <ul className="space-y-2">
+              {deliverables.map((item) => (
+                <li key={item} className="flex gap-3 type-body">
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-[var(--vhs-terminal)]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </VintageBlock>
+        </div>
+
+        <div className="mt-8 rounded border border-[var(--doom-stone)] bg-[var(--doom-panel)] p-6 text-center">
+          <p className="type-h3">{tc("ctaMid")}</p>
+          <div className="mt-4">
+            <VHSButton href={`/order?service=${slug === "automation" ? "automation" : slug}`} variant="primary">
+              {tc("ctaMidButton")} →
+            </VHSButton>
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <VintageBlock title={tc("miniCase")}>
+            <p className="type-body">{t("miniCase")}</p>
+            <div className="mt-4">
+              <VHSButton href={`/projects/${meta.caseSlug}`} variant="secondary">
+                {tc("viewCase")}: {tCase("cardTitle")} →
+              </VHSButton>
             </div>
           </VintageBlock>
         </div>
 
-        {faq.length > 0 && (
-          <div className="mt-4">
-            <VintageBlock title="FAQ">
-              <dl className="space-y-4">
-                {faq.map((item) => (
-                  <div key={item.q}>
-                    <dt className="font-display text-base uppercase text-[var(--vhs-white)]">
-                      {item.q}
-                    </dt>
-                    <dd className="mt-1 text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
-                      {item.a}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </VintageBlock>
-          </div>
-        )}
+        <div className="mt-4">
+          <VintageBlock title={tc("faq")}>
+            <dl className="space-y-4">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <dt className="type-h3">{item.q}</dt>
+                  <dd className="type-body mt-1">{item.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </VintageBlock>
+        </div>
 
         <div className="mt-10 text-center">
-          <VHSButton href="/order" variant="primary">
-            {service.cta} →
+          <VHSButton href={`/order?service=${slug === "creative" ? "business" : slug}`} variant="primary">
+            {t("ctaBottom")} →
           </VHSButton>
         </div>
       </div>

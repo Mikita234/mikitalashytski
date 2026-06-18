@@ -1,0 +1,419 @@
+{
+  "common": {
+    "backToPackages": "← Все пакеты",
+    "from": "от",
+    "forWho": "Подходит, если",
+    "notForWho": "Скорее не подходит, если",
+    "exampleResult": "Пример результата",
+    "process": "Как работаем",
+    "clientProvides": "Что вы присылаете",
+    "deliverables": "Что вы получаете",
+    "miniCase": "Похожий проект",
+    "viewCase": "Открыть кейс",
+    "faq": "Вопросы",
+    "ctaMid": "Готовы обсудить?",
+    "ctaMidButton": "Отправить бриф",
+    "problem": "Проблема",
+    "solution": "Что я делаю"
+  },
+  "landing": {
+    "title": "Fast landing pages",
+    "headline": "One strong page to test an idea, service or campaign",
+    "problem": "You need to check demand or launch a campaign quickly — without weeks of work or a generic template that does not convert.",
+    "solution": "One focused landing page: clear offer, trust signals, contact form and analytics. Live on your domain in days.",
+    "forWho": [
+      "You want to test a new service or product",
+      "You run ads and need a dedicated page",
+      "You need leads before building a full site",
+      "You have notes or a rough offer — not polished copy"
+    ],
+    "notForWho": [
+      "You need 10+ pages on day one",
+      "You want a complex shop with payments",
+      "You have no idea what you sell yet"
+    ],
+    "exampleResult": "A live page on your domain with a form that sends leads to Telegram or email — ready for ads or outreach.",
+    "processSteps": [
+      "You send the idea, offer notes and any references",
+      "I structure the page: headline, sections, CTA",
+      "We agree on copy and design direction",
+      "I build, connect the form and go live on your domain",
+      "You get a short handoff: how to edit and track results"
+    ],
+    "clientProvides": [
+      "What you sell and to whom",
+      "Logo or brand colours if you have them",
+      "Photos or examples you like",
+      "Domain access (or I help you pick one)"
+    ],
+    "deliverables": [
+      "One mobile-first landing page",
+      "Offer structure and copy framework",
+      "Contact form with Telegram or email hook",
+      "Basic SEO title, description and analytics",
+      "Live on your domain with SSL"
+    ],
+    "miniCase": "Alesya Takun — personal brand site with payments and booking, started as a focused offer page.",
+    "faq": [
+      {
+        "q": "How fast can we go live?",
+        "a": "Most landings are online in 3–7 days after we agree on the offer and content."
+      },
+      {
+        "q": "Do I need ready copy?",
+        "a": "No — bullet points or voice notes are fine. I turn them into page structure and suggest improvements."
+      },
+      {
+        "q": "Can we add more pages later?",
+        "a": "Yes. Many landings grow into full business sites when the offer works."
+      },
+      {
+        "q": "Will it work on phones?",
+        "a": "Yes — mobile-first layout is standard, not an extra."
+      },
+      {
+        "q": "Do you write in Polish / Ukrainian / Russian?",
+        "a": "Yes — I build multilingual sites when you need PL, UA, RU or EN."
+      },
+      {
+        "q": "What if I only have Instagram?",
+        "a": "That is common. We pull the offer from your posts and build a proper home for it."
+      }
+    ],
+    "ctaBottom": "Order landing"
+  },
+  "business": {
+    "title": "Business & project websites",
+    "headline": "Multi-page site for a business, studio or service brand",
+    "problem": "Your business lives on social or an old site — weak trust, no booking, no multilingual reach, poor search visibility.",
+    "solution": "A structured multi-page site with services, contact flows, payments when needed and search-ready architecture.",
+    "forWho": [
+      "Studios, agencies and service businesses",
+      "You need services, about, contact and maybe a blog",
+      "You want online booking or payments",
+      "You serve clients in more than one language"
+    ],
+    "notForWho": [
+      "You only need one campaign page",
+      "You need a full shop with 500+ SKUs on day one",
+      "You want a custom web app with user accounts"
+    ],
+    "exampleResult": "A site your clients trust: clear services, contact or booking, found in Google in your languages.",
+    "processSteps": [
+      "Brief: who you serve, what pages you need, examples you like",
+      "Site map and content plan — what goes on each page",
+      "Design direction and first draft of key pages",
+      "Build, forms, integrations, SEO base",
+      "Go live, handoff and optional iteration round"
+    ],
+    "clientProvides": [
+      "List of services and how you describe them",
+      "Photos, logo, brand colours",
+      "Access to domain and any existing content",
+      "Decision-maker for approvals"
+    ],
+    "deliverables": [
+      "Site structure and key pages",
+      "Services / about / contact flows",
+      "CMS or simple content workflow",
+      "Contact forms and integrations",
+      "SEO base and schema.org markup",
+      "Multiple languages when needed (PL / UA / RU / EN)"
+    ],
+    "miniCase": "Popular Poet — theatre and courses with trilingual content, ticketing and admin tools.",
+    "faq": [
+      {
+        "q": "Do you work with existing brands?",
+        "a": "Yes — I adapt to your visual language or help shape one if you are starting fresh."
+      },
+      {
+        "q": "Can you add online payments?",
+        "a": "Yes — booking and payment flows are a common part of business sites."
+      },
+      {
+        "q": "Multilingual from day one?",
+        "a": "We can launch one language first and add locales without rebuilding the site."
+      },
+      {
+        "q": "WordPress or custom code?",
+        "a": "Depends on your needs. I recommend after we review content volume and integrations."
+      },
+      {
+        "q": "Who updates content later?",
+        "a": "I set up a workflow you can use — CMS, simple admin or documented process."
+      },
+      {
+        "q": "Do you handle hosting?",
+        "a": "I launch on modern hosting (e.g. Vercel) and show you how it works."
+      }
+    ],
+    "ctaBottom": "Discuss your project"
+  },
+  "ecommerce": {
+    "title": "E-commerce setup & migration",
+    "headline": "Shop, migration and daily ops wired for sales",
+    "problem": "Catalog chaos, manual updates, marketplace and website out of sync — migration feels risky and expensive.",
+    "solution": "Shopify or WooCommerce setup or migration, payments, shipping, catalog sync and content workflows that scale.",
+    "forWho": [
+      "You sell physical or digital products online",
+      "You migrate from WooCommerce, WordPress or another platform",
+      "You sync with marketplaces or warehouse tools",
+      "You need multilingual product content"
+    ],
+    "notForWho": [
+      "You only need a brochure site",
+      "You want a marketplace with thousands of sellers",
+      "You have no products or pricing yet"
+    ],
+    "exampleResult": "A live shop with working checkout, shipping rules and catalog sync — less manual work every week.",
+    "processSteps": [
+      "Audit current catalog, integrations and pain points",
+      "Pick platform and migration plan with a safe cutover date",
+      "Build store structure, payments and shipping",
+      "Migrate or sync products and test orders",
+      "Go live, monitor and fix edge cases"
+    ],
+    "clientProvides": [
+      "Product data export or access to current shop",
+      "Payment and shipping provider accounts",
+      "Brand assets and category structure",
+      "List of integrations you rely on"
+    ],
+    "deliverables": [
+      "Store setup or migration",
+      "Product pages and collections",
+      "Payments and shipping rules",
+      "Marketplace or warehouse sync when needed",
+      "Multilingual catalog content workflow",
+      "SEO and structured data base"
+    ],
+    "miniCase": "KAYER.PL — WooCommerce to Shopify migration with catalog sync and multilingual content pipeline.",
+    "faq": [
+      {
+        "q": "Shopify or WooCommerce?",
+        "a": "Depends on your ops — I recommend after reviewing catalog size and integrations."
+      },
+      {
+        "q": "Can you migrate without downtime?",
+        "a": "We plan a cutover window and test sync before switching traffic."
+      },
+      {
+        "q": "Do you connect BaseLinker or Allegro?",
+        "a": "Yes — catalog sync and marketplace ops are core to my e-commerce work."
+      },
+      {
+        "q": "Who manages products after launch?",
+        "a": "I train you or your team and document the workflow."
+      },
+      {
+        "q": "What about B2B or salon-only products?",
+        "a": "Gated access, verification flows and custom pricing — done on KAYER and similar projects."
+      },
+      {
+        "q": "Can you automate product descriptions?",
+        "a": "Yes — AI-assisted content pipelines for PL / UA / EN when it saves real time."
+      },
+      {
+        "q": "Do you fix slow old shops?",
+        "a": "Often migration plus cleanup is faster than patching a broken theme."
+      }
+    ],
+    "ctaBottom": "Review your store"
+  },
+  "automation": {
+    "title": "Automation, bots & internal tools",
+    "headline": "Scripts and workflows that remove manual work",
+    "problem": "Content, leads and reports are done by hand — slow, error-prone, does not scale.",
+    "solution": "Telegram bots, publishing pipelines, API integrations, admin panels and AI-assisted workflows your team can run.",
+    "forWho": [
+      "Weekly repetitive tasks (posts, reports, updates)",
+      "Lead capture or ops alerts via Telegram",
+      "Connecting shop, sheets, email or CRM",
+      "Small internal tools instead of enterprise software"
+    ],
+    "notForWho": [
+      "You need a full ERP replacement",
+      "The process changes every day with no rules",
+      "You want automation before the manual process works once"
+    ],
+    "exampleResult": "A bot or script that runs the weekly job in minutes — with logs and a simple way to fix mistakes.",
+    "processSteps": [
+      "You describe the manual workflow step by step",
+      "I map inputs, outputs and failure cases",
+      "Build MVP automation and test on real data",
+      "Connect to your site, shop or messenger",
+      "Document and hand off — optional monitoring"
+    ],
+    "clientProvides": [
+      "Walkthrough of the current manual process",
+      "Sample inputs (files, messages, exports)",
+      "Access to APIs or admin panels involved",
+      "Who should get alerts or results"
+    ],
+    "deliverables": [
+      "Telegram bots for leads or ops",
+      "Auto-publishing: input → pages → search ping",
+      "Google Sheets / email / CRM hooks",
+      "AI parsing when it saves real time",
+      "Simple admin panel or commands",
+      "Documentation for your team"
+    ],
+    "miniCase": "Popular Poet Event Bot — photo and text in, structured event pages out, ~4 shows per week automated.",
+    "faq": [
+      {
+        "q": "What is a typical automation project?",
+        "a": "Weekly event publishing, lead bots, catalog updates or internal reporting dashboards."
+      },
+      {
+        "q": "Do I need a developer on my side?",
+        "a": "No — I deliver working scripts, launch them and write clear instructions."
+      },
+      {
+        "q": "Can automation connect to my existing site?",
+        "a": "Yes — most workflows plug into Shopify, WordPress, Next.js or warehouse tools."
+      },
+      {
+        "q": "Is this the same as a chatbot for customers?",
+        "a": "Often yes for Telegram — but I focus on ops and sales workflows, not generic FAQ bots."
+      },
+      {
+        "q": "What about AI costs?",
+        "a": "I prefer free or low-cost tiers when possible and show you expected usage."
+      },
+      {
+        "q": "Can you maintain it monthly?",
+        "a": "Yes — support retainers are available after the first build."
+      }
+    ],
+    "ctaBottom": "Describe the workflow"
+  },
+  "audit": {
+    "title": "Website rescue & audit",
+    "headline": "Quick audit for old sites — UX, SEO, speed, AI visibility",
+    "problem": "Site looks outdated, converts poorly, does not show up in Google or AI answers — a full rebuild feels too expensive right now.",
+    "solution": "Structured audit with prioritized fixes, impact notes and an optional rescue plan before a full rebuild.",
+    "forWho": [
+      "Old WordPress, Shopify or custom sites",
+      "Low conversions but traffic exists",
+      "Before a redesign or migration",
+      "You got outreach about SEO and want a second opinion"
+    ],
+    "notForWho": [
+      "You need a new site built this week",
+      "You have no site yet",
+      "You want guaranteed #1 rankings"
+    ],
+    "exampleResult": "A written report: what to fix first, what it likely improves and what a rebuild would cost.",
+    "processSteps": [
+      "You send the URL and main business goal",
+      "I review UX, technical SEO, speed and AI visibility",
+      "I score issues by impact and effort",
+      "You get a prioritized action list",
+      "Optional call to plan fixes or a rebuild"
+    ],
+    "clientProvides": [
+      "Website URL and target market",
+      "What is not working (leads, speed, search)",
+      "Access to Search Console if you have it",
+      "Any redesign plans or constraints"
+    ],
+    "deliverables": [
+      "Site and UX review",
+      "Technical SEO check",
+      "Speed and mobile audit",
+      "AI visibility check (schema, llms.txt)",
+      "Prioritized fix list",
+      "Impact notes and suggested next steps"
+    ],
+    "miniCase": "Lead Hunting pipeline — automated audits for outreach; same checklist used for client rescues.",
+    "faq": [
+      {
+        "q": "What do I get for 500 PLN?",
+        "a": "A written audit with UX, SEO, speed and AI visibility findings plus a prioritized action list."
+      },
+      {
+        "q": "Is this only for old WordPress sites?",
+        "a": "Any stack — WordPress, Shopify, custom Next.js, landing pages."
+      },
+      {
+        "q": "Can you fix issues after the audit?",
+        "a": "Yes — audit often leads to a landing rescue or full rebuild quote."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Usually 2–5 business days depending on site size."
+      },
+      {
+        "q": "Do you guarantee more traffic?",
+        "a": "No — I show what is broken and what to fix first. Honest metrics only."
+      },
+      {
+        "q": "Will AI tools like ChatGPT find my site?",
+        "a": "I check llms.txt, schema and content structure — and tell you what is missing."
+      }
+    ],
+    "ctaBottom": "Request audit"
+  },
+  "creative": {
+    "title": "Creative & event projects",
+    "headline": "Site and automation for courses, studios and events",
+    "problem": "Project lives on Instagram — no domain, no tickets, no search visibility, manual weekly publishing.",
+    "solution": "Showcase plus sales plus bot for publishing. Niche proof of flexibility — see Popular Poet.",
+    "forWho": [
+      "Theatres, schools, courses and event brands",
+      "Weekly schedule that changes often",
+      "Ticket or registration sales online",
+      "Multilingual audiences (PL / UA / RU)"
+    ],
+    "notForWho": [
+      "Standard corporate brochure only",
+      "One-off landing with no events",
+      "Large festival with complex seating maps on day one"
+    ],
+    "exampleResult": "Your own domain, ticket or registration flow and less time spent copying posts every week.",
+    "processSteps": [
+      "Map offer: events, courses, tickets, languages",
+      "Design showcase and checkout or registration",
+      "Build schedule and content structure",
+      "Add bot or automation for weekly updates if needed",
+      "Launch and train your team"
+    ],
+    "clientProvides": [
+      "Event or course calendar",
+      "Brand visuals and tone of voice",
+      "Ticket pricing and payment setup",
+      "Who publishes updates each week"
+    ],
+    "deliverables": [
+      "Showcase plus checkout or registration",
+      "Schedule and multilingual content",
+      "Telegram bot for publishing when useful",
+      "SEO and AI visibility base",
+      "Admin and check-in tools when needed"
+    ],
+    "miniCase": "Popular Poet / PopularTickets — trilingual theatre site, own ticketing and event automation.",
+    "faq": [
+      {
+        "q": "Is this your main offer?",
+        "a": "Core offers are landings, e-commerce and automation — events are a proven niche."
+      },
+      {
+        "q": "Can you automate weekly event posts?",
+        "a": "Yes — photo plus text to structured pages to search ping is a pattern I ship."
+      },
+      {
+        "q": "Do you build ticketing?",
+        "a": "Yes — own checkout or integration depending on your volume and fees."
+      },
+      {
+        "q": "Can actors or staff update the site?",
+        "a": "I set up flows that match how your team actually works — often Telegram-first."
+      },
+      {
+        "q": "What languages?",
+        "a": "PL, UA, RU and EN are common in my event work."
+      }
+    ],
+    "ctaBottom": "Discuss your project"
+  }
+}

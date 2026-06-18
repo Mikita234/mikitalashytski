@@ -23,22 +23,26 @@ export function VHSButton({
   const [hover, setHover] = useState(false);
 
   const base =
-    "relative inline-flex items-center justify-center gap-2 border-2 px-5 py-3 font-mono text-xs uppercase tracking-widest transition-transform sm:px-6 sm:text-sm";
+    "relative inline-flex items-center justify-center gap-2 border-2 px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-widest transition-all sm:px-8 sm:py-4 sm:text-sm";
   const variants = {
     primary:
-      "border-[var(--vhs-acid)] bg-[var(--vhs-acid)] text-black hover:translate-x-0.5 hover:-translate-y-0.5",
+      "border-[var(--doom-red)] bg-[var(--vhs-acid)] text-black shadow-[4px_4px_0_var(--doom-blood)] hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--doom-blood)] active:translate-x-1 active:translate-y-0 active:shadow-[2px_2px_0_var(--doom-blood)]",
     secondary:
-      "border-white/30 bg-transparent text-[var(--vhs-white)] hover:border-[var(--vhs-terminal)] hover:text-[var(--vhs-terminal)]",
+      "border-[var(--doom-stone-light)] bg-[var(--doom-panel)] text-[var(--vhs-white)] hover:border-[var(--doom-red)] hover:bg-[var(--doom-blood)]/30 hover:text-[var(--vhs-beige)]",
   };
+
+  const hoverLabel = variant === "primary" ? "PICK UP" : "PLAY";
 
   const content = (
     <>
       {hover && (
         <span
-          className="absolute -top-2 -right-2 bg-[var(--vhs-red)] px-1 font-mono text-[8px] text-white rec-blink"
+          className={`absolute -top-2.5 font-[family-name:var(--font-doom)] text-[7px] uppercase tracking-wide text-white sm:text-[8px] ${
+            variant === "primary" ? "-right-3 bg-[var(--doom-red)] px-1.5 py-0.5" : "-right-2 bg-[var(--vhs-red)] px-1 rec-blink"
+          }`}
           aria-hidden
         >
-          PLAY
+          {hoverLabel}
         </span>
       )}
       {children}
