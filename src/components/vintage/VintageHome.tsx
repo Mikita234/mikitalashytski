@@ -126,7 +126,7 @@ export function VintageHome() {
               <VHSButton href="/works" variant="secondary">
                 {t("works.viewAll")} →
               </VHSButton>
-              <VHSButton href="#case-archive" variant="secondary">
+              <VHSButton href="#hero-tv" variant="secondary">
                 {t("works.browseArchive")} ↑
               </VHSButton>
             </div>

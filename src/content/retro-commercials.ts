@@ -1,4 +1,5 @@
 import { site } from "./site";
+import { projectVisuals } from "./project-visuals";
 
 export type CommercialEra = "80s" | "90s" | "2000s";
 
@@ -19,6 +20,9 @@ export interface RetroCommercial {
   price?: string;
   visualStyle: VisualStyle;
   duration: number;
+  sitePreviewUrl?: string;
+  sitePreviewLabel?: string;
+  showBrowserChrome?: boolean;
 }
 
 export const retroCommercials: RetroCommercial[] = [
@@ -32,6 +36,9 @@ export const retroCommercials: RetroCommercial[] = [
     price: "FROM 2 500 PLN",
     visualStyle: "starburst",
     duration: 12000,
+    sitePreviewUrl: projectVisuals.alesyatakun.url,
+    sitePreviewLabel: projectVisuals.alesyatakun.domain,
+    showBrowserChrome: true,
   },
   {
     id: "ecommerce",
@@ -43,6 +50,9 @@ export const retroCommercials: RetroCommercial[] = [
     price: "AUTOMATE TODAY",
     visualStyle: "gradient-90s",
     duration: 13000,
+    sitePreviewUrl: projectVisuals["kayer-pl"].url,
+    sitePreviewLabel: projectVisuals["kayer-pl"].domain,
+    showBrowserChrome: true,
   },
   {
     id: "bots",
@@ -63,6 +73,9 @@ export const retroCommercials: RetroCommercial[] = [
     ctaHref: "/order",
     visualStyle: "y2k-chrome",
     duration: 12000,
+    sitePreviewUrl: projectVisuals["kayer-ua"].url,
+    sitePreviewLabel: projectVisuals["kayer-ua"].domain,
+    showBrowserChrome: true,
   },
   {
     id: "audit",
@@ -84,6 +97,9 @@ export const retroCommercials: RetroCommercial[] = [
     ctaHref: "/projects/kayer-pl",
     visualStyle: "case-spot",
     duration: 13000,
+    sitePreviewUrl: projectVisuals["kayer-pl"].url,
+    sitePreviewLabel: projectVisuals["kayer-pl"].domain,
+    showBrowserChrome: true,
   },
   {
     id: "popular",
@@ -94,6 +110,22 @@ export const retroCommercials: RetroCommercial[] = [
     ctaHref: "/projects/popular",
     visualStyle: "case-spot",
     duration: 12000,
+    sitePreviewUrl: projectVisuals.popular.url,
+    sitePreviewLabel: projectVisuals.popular.domain,
+    showBrowserChrome: true,
+  },
+  {
+    id: "mnsk7",
+    era: "2000s",
+    headline: "CASE SPOT: MNSK7-TOOLS",
+    subline: "Industrial catalog · Allegro sync · fast B2B checkout.",
+    cta: "VIEW PROJECT",
+    ctaHref: "/projects/mnsk7-tools",
+    visualStyle: "case-spot",
+    duration: 12000,
+    sitePreviewUrl: projectVisuals["mnsk7-tools"].url,
+    sitePreviewLabel: projectVisuals["mnsk7-tools"].domain,
+    showBrowserChrome: true,
   },
   {
     id: "telegram-cta",

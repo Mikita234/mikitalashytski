@@ -1,13 +1,84 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { retroCommercials, type RetroCommercial } from "@/content/retro-commercials";
+import { screenshotUrl } from "@/content/project-visuals";
 import { ScanlineOverlay } from "@/components/vintage/ScanlineOverlay";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { trackEvent } from "@/lib/analytics";
+
+function RetroAdSitePreview({
+  ad,
+  reduced,
+}: {
+  ad: RetroCommercial;
+  reduced: boolean;
+}) {
+  const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const label = ad.sitePreviewLabel ?? ad.sitePreviewUrl ?? "";
+
+  if (!ad.sitePreviewUrl) return null;
+
+  const preview = (
+    <div className="retro-ad__preview-screen">
+      {!failed && (
+        <Image
+          src={screenshotUrl(ad.sitePreviewUrl, 400)}
+          alt={`Preview of ${label}`}
+          width={200}
+          height={125}
+          className={`retro-ad__preview-img ${loaded ? "retro-ad__preview-img--loaded" : ""}`}
+          loading="lazy"
+          unoptimized
+          onLoad={() => setLoaded(true)}
+          onError={() => setFailed(true)}
+        />
+      )}
+      {(!loaded || failed) && (
+        <div className="retro-ad__preview-placeholder">
+          <span className="retro-ad__preview-domain">{label}</span>
+          <span className="retro-ad__preview-status">
+            {failed ? "preview unavailable" : "loading…"}
+          </span>
+        </div>
+      )}
+      <div className="retro-ad__preview-scanlines" aria-hidden />
+    </div>
+  );
+
+  if (ad.showBrowserChrome) {
+    return (
+      <div
+        className={`retro-ad__preview retro-ad__preview--chrome ${reduced ? "retro-ad__preview--static" : ""}`}
+      >
+        <div className="retro-ad__browser-bar">
+          <div className="retro-ad__browser-dots" aria-hidden>
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="retro-ad__browser-url">{label}</div>
+          <span className="retro-ad__browser-live rec-blink">● LIVE</span>
+        </div>
+        {preview}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`retro-ad__preview retro-ad__preview--frame ${reduced ? "retro-ad__preview--static" : ""}`}
+    >
+      <div className="retro-ad__tv-frame-label" aria-hidden>ON AIR</div>
+      {preview}
+    </div>
+  );
+}
 
 function RetroAdSlide({
   ad,
@@ -18,37 +89,51 @@ function RetroAdSlide({
   reduced: boolean;
   glitch: boolean;
 }) {
+  const hasPreview = Boolean(ad.sitePreviewUrl);
+
   return (
     <>
-      {ad.price && (
-        <p className="retro-ad__price" aria-hidden>
-          {ad.price}
-        </p>
-      )}
+      <div className={`retro-ad__layout ${hasPreview ? "retro-ad__layout--split" : ""}`}>
+        <div className="retro-ad__copy">
+          {ad.price && (
+            <p className="retro-ad__price" aria-hidden>
+              {ad.price}
+            </p>
+          )}
 
-      <h3 className={`retro-ad__headline ${reduced ? "" : "retro-ad__headline--animate"}`}>
-        {ad.headline}
-      </h3>
+          <h3 className={`retro-ad__headline ${reduced ? "" : "retro-ad__headline--animate"}`}>
+            {ad.headline}
+          </h3>
 
-      <p className={`retro-ad__subline ${reduced ? "" : "retro-ad__subline--animate"}`}>
-        {ad.subline}
-      </p>
+          <p className={`retro-ad__subline ${reduced ? "" : "retro-ad__subline--animate"}`}>
+            {ad.subline}
+          </p>
 
-      <Link
-        href={ad.ctaHref}
-        className="retro-ad__cta"
-        onClick={() =>
-          trackEvent("CTA Click", { location: "hero-tv", type: ad.id })
-        }
-      >
-        ☎ {ad.cta}
-      </Link>
+          <Link
+            href={ad.ctaHref}
+            className="retro-ad__cta"
+            onClick={() =>
+              trackEvent("CTA Click", { location: "hero-tv", type: ad.id })
+            }
+          >
+            ☎ {ad.cta}
+          </Link>
+        </div>
+
+        {hasPreview && <RetroAdSitePreview ad={ad} reduced={reduced} />}
+      </div>
 
       {glitch && !reduced && (
         <div className="retro-ad__vhs-glitch" aria-hidden />
       )}
 
-      <div className="retro-ad__starburst" aria-hidden />
+      <div className={`retro-ad__starburst ${reduced ? "retro-ad__starburst--static" : ""}`} aria-hidden />
+      {!reduced && (
+        <>
+          <div className="retro-ad__sparkle retro-ad__sparkle--1" aria-hidden />
+          <div className="retro-ad__sparkle retro-ad__sparkle--2" aria-hidden />
+        </>
+      )}
     </>
   );
 }
@@ -107,7 +192,9 @@ export function PhilipsCrtTv() {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={ad.id}
-                    className={`retro-ad retro-ad--${ad.era} retro-ad--${ad.visualStyle}`}
+                    className={`retro-ad retro-ad--${ad.era} retro-ad--${ad.visualStyle}${
+                      ad.sitePreviewUrl ? " retro-ad--with-preview" : ""
+                    }`}
                     initial={reduced ? false : { opacity: 0, scale: 0.97 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={reduced ? undefined : { opacity: 0, filter: "brightness(1.4)" }}
