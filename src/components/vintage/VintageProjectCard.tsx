@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { ProjectStatus } from "@/content/home-vintage";
 import type { ProjectSlug } from "@/content/project-visuals";
@@ -42,6 +43,7 @@ export function VintageProjectCard({
   style,
   domain,
 }: VintageWorkCardProps) {
+  const t = useTranslations("home.works");
   const isWin98 = style === "win98";
   const isHash = href.startsWith("#");
 
@@ -98,7 +100,7 @@ export function VintageProjectCard({
           isWin98 ? "text-[#000080]" : "text-[var(--vhs-acid)]"
         }`}
       >
-        OPEN SIGNAL →
+        {t("openCase")} →
       </span>
     </>
   );

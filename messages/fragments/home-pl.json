@@ -20,7 +20,7 @@
   "packages": {
     "tag": "PAKIETY",
     "title": "Co buduję",
-    "subtitle": "Pięć pakietów z jasnym zakresem. Ceny to punkty startowe — dokładna wycena po omówieniu zadania.",
+    "subtitle": "Pięć jasnych pakietów — co wchodzi, terminy i cena od. Dokładna wycena po rozmowie.",
     "from": "od",
     "timeline": "Termin",
     "order": "Zamów",
@@ -29,20 +29,20 @@
       "landing": {
         "title": "Szybki landing",
         "desc": "Jedna mocna strona do testu pomysłu, usługi lub kampanii.",
-        "forWho": ["Walidacja pomysłu", "Usługi lokalne", "Eventy", "Lead capture", "Landing pod reklamy"],
+        "forWho": ["Walidacja pomysłu", "Usługi lokalne", "Eventy", "Zbieranie kontaktów", "Landing pod reklamy"],
         "includes": ["1 strona", "Struktura oferty", "Formularz", "Podstawowe SEO", "Mobile", "Publikacja na Twojej domenie"]
       },
       "business": {
         "title": "Strona projektowa",
         "desc": "Wielostronicowy serwis dla biznesu, studia lub marki usługowej.",
         "forWho": ["Studia", "Usługi", "Mały biznes", "Teatr", "Projekty wielostronicowe"],
-        "includes": ["Struktura serwisu", "Wiele stron", "CMS/treści", "Formularz", "Baza SEO", "i18n jeśli potrzeba"]
+        "includes": ["Struktura serwisu", "Wiele stron", "Edytowalne treści", "Formularz", "Baza SEO", "Wiele języków jeśli potrzeba"]
       },
       "ecommerce": {
         "title": "E-commerce / migracja",
         "desc": "Shopify, WooCommerce, katalog, płatności i synchronizacja.",
         "forWho": ["Shopify", "WooCommerce", "Migracja", "Marketplace", "Operacje katalogowe"],
-        "includes": ["Setup sklepu", "Karty produktów", "Kolekcje", "Płatności", "Dostawa", "Automatyzacje Base", "Baza SEO/GEO"]
+        "includes": ["Setup sklepu", "Karty produktów", "Kolekcje", "Płatności", "Dostawa", "Synchronizacja BaseLinker", "Baza SEO"]
       },
       "automation": {
         "title": "Automatyzacja / boty / narzędzia",
@@ -53,8 +53,8 @@
       "audit": {
         "title": "Ratunek strony / audyt",
         "desc": "Szybki audyt starych stron — UX, SEO, szybkość, widoczność AI.",
-        "forWho": ["Stare strony", "Niska konwersja", "Cold outreach", "Przed przebudową"],
-        "includes": ["Przegląd strony", "UX", "SEO", "Szybkość", "Mobile", "Widoczność AI", "Lista quick fixes", "Szacunek wpływu"]
+        "forWho": ["Stare strony", "Niska konwersja", "Przed przebudową"],
+        "includes": ["Przegląd strony", "UX", "SEO", "Szybkość", "Mobile", "Widoczność w AI-search", "Lista szybkich poprawek", "Szacunek wpływu"]
       }
     },
     "timelines": {
@@ -92,10 +92,11 @@
     ]
   },
   "works": {
-    "tag": "SYGNAŁY",
+    "tag": "PROJEKTY",
     "title": "Wybrane realizacje",
     "subtitle": "Od e-commerce i marketplace po automatyzację i strony usługowe.",
     "viewAll": "Wszystkie realizacje",
+    "openCase": "Zobacz case",
     "filters": {
       "all": "Wszystko",
       "ecommerce": "E-commerce",
@@ -110,7 +111,7 @@
     "tag": "CENNIK",
     "title": "Ceny startowe",
     "subtitle": "Zakresy, nie stałe kwoty. Dokładna cena po omówieniu zadania. Audyt: 500–900 PLN.",
-    "caption": "Ceny startowe — dokładna wycena po krótkim briefie.",
+    "caption": "Ceny startowe — dokładna wycena po krótkiej rozmowie.",
     "service": "Usługa",
     "from": "Od",
     "to": "Do",
@@ -129,10 +130,10 @@
     "more": "Więcej o podejściu",
     "steps": [
       { "title": "Wysyłasz pomysł", "desc": "Surowy tekst wystarczy: landing, sklep, bot, migracja lub audyt." },
-      { "title": "Strukturyzuję", "desc": "Strony, funkcje, dane, integracje, terminy i plan techniczny." },
-      { "title": "Szybka walidacja", "desc": "Prototyp lub draft audytu — kształt przed 40 slajdami." },
+      { "title": "Strukturyzuję", "desc": "Strony, funkcje, integracje, terminy i plan prac." },
+      { "title": "Szybka walidacja", "desc": "Prototyp lub draft audytu — kształt przed długą prezentacją." },
       { "title": "Build i publikacja", "desc": "Strona, formularze, płatności, boty, baza SEO, domena, instrukcje." },
-      { "title": "Iteracja pod wynik", "desc": "Metryki, treści, automatyzacja, SEO/GEO — co przynosi leady i sprzedaż." }
+      { "title": "Iteracja pod wynik", "desc": "Treści, automatyzacja, SEO — co przynosi leady i sprzedaż." }
     ]
   },
   "underHood": {

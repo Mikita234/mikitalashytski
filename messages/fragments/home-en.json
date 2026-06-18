@@ -20,7 +20,7 @@
   "packages": {
     "tag": "PACKAGES",
     "title": "What I build",
-    "subtitle": "Five packages with clear scope. Prices are starting points — exact quote after we review your task.",
+    "subtitle": "Five clear packages — what's included, timeline, and starting price. Exact quote after we talk.",
     "from": "from",
     "timeline": "Timeline",
     "order": "Order this",
@@ -36,13 +36,13 @@
         "title": "Project website",
         "desc": "Multi-page site for a business, studio or service brand.",
         "forWho": ["Studios", "Services", "Small business", "Theatre", "Multi-page projects"],
-        "includes": ["Site structure", "Multiple pages", "CMS/content", "Contact form", "SEO base", "i18n if needed"]
+        "includes": ["Site structure", "Multiple pages", "Editable content", "Contact form", "SEO base", "Multiple languages if needed"]
       },
       "ecommerce": {
         "title": "E-commerce setup / migration",
         "desc": "Shopify, WooCommerce, catalog structure, payments and sync.",
         "forWho": ["Shopify", "WooCommerce", "Migration", "Marketplaces", "Catalog ops"],
-        "includes": ["Store setup", "Product pages", "Collections", "Payments", "Shipping", "Base automations", "SEO/GEO base"]
+        "includes": ["Store setup", "Product pages", "Collections", "Payments", "Shipping", "BaseLinker sync", "SEO base"]
       },
       "automation": {
         "title": "Automation / bots / internal tools",
@@ -53,7 +53,7 @@
       "audit": {
         "title": "Website rescue / audit",
         "desc": "Quick audit for old sites — UX, SEO, speed, AI visibility.",
-        "forWho": ["Old websites", "Low conversions", "Cold outreach leads", "Before rebuild"],
+        "forWho": ["Old websites", "Low conversions", "Before a rebuild"],
         "includes": ["Site check", "UX review", "SEO", "Speed", "Mobile", "AI visibility", "Quick fixes list", "Impact estimate"]
       }
     },
@@ -66,7 +66,7 @@
     }
   },
   "trust": {
-    "tag": "TRUST SIGNAL",
+    "tag": "TRUST",
     "title": "Built with real business constraints",
     "facts": [
       "E-commerce logistics and marketplace ops",
@@ -92,10 +92,11 @@
     ]
   },
   "works": {
-    "tag": "OPEN SIGNALS",
+    "tag": "PROJECTS",
     "title": "Selected work",
     "subtitle": "From e-commerce and marketplaces to automation and service sites.",
     "viewAll": "All works",
+    "openCase": "View case",
     "filters": {
       "all": "All",
       "ecommerce": "E-commerce",
@@ -110,7 +111,7 @@
     "tag": "PRICE LIST",
     "title": "Starting prices",
     "subtitle": "Ranges, not fixed quotes. Exact price after task review. Audit: €115–€205.",
-    "caption": "Prices are starting points — exact quote after a quick brief.",
+    "caption": "Starting prices — exact quote after a quick call.",
     "service": "Service",
     "from": "From",
     "to": "To",
@@ -129,10 +130,10 @@
     "more": "More about approach",
     "steps": [
       { "title": "You send the idea", "desc": "Raw text is fine: landing, store, bot, migration or audit." },
-      { "title": "I structure it", "desc": "Pages, features, data, integrations, timeline and tech plan." },
-      { "title": "We validate fast", "desc": "Prototype or audit draft — shape before a 40-slide deck." },
+      { "title": "I structure it", "desc": "Pages, features, integrations, timeline and work plan." },
+      { "title": "We validate fast", "desc": "Prototype or audit draft — shape before a long presentation." },
       { "title": "Build and go live", "desc": "Site, forms, payments, bots, SEO base, domain, instructions." },
-      { "title": "Iterate for results", "desc": "Metrics, content, automation, SEO/GEO — what brings leads and sales." }
+      { "title": "Iterate for results", "desc": "Content, automation, SEO — what brings leads and sales." }
     ]
   },
   "underHood": {

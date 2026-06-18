@@ -216,8 +216,9 @@ export function CRTScreen({ label }: { label: string }) {
         </div>
 
         <div className="crt-tv-frame__bezel crt-flicker">
-          <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0a0806]">
-            <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_80%_70%_at_50%_55%,rgba(74,124,35,0.12),transparent_70%)]" aria-hidden />
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#120806]">
+            <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_90%_60%_at_50%_40%,rgba(220,80,30,0.22),transparent_65%)]" aria-hidden />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-1/3 bg-gradient-to-t from-[rgba(255,90,0,0.18)] to-transparent" aria-hidden />
             <AnimatePresence mode="wait">
               <motion.div
                 key={state.id}
@@ -243,7 +244,7 @@ export function CRTScreen({ label }: { label: string }) {
               />
             )}
             <div
-              className="pointer-events-none absolute inset-0 z-[5] shadow-[inset_0_0_40px_rgba(74,124,35,0.15)]"
+              className="pointer-events-none absolute inset-0 z-[5] shadow-[inset_0_0_50px_rgba(170,34,34,0.2),inset_0_-20px_40px_rgba(255,90,0,0.12)]"
               aria-hidden
             />
           </div>
