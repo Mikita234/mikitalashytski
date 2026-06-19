@@ -35,6 +35,14 @@
     "dark": "Ciemny"
   },
   "home": {
+    "nav": {
+      "home": "START",
+      "works": "PROJEKTY",
+      "guides": "PORADNIKI",
+      "packages": "PAKIETY",
+      "approach": "PODEJSCIE",
+      "order": "ZAMOW"
+    },
     "hero": {
       "badge": "Otwarty na nowe projekty",
       "titleTop": "To nie strona.",
@@ -133,7 +141,9 @@
     "eventBotNote": "Bot Gemini do automatycznej publikacji wydarzeń — moduł w tej samej infrastrukturze.",
     "eventBotLink": "Otwórz Event Bot",
     "metrics": "Metryki",
-    "metricsNote": "Źródło pokazuje skąd pochodzi liczba. Żółta etykieta = szacunek, nie zweryfikowane."
+    "metricsNote": "Źródło pokazuje skąd pochodzi liczba. Żółta etykieta = szacunek, nie zweryfikowane.",
+    "ctaOrder": "Zamów build",
+    "ctaGuides": "Czytaj darmowe poradniki"
   },
   "projects": {
     "mnsk7-tools": {

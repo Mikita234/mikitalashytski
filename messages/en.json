@@ -35,6 +35,14 @@
     "dark": "Dark"
   },
   "home": {
+    "nav": {
+      "home": "HOME",
+      "works": "WORKS",
+      "guides": "GUIDES",
+      "packages": "PACKAGES",
+      "approach": "APPROACH",
+      "order": "ORDER"
+    },
     "hero": {
       "badge": "Available for new projects",
       "titleTop": "Not a website.",
@@ -133,7 +141,9 @@
     "eventBotNote": "Gemini bot for automated event publishing — a module inside the same infrastructure.",
     "eventBotLink": "Open Event Bot",
     "metrics": "Metrics",
-    "metricsNote": "Source tags show where each number comes from. Yellow badge = estimated, not verified."
+    "metricsNote": "Source tags show where each number comes from. Yellow badge = estimated, not verified.",
+    "ctaOrder": "Order build",
+    "ctaGuides": "Read free guides"
   },
   "projects": {
     "mnsk7-tools": {

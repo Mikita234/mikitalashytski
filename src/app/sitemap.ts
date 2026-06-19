@@ -3,6 +3,7 @@ import { routing } from "@/i18n/routing";
 import { site } from "@/content/site";
 import { projectSlugs } from "@/content/projects";
 import { serviceSlugs } from "@/content/services";
+import { guideSlugs } from "@/content/guides";
 
 const paths = [
   "",
@@ -12,6 +13,8 @@ const paths = [
   "/works",
   ...serviceSlugs.map((slug) => `/services/${slug}`),
   ...projectSlugs.map((slug) => `/projects/${slug}`),
+  "/guides",
+  ...guideSlugs.map((slug) => `/guides/${slug}`),
 ];
 
 function url(locale: string, path: string) {

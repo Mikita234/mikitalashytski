@@ -439,9 +439,12 @@ export function VintageProjectContent({ project }: { project: Project }) {
           </div>
         )}
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <VHSButton href="/order" variant="primary">
-            Order build →
+            {pp("ctaOrder")} →
+          </VHSButton>
+          <VHSButton href="/guides" variant="secondary">
+            {pp("ctaGuides")} →
           </VHSButton>
         </div>
       </div>
