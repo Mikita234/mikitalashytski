@@ -3,7 +3,13 @@
 import { useId } from "react";
 
 /** Decorative 1980s brick cellphone — matte black plastic, pseudo-3D SVG */
-export function RetroPhoneHandset({ className = "" }: { className?: string }) {
+export function RetroPhoneHandset({
+  className = "",
+  decorative = true,
+}: {
+  className?: string;
+  decorative?: boolean;
+}) {
   const uid = useId().replace(/:/g, "");
 
   const body = `phone-body-${uid}`;
@@ -21,7 +27,10 @@ export function RetroPhoneHandset({ className = "" }: { className?: string }) {
   ];
 
   return (
-    <div className={`retro-phone-handset ${className}`} aria-hidden>
+    <div
+      className={`retro-phone-handset ${className}`}
+      aria-hidden={decorative ? true : undefined}
+    >
       <svg
         viewBox="0 0 72 168"
         fill="none"

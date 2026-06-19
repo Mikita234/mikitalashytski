@@ -17,7 +17,19 @@
     "ctaOrder": "Omów projekt",
     "ctaWorks": "Zobacz realizacje",
     "ctaAudit": "Zrób sam",
-    "tvLabel": "BUILDER-TV 2001"
+    "tvLabel": "BUILDER-TV 2001",
+    "phone": {
+      "ariaLabel": "Odbierz telefon — skontaktuj się",
+      "hint": "Kliknij, aby odebrać połączenie z reklamy",
+      "ringing": "DZWONI",
+      "live": "NA ŻYWO",
+      "title": "Odbierz!",
+      "subtitle": "Jak w reklamie lat 90. — bez czekania na linii.",
+      "ctaTelegram": "NAPISZ NA TELEGRAM",
+      "ctaCall": "ZADZWOŃ",
+      "ctaOrder": "ZAMÓW PROJEKT",
+      "close": "Zamknij"
+    }
   },
   "salesPath": {
     "tag": "JAK ZACZĄĆ",

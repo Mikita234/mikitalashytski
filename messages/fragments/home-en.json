@@ -17,7 +17,19 @@
     "ctaOrder": "Discuss project",
     "ctaWorks": "View works",
     "ctaAudit": "Do it yourself",
-    "tvLabel": "BUILDER-TV 2001"
+    "tvLabel": "BUILDER-TV 2001",
+    "phone": {
+      "ariaLabel": "Pick up the phone — get in touch",
+      "hint": "Tap to answer the call from the ad",
+      "ringing": "RINGING",
+      "live": "ON AIR",
+      "title": "Pick up!",
+      "subtitle": "Like a 90s infomercial — minus the hold music.",
+      "ctaTelegram": "MESSAGE ON TELEGRAM",
+      "ctaCall": "CALL NOW",
+      "ctaOrder": "ORDER A PROJECT",
+      "close": "Close"
+    }
   },
   "salesPath": {
     "tag": "HOW TO START",
