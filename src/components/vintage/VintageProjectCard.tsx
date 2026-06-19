@@ -3,8 +3,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { ProjectStatus } from "@/content/home-vintage";
-import type { ProjectSlug } from "@/content/project-visuals";
-import { projectVisuals } from "@/content/project-visuals";
 import { ProjectMiniPreview } from "./ProjectMiniPreview";
 
 const statusColors: Record<ProjectStatus, string> = {

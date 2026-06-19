@@ -13,16 +13,20 @@ export function SignalIntro({ onDone }: { onDone: () => void }) {
 
   useEffect(() => {
     if (reduced) {
-      onDone();
-      setActive(false);
-      return;
+      const t = setTimeout(() => {
+        onDone();
+        setActive(false);
+      }, 0);
+      return () => clearTimeout(t);
     }
 
     const seen = sessionStorage.getItem("vhs-intro-seen");
     if (seen) {
-      onDone();
-      setActive(false);
-      return;
+      const t = setTimeout(() => {
+        onDone();
+        setActive(false);
+      }, 0);
+      return () => clearTimeout(t);
     }
 
     const t1 = setTimeout(() => setPhase("flash"), 700);

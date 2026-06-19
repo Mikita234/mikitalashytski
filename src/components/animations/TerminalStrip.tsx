@@ -18,9 +18,14 @@ export function TerminalStrip({ selectedCase, playbackState }: Props) {
     return IDLE;
   }, [playbackState, selectedCase]);
   useEffect(() => {
-    if (reduced) { setVisibleCount(lines.length); return; }
-    setVisibleCount(0);
-    const timers = lines.map((_, i) => setTimeout(() => setVisibleCount(i + 1), 100 + i * 160));
+    if (reduced) {
+      const timer = setTimeout(() => setVisibleCount(lines.length), 0);
+      return () => clearTimeout(timer);
+    }
+    const timers = [
+      setTimeout(() => setVisibleCount(0), 0),
+      ...lines.map((_, i) => setTimeout(() => setVisibleCount(i + 1), 100 + i * 160)),
+    ];
     return () => timers.forEach(clearTimeout);
   }, [lines, reduced, selectedCase?.slug, playbackState]);
   return (

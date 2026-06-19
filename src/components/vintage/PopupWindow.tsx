@@ -28,8 +28,8 @@ export function PopupWindow({
 
   useEffect(() => {
     if (reduced) {
-      setVisible(true);
-      return;
+      const t = setTimeout(() => setVisible(true), 0);
+      return () => clearTimeout(t);
     }
     const t = setTimeout(() => setVisible(true), delay);
     return () => clearTimeout(t);

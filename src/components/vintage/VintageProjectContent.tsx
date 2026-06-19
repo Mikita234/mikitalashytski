@@ -93,8 +93,6 @@ export function VintageProjectContent({ project }: { project: Project }) {
     slug in projectVisuals
       ? projectVisuals[slug as ProjectSlug]
       : { channel: "CH-INT", accent: "#888", accentGlow: "rgba(0,0,0,0)", domain: project.name, url: "" };
-  const work = vintageWorks.find((w) => w.slug === slug);
-
   const idx = projects.findIndex((p) => p.slug === project.slug);
   const next = projects[(idx + 1) % projects.length];
   const nextWork = vintageWorks.find((w) => w.slug === next.slug);

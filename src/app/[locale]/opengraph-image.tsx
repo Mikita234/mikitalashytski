@@ -39,7 +39,7 @@ export default function OgImage() {
         />
 
         {/* REC badge */}
-        <div style={{ display: "flex", alignItems: "center", gap: 16, zIndex: 1 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div
             style={{
               background: "#c41e1e",
@@ -59,7 +59,7 @@ export default function OgImage() {
         </div>
 
         {/* Main title */}
-        <div style={{ display: "flex", flexDirection: "column", zIndex: 1 }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               fontSize: 96,
@@ -102,7 +102,6 @@ export default function OgImage() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
-            zIndex: 1,
           }}
         >
           <div style={{ fontSize: 28, fontWeight: 700 }}>{site.name}</div>

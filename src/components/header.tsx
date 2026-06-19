@@ -20,8 +20,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
-
   // Homepage has its own VHS navigation
   if (pathname === "/") return null;
 
@@ -98,6 +96,7 @@ export function Header() {
             <Link
               key={l.href}
               href={l.href}
+              onClick={() => setOpen(false)}
               className="block rounded-lg px-3 py-3 text-sm text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
             >
               {l.label}

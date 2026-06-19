@@ -9,7 +9,10 @@ export function ThemeToggle() {
   const t = useTranslations("theme");
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   const isDark = resolvedTheme === "dark";
 

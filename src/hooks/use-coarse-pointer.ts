@@ -1,17 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const QUERY = "(pointer: coarse)";
+
+function subscribe(onStoreChange: () => void) {
+  const mq = window.matchMedia(QUERY);
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+
+function getSnapshot() {
+  return window.matchMedia(QUERY).matches;
+}
+
+function getServerSnapshot() {
+  return false;
+}
 
 export function useCoarsePointer(): boolean {
-  const [coarse, setCoarse] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(pointer: coarse)");
-    setCoarse(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setCoarse(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  return coarse;
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
