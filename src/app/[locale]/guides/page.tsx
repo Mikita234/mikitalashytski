@@ -9,7 +9,12 @@ import {
 import { VHSButton } from "@/components/vintage/VHSButton";
 import { buildAlternates } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
-import { guideIntro, guideLabels, guides } from "@/content/guides";
+import {
+  guideIntro,
+  guideLabels,
+  guideRoadmap,
+  guides,
+} from "@/content/guides";
 import { site } from "@/content/site";
 
 export async function generateMetadata({
@@ -37,6 +42,7 @@ export default async function GuidesPage({
   const t = await getTranslations({ locale, namespace: "home.nav" });
   const intro = guideIntro[l];
   const labels = guideLabels[l];
+  const roadmap = guideRoadmap[l];
 
   const collectionLd = {
     "@context": "https://schema.org",
@@ -85,6 +91,93 @@ export default async function GuidesPage({
       </section>
 
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18">
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <VintageSectionHeader
+            tag={roadmap.tag}
+            title={roadmap.title}
+            subtitle={roadmap.subtitle}
+            tagClassName="text-[var(--vhs-acid)]"
+          />
+
+          <div className="grid gap-5 lg:grid-cols-2">
+            {roadmap.modules.map((module) => (
+              <div
+                key={module.code}
+                className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                    {module.code}
+                  </span>
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
+                    {roadmap.modulesTitle}
+                  </span>
+                </div>
+                <h2 className="mt-4 font-display text-3xl uppercase leading-none text-[var(--vhs-white)]">
+                  {module.title}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
+                  {module.body}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {module.items.map((item) => (
+                    <span
+                      key={item}
+                      className="border border-white/15 px-2 py-1 font-mono text-[9px] uppercase text-[var(--vhs-muted)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <div className="grid gap-8 lg:grid-cols-[320px_1fr]">
+            <div>
+              <p className="type-tag text-[var(--vhs-terminal)]">
+                ● {roadmap.setupTitle}
+              </p>
+              <h2 className="type-h2 mt-3">{roadmap.setupTitle}</h2>
+              <p className="type-subtitle mt-4">
+                {roadmap.setupSubtitle}
+              </p>
+              <div className="doom-stone-divider mt-6 max-w-xs" aria-hidden />
+            </div>
+
+            <div className="grid gap-4">
+              {roadmap.setupSteps.map((step) => (
+                <div
+                  key={step.code}
+                  className="grid gap-4 border border-white/10 bg-[#101014] p-5 sm:grid-cols-[72px_1fr]"
+                >
+                  <span className="font-display text-4xl leading-none text-[var(--doom-ammo)]">
+                    {step.code}
+                  </span>
+                  <div>
+                    <h3 className="type-h3">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
+                      {step.body}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {step.items.map((item) => (
+                        <span
+                          key={item}
+                          className="border border-[var(--vhs-terminal)]/25 bg-[var(--vhs-terminal)]/5 px-2 py-1 font-mono text-[9px] uppercase text-[var(--vhs-terminal)]"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <VintageSectionHeader
           tag={labels.all}
           title={t("guides")}

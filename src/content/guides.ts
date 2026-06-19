@@ -27,6 +27,24 @@ export interface Guide {
   cta: Record<Locale, { title: string; body: string; bullets: string[] }>;
 }
 
+export interface GuideRoadmapModule {
+  code: string;
+  title: string;
+  body: string;
+  items: string[];
+}
+
+export interface GuideRoadmap {
+  tag: string;
+  title: string;
+  subtitle: string;
+  modulesTitle: string;
+  setupTitle: string;
+  setupSubtitle: string;
+  modules: GuideRoadmapModule[];
+  setupSteps: GuideRoadmapModule[];
+}
+
 const sharedTags = ["Cursor", "GitHub", "Vercel", "SEO"];
 
 export const guideIntro = {
@@ -106,6 +124,341 @@ export const guideLabels = {
     back: "Назад до гайдів",
   },
 } as const;
+
+export const guideRoadmap: Record<Locale, GuideRoadmap> = {
+  en: {
+    tag: "Course plan",
+    title: "AI-assisted coding system, not random prompting",
+    subtitle:
+      "The free school is built around a practical setup: Cursor, Claude, Codex, model routing, scripts, repeatable pipelines and human review checkpoints.",
+    modulesTitle: "What the course covers",
+    setupTitle: "System setup path",
+    setupSubtitle:
+      "Do it in this order. Each step leaves you with a working artifact, not just a video watched.",
+    modules: [
+      {
+        code: "MOD-01",
+        title: "Cursor as the workbench",
+        body: "Project context, rules, small commits, refactors and how to stop Cursor from rewriting the whole app.",
+        items: ["project rules", "file-by-file edits", "debug loops"],
+      },
+      {
+        code: "MOD-02",
+        title: "Claude, Codex and model roles",
+        body: "Use different models for different jobs: architecture, code edits, critique, copy, tests and documentation.",
+        items: ["role split", "handoff prompts", "review prompts"],
+      },
+      {
+        code: "MOD-03",
+        title: "Chinese AI stack",
+        body: "Where Qwen / DeepSeek / Kimi-style models fit: cheap drafting, alternative reasoning, translation and bulk content checks.",
+        items: ["cost control", "second opinions", "multilingual drafts"],
+      },
+      {
+        code: "MOD-04",
+        title: "Skills and reusable instructions",
+        body: "Turn repeated work into local skills: SEO checklist, landing audit, product card generation, deployment checklist.",
+        items: ["SKILL.md", "checklists", "templates"],
+      },
+      {
+        code: "MOD-05",
+        title: "Scripts and automation",
+        body: "Use small scripts for boring work: content transforms, image lists, sitemap checks, product data cleanup and reports.",
+        items: ["Node/Python scripts", "safe inputs", "logs"],
+      },
+      {
+        code: "MOD-06",
+        title: "Human-in-the-loop pipelines",
+        body: "AI drafts, scripts prepare, human approves, system publishes. No blind auto-posting for business-critical work.",
+        items: ["approval gates", "diff review", "rollback"],
+      },
+    ],
+    setupSteps: [
+      {
+        code: "01",
+        title: "Create the base workspace",
+        body: "GitHub repo, README, project rules, design references and a short business brief.",
+        items: ["repo", "README", "rules"],
+      },
+      {
+        code: "02",
+        title: "Install the coding loop",
+        body: "Cursor/Codex for edits, Claude-style chat for planning and review, terminal for tests and builds.",
+        items: ["edit", "test", "review"],
+      },
+      {
+        code: "03",
+        title: "Add reusable prompts and skills",
+        body: "Save prompts for landing pages, audits, SEO, product data, translations and deployment.",
+        items: ["prompts", "skills", "checklists"],
+      },
+      {
+        code: "04",
+        title: "Wire scripts into the workflow",
+        body: "Start with safe scripts: generate page drafts, validate links, check JSON-LD and prepare content tables.",
+        items: ["scripts", "validation", "reports"],
+      },
+      {
+        code: "05",
+        title: "Publish with checkpoints",
+        body: "Git diff, human review, build, deploy preview, production deploy and rollback notes.",
+        items: ["diff", "preview", "prod"],
+      },
+    ],
+  },
+  pl: {
+    tag: "Plan kursu",
+    title: "System AI-assisted coding, nie losowe promptowanie",
+    subtitle:
+      "Darmowa szkoła opiera się na praktycznym setupie: Cursor, Claude, Codex, routing modeli, skrypty, powtarzalne pipeline i checkpointy human review.",
+    modulesTitle: "Co obejmuje kurs",
+    setupTitle: "Ścieżka konfiguracji systemu",
+    setupSubtitle:
+      "Rób to w tej kolejności. Każdy krok zostawia działający artefakt, nie tylko obejrzany materiał.",
+    modules: [
+      {
+        code: "MOD-01",
+        title: "Cursor jako warsztat",
+        body: "Kontekst projektu, rules, małe commity, refaktory i jak nie pozwolić Cursorowi przepisać całej aplikacji.",
+        items: ["project rules", "edycje plik po pliku", "debug loop"],
+      },
+      {
+        code: "MOD-02",
+        title: "Claude, Codex i role modeli",
+        body: "Różne modele do różnych zadań: architektura, zmiany w kodzie, krytyka, copy, testy i dokumentacja.",
+        items: ["podział ról", "handoff prompts", "review prompts"],
+      },
+      {
+        code: "MOD-03",
+        title: "Chiński stack AI",
+        body: "Gdzie pasują modele typu Qwen / DeepSeek / Kimi: tanie drafty, druga opinia, tłumaczenia i masowe sprawdzanie treści.",
+        items: ["kontrola kosztów", "druga opinia", "drafty multi-language"],
+      },
+      {
+        code: "MOD-04",
+        title: "Skills i instrukcje wielokrotnego użytku",
+        body: "Zamień powtarzalną pracę w lokalne skills: SEO checklist, audyt landingu, karty produktów, deployment checklist.",
+        items: ["SKILL.md", "checklisty", "szablony"],
+      },
+      {
+        code: "MOD-05",
+        title: "Skrypty i automatyzacja",
+        body: "Małe skrypty do nudnych rzeczy: transformacje treści, listy obrazów, sitemap, czyszczenie danych produktów i raporty.",
+        items: ["Node/Python", "bezpieczne inputy", "logi"],
+      },
+      {
+        code: "MOD-06",
+        title: "Human-in-the-loop pipelines",
+        body: "AI robi draft, skrypty przygotowują, człowiek zatwierdza, system publikuje. Bez ślepego auto-postingu dla biznesu.",
+        items: ["approval gates", "diff review", "rollback"],
+      },
+    ],
+    setupSteps: [
+      {
+        code: "01",
+        title: "Stwórz bazowy workspace",
+        body: "Repo GitHub, README, project rules, referencje designu i krótki brief biznesowy.",
+        items: ["repo", "README", "rules"],
+      },
+      {
+        code: "02",
+        title: "Ustaw pętlę pracy",
+        body: "Cursor/Codex do edycji, Claude-style chat do planu i review, terminal do testów i buildów.",
+        items: ["edit", "test", "review"],
+      },
+      {
+        code: "03",
+        title: "Dodaj prompty i skills",
+        body: "Zapisz prompty do landingów, audytów, SEO, danych produktów, tłumaczeń i deploymentu.",
+        items: ["prompts", "skills", "checklists"],
+      },
+      {
+        code: "04",
+        title: "Podłącz skrypty",
+        body: "Zacznij od bezpiecznych skryptów: drafty stron, walidacja linków, JSON-LD i tabele treści.",
+        items: ["scripts", "validation", "reports"],
+      },
+      {
+        code: "05",
+        title: "Publikuj z checkpointami",
+        body: "Git diff, review człowieka, build, deploy preview, produkcja i notatki rollback.",
+        items: ["diff", "preview", "prod"],
+      },
+    ],
+  },
+  ru: {
+    tag: "Контент-план",
+    title: "Не набор промптов, а система AI-assisted coding",
+    subtitle:
+      "Бесплатная школа про Cursor, Claude, Codex, китайские AI-модели, skills, скрипты, пайплайны и human-in-the-loop контроль. Цель — настроить рабочую систему, а не просто посмотреть курс.",
+    modulesTitle: "Про что будут гайды",
+    setupTitle: "Как по шагам настроить систему",
+    setupSubtitle:
+      "Идти лучше в этом порядке: каждый шаг даёт рабочий артефакт, который потом переиспользуется в проектах.",
+    modules: [
+      {
+        code: "MOD-01",
+        title: "Cursor как рабочая среда",
+        body: "Контекст проекта, правила, маленькие коммиты, точечные правки, рефакторинг и как не дать Cursor переписать весь проект.",
+        items: ["project rules", "правки по файлам", "debug loop"],
+      },
+      {
+        code: "MOD-02",
+        title: "Claude, Codex и роли моделей",
+        body: "Одна модель планирует, другая пишет код, третья критикует. Разделяем архитектуру, правки, copy, тесты и документацию.",
+        items: ["разделение ролей", "handoff prompts", "review prompts"],
+      },
+      {
+        code: "MOD-03",
+        title: "Китайские AI-модели",
+        body: "Где использовать Qwen / DeepSeek / Kimi-подобные модели: дешёвые черновики, альтернативное рассуждение, переводы, массовая проверка контента.",
+        items: ["контроль цены", "вторая точка зрения", "мультиязычные черновики"],
+      },
+      {
+        code: "MOD-04",
+        title: "Skills и переиспользуемые инструкции",
+        body: "Повторяющуюся работу превращаем в локальные skills: SEO-чеклист, аудит лендинга, генерация карточек товара, чеклист деплоя.",
+        items: ["SKILL.md", "чеклисты", "шаблоны"],
+      },
+      {
+        code: "MOD-05",
+        title: "Скрипты и автоматизация",
+        body: "Маленькие Node/Python-скрипты для рутины: тексты, картинки, sitemap, JSON-LD, чистка товарных данных, отчёты.",
+        items: ["Node/Python", "безопасные inputs", "логи"],
+      },
+      {
+        code: "MOD-06",
+        title: "Пайплайны и human-in-the-loop",
+        body: "AI готовит черновик, скрипт нормализует, человек проверяет, система публикует. Без слепой автопубликации там, где есть бизнес-риск.",
+        items: ["approval gates", "diff review", "rollback"],
+      },
+    ],
+    setupSteps: [
+      {
+        code: "01",
+        title: "Собрать базовое рабочее место",
+        body: "GitHub repo, README, project rules, дизайн-референсы, короткий business brief и папка для reusable prompts.",
+        items: ["repo", "README", "rules"],
+      },
+      {
+        code: "02",
+        title: "Настроить цикл правок",
+        body: "Cursor/Codex для изменений в коде, Claude-style чат для плана и ревью, терминал для тестов, build и git diff.",
+        items: ["edit", "test", "review"],
+      },
+      {
+        code: "03",
+        title: "Добавить prompts и skills",
+        body: "Сохранить инструкции для лендинга, аудита, SEO, product cards, переводов, деплоя и проверки перед публикацией.",
+        items: ["prompts", "skills", "checklists"],
+      },
+      {
+        code: "04",
+        title: "Подключить скрипты",
+        body: "Начать с безопасного: генерация черновиков страниц, проверка ссылок, JSON-LD, таблицы контента, подготовка sitemap.",
+        items: ["scripts", "validation", "reports"],
+      },
+      {
+        code: "05",
+        title: "Ввести human checkpoints",
+        body: "Перед публикацией: посмотреть diff, открыть preview, проверить форму, SEO, мобильную версию и только потом deploy production.",
+        items: ["diff", "preview", "prod"],
+      },
+      {
+        code: "06",
+        title: "Собрать личный pipeline",
+        body: "Один шаблон процесса: idea -> brief -> AI draft -> code -> tests -> human review -> deploy -> analytics -> next iteration.",
+        items: ["pipeline", "analytics", "iteration"],
+      },
+    ],
+  },
+  uk: {
+    tag: "Контент-план",
+    title: "Не набір prompt, а система AI-assisted coding",
+    subtitle:
+      "Безкоштовна школа про Cursor, Claude, Codex, китайські AI-моделі, skills, скрипти, pipeline і human-in-the-loop контроль.",
+    modulesTitle: "Про що будуть гайди",
+    setupTitle: "Як по кроках налаштувати систему",
+    setupSubtitle:
+      "Краще йти в цьому порядку: кожен крок дає робочий артефакт, який потім пере використовується у проєктах.",
+    modules: [
+      {
+        code: "MOD-01",
+        title: "Cursor як робоче середовище",
+        body: "Контекст проєкту, правила, маленькі коміти, точкові правки, рефакторинг і як не дати Cursor переписати весь проєкт.",
+        items: ["project rules", "правки по файлах", "debug loop"],
+      },
+      {
+        code: "MOD-02",
+        title: "Claude, Codex і ролі моделей",
+        body: "Одна модель планує, інша пише код, третя критикує. Розділяємо архітектуру, правки, copy, тести й документацію.",
+        items: ["розподіл ролей", "handoff prompts", "review prompts"],
+      },
+      {
+        code: "MOD-03",
+        title: "Китайські AI-моделі",
+        body: "Де використовувати Qwen / DeepSeek / Kimi-подібні моделі: дешеві чернетки, альтернативне мислення, переклади, перевірка контенту.",
+        items: ["контроль ціни", "друга думка", "мультимовні чернетки"],
+      },
+      {
+        code: "MOD-04",
+        title: "Skills і reusable instructions",
+        body: "Повторювану роботу перетворюємо на локальні skills: SEO-чеклист, аудит лендингу, product cards, deployment checklist.",
+        items: ["SKILL.md", "чеклисти", "шаблони"],
+      },
+      {
+        code: "MOD-05",
+        title: "Скрипти й автоматизація",
+        body: "Малі Node/Python-скрипти для рутини: тексти, картинки, sitemap, JSON-LD, чистка товарних даних, звіти.",
+        items: ["Node/Python", "safe inputs", "логи"],
+      },
+      {
+        code: "MOD-06",
+        title: "Pipeline і human-in-the-loop",
+        body: "AI готує draft, скрипт нормалізує, людина перевіряє, система публікує. Без сліпої автопублікації там, де є бізнес-ризик.",
+        items: ["approval gates", "diff review", "rollback"],
+      },
+    ],
+    setupSteps: [
+      {
+        code: "01",
+        title: "Зібрати базовий workspace",
+        body: "GitHub repo, README, project rules, дизайн-референси, короткий business brief і папка для reusable prompts.",
+        items: ["repo", "README", "rules"],
+      },
+      {
+        code: "02",
+        title: "Налаштувати цикл правок",
+        body: "Cursor/Codex для змін у коді, Claude-style чат для плану й review, terminal для tests, build і git diff.",
+        items: ["edit", "test", "review"],
+      },
+      {
+        code: "03",
+        title: "Додати prompts і skills",
+        body: "Зберегти інструкції для лендингу, аудиту, SEO, product cards, перекладів, deployment і pre-publish перевірки.",
+        items: ["prompts", "skills", "checklists"],
+      },
+      {
+        code: "04",
+        title: "Підключити скрипти",
+        body: "Почати з безпечного: draft сторінок, перевірка links, JSON-LD, таблиці контенту, підготовка sitemap.",
+        items: ["scripts", "validation", "reports"],
+      },
+      {
+        code: "05",
+        title: "Ввести human checkpoints",
+        body: "Перед публікацією: diff, preview, форма, SEO, mobile і тільки потім production deploy.",
+        items: ["diff", "preview", "prod"],
+      },
+      {
+        code: "06",
+        title: "Зібрати особистий pipeline",
+        body: "Один шаблон процесу: idea -> brief -> AI draft -> code -> tests -> human review -> deploy -> analytics -> next iteration.",
+        items: ["pipeline", "analytics", "iteration"],
+      },
+    ],
+  },
+};
 
 export const guides: Guide[] = [
   {
