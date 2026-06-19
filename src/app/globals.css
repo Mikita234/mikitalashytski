@@ -705,29 +705,29 @@ button:focus-visible {
 
 .retro-phone-handset--hero {
   position: absolute;
-  bottom: -8%;
-  left: -18%;
+  bottom: -6%;
+  left: -20%;
   z-index: 2;
-  width: 4.5rem;
-  opacity: 0.88;
-  transform: rotate(-28deg);
+  width: 5.5rem;
+  opacity: 0.9;
+  transform: rotate(-22deg);
 }
 
 .retro-phone-handset--cta {
-  width: 5.5rem;
+  width: 6.5rem;
   opacity: 0.92;
-  transform: rotate(-18deg);
+  transform: rotate(-14deg);
 }
 
 @media (min-width: 1024px) {
   .retro-phone-handset--hero {
-    width: 5.75rem;
-    bottom: -4%;
-    left: -22%;
+    width: 7.5rem;
+    bottom: -2%;
+    left: -24%;
   }
 
   .retro-phone-handset--cta {
-    width: 7rem;
+    width: 8.5rem;
   }
 }
 
