@@ -8,7 +8,7 @@ import {
   VintageBulletList,
 } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
 import { pipelines } from "@/data/pipelines";
 import { pipelineHub, pipelineLabels } from "@/content/pipeline";
@@ -22,11 +22,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const hub = pipelineHub[l];
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: "/pipeline",
     title: hub.title,
     description: hub.subtitle,
-    alternates: buildAlternates(locale, "/pipeline"),
-  };
+  });
 }
 
 export default async function PipelineHubPage({

@@ -3,7 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { StackMatrix } from "@/components/pipeline/StackMatrix";
 import { VintagePageHeader } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import { stacksPage, pipelineHub, pipelineLabels, stacksPhilosophy } from "@/content/pipeline";
 import { VintageSectionHeader } from "@/components/vintage/VintagePage";
@@ -16,11 +16,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const copy = stacksPage[l];
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: "/pipeline/stacks",
     title: copy.title,
     description: copy.subtitle,
-    alternates: buildAlternates(locale, "/pipeline/stacks"),
-  };
+  });
 }
 
 export default async function PipelineStacksPage({

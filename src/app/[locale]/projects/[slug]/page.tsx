@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { buildAlternates } from "@/lib/seo";
-import { site } from "@/content/site";
-import { routing } from "@/i18n/routing";
+import { buildSeoMetadata } from "@/lib/seo";
 import { projects, getProject } from "@/content/projects";
 import { VintageProjectContent } from "@/components/vintage/VintageProjectContent";
 
@@ -23,17 +21,13 @@ export async function generateMetadata({
   const title = `${project.name} — ${t("category")}`;
   const description = t("tagline");
 
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: `/projects/${slug}`,
     title,
     description,
-    alternates: buildAlternates(locale, `/projects/${slug}`),
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      url: `${site.url}${locale === routing.defaultLocale ? "" : `/${locale}`}/projects/${slug}`,
-    },
-  };
+    type: "article",
+  });
 }
 
 export default async function ProjectPage({

@@ -10,7 +10,7 @@ import {
   VintageSectionHeader,
 } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
 import { getGuide, guideLabels, guides } from "@/content/guides";
 import { site } from "@/content/site";
@@ -32,11 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
   const l = locale as Locale;
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: `/guides/${guide.slug}`,
     title: guide.title[l],
     description: guide.description[l],
-    alternates: buildAlternates(locale, `/guides/${guide.slug}`),
-  };
+    type: "article",
+  });
 }
 
 export default async function GuidePage({ params }: Props) {

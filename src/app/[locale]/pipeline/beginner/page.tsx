@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/json-ld";
 import { StepChecklist } from "@/components/pipeline/StepChecklist";
 import { VintagePageHeader, VintageSectionHeader } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
 import { beginnerIntro, beginnerStages, pipelineHub } from "@/content/pipeline";
 import { site } from "@/content/site";
@@ -17,11 +17,13 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const intro = beginnerIntro[l];
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: "/pipeline/beginner",
     title: intro.seoTitle,
     description: intro.subtitle,
-    alternates: buildAlternates(locale, "/pipeline/beginner"),
-  };
+    type: "article",
+  });
 }
 
 export default async function PipelineBeginnerPage({

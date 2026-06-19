@@ -8,7 +8,7 @@ import {
   VintageBulletList,
 } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
 import {
   guideContentClusters,
@@ -31,11 +31,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const gp = guidesPipelineUpdate[l];
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: "/guides",
     title: gp.heroTitle,
     description: gp.heroSubtitle,
-    alternates: buildAlternates(locale, "/guides"),
-  };
+  });
 }
 
 export default async function GuidesPage({

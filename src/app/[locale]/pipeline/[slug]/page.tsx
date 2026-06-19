@@ -11,7 +11,7 @@ import {
   VintageSectionHeader,
 } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
 import { getPipeline, pipelineSlugs } from "@/data/pipelines";
 import { getStackById } from "@/data/stack-options";
@@ -33,11 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pipeline = getPipeline(slug);
   if (!pipeline) return {};
   const l = locale as Locale;
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: `/pipeline/${pipeline.id}`,
     title: pipeline.title[l],
     description: pipeline.description[l],
-    alternates: buildAlternates(locale, `/pipeline/${pipeline.id}`),
-  };
+    type: "article",
+  });
 }
 
 export default async function PipelineDetailPage({ params }: Props) {

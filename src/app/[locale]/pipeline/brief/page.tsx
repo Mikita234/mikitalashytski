@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { BriefBuilder } from "@/components/pipeline/BriefBuilder";
 import { VintagePageHeader } from "@/components/vintage/VintagePage";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import { briefPage } from "@/content/pipeline";
 
@@ -14,11 +14,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const copy = briefPage[l];
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: "/pipeline/brief",
     title: copy.title,
     description: copy.subtitle,
-    alternates: buildAlternates(locale, "/pipeline/brief"),
-  };
+  });
 }
 
 export default async function PipelineBriefPage({

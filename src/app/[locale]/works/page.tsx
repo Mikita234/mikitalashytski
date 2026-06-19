@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import { VintagePageHeader } from "@/components/vintage/VintagePage";
 import { WorksGrid } from "@/components/vintage/WorksGrid";
 
@@ -11,11 +11,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home.works" });
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: "/works",
     title: t("title"),
     description: t("subtitle"),
-    alternates: buildAlternates(locale, "/works"),
-  };
+  });
 }
 
 export default async function WorksPage({

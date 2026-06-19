@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import { getServiceMeta, serviceSlugs, type ServiceSlug } from "@/content/services";
 import { ServicePageContent } from "@/components/vintage/ServicePageContent";
 
@@ -18,11 +18,12 @@ export async function generateMetadata({
   const meta = getServiceMeta(slug);
   if (!meta) return {};
   const t = await getTranslations({ locale, namespace: `services.${slug}` });
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: `/services/${slug}`,
     title: t("title"),
     description: t("headline"),
-    alternates: buildAlternates(locale, `/services/${slug}`),
-  };
+  });
 }
 
 export default async function ServicePage({

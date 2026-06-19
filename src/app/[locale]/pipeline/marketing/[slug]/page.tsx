@@ -10,7 +10,7 @@ import {
   VintageSectionHeader,
 } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
-import { buildAlternates } from "@/lib/seo";
+import { buildSeoMetadata } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
 import {
   getMarketingPipeline,
@@ -34,11 +34,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pipeline = getMarketingPipeline(slug);
   if (!pipeline) return {};
   const l = locale as Locale;
-  return {
+  return buildSeoMetadata({
+    locale,
+    path: `/pipeline/marketing/${pipeline.id}`,
     title: pipeline.title[l],
     description: pipeline.description[l],
-    alternates: buildAlternates(locale, `/pipeline/marketing/${pipeline.id}`),
-  };
+    type: "article",
+  });
 }
 
 export default async function MarketingPipelineDetailPage({ params }: Props) {

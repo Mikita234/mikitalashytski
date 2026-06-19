@@ -9,6 +9,7 @@ import { VintageShell } from "@/components/vintage/VintageShell";
 import { JsonLd } from "@/components/json-ld";
 import { PlausibleScript } from "@/components/analytics/PlausibleScript";
 import { site } from "@/content/site";
+import { buildSeoMetadata } from "@/lib/seo";
 import "../globals.css";
 
 const barlow = Barlow_Condensed({
@@ -51,37 +52,21 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
 
-  const languages = Object.fromEntries(
-    routing.locales.map((l) => [l, l === routing.defaultLocale ? "/" : `/${l}`]),
-  );
+  const baseMetadata = buildSeoMetadata({
+    locale,
+    title: t("title"),
+    description: t("description"),
+  });
 
   return {
-    metadataBase: new URL(site.url),
+    ...baseMetadata,
     title: {
       default: t("title"),
       template: `%s · ${site.name}`,
     },
-    description: t("description"),
     applicationName: site.name,
     authors: [{ name: site.name, url: site.url }],
     creator: site.name,
-    alternates: {
-      canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
-      languages: { ...languages, "x-default": "/" },
-    },
-    openGraph: {
-      type: "website",
-      siteName: site.name,
-      title: t("title"),
-      description: t("description"),
-      url: locale === routing.defaultLocale ? site.url : `${site.url}/${locale}`,
-      locale,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-    },
     robots: { index: true, follow: true },
   };
 }
