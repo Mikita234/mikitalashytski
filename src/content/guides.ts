@@ -15,7 +15,13 @@ export type GuideSlug =
   | "seo-internal-linking"
   | "homepage-seo-description"
   | "google-business-profile"
-  | "form-tracking-conversions";
+  | "form-tracking-conversions"
+  | "service-page-that-converts"
+  | "case-study-proof-structure"
+  | "safe-case-screenshots"
+  | "seo-content-clusters"
+  | "ai-search-llms-txt"
+  | "analytics-without-ga4";
 
 export interface GuideStep {
   title: string;
@@ -61,6 +67,14 @@ export interface GuideTopicExpansion {
   title: string;
   subtitle: string;
   items: GuideRoadmapModule[];
+}
+
+export interface GuideContentCluster {
+  code: string;
+  title: Record<Locale, string>;
+  body: Record<Locale, string>;
+  guides: GuideSlug[];
+  href: string;
 }
 
 const sharedTags = ["Cursor", "GitHub", "Vercel", "SEO"];
@@ -816,6 +830,119 @@ export const guideTopicExpansion: Record<Locale, GuideTopicExpansion> = {
     ],
   },
 };
+
+export const guideContentClusters: GuideContentCluster[] = [
+  {
+    code: "CL-01",
+    title: {
+      en: "Launch and technical SEO",
+      pl: "Launch i techniczne SEO",
+      ru: "Запуск и техническое SEO",
+      uk: "Запуск і технічне SEO",
+    },
+    body: {
+      en: "From a live site to indexing, Search Console, internal links and AI-readable files.",
+      pl: "Od działającej strony do indeksacji, Search Console, linków wewnętrznych i plików czytelnych dla AI.",
+      ru: "От живого сайта до индексации, Search Console, внутренних ссылок и файлов, понятных AI.",
+      uk: "Від live-сайту до індексації, Search Console, внутрішніх links і файлів, зрозумілих AI.",
+    },
+    guides: [
+      "website-launch-checklist-full",
+      "google-search-console-setup",
+      "seo-internal-linking",
+      "ai-search-llms-txt",
+    ],
+    href: "/guides/website-launch-checklist-full",
+  },
+  {
+    code: "CL-02",
+    title: {
+      en: "Service pages that bring leads",
+      pl: "Strony usług, które dają leady",
+      ru: "Страницы услуг, которые дают заявки",
+      uk: "Сторінки послуг, які дають заявки",
+    },
+    body: {
+      en: "Homepage metadata, service-page structure, local profile and paid traffic without wasting clicks.",
+      pl: "Metadata homepage, struktura strony usługi, local profile i reklama bez marnowania klików.",
+      ru: "Metadata главной, структура услуги, local profile и реклама без слива кликов.",
+      uk: "Metadata головної, структура послуги, local profile і реклама без зливу кліків.",
+    },
+    guides: [
+      "homepage-seo-description",
+      "service-page-that-converts",
+      "google-business-profile",
+      "google-ads-starter",
+    ],
+    href: "/guides/service-page-that-converts",
+  },
+  {
+    code: "CL-03",
+    title: {
+      en: "Proof, screenshots and case studies",
+      pl: "Dowody, screeny i case studies",
+      ru: "Доказательства, скрины и кейсы",
+      uk: "Докази, скріни й кейси",
+    },
+    body: {
+      en: "How to turn projects into credible case studies without leaking private data.",
+      pl: "Jak zamienić projekty w wiarygodne case studies bez wycieku prywatnych danych.",
+      ru: "Как превратить проекты в убедительные кейсы и не слить приватные данные.",
+      uk: "Як перетворити проєкти на переконливі кейси й не злити приватні дані.",
+    },
+    guides: [
+      "case-study-proof-structure",
+      "safe-case-screenshots",
+      "when-to-hire",
+      "ai-website-mistakes",
+    ],
+    href: "/guides/case-study-proof-structure",
+  },
+  {
+    code: "CL-04",
+    title: {
+      en: "Content operations and discovery",
+      pl: "Content ops i odkrywanie",
+      ru: "Content ops и обнаружение",
+      uk: "Content ops і знаходження",
+    },
+    body: {
+      en: "Cluster planning, social discovery, regional search and measurement before scaling publishing.",
+      pl: "Plan klastrów, social discovery, regional search i pomiar przed skalowaniem publikacji.",
+      ru: "План кластеров, social discovery, региональный поиск и измерение до масштабирования публикаций.",
+      uk: "План кластерів, social discovery, регіональний пошук і вимір до масштабування публікацій.",
+    },
+    guides: [
+      "seo-content-clusters",
+      "tiktok-for-small-business",
+      "yandex-for-ru-market",
+      "analytics-without-ga4",
+    ],
+    href: "/guides/seo-content-clusters",
+  },
+  {
+    code: "CL-05",
+    title: {
+      en: "AI build and deployment workflow",
+      pl: "Workflow budowy i deploymentu z AI",
+      ru: "AI build и workflow деплоя",
+      uk: "AI build і workflow деплою",
+    },
+    body: {
+      en: "From prompt and stack choice to GitHub, Vercel, checks and a site you can keep editing.",
+      pl: "Od promptu i wyboru stacku do GitHub, Vercel, kontroli i strony, którą da się dalej edytować.",
+      ru: "От prompt и выбора stack до GitHub, Vercel, проверок и сайта, который можно дальше править.",
+      uk: "Від prompt і вибору stack до GitHub, Vercel, перевірок і сайту, який можна далі редагувати.",
+    },
+    guides: [
+      "make-website-yourself",
+      "cursor-prompts",
+      "cursor-github-vercel",
+      "frameworks-pick-2026",
+    ],
+    href: "/guides/make-website-yourself",
+  },
+];
 
 export const guides: Guide[] = [
   {
@@ -1781,6 +1908,442 @@ export const guides: Guide[] = [
       uk: { title: "Потрібен tracking конверсій?", body: "Підключу форму, аналітику і lead routing до реклами.", bullets: ["Тест форми", "Analytics event", "Lead routing"] },
     },
     related: ["google-ads-starter", "google-search-console-setup", "website-launch-checklist-full"],
+  },
+  {
+    slug: "service-page-that-converts",
+    tape: "TAPE-16",
+    channel: "SERVICE-SEO",
+    minutes: 10,
+    tags: ["SEO", "Copy", "Conversion", "Services"],
+    title: {
+      en: "How to write a service page that converts",
+      pl: "Jak napisać stronę usługi, która konwertuje",
+      ru: "Как написать страницу услуги, которая дает заявки",
+      uk: "Як написати сторінку послуги, яка дає заявки",
+    },
+    description: {
+      en: "A practical structure for one service page: intent, offer, proof, process, FAQ, CTA and internal links.",
+      pl: "Praktyczna struktura strony usługi: intencja, oferta, dowód, proces, FAQ, CTA i linki wewnętrzne.",
+      ru: "Практичная структура страницы услуги: intent, оффер, доказательства, процесс, FAQ, CTA и внутренние ссылки.",
+      uk: "Практична структура сторінки послуги: intent, офер, докази, процес, FAQ, CTA і внутрішні links.",
+    },
+    intro: {
+      en: "A service page is not a brochure. It must answer the exact buying question, prove that you can do the work and make the next action obvious.",
+      pl: "Strona usługi nie jest broszurą. Ma odpowiedzieć na pytanie zakupowe, pokazać dowód i jasno prowadzić do kontaktu.",
+      ru: "Страница услуги — не буклет. Она должна закрыть покупательский вопрос, доказать компетенцию и сразу вести к заявке.",
+      uk: "Сторінка послуги — не буклет. Вона має закрити купівельне питання, довести компетенцію і вести до заявки.",
+    },
+    outcome: {
+      en: ["One focused keyword intent", "Offer block with scope and price logic", "Proof section", "FAQ and internal links", "CTA that matches the page"],
+      pl: ["Jedna intencja keyword", "Oferta z zakresem i logiką ceny", "Sekcja dowodów", "FAQ i linki", "CTA zgodne ze stroną"],
+      ru: ["Один фокусный intent", "Оффер с рамками и логикой цены", "Блок доказательств", "FAQ и ссылки", "CTA по смыслу страницы"],
+      uk: ["Один фокусний intent", "Офер з рамками й логікою ціни", "Блок доказів", "FAQ і links", "CTA за змістом сторінки"],
+    },
+    steps: {
+      en: [
+        { title: "Pick one search intent", body: "Do not mix website build, SEO audit and ads setup on one URL if people search for them separately." },
+        { title: "Open with the real offer", body: "Say what you do, for whom, where it works and what changes after the work is done." },
+        { title: "Show proof before process", body: "Use screenshots, numbers, before/after notes or constraints. Process without proof reads like filler." },
+        { title: "Add FAQ from objections", body: "Answer price, timing, access, maintenance, ownership, revisions and what happens after launch." },
+        { title: "Link to the next best page", body: "Service pages should link to a relevant case, guide and contact path, not only to the homepage." },
+      ],
+      pl: [
+        { title: "Wybierz jedną intencję", body: "Nie mieszaj budowy strony, audytu SEO i reklam na jednym URL, jeśli ludzie szukają tego osobno." },
+        { title: "Zacznij od konkretnej oferty", body: "Powiedz co robisz, dla kogo, gdzie to działa i co zmienia się po wykonaniu pracy." },
+        { title: "Pokaż dowód przed procesem", body: "Screeny, liczby, before/after albo ograniczenia. Sam proces bez dowodu brzmi jak wypełniacz." },
+        { title: "FAQ z obiekcji", body: "Cena, czas, dostępy, utrzymanie, własność, poprawki i co dzieje się po launchu." },
+        { title: "Linkuj następny krok", body: "Strona usługi powinna linkować case, guide i kontakt, nie tylko homepage." },
+      ],
+      ru: [
+        { title: "Выбери один intent", body: "Не смешивай создание сайта, SEO-аудит и рекламу на одном URL, если люди ищут это отдельно." },
+        { title: "Начни с конкретного оффера", body: "Что делаешь, для кого, где это работает и что меняется после работы." },
+        { title: "Покажи доказательство до процесса", body: "Скрины, цифры, before/after или ограничения. Процесс без доказательств выглядит как вода." },
+        { title: "FAQ делай из возражений", body: "Цена, сроки, доступы, поддержка, владение кодом, правки и что происходит после запуска." },
+        { title: "Дай следующий логичный шаг", body: "Страница услуги должна вести в кейс, гайд и контакт, а не только на главную." },
+      ],
+      uk: [
+        { title: "Обери один intent", body: "Не змішуй створення сайту, SEO-аудит і рекламу на одному URL, якщо люди шукають це окремо." },
+        { title: "Почни з конкретного оферу", body: "Що робиш, для кого, де це працює і що змінюється після роботи." },
+        { title: "Покажи доказ до процесу", body: "Скріни, цифри, before/after або обмеження. Процес без доказів виглядає як вода." },
+        { title: "FAQ роби з заперечень", body: "Ціна, строки, доступи, підтримка, ownership, правки і що після запуску." },
+        { title: "Дай наступний логічний крок", body: "Сторінка послуги має вести в case, guide і contact, не тільки на головну." },
+      ],
+    },
+    mistakes: {
+      en: ["Three different services on one page", "No proof", "Vague CTA", "FAQ copied from competitors", "No internal links"],
+      pl: ["Trzy usługi na jednej stronie", "Brak dowodu", "Niejasne CTA", "FAQ skopiowane od konkurencji", "Brak linków"],
+      ru: ["Три услуги на одной странице", "Нет proof", "Размытый CTA", "FAQ скопирован у конкурентов", "Нет внутренних ссылок"],
+      uk: ["Три послуги на одній сторінці", "Немає proof", "Розмите CTA", "FAQ скопійований у конкурентів", "Немає internal links"],
+    },
+    cta: {
+      en: { title: "Need service-page copy?", body: "I can turn one offer into a page structure, metadata, FAQ and internal links.", bullets: ["SEO structure", "Conversion copy", "FAQ and schema plan"] },
+      pl: { title: "Potrzebujesz copy usługi?", body: "Zamienię ofertę w strukturę strony, metadata, FAQ i linki.", bullets: ["Struktura SEO", "Conversion copy", "FAQ i schema"] },
+      ru: { title: "Нужна страница услуги?", body: "Разложу оффер в структуру страницы, metadata, FAQ и внутренние ссылки.", bullets: ["SEO-структура", "Conversion copy", "FAQ и schema"] },
+      uk: { title: "Потрібна сторінка послуги?", body: "Розкладу офер у структуру сторінки, metadata, FAQ і internal links.", bullets: ["SEO-структура", "Conversion copy", "FAQ і schema"] },
+    },
+    related: ["homepage-seo-description", "google-business-profile", "form-tracking-conversions"],
+  },
+  {
+    slug: "case-study-proof-structure",
+    tape: "TAPE-17",
+    channel: "PROOF",
+    minutes: 9,
+    tags: ["Case Studies", "Proof", "SEO", "Conversion"],
+    title: {
+      en: "Case study structure: proof instead of portfolio fluff",
+      pl: "Struktura case study: dowód zamiast portfolio-fluff",
+      ru: "Структура кейса: доказательства вместо портфолио-воды",
+      uk: "Структура кейса: докази замість портфоліо-води",
+    },
+    description: {
+      en: "Turn a project into a credible case page with problem, constraints, screenshots, metrics, process and next-step links.",
+      pl: "Zamień projekt w wiarygodny case: problem, ograniczenia, screeny, metryki, proces i linki.",
+      ru: "Как превратить проект в нормальный кейс: проблема, ограничения, скрины, метрики, процесс и ссылки.",
+      uk: "Як перетворити проєкт на нормальний case: проблема, обмеження, скріни, метрики, процес і links.",
+    },
+    intro: {
+      en: "A case study should make a stranger believe the work happened and understand why it mattered. Pretty screenshots alone do not do that.",
+      pl: "Case study ma sprawić, że obca osoba wierzy w wykonaną pracę i rozumie jej sens. Same ładne screeny nie wystarczą.",
+      ru: "Кейс должен дать незнакомому человеку понять, что работа реально была и почему она важна. Одних красивых скринов мало.",
+      uk: "Case має дати незнайомій людині зрозуміти, що робота була реальною і чому вона важлива. Одних гарних скрінів мало.",
+    },
+    outcome: {
+      en: ["Problem/process/result frame", "2-3 evidence screenshots", "Metric source list", "Internal links to guides and services"],
+      pl: ["Problem/proces/wynik", "2-3 screeny dowodu", "Lista źródeł metryk", "Linki do guides i usług"],
+      ru: ["Фрейм проблема/процесс/результат", "2-3 скрина-доказательства", "Список источников метрик", "Ссылки на гайды и услуги"],
+      uk: ["Фрейм проблема/процес/результат", "2-3 скріни-докази", "Список джерел метрик", "Links на guides і послуги"],
+    },
+    steps: {
+      en: [
+        { title: "Start with the constraint", body: "Budget, old stack, marketplace rules, time pressure or manual workflow. Constraints make the result believable." },
+        { title: "Show the evidence", body: "Use real interface screenshots, Search Console, Lighthouse, order/admin proof or workflow before/after." },
+        { title: "Separate confirmed and estimated metrics", body: "Never present a placeholder as a confirmed result. Label source and date." },
+        { title: "Explain the decisions", body: "Why this stack, why this flow, why these compromises. That is more useful than a generic feature list." },
+        { title: "Link the buyer path", body: "Case -> relevant guide -> service/order CTA. A case should help conversion, not only look nice." },
+      ],
+      pl: [
+        { title: "Zacznij od ograniczenia", body: "Budżet, stary stack, marketplace, presja czasu albo manualny workflow. Ograniczenia budują wiarygodność." },
+        { title: "Pokaż dowód", body: "Realne screeny interfejsu, Search Console, Lighthouse, admin/order proof albo before/after workflow." },
+        { title: "Oddziel metryki potwierdzone", body: "Placeholder nigdy nie może wyglądać jak potwierdzony wynik. Źródło i data są obowiązkowe." },
+        { title: "Wyjaśnij decyzje", body: "Czemu taki stack, flow i kompromisy. To lepsze niż generyczna lista funkcji." },
+        { title: "Połącz ścieżkę kupującego", body: "Case -> guide -> service/order CTA. Case ma pomagać konwersji." },
+      ],
+      ru: [
+        { title: "Начни с ограничения", body: "Бюджет, старый stack, правила marketplace, сроки или ручной workflow. Ограничения делают кейс честным." },
+        { title: "Покажи доказательства", body: "Реальные скрины интерфейса, Search Console, Lighthouse, admin/order proof или before/after workflow." },
+        { title: "Раздели confirmed и estimated", body: "Placeholder нельзя показывать как подтвержденный результат. Нужны источник и дата." },
+        { title: "Объясни решения", body: "Почему такой stack, flow и компромиссы. Это полезнее списка функций." },
+        { title: "Свяжи путь покупателя", body: "Кейс -> релевантный гайд -> service/order CTA. Кейс должен помогать конверсии." },
+      ],
+      uk: [
+        { title: "Почни з обмеження", body: "Бюджет, старий stack, правила marketplace, строки або ручний workflow. Обмеження роблять case чесним." },
+        { title: "Покажи докази", body: "Реальні скріни інтерфейсу, Search Console, Lighthouse, admin/order proof або before/after workflow." },
+        { title: "Розділи confirmed і estimated", body: "Placeholder не можна показувати як підтверджений результат. Потрібні джерело й дата." },
+        { title: "Поясни рішення", body: "Чому такий stack, flow і компроміси. Це корисніше за список features." },
+        { title: "Зв'яжи шлях покупця", body: "Case -> релевантний guide -> service/order CTA. Case має допомагати конверсії." },
+      ],
+    },
+    mistakes: {
+      en: ["Only pretty screenshots", "No source for metrics", "No business constraint", "No CTA", "Hiding what was actually built"],
+      pl: ["Same ładne screeny", "Brak źródła metryk", "Brak ograniczenia biznesowego", "Brak CTA", "Nie wiadomo co zbudowano"],
+      ru: ["Только красивые скрины", "Нет источника метрик", "Нет бизнес-ограничения", "Нет CTA", "Неясно, что реально сделано"],
+      uk: ["Тільки красиві скріни", "Немає джерела метрик", "Немає бізнес-обмеження", "Немає CTA", "Неясно, що реально зроблено"],
+    },
+    cta: {
+      en: { title: "Need stronger cases?", body: "I can rewrite case pages around proof, screenshots, metrics and conversion paths.", bullets: ["Case structure", "Proof checklist", "Internal links"] },
+      pl: { title: "Potrzebujesz mocniejszych case?", body: "Przepiszę case wokół dowodów, screenów, metryk i ścieżek konwersji.", bullets: ["Struktura case", "Checklista dowodów", "Linki"] },
+      ru: { title: "Нужны сильнее кейсы?", body: "Пересоберу кейсы вокруг proof, скринов, метрик и путей конверсии.", bullets: ["Структура кейса", "Чеклист proof", "Внутренние ссылки"] },
+      uk: { title: "Потрібні сильніші кейси?", body: "Перезберу cases навколо proof, скрінів, метрик і шляхів конверсії.", bullets: ["Структура case", "Proof checklist", "Internal links"] },
+    },
+    related: ["safe-case-screenshots", "when-to-hire", "seo-internal-linking"],
+  },
+  {
+    slug: "safe-case-screenshots",
+    tape: "TAPE-18",
+    channel: "SCREENSHOTS",
+    minutes: 8,
+    tags: ["Case Studies", "Privacy", "Proof", "SEO"],
+    title: {
+      en: "How to prepare public case screenshots safely",
+      pl: "Jak bezpiecznie przygotować screeny do case studies",
+      ru: "Как безопасно готовить скрины для публичных кейсов",
+      uk: "Як безпечно готувати скріни для публічних кейсів",
+    },
+    description: {
+      en: "A checklist for proof screenshots: what to capture, what to blur, filenames, alt text and replacement order.",
+      pl: "Checklista screenów dowodowych: co złapać, co zamazać, nazwy plików, alt text i kolejność wymiany.",
+      ru: "Чеклист proof-скринов: что снять, что замазать, имена файлов, alt text и порядок замены.",
+      uk: "Checklist proof-скрінів: що зняти, що замазати, імена файлів, alt text і порядок заміни.",
+    },
+    intro: {
+      en: "Screenshots are the fastest way to make a case credible, but they can also leak customer, order or admin data. Treat them like production assets.",
+      pl: "Screeny najszybciej budują wiarygodność case, ale mogą ujawnić dane klientów, zamówień i admina. Traktuj je jak assety produkcyjne.",
+      ru: "Скрины быстрее всего делают кейс убедительным, но легко сливают клиентов, заказы и админку. Относись к ним как к production-ассетам.",
+      uk: "Скріни найшвидше роблять case переконливим, але легко зливають клієнтів, замовлення й адмінку. Стався до них як до production assets.",
+    },
+    outcome: {
+      en: ["Screenshot shot list", "Blur/redaction rules", "WebP filenames", "Alt text plan", "Replacement checklist"],
+      pl: ["Lista screenów", "Zasady zamazywania", "Nazwy WebP", "Plan alt text", "Checklista wymiany"],
+      ru: ["Список нужных скринов", "Правила блюра", "WebP-имена", "План alt text", "Чеклист замены"],
+      uk: ["Список потрібних скрінів", "Правила blur", "WebP-імена", "План alt text", "Checklist заміни"],
+    },
+    steps: {
+      en: [
+        { title: "Capture the proof moment", body: "Home page, product/category, admin integration, payment flow, Search Console or automation output." },
+        { title: "Blur private data twice", body: "Names, emails, phone numbers, addresses, order IDs, revenue, tokens and internal comments need real redaction." },
+        { title: "Export consistent assets", body: "Use WebP, predictable filenames and the exact paths already referenced in project content." },
+        { title: "Write useful alt text", body: "Alt text should describe the proof, not repeat 'screenshot' or stuff keywords." },
+        { title: "Verify on mobile and desktop", body: "Open every case page after replacement and make sure the image crop still proves the point." },
+      ],
+      pl: [
+        { title: "Złap moment dowodu", body: "Home, produkt/kategoria, integracja admin, payment flow, Search Console albo output automatyzacji." },
+        { title: "Zamazuj dane dwa razy", body: "Nazwy, maile, telefony, adresy, order ID, revenue, tokeny i komentarze wewnętrzne wymagają redakcji." },
+        { title: "Eksportuj spójnie", body: "WebP, przewidywalne nazwy i dokładne ścieżki już użyte w treści projektu." },
+        { title: "Napisz dobry alt text", body: "Alt ma opisywać dowód, nie powtarzać 'screenshot' i nie upychać keywords." },
+        { title: "Sprawdź mobile i desktop", body: "Po wymianie otwórz każdy case i upewnij się, że crop nadal pokazuje dowód." },
+      ],
+      ru: [
+        { title: "Сними момент доказательства", body: "Home, product/category, admin integration, payment flow, Search Console или output автоматизации." },
+        { title: "Замазывай приватное дважды", body: "Имена, email, телефоны, адреса, order ID, revenue, токены и внутренние комментарии нужно реально редактировать." },
+        { title: "Экспортируй одинаково", body: "WebP, предсказуемые имена файлов и точные пути, которые уже прописаны в проектном контенте." },
+        { title: "Напиши полезный alt text", body: "Alt должен описывать proof, а не повторять 'скриншот' и не набивать keywords." },
+        { title: "Проверь mobile и desktop", body: "После замены открой каждый case и убедись, что crop всё еще доказывает нужную мысль." },
+      ],
+      uk: [
+        { title: "Зніми момент доказу", body: "Home, product/category, admin integration, payment flow, Search Console або output автоматизації." },
+        { title: "Замазуй приватне двічі", body: "Імена, email, телефони, адреси, order ID, revenue, tokens і внутрішні коментарі треба реально редагувати." },
+        { title: "Експортуй однаково", body: "WebP, передбачувані імена файлів і точні paths, які вже прописані у project content." },
+        { title: "Напиши корисний alt text", body: "Alt має описувати proof, а не повторювати 'screenshot' і не набивати keywords." },
+        { title: "Перевір mobile і desktop", body: "Після заміни відкрий кожен case і переконайся, що crop досі доводить потрібну думку." },
+      ],
+    },
+    mistakes: {
+      en: ["Leaking order data", "Screenshots too cropped", "Random filenames", "No alt text", "Uploading PNG megabytes"],
+      pl: ["Wyciek danych zamówień", "Za mocno przycięte screeny", "Losowe nazwy", "Brak alt text", "Wielkie PNG"],
+      ru: ["Слив данных заказов", "Скрины слишком обрезаны", "Случайные имена файлов", "Нет alt text", "Тяжелые PNG"],
+      uk: ["Злив даних замовлень", "Скріни надто обрізані", "Випадкові імена", "Немає alt text", "Важкі PNG"],
+    },
+    cta: {
+      en: { title: "Need proof assets prepared?", body: "I can make a shot list, redact screenshots and wire them into case pages.", bullets: ["Shot list", "Redaction", "Case image replacement"] },
+      pl: { title: "Potrzebujesz assetów proof?", body: "Przygotuję shot list, zredaguję screeny i podłączę je do case pages.", bullets: ["Shot list", "Redakcja", "Wymiana obrazów"] },
+      ru: { title: "Нужны proof-ассеты?", body: "Соберу shot list, отредактирую скрины и подключу их к кейсам.", bullets: ["Shot list", "Редакция", "Замена изображений"] },
+      uk: { title: "Потрібні proof assets?", body: "Зберу shot list, відредагую скріни й підключу їх до cases.", bullets: ["Shot list", "Redaction", "Image replacement"] },
+    },
+    related: ["case-study-proof-structure", "website-launch-checklist-full", "seo-internal-linking"],
+  },
+  {
+    slug: "seo-content-clusters",
+    tape: "TAPE-19",
+    channel: "CONTENT-OPS",
+    minutes: 11,
+    tags: ["SEO", "Content", "Internal Links", "Strategy"],
+    title: {
+      en: "SEO content clusters for a small business site",
+      pl: "Klastry SEO contentu dla małej firmy",
+      ru: "SEO-кластеры контента для малого бизнеса",
+      uk: "SEO-кластери контенту для малого бізнесу",
+    },
+    description: {
+      en: "Plan a useful content map: hub pages, support guides, internal links, update cadence and conversion paths.",
+      pl: "Plan mapy contentu: hub pages, poradniki wspierające, linki wewnętrzne, aktualizacje i konwersja.",
+      ru: "Как спланировать карту контента: hub pages, supporting guides, внутренние ссылки, обновления и путь к заявке.",
+      uk: "Як спланувати карту контенту: hub pages, supporting guides, internal links, оновлення і шлях до заявки.",
+    },
+    intro: {
+      en: "Publishing more is not a strategy. A cluster works when every article has a job: answer intent, support a hub, pass trust and move the visitor toward action.",
+      pl: "Więcej publikacji to nie strategia. Klaster działa, gdy każdy artykuł ma zadanie: odpowiada na intent, wspiera hub i prowadzi do akcji.",
+      ru: "Больше публикаций — не стратегия. Кластер работает, когда каждая статья отвечает intent, усиливает hub и ведет к действию.",
+      uk: "Більше публікацій — не стратегія. Кластер працює, коли кожна стаття відповідає intent, підсилює hub і веде до дії.",
+    },
+    outcome: {
+      en: ["Cluster map", "Hub/support split", "Internal link rules", "Content update loop", "Conversion path per cluster"],
+      pl: ["Mapa klastra", "Hub/support split", "Zasady linkowania", "Loop aktualizacji", "Ścieżka konwersji"],
+      ru: ["Карта кластера", "Разделение hub/support", "Правила перелинковки", "Цикл обновлений", "Путь конверсии"],
+      uk: ["Карта кластера", "Розділення hub/support", "Правила linking", "Цикл оновлень", "Шлях конверсії"],
+    },
+    steps: {
+      en: [
+        { title: "Choose a business hub", body: "A hub is the page that can convert: service, pipeline, project category or guide index." },
+        { title: "List support intents", body: "Add articles for problems, comparisons, checklists, setup guides, mistakes and proof questions." },
+        { title: "Create link rules", body: "Every support guide links up to the hub, sideways to two related guides and down to a conversion path." },
+        { title: "Track gaps", body: "Mark missing screenshots, weak proof, old metadata and pages with no next step." },
+        { title: "Update, do not only publish", body: "Refresh high-value pages after Search Console shows queries, not only when inspiration appears." },
+      ],
+      pl: [
+        { title: "Wybierz hub biznesowy", body: "Hub to strona, która może konwertować: usługa, pipeline, kategoria projektów albo index guides." },
+        { title: "Wypisz intencje wspierające", body: "Artykuły o problemach, porównaniach, checklistach, setupie, błędach i pytaniach o proof." },
+        { title: "Ustal zasady linków", body: "Każdy support guide linkuje do hub, dwóch powiązanych guides i ścieżki konwersji." },
+        { title: "Śledź luki", body: "Brakujące screeny, słaby proof, stare metadata i strony bez następnego kroku." },
+        { title: "Aktualizuj, nie tylko publikuj", body: "Odświeżaj ważne strony po query z Search Console, nie tylko z inspiracji." },
+      ],
+      ru: [
+        { title: "Выбери бизнес-hub", body: "Hub — страница, которая может конвертить: услуга, pipeline, категория проектов или индекс гайдов." },
+        { title: "Собери support intents", body: "Статьи под проблемы, сравнения, чеклисты, setup, ошибки и вопросы про proof." },
+        { title: "Введи правила ссылок", body: "Каждый support guide ведет вверх в hub, вбок на два related guides и вниз к конверсии." },
+        { title: "Отмечай пробелы", body: "Недостающие скрины, слабый proof, старая metadata и страницы без следующего шага." },
+        { title: "Обновляй, а не только публикуй", body: "Переписывай важные страницы после queries из Search Console, а не только по вдохновению." },
+      ],
+      uk: [
+        { title: "Обери бізнес-hub", body: "Hub — сторінка, яка може конвертити: послуга, pipeline, категорія проєктів або index guides." },
+        { title: "Збери support intents", body: "Статті під проблеми, порівняння, checklist, setup, помилки й питання про proof." },
+        { title: "Введи правила links", body: "Кожен support guide веде в hub, на два related guides і до conversion path." },
+        { title: "Позначай прогалини", body: "Бракуючі скріни, слабкий proof, стара metadata і сторінки без наступного кроку." },
+        { title: "Оновлюй, не тільки публікуй", body: "Переписуй важливі сторінки після queries з Search Console, не лише з натхнення." },
+      ],
+    },
+    mistakes: {
+      en: ["Publishing random topics", "No hub page", "No internal links", "No update loop", "No conversion destination"],
+      pl: ["Losowe tematy", "Brak hub page", "Brak linków", "Brak update loop", "Brak celu konwersji"],
+      ru: ["Случайные темы", "Нет hub page", "Нет внутренних ссылок", "Нет цикла обновлений", "Нет conversion destination"],
+      uk: ["Випадкові теми", "Немає hub page", "Немає internal links", "Немає update loop", "Немає conversion destination"],
+    },
+    cta: {
+      en: { title: "Need a content map?", body: "I can map your guides, services, cases and CTAs into a usable SEO cluster system.", bullets: ["Cluster map", "Internal links", "Publishing backlog"] },
+      pl: { title: "Potrzebujesz mapy contentu?", body: "Połączę guides, usługi, case i CTA w system klastrów SEO.", bullets: ["Mapa klastra", "Linki", "Backlog publikacji"] },
+      ru: { title: "Нужна карта контента?", body: "Свяжу guides, услуги, кейсы и CTA в рабочую систему SEO-кластеров.", bullets: ["Карта кластера", "Перелинковка", "Backlog публикаций"] },
+      uk: { title: "Потрібна карта content?", body: "Зв'яжу guides, послуги, cases і CTA в робочу систему SEO-кластерів.", bullets: ["Cluster map", "Internal links", "Publishing backlog"] },
+    },
+    related: ["seo-internal-linking", "ai-search-llms-txt", "analytics-without-ga4"],
+  },
+  {
+    slug: "ai-search-llms-txt",
+    tape: "TAPE-20",
+    channel: "AI-SEO",
+    minutes: 8,
+    tags: ["AI visibility", "SEO", "llms.txt", "Structured Data"],
+    title: {
+      en: "AI search visibility: llms.txt, schema and clear entity data",
+      pl: "Widoczność w AI search: llms.txt, schema i jasne entity data",
+      ru: "AI search visibility: llms.txt, schema и понятная entity data",
+      uk: "AI search visibility: llms.txt, schema і зрозуміла entity data",
+    },
+    description: {
+      en: "Make a site easier for AI systems to understand with consistent identity, summaries, structured data and source pages.",
+      pl: "Ułatw AI zrozumienie strony przez spójne identity, summary, structured data i strony źródłowe.",
+      ru: "Как сделать сайт понятнее AI-системам: единая identity, summaries, structured data и страницы-источники.",
+      uk: "Як зробити сайт зрозумілішим для AI-систем: єдина identity, summaries, structured data і source pages.",
+    },
+    intro: {
+      en: "AI visibility starts with boring consistency. The same name, offer, services, cases and proof need to appear in metadata, schema, page copy and llms.txt.",
+      pl: "AI visibility zaczyna się od nudnej spójności. Ta sama nazwa, oferta, usługi, case i proof muszą być w metadata, schema, copy i llms.txt.",
+      ru: "AI visibility начинается со скучной консистентности. Одно имя, оффер, услуги, кейсы и proof должны быть в metadata, schema, copy и llms.txt.",
+      uk: "AI visibility починається з нудної консистентності. Одне ім'я, офер, послуги, cases і proof мають бути в metadata, schema, copy і llms.txt.",
+    },
+    outcome: {
+      en: ["Consistent entity name", "Useful llms.txt", "Article/Collection schema", "Case and service source links"],
+      pl: ["Spójna entity name", "Użyteczny llms.txt", "Article/Collection schema", "Linki do case i usług"],
+      ru: ["Единая entity name", "Полезный llms.txt", "Article/Collection schema", "Ссылки на кейсы и услуги"],
+      uk: ["Єдина entity name", "Корисний llms.txt", "Article/Collection schema", "Links на cases і послуги"],
+    },
+    steps: {
+      en: [
+        { title: "Normalize the entity", body: "Use one spelling for the public name across title, JSON-LD, OG alt, sitemap-linked pages and llms.txt." },
+        { title: "Write llms.txt like a source card", body: "Summarize who the site belongs to, what it offers, best pages, proof pages and contact path." },
+        { title: "Keep schema close to reality", body: "Article, CollectionPage, Person and Organization data should match visible page content." },
+        { title: "Link to proof pages", body: "AI systems and humans both need source pages: cases, guides, project pages and public contact routes." },
+      ],
+      pl: [
+        { title: "Ujednolić entity", body: "Jedna pisownia publicznej nazwy w title, JSON-LD, OG alt, sitemap pages i llms.txt." },
+        { title: "llms.txt jak source card", body: "Kto, oferta, najlepsze strony, proof pages i kontakt." },
+        { title: "Schema blisko rzeczywistości", body: "Article, CollectionPage, Person i Organization muszą pasować do widocznego contentu." },
+        { title: "Linkuj proof pages", body: "AI i ludzie potrzebują źródeł: case, guides, project pages i kontakt." },
+      ],
+      ru: [
+        { title: "Нормализуй entity", body: "Одно написание публичного имени в title, JSON-LD, OG alt, sitemap-linked pages и llms.txt." },
+        { title: "llms.txt как source card", body: "Кто владелец, что предлагает, лучшие страницы, proof pages и путь контакта." },
+        { title: "Schema должна совпадать с реальностью", body: "Article, CollectionPage, Person и Organization должны соответствовать видимому контенту." },
+        { title: "Ссылайся на proof pages", body: "AI и людям нужны источники: кейсы, гайды, project pages и публичный контакт." },
+      ],
+      uk: [
+        { title: "Нормалізуй entity", body: "Одне написання публічного імені в title, JSON-LD, OG alt, sitemap-linked pages і llms.txt." },
+        { title: "llms.txt як source card", body: "Хто власник, що пропонує, найкращі сторінки, proof pages і contact path." },
+        { title: "Schema має збігатися з реальністю", body: "Article, CollectionPage, Person і Organization мають відповідати видимому content." },
+        { title: "Посилайся на proof pages", body: "AI і людям потрібні джерела: cases, guides, project pages і публічний contact." },
+      ],
+    },
+    mistakes: {
+      en: ["Different name spelling", "llms.txt with no useful links", "Schema claims not visible on page", "No case proof"],
+      pl: ["Różna pisownia nazwy", "llms.txt bez dobrych linków", "Schema obiecuje coś niewidocznego", "Brak proof case"],
+      ru: ["Разное написание имени", "llms.txt без полезных ссылок", "Schema обещает то, чего нет на странице", "Нет proof кейсов"],
+      uk: ["Різне написання імені", "llms.txt без корисних links", "Schema обіцяє те, чого нема на сторінці", "Немає proof cases"],
+    },
+    cta: {
+      en: { title: "Need AI visibility cleanup?", body: "I can align entity data, schema, llms.txt and internal source pages.", bullets: ["Entity cleanup", "llms.txt", "Schema review"] },
+      pl: { title: "Potrzebujesz AI visibility cleanup?", body: "Wyrównam entity data, schema, llms.txt i source pages.", bullets: ["Entity cleanup", "llms.txt", "Schema review"] },
+      ru: { title: "Нужна чистка AI visibility?", body: "Сведу entity data, schema, llms.txt и source pages.", bullets: ["Entity cleanup", "llms.txt", "Schema review"] },
+      uk: { title: "Потрібна чистка AI visibility?", body: "Зведу entity data, schema, llms.txt і source pages.", bullets: ["Entity cleanup", "llms.txt", "Schema review"] },
+    },
+    related: ["seo-content-clusters", "google-search-console-setup", "case-study-proof-structure"],
+  },
+  {
+    slug: "analytics-without-ga4",
+    tape: "TAPE-21",
+    channel: "ANALYTICS",
+    minutes: 9,
+    tags: ["Analytics", "SEO", "Conversion", "Plausible"],
+    title: {
+      en: "Simple analytics without GA4 complexity",
+      pl: "Prosta analityka bez złożoności GA4",
+      ru: "Простая аналитика без сложности GA4",
+      uk: "Проста аналітика без складності GA4",
+    },
+    description: {
+      en: "Use Search Console, privacy-friendly analytics, form events and a monthly review to understand whether the site works.",
+      pl: "Search Console, prosta analityka, form events i miesięczny review, żeby wiedzieć czy strona działa.",
+      ru: "Search Console, простая аналитика, form events и monthly review, чтобы понять, работает ли сайт.",
+      uk: "Search Console, проста аналітика, form events і monthly review, щоб зрозуміти, чи працює сайт.",
+    },
+    intro: {
+      en: "Small sites usually do not need a giant analytics stack. They need a reliable answer to three questions: who arrived, what page worked, and what became a lead.",
+      pl: "Małe strony zwykle nie potrzebują ogromnego stacku analityki. Potrzebują odpowiedzi: kto przyszedł, która strona działa i co zostało leadem.",
+      ru: "Маленьким сайтам обычно не нужен огромный analytics stack. Нужны ответы: кто пришел, какая страница сработала и что стало лидом.",
+      uk: "Малим сайтам зазвичай не потрібен великий analytics stack. Потрібні відповіді: хто прийшов, яка сторінка спрацювала і що стало lead.",
+    },
+    outcome: {
+      en: ["Search Console baseline", "Plausible or similar page analytics", "Form conversion event", "Monthly content review checklist"],
+      pl: ["Search Console baseline", "Plausible albo podobna analityka", "Event formularza", "Monthly content review"],
+      ru: ["Search Console baseline", "Plausible или похожая аналитика", "Form conversion event", "Monthly content review"],
+      uk: ["Search Console baseline", "Plausible або схожа аналітика", "Form conversion event", "Monthly content review"],
+    },
+    steps: {
+      en: [
+        { title: "Start with Search Console", body: "Indexing, queries, pages and countries show whether Google understands the site." },
+        { title: "Add lightweight page analytics", body: "Use Plausible or a similar simple tool for visits, referrers and top pages." },
+        { title: "Track the form", body: "A lead event matters more than a visit count. Test delivery and record source." },
+        { title: "Review once a month", body: "Find pages with impressions but weak CTR, pages with visits but no leads and guides that need internal links." },
+      ],
+      pl: [
+        { title: "Zacznij od Search Console", body: "Indeksacja, queries, pages i kraje pokazują, czy Google rozumie stronę." },
+        { title: "Dodaj lekką analitykę", body: "Plausible albo podobne narzędzie do visits, referrers i top pages." },
+        { title: "Śledź formularz", body: "Lead event jest ważniejszy niż liczba visits. Testuj dostarczenie i zapisuj source." },
+        { title: "Review raz w miesiącu", body: "Strony z impressions i słabym CTR, visits bez leadów i guides bez linków." },
+      ],
+      ru: [
+        { title: "Начни с Search Console", body: "Индексация, queries, pages и страны показывают, понимает ли Google сайт." },
+        { title: "Добавь легкую аналитику", body: "Plausible или похожий инструмент для visits, referrers и top pages." },
+        { title: "Отслеживай форму", body: "Lead event важнее счетчика посещений. Тестируй доставку и сохраняй source." },
+        { title: "Раз в месяц делай review", body: "Страницы с impressions и слабым CTR, visits без лидов и guides без внутренних ссылок." },
+      ],
+      uk: [
+        { title: "Почни з Search Console", body: "Індексація, queries, pages і країни показують, чи розуміє Google сайт." },
+        { title: "Додай легку аналітику", body: "Plausible або схожий tool для visits, referrers і top pages." },
+        { title: "Відстежуй форму", body: "Lead event важливіший за лічильник visits. Тестуй доставку і зберігай source." },
+        { title: "Раз на місяць роби review", body: "Сторінки з impressions і слабким CTR, visits без leads і guides без internal links." },
+      ],
+    },
+    mistakes: {
+      en: ["Only looking at visits", "No form event", "No Search Console", "No monthly review", "Changing pages without notes"],
+      pl: ["Patrzenie tylko na visits", "Brak form event", "Brak Search Console", "Brak monthly review", "Zmiany bez notatek"],
+      ru: ["Смотреть только visits", "Нет form event", "Нет Search Console", "Нет monthly review", "Правки без notes"],
+      uk: ["Дивитися тільки visits", "Немає form event", "Немає Search Console", "Немає monthly review", "Правки без notes"],
+    },
+    cta: {
+      en: { title: "Need measurement setup?", body: "I can connect Search Console, lightweight analytics and form conversion tracking.", bullets: ["GSC setup", "Plausible check", "Form event"] },
+      pl: { title: "Potrzebujesz pomiaru?", body: "Podłączę Search Console, lekką analitykę i tracking formularza.", bullets: ["GSC setup", "Plausible check", "Form event"] },
+      ru: { title: "Нужна настройка измерений?", body: "Подключу Search Console, легкую аналитику и tracking формы.", bullets: ["GSC setup", "Plausible check", "Form event"] },
+      uk: { title: "Потрібне налаштування вимірів?", body: "Підключу Search Console, легку аналітику і tracking форми.", bullets: ["GSC setup", "Plausible check", "Form event"] },
+    },
+    related: ["form-tracking-conversions", "google-search-console-setup", "seo-content-clusters"],
   },
 ];
 

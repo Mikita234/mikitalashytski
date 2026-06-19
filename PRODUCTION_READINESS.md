@@ -47,7 +47,7 @@ Required evidence:
 
 ## P1 — SEO and entity polish
 
-- Keep the public entity name as `Микита Лашицкий` in metadata, JSON-LD, OG image alt and `public/llms.txt`.
+- Keep the public entity name as `Mikita Lashytski` in metadata, JSON-LD, OG image alt and `public/llms.txt`.
 - Add real case screenshots before pushing more project traffic; screenshots are currently the biggest trust gap.
 - Review every project page after screenshots are added: no broken image fallback should appear.
 - Submit fresh sitemap in Google Search Console after the screenshot and content update.
@@ -55,6 +55,8 @@ Required evidence:
 
 ## P1 — internal links and conversion paths
 
+- Current guide inventory: 21 guides across 4 locales, 5 visible content clusters on `/guides`, 20 cluster links and 33 explicit related-guide links.
+- Current link graph check: no missing related/cluster slugs and no guide left outside the cluster/related graph.
 - Keep guides linked in clusters:
   - launch checklist -> GSC -> form tracking -> internal linking
   - homepage SEO -> internal linking -> business-site pipeline
@@ -62,6 +64,22 @@ Required evidence:
 - Add service CTAs from high-intent guides to `/order`.
 - Keep `/pipeline/brief` linked from pipeline pages and relevant guides.
 - Make sure every new guide has either explicit `related` links or useful tag overlap.
+
+## P1 — content sufficiency check
+
+Enough for a production v1:
+
+- Guide hub now covers build/deploy, technical SEO, service-page SEO, local SEO, case proof, screenshots, analytics, AI visibility and content clusters.
+- `/guides` has a visible cluster map, so the archive is not just a flat blog list.
+- Sitemap picks up every guide automatically through `guideSlugs`.
+- Article JSON-LD and collection JSON-LD use the site entity name consistently.
+
+Still not enough for a strong trust layer:
+
+- Case pages still need real screenshots from `public/cases/`.
+- Placeholder metrics still need proof sources.
+- Search Console screenshots/exports are needed before making stronger organic/AI-search claims.
+- Service/order pages should be reviewed after the guide update to make sure high-intent guides point to the right conversion route.
 
 ## P1 — production QA pass
 

@@ -11,6 +11,7 @@ import { VHSButton } from "@/components/vintage/VHSButton";
 import { buildAlternates } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
 import {
+  guideContentClusters,
   guideIntro,
   guideLabels,
   guideRoadmap,
@@ -338,6 +339,57 @@ export default async function GuidesPage({
           subtitle={intro.subtitle}
           tagClassName="text-[var(--vhs-terminal)]"
         />
+
+        <section className="mb-10 border-b border-[var(--doom-stone)]/50 pb-10">
+          <div className="grid gap-5 lg:grid-cols-2">
+            {guideContentClusters.map((cluster) => (
+              <div
+                key={cluster.code}
+                className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                    {cluster.code}
+                  </span>
+                  <Link
+                    href={cluster.href}
+                    className="font-mono text-[10px] uppercase tracking-widest text-[var(--vhs-acid)] hover:text-[var(--vhs-white)]"
+                  >
+                    {labels.read} →
+                  </Link>
+                </div>
+                <h2 className="mt-4 font-display text-2xl uppercase leading-none text-[var(--vhs-white)]">
+                  {cluster.title[l]}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                  {cluster.body[l]}
+                </p>
+                <div className="mt-5 grid gap-2">
+                  {cluster.guides.map((guideSlug) => {
+                    const clusterGuide = guides.find((guide) => guide.slug === guideSlug);
+
+                    if (!clusterGuide) {
+                      return null;
+                    }
+
+                    return (
+                      <Link
+                        key={clusterGuide.slug}
+                        href={`/guides/${clusterGuide.slug}`}
+                        className="flex items-start justify-between gap-4 border border-white/10 bg-[#101014] px-3 py-2 text-sm text-[var(--vhs-muted)] hover:border-[var(--vhs-acid)] hover:text-[var(--vhs-white)]"
+                      >
+                        <span>{clusterGuide.title[l]}</span>
+                        <span className="shrink-0 font-mono text-[10px] uppercase text-[var(--vhs-terminal)]">
+                          {clusterGuide.tape}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="mb-10 border-2 border-[var(--doom-stone)] bg-[#0c0c0e] p-5 sm:p-6">
           <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--vhs-terminal)]">
