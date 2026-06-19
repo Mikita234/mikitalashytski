@@ -224,7 +224,7 @@ export default async function GuidesPage({
           <VintageSectionHeader
             tag={gp.comingTag}
             title={gp.comingTitle}
-            subtitle="Marketing tapes expanding the series — practical, not placeholder modules."
+            subtitle={gp.marketingSubtitle}
             tagClassName="text-[var(--doom-ammo)]"
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -232,14 +232,14 @@ export default async function GuidesPage({
               <Link
                 key={guide.slug}
                 href={`/guides/${guide.slug}`}
-                className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5 opacity-90 hover:border-[var(--doom-ammo)]"
+                className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5 hover:border-[var(--vhs-acid)]"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
                     {guide.tape}
                   </span>
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
-                    {gp.comingTag}
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-acid)]">
+                    {gp.readyTag}
                   </span>
                 </div>
                 <h2 className="mt-4 font-display text-2xl uppercase leading-none text-[var(--vhs-white)]">

@@ -140,11 +140,11 @@ export const guideLabels = {
 
 export const guideRoadmap: Record<Locale, GuideRoadmap> = {
   en: {
-    tag: "Course plan",
+    tag: "AI coding school",
     title: "AI-assisted coding system, not random prompting",
     subtitle:
-      "The free school is built around a practical setup: Cursor, Claude, Codex, model routing, scripts, repeatable pipelines and human review checkpoints.",
-    modulesTitle: "What the course covers",
+      "A practical setup for working with Cursor, Claude, Codex, model routing, scripts, repeatable pipelines and human review checkpoints.",
+    modulesTitle: "What you can use from the system",
     setupTitle: "System setup path",
     setupSubtitle:
       "Do it in this order. Each step leaves you with a working artifact, not just a video watched.",
@@ -220,11 +220,11 @@ export const guideRoadmap: Record<Locale, GuideRoadmap> = {
     ],
   },
   pl: {
-    tag: "Plan kursu",
+    tag: "Szkoła AI coding",
     title: "System AI-assisted coding, nie losowe promptowanie",
     subtitle:
-      "Darmowa szkoła opiera się na praktycznym setupie: Cursor, Claude, Codex, routing modeli, skrypty, powtarzalne pipeline i checkpointy human review.",
-    modulesTitle: "Co obejmuje kurs",
+      "Praktyczny setup do pracy z Cursor, Claude, Codex, routingiem modeli, skryptami, powtarzalnymi pipeline i checkpointami human review.",
+    modulesTitle: "Co możesz wykorzystać w systemie",
     setupTitle: "Ścieżka konfiguracji systemu",
     setupSubtitle:
       "Rób to w tej kolejności. Każdy krok zostawia działający artefakt, nie tylko obejrzany materiał.",
@@ -300,11 +300,11 @@ export const guideRoadmap: Record<Locale, GuideRoadmap> = {
     ],
   },
   ru: {
-    tag: "Контент-план",
+    tag: "Школа AI-кодинга",
     title: "Не набор промптов, а система AI-assisted coding",
     subtitle:
-      "Бесплатная школа про Cursor, Claude, Codex, китайские AI-модели, skills, скрипты, пайплайны и human-in-the-loop контроль. Цель — настроить рабочую систему, а не просто посмотреть курс.",
-    modulesTitle: "Про что будут гайды",
+      "Практическая система работы с Cursor, Claude, Codex, китайскими AI-моделями, skills, скриптами, пайплайнами и human-in-the-loop контролем.",
+    modulesTitle: "Что можно забрать в работу",
     setupTitle: "Как по шагам настроить систему",
     setupSubtitle:
       "Идти лучше в этом порядке: каждый шаг даёт рабочий артефакт, который потом переиспользуется в проектах.",
@@ -386,11 +386,11 @@ export const guideRoadmap: Record<Locale, GuideRoadmap> = {
     ],
   },
   uk: {
-    tag: "Контент-план",
+    tag: "Школа AI-кодингу",
     title: "Не набір prompt, а система AI-assisted coding",
     subtitle:
-      "Безкоштовна школа про Cursor, Claude, Codex, китайські AI-моделі, skills, скрипти, pipeline і human-in-the-loop контроль.",
-    modulesTitle: "Про що будуть гайди",
+      "Практична система роботи з Cursor, Claude, Codex, китайськими AI-моделями, skills, скриптами, pipeline і human-in-the-loop контролем.",
+    modulesTitle: "Що можна забрати в роботу",
     setupTitle: "Як по кроках налаштувати систему",
     setupSubtitle:
       "Краще йти в цьому порядку: кожен крок дає робочий артефакт, який потім пере використовується у проєктах.",
@@ -475,8 +475,8 @@ export const guideRoadmap: Record<Locale, GuideRoadmap> = {
 
 export const guideTopicExpansion: Record<Locale, GuideTopicExpansion> = {
   en: {
-    tag: "Next blocks",
-    title: "More systems to build after the basics",
+    tag: "System library",
+    title: "Reusable systems for real AI-assisted work",
     subtitle:
       "Same practical format: what the tool is for, when to use it, how to wire it into a real workflow and where a human must approve the result.",
     items: [
@@ -555,8 +555,8 @@ export const guideTopicExpansion: Record<Locale, GuideTopicExpansion> = {
     ],
   },
   pl: {
-    tag: "Kolejne bloki",
-    title: "Więcej systemów po podstawach",
+    tag: "Biblioteka systemów",
+    title: "Systemy wielokrotnego użytku do realnej pracy z AI",
     subtitle:
       "Ten sam praktyczny format: do czego jest narzędzie, kiedy go użyć, jak wpiąć w workflow i gdzie człowiek musi zatwierdzić wynik.",
     items: [
@@ -635,8 +635,8 @@ export const guideTopicExpansion: Record<Locale, GuideTopicExpansion> = {
     ],
   },
   ru: {
-    tag: "Дальше в программе",
-    title: "Ещё такие же блоки: от AI-игрушки к рабочей системе",
+    tag: "Библиотека систем",
+    title: "Переиспользуемые системы для реальной работы с AI",
     subtitle:
       "Тот же формат: что это, зачем нужно, когда применять, как встроить в пайплайн и где человек обязан проверить результат перед публикацией.",
     items: [
@@ -715,8 +715,8 @@ export const guideTopicExpansion: Record<Locale, GuideTopicExpansion> = {
     ],
   },
   uk: {
-    tag: "Далі в програмі",
-    title: "Ще такі самі блоки: від AI-іграшки до робочої системи",
+    tag: "Бібліотека систем",
+    title: "Системи для реальної роботи з AI",
     subtitle:
       "Той самий формат: що це, навіщо потрібно, коли застосовувати, як вбудувати в pipeline і де людина має перевірити результат.",
     items: [
@@ -1129,10 +1129,10 @@ export const guides: Guide[] = [
       uk: ["TikTok до live сайту", "Сток під виглядом своєї роботи", "Немає посилання в bio"],
     },
     cta: {
-      en: { title: "Need marketing order?", body: "I can set up GSC, GBP and a simple content plan before you film.", bullets: ["GSC setup", "GBP verification", "3-clip script"] },
+      en: { title: "Need marketing order?", body: "I can set up GSC, GBP and the first clip script before you film.", bullets: ["GSC setup", "GBP verification", "3-clip script"] },
       pl: { title: "Potrzebujesz pomocy z marketingiem?", body: "Ustawię GSC, GBP i prosty plan contentu przed nagrywaniem.", bullets: ["Setup GSC", "Weryfikacja GBP", "Scenariusz 3 klipów"] },
-      ru: { title: "Нужен порядок в маркетинге?", body: "Настрою GSC, GBP и простой контент-план до съёмки.", bullets: ["Настройка GSC", "Верификация GBP", "Сценарий 3 роликов"] },
-      uk: { title: "Потрібен порядок у маркетингу?", body: "Налаштую GSC, GBP і простий контент-план до зйомки.", bullets: ["Налаштування GSC", "Верифікація GBP", "Сценарій 3 роликів"] },
+      ru: { title: "Нужен порядок в маркетинге?", body: "Настрою GSC, GBP и сценарий первых роликов до съёмки.", bullets: ["Настройка GSC", "Верификация GBP", "Сценарий 3 роликов"] },
+      uk: { title: "Потрібен порядок у маркетингу?", body: "Налаштую GSC, GBP і сценарій перших роликів до зйомки.", bullets: ["Налаштування GSC", "Верифікація GBP", "Сценарій 3 роликів"] },
     },
   },
   {

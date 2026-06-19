@@ -1825,20 +1825,86 @@ button:focus-visible {
   scrollbar-color: var(--vhs-dirt) transparent;
 }
 
+.vhs-tape-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 12.5rem;
+  padding: 0.5rem 0.25rem 0.75rem;
+  text-decoration: none;
+  transition: transform 0.28s ease;
+}
+
+@media (min-width: 640px) {
+  .vhs-tape-item {
+    min-width: 14rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vhs-tape-item {
+    min-width: 17.5rem;
+  }
+}
+
+.vhs-tape-item__title {
+  margin-top: 0.875rem;
+  max-width: 17.5rem;
+  text-align: center;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--vhs-body);
+  transition: color 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .vhs-tape-item__title {
+    font-size: 0.875rem;
+  }
+}
+
+.vhs-tape-item:hover .vhs-tape-item__title,
+.vhs-tape-item:focus-visible .vhs-tape-item__title {
+  color: var(--vhs-white);
+}
+
+.vhs-tape-item__code {
+  margin-top: 0.375rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--vhs-muted);
+  transition: color 0.2s ease;
+}
+
+.vhs-tape-item:hover .vhs-tape-item__code,
+.vhs-tape-item:focus-visible .vhs-tape-item__code {
+  color: var(--vhs-terminal);
+}
+
 /* Realistic pseudo-3D VHS cassette (front face) */
 .vhs-c3d {
   display: block;
-  width: 8.75rem;
+  width: 12.5rem;
   border: none;
   background: transparent;
   padding: 0;
   cursor: default;
-  perspective: 720px;
+  perspective: 900px;
 }
 
 @media (min-width: 640px) {
   .vhs-c3d {
-    width: 9.5rem;
+    width: 14rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vhs-c3d {
+    width: 17.5rem;
   }
 }
 
@@ -1849,24 +1915,37 @@ button:focus-visible {
 
 .vhs-c3d__stage {
   transform-style: preserve-3d;
-  transition: transform 0.28s ease;
+  transform: rotateX(8deg);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.28s ease;
+  will-change: transform;
 }
 
 .vhs-c3d--tilt:hover .vhs-c3d__stage,
 .vhs-c3d--tilt:focus-visible .vhs-c3d__stage,
 .vhs-c3d--link:hover .vhs-c3d__stage,
-.vhs-c3d--link:focus-visible .vhs-c3d__stage {
-  transform: rotateX(7deg) rotateY(-9deg) translateY(-5px);
+.vhs-c3d--link:focus-visible .vhs-c3d__stage,
+.vhs-tape-item:hover .vhs-c3d__stage,
+.vhs-tape-item:focus-visible .vhs-c3d__stage {
+  transform: rotateX(0deg) translateY(-8px) translateZ(18px) scale(1.05);
 }
 
-.vhs-c3d--tap:active .vhs-c3d__stage {
-  transform: translateY(-2px) scale(0.985);
+.vhs-c3d--tap:active .vhs-c3d__stage,
+.vhs-tape-item:active .vhs-c3d__stage {
+  transform: rotateX(4deg) translateY(-2px) scale(0.97);
+  transition-duration: 0.15s;
+}
+
+.vhs-c3d--selected .vhs-c3d__stage {
+  transform: rotateX(2deg) translateY(-6px) translateZ(14px) scale(1.03);
 }
 
 .vhs-c3d--selected .vhs-c3d__body {
   box-shadow:
     0 0 0 2px var(--vhs-acid),
-    0 12px 28px rgba(204, 255, 0, 0.16),
+    0 16px 36px rgba(204, 255, 0, 0.18),
+    0 10px 24px rgba(0, 0, 0, 0.55),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
@@ -1875,72 +1954,88 @@ button:focus-visible {
 }
 
 @keyframes vhs-c3d-insert {
-  0% { transform: translateY(0) rotateX(0); }
-  55% { transform: translateY(6px) rotateX(12deg); }
-  100% { transform: translateY(2px) rotateX(4deg); }
+  0% { transform: rotateX(8deg) translateY(0); }
+  55% { transform: rotateX(14deg) translateY(8px) scale(0.96); }
+  100% { transform: rotateX(4deg) translateY(2px) scale(1); }
 }
 
 .vhs-c3d__body {
   position: relative;
   aspect-ratio: 1.9 / 1;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 7px;
   border: 1px solid #050505;
   background:
-    radial-gradient(ellipse 120% 80% at 18% 12%, rgba(255, 255, 255, 0.06), transparent 42%),
-    linear-gradient(168deg, #242424 0%, #101010 38%, #181818 100%);
-  padding: 5px 6px 6px;
+    radial-gradient(ellipse 120% 80% at 18% 12%, rgba(255, 255, 255, 0.07), transparent 42%),
+    linear-gradient(168deg, #2a2a2a 0%, #0c0c0c 38%, #161616 100%);
+  padding: 7px 8px 8px;
   transform-style: preserve-3d;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.07),
-    inset 0 -10px 18px rgba(0, 0, 0, 0.55),
-    0 8px 18px rgba(0, 0, 0, 0.65);
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -12px 22px rgba(0, 0, 0, 0.6),
+    0 10px 22px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.28s ease;
+}
+
+.vhs-c3d--link:hover .vhs-c3d__body,
+.vhs-c3d--link:focus-visible .vhs-c3d__body,
+.vhs-tape-item:hover .vhs-c3d__body,
+.vhs-tape-item:focus-visible .vhs-c3d__body {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -12px 22px rgba(0, 0, 0, 0.55),
+    0 18px 36px rgba(0, 0, 0, 0.75),
+    0 8px 20px rgba(204, 255, 0, 0.08);
 }
 
 .vhs-c3d__rib {
-  height: 9px;
+  height: 13px;
   border-radius: 2px;
   background:
     repeating-linear-gradient(
       180deg,
-      #070707 0,
-      #070707 1px,
-      #1f1f1f 1px,
-      #1f1f1f 2px,
-      #0c0c0c 2px,
-      #0c0c0c 3px
+      #050505 0,
+      #050505 1px,
+      #2a2a2a 1px,
+      #2a2a2a 2px,
+      #111 2px,
+      #111 3px,
+      #1f1f1f 3px,
+      #1f1f1f 4px
     );
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.65);
+    inset 0 2px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.75);
 }
 
 .vhs-c3d__rib--top {
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .vhs-c3d__rib--bottom {
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .vhs-c3d__mid {
   display: grid;
-  grid-template-columns: 1.05fr 1.35fr 1.05fr;
+  grid-template-columns: 1.1fr 1.3fr 1.1fr;
   align-items: stretch;
-  gap: 4px;
+  gap: 5px;
   min-height: 0;
 }
 
 .vhs-c3d__window {
   position: relative;
-  min-height: 2.65rem;
+  min-height: 3.75rem;
   overflow: hidden;
-  border-radius: 3px;
-  border: 1px solid #030303;
-  background: linear-gradient(180deg, #080808, #151515);
+  border-radius: 4px;
+  border: 1px solid #020202;
+  background: linear-gradient(180deg, #040404, #101010 55%, #080808);
   box-shadow:
-    inset 0 2px 6px rgba(0, 0, 0, 0.95),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+    inset 0 3px 8px rgba(0, 0, 0, 0.98),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    inset 2px 0 4px rgba(0, 0, 0, 0.5),
+    inset -2px 0 4px rgba(0, 0, 0, 0.5);
 }
 
 .vhs-c3d__glass {
@@ -1950,20 +2045,21 @@ button:focus-visible {
   z-index: 2;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.16) 0%,
-    rgba(255, 255, 255, 0.03) 38%,
-    transparent 62%
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.05) 32%,
+    transparent 58%,
+    rgba(255, 255, 255, 0.02) 100%
   );
-  opacity: 0.55;
+  opacity: 0.65;
 }
 
 .vhs-c3d__reel {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1.55rem;
-  height: 1.55rem;
-  margin: -0.775rem 0 0 -0.775rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin: -1.175rem 0 0 -1.175rem;
   border-radius: 50%;
 }
 
@@ -1972,37 +2068,41 @@ button:focus-visible {
   inset: 0;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 50% 50%, transparent 28%, #0a0a0a 29%, #0a0a0a 100%),
-    conic-gradient(from 210deg, #1a1210, #3d2a24 18%, #120c0a 36%, #4a3028 54%, #100908 72%, #3a2620 88%, #1a1210);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.85);
+    radial-gradient(circle at 50% 50%, transparent 22%, #050403 23%, #050403 100%),
+    conic-gradient(from 200deg, #0f0a08, #3d2a22 14%, #0a0706 28%, #4a3228 42%, #0c0807 56%, #3a2620 70%, #120c0a 84%, #0f0a08);
+  box-shadow:
+    inset 0 0 8px rgba(0, 0, 0, 0.9),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 .vhs-c3d__reel--wound-left .vhs-c3d__tape-ring {
-  inset: -1px;
+  inset: -2px;
 }
 
 .vhs-c3d__reel--wound-right .vhs-c3d__tape-ring {
-  inset: 3px;
+  inset: 4px;
 }
 
 .vhs-c3d__hub {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 0.42rem;
-  height: 0.42rem;
-  margin: -0.21rem 0 0 -0.21rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  margin: -0.325rem 0 0 -0.325rem;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ddd, #888 45%, #444 100%);
+  background: radial-gradient(circle at 35% 30%, #ececec, #9a9a9a 42%, #555 100%);
   box-shadow:
-    inset 0 0 2px rgba(0, 0, 0, 0.65),
-    0 0 0 1px rgba(255, 255, 255, 0.12);
+    inset 0 0 3px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 
 .vhs-c3d--tilt:hover .vhs-c3d__reel--spin .vhs-c3d__hub,
 .vhs-c3d--link:hover .vhs-c3d__reel--spin .vhs-c3d__hub,
-.vhs-c3d--selected .vhs-c3d__reel--spin .vhs-c3d__hub {
-  animation: vhs-reel-spin 2.4s linear infinite;
+.vhs-c3d--selected .vhs-c3d__reel--spin .vhs-c3d__hub,
+.vhs-tape-item:hover .vhs-c3d__reel--spin .vhs-c3d__hub,
+.vhs-tape-item:focus-visible .vhs-c3d__reel--spin .vhs-c3d__hub {
+  animation: vhs-reel-spin 1.8s linear infinite;
 }
 
 @keyframes vhs-reel-spin {
@@ -2014,28 +2114,30 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 2.65rem;
+  align-items: center;
+  min-height: 3.75rem;
   overflow: hidden;
-  border: 1px solid #c8bc98;
-  border-radius: 2px;
-  background: linear-gradient(180deg, #faf6ea 0%, #efe4c8 100%);
-  padding: 3px 4px;
-  transform: rotate(-1.4deg);
+  border: 1px solid #b8aa82;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #faf6ea 0%, #ebe0c4 100%);
+  padding: 5px 6px;
+  transform: rotate(-1.2deg);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.55),
-    0 2px 4px rgba(0, 0, 0, 0.35);
+    0 1px 0 rgba(255, 255, 255, 0.6),
+    0 3px 6px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
 .vhs-c3d__label-lines {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  opacity: 0.55;
+  opacity: 0.6;
   background: repeating-linear-gradient(
     transparent,
-    transparent 6px,
-    rgba(40, 60, 120, 0.16) 6px,
-    rgba(40, 60, 120, 0.16) 7px
+    transparent 9px,
+    rgba(40, 60, 120, 0.18) 9px,
+    rgba(40, 60, 120, 0.18) 10px
   );
 }
 
@@ -2044,22 +2146,29 @@ button:focus-visible {
   z-index: 1;
   display: block;
   font-family: "Segoe Script", "Bradley Hand", "Brush Script MT", cursive;
-  font-size: 0.62rem;
-  line-height: 1.15;
+  font-size: 1rem;
+  line-height: 1.1;
   font-weight: 600;
-  color: #141418;
+  color: #121216;
   text-transform: none;
-  letter-spacing: 0.01em;
-  transform: rotate(0.8deg);
+  letter-spacing: 0.02em;
+  transform: rotate(0.6deg);
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .vhs-c3d__label-text {
+    font-size: 1.125rem;
+  }
 }
 
 .vhs-c3d__label-sub {
   position: relative;
   z-index: 1;
-  margin-top: 1px;
+  margin-top: 2px;
   display: block;
   font-family: var(--font-mono), monospace;
-  font-size: 6px;
+  font-size: 7px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #4a4a52;
@@ -2068,11 +2177,11 @@ button:focus-visible {
 .vhs-c3d__edge {
   pointer-events: none;
   position: absolute;
-  top: 8px;
-  bottom: 8px;
-  width: 4px;
+  top: 10px;
+  bottom: 10px;
+  width: 5px;
   border-radius: 2px;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.55), transparent);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65), transparent);
 }
 
 .vhs-c3d__edge--left {
@@ -2090,11 +2199,42 @@ button:focus-visible {
   inset: 0;
   background: linear-gradient(
     118deg,
-    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.1) 0%,
     transparent 34%,
     transparent 68%,
-    rgba(255, 255, 255, 0.03) 100%
+    rgba(255, 255, 255, 0.04) 100%
   );
+}
+
+.vhs-c3d__play {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  z-index: 4;
+  transform: translateX(-50%) translateY(4px);
+  border: 1px solid rgba(204, 255, 0, 0.55);
+  border-radius: 2px;
+  background: rgba(8, 10, 6, 0.82);
+  padding: 3px 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--vhs-acid);
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vhs-c3d--link:hover .vhs-c3d__play,
+.vhs-c3d--link:focus-visible .vhs-c3d__play,
+.vhs-tape-item:hover .vhs-c3d__play,
+.vhs-tape-item:focus-visible .vhs-c3d__play {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Case tape row wrapper */

@@ -372,7 +372,7 @@ export const marketingPipelines: MarketingPipeline[] = [
       ["Послуги в РФ, Білорусі, сх. Україні", "Сайт російською", "Експорт Allegro + СНГ"],
     ),
     avoidIf: LA(
-      ["Only UK/DE/PL Google market", "No Cyrillic content plan"],
+      ["Only UK/DE/PL Google market", "No Russian-language publishing plan"],
       ["Tylko rynek UK/DE/PL Google", "Brak planu treści cyrylicą"],
       ["Только рынок UK/DE/PL Google", "Нет плана контента на кириллице"],
       ["Лише ринок UK/DE/PL Google", "Немає плану контенту кирилицею"],

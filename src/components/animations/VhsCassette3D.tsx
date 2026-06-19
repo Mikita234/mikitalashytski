@@ -9,6 +9,7 @@ export type VhsCassette3DProps = {
   selected?: boolean;
   inserting?: boolean;
   interactive?: boolean;
+  showPlay?: boolean;
   className?: string;
   as?: "button" | "div";
   onClick?: () => void;
@@ -36,6 +37,7 @@ export function VhsCassette3D({
   selected = false,
   inserting = false,
   interactive = true,
+  showPlay = false,
   className = "",
   as: Tag = "div",
   onClick,
@@ -83,6 +85,11 @@ export function VhsCassette3D({
           <div className="vhs-c3d__edge vhs-c3d__edge--left" />
           <div className="vhs-c3d__edge vhs-c3d__edge--right" />
           <div className="vhs-c3d__shine" />
+          {showPlay ? (
+            <span className="vhs-c3d__play" aria-hidden>
+              ▶ PLAY
+            </span>
+          ) : null}
         </div>
       </div>
     </Tag>
