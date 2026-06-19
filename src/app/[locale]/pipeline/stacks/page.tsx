@@ -5,7 +5,8 @@ import { VintagePageHeader } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
 import { buildAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
-import { stacksPage, pipelineHub, pipelineLabels } from "@/content/pipeline";
+import { stacksPage, pipelineHub, pipelineLabels, stacksPhilosophy } from "@/content/pipeline";
+import { VintageSectionHeader } from "@/components/vintage/VintagePage";
 
 export async function generateMetadata({
   params,
@@ -50,6 +51,27 @@ export default async function PipelineStacksPage({
       </section>
 
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <VintageSectionHeader
+            tag={stacksPhilosophy[l].tag}
+            title={stacksPhilosophy[l].title}
+            tagClassName="text-[var(--vhs-acid)]"
+          />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {stacksPhilosophy[l].items.map((item) => (
+              <div key={item.code} className="border border-white/10 bg-[#101014] p-5">
+                <span className="font-mono text-[10px] uppercase text-[var(--vhs-terminal)]">
+                  {item.code}
+                </span>
+                <h2 className="mt-3 font-display text-xl uppercase text-[var(--vhs-white)]">
+                  {item.title}
+                </h2>
+                <p className="mt-2 text-sm text-[var(--vhs-muted)]">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <StackMatrix locale={l} />
         <div className="mt-10 flex flex-wrap gap-3">
           <VHSButton href="/pipeline/brief" variant="primary">
@@ -57,6 +79,9 @@ export default async function PipelineStacksPage({
           </VHSButton>
           <VHSButton href="/pipeline/beginner" variant="secondary">
             {hub.ctaBeginner}
+          </VHSButton>
+          <VHSButton href="/pipeline/marketing" variant="secondary">
+            {hub.ctaMarketing}
           </VHSButton>
         </div>
       </div>

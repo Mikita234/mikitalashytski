@@ -53,7 +53,14 @@ export function StepChecklist({
               </button>
             </div>
             <div>
-              <h3 className="type-h3">{stage.title[locale]}</h3>
+              <h3 className="type-h3">
+                {stage.title[locale]}
+                {stage.optional ? (
+                  <span className="ml-2 font-mono text-[9px] uppercase text-[var(--doom-ammo)]">
+                    optional
+                  </span>
+                ) : null}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
                 {stage.body[locale]}
               </p>

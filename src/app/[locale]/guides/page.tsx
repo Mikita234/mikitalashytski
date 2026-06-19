@@ -17,7 +17,8 @@ import {
   guideTopicExpansion,
   guides,
 } from "@/content/guides";
-import { guidesPipelineUpdate, pipelineHub } from "@/content/pipeline";
+import { guidesPipelineUpdate, pipelineHub, marketingHub } from "@/content/pipeline";
+import { marketingPipelines } from "@/data/marketing-pipelines";
 import { site } from "@/content/site";
 
 export async function generateMetadata({
@@ -50,6 +51,7 @@ export default async function GuidesPage({
   const topicExpansion = guideTopicExpansion[l];
   const gp = guidesPipelineUpdate[l];
   const hub = pipelineHub[l];
+  const mkt = marketingHub[l];
 
   const collectionLd = {
     "@context": "https://schema.org",
@@ -70,7 +72,23 @@ export default async function GuidesPage({
   const readyItems = [
     { code: "READY-01", title: hub.cardsTitle, href: "/pipeline", body: hub.subtitle },
     { code: "READY-02", title: hub.ctaBeginner, href: "/pipeline/beginner", body: hub.outcomeTitle },
-    { code: "READY-03", title: hub.ctaBrief, href: "/pipeline/brief", body: intro.subtitle },
+    { code: "READY-03", title: mkt.title, href: "/pipeline/marketing", body: mkt.subtitle },
+    { code: "READY-04", title: guides.find((g) => g.slug === "website-launch-checklist-full")!.title[l], href: "/guides/website-launch-checklist-full", body: guides.find((g) => g.slug === "website-launch-checklist-full")!.description[l] },
+    { code: "READY-05", title: guides.find((g) => g.slug === "google-search-console-setup")!.title[l], href: "/guides/google-search-console-setup", body: guides.find((g) => g.slug === "google-search-console-setup")!.description[l] },
+    { code: "READY-06", title: guides.find((g) => g.slug === "frameworks-pick-2026")!.title[l], href: "/guides/frameworks-pick-2026", body: guides.find((g) => g.slug === "frameworks-pick-2026")!.description[l] },
+  ];
+
+  const marketingCards = marketingPipelines.slice(0, 6).map((p) => ({
+    code: p.tag,
+    title: p.title[l],
+    href: `/pipeline/marketing/${p.id}`,
+    body: p.honestNote[l],
+  }));
+
+  const inSeriesGuides = [
+    guides.find((g) => g.slug === "tiktok-for-small-business")!,
+    guides.find((g) => g.slug === "google-ads-starter")!,
+    guides.find((g) => g.slug === "yandex-for-ru-market")!,
   ];
 
   return (
@@ -151,7 +169,7 @@ export default async function GuidesPage({
             title={gp.readyTitle}
             tagClassName="text-[var(--vhs-acid)]"
           />
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {readyItems.map((item) => (
               <Link
                 key={item.code}
@@ -172,8 +190,72 @@ export default async function GuidesPage({
 
         <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
           <VintageSectionHeader
+            tag={gp.marketingTag}
+            title={gp.marketingTitle}
+            subtitle={gp.marketingSubtitle}
+            tagClassName="text-[var(--vhs-acid)]"
+          />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {marketingCards.map((item) => (
+              <Link
+                key={item.code}
+                href={item.href}
+                className="border border-white/10 bg-[#101014] p-5 hover:border-[var(--vhs-acid)]"
+              >
+                <span className="font-mono text-[10px] uppercase text-[var(--vhs-terminal)]">
+                  {item.code}
+                </span>
+                <h2 className="mt-3 font-display text-xl uppercase text-[var(--vhs-white)]">
+                  {item.title}
+                </h2>
+                <p className="mt-2 text-sm text-[var(--vhs-muted)]">{item.body}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8">
+            <VHSButton href="/pipeline/marketing" variant="primary">
+              {mkt.title} →
+            </VHSButton>
+          </div>
+        </section>
+
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <VintageSectionHeader
             tag={gp.comingTag}
             title={gp.comingTitle}
+            subtitle="Marketing tapes expanding the series — practical, not placeholder modules."
+            tagClassName="text-[var(--doom-ammo)]"
+          />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {inSeriesGuides.map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/guides/${guide.slug}`}
+                className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5 opacity-90 hover:border-[var(--doom-ammo)]"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                    {guide.tape}
+                  </span>
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
+                    {gp.comingTag}
+                  </span>
+                </div>
+                <h2 className="mt-4 font-display text-2xl uppercase leading-none text-[var(--vhs-white)]">
+                  {guide.title[l]}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                  {guide.description[l]}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <VintageSectionHeader
+            tag={roadmap.tag}
+            title={roadmap.modulesTitle}
             subtitle={roadmap.subtitle}
             tagClassName="text-[var(--doom-ammo)]"
           />

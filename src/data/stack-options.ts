@@ -2,13 +2,18 @@ import type { Locale } from "@/i18n/routing";
 
 export type StackCategory =
   | "framework"
+  | "frameworks-2026"
   | "hosting"
   | "cms"
   | "payments"
   | "auth"
   | "database"
   | "automation"
-  | "commerce";
+  | "commerce"
+  | "analytics"
+  | "ads"
+  | "social"
+  | "seo-tools";
 
 export type CostLevel = "free" | "low" | "medium" | "high";
 export type TechnicalLevel = "beginner" | "intermediate" | "advanced";
@@ -23,6 +28,7 @@ export interface StackOption {
   costLevel: CostLevel;
   technicalLevel: TechnicalLevel;
   pipelines: string[];
+  aiAgentFriendliness?: Record<Locale, string>;
 }
 
 export const stackCategories: Record<StackCategory, Record<Locale, string>> = {
@@ -74,6 +80,36 @@ export const stackCategories: Record<StackCategory, Record<Locale, string>> = {
     ru: "Платформа магазина",
     uk: "Платформа магазину",
   },
+  analytics: {
+    en: "Who visits & what they do",
+    pl: "Kto wchodzi i co robi",
+    ru: "Кто заходит и что делает",
+    uk: "Хто заходить і що робить",
+  },
+  ads: {
+    en: "Paid traffic",
+    pl: "Płatny ruch",
+    ru: "Платный трафик",
+    uk: "Платний трафік",
+  },
+  social: {
+    en: "Social & local presence",
+    pl: "Social i obecność lokalna",
+    ru: "Соцсети и локальное присутствие",
+    uk: "Соцмережі та локальна присутність",
+  },
+  "seo-tools": {
+    en: "Search indexing tools",
+    pl: "Narzędzia indeksacji",
+    ru: "Инструменты индексации",
+    uk: "Інструменти індексації",
+  },
+  "frameworks-2026": {
+    en: "Framework pick 2026",
+    pl: "Wybór frameworka 2026",
+    ru: "Выбор фреймворка 2026",
+    uk: "Вибір фреймворку 2026",
+  },
 };
 
 export const stackOptions: StackOption[] = [
@@ -102,6 +138,12 @@ export const stackOptions: StackOption[] = [
     costLevel: "free",
     technicalLevel: "beginner",
     pipelines: ["business-site", "content-site", "portfolio"],
+    aiAgentFriendliness: {
+      en: "Excellent — simple file structure, AI rarely breaks builds",
+      pl: "Doskonałe — prosta struktura, AI rzadko psuje build",
+      ru: "Отлично — простая структура, AI редко ломает сборку",
+      uk: "Відмінно — проста структура, AI рідко ламає build",
+    },
   },
   {
     id: "nextjs",
@@ -128,6 +170,12 @@ export const stackOptions: StackOption[] = [
     costLevel: "low",
     technicalLevel: "intermediate",
     pipelines: ["events-ticketing", "saas", "portfolio"],
+    aiAgentFriendliness: {
+      en: "Very good — huge docs corpus, but AI may over-engineer simple sites",
+      pl: "Bardzo dobre — ogromna dokumentacja, ale AI może over-engineerować proste strony",
+      ru: "Очень хорошо — огромная документация, но AI может переусложнить простой сайт",
+      uk: "Дуже добре — величезна документація, але AI може over-engineerити простий сайт",
+    },
   },
   {
     id: "cloudflare-pages",
@@ -336,6 +384,518 @@ export const stackOptions: StackOption[] = [
     costLevel: "low",
     technicalLevel: "intermediate",
     pipelines: ["automation"],
+  },
+  {
+    id: "ga4",
+    name: "Google Analytics 4",
+    category: "analytics",
+    plainLanguage: {
+      en: "Free Google stats: visits, pages, where people come from.",
+      pl: "Darmowe statystyki Google: wizyty, strony, skąd przychodzą.",
+      ru: "Бесплатная статистика Google: визиты, страницы, откуда пришли.",
+      uk: "Безкоштовна статистика Google: візити, сторінки, звідки прийшли.",
+    },
+    bestFor: {
+      en: "Default free analytics when you need funnels and Google Ads link",
+      pl: "Domyślna darmowa analityka z lejkami i linkiem do Google Ads",
+      ru: "Бесплатная аналитика по умолчанию, воронки и связка с Google Ads",
+      uk: "Безкоштовна аналітика за замовчуванням, воронки й звʼязок з Google Ads",
+    },
+    avoidIf: {
+      en: "You want zero cookies and simplest dashboard — use Plausible",
+      pl: "Chcesz zero cookies i najprostszy panel — Plausible",
+      ru: "Нужны ноль cookies и простейшая панель — Plausible",
+      uk: "Потрібно нуль cookies і найпростіша панель — Plausible",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["seo-analytics"],
+  },
+  {
+    id: "plausible",
+    name: "Plausible",
+    category: "analytics",
+    plainLanguage: {
+      en: "Simple privacy-friendly stats. One script, clean dashboard.",
+      pl: "Proste statystyki privacy-friendly. Jeden skrypt, czysty panel.",
+      ru: "Простая приватная статистика. Один скрипт, чистая панель.",
+      uk: "Проста приватна статистика. Один скрипт, чиста панель.",
+    },
+    bestFor: {
+      en: "Beginner who wants numbers without GA4 complexity",
+      pl: "Beginner chcący liczby bez złożoności GA4",
+      ru: "Новичок, которому нужны цифры без сложности GA4",
+      uk: "Новачок, якому потрібні цифри без складності GA4",
+    },
+    avoidIf: {
+      en: "You need deep Google Ads integration for free",
+      pl: "Potrzebujesz głębokiej integracji Google Ads za darmo",
+      ru: "Нужна глубокая интеграция с Google Ads бесплатно",
+      uk: "Потрібна глибока інтеграція з Google Ads безкоштовно",
+    },
+    costLevel: "low",
+    technicalLevel: "beginner",
+    pipelines: ["seo-analytics"],
+  },
+  {
+    id: "umami",
+    name: "Umami",
+    category: "analytics",
+    plainLanguage: {
+      en: "Open-source analytics you can self-host. Like Plausible, DIY.",
+      pl: "Analityka open-source do self-host. Jak Plausible, DIY.",
+      ru: "Open-source аналитика на своём сервере. Как Plausible, DIY.",
+      uk: "Open-source аналітика на своєму сервері. Як Plausible, DIY.",
+    },
+    bestFor: {
+      en: "Privacy-first sites with someone who can host a small server",
+      pl: "Strony privacy-first z kimś kto hostuje mały serwer",
+      ru: "Privacy-first сайты, если есть кто поднимет маленький сервер",
+      uk: "Privacy-first сайти, якщо є хто підніме маленький сервер",
+    },
+    avoidIf: {
+      en: "You want zero maintenance — use Plausible or GA4",
+      pl: "Chcesz zero utrzymania — Plausible lub GA4",
+      ru: "Нужно ноль обслуживания — Plausible или GA4",
+      uk: "Потрібно нуль обслуговування — Plausible або GA4",
+    },
+    costLevel: "free",
+    technicalLevel: "intermediate",
+    pipelines: ["seo-analytics"],
+  },
+  {
+    id: "yandex-metrica",
+    name: "Yandex Metrica",
+    category: "analytics",
+    plainLanguage: {
+      en: "Yandex version of analytics. Essential for RU/UA/BY audience.",
+      pl: "Analityka Yandex. Niezbędna dla odbiorców RU/UA/BY.",
+      ru: "Аналитика Яндекса. Обязательна для аудитории RU/UA/BY.",
+      uk: "Аналітика Яндекса. Обовʼязкова для аудиторії RU/UA/BY.",
+    },
+    bestFor: {
+      en: "Russian-language site or CIS clients",
+      pl: "Strona po rosyjsku lub klienci CIS",
+      ru: "Сайт на русском или клиенты из СНГ",
+      uk: "Сайт російською або клієнти з СНД",
+    },
+    avoidIf: {
+      en: "100% Poland/EU Google-only traffic",
+      pl: "100% ruchu tylko z Google PL/EU",
+      ru: "100% трафика только из Google PL/EU",
+      uk: "100% трафіку лише з Google PL/EU",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["yandex-ecosystem"],
+  },
+  {
+    id: "microsoft-clarity",
+    name: "Microsoft Clarity",
+    category: "analytics",
+    plainLanguage: {
+      en: "Free heatmaps and session recordings. See where people rage-click.",
+      pl: "Darmowe heatmapy i nagrania sesji. Gdzie ludzie rage-clickują.",
+      ru: "Бесплатные тепловые карты и записи сессий. Где люди злятся и кликают.",
+      uk: "Безкоштовні heatmap і записи сесій. Де люди зляться й клікають.",
+    },
+    bestFor: {
+      en: "Debugging confusing forms and layouts after launch",
+      pl: "Debugowanie mylących formularzy i layoutów po launchu",
+      ru: "Отладка непонятных форм и вёрстки после запуска",
+      uk: "Відладка незрозумілих форм і вёрстки після запуску",
+    },
+    avoidIf: {
+      en: "Strict GDPR without consent banner setup",
+      pl: "Ścisłe GDPR bez bannera zgody",
+      ru: "Строгий GDPR без баннера согласия",
+      uk: "Суворий GDPR без банера згоди",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["seo-analytics"],
+  },
+  {
+    id: "posthog",
+    name: "PostHog",
+    category: "analytics",
+    plainLanguage: {
+      en: "Analytics + feature flags + session replay for product apps.",
+      pl: "Analityka + feature flags + replay dla aplikacji produktowych.",
+      ru: "Аналитика + feature flags + replay для продуктовых приложений.",
+      uk: "Аналітика + feature flags + replay для продуктових застосунків.",
+    },
+    bestFor: {
+      en: "SaaS and apps where you track user journeys",
+      pl: "SaaS i aplikacje ze śledzeniem user journey",
+      ru: "SaaS и приложения с отслеживанием пути пользователя",
+      uk: "SaaS і застосунки з відстеженням user journey",
+    },
+    avoidIf: {
+      en: "Simple plumber brochure site",
+      pl: "Prosta strona wizytówka hydraulika",
+      ru: "Простая визитка сантехника",
+      uk: "Проста візитка сантехніка",
+    },
+    costLevel: "low",
+    technicalLevel: "intermediate",
+    pipelines: ["saas"],
+  },
+  {
+    id: "google-ads",
+    name: "Google Ads",
+    category: "ads",
+    plainLanguage: {
+      en: "Pay Google to show your site when people search your service.",
+      pl: "Płać Google za pokazanie strony gdy ludzie szukają usługi.",
+      ru: "Платишь Google за показ сайта, когда ищут твою услугу.",
+      uk: "Платиш Google за показ сайту, коли шукають твою послугу.",
+    },
+    bestFor: {
+      en: "High-intent local search after site + GSC work",
+      pl: "Lokalne wyszukiwanie z intencją po stronie + GSC",
+      ru: "Локальный поиск с intent после сайта + GSC",
+      uk: "Локальний пошук з intent після сайту + GSC",
+    },
+    avoidIf: {
+      en: "Site not live, form broken, or no budget cap",
+      pl: "Strona nie live, forma zepsuta lub brak limitu budżetu",
+      ru: "Сайт не живой, форма сломана или нет лимита бюджета",
+      uk: "Сайт не live, форма зламана або немає ліміту бюджету",
+    },
+    costLevel: "medium",
+    technicalLevel: "beginner",
+    pipelines: ["google-ads-basics"],
+  },
+  {
+    id: "meta-ads",
+    name: "Meta Ads",
+    category: "ads",
+    plainLanguage: {
+      en: "Facebook and Instagram ads. Good for visual services and retargeting.",
+      pl: "Reklamy Facebook i Instagram. Dobre dla usług wizualnych i retargetingu.",
+      ru: "Реклама Facebook и Instagram. Хороша для визуальных услуг и ретаргета.",
+      uk: "Реклама Facebook і Instagram. Добра для візуальних послуг і ретаргету.",
+    },
+    bestFor: {
+      en: "Salon, renovation, food — anything photogenic",
+      pl: "Salon, remont, jedzenie — wszystko fotogeniczne",
+      ru: "Салон, ремонт, еда — всё фотогеничное",
+      uk: "Салон, ремонт, їжа — все фотогенічне",
+    },
+    avoidIf: {
+      en: "B2B plumbing with no visuals and no pixel setup",
+      pl: "B2B hydraulika bez wizualiów i bez pixela",
+      ru: "B2B сантехника без визуала и без пикселя",
+      uk: "B2B сантехніка без візуалу й без pixel",
+    },
+    costLevel: "medium",
+    technicalLevel: "beginner",
+    pipelines: ["marketing-basics"],
+  },
+  {
+    id: "tiktok-ads",
+    name: "TikTok Ads",
+    category: "ads",
+    plainLanguage: {
+      en: "Paid reach on TikTok. Only after organic TikTok shows traction.",
+      pl: "Płatny zasięg na TikTok. Dopiero gdy organiczny TikTok ma trakcję.",
+      ru: "Платный охват в TikTok. Только после того как органика показала отклик.",
+      uk: "Платний охоплення в TikTok. Лише після того як органіка показала відгук.",
+    },
+    bestFor: {
+      en: "Young audience, visual trades, viral-friendly offers",
+      pl: "Młoda publiczność, wizualne zawody, oferty viral-friendly",
+      ru: "Молодая аудитория, визуальные профессии, вирусные офферы",
+      uk: "Молода аудиторія, візуальні професії, вірусні офери",
+    },
+    avoidIf: {
+      en: "No TikTok content yet or B2B corporate only",
+      pl: "Brak contentu TikTok lub tylko B2B korporacja",
+      ru: "Ещё нет контента в TikTok или только B2B корпорат",
+      uk: "Ще немає контенту в TikTok або лише B2B корпорат",
+    },
+    costLevel: "medium",
+    technicalLevel: "beginner",
+    pipelines: ["marketing-basics"],
+  },
+  {
+    id: "yandex-direct",
+    name: "Yandex Direct",
+    category: "ads",
+    plainLanguage: {
+      en: "Yandex paid search. Google Ads equivalent for RU/UA/BY.",
+      pl: "Płatne wyszukiwanie Yandex. Odpowiednik Google Ads dla RU/UA/BY.",
+      ru: "Платный поиск Яндекса. Аналог Google Ads для RU/UA/BY.",
+      uk: "Платний пошук Яндекса. Аналог Google Ads для RU/UA/BY.",
+    },
+    bestFor: {
+      en: "CIS market with Yandex search share",
+      pl: "Rynek CIS z udziałem wyszukiwarki Yandex",
+      ru: "Рынок СНГ с долей поиска Яндекса",
+      uk: "Ринок СНД з часткою пошуку Яндекса",
+    },
+    avoidIf: {
+      en: "Poland-only Google traffic",
+      pl: "Tylko ruch Google w Polsce",
+      ru: "Только трафик Google в Польше",
+      uk: "Лише трафік Google в Польщі",
+    },
+    costLevel: "medium",
+    technicalLevel: "beginner",
+    pipelines: ["yandex-ecosystem"],
+  },
+  {
+    id: "tiktok-business",
+    name: "TikTok Business",
+    category: "social",
+    plainLanguage: {
+      en: "Business account on TikTok with analytics and website link in bio.",
+      pl: "Konto firmowe TikTok z analityką i linkiem do strony w bio.",
+      ru: "Бизнес-аккаунт TikTok с аналитикой и ссылкой на сайт в bio.",
+      uk: "Бізнес-акаунт TikTok з аналітикою й посиланням на сайт у bio.",
+    },
+    bestFor: {
+      en: "Trades, food, beauty — show real work in 15–30 sec clips",
+      pl: "Zawody, jedzenie, beauty — pokaż prawdziwą pracę w 15–30 sek",
+      ru: "Рабочие профессии, еда, beauty — показ реальной работы за 15–30 сек",
+      uk: "Робочі професії, їжа, beauty — показ реальної роботи за 15–30 сек",
+    },
+    avoidIf: {
+      en: "You will never post video",
+      pl: "Nigdy nie opublikujesz wideo",
+      ru: "Никогда не будешь постить видео",
+      uk: "Ніколи не будеш постити відео",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["marketing-basics"],
+  },
+  {
+    id: "instagram",
+    name: "Instagram",
+    category: "social",
+    plainLanguage: {
+      en: "Photo portfolio + Stories + Reels. Reuse TikTok clips here.",
+      pl: "Portfolio zdjęć + Stories + Reels. Tuż użyj klipów z TikTok.",
+      ru: "Фото-портфолио + Stories + Reels. Переиспользуй ролики с TikTok.",
+      uk: "Фото-портфоліо + Stories + Reels. Перевикористай ролики з TikTok.",
+    },
+    bestFor: {
+      en: "Visual brands, local services, cross-post from TikTok",
+      pl: "Marki wizualne, usługi lokalne, cross-post z TikTok",
+      ru: "Визуальные бренды, локальные услуги, кросс-пост из TikTok",
+      uk: "Візуальні бренди, локальні послуги, кросс-пост з TikTok",
+    },
+    avoidIf: {
+      en: "Pure B2B industrial with no photos",
+      pl: "Czyste B2B przemysłowe bez zdjęć",
+      ru: "Чистый B2B промышленный без фото",
+      uk: "Чистий B2B промисловий без фото",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["marketing-basics"],
+  },
+  {
+    id: "google-business-profile",
+    name: "Google Business Profile",
+    category: "social",
+    plainLanguage: {
+      en: "Your pin on Google Maps with phone, hours, reviews. Free leads.",
+      pl: "Pinezka w Google Maps z telefonem, godzinami, opiniami. Darmowe leady.",
+      ru: "Точка на Google Maps с телефоном, часами, отзывами. Бесплатные лиды.",
+      uk: "Точка на Google Maps з телефоном, годинами, відгуками. Безкоштовні ліди.",
+    },
+    bestFor: {
+      en: "Any local business with address or service area",
+      pl: "Każda firma lokalna z adresem lub obszarem usług",
+      ru: "Любой локальный бизнес с адресом или зоной выезда",
+      uk: "Будь-який локальний бізнес з адресою або зоною виїзду",
+    },
+    avoidIf: {
+      en: "Pure online SaaS with no local intent",
+      pl: "Czyste online SaaS bez intencji lokalnej",
+      ru: "Чистый онлайн SaaS без локального intent",
+      uk: "Чистий online SaaS без локального intent",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["marketing-basics", "business-site"],
+  },
+  {
+    id: "google-search-console",
+    name: "Google Search Console",
+    category: "seo-tools",
+    plainLanguage: {
+      en: "Free Google tool: is your site indexed, what queries bring clicks.",
+      pl: "Darmowe narzędzie Google: czy strona jest w indeksie, jakie zapytania dają kliknięcia.",
+      ru: "Бесплатный инструмент Google: проиндексирован ли сайт, какие запросы дают клики.",
+      uk: "Безкоштовний інструмент Google: чи проіндексований сайт, які запити дають кліки.",
+    },
+    bestFor: {
+      en: "Every public site that should appear in Google",
+      pl: "Każda publiczna strona do pokazania w Google",
+      ru: "Каждый публичный сайт, который должен быть в Google",
+      uk: "Кожен публічний сайт, який має бути в Google",
+    },
+    avoidIf: {
+      en: "Never — if site is public, GSC is mandatory",
+      pl: "Nigdy — jeśli strona publiczna, GSC jest obowiązkowe",
+      ru: "Никогда — если сайт публичный, GSC обязателен",
+      uk: "Ніколи — якщо сайт публічний, GSC обовʼязковий",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["seo-analytics"],
+  },
+  {
+    id: "bing-webmaster",
+    name: "Bing Webmaster",
+    category: "seo-tools",
+    plainLanguage: {
+      en: "Same idea as GSC but for Bing. Import from GSC in one click.",
+      pl: "To samo co GSC ale dla Bing. Import z GSC jednym kliknięciem.",
+      ru: "То же что GSC, но для Bing. Импорт из GSC в один клик.",
+      uk: "Те саме що GSC, але для Bing. Імпорт з GSC одним кліком.",
+    },
+    bestFor: {
+      en: "Extra search visibility with 10 minutes setup",
+      pl: "Dodatkowa widoczność w wyszukiwarce za 10 minut",
+      ru: "Дополнительная видимость в поиске за 10 минут",
+      uk: "Додаткова видимість у пошуку за 10 хвилин",
+    },
+    avoidIf: {
+      en: "You have not done GSC yet — do GSC first",
+      pl: "Nie masz jeszcze GSC — najpierw GSC",
+      ru: "Ещё нет GSC — сначала GSC",
+      uk: "Ще немає GSC — спочатку GSC",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["seo-analytics"],
+  },
+  {
+    id: "yandex-webmaster",
+    name: "Yandex Webmaster",
+    category: "seo-tools",
+    plainLanguage: {
+      en: "Yandex indexing tool. GSC equivalent for Yandex search.",
+      pl: "Narzędzie indeksacji Yandex. Odpowiednik GSC dla Yandex.",
+      ru: "Инструмент индексации Яндекса. Аналог GSC для поиска Яндекса.",
+      uk: "Інструмент індексації Яндекса. Аналог GSC для пошуку Яндекса.",
+    },
+    bestFor: {
+      en: "Russian/Cyrillic sites and CIS audience",
+      pl: "Strony rosyjskie/cyrylica i odbiorcy CIS",
+      ru: "Русскоязычные сайты и аудитория СНГ",
+      uk: "Російськомовні сайти та аудиторія СНД",
+    },
+    avoidIf: {
+      en: "Zero Yandex traffic expected",
+      pl: "Zero ruchu z Yandex oczekiwane",
+      ru: "Нулевой трафик из Яндекса ожидается",
+      uk: "Нульовий трафік з Яндекса очікується",
+    },
+    costLevel: "free",
+    technicalLevel: "beginner",
+    pipelines: ["yandex-ecosystem"],
+  },
+  {
+    id: "remix",
+    name: "Remix",
+    category: "frameworks-2026",
+    plainLanguage: {
+      en: "Web framework focused on forms and fast data loading. App sites.",
+      pl: "Framework pod formularze i szybkie ładowanie danych. Strony-aplikacje.",
+      ru: "Фреймворк под формы и быструю загрузку данных. Сайты-приложения.",
+      uk: "Фреймворк під форми й швидке завантаження даних. Сайти-застосунки.",
+    },
+    bestFor: {
+      en: "Form-heavy apps, dashboards with lots of server data",
+      pl: "Aplikacje z formularzami, dashboardy z danymi serwera",
+      ru: "Приложения с формами, дашборды с серверными данными",
+      uk: "Застосунки з формами, дашборди з серверними даними",
+    },
+    avoidIf: {
+      en: "Static 5-page brochure — use Astro",
+      pl: "Statyczna broszura 5 stron — Astro",
+      ru: "Статичная визитка на 5 страниц — Astro",
+      uk: "Статична візитка на 5 сторінок — Astro",
+    },
+    costLevel: "low",
+    technicalLevel: "intermediate",
+    pipelines: ["frameworks-2026"],
+    aiAgentFriendliness: {
+      en: "Good — smaller community than Next.js, AI may hallucinate APIs",
+      pl: "Dobre — mniejsza społeczność niż Next.js, AI może halucynować API",
+      ru: "Хорошо — меньше сообщество чем Next.js, AI может выдумывать API",
+      uk: "Добре — менша спільнота ніж Next.js, AI може галюцинувати API",
+    },
+  },
+  {
+    id: "sveltekit",
+    name: "SvelteKit",
+    category: "frameworks-2026",
+    plainLanguage: {
+      en: "Fast, lightweight sites and apps. Less boilerplate than React stacks.",
+      pl: "Szybkie, lekkie strony i aplikacje. Mniej boilerplate niż React.",
+      ru: "Быстрые лёгкие сайты и приложения. Меньше boilerplate чем React.",
+      uk: "Швидкі легкі сайти й застосунки. Менше boilerplate ніж React.",
+    },
+    bestFor: {
+      en: "Performance-sensitive apps when team knows Svelte",
+      pl: "Aplikacje wrażliwe na wydajność gdy zespół zna Svelte",
+      ru: "Приложения чувствительные к скорости, если команда знает Svelte",
+      uk: "Застосунки чутливі до швидкості, якщо команда знає Svelte",
+    },
+    avoidIf: {
+      en: "You need maximum AI/Cursor docs — Next.js is safer default",
+      pl: "Potrzebujesz max dokumentacji AI/Cursor — Next.js bezpieczniejszy",
+      ru: "Нужна максимум документации для AI/Cursor — Next.js безопаснее",
+      uk: "Потрібен максимум документації для AI/Cursor — Next.js безпечніший",
+    },
+    costLevel: "low",
+    technicalLevel: "intermediate",
+    pipelines: ["frameworks-2026"],
+    aiAgentFriendliness: {
+      en: "Moderate — growing AI support, fewer Stack Overflow answers",
+      pl: "Umiarkowane — rosnące wsparcie AI, mniej odpowiedzi SO",
+      ru: "Умеренно — растёт поддержка AI, меньше ответов на SO",
+      uk: "Помірно — зростає підтримка AI, менше відповідей на SO",
+    },
+  },
+  {
+    id: "nuxt",
+    name: "Nuxt",
+    category: "frameworks-2026",
+    plainLanguage: {
+      en: "Vue-based framework. Strong for content sites and EU agencies.",
+      pl: "Framework na Vue. Mocny dla stron content i agencji EU.",
+      ru: "Фреймворк на Vue. Силён для контент-сайтов и EU-агентств.",
+      uk: "Фреймворк на Vue. Сильний для контент-сайтів і EU-агентств.",
+    },
+    bestFor: {
+      en: "Vue team, multilingual content, marketing sites",
+      pl: "Zespół Vue, wielojęzyczny content, strony marketingowe",
+      ru: "Команда на Vue, мультиязычный контент, маркетинговые сайты",
+      uk: "Команда на Vue, мультимовний контент, маркетингові сайти",
+    },
+    avoidIf: {
+      en: "You do not know Vue and want fastest AI-assisted start",
+      pl: "Nie znasz Vue i chcesz najszybszy start z AI",
+      ru: "Не знаешь Vue и хочешь быстрейший старт с AI",
+      uk: "Не знаєш Vue і хочеш найшвидший старт з AI",
+    },
+    costLevel: "low",
+    technicalLevel: "intermediate",
+    pipelines: ["frameworks-2026", "content-site"],
+    aiAgentFriendliness: {
+      en: "Good for Vue users — AI knows Vue 3 well, Nuxt 4 less than Next",
+      pl: "Dobre dla użytkowników Vue — AI zna Vue 3, Nuxt 4 mniej niż Next",
+      ru: "Хорошо для Vue — AI знает Vue 3, Nuxt 4 меньше чем Next",
+      uk: "Добре для Vue — AI знає Vue 3, Nuxt 4 менше ніж Next",
+    },
   },
 ];
 

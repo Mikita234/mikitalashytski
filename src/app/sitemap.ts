@@ -4,6 +4,7 @@ import { site } from "@/content/site";
 import { projectSlugs } from "@/content/projects";
 import { serviceSlugs } from "@/content/services";
 import { guideSlugs } from "@/content/guides";
+import { marketingPipelineSlugs } from "@/data/marketing-pipelines";
 
 const paths = [
   "",
@@ -11,6 +12,12 @@ const paths = [
   "/contact",
   "/order",
   "/works",
+  "/pipeline",
+  "/pipeline/beginner",
+  "/pipeline/brief",
+  "/pipeline/stacks",
+  "/pipeline/marketing",
+  ...marketingPipelineSlugs.map((slug) => `/pipeline/marketing/${slug}`),
   ...serviceSlugs.map((slug) => `/services/${slug}`),
   ...projectSlugs.map((slug) => `/projects/${slug}`),
   "/guides",

@@ -60,6 +60,7 @@ export const pipelineHub = {
     ctaBeginner: "Start beginner path",
     ctaBrief: "Build my brief",
     ctaStacks: "Compare stacks",
+    ctaMarketing: "Marketing & SEO hub",
     cardsTitle: "Project types",
     cardsSubtitle: "Each pipeline includes stack, risks, phases and downloadable skill pack.",
     defaultNote: "Default for plumber / local service: Astro + Cloudflare",
@@ -81,6 +82,7 @@ export const pipelineHub = {
     ctaBeginner: "Ścieżka beginner",
     ctaBrief: "Zbuduj brief",
     ctaStacks: "Porównaj stacki",
+    ctaMarketing: "Marketing i SEO",
     cardsTitle: "Typy projektów",
     cardsSubtitle: "Każdy pipeline: stack, ryzyka, fazy i skill pack do pobrania.",
     defaultNote: "Domyślnie dla hydraulika / usług lokalnych: Astro + Cloudflare",
@@ -102,6 +104,7 @@ export const pipelineHub = {
     ctaBeginner: "Путь для новичка",
     ctaBrief: "Собрать brief",
     ctaStacks: "Сравнить стеки",
+    ctaMarketing: "Маркетинг и SEO",
     cardsTitle: "Типы проектов",
     cardsSubtitle: "В каждом пайплайне: стек, риски, фазы и skill pack для скачивания.",
     defaultNote: "По умолчанию для сантехника / локальных услуг: Astro + Cloudflare",
@@ -123,6 +126,7 @@ export const pipelineHub = {
     ctaBeginner: "Шлях для новачка",
     ctaBrief: "Зібрати brief",
     ctaStacks: "Порівняти stack",
+    ctaMarketing: "Маркетинг і SEO",
     cardsTitle: "Типи проєктів",
     cardsSubtitle: "У кожному pipeline: stack, ризики, фази та skill pack для завантаження.",
     defaultNote: "За замовчуванням для сантехніка / локальних послуг: Astro + Cloudflare",
@@ -156,7 +160,7 @@ export const pipelineLabels = {
     copyMarkdown: "Copy as markdown",
     defaultStack: "Default stack philosophy",
     defaultStackBody:
-      "Simple service site → Astro + Cloudflare Pages + Markdown. Next.js + Vercel only for tickets, SaaS and dashboards.",
+      "2026 default: simple site → Astro + Cloudflare Pages + Markdown. Apps with login → Next.js 15+ on Vercel. Shop → Shopify. GSC mandatory for Google; TikTok optional for visibility.",
     readMore: "Details →",
     minutes: "min setup",
   },
@@ -177,7 +181,7 @@ export const pipelineLabels = {
     copyMarkdown: "Kopiuj jako markdown",
     defaultStack: "Filozofia domyślnego stacku",
     defaultStackBody:
-      "Prosta strona usługowa → Astro + Cloudflare Pages + Markdown. Next.js + Vercel tylko na bilety, SaaS i dashboardy.",
+      "Domyślnie 2026: prosta strona → Astro + Cloudflare Pages + Markdown. Aplikacje z logowaniem → Next.js 15+ na Vercel. Sklep → Shopify. GSC obowiązkowe dla Google; TikTok opcjonalny.",
     readMore: "Szczegóły →",
     minutes: "min setup",
   },
@@ -198,7 +202,7 @@ export const pipelineLabels = {
     copyMarkdown: "Скопировать markdown",
     defaultStack: "Философия стека по умолчанию",
     defaultStackBody:
-      "Простой сайт услуг → Astro + Cloudflare Pages + Markdown. Next.js + Vercel только для билетов, SaaS и дашбордов.",
+      "По умолчанию 2026: простой сайт → Astro + Cloudflare Pages + Markdown. Приложения с входом → Next.js 15+ на Vercel. Магазин → Shopify. GSC обязателен для Google; TikTok опционален.",
     readMore: "Подробнее →",
     minutes: "мин setup",
   },
@@ -219,7 +223,7 @@ export const pipelineLabels = {
     copyMarkdown: "Скопіювати markdown",
     defaultStack: "Філософія stack за замовчуванням",
     defaultStackBody:
-      "Простий сайт послуг → Astro + Cloudflare Pages + Markdown. Next.js + Vercel лише для квитків, SaaS і dashboard.",
+      "За замовчуванням 2026: простий сайт → Astro + Cloudflare Pages + Markdown. Застосунки з входом → Next.js 15+ на Vercel. Магазин → Shopify. GSC обовʼязковий для Google; TikTok опційний.",
     readMore: "Деталі →",
     minutes: "хв setup",
   },
@@ -231,6 +235,7 @@ export interface BeginnerStage {
   body: Record<Locale, string>;
   doneWhen: Record<Locale, string>;
   tips: Record<Locale, string[]>;
+  optional?: boolean;
 }
 
 export const beginnerStages: BeginnerStage[] = [
@@ -476,36 +481,117 @@ export const beginnerStages: BeginnerStage[] = [
       ["Застряг? → /pipeline/rescue або /order"],
     ),
   },
+  {
+    code: "12",
+    title: L("Google Search Console (detailed)", "Google Search Console (szczegółowo)", "Google Search Console (подробно)", "Google Search Console (детально)"),
+    body: L(
+      "Open search.google.com/search-console → Add property → enter your full URL (https://yoursite.com) → verify via DNS TXT record at your domain registrar OR upload HTML file → Sitemaps → paste yoursite.com/sitemap.xml → Request indexing for home page.",
+      "Otwórz search.google.com/search-console → Dodaj witrynę → pełny URL → weryfikacja DNS TXT u rejestratora LUB plik HTML → Mapy witryn → yoursite.com/sitemap.xml → Żądanie indeksacji strony głównej.",
+      "Открой search.google.com/search-console → Добавить ресурс → полный URL → верификация DNS TXT у регистратора ИЛИ HTML-файл → Файлы Sitemap → yoursite.com/sitemap.xml → Запросить индексацию главной.",
+      "Відкрий search.google.com/search-console → Додати ресурс → повний URL → верифікація DNS TXT у реєстратора АБО HTML-файл → Файли Sitemap → yoursite.com/sitemap.xml → Запит індексації головної.",
+    ),
+    doneWhen: L(
+      "GSC shows sitemap Success and URL Inspection says Indexed or Discovered",
+      "GSC pokazuje sitemap Success i Inspekcja URL mówi Indexed lub Discovered",
+      "GSC показывает sitemap Success и Проверка URL говорит Indexed или Discovered",
+      "GSC показує sitemap Success і Перевірка URL каже Indexed або Discovered",
+    ),
+    tips: LArr(
+      ["Mandatory — not optional like TikTok"],
+      ["Obowiązkowe — nie opcjonalne jak TikTok"],
+      ["Обязательно — не опция как TikTok"],
+      ["Обовʼязково — не опція як TikTok"],
+    ),
+    optional: true,
+  },
+  {
+    code: "13",
+    title: L("Basic analytics", "Podstawowa analityka", "Базовая аналитика", "Базова аналітика"),
+    body: L(
+      "Pick ONE: Plausible.io (paid, simple) OR GA4 (free, analytics.google.com). Add tracking script to site <head>. Visit your site → see 1 visitor in dashboard.",
+      "Wybierz JEDNO: Plausible.io (płatne, proste) LUB GA4 (darmowe, analytics.google.com). Skrypt w <head>. Wejdź na stronę → 1 odwiedzający w panelu.",
+      "Выбери ОДНО: Plausible.io (платный, простой) ИЛИ GA4 (бесплатный, analytics.google.com). Скрипт в <head>. Зайди на сайт → 1 посетитель в панели.",
+      "Обери ОДНЕ: Plausible.io (платний, простий) АБО GA4 (безкоштовний, analytics.google.com). Скрипт у <head>. Зайди на сайт → 1 відвідувач у панелі.",
+    ),
+    doneWhen: L(
+      "Your own visit appears in analytics within 24 hours",
+      "Twoja wizyta widać w analityce w 24h",
+      "Твой визит виден в аналитике в течение 24ч",
+      "Твій візит видно в аналітиці за 24 год",
+    ),
+    tips: LArr(
+      ["Do not install both on day 1 — pick one"],
+      ["Nie instaluj obu w dzień 1 — wybierz jedno"],
+      ["Не ставь оба в первый день — выбери один"],
+      ["Не став обидва в перший день — обери один"],
+    ),
+    optional: true,
+  },
+  {
+    code: "14",
+    title: L("Google Business Profile (local)", "Google Business Profile (lokalnie)", "Google Business Profile (для локального бизнеса)", "Google Business Profile (локальний бізнес)"),
+    body: L(
+      "Only if you serve customers in a city/area. business.google.com → create → real address or service area → phone, hours, 5 photos → verify → link to your website.",
+      "Tylko jeśli obsługujesz klientów w mieście/regionie. business.google.com → utwórz → adres lub obszar → telefon, godziny, 5 zdjęć → weryfikacja → link do strony.",
+      "Только если обслуживаешь клиентов в городе/районе. business.google.com → создать → адрес или зона выезда → телефон, часы, 5 фото → верификация → ссылка на сайт.",
+      "Лише якщо обслуговуєш клієнтів у місті/районі. business.google.com → створити → адреса або зона → телефон, години, 5 фото → верифікація → посилання на сайт.",
+    ),
+    doneWhen: L(
+      "Maps search for your service + city shows your business pin",
+      "Wyszukiwanie w Maps: usługa + miasto pokazuje pinezkę",
+      "Поиск в Maps: услуга + город показывает вашу точку",
+      "Пошук у Maps: послуга + місто показує вашу точку",
+    ),
+    tips: LArr(
+      ["Skip if you are online-only SaaS"],
+      ["Pomiń jeśli to online-only SaaS"],
+      ["Пропусти если это online-only SaaS"],
+      ["Пропусти якщо це online-only SaaS"],
+    ),
+    optional: true,
+  },
 ];
 
 export const beginnerIntro = {
   en: {
     tag: "Beginner path",
-    title: "From zero to live site — 11 steps, no jargon first",
+    title: "From zero to live site — 11 core steps + 3 optional marketing",
     subtitle:
-      "GitHub signup level detail. Each step has a 'done when' checkpoint. Default stack: Astro + Cloudflare.",
+      "GitHub signup level detail. Steps 12–14 are optional but GSC is mandatory for Google. Default stack: Astro + Cloudflare.",
     seoTitle: "Build a business website yourself — step-by-step for non-developers",
+    marketingLaterTitle: "Marketing later",
+    marketingLaterBody: "TikTok, ads, Yandex — after the site works. Full hub with honest priorities.",
+    marketingLaterCta: "Open marketing hub",
   },
   pl: {
     tag: "Ścieżka beginner",
-    title: "Od zera do live strony — 11 kroków, bez żargonu",
+    title: "Od zera do live strony — 11 kroków + 3 opcjonalne marketing",
     subtitle:
-      "Szczegółowo jak rejestracja GitHub. Każdy krok ma checkpoint 'gotowe, gdy'. Domyślnie Astro + Cloudflare.",
+      "Szczegółowo jak rejestracja GitHub. Kroki 12–14 opcjonalne, ale GSC obowiązkowe dla Google. Astro + Cloudflare.",
     seoTitle: "Zrób stronę firmową sam — krok po kroku dla nietechnicznych",
+    marketingLaterTitle: "Marketing później",
+    marketingLaterBody: "TikTok, reklamy, Yandex — po działającej stronie. Hub z uczciwymi priorytetami.",
+    marketingLaterCta: "Otwórz hub marketingu",
   },
   ru: {
     tag: "Путь для новичка",
-    title: "От нуля до живого сайта — 11 шагов, сначала без жаргона",
+    title: "От нуля до живого сайта — 11 шагов + 3 опциональных маркетинга",
     subtitle:
-      "Детально, как регистрация на GitHub. У каждого шага — «готово, если…». Стек по умолчанию: Astro + Cloudflare.",
+      "Детально, как регистрация на GitHub. Шаги 12–14 опциональны, но GSC обязателен для Google. Стек: Astro + Cloudflare.",
     seoTitle: "Собрать сайт для бизнеса самому — пошагово для нетech",
+    marketingLaterTitle: "Маркетинг потом",
+    marketingLaterBody: "TikTok, реклама, Яндекс — после рабочего сайта. Полный hub с честными приоритетами.",
+    marketingLaterCta: "Открыть маркетинговый hub",
   },
   uk: {
     tag: "Шлях для новачка",
-    title: "Від нуля до live сайту — 11 кроків, спочатку без жargonu",
+    title: "Від нуля до live сайту — 11 кроків + 3 опційних маркетингу",
     subtitle:
-      "Детально, як реєстрація на GitHub. У кожного кроку — «готово, якщо…». Stack: Astro + Cloudflare.",
+      "Детально, як реєстрація на GitHub. Кроки 12–14 опційні, але GSC обовʼязковий для Google. Stack: Astro + Cloudflare.",
     seoTitle: "Зібрати сайт для бізнесу самому — покроково для нетech",
+    marketingLaterTitle: "Маркетинг потім",
+    marketingLaterBody: "TikTok, реклама, Яндекс — після робочого сайту. Повний hub з чесними пріоритетами.",
+    marketingLaterCta: "Відкрити маркетинговий hub",
   },
 } as const;
 
@@ -561,6 +647,140 @@ export const stacksPage = {
     colAvoid: "Не бери коли",
     colLevel: "Рівень",
     colCost: "Ціна",
+  },
+} as const;
+
+export const marketingHub = {
+  en: {
+    tag: "Marketing hub",
+    title: "After the site works: visibility, SEO, ads",
+    subtitle:
+      "Full kitchen for launching a business site — not just code. Honest order: GSC first, TikTok optional, ads last.",
+    cardsTitle: "Marketing pipelines",
+    cardsSubtitle: "Each module has steps, done-when checks and links to guides.",
+    priorityTitle: "What matters first",
+    priorityItems: [
+      "1. Working site + contact form",
+      "2. Google Search Console (mandatory)",
+      "3. Analytics (Plausible or GA4)",
+      "4. Google Business Profile (if local)",
+      "5. TikTok / Instagram (optional visibility)",
+      "6. Google Ads (only with budget cap)",
+      "7. Yandex (if RU/UA/BY audience)",
+    ],
+    ctaBeginner: "Back to beginner path",
+    ctaGuides: "Read guide tapes",
+    honestNote: "TikTok optional. GSC mandatory for Google.",
+  },
+  pl: {
+    tag: "Hub marketingu",
+    title: "Po działającej stronie: widoczność, SEO, reklamy",
+    subtitle:
+      "Pełna kuchnia launchu strony biznesowej — nie tylko kod. Kolejność: GSC pierwsze, TikTok opcjonalny, reklamy na końcu.",
+    cardsTitle: "Pipeline marketingowe",
+    cardsSubtitle: "Każdy moduł ma kroki, checkpointy i linki do poradników.",
+    priorityTitle: "Co najpierw",
+    priorityItems: [
+      "1. Działająca strona + formularz",
+      "2. Google Search Console (obowiązkowe)",
+      "3. Analityka (Plausible lub GA4)",
+      "4. Google Business Profile (jeśli lokalnie)",
+      "5. TikTok / Instagram (opcjonalna widoczność)",
+      "6. Google Ads (tylko z limitem budżetu)",
+      "7. Yandex (jeśli odbiorcy RU/UA/BY)",
+    ],
+    ctaBeginner: "Wróć do ścieżki beginner",
+    ctaGuides: "Czytaj taśmy poradników",
+    honestNote: "TikTok opcjonalny. GSC obowiązkowe dla Google.",
+  },
+  ru: {
+    tag: "Маркетинговый hub",
+    title: "После рабочего сайта: видимость, SEO, реклама",
+    subtitle:
+      "Полная кухня запуска бизнес-сайта — не только код. Порядок: сначала GSC, TikTok опционален, реклама в конце.",
+    cardsTitle: "Маркетинговые пайплайны",
+    cardsSubtitle: "В каждом модуле: шаги, «готово если» и ссылки на гайды.",
+    priorityTitle: "Что важнее всего",
+    priorityItems: [
+      "1. Рабочий сайт + форма заявки",
+      "2. Google Search Console (обязательно)",
+      "3. Аналитика (Plausible или GA4)",
+      "4. Google Business Profile (если локальный бизнес)",
+      "5. TikTok / Instagram (опциональная видимость)",
+      "6. Google Ads (только с лимитом бюджета)",
+      "7. Яндекс (если аудитория RU/UA/BY)",
+    ],
+    ctaBeginner: "Назад к пути новичка",
+    ctaGuides: "Читать кассеты-гайды",
+    honestNote: "TikTok опционален. GSC обязателен для Google.",
+  },
+  uk: {
+    tag: "Маркетинговий hub",
+    title: "Після робочого сайту: видимість, SEO, реклама",
+    subtitle:
+      "Повна кухня запуску бізнес-сайту — не лише код. Порядок: спочатку GSC, TikTok опційний, реклама в кінці.",
+    cardsTitle: "Маркетингові pipeline",
+    cardsSubtitle: "У кожному модулі: кроки, «готово якщо» та посилання на гайди.",
+    priorityTitle: "Що важливіше",
+    priorityItems: [
+      "1. Робочий сайт + форма заявки",
+      "2. Google Search Console (обовʼязково)",
+      "3. Аналітика (Plausible або GA4)",
+      "4. Google Business Profile (якщо локальний бізнес)",
+      "5. TikTok / Instagram (опційна видимість)",
+      "6. Google Ads (лише з лімітом бюджету)",
+      "7. Яндекс (якщо аудиторія RU/UA/BY)",
+    ],
+    ctaBeginner: "Назад до шляху новачка",
+    ctaGuides: "Читати касети-гайди",
+    honestNote: "TikTok опційний. GSC обовʼязковий для Google.",
+  },
+} as const;
+
+export const stacksPhilosophy = {
+  en: {
+    tag: "2026 defaults",
+    title: "Stack philosophy — when each tool wins",
+    items: [
+      { code: "S-01", title: "Simple site", body: "Astro 5 + Cloudflare Pages + Markdown. Plumber, lawyer, cafe." },
+      { code: "S-02", title: "App with login", body: "Next.js 15+ on Vercel. Tickets, SaaS, dashboards." },
+      { code: "S-03", title: "Shop", body: "Shopify first. Custom cart only when revenue justifies dev cost." },
+      { code: "S-04", title: "TikTok vs GSC", body: "GSC first — free Google traffic. TikTok when you can film real work weekly." },
+      { code: "S-05", title: "Yandex", body: "Add Metrica + Webmaster if RU/UA/BY clients matter. Skip for PL-only Google." },
+    ],
+  },
+  pl: {
+    tag: "Domyślne 2026",
+    title: "Filozofia stacku — kiedy które narzędzie",
+    items: [
+      { code: "S-01", title: "Prosta strona", body: "Astro 5 + Cloudflare Pages + Markdown. Hydraulik, prawnik, kawiarnia." },
+      { code: "S-02", title: "Aplikacja z logowaniem", body: "Next.js 15+ na Vercel. Bilety, SaaS, dashboardy." },
+      { code: "S-03", title: "Sklep", body: "Shopify najpierw. Custom cart gdy revenue uzasadnia koszt dev." },
+      { code: "S-04", title: "TikTok vs GSC", body: "GSC pierwsze — darmowy ruch z Google. TikTok gdy możesz filmować pracę co tydzień." },
+      { code: "S-05", title: "Yandex", body: "Metrica + Webmaster jeśli klienci RU/UA/BY. Pomiń dla samego Google PL." },
+    ],
+  },
+  ru: {
+    tag: "Дефолты 2026",
+    title: "Философия стека — когда что выбирать",
+    items: [
+      { code: "S-01", title: "Простой сайт", body: "Astro 5 + Cloudflare Pages + Markdown. Сантехник, юрист, кафе." },
+      { code: "S-02", title: "Приложение с входом", body: "Next.js 15+ на Vercel. Билеты, SaaS, дашборды." },
+      { code: "S-03", title: "Магазин", body: "Shopify в первую очередь. Своя корзина — когда выручка оправдывает разработку." },
+      { code: "S-04", title: "TikTok vs GSC", body: "Сначала GSC — бесплатный трафик из Google. TikTok — когда можешь снимать реальную работу раз в неделю." },
+      { code: "S-05", title: "Яндекс", body: "Метрика + Вебмастер, если клиенты RU/UA/BY. Пропусти для чистого Google PL." },
+    ],
+  },
+  uk: {
+    tag: "Дефолти 2026",
+    title: "Філософія stack — коли що обирати",
+    items: [
+      { code: "S-01", title: "Простий сайт", body: "Astro 5 + Cloudflare Pages + Markdown. Сантехнік, юрист, кафе." },
+      { code: "S-02", title: "Застосунок з входом", body: "Next.js 15+ на Vercel. Квитки, SaaS, дашборди." },
+      { code: "S-03", title: "Магазин", body: "Shopify спочатку. Свій кошик — коли revenue виправдовує розробку." },
+      { code: "S-04", title: "TikTok vs GSC", body: "Спочатку GSC — безкоштовний трафік з Google. TikTok — коли можеш знімати роботу щотижня." },
+      { code: "S-05", title: "Яндекс", body: "Метрика + Вебмастер, якщо клієнти RU/UA/BY. Пропусти для чистого Google PL." },
+    ],
   },
 } as const;
 
@@ -750,10 +970,13 @@ export const guidesPipelineUpdate = {
     persona3Title: "Broken project",
     persona3Body: "AI demo, deploy fails, domain wrong — rescue path.",
     ctaPipeline: "Open pipeline hub",
-    ctaBeginner: "11-step beginner path",
+    ctaBeginner: "14-step beginner path",
     whereBreaks: "Where it breaks",
     whereBreaksBody: "Wrong stack, no form, fake copy — fix with pipeline or rescue.",
     ctaAfterBreaks: "Fix with pipeline →",
+    marketingTag: "Marketing & SEO",
+    marketingTitle: "Visibility after launch",
+    marketingSubtitle: "GSC, analytics, TikTok, ads, Yandex — honest order for small business.",
   },
   pl: {
     heroTag: "Szkoła pipeline",
@@ -777,6 +1000,9 @@ export const guidesPipelineUpdate = {
     whereBreaks: "Gdzie się psuje",
     whereBreaksBody: "Zły stack, brak formy, fake copy — napraw pipeline lub rescue.",
     ctaAfterBreaks: "Napraw pipeline →",
+    marketingTag: "Marketing i SEO",
+    marketingTitle: "Widoczność po launchu",
+    marketingSubtitle: "GSC, analityka, TikTok, reklamy, Yandex — uczciwa kolejność dla małej firmy.",
   },
   ru: {
     heroTag: "Школа пайплайнов",
@@ -800,6 +1026,9 @@ export const guidesPipelineUpdate = {
     whereBreaks: "Где ломается",
     whereBreaksBody: "Неверный стек, нет формы, фейковый текст — чини через pipeline или rescue.",
     ctaAfterBreaks: "Починить через pipeline →",
+    marketingTag: "Маркетинг и SEO",
+    marketingTitle: "Видимость после запуска",
+    marketingSubtitle: "GSC, аналитика, TikTok, реклама, Яндекс — честный порядок для малого бизнеса.",
   },
   uk: {
     heroTag: "Школа pipeline",
@@ -823,6 +1052,9 @@ export const guidesPipelineUpdate = {
     whereBreaks: "Де ламається",
     whereBreaksBody: "Невірний stack, немає форми, фейковий текст — лагодь через pipeline або rescue.",
     ctaAfterBreaks: "Полагодити через pipeline →",
+    marketingTag: "Маркетинг і SEO",
+    marketingTitle: "Видимість після запуску",
+    marketingSubtitle: "GSC, аналітика, TikTok, реклама, Яндекс — чесний порядок для малого бізнесу.",
   },
 } as const;
 

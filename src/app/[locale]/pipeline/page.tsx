@@ -73,6 +73,9 @@ export default async function PipelineHubPage({
           <VHSButton href="/pipeline/stacks" variant="secondary">
             {hub.ctaStacks}
           </VHSButton>
+          <VHSButton href="/pipeline/marketing" variant="secondary">
+            {hub.ctaMarketing}
+          </VHSButton>
         </div>
       </section>
 

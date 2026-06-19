@@ -44,6 +44,9 @@ export function StackMatrix({ locale }: { locale: Locale }) {
               <th className="px-4 py-3 font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-terminal)]">
                 {copy.colBest}
               </th>
+              <th className="hidden px-4 py-3 font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-terminal)] xl:table-cell">
+                AI
+              </th>
               <th className="hidden px-4 py-3 font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-terminal)] lg:table-cell">
                 {copy.colLevel}
               </th>
@@ -69,6 +72,9 @@ export function StackMatrix({ locale }: { locale: Locale }) {
                 </td>
                 <td className="max-w-xs px-4 py-4 text-[var(--vhs-muted)]">
                   {stack.bestFor[locale]}
+                </td>
+                <td className="hidden px-4 py-4 font-mono text-[9px] uppercase text-[var(--doom-ammo)] xl:table-cell">
+                  {stack.aiAgentFriendliness?.[locale] ?? "—"}
                 </td>
                 <td className="hidden px-4 py-4 font-mono text-[9px] uppercase text-[var(--doom-ammo)] lg:table-cell">
                   {levelLabels[stack.technicalLevel][locale]}
