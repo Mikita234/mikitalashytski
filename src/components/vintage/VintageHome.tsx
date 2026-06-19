@@ -9,6 +9,7 @@ import {
 import { guideIntro, guideLabels, guides } from "@/content/guides";
 import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
+import { GuideTapeArchive } from "@/components/guides/GuideTapeArchive";
 import { PopupWindow } from "./PopupWindow";
 import { servicePackages } from "@/content/services";
 import { SignalIntro } from "./SignalIntro";
@@ -206,7 +207,20 @@ export function VintageHome() {
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="mt-8 border-2 border-[var(--doom-stone)] bg-[#0c0c0e] p-4 sm:p-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                ● {guideLabels[l].all}
+              </p>
+              <div className="mt-4">
+                <GuideTapeArchive
+                  guides={guides.slice(0, 6)}
+                  locale={l}
+                  readLabel={guideLabels[l].read}
+                />
+              </div>
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
               {guides.slice(0, 3).map((guide) => (
                 <Link
                   key={guide.slug}

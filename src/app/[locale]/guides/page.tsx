@@ -20,6 +20,7 @@ import {
 import { guidesPipelineUpdate, pipelineHub, marketingHub } from "@/content/pipeline";
 import { marketingPipelines } from "@/data/marketing-pipelines";
 import { site } from "@/content/site";
+import { GuideTapeArchive } from "@/components/guides/GuideTapeArchive";
 
 export async function generateMetadata({
   params,
@@ -337,6 +338,22 @@ export default async function GuidesPage({
           subtitle={intro.subtitle}
           tagClassName="text-[var(--vhs-terminal)]"
         />
+
+        <section className="mb-10 border-2 border-[var(--doom-stone)] bg-[#0c0c0e] p-5 sm:p-6">
+          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--vhs-terminal)]">
+            ● Tape archive
+          </p>
+          <p className="mt-2 max-w-2xl text-sm text-[var(--vhs-muted)]">
+            {intro.subtitle}
+          </p>
+          <div className="mt-6">
+            <GuideTapeArchive
+              guides={guides}
+              locale={l}
+              readLabel={labels.read}
+            />
+          </div>
+        </section>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {guides.map((guide) => (
