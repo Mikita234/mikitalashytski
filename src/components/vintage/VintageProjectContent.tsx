@@ -160,7 +160,7 @@ export function VintageProjectContent({ project }: { project: Project }) {
         className={`relative overflow-hidden border-b-2 border-[var(--vhs-dirt)] bg-[#0c0c0e] ${accentGlow[project.accent]}`}
       >
         <div
-          className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full opacity-20 blur-[100px]"
+          className="pointer-events-none absolute right-0 top-0 h-full w-1 opacity-80"
           style={{ background: visual.accent }}
           aria-hidden
         />
@@ -272,20 +272,27 @@ export function VintageProjectContent({ project }: { project: Project }) {
           />
         </div>
 
-        <div className="mb-8 border-2 border-[var(--doom-stone)] bg-[#141418] p-5">
-          <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-acid)]">
-            ● {pp("salesNoteTitle")}
-          </p>
-          <p className="mt-3 max-w-3xl text-base leading-relaxed text-[var(--vhs-muted)]">
-            {pp("salesNoteBody")}
-          </p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <VHSButton href="/order" variant="primary">
-              {pp("ctaOrder")} →
-            </VHSButton>
-            <VHSButton href="/guides" variant="secondary">
-              {pp("ctaGuides")} →
-            </VHSButton>
+        <div className="mb-8 overflow-hidden border-2 border-[var(--doom-stone)] bg-[#141418]">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[var(--doom-stone)] bg-[var(--doom-panel)] px-4 py-2">
+            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-acid)]">
+              ● {pp("salesNoteTitle")}
+            </p>
+            <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
+              {visual.channel} / ACTION
+            </span>
+          </div>
+          <div className="grid gap-5 p-5 lg:grid-cols-[1fr_auto] lg:items-center">
+            <p className="max-w-3xl text-base leading-relaxed text-[var(--vhs-muted)]">
+              {pp("salesNoteBody")}
+            </p>
+            <div className="flex flex-wrap gap-3 lg:justify-end">
+              <VHSButton href="/order" variant="primary">
+                {pp("ctaOrder")} →
+              </VHSButton>
+              <VHSButton href="/guides" variant="secondary">
+                {pp("ctaGuides")} →
+              </VHSButton>
+            </div>
           </div>
         </div>
 

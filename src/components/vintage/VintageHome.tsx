@@ -25,8 +25,30 @@ import { StackGrid } from "./StackGrid";
 import { ProofStrip } from "./ProofStrip";
 import { DVDLogoBouncer } from "./DVDLogoBouncer";
 import { VHSButton } from "./VHSButton";
+import { DoomCornerFrame } from "./DoomCornerFrame";
 import { VintageSectionHeader } from "./VintagePage";
 import type { PackageId } from "@/content/selling";
+
+const salesPathVisuals = [
+  {
+    channel: "CH-01",
+    rail: "bg-[var(--vhs-acid)]",
+    label: "text-[var(--vhs-acid)]",
+    border: "hover:border-[var(--vhs-acid)]",
+  },
+  {
+    channel: "CH-02",
+    rail: "bg-[var(--vhs-terminal)]",
+    label: "text-[var(--vhs-terminal)]",
+    border: "hover:border-[var(--vhs-terminal)]",
+  },
+  {
+    channel: "CH-03",
+    rail: "bg-[var(--vhs-red)]",
+    label: "text-[var(--vhs-red)]",
+    border: "hover:border-[var(--vhs-red)]",
+  },
+] as const;
 
 export function VintageHome() {
   const [introDone, setIntroDone] = useState(false);
@@ -86,27 +108,41 @@ export function VintageHome() {
               tagClassName="text-[var(--vhs-acid)]"
             />
             <div className="grid gap-4 md:grid-cols-3">
-              {salesPath.items.map((item) => (
-                <div
-                  key={item.label}
-                  className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5"
-                >
-                  <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
-                    {item.label}
-                  </span>
-                  <h3 className="mt-4 font-display text-3xl uppercase leading-none text-[var(--vhs-white)]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
-                    {item.text}
-                  </p>
-                  <div className="mt-5">
-                    <VHSButton href={item.href} variant="secondary">
-                      {item.cta} →
-                    </VHSButton>
-                  </div>
-                </div>
-              ))}
+              {salesPath.items.map((item, index) => {
+                const visual = salesPathVisuals[index % salesPathVisuals.length];
+
+                return (
+                  <DoomCornerFrame key={item.label}>
+                    <div
+                      className={`group relative flex min-h-[280px] flex-col overflow-hidden border-2 border-[var(--doom-stone)] bg-[#141418] p-5 transition-colors ${visual.border}`}
+                    >
+                      <div
+                        className={`absolute inset-x-0 top-0 h-2 ${visual.rail}`}
+                        aria-hidden
+                      />
+                      <div className="absolute right-3 top-4 font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
+                        {visual.channel}
+                      </div>
+                      <span
+                        className={`mt-3 font-mono text-[10px] uppercase tracking-[0.24em] ${visual.label}`}
+                      >
+                        {item.label}
+                      </span>
+                      <h3 className="mt-4 font-display text-3xl uppercase leading-none text-[var(--vhs-white)]">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                        {item.text}
+                      </p>
+                      <div className="mt-6 border-t border-white/10 pt-4">
+                        <VHSButton href={item.href} variant="secondary" className="w-full">
+                          {item.cta} →
+                        </VHSButton>
+                      </div>
+                    </div>
+                  </DoomCornerFrame>
+                );
+              })}
             </div>
           </div>
         </section>

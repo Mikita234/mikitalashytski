@@ -88,15 +88,15 @@ export function OrderForm() {
   }
 
   const inputCls =
-    "w-full border-2 border-t-[#404040] border-l-[#404040] border-b-white border-r-white bg-white px-2 py-1.5 font-mono text-sm text-black outline-none focus:ring-1 focus:ring-[#000080]";
+    "w-full border-2 border-t-[#404040] border-l-[#404040] border-b-white border-r-white bg-white px-2 py-1.5 font-mono text-sm text-black outline-none placeholder:text-black/45 focus:ring-1 focus:ring-[#000080]";
 
   return (
-    <div className="mx-auto max-w-lg border-2 border-t-white border-l-white border-b-[#404040] border-r-[#404040] bg-[#c0c0c0] shadow-lg">
-      <div className="flex items-center justify-between bg-gradient-to-r from-[#000080] to-[#1084d0] px-2 py-1">
+    <div className="mx-auto max-w-2xl border-2 border-t-white border-l-white border-b-[#404040] border-r-[#404040] bg-[#c0c0c0] shadow-lg">
+      <div className="flex items-center justify-between gap-3 bg-gradient-to-r from-[#000080] to-[#1084d0] px-2 py-1">
         <span className="font-mono text-xs font-bold text-white">
           {t("formTitle")}
         </span>
-        <span className="font-mono text-[9px] text-white/70 rec-blink">{t("recBadge")}</span>
+        <span className="shrink-0 font-mono text-[9px] text-white/70 rec-blink">{t("recBadge")}</span>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4 p-4">
@@ -109,18 +109,20 @@ export function OrderForm() {
           </div>
         ) : (
           <>
-            <div>
-              <label htmlFor="order-name" className="mb-1 block font-mono text-xs font-bold text-black">
-                {t("labels.name")} *
-              </label>
-              <input id="order-name" required value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
-            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label htmlFor="order-name" className="mb-1 block font-mono text-xs font-bold text-black">
+                  {t("labels.name")} *
+                </label>
+                <input id="order-name" required value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
+              </div>
 
-            <div>
-              <label htmlFor="order-contact" className="mb-1 block font-mono text-xs font-bold text-black">
-                {t("labels.contact")} *
-              </label>
-              <input id="order-contact" required value={contact} onChange={(e) => setContact(e.target.value)} className={inputCls} placeholder={t("placeholders.contact")} />
+              <div>
+                <label htmlFor="order-contact" className="mb-1 block font-mono text-xs font-bold text-black">
+                  {t("labels.contact")} *
+                </label>
+                <input id="order-contact" required value={contact} onChange={(e) => setContact(e.target.value)} className={inputCls} placeholder={t("placeholders.contact")} />
+              </div>
             </div>
 
             <div>
@@ -174,7 +176,7 @@ export function OrderForm() {
               <label htmlFor="order-message" className="mb-1 block font-mono text-xs font-bold text-black">
                 {t("labels.message")}
               </label>
-              <textarea id="order-message" rows={5} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputCls} resize-y`} placeholder={t("placeholders.message")} />
+              <textarea id="order-message" rows={6} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputCls} resize-y leading-relaxed`} placeholder={t("placeholders.message")} />
             </div>
 
             {state === "error" && (
