@@ -705,6 +705,18 @@
     "github": "GitHub",
     "note": "Dane kontaktowe to na razie placeholdery — zmień je w src/content/site.ts."
   },
+  "feedback": {
+    "confusion": {
+      "pill": "Niejasne?",
+      "title": "Zgłoś niejasny fragment",
+      "placeholder": "Co było niejasne? (opcjonalnie)",
+      "submit": "Wyślij",
+      "success": "Dzięki — wyjaśnimy i uzupełnimy przewodnik",
+      "error": "Nie udało się wysłać. Spróbuj później.",
+      "privacy": "Wysyłany jest tylko zaznaczony fragment",
+      "shortcut": "Po zaznaczeniu naciśnij ?"
+    }
+  },
   "footer": {
     "tagline": "Vibe-coder i operator pełnego cyklu",
     "built": "Zbudowane na Next.js — z JSON-LD, hreflang i llms.txt.",

@@ -5,6 +5,7 @@ import { ScanlineOverlay } from "./ScanlineOverlay";
 import { CursorMascot } from "./CursorMascot";
 import { VHSNav } from "./VHSNav";
 import { VintageFooter } from "./VintageFooter";
+import { ConfusionTracker } from "@/components/feedback/ConfusionTracker";
 
 export function VintageShell({ children }: { children: React.ReactNode }) {
   return (
@@ -15,6 +16,7 @@ export function VintageShell({ children }: { children: React.ReactNode }) {
       <VHSNav />
       <main>{children}</main>
       <VintageFooter />
+      <ConfusionTracker />
     </>
   );
 }
