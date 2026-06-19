@@ -4,8 +4,8 @@ function env(key: string, fallback: string) {
 }
 
 export const site = {
-  name: "Mikita Lashytski",
-  shortName: "ML",
+  name: "Микита Лашицкий",
+  shortName: "МЛ",
   domain: env("NEXT_PUBLIC_SITE_DOMAIN", "mikitalashytski.com"),
   url: env("NEXT_PUBLIC_SITE_URL", "https://mikitalashytski.com"),
   email: env("NEXT_PUBLIC_CONTACT_EMAIL", "mikitalashytski@gmail.com"),
