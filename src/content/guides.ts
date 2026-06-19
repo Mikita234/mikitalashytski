@@ -105,6 +105,9 @@ export const guideLabels = {
     read: "Read guide",
     minutes: "min read",
     back: "Back to guides",
+    scrollHint: "← scroll →",
+    scrollPrev: "Previous tape",
+    scrollNext: "Next tape",
   },
   pl: {
     all: "Wszystkie taśmy",
@@ -115,6 +118,9 @@ export const guideLabels = {
     read: "Czytaj poradnik",
     minutes: "min czytania",
     back: "Wróć do poradników",
+    scrollHint: "← przewiń →",
+    scrollPrev: "Poprzednia taśma",
+    scrollNext: "Następna taśma",
   },
   ru: {
     all: "Все кассеты",
@@ -125,6 +131,9 @@ export const guideLabels = {
     read: "Открыть гайд",
     minutes: "мин чтения",
     back: "Назад к гайдам",
+    scrollHint: "← листай →",
+    scrollPrev: "Предыдущая кассета",
+    scrollNext: "Следующая кассета",
   },
   uk: {
     all: "Усі касети",
@@ -135,6 +144,9 @@ export const guideLabels = {
     read: "Відкрити гайд",
     minutes: "хв читання",
     back: "Назад до гайдів",
+    scrollHint: "← гортай →",
+    scrollPrev: "Попередня касета",
+    scrollNext: "Наступна касета",
   },
 } as const;
 

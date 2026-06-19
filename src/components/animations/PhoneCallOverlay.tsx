@@ -130,13 +130,9 @@ export function PhoneCallOverlay({ open, onClose, origin }: PhoneCallOverlayProp
                 ✕
               </button>
 
-              <p className="phone-call-overlay__tag rec-blink" aria-hidden>
-                ● {t("live")}
-              </p>
               <h2 id="phone-call-overlay-title" className="phone-call-overlay__title">
                 {t("title")}
               </h2>
-              <p className="phone-call-overlay__subtitle">{t("subtitle")}</p>
 
               <div className="phone-call-overlay__actions">
                 <a
