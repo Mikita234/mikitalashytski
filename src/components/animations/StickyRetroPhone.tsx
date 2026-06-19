@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -9,6 +9,15 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { PhoneCallOverlay } from "./PhoneCallOverlay";
 
 type Origin = { x: number; y: number; scale: number };
+
+const PHONE_RING_CYCLE_S = 2.8;
+let phonePulseOriginMs: number | undefined;
+
+function getPhonePulseDelay(): string {
+  phonePulseOriginMs ??= Date.now();
+  const elapsed = (Date.now() - phonePulseOriginMs) / 1000;
+  return `${-(elapsed % PHONE_RING_CYCLE_S)}s`;
+}
 
 type PhoneButtonProps = {
   buttonRef: RefObject<HTMLButtonElement | null>;
@@ -31,6 +40,10 @@ function PhoneButton({
 }: PhoneButtonProps) {
   const t = useTranslations("home.hero.phone");
   const reduced = useReducedMotion();
+  const pulseDelay = useMemo(
+    () => (reduced ? undefined : getPhonePulseDelay()),
+    [reduced],
+  );
 
   const className = [
     "retro-phone-handset--hero-interactive",
@@ -47,6 +60,7 @@ function PhoneButton({
       type="button"
       layoutId={reduced ? undefined : layoutId}
       className={className}
+      style={pulseDelay ? { animationDelay: pulseDelay } : undefined}
       aria-label={t("ariaLabel")}
       aria-haspopup="dialog"
       aria-expanded={open}
@@ -95,7 +109,8 @@ export function StickyRetroPhone() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {

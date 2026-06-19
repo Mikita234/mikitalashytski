@@ -698,6 +698,7 @@ button:focus-visible {
 }
 
 .retro-phone-handset--hero-interactive {
+  --phone-rotate: -22deg;
   position: absolute;
   bottom: -4%;
   left: -16%;
@@ -711,15 +712,17 @@ button:focus-visible {
   pointer-events: auto;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  transform: rotate(-22deg);
   filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55));
   animation: phone-ring-pulse 2.8s ease-in-out infinite;
+  animation-fill-mode: both;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.retro-phone-handset--hero-interactive:hover {
-  transform: rotate(-18deg) scale(1.06);
-  filter: drop-shadow(6px 10px 20px rgba(0, 0, 0, 0.65));
+.retro-phone-handset--hero-interactive:hover,
+.retro-phone-handset--hero-interactive:active {
+  transform: rotate(calc(var(--phone-rotate) + 4deg)) scale(1.06);
+  filter: drop-shadow(6px 10px 20px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 18px rgba(74, 222, 128, 0.55));
 }
 
 .retro-phone-handset--hero-interactive:focus-visible {
@@ -740,31 +743,33 @@ button:focus-visible {
   0%,
   72%,
   100% {
-    transform: rotate(-22deg) scale(1);
+    transform: rotate(var(--phone-rotate)) scale(1);
     filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55));
   }
   76% {
-    transform: rotate(-20deg) scale(1.04);
+    transform: rotate(calc(var(--phone-rotate) + 2deg)) scale(1.04);
     filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 12px rgba(74, 222, 128, 0.35));
   }
   80% {
-    transform: rotate(-24deg) scale(1.02);
+    transform: rotate(calc(var(--phone-rotate) - 2deg)) scale(1.02);
   }
   84% {
-    transform: rotate(-21deg) scale(1.05);
+    transform: rotate(calc(var(--phone-rotate) + 1deg)) scale(1.05);
     filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 16px rgba(74, 222, 128, 0.5));
   }
   88% {
-    transform: rotate(-23deg) scale(1.01);
+    transform: rotate(calc(var(--phone-rotate) - 1deg)) scale(1.01);
   }
 }
 
 /* Sticky FAB — docks bottom-left after hero scrolls out */
 .retro-phone-handset-sticky-wrap {
+  --phone-peek: 18%;
   position: fixed;
   z-index: 100;
-  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
-  left: calc(1rem + env(safe-area-inset-left, 0px));
+  bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  left: env(safe-area-inset-left, 0px);
+  transform: translateX(calc(-1 * var(--phone-peek)));
   pointer-events: none;
 }
 
@@ -804,48 +809,37 @@ button:focus-visible {
 }
 
 .retro-phone-handset--sticky-fab {
+  --phone-rotate: -18deg;
   position: relative;
   bottom: auto;
   left: auto;
   width: 4.5rem;
   pointer-events: auto;
-  transform: rotate(-12deg);
-  animation: phone-sticky-ring-pulse 30s ease-in-out infinite;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.retro-phone-handset--sticky-fab:hover {
-  transform: rotate(-8deg) scale(1.06);
-  filter: drop-shadow(6px 10px 20px rgba(0, 0, 0, 0.65));
+.retro-phone-handset--sticky-fab:hover,
+.retro-phone-handset--sticky-fab:active {
+  transform: rotate(calc(var(--phone-rotate) + 4deg)) scale(1.06);
+  filter: drop-shadow(6px 10px 20px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 18px rgba(74, 222, 128, 0.55));
 }
 
 .retro-phone-handset--sticky-fab--static {
   animation: none;
 }
 
-@keyframes phone-sticky-ring-pulse {
-  0%,
-  96%,
-  100% {
-    transform: rotate(-12deg) scale(1);
-    filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55));
-  }
-  97% {
-    transform: rotate(-10deg) scale(1.05);
-    filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 14px rgba(74, 222, 128, 0.45));
-  }
-  98% {
-    transform: rotate(-14deg) scale(1.02);
-  }
-  99% {
-    transform: rotate(-11deg) scale(1.06);
-    filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 18px rgba(74, 222, 128, 0.55));
-  }
-}
-
 @media (min-width: 640px) {
   .retro-phone-handset--sticky-fab {
     width: 5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .retro-phone-handset--hero-interactive {
+    left: -20%;
+    bottom: -3%;
+    width: 4rem;
   }
 }
 
@@ -856,7 +850,6 @@ button:focus-visible {
 
   .retro-phone-handset-sticky-wrap {
     bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
-    left: calc(1.25rem + env(safe-area-inset-left, 0px));
   }
 }
 
