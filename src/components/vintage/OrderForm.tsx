@@ -120,7 +120,7 @@ export function OrderForm() {
               <label htmlFor="order-contact" className="mb-1 block font-mono text-xs font-bold text-black">
                 {t("labels.contact")} *
               </label>
-              <input id="order-contact" required value={contact} onChange={(e) => setContact(e.target.value)} className={inputCls} />
+              <input id="order-contact" required value={contact} onChange={(e) => setContact(e.target.value)} className={inputCls} placeholder={t("placeholders.contact")} />
             </div>
 
             <div>
@@ -174,7 +174,7 @@ export function OrderForm() {
               <label htmlFor="order-message" className="mb-1 block font-mono text-xs font-bold text-black">
                 {t("labels.message")}
               </label>
-              <textarea id="order-message" rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputCls} resize-y`} />
+              <textarea id="order-message" rows={5} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputCls} resize-y`} placeholder={t("placeholders.message")} />
             </div>
 
             {state === "error" && (

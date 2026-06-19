@@ -9,14 +9,42 @@
   },
   "hero": {
     "broadcast": "LIVE BROADCAST",
-    "title": "Websites, automations and AI workflows for small business",
-    "subtitle": "Landing pages, e-commerce, bots, payment flows, BaseLinker integrations, multilingual content and internal tools — from idea to a live website that works.",
-    "body": "Digital builder for small business, e-commerce and event projects. I build working systems — not just pages.",
-    "stack": ["Shopify", "WordPress", "BaseLinker", "Payments", "Bots", "AI content", "SEO"],
-    "ctaOrder": "Order build",
+    "title": "Websites, stores and automations that actually launch",
+    "subtitle": "I help small businesses move from idea to a working system: offer, design, code, domain, forms, payments, SEO, AI search and automation.",
+    "body": "Start with free guides. If it gets messy, I can audit, fix or build the whole thing.",
+    "stack": ["Landings", "Shopify", "BaseLinker", "Payments", "Bots", "AI pipelines", "SEO"],
+    "ctaOrder": "Discuss project",
     "ctaWorks": "View works",
-    "ctaAudit": "Request audit",
+    "ctaAudit": "Do it yourself",
     "tvLabel": "BUILDER-TV 2001"
+  },
+  "salesPath": {
+    "tag": "HOW TO START",
+    "title": "Three clean entry points",
+    "subtitle": "Pick what is cheaper in time and risk right now: DIY, rescue audit or full build.",
+    "items": [
+      {
+        "label": "DIY",
+        "title": "Build it yourself",
+        "text": "Free guides for Cursor, Codex, GitHub, Vercel, AI pipelines and human-in-the-loop workflows.",
+        "cta": "Open guides",
+        "href": "/guides"
+      },
+      {
+        "label": "RESCUE",
+        "title": "Audit and fix",
+        "text": "For broken Cursor projects, domain issues, dead forms, messy layouts or AI-demo-looking sites.",
+        "cta": "Book audit",
+        "href": "/services/audit"
+      },
+      {
+        "label": "BUILD",
+        "title": "Full build",
+        "text": "Landing page, business site, Shopify/e-commerce, ticketing, bot or automation with launch and handoff.",
+        "cta": "Send brief",
+        "href": "/order"
+      }
+    ]
   },
   "tv": {
     "label": "Philips CRT television with retro commercials",
@@ -117,8 +145,8 @@
   },
   "packages": {
     "tag": "PACKAGES",
-    "title": "What I build",
-    "subtitle": "Five clear packages — what's included, timeline, and starting price. Exact quote after we talk.",
+    "title": "What you can order",
+    "subtitle": "Packages mapped to business situations: test demand, fix a site, launch a store or remove manual work.",
     "from": "from",
     "timeline": "Timeline",
     "order": "Order this",
@@ -264,10 +292,10 @@
   },
   "contact": {
     "orderTag": "ORDER",
-    "headline": "Got an idea, project or digital chaos?",
-    "subline": "Show me the task — we'll map what to build and for how much.",
-    "stickers": ["CALL NOW", "FROM €115", "FAST LAUNCH"],
-    "ctaOrder": "Order build",
+    "headline": "Show me the project — I will map the next move",
+    "subline": "Send the task, current site and desired result. I will answer with DIY, audit, rescue or full-build direction.",
+    "stickers": ["FAST TRIAGE", "FROM €115", "NO COURSE"],
+    "ctaOrder": "Send brief",
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
     "startFrom": "START FROM THE IDEA — NOT A TEMPLATE",
@@ -313,10 +341,12 @@
       "budget": "Budget",
       "timeline": "Timeline",
       "website": "Current website",
-      "message": "Task description"
+      "message": "Desired result"
     },
     "placeholders": {
-      "website": "https://..."
+      "contact": "@username or email@example.com",
+      "website": "https://... or “no site yet”",
+      "message": "Example: I need a landing page for a service; the current site gets no leads; Cursor broke the deploy; I need Shopify + BaseLinker."
     }
   },
   "marquee": "LANDINGS / ECOMMERCE / AUTOMATION / BOTS / SEO / AI VISIBILITY / SMALL BUSINESS / WEBSITES /",

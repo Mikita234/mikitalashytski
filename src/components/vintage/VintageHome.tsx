@@ -37,6 +37,12 @@ export function VintageHome() {
   const tProjects = useTranslations("projects");
   const popups = t.raw("popups") as { title: string; text: string }[];
   const processSteps = t.raw("process.steps") as { title: string; desc: string }[];
+  const salesPath = t.raw("salesPath") as {
+    tag: string;
+    title: string;
+    subtitle: string;
+    items: { label: string; title: string; text: string; cta: string; href: string }[];
+  };
 
   const timelineSteps = processSteps.map((s, i) => ({
     step: String(i + 1).padStart(2, "0"),
@@ -67,6 +73,43 @@ export function VintageHome() {
         />
 
         <HeroSection />
+
+        <section
+          id="start"
+          className="scroll-mt-20 border-t border-[var(--doom-stone)]/40 bg-[#101014] section-spacing"
+        >
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <VintageSectionHeader
+              tag={salesPath.tag}
+              title={salesPath.title}
+              subtitle={salesPath.subtitle}
+              tagClassName="text-[var(--vhs-acid)]"
+            />
+            <div className="grid gap-4 md:grid-cols-3">
+              {salesPath.items.map((item) => (
+                <div
+                  key={item.label}
+                  className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5"
+                >
+                  <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                    {item.label}
+                  </span>
+                  <h3 className="mt-4 font-display text-3xl uppercase leading-none text-[var(--vhs-white)]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                    {item.text}
+                  </p>
+                  <div className="mt-5">
+                    <VHSButton href={item.href} variant="secondary">
+                      {item.cta} →
+                    </VHSButton>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section
           id="packages"

@@ -272,6 +272,23 @@ export function VintageProjectContent({ project }: { project: Project }) {
           />
         </div>
 
+        <div className="mb-8 border-2 border-[var(--doom-stone)] bg-[#141418] p-5">
+          <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-acid)]">
+            ● {pp("salesNoteTitle")}
+          </p>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-[var(--vhs-muted)]">
+            {pp("salesNoteBody")}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <VHSButton href="/order" variant="primary">
+              {pp("ctaOrder")} →
+            </VHSButton>
+            <VHSButton href="/guides" variant="secondary">
+              {pp("ctaGuides")} →
+            </VHSButton>
+          </div>
+        </div>
+
         {beforeAfter && (
           <div className="mb-8">
             <BeforeAfterBlock

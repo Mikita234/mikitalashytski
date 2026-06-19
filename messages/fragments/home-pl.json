@@ -9,14 +9,42 @@
   },
   "hero": {
     "broadcast": "TRANSMISJA NA ŻYWO",
-    "title": "Strony, automatyzacje i workflow AI dla małego biznesu",
-    "subtitle": "Landingi, e-commerce, boty, płatności, integracje BaseLinker, treści wielojęzyczne i narzędzia wewnętrzne — od pomysłu do działającej strony online.",
-    "body": "Digital builder dla małego biznesu, e-commerce i projektów eventowych. Buduję działające systemy — nie tylko strony.",
-    "stack": ["Shopify", "WordPress", "BaseLinker", "Płatności", "Boty", "AI content", "SEO"],
-    "ctaOrder": "Zamów build",
+    "title": "Strony, sklepy i automatyzacje, które naprawdę startują",
+    "subtitle": "Pomagam małym firmom przejść od pomysłu do działającego systemu: oferta, design, kod, domena, formularze, płatności, SEO, AI search i automatyzacja.",
+    "body": "Możesz zacząć od darmowych poradników. Jeśli utkniesz, zrobię audyt, naprawię albo zbuduję całość.",
+    "stack": ["Landingi", "Shopify", "BaseLinker", "Płatności", "Boty", "AI pipelines", "SEO"],
+    "ctaOrder": "Omów projekt",
     "ctaWorks": "Zobacz realizacje",
-    "ctaAudit": "Zamów audyt",
+    "ctaAudit": "Zrób sam",
     "tvLabel": "BUILDER-TV 2001"
+  },
+  "salesPath": {
+    "tag": "JAK ZACZĄĆ",
+    "title": "Trzy proste wejścia",
+    "subtitle": "Wybierz, co dziś jest tańsze pod względem czasu i ryzyka: DIY, audyt rescue albo pełny build.",
+    "items": [
+      {
+        "label": "DIY",
+        "title": "Zrób sam",
+        "text": "Darmowe poradniki o Cursor, Codex, GitHub, Vercel, AI pipelines i human-in-the-loop.",
+        "cta": "Otwórz poradniki",
+        "href": "/guides"
+      },
+      {
+        "label": "RESCUE",
+        "title": "Audyt i naprawa",
+        "text": "Gdy Cursor zepsuł projekt, domena nie działa, formularz nie wysyła albo strona wygląda jak demo AI.",
+        "cta": "Zamów audyt",
+        "href": "/services/audit"
+      },
+      {
+        "label": "BUILD",
+        "title": "Pełna budowa",
+        "text": "Landing, strona biznesowa, Shopify/e-commerce, bilety, bot albo automatyzacja z launch i handoff.",
+        "cta": "Wyślij brief",
+        "href": "/order"
+      }
+    ]
   },
   "tv": {
     "label": "Telewizor Philips z reklamami retro",
@@ -117,8 +145,8 @@
   },
   "packages": {
     "tag": "PAKIETY",
-    "title": "Co buduję",
-    "subtitle": "Pięć jasnych pakietów — co wchodzi, terminy i cena od. Dokładna wycena po rozmowie.",
+    "title": "Co możesz zamówić",
+    "subtitle": "Pakiety pod konkretne sytuacje: test popytu, naprawa strony, start sklepu albo usunięcie ręcznej pracy.",
     "from": "od",
     "timeline": "Termin",
     "order": "Zamów",
@@ -264,10 +292,10 @@
   },
   "contact": {
     "orderTag": "ZAMÓWIENIE",
-    "headline": "Masz pomysł, projekt lub cyfrowy chaos?",
-    "subline": "Pokaż zadanie — ułożymy co budować i za ile.",
-    "stickers": ["DZWOŃ TERAZ", "OD 500 PLN", "SZYBKI START"],
-    "ctaOrder": "Zamów build",
+    "headline": "Pokaż projekt — powiem, co zrobić dalej",
+    "subline": "Opisz zadanie, obecną stronę i oczekiwany wynik. Odpowiem: DIY, audyt, rescue albo pełny build.",
+    "stickers": ["SZYBKI ROZBIÓR", "OD 500 PLN", "BEZ KURSU"],
+    "ctaOrder": "Wyślij brief",
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
     "startFrom": "START OD POMYSŁU — NIE OD SZABLONU",
@@ -313,10 +341,12 @@
       "budget": "Budżet",
       "timeline": "Termin",
       "website": "Obecna strona",
-      "message": "Opis zadania"
+      "message": "Jaki ma być wynik"
     },
     "placeholders": {
-      "website": "https://..."
+      "contact": "@username albo email@example.com",
+      "website": "https://... albo „brak strony”",
+      "message": "Np. potrzebuję landing dla usługi; obecna strona nie daje leadów; Cursor zepsuł deploy; potrzebuję Shopify + BaseLinker."
     }
   },
   "marquee": "LANDINGI / E-COMMERCE / AUTOMATYZACJA / BOTY / SEO / AI VISIBILITY / MAŁY BIZNES / STRONY /",

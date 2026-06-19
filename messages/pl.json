@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Mikita Lashytski — digital builder i operator pełnego cyklu",
-    "description": "Systemy cyfrowe dla małego biznesu: strony, e-commerce, marketplace, boty, automatyzacja, SEO i widoczność w AI.",
+    "description": "Strony, sklepy, automatyzacja i workflow AI dla małego biznesu. Darmowe poradniki, audyt/rescue i pełne buildy.",
     "ogTagline": "Strony · E-commerce · Boty · Automatyzacja · SEO · Widoczność w AI"
   },
   "nav": {
@@ -143,7 +143,9 @@
     "metrics": "Metryki",
     "metricsNote": "Źródło pokazuje skąd pochodzi liczba. Żółta etykieta = szacunek, nie zweryfikowane.",
     "ctaOrder": "Zamów build",
-    "ctaGuides": "Czytaj darmowe poradniki"
+    "ctaGuides": "Czytaj darmowe poradniki",
+    "salesNoteTitle": "Jeśli masz podobną sytuację",
+    "salesNoteBody": "Wyślij obecną stronę, pomysł albo blocker. Powiem, czy lepsze będzie DIY, audyt/rescue czy pełny build."
   },
   "projects": {
     "mnsk7-tools": {
