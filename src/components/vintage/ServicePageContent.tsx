@@ -53,7 +53,7 @@ export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
               {tc("from")} {formatPriceFrom(meta.priceFromPln, locale)}
             </span>
             <span className="border border-white/20 px-3 py-1 text-[var(--vhs-muted)]">
-              {meta.timeline}
+              {tc(`timelines.${slug}`)}
             </span>
           </div>
         </div>

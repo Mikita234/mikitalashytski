@@ -107,7 +107,7 @@ function RetroAdSitePreview({
             <span />
           </div>
           <div className="retro-ad__browser-url">{label}</div>
-          <span className="retro-ad__browser-live rec-blink">● LIVE</span>
+          <span className="retro-ad__browser-live rec-blink">{t("browserLive")}</span>
         </div>
         {preview}
       </div>
@@ -118,7 +118,7 @@ function RetroAdSitePreview({
     <div
       className={`retro-ad__preview retro-ad__preview--frame ${reduced ? "retro-ad__preview--static" : ""}`}
     >
-      <div className="retro-ad__tv-frame-label" aria-hidden>ON AIR</div>
+      <div className="retro-ad__tv-frame-label" aria-hidden>{t("onAir")}</div>
       {preview}
     </div>
   );
@@ -294,10 +294,10 @@ export function PhilipsCrtTv() {
 
         <div className="philips-tv__controls">
           <div className="philips-tv__knobs" aria-hidden>
-            <span className="philips-tv__knob philips-tv__knob--vol" title="Volume">
+            <span className="philips-tv__knob philips-tv__knob--vol" title={t("volume")}>
               <i />
             </span>
-            <span className="philips-tv__knob philips-tv__knob--bright" title="Brightness">
+            <span className="philips-tv__knob philips-tv__knob--bright" title={t("brightness")}>
               <i />
             </span>
           </div>
@@ -331,7 +331,7 @@ export function PhilipsCrtTv() {
 
           <div className="philips-tv__power" aria-hidden>
             <span className="philips-tv__led philips-tv__led--on" />
-            <span className="philips-tv__power-label">PWR</span>
+            <span className="philips-tv__power-label">{t("power")}</span>
           </div>
         </div>
 

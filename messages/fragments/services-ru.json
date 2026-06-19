@@ -14,406 +14,414 @@
     "ctaMid": "Готовы обсудить?",
     "ctaMidButton": "Отправить бриф",
     "problem": "Проблема",
-    "solution": "Что я делаю"
+    "solution": "Что я делаю",
+    "timelines": {
+      "landing": "3–7 дней",
+      "business": "1–3 недели",
+      "ecommerce": "2–6 недель",
+      "automation": "3–14 дней",
+      "audit": "2–5 дней",
+      "creative": "1–4 недели"
+    }
   },
   "landing": {
-    "title": "Fast landing pages",
-    "headline": "One strong page to test an idea, service or campaign",
-    "problem": "You need to check demand or launch a campaign quickly — without weeks of work or a generic template that does not convert.",
-    "solution": "One focused landing page: clear offer, trust signals, contact form and analytics. Live on your domain in days.",
+    "title": "Быстрые лендинги",
+    "headline": "Одна сильная страница, чтобы проверить идею, услугу или кампанию",
+    "problem": "Нужно быстро проверить спрос или запустить кампанию — без недель работы и шаблона, который не конвертирует.",
+    "solution": "Один сфокусированный лендинг: понятное предложение, сигналы доверия, форма связи и аналитика. На вашем домене за несколько дней.",
     "forWho": [
-      "You want to test a new service or product",
-      "You run ads and need a dedicated page",
-      "You need leads before building a full site",
-      "You have notes or a rough offer — not polished copy"
+      "Хотите протестировать новую услугу или продукт",
+      "Запускаете рекламу и нужна отдельная страница",
+      "Нужны лиды до полноценного сайта",
+      "Есть заметки или черновик оффера — не готовый текст"
     ],
     "notForWho": [
-      "You need 10+ pages on day one",
-      "You want a complex shop with payments",
-      "You have no idea what you sell yet"
+      "Нужно 10+ страниц с первого дня",
+      "Нужен сложный магазин с оплатой",
+      "Ещё не понятно, что вы продаёте"
     ],
-    "exampleResult": "A live page on your domain with a form that sends leads to Telegram or email — ready for ads or outreach.",
+    "exampleResult": "Живая страница на вашем домене с формой, которая отправляет лиды в Telegram или на email — готова к рекламе или рассылке.",
     "processSteps": [
-      "You send the idea, offer notes and any references",
-      "I structure the page: headline, sections, CTA",
-      "We agree on copy and design direction",
-      "I build, connect the form and go live on your domain",
-      "You get a short handoff: how to edit and track results"
+      "Вы присылаете идею, заметки об оффере и референсы",
+      "Я структурирую страницу: заголовок, блоки, CTA",
+      "Согласуем тексты и визуальное направление",
+      "Собираю, подключаю форму и публикую на вашем домене",
+      "Короткая передача: как редактировать и отслеживать результат"
     ],
     "clientProvides": [
-      "What you sell and to whom",
-      "Logo or brand colours if you have them",
-      "Photos or examples you like",
-      "Domain access (or I help you pick one)"
+      "Что продаёте и кому",
+      "Логотип или фирменные цвета, если есть",
+      "Фото или примеры, которые нравятся",
+      "Доступ к домену (или помогу выбрать)"
     ],
     "deliverables": [
-      "One mobile-first landing page",
-      "Offer structure and copy framework",
-      "Contact form with Telegram or email hook",
-      "Basic SEO title, description and analytics",
-      "Live on your domain with SSL"
+      "Один mobile-first лендинг",
+      "Структура оффера и каркас текстов",
+      "Форма связи с Telegram или email",
+      "Базовые SEO title, description и аналитика",
+      "Публикация на вашем домене с SSL"
     ],
-    "miniCase": "Alesya Takun — personal brand site with payments and booking, started as a focused offer page.",
+    "miniCase": "Alesya Takun — сайт личного бренда с оплатой и записью, начался как сфокусированная страница оффера.",
     "faq": [
       {
-        "q": "How fast can we go live?",
-        "a": "Most landings are online in 3–7 days after we agree on the offer and content."
+        "q": "Как быстро можно запуститься?",
+        "a": "Большинство лендингов онлайн за 3–7 дней после согласования оффера и контента."
       },
       {
-        "q": "Do I need ready copy?",
-        "a": "No — bullet points or voice notes are fine. I turn them into page structure and suggest improvements."
+        "q": "Нужны готовые тексты?",
+        "a": "Нет — подойдут тезисы или голосовые. Я превращу их в структуру страницы и предложу улучшения."
       },
       {
-        "q": "Can we add more pages later?",
-        "a": "Yes. Many landings grow into full business sites when the offer works."
+        "q": "Можно добавить страницы позже?",
+        "a": "Да. Многие лендинги вырастают в полноценные бизнес-сайты, когда оффер работает."
       },
       {
-        "q": "Will it work on phones?",
-        "a": "Yes — mobile-first layout is standard, not an extra."
+        "q": "Будет ли работать на телефонах?",
+        "a": "Да — mobile-first вёрстка по умолчанию, не дополнительная опция."
       },
       {
-        "q": "Do you write in Polish / Ukrainian / Russian?",
-        "a": "Yes — I build multilingual sites when you need PL, UA, RU or EN."
+        "q": "Пишете на польском / украинском / русском?",
+        "a": "Да — делаю мультиязычные сайты, когда нужны PL, UA, RU или EN."
       },
       {
-        "q": "What if I only have Instagram?",
-        "a": "That is common. We pull the offer from your posts and build a proper home for it."
+        "q": "А если есть только Instagram?",
+        "a": "Это частый случай. Берём оффер из постов и делаем для него нормальную домашнюю страницу."
       }
     ],
-    "ctaBottom": "Order landing"
+    "ctaBottom": "Заказать лендинг"
   },
   "business": {
-    "title": "Business & project websites",
-    "headline": "Multi-page site for a business, studio or service brand",
-    "problem": "Your business lives on social or an old site — weak trust, no booking, no multilingual reach, poor search visibility.",
-    "solution": "A structured multi-page site with services, contact flows, payments when needed and search-ready architecture.",
+    "title": "Бизнес- и проектные сайты",
+    "headline": "Многостраничный сайт для бизнеса, студии или сервисного бренда",
+    "problem": "Бизнес живёт в соцсетях или на старом сайте — слабое доверие, нет записи, нет мультиязычности, плохая видимость в поиске.",
+    "solution": "Структурированный многостраничный сайт с услугами, формами связи, оплатой при необходимости и архитектурой, готовой к поиску.",
     "forWho": [
-      "Studios, agencies and service businesses",
-      "You need services, about, contact and maybe a blog",
-      "You want online booking or payments",
-      "You serve clients in more than one language"
+      "Студии, агентства и сервисный бизнес",
+      "Нужны услуги, о нас, контакты и, возможно, блог",
+      "Нужна онлайн-запись или оплата",
+      "Работаете с клиентами на нескольких языках"
     ],
     "notForWho": [
-      "You only need one campaign page",
-      "You need a full shop with 500+ SKUs on day one",
-      "You want a custom web app with user accounts"
+      "Нужна только одна страница под кампанию",
+      "Нужен полный магазин с 500+ SKU с первого дня",
+      "Нужно кастомное веб-приложение с аккаунтами"
     ],
-    "exampleResult": "A site your clients trust: clear services, contact or booking, found in Google in your languages.",
+    "exampleResult": "Сайт, которому доверяют клиенты: понятные услуги, связь или запись, находят в Google на ваших языках.",
     "processSteps": [
-      "Brief: who you serve, what pages you need, examples you like",
-      "Site map and content plan — what goes on each page",
-      "Design direction and first draft of key pages",
-      "Build, forms, integrations, SEO base",
-      "Go live, handoff and optional iteration round"
+      "Бриф: кому служите, какие страницы нужны, примеры",
+      "Карта сайта и план контента — что на каждой странице",
+      "Визуальное направление и первый черновик ключевых страниц",
+      "Сборка, формы, интеграции, SEO-база",
+      "Запуск, передача и опциональный раунд правок"
     ],
     "clientProvides": [
-      "List of services and how you describe them",
-      "Photos, logo, brand colours",
-      "Access to domain and any existing content",
-      "Decision-maker for approvals"
+      "Список услуг и как вы их описываете",
+      "Фото, логотип, фирменные цвета",
+      "Доступ к домену и существующему контенту",
+      "Лицо, принимающее решения по согласованию"
     ],
     "deliverables": [
-      "Site structure and key pages",
-      "Services / about / contact flows",
-      "CMS or simple content workflow",
-      "Contact forms and integrations",
-      "SEO base and schema.org markup",
-      "Multiple languages when needed (PL / UA / RU / EN)"
+      "Структура сайта и ключевые страницы",
+      "Блоки услуги / о нас / контакты",
+      "CMS или простой workflow контента",
+      "Формы связи и интеграции",
+      "SEO-база и разметка schema.org",
+      "Несколько языков при необходимости (PL / UA / RU / EN)"
     ],
-    "miniCase": "Popular Poet — theatre and courses with trilingual content, ticketing and admin tools.",
+    "miniCase": "Popular Poet — театр и курсы с трёхъязычным контентом, билетами и админ-инструментами.",
     "faq": [
       {
-        "q": "Do you work with existing brands?",
-        "a": "Yes — I adapt to your visual language or help shape one if you are starting fresh."
+        "q": "Работаете с существующими брендами?",
+        "a": "Да — подстраиваюсь под ваш визуальный язык или помогаю сформировать его с нуля."
       },
       {
-        "q": "Can you add online payments?",
-        "a": "Yes — booking and payment flows are a common part of business sites."
+        "q": "Можно добавить онлайн-оплату?",
+        "a": "Да — запись и оплата — обычная часть бизнес-сайтов."
       },
       {
-        "q": "Multilingual from day one?",
-        "a": "We can launch one language first and add locales without rebuilding the site."
+        "q": "Мультиязычность с первого дня?",
+        "a": "Можем запустить один язык и добавить локали без пересборки сайта."
       },
       {
-        "q": "WordPress or custom code?",
-        "a": "Depends on your needs. I recommend after we review content volume and integrations."
+        "q": "WordPress или кастомный код?",
+        "a": "Зависит от задачи. Рекомендую после обзора объёма контента и интеграций."
       },
       {
-        "q": "Who updates content later?",
-        "a": "I set up a workflow you can use — CMS, simple admin or documented process."
+        "q": "Кто будет обновлять контент потом?",
+        "a": "Настрою workflow, которым вы сможете пользоваться — CMS, простая админка или документированный процесс."
       },
       {
-        "q": "Do you handle hosting?",
-        "a": "I launch on modern hosting (e.g. Vercel) and show you how it works."
+        "q": "Занимаетесь хостингом?",
+        "a": "Запускаю на современном хостинге (например, Vercel) и показываю, как это работает."
       }
     ],
-    "ctaBottom": "Discuss your project"
+    "ctaBottom": "Обсудить проект"
   },
   "ecommerce": {
-    "title": "E-commerce setup & migration",
-    "headline": "Shop, migration and daily ops wired for sales",
-    "problem": "Catalog chaos, manual updates, marketplace and website out of sync — migration feels risky and expensive.",
-    "solution": "Shopify or WooCommerce setup or migration, payments, shipping, catalog sync and content workflows that scale.",
+    "title": "E-commerce: настройка и миграция",
+    "headline": "Магазин, миграция и ежедневные операции под продажи",
+    "problem": "Хаос в каталоге, ручные обновления, маркетплейс и сайт не синхронизированы — миграция кажется рискованной и дорогой.",
+    "solution": "Настройка или миграция Shopify или WooCommerce, оплата, доставка, синхронизация каталога и контент-workflow, которые масштабируются.",
     "forWho": [
-      "You sell physical or digital products online",
-      "You migrate from WooCommerce, WordPress or another platform",
-      "You sync with marketplaces or warehouse tools",
-      "You need multilingual product content"
+      "Продаёте физические или цифровые товары онлайн",
+      "Мигрируете с WooCommerce, WordPress или другой платформы",
+      "Синхронизируетесь с маркетплейсами или складскими системами",
+      "Нужен мультиязычный контент товаров"
     ],
     "notForWho": [
-      "You only need a brochure site",
-      "You want a marketplace with thousands of sellers",
-      "You have no products or pricing yet"
+      "Нужен только визиточный сайт",
+      "Нужен маркетплейс с тысячами продавцов",
+      "Ещё нет товаров или цен"
     ],
-    "exampleResult": "A live shop with working checkout, shipping rules and catalog sync — less manual work every week.",
+    "exampleResult": "Живой магазин с рабочим checkout, правилами доставки и синхронизацией каталога — меньше ручной работы каждую неделю.",
     "processSteps": [
-      "Audit current catalog, integrations and pain points",
-      "Pick platform and migration plan with a safe cutover date",
-      "Build store structure, payments and shipping",
-      "Migrate or sync products and test orders",
-      "Go live, monitor and fix edge cases"
+      "Аудит текущего каталога, интеграций и болевых точек",
+      "Выбор платформы и план миграции с безопасной датой переключения",
+      "Сборка структуры магазина, оплаты и доставки",
+      "Миграция или синхронизация товаров и тестовые заказы",
+      "Запуск, мониторинг и исправление edge cases"
     ],
     "clientProvides": [
-      "Product data export or access to current shop",
-      "Payment and shipping provider accounts",
-      "Brand assets and category structure",
-      "List of integrations you rely on"
+      "Экспорт данных товаров или доступ к текущему магазину",
+      "Аккаунты платёжных и логистических провайдеров",
+      "Бренд-ассеты и структура категорий",
+      "Список интеграций, от которых зависите"
     ],
     "deliverables": [
-      "Store setup or migration",
-      "Product pages and collections",
-      "Payments and shipping rules",
-      "Marketplace or warehouse sync when needed",
-      "Multilingual catalog content workflow",
-      "SEO and structured data base"
+      "Настройка или миграция магазина",
+      "Страницы товаров и коллекции",
+      "Оплата и правила доставки",
+      "Синхронизация с маркетплейсом или складом при необходимости",
+      "Workflow мультиязычного контента каталога",
+      "SEO и база structured data"
     ],
-    "miniCase": "KAYER.PL — WooCommerce to Shopify migration with catalog sync and multilingual content pipeline.",
+    "miniCase": "KAYER.PL — миграция WooCommerce → Shopify с синхронизацией каталога и мультиязычным контент-pipeline.",
     "faq": [
       {
-        "q": "Shopify or WooCommerce?",
-        "a": "Depends on your ops — I recommend after reviewing catalog size and integrations."
+        "q": "Shopify или WooCommerce?",
+        "a": "Зависит от ваших операций — рекомендую после обзора размера каталога и интеграций."
       },
       {
-        "q": "Can you migrate without downtime?",
-        "a": "We plan a cutover window and test sync before switching traffic."
+        "q": "Можно мигрировать без простоя?",
+        "a": "Планируем окно переключения и тестируем синхронизацию до смены трафика."
       },
       {
-        "q": "Do you connect BaseLinker or Allegro?",
-        "a": "Yes — catalog sync and marketplace ops are core to my e-commerce work."
+        "q": "Подключаете BaseLinker или Allegro?",
+        "a": "Да — синхронизация каталога и marketplace-операции — ядро моей e-commerce работы."
       },
       {
-        "q": "Who manages products after launch?",
-        "a": "I train you or your team and document the workflow."
+        "q": "Кто будет управлять товарами после запуска?",
+        "a": "Обучаю вас или команду и документирую workflow."
       },
       {
-        "q": "What about B2B or salon-only products?",
-        "a": "Gated access, verification flows and custom pricing — done on KAYER and similar projects."
+        "q": "А B2B или товары только для салонов?",
+        "a": "Закрытый доступ, верификация и кастомные цены — делал на KAYER и похожих проектах."
       },
       {
-        "q": "Can you automate product descriptions?",
-        "a": "Yes — AI-assisted content pipelines for PL / UA / EN when it saves real time."
+        "q": "Можно автоматизировать описания товаров?",
+        "a": "Да — AI-assisted контент-pipeline для PL / UA / EN, когда это реально экономит время."
       },
       {
-        "q": "Do you fix slow old shops?",
-        "a": "Often migration plus cleanup is faster than patching a broken theme."
+        "q": "Чините медленные старые магазины?",
+        "a": "Часто миграция плюс cleanup быстрее, чем латать сломанную тему."
       }
     ],
-    "ctaBottom": "Review your store"
+    "ctaBottom": "Разобрать ваш магазин"
   },
   "automation": {
-    "title": "Automation, bots & internal tools",
-    "headline": "Scripts and workflows that remove manual work",
-    "problem": "Content, leads and reports are done by hand — slow, error-prone, does not scale.",
-    "solution": "Telegram bots, publishing pipelines, API integrations, admin panels and AI-assisted workflows your team can run.",
+    "title": "Автоматизация, боты и внутренние инструменты",
+    "headline": "Скрипты и workflow, которые убирают ручную работу",
+    "problem": "Контент, лиды и отчёты делаются вручную — медленно, с ошибками, не масштабируется.",
+    "solution": "Telegram-боты, publishing pipeline, API-интеграции, админ-панели и AI-assisted workflow, которыми команда может пользоваться сама.",
     "forWho": [
-      "Weekly repetitive tasks (posts, reports, updates)",
-      "Lead capture or ops alerts via Telegram",
-      "Connecting shop, sheets, email or CRM",
-      "Small internal tools instead of enterprise software"
+      "Еженедельные повторяющиеся задачи (посты, отчёты, обновления)",
+      "Сбор лидов или ops-алерты через Telegram",
+      "Связка магазина, таблиц, email или CRM",
+      "Небольшие внутренние инструменты вместо enterprise-софта"
     ],
     "notForWho": [
-      "You need a full ERP replacement",
-      "The process changes every day with no rules",
-      "You want automation before the manual process works once"
+      "Нужна полная замена ERP",
+      "Процесс меняется каждый день без правил",
+      "Хотите автоматизацию до того, как ручной процесс хотя бы раз отработал"
     ],
-    "exampleResult": "A bot or script that runs the weekly job in minutes — with logs and a simple way to fix mistakes.",
+    "exampleResult": "Бот или скрипт, который делает еженедельную задачу за минуты — с логами и простым способом исправить ошибки.",
     "processSteps": [
-      "You describe the manual workflow step by step",
-      "I map inputs, outputs and failure cases",
-      "Build MVP automation and test on real data",
-      "Connect to your site, shop or messenger",
-      "Document and hand off — optional monitoring"
+      "Вы описываете ручной workflow по шагам",
+      "Я маплю входы, выходы и сценарии сбоев",
+      "Собираю MVP-автоматизацию и тестирую на реальных данных",
+      "Подключаю к сайту, магазину или мессенджеру",
+      "Документирую и передаю — опциональный мониторинг"
     ],
     "clientProvides": [
-      "Walkthrough of the current manual process",
-      "Sample inputs (files, messages, exports)",
-      "Access to APIs or admin panels involved",
-      "Who should get alerts or results"
+      "Walkthrough текущего ручного процесса",
+      "Примеры входных данных (файлы, сообщения, экспорты)",
+      "Доступ к API или админ-панелям",
+      "Кто должен получать алерты или результаты"
     ],
     "deliverables": [
-      "Telegram bots for leads or ops",
+      "Telegram-боты для лидов или ops",
       "Auto-publishing: input → pages → search ping",
-      "Google Sheets / email / CRM hooks",
-      "AI parsing when it saves real time",
-      "Simple admin panel or commands",
-      "Documentation for your team"
+      "Хуки Google Sheets / email / CRM",
+      "AI-парсинг, когда это реально экономит время",
+      "Простая админ-панель или команды",
+      "Документация для команды"
     ],
-    "miniCase": "Popular Poet Event Bot — photo and text in, structured event pages out, ~4 shows per week automated.",
+    "miniCase": "Popular Poet Event Bot — фото и текст на входе, структурированные страницы событий на выходе, ~4 шоу в неделю автоматически.",
     "faq": [
       {
-        "q": "What is a typical automation project?",
-        "a": "Weekly event publishing, lead bots, catalog updates or internal reporting dashboards."
+        "q": "Как выглядит типичный проект автоматизации?",
+        "a": "Еженедельная публикация событий, lead-боты, обновление каталога или внутренние reporting dashboard."
       },
       {
-        "q": "Do I need a developer on my side?",
-        "a": "No — I deliver working scripts, launch them and write clear instructions."
+        "q": "Нужен разработчик на моей стороне?",
+        "a": "Нет — я отдаю рабочие скрипты, запускаю их и пишу понятные инструкции."
       },
       {
-        "q": "Can automation connect to my existing site?",
-        "a": "Yes — most workflows plug into Shopify, WordPress, Next.js or warehouse tools."
+        "q": "Автоматизация подключится к существующему сайту?",
+        "a": "Да — большинство workflow встраиваются в Shopify, WordPress, Next.js или складские системы."
       },
       {
-        "q": "Is this the same as a chatbot for customers?",
-        "a": "Often yes for Telegram — but I focus on ops and sales workflows, not generic FAQ bots."
+        "q": "Это то же самое, что чат-бот для клиентов?",
+        "a": "Часто да для Telegram — но я фокусируюсь на ops и sales workflow, а не на generic FAQ-ботах."
       },
       {
-        "q": "What about AI costs?",
-        "a": "I prefer free or low-cost tiers when possible and show you expected usage."
+        "q": "А расходы на AI?",
+        "a": "Предпочитаю free или low-cost тарифы, где возможно, и показываю ожидаемое потребление."
       },
       {
-        "q": "Can you maintain it monthly?",
-        "a": "Yes — support retainers are available after the first build."
+        "q": "Можно сопровождать помесячно?",
+        "a": "Да — support retainer доступен после первой сборки."
       }
     ],
-    "ctaBottom": "Describe the workflow"
+    "ctaBottom": "Описать workflow"
   },
   "audit": {
-    "title": "Website rescue & audit",
-    "headline": "Quick audit for old sites — UX, SEO, speed, AI visibility",
-    "problem": "Site looks outdated, converts poorly, does not show up in Google or AI answers — a full rebuild feels too expensive right now.",
-    "solution": "Structured audit with prioritized fixes, impact notes and an optional rescue plan before a full rebuild.",
+    "title": "Спасение сайта и аудит",
+    "headline": "Быстрый аудит старых сайтов — UX, SEO, скорость, AI visibility",
+    "problem": "Сайт выглядит устаревшим, плохо конвертирует, не виден в Google или AI-ответах — полная пересборка сейчас кажется слишком дорогой.",
+    "solution": "Структурированный аудит с приоритетными правками, заметками об impact и опциональным rescue-планом до полной пересборки.",
     "forWho": [
-      "Old WordPress, Shopify or custom sites",
-      "Low conversions but traffic exists",
-      "Before a redesign or migration",
-      "You got outreach about SEO and want a second opinion"
+      "Старые WordPress, Shopify или кастомные сайты",
+      "Низкая конверсия, но трафик есть",
+      "Перед редизайном или миграцией",
+      "Пришло SEO-предложение и нужно второе мнение"
     ],
     "notForWho": [
-      "You need a new site built this week",
-      "You have no site yet",
-      "You want guaranteed #1 rankings"
+      "Нужен новый сайт на этой неделе",
+      "Сайта ещё нет",
+      "Нужны гарантированные позиции #1"
     ],
-    "exampleResult": "A written report: what to fix first, what it likely improves and what a rebuild would cost.",
+    "exampleResult": "Письменный отчёт: что чинить в первую очередь, что это, вероятно, улучшит и сколько стоила бы пересборка.",
     "processSteps": [
-      "You send the URL and main business goal",
-      "I review UX, technical SEO, speed and AI visibility",
-      "I score issues by impact and effort",
-      "You get a prioritized action list",
-      "Optional call to plan fixes or a rebuild"
+      "Вы присылаете URL и главную бизнес-цель",
+      "Я смотрю UX, technical SEO, скорость и AI visibility",
+      "Оцениваю проблемы по impact и effort",
+      "Вы получаете приоритетный список действий",
+      "Опциональный созвон для плана правок или пересборки"
     ],
     "clientProvides": [
-      "Website URL and target market",
-      "What is not working (leads, speed, search)",
-      "Access to Search Console if you have it",
-      "Any redesign plans or constraints"
+      "URL сайта и целевой рынок",
+      "Что не работает (лиды, скорость, поиск)",
+      "Доступ к Search Console, если есть",
+      "Планы редизайна или ограничения"
     ],
     "deliverables": [
-      "Site and UX review",
-      "Technical SEO check",
-      "Speed and mobile audit",
-      "AI visibility check (schema, llms.txt)",
-      "Prioritized fix list",
-      "Impact notes and suggested next steps"
+      "Обзор сайта и UX",
+      "Проверка technical SEO",
+      "Аудит скорости и mobile",
+      "Проверка AI visibility (schema, llms.txt)",
+      "Приоритетный список правок",
+      "Заметки об impact и рекомендуемые следующие шаги"
     ],
-    "miniCase": "Lead Hunting pipeline — automated audits for outreach; same checklist used for client rescues.",
+    "miniCase": "Lead Hunting pipeline — автоматизированные аудиты для outreach; тот же чеклист для client rescue.",
     "faq": [
       {
         "q": "Что входит за €115?",
-        "a": "A written audit with UX, SEO, speed and AI visibility findings plus a prioritized action list."
+        "a": "Письменный аудит с выводами по UX, SEO, скорости и AI visibility плюс приоритетный список действий."
       },
       {
-        "q": "Is this only for old WordPress sites?",
-        "a": "Any stack — WordPress, Shopify, custom Next.js, landing pages."
+        "q": "Только для старых WordPress-сайтов?",
+        "a": "Любой стек — WordPress, Shopify, кастомный Next.js, лендинги."
       },
       {
-        "q": "Can you fix issues after the audit?",
-        "a": "Yes — audit often leads to a landing rescue or full rebuild quote."
+        "q": "Можете исправить проблемы после аудита?",
+        "a": "Да — аудит часто ведёт к landing rescue или смете полной пересборки."
       },
       {
-        "q": "How long does it take?",
-        "a": "Usually 2–5 business days depending on site size."
+        "q": "Сколько времени занимает?",
+        "a": "Обычно 2–5 рабочих дней в зависимости от размера сайта."
       },
       {
-        "q": "Do you guarantee more traffic?",
-        "a": "No — I show what is broken and what to fix first. Honest metrics only."
+        "q": "Гарантируете больше трафика?",
+        "a": "Нет — показываю, что сломано и что чинить в первую очередь. Только честные метрики."
       },
       {
-        "q": "Will AI tools like ChatGPT find my site?",
-        "a": "I check llms.txt, schema and content structure — and tell you what is missing."
+        "q": "AI-инструменты вроде ChatGPT найдут мой сайт?",
+        "a": "Проверяю llms.txt, schema и структуру контента — и говорю, чего не хватает."
       }
     ],
-    "ctaBottom": "Request audit"
+    "ctaBottom": "Заказать аудит"
   },
   "creative": {
-    "title": "Creative & event projects",
-    "headline": "Site and automation for courses, studios and events",
-    "problem": "Project lives on Instagram — no domain, no tickets, no search visibility, manual weekly publishing.",
-    "solution": "Showcase plus sales plus bot for publishing. Niche proof of flexibility — see Popular Poet.",
+    "title": "Креативные и event-проекты",
+    "headline": "Сайт и автоматизация для курсов, студий и событий",
+    "problem": "Проект живёт в Instagram — нет домена, нет билетов, нет видимости в поиске, ручная еженедельная публикация.",
+    "solution": "Витрина плюс продажи плюс бот для публикации. Нишевое доказательство гибкости — смотрите Popular Poet.",
     "forWho": [
-      "Theatres, schools, courses and event brands",
-      "Weekly schedule that changes often",
-      "Ticket or registration sales online",
-      "Multilingual audiences (PL / UA / RU)"
+      "Театры, школы, курсы и event-бренды",
+      "Еженедельное расписание, которое часто меняется",
+      "Продажа билетов или регистрации онлайн",
+      "Мультиязычная аудитория (PL / UA / RU)"
     ],
     "notForWho": [
-      "Standard corporate brochure only",
-      "One-off landing with no events",
-      "Large festival with complex seating maps on day one"
+      "Только стандартная корпоративная визитка",
+      "Разовый лендинг без событий",
+      "Крупный фестиваль со сложными схемами рассадки с первого дня"
     ],
-    "exampleResult": "Your own domain, ticket or registration flow and less time spent copying posts every week.",
+    "exampleResult": "Свой домен, flow билетов или регистрации и меньше времени на копирование постов каждую неделю.",
     "processSteps": [
-      "Map offer: events, courses, tickets, languages",
-      "Design showcase and checkout or registration",
-      "Build schedule and content structure",
-      "Add bot or automation for weekly updates if needed",
-      "Launch and train your team"
+      "Карта оффера: события, курсы, билеты, языки",
+      "Дизайн витрины и checkout или регистрации",
+      "Сборка расписания и структуры контента",
+      "Бот или автоматизация для еженедельных обновлений при необходимости",
+      "Запуск и обучение команды"
     ],
     "clientProvides": [
-      "Event or course calendar",
-      "Brand visuals and tone of voice",
-      "Ticket pricing and payment setup",
-      "Who publishes updates each week"
+      "Календарь событий или курсов",
+      "Визуал бренда и tone of voice",
+      "Цены на билеты и настройка оплаты",
+      "Кто публикует обновления каждую неделю"
     ],
     "deliverables": [
-      "Showcase plus checkout or registration",
-      "Schedule and multilingual content",
-      "Telegram bot for publishing when useful",
-      "SEO and AI visibility base",
-      "Admin and check-in tools when needed"
+      "Витрина плюс checkout или регистрация",
+      "Расписание и мультиязычный контент",
+      "Telegram-бот для публикации, когда полезно",
+      "SEO и база AI visibility",
+      "Админ и check-in инструменты при необходимости"
     ],
-    "miniCase": "Popular Poet / PopularTickets — trilingual theatre site, own ticketing and event automation.",
+    "miniCase": "Popular Poet / PopularTickets — трёхъязычный театральный сайт, своя билетная система и event-автоматизация.",
     "faq": [
       {
-        "q": "Is this your main offer?",
-        "a": "Core offers are landings, e-commerce and automation — events are a proven niche."
+        "q": "Это ваш основной оффер?",
+        "a": "Ядро — лендинги, e-commerce и автоматизация — события проверенная ниша."
       },
       {
-        "q": "Can you automate weekly event posts?",
-        "a": "Yes — photo plus text to structured pages to search ping is a pattern I ship."
+        "q": "Можно автоматизировать еженедельные посты о событиях?",
+        "a": "Да — фото плюс текст → структурированные страницы → search ping — паттерн, который я уже делал."
       },
       {
-        "q": "Do you build ticketing?",
-        "a": "Yes — own checkout or integration depending on your volume and fees."
+        "q": "Делаете билетную систему?",
+        "a": "Да — свой checkout или интеграция в зависимости от объёма и комиссий."
       },
       {
-        "q": "Can actors or staff update the site?",
-        "a": "I set up flows that match how your team actually works — often Telegram-first."
+        "q": "Актёры или staff смогут обновлять сайт?",
+        "a": "Настраиваю flow под то, как команда реально работает — часто Telegram-first."
       },
       {
-        "q": "What languages?",
-        "a": "PL, UA, RU and EN are common in my event work."
+        "q": "Какие языки?",
+        "a": "PL, UA, RU и EN — частые в моей event-работе."
       }
     ],
-    "ctaBottom": "Discuss your project"
+    "ctaBottom": "Обсудить проект"
   }
 }

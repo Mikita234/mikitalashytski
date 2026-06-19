@@ -14,7 +14,15 @@
     "ctaMid": "Ready to talk?",
     "ctaMidButton": "Send your brief",
     "problem": "The problem",
-    "solution": "What I do"
+    "solution": "What I do",
+    "timelines": {
+      "landing": "3–7 days",
+      "business": "1–3 weeks",
+      "ecommerce": "2–6 weeks",
+      "automation": "3–14 days",
+      "audit": "2–5 days",
+      "creative": "1–4 weeks"
+    }
   },
   "landing": {
     "title": "Fast landing pages",

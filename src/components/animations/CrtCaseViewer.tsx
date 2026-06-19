@@ -44,12 +44,12 @@ function CaseHud({ tape, dimmed }: { tape: CaseTape; dimmed?: boolean }) {
   const t = useTranslations("home.workstation");
   const thumb = getCaseTapeThumbnail(tape);
   const rows = [
-    { key: "CASE", value: tape.label },
-    { key: "TYPE", value: tape.type },
-    { key: "INPUT", value: tape.input },
-    { key: "SYSTEM", value: tape.system },
-    { key: "OUTPUT", value: tape.output },
-    { key: "STATUS", value: tape.status },
+    { key: t("hudCase"), value: tape.label },
+    { key: t("hudType"), value: tape.type },
+    { key: t("hudInput"), value: tape.input },
+    { key: t("hudSystem"), value: tape.system },
+    { key: t("hudOutput"), value: tape.output },
+    { key: t("hudStatus"), value: tape.status },
   ];
   return (
     <div className={`flex h-full flex-col p-2 sm:p-3 ${dimmed ? "opacity-80" : ""}`}>
@@ -57,7 +57,7 @@ function CaseHud({ tape, dimmed }: { tape: CaseTape; dimmed?: boolean }) {
         {rows.map((row) => (
           <div key={row.key} className="flex gap-2">
             <span className="shrink-0 phosphor-text phosphor-text--muted">{row.key}:</span>
-            <span className={row.key === "STATUS" ? "phosphor-text phosphor-text--amber" : "phosphor-text"} style={row.key === "STATUS" ? { color: tape.accent } : undefined}>{row.value}</span>
+            <span className={row.key === t("hudStatus") ? "phosphor-text phosphor-text--amber" : "phosphor-text"} style={row.key === t("hudStatus") ? { color: tape.accent } : undefined}>{row.value}</span>
           </div>
         ))}
       </div>
@@ -99,7 +99,13 @@ function LoadingScreen() {
 
 export function CrtCaseViewer({ label, selectedCase, playbackState, showTrackingNoise = false }: Props) {
   const reduced = useReducedMotion();
-  const status = playbackState === "playing" ? "● CASE LIVE" : selectedCase ? "● TAPE LOADED" : "● STANDBY";
+  const t = useTranslations("home.workstation");
+  const status =
+    playbackState === "playing"
+      ? t("statusLive")
+      : selectedCase
+        ? t("statusLoaded")
+        : t("statusStandby");
   return (
     <CrtShell label={label} status={status} trackingNoise={showTrackingNoise && !reduced}>
       <AnimatePresence mode="wait">

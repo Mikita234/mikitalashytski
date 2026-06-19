@@ -24,6 +24,10 @@
     "chUp": "CH+",
     "chDown": "CH−",
     "mute": "MUTE",
+    "browserLive": "● LIVE",
+    "volume": "Volume",
+    "brightness": "Brightness",
+    "power": "PWR",
     "previewLoading": "loading…",
     "previewUnavailable": "preview unavailable",
     "commercials": {
@@ -99,7 +103,16 @@
     "terminalLabel": "Terminal output",
     "stackDll": "STACK.DLL",
     "outputLog": "OUTPUT.LOG",
-    "systemDll": "SYSTEM.DLL"
+    "systemDll": "SYSTEM.DLL",
+    "statusLive": "● CASE LIVE",
+    "statusLoaded": "● TAPE LOADED",
+    "statusStandby": "● STANDBY",
+    "hudCase": "CASE",
+    "hudType": "TYPE",
+    "hudInput": "INPUT",
+    "hudSystem": "SYSTEM",
+    "hudOutput": "OUTPUT",
+    "hudStatus": "STATUS"
   },
   "packages": {
     "tag": "PACKAGES",
@@ -231,7 +244,22 @@
       { "title": "Multilingual architecture", "text": "EN / PL / RU / UA with full hreflang." },
       { "title": "Performance as feature", "text": "SSG, minimal JS, Core Web Vitals in the green." }
     ],
-    "viewSource": "View source → JSON-LD"
+    "viewSource": "View source → JSON-LD",
+    "techPanelTitle": "P300 TECH SPECS",
+    "online": "● ONLINE",
+    "specs": [
+      { "label": "RENDER", "value": "STATIC SSG", "bg": "#f00", "fg": "#fff" },
+      { "label": "LOCALES", "value": "EN PL RU UA", "bg": "#ff0", "fg": "#000" },
+      { "label": "JSON-LD", "value": "ACTIVE", "bg": "#0f0", "fg": "#000" },
+      { "label": "LLMS.TXT", "value": "PUBLIC", "bg": "#f0f", "fg": "#fff" },
+      { "label": "AI BOTS", "value": "ALLOWED", "bg": "#00f", "fg": "#fff" },
+      { "label": "MOTION", "value": "REDUCED OK", "bg": "#333", "fg": "#ccc" }
+    ],
+    "techLines": [
+      "/robots.txt → AI BOTS OK",
+      "/llms.txt → PUBLIC",
+      "/sitemap.xml → 4 LOCALES"
+    ]
   },
   "contact": {
     "orderTag": "ORDER",
@@ -241,7 +269,10 @@
     "ctaOrder": "Order build",
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
-    "startFrom": "START FROM THE IDEA — NOT A TEMPLATE"
+    "startFrom": "START FROM THE IDEA — NOT A TEMPLATE",
+    "liveBadge": "● LIVE",
+    "hpLabel": "HP",
+    "recLabel": "REC"
   },
   "form": {
     "services": {
@@ -271,9 +302,34 @@
     "success": "Request received. I'll check the task and reply with next steps.",
     "error": "Could not send automatically — try Telegram or email below.",
     "submit": "ORDER BUILD",
-    "submitting": "SENDING..."
+    "submitting": "SENDING...",
+    "formTitle": "brief_form.exe",
+    "recBadge": "● REC",
+    "labels": {
+      "name": "Name",
+      "contact": "Telegram / Email",
+      "service": "Service",
+      "budget": "Budget",
+      "timeline": "Timeline",
+      "website": "Current website",
+      "message": "Task description"
+    },
+    "placeholders": {
+      "website": "https://..."
+    }
   },
   "marquee": "LANDINGS / ECOMMERCE / AUTOMATION / BOTS / SEO / AI VISIBILITY / SMALL BUSINESS / WEBSITES /",
+  "intro": {
+    "searching": "SEARCHING FOR SIGNAL…"
+  },
+  "vhsButton": {
+    "pickUp": "PICK UP",
+    "play": "PLAY"
+  },
+  "popups": [
+    { "title": "website.exe", "text": "website.exe is running" },
+    { "title": "vibe.sys", "text": "old internet mode enabled" }
+  ],
   "terminal": [
     "> npm run build",
     "> launching landing...",

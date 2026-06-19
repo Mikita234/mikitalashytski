@@ -39,11 +39,11 @@ export default async function OrderPage({
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="mb-8 flex flex-wrap justify-center gap-2">
-          {(t.raw("stickers") as string[]).map((s) => (
+          {(t.raw("stickers") as string[]).map((s, i) => (
             <span
               key={s}
               className={`border-2 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest ${
-                s === "CALL NOW"
+                i === 0
                   ? "border-[var(--vhs-red)] bg-[var(--vhs-red)] text-white rec-blink"
                   : "border-[var(--vhs-acid)] text-[var(--vhs-acid)]"
               }`}

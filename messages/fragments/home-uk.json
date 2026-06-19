@@ -24,6 +24,10 @@
     "chUp": "КАН+",
     "chDown": "КАН−",
     "mute": "БЕЗ ЗВУКУ",
+    "browserLive": "● В ЕФІРІ",
+    "volume": "Гучність",
+    "brightness": "Яскравість",
+    "power": "ЖЖ",
     "previewLoading": "завантаження…",
     "previewUnavailable": "превʼю недоступне",
     "commercials": {
@@ -99,7 +103,16 @@
     "terminalLabel": "Вивід терміналу",
     "stackDll": "STACK.DLL",
     "outputLog": "OUTPUT.LOG",
-    "systemDll": "SYSTEM.DLL"
+    "systemDll": "SYSTEM.DLL",
+    "statusLive": "● КЕЙС В ЕФІРІ",
+    "statusLoaded": "● КАСЕТУ ЗАВАНТАЖЕНО",
+    "statusStandby": "● ОЧІКУВАННЯ",
+    "hudCase": "КЕЙС",
+    "hudType": "ТИП",
+    "hudInput": "ВХІД",
+    "hudSystem": "СИСТЕМА",
+    "hudOutput": "ВИХІД",
+    "hudStatus": "СТАТУС"
   },
   "packages": {
     "tag": "ПАКЕТИ",
@@ -226,12 +239,27 @@
     "title": "Чого не видно на обкладинці",
     "subtitle": "Сайт демонструє себе сам: JSON-LD, hreflang, sitemap, llms.txt, статичний SSG.",
     "cards": [
-      { "title": "Structured data", "text": "Organization + Person + WebSite JSON-LD на кожній сторінці." },
+      { "title": "Структуровані дані", "text": "Organization + Person + WebSite JSON-LD на кожній сторінці." },
       { "title": "Під AI-відповіді", "text": "Публічний llms.txt і robots.txt для GPTBot, PerplexityBot, ClaudeBot." },
       { "title": "Мультимовна архітектура", "text": "EN / PL / RU / UA з повним hreflang." },
-      { "title": "Performance як фіча", "text": "SSG, мінімум JS, Core Web Vitals у зеленій зоні." }
+      { "title": "Продуктивність як фіча", "text": "SSG, мінімум JS, Core Web Vitals у зеленій зоні." }
     ],
-    "viewSource": "View source → JSON-LD"
+    "viewSource": "Код сторінки → JSON-LD",
+    "techPanelTitle": "P300 ТЕХ. СПЕЦИФІКАЦІЯ",
+    "online": "● ОНЛАЙН",
+    "specs": [
+      { "label": "РЕНДЕР", "value": "STATIC SSG", "bg": "#f00", "fg": "#fff" },
+      { "label": "ЛОКАЛІ", "value": "EN PL RU UA", "bg": "#ff0", "fg": "#000" },
+      { "label": "JSON-LD", "value": "АКТИВНИЙ", "bg": "#0f0", "fg": "#000" },
+      { "label": "LLMS.TXT", "value": "ПУБЛІЧНИЙ", "bg": "#f0f", "fg": "#fff" },
+      { "label": "AI БОТИ", "value": "ДОЗВОЛЕНІ", "bg": "#00f", "fg": "#fff" },
+      { "label": "АНІМАЦІЯ", "value": "REDUCED OK", "bg": "#333", "fg": "#ccc" }
+    ],
+    "techLines": [
+      "/robots.txt → AI БОТИ OK",
+      "/llms.txt → ПУБЛІЧНИЙ",
+      "/sitemap.xml → 4 ЛОКАЛІ"
+    ]
   },
   "contact": {
     "orderTag": "ЗАМОВЛЕННЯ",
@@ -241,7 +269,10 @@
     "ctaOrder": "Замовити build",
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
-    "startFrom": "СТАРТ ВІД ІДЕЇ — НЕ ВІД ШАБЛОНУ"
+    "startFrom": "СТАРТ ВІД ІДЕЇ — НЕ ВІД ШАБЛОНУ",
+    "liveBadge": "● В ЕФІРІ",
+    "hpLabel": "HP",
+    "recLabel": "REC"
   },
   "form": {
     "services": {
@@ -271,9 +302,34 @@
     "success": "Заявку отримано. Перевірю задачу і відповім з наступними кроками.",
     "error": "Не вдалося надіслати автоматично — спробуйте Telegram або email.",
     "submit": "ЗАМОВИТИ BUILD",
-    "submitting": "НАДСИЛАЮ..."
+    "submitting": "НАДСИЛАЮ...",
+    "formTitle": "brief_form.exe",
+    "recBadge": "● REC",
+    "labels": {
+      "name": "Ім'я",
+      "contact": "Telegram / Email",
+      "service": "Послуга",
+      "budget": "Бюджет",
+      "timeline": "Термін",
+      "website": "Поточний сайт",
+      "message": "Опис задачі"
+    },
+    "placeholders": {
+      "website": "https://..."
+    }
   },
   "marquee": "ЛЕНДІНГИ / E-COMMERCE / АВТОМАТИЗАЦІЯ / БОТИ / SEO / AI VISIBILITY / МАЛИЙ БІЗНЕС / САЙТИ /",
+  "intro": {
+    "searching": "ПОШУК СИГНАЛУ…"
+  },
+  "vhsButton": {
+    "pickUp": "ЗНЯТИ",
+    "play": "PLAY"
+  },
+  "popups": [
+    { "title": "website.exe", "text": "website.exe запущено" },
+    { "title": "vibe.sys", "text": "режим старого інтернету увімкнено" }
+  ],
   "terminal": [
     "> npm run build",
     "> launching landing...",

@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 export function SignalIntro({ onDone }: { onDone: () => void }) {
   const reduced = useReducedMotion();
+  const t = useTranslations("home.intro");
   const [active, setActive] = useState(true);
   const [phase, setPhase] = useState<"search" | "flash">("search");
 
@@ -53,7 +55,7 @@ export function SignalIntro({ onDone }: { onDone: () => void }) {
             animate={{ opacity: [0, 1, 1, 0.7, 1] }}
             transition={{ duration: 0.7 }}
           >
-            SEARCHING FOR SIGNAL…
+            {t("searching")}
           </motion.p>
         )}
         {phase === "flash" && (

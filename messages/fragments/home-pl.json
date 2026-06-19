@@ -24,6 +24,10 @@
     "chUp": "KAN+",
     "chDown": "KAN−",
     "mute": "WYCISZ",
+    "browserLive": "● NA ŻYWO",
+    "volume": "Głośność",
+    "brightness": "Jasność",
+    "power": "ZAS",
     "previewLoading": "ładowanie…",
     "previewUnavailable": "brak podglądu",
     "commercials": {
@@ -99,7 +103,16 @@
     "terminalLabel": "Wyjście terminala",
     "stackDll": "STACK.DLL",
     "outputLog": "OUTPUT.LOG",
-    "systemDll": "SYSTEM.DLL"
+    "systemDll": "SYSTEM.DLL",
+    "statusLive": "● CASE NA ŻYWO",
+    "statusLoaded": "● TAŚMA ZAŁADOWANA",
+    "statusStandby": "● STANDBY",
+    "hudCase": "CASE",
+    "hudType": "TYP",
+    "hudInput": "WEJŚCIE",
+    "hudSystem": "SYSTEM",
+    "hudOutput": "WYJŚCIE",
+    "hudStatus": "STATUS"
   },
   "packages": {
     "tag": "PAKIETY",
@@ -226,12 +239,27 @@
     "title": "Czego nie widać na okładce",
     "subtitle": "Ta strona sama się demonstruje: JSON-LD, hreflang, sitemap, llms.txt, statyczny SSG.",
     "cards": [
-      { "title": "Structured data", "text": "Organization + Person + WebSite JSON-LD na każdej stronie." },
-      { "title": "Pod AI-odpowiedzi", "text": "Publiczny llms.txt i robots.txt dla GPTBot, PerplexityBot, ClaudeBot." },
+      { "title": "Dane strukturalne", "text": "Organization + Person + WebSite JSON-LD na każdej stronie." },
+      { "title": "Pod odpowiedzi AI", "text": "Publiczny llms.txt i robots.txt dla GPTBot, PerplexityBot, ClaudeBot." },
       { "title": "Architektura wielojęzyczna", "text": "EN / PL / RU / UA z pełnym hreflang." },
-      { "title": "Performance jako feature", "text": "SSG, minimalny JS, Core Web Vitals w zieleni." }
+      { "title": "Wydajność jako feature", "text": "SSG, minimalny JS, Core Web Vitals w zieleni." }
     ],
-    "viewSource": "View source → JSON-LD"
+    "viewSource": "Kod źródłowy → JSON-LD",
+    "techPanelTitle": "P300 SPECYFIKACJA TECH",
+    "online": "● ONLINE",
+    "specs": [
+      { "label": "RENDER", "value": "STATIC SSG", "bg": "#f00", "fg": "#fff" },
+      { "label": "LOKALE", "value": "EN PL RU UA", "bg": "#ff0", "fg": "#000" },
+      { "label": "JSON-LD", "value": "AKTYWNY", "bg": "#0f0", "fg": "#000" },
+      { "label": "LLMS.TXT", "value": "PUBLICZNY", "bg": "#f0f", "fg": "#fff" },
+      { "label": "BOTY AI", "value": "DOZWOLONE", "bg": "#00f", "fg": "#fff" },
+      { "label": "RUCH", "value": "REDUCED OK", "bg": "#333", "fg": "#ccc" }
+    ],
+    "techLines": [
+      "/robots.txt → BOTY AI OK",
+      "/llms.txt → PUBLICZNY",
+      "/sitemap.xml → 4 LOKALE"
+    ]
   },
   "contact": {
     "orderTag": "ZAMÓWIENIE",
@@ -241,7 +269,10 @@
     "ctaOrder": "Zamów build",
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
-    "startFrom": "START OD POMYSŁU — NIE OD SZABLONU"
+    "startFrom": "START OD POMYSŁU — NIE OD SZABLONU",
+    "liveBadge": "● NA ŻYWO",
+    "hpLabel": "HP",
+    "recLabel": "REC"
   },
   "form": {
     "services": {
@@ -271,9 +302,34 @@
     "success": "Zgłoszenie przyjęte. Sprawdzę zadanie i odpowiem z kolejnymi krokami.",
     "error": "Nie udało się wysłać automatycznie — spróbuj Telegram lub e-mail.",
     "submit": "ZAMÓW BUILD",
-    "submitting": "WYSYŁAM..."
+    "submitting": "WYSYŁAM...",
+    "formTitle": "brief_form.exe",
+    "recBadge": "● REC",
+    "labels": {
+      "name": "Imię",
+      "contact": "Telegram / Email",
+      "service": "Usługa",
+      "budget": "Budżet",
+      "timeline": "Termin",
+      "website": "Obecna strona",
+      "message": "Opis zadania"
+    },
+    "placeholders": {
+      "website": "https://..."
+    }
   },
   "marquee": "LANDINGI / E-COMMERCE / AUTOMATYZACJA / BOTY / SEO / AI VISIBILITY / MAŁY BIZNES / STRONY /",
+  "intro": {
+    "searching": "SZUKANIE SYGNAŁU…"
+  },
+  "vhsButton": {
+    "pickUp": "ODBIEŻ",
+    "play": "PLAY"
+  },
+  "popups": [
+    { "title": "website.exe", "text": "website.exe działa" },
+    { "title": "vibe.sys", "text": "tryb starego internetu włączony" }
+  ],
   "terminal": [
     "> npm run build",
     "> launching landing...",

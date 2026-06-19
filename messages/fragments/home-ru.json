@@ -24,6 +24,10 @@
     "chUp": "КАН+",
     "chDown": "КАН−",
     "mute": "БЕЗ ЗВУКА",
+    "browserLive": "● В ЭФИРЕ",
+    "volume": "Громкость",
+    "brightness": "Яркость",
+    "power": "ПИТ",
     "previewLoading": "загрузка…",
     "previewUnavailable": "превью недоступно",
     "commercials": {
@@ -99,7 +103,16 @@
     "terminalLabel": "Вывод терминала",
     "stackDll": "STACK.DLL",
     "outputLog": "OUTPUT.LOG",
-    "systemDll": "SYSTEM.DLL"
+    "systemDll": "SYSTEM.DLL",
+    "statusLive": "● КЕЙС В ЭФИРЕ",
+    "statusLoaded": "● КАССЕТА ЗАГРУЖЕНА",
+    "statusStandby": "● ОЖИДАНИЕ",
+    "hudCase": "КЕЙС",
+    "hudType": "ТИП",
+    "hudInput": "ВХОД",
+    "hudSystem": "СИСТЕМА",
+    "hudOutput": "ВЫХОД",
+    "hudStatus": "СТАТУС"
   },
   "packages": {
     "tag": "ПАКЕТЫ",
@@ -226,12 +239,27 @@
     "title": "Чего не видно на обложке",
     "subtitle": "Сайт демонстрирует себя сам: JSON-LD, hreflang, sitemap, llms.txt, статический SSG.",
     "cards": [
-      { "title": "Structured data", "text": "Organization + Person + WebSite JSON-LD на каждой странице." },
+      { "title": "Структурированные данные", "text": "Organization + Person + WebSite JSON-LD на каждой странице." },
       { "title": "Под AI-ответы", "text": "Публичный llms.txt и robots.txt для GPTBot, PerplexityBot, ClaudeBot." },
       { "title": "Мультиязычная архитектура", "text": "EN / PL / RU / UA с полным hreflang." },
-      { "title": "Performance как фича", "text": "SSG, минимум JS, Core Web Vitals в зелёной зоне." }
+      { "title": "Производительность как фича", "text": "SSG, минимум JS, Core Web Vitals в зелёной зоне." }
     ],
-    "viewSource": "View source → JSON-LD"
+    "viewSource": "Исходный код → JSON-LD",
+    "techPanelTitle": "P300 ТЕХ. СПЕЦИФИКАЦИЯ",
+    "online": "● ОНЛАЙН",
+    "specs": [
+      { "label": "РЕНДЕР", "value": "STATIC SSG", "bg": "#f00", "fg": "#fff" },
+      { "label": "ЛОКАЛИ", "value": "EN PL RU UA", "bg": "#ff0", "fg": "#000" },
+      { "label": "JSON-LD", "value": "АКТИВЕН", "bg": "#0f0", "fg": "#000" },
+      { "label": "LLMS.TXT", "value": "ПУБЛИЧНЫЙ", "bg": "#f0f", "fg": "#fff" },
+      { "label": "AI БОТЫ", "value": "РАЗРЕШЕНЫ", "bg": "#00f", "fg": "#fff" },
+      { "label": "АНИМАЦИЯ", "value": "REDUCED OK", "bg": "#333", "fg": "#ccc" }
+    ],
+    "techLines": [
+      "/robots.txt → AI БОТЫ OK",
+      "/llms.txt → ПУБЛИЧНЫЙ",
+      "/sitemap.xml → 4 ЛОКАЛИ"
+    ]
   },
   "contact": {
     "orderTag": "ЗАКАЗ",
@@ -241,7 +269,10 @@
     "ctaOrder": "Заказать build",
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
-    "startFrom": "СТАРТ ОТ ИДЕИ — НЕ ОТ ШАБЛОНА"
+    "startFrom": "СТАРТ ОТ ИДЕИ — НЕ ОТ ШАБЛОНА",
+    "liveBadge": "● В ЭФИРЕ",
+    "hpLabel": "HP",
+    "recLabel": "REC"
   },
   "form": {
     "services": {
@@ -271,9 +302,34 @@
     "success": "Заявка получена. Проверю задачу и отвечу с дальнейшими шагами.",
     "error": "Не удалось отправить автоматически — напишите в Telegram или на email.",
     "submit": "ЗАКАЗАТЬ BUILD",
-    "submitting": "ОТПРАВЛЯЮ..."
+    "submitting": "ОТПРАВЛЯЮ...",
+    "formTitle": "brief_form.exe",
+    "recBadge": "● REC",
+    "labels": {
+      "name": "Имя",
+      "contact": "Telegram / Email",
+      "service": "Услуга",
+      "budget": "Бюджет",
+      "timeline": "Срок",
+      "website": "Текущий сайт",
+      "message": "Описание задачи"
+    },
+    "placeholders": {
+      "website": "https://..."
+    }
   },
   "marquee": "ЛЕНДИНГИ / E-COMMERCE / АВТОМАТИЗАЦИЯ / БОТЫ / SEO / AI VISIBILITY / МАЛЫЙ БИЗНЕС / САЙТЫ /",
+  "intro": {
+    "searching": "ПОИСК СИГНАЛА…"
+  },
+  "vhsButton": {
+    "pickUp": "СНЯТЬ",
+    "play": "PLAY"
+  },
+  "popups": [
+    { "title": "website.exe", "text": "website.exe запущен" },
+    { "title": "vibe.sys", "text": "режим старого интернета включён" }
+  ],
   "terminal": [
     "> npm run build",
     "> launching landing...",

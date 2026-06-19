@@ -6,7 +6,8 @@ import { Link } from "@/i18n/navigation";
 import { sellNav } from "@/content/selling";
 
 export function VintageFooter() {
-  const t = useTranslations("home.nav");
+  const tNav = useTranslations("home.nav");
+  const tFooter = useTranslations("footer");
 
   return (
     <footer className="border-t-2 border-[var(--vhs-dirt)] bg-[#0a0a0a]">
@@ -18,19 +19,17 @@ export function VintageFooter() {
           <p className="mt-2 font-display text-xl uppercase text-[var(--vhs-white)]">
             {site.name}
           </p>
-          <p className="mt-1 text-sm text-[var(--vhs-muted)]">
-            Digital builder · sites · e-commerce · automation
-          </p>
+          <p className="mt-1 text-sm text-[var(--vhs-muted)]">{tFooter("tagline")}</p>
         </div>
 
-        <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2">
+        <nav aria-label={tFooter("nav")} className="flex flex-wrap gap-x-5 gap-y-2">
           {sellNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className="font-mono text-[10px] uppercase tracking-widest text-[var(--vhs-muted)] transition-colors hover:text-[var(--vhs-acid)]"
             >
-              {t(item.key)}
+              {tNav(item.key)}
             </Link>
           ))}
         </nav>
@@ -38,8 +37,7 @@ export function VintageFooter() {
 
       <div className="border-t border-white/5 px-4 py-4 text-center sm:px-6">
         <p className="font-mono text-[9px] text-[var(--vhs-muted)]/70">
-          © {new Date().getFullYear()} {site.name} — old signal mode enabled · do
-          not adjust your set
+          © {new Date().getFullYear()} {site.name} — {tFooter("built")} · {tFooter("rights")}
         </p>
       </div>
     </footer>

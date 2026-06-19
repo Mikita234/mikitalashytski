@@ -5,7 +5,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { formatPriceFrom } from "@/lib/pricing";
 import {
   vintageWorksHome,
-  vintagePopups,
 } from "@/content/home-vintage";
 import { PopupWindow } from "./PopupWindow";
 import { servicePackages } from "@/content/services";
@@ -32,6 +31,7 @@ export function VintageHome() {
   const locale = useLocale();
   const t = useTranslations("home");
   const tProjects = useTranslations("projects");
+  const popups = t.raw("popups") as { title: string; text: string }[];
   const processSteps = t.raw("process.steps") as { title: string; desc: string }[];
 
   const timelineSteps = processSteps.map((s, i) => ({
@@ -50,14 +50,14 @@ export function VintageHome() {
         }`}
       >
         <PopupWindow
-          title={vintagePopups[0].title}
-          text={vintagePopups[0].text}
+          title={popups[0].title}
+          text={popups[0].text}
           position="bottom-right"
           delay={2000}
         />
         <PopupWindow
-          title={vintagePopups[1].title}
-          text={vintagePopups[1].text}
+          title={popups[1].title}
+          text={popups[1].text}
           position="bottom-left"
           delay={3500}
         />

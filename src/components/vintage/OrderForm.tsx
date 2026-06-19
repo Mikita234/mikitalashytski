@@ -94,9 +94,9 @@ export function OrderForm() {
     <div className="mx-auto max-w-lg border-2 border-t-white border-l-white border-b-[#404040] border-r-[#404040] bg-[#c0c0c0] shadow-lg">
       <div className="flex items-center justify-between bg-gradient-to-r from-[#000080] to-[#1084d0] px-2 py-1">
         <span className="font-mono text-xs font-bold text-white">
-          brief_form.exe
+          {t("formTitle")}
         </span>
-        <span className="font-mono text-[9px] text-white/70 rec-blink">● REC</span>
+        <span className="font-mono text-[9px] text-white/70 rec-blink">{t("recBadge")}</span>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4 p-4">
@@ -111,21 +111,21 @@ export function OrderForm() {
           <>
             <div>
               <label htmlFor="order-name" className="mb-1 block font-mono text-xs font-bold text-black">
-                Name *
+                {t("labels.name")} *
               </label>
               <input id="order-name" required value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
             </div>
 
             <div>
               <label htmlFor="order-contact" className="mb-1 block font-mono text-xs font-bold text-black">
-                Telegram / Email *
+                {t("labels.contact")} *
               </label>
               <input id="order-contact" required value={contact} onChange={(e) => setContact(e.target.value)} className={inputCls} />
             </div>
 
             <div>
               <label htmlFor="order-service" className="mb-1 block font-mono text-xs font-bold text-black">
-                Service *
+                {t("labels.service")} *
               </label>
               <select id="order-service" value={service} onChange={(e) => setService(e.target.value)} className={inputCls}>
                 {orderServiceKeys.map((key) => (
@@ -139,7 +139,7 @@ export function OrderForm() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="order-budget" className="mb-1 block font-mono text-xs font-bold text-black">
-                  Budget
+                  {t("labels.budget")}
                 </label>
                 <select id="order-budget" value={budget} onChange={(e) => setBudget(e.target.value)} className={inputCls}>
                   {orderBudgetKeys.map((key) => (
@@ -151,7 +151,7 @@ export function OrderForm() {
               </div>
               <div>
                 <label htmlFor="order-timeline" className="mb-1 block font-mono text-xs font-bold text-black">
-                  Timeline
+                  {t("labels.timeline")}
                 </label>
                 <select id="order-timeline" value={timeline} onChange={(e) => setTimeline(e.target.value)} className={inputCls}>
                   {orderTimelineKeys.map((key) => (
@@ -165,14 +165,14 @@ export function OrderForm() {
 
             <div>
               <label htmlFor="order-website" className="mb-1 block font-mono text-xs font-bold text-black">
-                Current website
+                {t("labels.website")}
               </label>
-              <input id="order-website" value={website} onChange={(e) => setWebsite(e.target.value)} className={inputCls} placeholder="https://..." />
+              <input id="order-website" value={website} onChange={(e) => setWebsite(e.target.value)} className={inputCls} placeholder={t("placeholders.website")} />
             </div>
 
             <div>
               <label htmlFor="order-message" className="mb-1 block font-mono text-xs font-bold text-black">
-                Task description
+                {t("labels.message")}
               </label>
               <textarea id="order-message" rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputCls} resize-y`} />
             </div>

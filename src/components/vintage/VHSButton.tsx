@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 type VHSButtonProps = {
@@ -20,6 +21,7 @@ export function VHSButton({
   className = "",
   external,
 }: VHSButtonProps) {
+  const t = useTranslations("home.vhsButton");
   const [hover, setHover] = useState(false);
 
   const base =
@@ -31,7 +33,7 @@ export function VHSButton({
       "border-[var(--doom-stone-light)] bg-[var(--doom-panel)] text-[var(--vhs-beige)] hover:border-[var(--doom-red)] hover:bg-[var(--doom-blood)]/30 hover:text-[var(--vhs-white)]",
   };
 
-  const hoverLabel = variant === "primary" ? "PICK UP" : "PLAY";
+  const hoverLabel = variant === "primary" ? t("pickUp") : t("play");
 
   const content = (
     <>

@@ -3,8 +3,8 @@
 /* ─── VHS / CRT palette ─── */
 :root {
   --vhs-black: #0a0a0a;
-  --vhs-gray: #1a1a1e;
-  --vhs-dirt: #2a2a30;
+  --vhs-gray: #1e1e24;
+  --vhs-dirt: #2e2e36;
   --vhs-blue: #1a3a6e;
   --vhs-terminal: #33ff66;
   --vhs-red: #c41e1e;
@@ -12,8 +12,8 @@
   --vhs-beige: #e8d4a8;
   --vhs-yellow: #ffd700;
   --vhs-white: #f0f0f0;
-  --vhs-muted: #8a8a94;
-  --vhs-body: #b8b8c4;
+  --vhs-muted: #a4a4b0;
+  --vhs-body: #cacad6;
 
   /* Doom accent layer (~20–30%, layered on VHS) */
   --doom-red: #aa2222;
@@ -688,6 +688,47 @@ button:focus-visible {
 /* Tech spec cards */
 .tech-spec-card:hover {
   box-shadow: inset 0 0 20px rgba(51, 255, 102, 0.04);
+}
+
+/* Retro phone handset (decorative) */
+.retro-phone-handset {
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55));
+}
+
+.retro-phone-handset__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.retro-phone-handset--hero {
+  position: absolute;
+  bottom: -8%;
+  left: -18%;
+  z-index: 2;
+  width: 4.5rem;
+  opacity: 0.88;
+  transform: rotate(-28deg);
+}
+
+.retro-phone-handset--cta {
+  width: 5.5rem;
+  opacity: 0.92;
+  transform: rotate(-18deg);
+}
+
+@media (min-width: 1024px) {
+  .retro-phone-handset--hero {
+    width: 5.75rem;
+    bottom: -4%;
+    left: -22%;
+  }
+
+  .retro-phone-handset--cta {
+    width: 7rem;
+  }
 }
 
 /* Hero VHS tape */
@@ -2079,7 +2120,7 @@ button:focus-visible {
   font-size: 0.6875rem;
   line-height: 1.5;
   letter-spacing: 0.06em;
-  color: #9a9aa8;
+  color: #b0b0be;
 }
 
 .section-spacing {

@@ -1,12 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { vintageUnderHoodSpecs } from "@/content/home-vintage";
 import { VintageSectionHeader } from "./VintagePage";
 
 export function UnderTheHoodSection() {
   const t = useTranslations("home.underHood");
   const cards = t.raw("cards") as { title: string; text: string }[];
+  const specs = t.raw("specs") as { label: string; value: string; bg: string; fg: string }[];
+  const techLines = t.raw("techLines") as string[];
 
   return (
     <section
@@ -41,10 +42,10 @@ export function UnderTheHoodSection() {
 
           <aside className="teletext-grid border-2 border-[#00f] p-3 font-mono text-[10px] leading-relaxed sm:p-4 sm:text-xs">
             <div className="bg-[#00f] px-2 py-1 text-center font-bold text-white">
-              P300 TECH SPECS
+              {t("techPanelTitle")}
             </div>
             <div className="mt-2 space-y-0.5">
-              {vintageUnderHoodSpecs.map((line) => (
+              {specs.map((line) => (
                 <p
                   key={line.label}
                   className="px-1"
@@ -56,11 +57,11 @@ export function UnderTheHoodSection() {
             </div>
             <div className="mt-3 border-t border-white/20 pt-2 text-[#ccc]">
               <p>{t("viewSource")}</p>
-              <p>/robots.txt → AI BOTS OK</p>
-              <p>/llms.txt → PUBLIC</p>
-              <p>/sitemap.xml → 4 LOCALES</p>
+              {techLines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
             </div>
-            <p className="mt-2 text-[8px] text-[var(--vhs-muted)]">● ONLINE</p>
+            <p className="mt-2 text-[8px] text-[var(--vhs-muted)]">{t("online")}</p>
           </aside>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { site } from "@/content/site";
 import { VHSButton } from "./VHSButton";
 import { DoomHudBar } from "./DoomHudBar";
+import { RetroPhoneHandset } from "./RetroPhoneHandset";
 
 export function ContactCTA() {
   const t = useTranslations("home.contact");
@@ -20,24 +21,24 @@ export function ContactCTA() {
       />
 
       <div
-        className="pointer-events-none absolute -left-8 bottom-8 hidden opacity-10 lg:block"
+        className="pointer-events-none absolute -left-4 bottom-6 hidden lg:block"
         aria-hidden
       >
-        <div className="rotate-[-12deg] border-4 border-[var(--vhs-beige)] bg-[#1a1a1e] p-6">
-          <p className="font-display text-6xl text-[var(--vhs-red)]">☎</p>
-          <p className="mt-2 font-mono text-xs text-[var(--vhs-yellow)]">● LIVE</p>
-        </div>
+        <RetroPhoneHandset className="retro-phone-handset--cta" />
+        <p className="mt-1 text-center font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-yellow)] rec-blink">
+          {t("liveBadge")}
+        </p>
       </div>
 
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
-        <DoomHudBar label="HP" value="100%" fill={100} className="mx-auto mb-8 max-w-[200px]" />
+        <DoomHudBar label={t("hpLabel")} value="100%" fill={100} className="mx-auto mb-8 max-w-[200px]" />
 
         <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
-          {stickers.map((s) => (
+          {stickers.map((s, i) => (
             <span
               key={s}
               className={`border-2 px-3 py-1 font-[family-name:var(--font-doom)] text-[9px] font-bold uppercase tracking-widest sm:text-[10px] ${
-                s === "CALL NOW"
+                i === 0
                   ? "border-[var(--vhs-red)] bg-[var(--vhs-red)] text-white rec-blink"
                   : "border-[var(--doom-ammo)] text-[var(--doom-ammo)]"
               }`}
@@ -69,7 +70,7 @@ export function ContactCTA() {
         </div>
 
         <p className="type-caption mt-8">
-          ● REC — {site.telegramHandle} — {site.email}
+          ● {t("recLabel")} — {site.telegramHandle} — {site.email}
         </p>
       </div>
     </section>
