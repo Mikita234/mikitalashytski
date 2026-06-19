@@ -31,7 +31,7 @@ export function HeroSection() {
   const stack = t.raw("stack") as string[];
 
   return (
-    <section className="relative overflow-hidden section-glow-terminal">
+    <section id="hero" className="relative overflow-hidden section-glow-terminal">
       <div
         className="pointer-events-none absolute -left-20 top-0 h-64 w-64 rounded-full bg-[var(--vhs-blue)] opacity-20 blur-[100px]"
         aria-hidden

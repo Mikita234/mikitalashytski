@@ -759,6 +759,107 @@ button:focus-visible {
   }
 }
 
+/* Sticky FAB — docks bottom-left after hero scrolls out */
+.retro-phone-handset-sticky-wrap {
+  position: fixed;
+  z-index: 100;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  left: calc(1rem + env(safe-area-inset-left, 0px));
+  pointer-events: none;
+}
+
+.retro-phone-handset-sticky-wrap__dismiss {
+  pointer-events: auto;
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  background: rgba(10, 10, 10, 0.92);
+  color: var(--vhs-muted);
+  font-size: 0.65rem;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.retro-phone-handset-sticky-wrap__dismiss:hover {
+  color: var(--vhs-white);
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(20, 20, 24, 0.98);
+}
+
+.retro-phone-handset-sticky-wrap__dismiss:focus-visible {
+  outline: 2px solid var(--vhs-terminal);
+  outline-offset: 2px;
+}
+
+.retro-phone-handset--sticky-fab {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  width: 4.5rem;
+  pointer-events: auto;
+  transform: rotate(-12deg);
+  animation: phone-sticky-ring-pulse 30s ease-in-out infinite;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.retro-phone-handset--sticky-fab:hover {
+  transform: rotate(-8deg) scale(1.06);
+  filter: drop-shadow(6px 10px 20px rgba(0, 0, 0, 0.65));
+}
+
+.retro-phone-handset--sticky-fab--static {
+  animation: none;
+}
+
+@keyframes phone-sticky-ring-pulse {
+  0%,
+  96%,
+  100% {
+    transform: rotate(-12deg) scale(1);
+    filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55));
+  }
+  97% {
+    transform: rotate(-10deg) scale(1.05);
+    filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 14px rgba(74, 222, 128, 0.45));
+  }
+  98% {
+    transform: rotate(-14deg) scale(1.02);
+  }
+  99% {
+    transform: rotate(-11deg) scale(1.06);
+    filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 18px rgba(74, 222, 128, 0.55));
+  }
+}
+
+@media (min-width: 640px) {
+  .retro-phone-handset--sticky-fab {
+    width: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .retro-phone-handset--sticky-fab {
+    width: 5.625rem;
+  }
+
+  .retro-phone-handset-sticky-wrap {
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    left: calc(1.25rem + env(safe-area-inset-left, 0px));
+  }
+}
+
 .retro-phone-handset--overlay {
   width: 11rem;
   opacity: 1;
@@ -2673,6 +2774,10 @@ body.phone-call-open #hero-tv {
   .retro-ad__subline--animate,
   .retro-ad__cta,
   .retro-phone-handset--hero-interactive {
+    animation: none !important;
+  }
+
+  .retro-phone-handset--sticky-fab {
     animation: none !important;
   }
 

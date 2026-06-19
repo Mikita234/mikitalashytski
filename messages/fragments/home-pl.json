@@ -26,7 +26,8 @@
       "ctaTelegram": "NAPISZ NA TELEGRAM",
       "ctaCall": "ZADZWOŃ",
       "ctaOrder": "ZAMÓW PROJEKT",
-      "close": "Zamknij"
+      "close": "Zamknij",
+      "dismiss": "Ukryj telefon"
     }
   },
   "salesPath": {

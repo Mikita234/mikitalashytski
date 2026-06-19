@@ -26,7 +26,8 @@
       "ctaTelegram": "MESSAGE ON TELEGRAM",
       "ctaCall": "CALL NOW",
       "ctaOrder": "ORDER A PROJECT",
-      "close": "Close"
+      "close": "Close",
+      "dismiss": "Hide phone"
     }
   },
   "salesPath": {

@@ -26,7 +26,8 @@
       "ctaTelegram": "НАПИСАТИ В TELEGRAM",
       "ctaCall": "ПОДЗВОНИТИ",
       "ctaOrder": "ЗАМОВИТИ ПРОЄКТ",
-      "close": "Закрити"
+      "close": "Закрити",
+      "dismiss": "Сховати телефон"
     }
   },
   "salesPath": {
