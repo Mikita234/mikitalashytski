@@ -45,6 +45,13 @@ export interface GuideRoadmap {
   setupSteps: GuideRoadmapModule[];
 }
 
+export interface GuideTopicExpansion {
+  tag: string;
+  title: string;
+  subtitle: string;
+  items: GuideRoadmapModule[];
+}
+
 const sharedTags = ["Cursor", "GitHub", "Vercel", "SEO"];
 
 export const guideIntro = {
@@ -455,6 +462,329 @@ export const guideRoadmap: Record<Locale, GuideRoadmap> = {
         title: "Зібрати особистий pipeline",
         body: "Один шаблон процесу: idea -> brief -> AI draft -> code -> tests -> human review -> deploy -> analytics -> next iteration.",
         items: ["pipeline", "analytics", "iteration"],
+      },
+    ],
+  },
+};
+
+export const guideTopicExpansion: Record<Locale, GuideTopicExpansion> = {
+  en: {
+    tag: "Next blocks",
+    title: "More systems to build after the basics",
+    subtitle:
+      "Same practical format: what the tool is for, when to use it, how to wire it into a real workflow and where a human must approve the result.",
+    items: [
+      {
+        code: "SYS-01",
+        title: "AI agents and task delegation",
+        body: "When to use an agent, how to split work into roles, and why every agent needs a scope, tools, budget and stop condition.",
+        items: ["agent roles", "tool access", "stop rules"],
+      },
+      {
+        code: "SYS-02",
+        title: "MCP and connected tools",
+        body: "Connect AI to GitHub, Gmail, files, docs, databases and internal tools without turning every task into copy-paste.",
+        items: ["MCP servers", "permissions", "audit trail"],
+      },
+      {
+        code: "SYS-03",
+        title: "RAG and knowledge bases",
+        body: "Build a small knowledge base for project docs, product catalogs, FAQs and internal instructions before asking AI to answer.",
+        items: ["chunks", "retrieval", "citations"],
+      },
+      {
+        code: "SYS-04",
+        title: "Browser automation",
+        body: "Use Playwright-style checks for forms, checkout, layouts and SEO-critical pages instead of trusting screenshots.",
+        items: ["Playwright", "forms", "screenshots"],
+      },
+      {
+        code: "SYS-05",
+        title: "Evals and quality gates",
+        body: "Create repeatable checks for copy, code, schema, translations and generated product data so mistakes do not scale.",
+        items: ["eval cases", "thresholds", "regression checks"],
+      },
+      {
+        code: "SYS-06",
+        title: "Design systems for AI builds",
+        body: "Give AI tokens, components, spacing rules and examples so every new page does not look like a different template.",
+        items: ["tokens", "components", "examples"],
+      },
+      {
+        code: "SYS-07",
+        title: "SEO, AEO and content operations",
+        body: "Turn search intent into a publishing pipeline: briefs, drafts, schema, internal links, updates and analytics review.",
+        items: ["briefs", "schema", "content ops"],
+      },
+      {
+        code: "SYS-08",
+        title: "Security and secrets",
+        body: "Basic rules for env vars, tokens, API keys, webhooks, user data and why AI must not invent security decisions.",
+        items: ["env vars", "tokens", "webhooks"],
+      },
+      {
+        code: "SYS-09",
+        title: "Monitoring and rollback",
+        body: "Logs, analytics, uptime, error reports, deployment history and the boring checklist that saves production launches.",
+        items: ["logs", "alerts", "rollback"],
+      },
+      {
+        code: "SYS-10",
+        title: "Cost and model routing",
+        body: "Use expensive models only where they matter, cheap models for bulk work, and local scripts for deterministic tasks.",
+        items: ["routing", "budgets", "batch work"],
+      },
+      {
+        code: "SYS-11",
+        title: "E-commerce data pipelines",
+        body: "Product descriptions, categories, attributes, translations, marketplace exports and human approval before publishing.",
+        items: ["products", "feeds", "approval"],
+      },
+      {
+        code: "SYS-12",
+        title: "Personal operating system",
+        body: "A repeatable working system for every project: intake, brief, build, review, publish, measure and improve.",
+        items: ["intake", "review", "iteration"],
+      },
+    ],
+  },
+  pl: {
+    tag: "Kolejne bloki",
+    title: "Więcej systemów po podstawach",
+    subtitle:
+      "Ten sam praktyczny format: do czego jest narzędzie, kiedy go użyć, jak wpiąć w workflow i gdzie człowiek musi zatwierdzić wynik.",
+    items: [
+      {
+        code: "SYS-01",
+        title: "Agenci AI i delegowanie zadań",
+        body: "Kiedy używać agenta, jak dzielić pracę na role i dlaczego agent potrzebuje scope, narzędzi, budżetu i stop condition.",
+        items: ["role agentów", "tool access", "stop rules"],
+      },
+      {
+        code: "SYS-02",
+        title: "MCP i podłączone narzędzia",
+        body: "Połącz AI z GitHub, Gmail, plikami, dokumentacją, bazami danych i narzędziami bez ręcznego copy-paste.",
+        items: ["MCP servers", "permissions", "audit trail"],
+      },
+      {
+        code: "SYS-03",
+        title: "RAG i bazy wiedzy",
+        body: "Mała baza wiedzy dla dokumentów projektu, katalogów produktów, FAQ i instrukcji zanim AI zacznie odpowiadać.",
+        items: ["chunks", "retrieval", "citations"],
+      },
+      {
+        code: "SYS-04",
+        title: "Automatyzacja przeglądarki",
+        body: "Testy Playwright dla formularzy, checkoutu, layoutów i stron SEO zamiast ufania screenshotom.",
+        items: ["Playwright", "forms", "screenshots"],
+      },
+      {
+        code: "SYS-05",
+        title: "Evals i quality gates",
+        body: "Powtarzalne kontrole copy, kodu, schema, tłumaczeń i danych produktów, żeby błędy nie skalowały się.",
+        items: ["eval cases", "thresholds", "regression"],
+      },
+      {
+        code: "SYS-06",
+        title: "Design system dla AI buildów",
+        body: "Tokeny, komponenty, spacing i przykłady, żeby każda nowa strona nie wyglądała jak inny szablon.",
+        items: ["tokens", "components", "examples"],
+      },
+      {
+        code: "SYS-07",
+        title: "SEO, AEO i content ops",
+        body: "Zamiana intencji wyszukiwania w pipeline: brief, draft, schema, linki wewnętrzne, aktualizacje i analiza.",
+        items: ["briefs", "schema", "content ops"],
+      },
+      {
+        code: "SYS-08",
+        title: "Security i secrets",
+        body: "Env vars, tokeny, API keys, webhooki, dane użytkowników i zasada: AI nie wymyśla decyzji bezpieczeństwa.",
+        items: ["env vars", "tokens", "webhooks"],
+      },
+      {
+        code: "SYS-09",
+        title: "Monitoring i rollback",
+        body: "Logi, analityka, uptime, błędy, historia deploymentów i nudna checklista ratująca produkcję.",
+        items: ["logs", "alerts", "rollback"],
+      },
+      {
+        code: "SYS-10",
+        title: "Koszt i routing modeli",
+        body: "Drogie modele tylko tam, gdzie warto, tanie do bulk work, lokalne skrypty do deterministycznych zadań.",
+        items: ["routing", "budgets", "batch work"],
+      },
+      {
+        code: "SYS-11",
+        title: "Pipeline danych e-commerce",
+        body: "Opisy, kategorie, atrybuty, tłumaczenia, eksporty marketplace i zatwierdzenie człowieka przed publikacją.",
+        items: ["products", "feeds", "approval"],
+      },
+      {
+        code: "SYS-12",
+        title: "Osobisty system operacyjny",
+        body: "Powtarzalny system pracy: intake, brief, build, review, publish, measure i poprawa.",
+        items: ["intake", "review", "iteration"],
+      },
+    ],
+  },
+  ru: {
+    tag: "Дальше в программе",
+    title: "Ещё такие же блоки: от AI-игрушки к рабочей системе",
+    subtitle:
+      "Тот же формат: что это, зачем нужно, когда применять, как встроить в пайплайн и где человек обязан проверить результат перед публикацией.",
+    items: [
+      {
+        code: "SYS-01",
+        title: "AI-агенты и делегирование задач",
+        body: "Когда нужен агент, как делить работу на роли и почему у каждого агента должны быть scope, инструменты, бюджет и условие остановки.",
+        items: ["agent roles", "tool access", "stop rules"],
+      },
+      {
+        code: "SYS-02",
+        title: "MCP и подключённые инструменты",
+        body: "Как связать AI с GitHub, Gmail, файлами, документацией, базами и внутренними системами, чтобы не копипастить руками.",
+        items: ["MCP servers", "permissions", "audit trail"],
+      },
+      {
+        code: "SYS-03",
+        title: "RAG и базы знаний",
+        body: "Как собрать маленькую knowledge base для проекта: документы, каталог товаров, FAQ, инструкции, чтобы AI отвечал из источников.",
+        items: ["chunks", "retrieval", "citations"],
+      },
+      {
+        code: "SYS-04",
+        title: "Browser automation",
+        body: "Playwright-проверки для форм, checkout, мобильной вёрстки, критичных SEO-страниц и визуальных регрессий.",
+        items: ["Playwright", "forms", "screenshots"],
+      },
+      {
+        code: "SYS-05",
+        title: "Evals и quality gates",
+        body: "Повторяемые проверки для copy, кода, schema, переводов, карточек товаров и AI-ответов, чтобы ошибки не масштабировались.",
+        items: ["eval cases", "thresholds", "regression checks"],
+      },
+      {
+        code: "SYS-06",
+        title: "Design system для AI-сборки",
+        body: "Токены, компоненты, spacing, примеры, правила текста и состояния, чтобы AI не делал каждый экран как новый шаблон.",
+        items: ["tokens", "components", "examples"],
+      },
+      {
+        code: "SYS-07",
+        title: "SEO, AEO и content ops",
+        body: "Как превращать поисковые запросы в pipeline: brief, draft, schema, внутренние ссылки, обновления, Search Console и AI-search.",
+        items: ["briefs", "schema", "content ops"],
+      },
+      {
+        code: "SYS-08",
+        title: "Security, secrets и доступы",
+        body: "Env vars, токены, API keys, webhooks, пользовательские данные, роли доступа и правило: AI не принимает security-решения сам.",
+        items: ["env vars", "tokens", "webhooks"],
+      },
+      {
+        code: "SYS-09",
+        title: "Monitoring и rollback",
+        body: "Логи, аналитика, uptime, ошибки, история деплоев, алерты и скучный чеклист, который спасает продакшен.",
+        items: ["logs", "alerts", "rollback"],
+      },
+      {
+        code: "SYS-10",
+        title: "Cost control и model routing",
+        body: "Дорогие модели — на архитектуру и сложные решения, дешёвые — на bulk tasks, скрипты — на детерминированную рутину.",
+        items: ["routing", "budgets", "batch work"],
+      },
+      {
+        code: "SYS-11",
+        title: "E-commerce data pipelines",
+        body: "Товарные описания, категории, атрибуты, переводы, marketplace exports и human approval перед публикацией.",
+        items: ["products", "feeds", "approval"],
+      },
+      {
+        code: "SYS-12",
+        title: "Личная операционная система",
+        body: "Единый процесс для проектов: intake -> brief -> AI draft -> code -> tests -> human review -> deploy -> analytics -> iteration.",
+        items: ["intake", "review", "iteration"],
+      },
+    ],
+  },
+  uk: {
+    tag: "Далі в програмі",
+    title: "Ще такі самі блоки: від AI-іграшки до робочої системи",
+    subtitle:
+      "Той самий формат: що це, навіщо потрібно, коли застосовувати, як вбудувати в pipeline і де людина має перевірити результат.",
+    items: [
+      {
+        code: "SYS-01",
+        title: "AI-агенти й делегування задач",
+        body: "Коли потрібен агент, як ділити роботу на ролі й чому кожен агент потребує scope, tools, budget і stop condition.",
+        items: ["agent roles", "tool access", "stop rules"],
+      },
+      {
+        code: "SYS-02",
+        title: "MCP і підключені інструменти",
+        body: "Як зв'язати AI з GitHub, Gmail, файлами, документацією, базами й внутрішніми системами без copy-paste.",
+        items: ["MCP servers", "permissions", "audit trail"],
+      },
+      {
+        code: "SYS-03",
+        title: "RAG і бази знань",
+        body: "Мала knowledge base для документів проєкту, каталогу товарів, FAQ та інструкцій, щоб AI відповідав із джерел.",
+        items: ["chunks", "retrieval", "citations"],
+      },
+      {
+        code: "SYS-04",
+        title: "Browser automation",
+        body: "Playwright-перевірки для форм, checkout, mobile layout, SEO-сторінок і visual regression.",
+        items: ["Playwright", "forms", "screenshots"],
+      },
+      {
+        code: "SYS-05",
+        title: "Evals і quality gates",
+        body: "Повторювані перевірки для copy, коду, schema, перекладів, product cards і AI-відповідей.",
+        items: ["eval cases", "thresholds", "regression"],
+      },
+      {
+        code: "SYS-06",
+        title: "Design system для AI-збірки",
+        body: "Tokens, components, spacing, приклади, правила тексту й states, щоб AI не робив кожен екран як новий шаблон.",
+        items: ["tokens", "components", "examples"],
+      },
+      {
+        code: "SYS-07",
+        title: "SEO, AEO і content ops",
+        body: "Як перетворити пошукові запити в pipeline: brief, draft, schema, internal links, updates, Search Console і AI-search.",
+        items: ["briefs", "schema", "content ops"],
+      },
+      {
+        code: "SYS-08",
+        title: "Security, secrets і доступи",
+        body: "Env vars, tokens, API keys, webhooks, user data, access roles і правило: AI не приймає security-рішення сам.",
+        items: ["env vars", "tokens", "webhooks"],
+      },
+      {
+        code: "SYS-09",
+        title: "Monitoring і rollback",
+        body: "Logs, analytics, uptime, errors, deployment history, alerts і нудний checklist, який рятує production.",
+        items: ["logs", "alerts", "rollback"],
+      },
+      {
+        code: "SYS-10",
+        title: "Cost control і model routing",
+        body: "Дорогі моделі — на архітектуру, дешеві — на bulk tasks, скрипти — на deterministic routine.",
+        items: ["routing", "budgets", "batch work"],
+      },
+      {
+        code: "SYS-11",
+        title: "E-commerce data pipelines",
+        body: "Product descriptions, categories, attributes, translations, marketplace exports і human approval перед публікацією.",
+        items: ["products", "feeds", "approval"],
+      },
+      {
+        code: "SYS-12",
+        title: "Особиста операційна система",
+        body: "Єдиний процес: intake -> brief -> AI draft -> code -> tests -> human review -> deploy -> analytics -> iteration.",
+        items: ["intake", "review", "iteration"],
       },
     ],
   },

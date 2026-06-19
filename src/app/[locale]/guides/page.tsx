@@ -13,6 +13,7 @@ import {
   guideIntro,
   guideLabels,
   guideRoadmap,
+  guideTopicExpansion,
   guides,
 } from "@/content/guides";
 import { site } from "@/content/site";
@@ -43,6 +44,7 @@ export default async function GuidesPage({
   const intro = guideIntro[l];
   const labels = guideLabels[l];
   const roadmap = guideRoadmap[l];
+  const topicExpansion = guideTopicExpansion[l];
 
   const collectionLd = {
     "@context": "https://schema.org",
@@ -121,6 +123,44 @@ export default async function GuidesPage({
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {module.items.map((item) => (
+                    <span
+                      key={item}
+                      className="border border-white/15 px-2 py-1 font-mono text-[9px] uppercase text-[var(--vhs-muted)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <VintageSectionHeader
+            tag={topicExpansion.tag}
+            title={topicExpansion.title}
+            subtitle={topicExpansion.subtitle}
+            tagClassName="text-[var(--doom-ammo)]"
+          />
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {topicExpansion.items.map((topic) => (
+              <div
+                key={topic.code}
+                className="border border-white/10 bg-[#101014] p-5"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--doom-ammo)]">
+                  {topic.code}
+                </span>
+                <h2 className="mt-4 font-display text-2xl uppercase leading-none text-[var(--vhs-white)]">
+                  {topic.title}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                  {topic.body}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {topic.items.map((item) => (
                     <span
                       key={item}
                       className="border border-white/15 px-2 py-1 font-mono text-[9px] uppercase text-[var(--vhs-muted)]"
