@@ -3,6 +3,7 @@
 export const sellNav = [
   { href: "/", key: "home" },
   { href: "/works", key: "works" },
+  { href: "/pipeline", key: "pipeline" },
   { href: "/guides", key: "guides" },
   { href: "/#packages", key: "packages" },
   { href: "/about", key: "approach" },

@@ -38,6 +38,7 @@
     "nav": {
       "home": "START",
       "works": "PROJEKTY",
+      "pipeline": "PIPELINE",
       "guides": "PORADNIKI",
       "packages": "PAKIETY",
       "approach": "PODEJSCIE",

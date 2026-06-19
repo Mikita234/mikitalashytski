@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import {
   VintagePageHeader,
   VintageSectionHeader,
+  VintageBulletList,
 } from "@/components/vintage/VintagePage";
 import { VHSButton } from "@/components/vintage/VHSButton";
 import { buildAlternates } from "@/lib/seo";
@@ -16,6 +17,7 @@ import {
   guideTopicExpansion,
   guides,
 } from "@/content/guides";
+import { guidesPipelineUpdate, pipelineHub } from "@/content/pipeline";
 import { site } from "@/content/site";
 
 export async function generateMetadata({
@@ -25,9 +27,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const l = locale as Locale;
+  const gp = guidesPipelineUpdate[l];
   return {
-    title: guideIntro[l].title,
-    description: guideIntro[l].subtitle,
+    title: gp.heroTitle,
+    description: gp.heroSubtitle,
     alternates: buildAlternates(locale, "/guides"),
   };
 }
@@ -45,12 +48,14 @@ export default async function GuidesPage({
   const labels = guideLabels[l];
   const roadmap = guideRoadmap[l];
   const topicExpansion = guideTopicExpansion[l];
+  const gp = guidesPipelineUpdate[l];
+  const hub = pipelineHub[l];
 
   const collectionLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: intro.title,
-    description: intro.subtitle,
+    name: gp.heroTitle,
+    description: gp.heroSubtitle,
     url: `${site.url}${l === routing.defaultLocale ? "" : `/${l}`}/guides`,
     inLanguage: l,
     author: { "@type": "Person", name: site.name, url: site.url },
@@ -62,28 +67,45 @@ export default async function GuidesPage({
     })),
   };
 
+  const readyItems = [
+    { code: "READY-01", title: hub.cardsTitle, href: "/pipeline", body: hub.subtitle },
+    { code: "READY-02", title: hub.ctaBeginner, href: "/pipeline/beginner", body: hub.outcomeTitle },
+    { code: "READY-03", title: hub.ctaBrief, href: "/pipeline/brief", body: intro.subtitle },
+  ];
+
   return (
     <>
       <JsonLd data={collectionLd} />
       <VintagePageHeader
-        tag={intro.tag}
-        title={intro.title}
-        subtitle={intro.subtitle}
+        tag={gp.heroTag}
+        title={gp.heroTitle}
+        subtitle={gp.heroSubtitle}
       />
 
       <section className="border-b border-[var(--doom-stone)]/40 bg-[#101014]">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-[1fr_320px]">
           <div className="border-l-4 border-[var(--vhs-acid)] pl-4">
             <p className="type-tag text-[var(--vhs-acid)]">
-              ● Cursor / Codex / GitHub / Vercel
+              ● {hub.defaultNote}
             </p>
             <p className="mt-3 max-w-2xl text-base leading-relaxed text-[var(--vhs-body)] sm:text-lg">
-              {intro.subtitle}
+              {hub.outcomeTitle}
             </p>
+            <ul className="mt-4 space-y-2">
+              {hub.outcomeItems.slice(0, 4).map((item) => (
+                <li key={item} className="flex gap-2 text-sm text-[var(--vhs-muted)]">
+                  <span className="text-[var(--vhs-acid)]">→</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex flex-wrap items-center gap-3 lg:justify-end">
-            <VHSButton href="/guides/make-website-yourself" variant="primary">
-              {intro.primary} →
+          <div className="flex flex-col flex-wrap items-stretch gap-3 lg:items-end">
+            <VHSButton href="/pipeline" variant="primary">
+              {gp.ctaPipeline} →
+            </VHSButton>
+            <VHSButton href="/pipeline/beginner" variant="secondary">
+              {gp.ctaBeginner}
             </VHSButton>
             <VHSButton href="/order" variant="secondary">
               {intro.secondary}
@@ -95,44 +117,107 @@ export default async function GuidesPage({
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18">
         <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
           <VintageSectionHeader
-            tag={roadmap.tag}
-            title={roadmap.title}
-            subtitle={roadmap.subtitle}
+            tag={gp.personasTag}
+            title={gp.personasTitle}
             tagClassName="text-[var(--vhs-acid)]"
+          />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              { title: gp.persona1Title, body: gp.persona1Body, code: "P-01" },
+              { title: gp.persona2Title, body: gp.persona2Body, code: "P-02" },
+              { title: gp.persona3Title, body: gp.persona3Body, code: "P-03" },
+            ].map((persona) => (
+              <div
+                key={persona.code}
+                className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                  {persona.code}
+                </span>
+                <h2 className="mt-4 font-display text-2xl uppercase leading-none text-[var(--vhs-white)]">
+                  {persona.title}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                  {persona.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <VintageSectionHeader
+            tag={gp.readyTag}
+            title={gp.readyTitle}
+            tagClassName="text-[var(--vhs-acid)]"
+          />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {readyItems.map((item) => (
+              <Link
+                key={item.code}
+                href={item.href}
+                className="border border-white/10 bg-[#101014] p-5 hover:border-[var(--vhs-acid)]"
+              >
+                <span className="font-mono text-[10px] uppercase text-[var(--vhs-terminal)]">
+                  {item.code}
+                </span>
+                <h2 className="mt-3 font-display text-xl uppercase text-[var(--vhs-white)]">
+                  {item.title}
+                </h2>
+                <p className="mt-2 text-sm text-[var(--vhs-muted)]">{item.body}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <VintageSectionHeader
+            tag={gp.comingTag}
+            title={gp.comingTitle}
+            subtitle={roadmap.subtitle}
+            tagClassName="text-[var(--doom-ammo)]"
           />
 
           <div className="grid gap-5 lg:grid-cols-2">
-            {roadmap.modules.map((module) => (
+            {roadmap.modules.slice(0, 4).map((module) => (
               <div
                 key={module.code}
-                className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5"
+                className="border-2 border-[var(--doom-stone)] bg-[#141418] p-5 opacity-90"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
                     {module.code}
                   </span>
                   <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
-                    {roadmap.modulesTitle}
+                    {gp.comingTag}
                   </span>
                 </div>
-                <h2 className="mt-4 font-display text-3xl uppercase leading-none text-[var(--vhs-white)]">
+                <h2 className="mt-4 font-display text-2xl uppercase leading-none text-[var(--vhs-white)]">
                   {module.title}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
                   {module.body}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {module.items.map((item) => (
-                    <span
-                      key={item}
-                      className="border border-white/15 px-2 py-1 font-mono text-[9px] uppercase text-[var(--vhs-muted)]"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
+          <VintageSectionHeader
+            tag={gp.whereBreaks}
+            title={gp.whereBreaks}
+            subtitle={gp.whereBreaksBody}
+            tagClassName="text-[var(--vhs-red)]"
+          />
+          <VintageBulletList
+            items={guides[3].mistakes[l]}
+            accent="bg-[var(--vhs-red)]"
+          />
+          <div className="mt-8">
+            <VHSButton href="/pipeline/rescue" variant="primary">
+              {gp.ctaAfterBreaks}
+            </VHSButton>
           </div>
         </section>
 
@@ -145,7 +230,7 @@ export default async function GuidesPage({
           />
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {topicExpansion.items.map((topic) => (
+            {topicExpansion.items.slice(0, 6).map((topic) => (
               <div
                 key={topic.code}
                 className="border border-white/10 bg-[#101014] p-5"
@@ -159,62 +244,8 @@ export default async function GuidesPage({
                 <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
                   {topic.body}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {topic.items.map((item) => (
-                    <span
-                      key={item}
-                      className="border border-white/15 px-2 py-1 font-mono text-[9px] uppercase text-[var(--vhs-muted)]"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        <section className="mb-14 border-b border-[var(--doom-stone)]/50 pb-14">
-          <div className="grid gap-8 lg:grid-cols-[320px_1fr]">
-            <div>
-              <p className="type-tag text-[var(--vhs-terminal)]">
-                ● {roadmap.setupTitle}
-              </p>
-              <h2 className="type-h2 mt-3">{roadmap.setupTitle}</h2>
-              <p className="type-subtitle mt-4">
-                {roadmap.setupSubtitle}
-              </p>
-              <div className="doom-stone-divider mt-6 max-w-xs" aria-hidden />
-            </div>
-
-            <div className="grid gap-4">
-              {roadmap.setupSteps.map((step) => (
-                <div
-                  key={step.code}
-                  className="grid gap-4 border border-white/10 bg-[#101014] p-5 sm:grid-cols-[72px_1fr]"
-                >
-                  <span className="font-display text-4xl leading-none text-[var(--doom-ammo)]">
-                    {step.code}
-                  </span>
-                  <div>
-                    <h3 className="type-h3">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--vhs-muted)] sm:text-base">
-                      {step.body}
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {step.items.map((item) => (
-                        <span
-                          key={item}
-                          className="border border-[var(--vhs-terminal)]/25 bg-[var(--vhs-terminal)]/5 px-2 py-1 font-mono text-[9px] uppercase text-[var(--vhs-terminal)]"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

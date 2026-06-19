@@ -38,6 +38,7 @@
     "nav": {
       "home": "ГОЛОВНА",
       "works": "РОБОТИ",
+      "pipeline": "PIPELINE",
       "guides": "ГАЙДИ",
       "packages": "ПАКЕТИ",
       "approach": "ПІДХІД",

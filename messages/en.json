@@ -38,6 +38,7 @@
     "nav": {
       "home": "HOME",
       "works": "WORKS",
+      "pipeline": "PIPELINE",
       "guides": "GUIDES",
       "packages": "PACKAGES",
       "approach": "APPROACH",
