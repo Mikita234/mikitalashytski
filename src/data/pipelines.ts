@@ -134,6 +134,38 @@ export const pipelines: ProjectPipeline[] = [
           "localhost показує hero + сітку проєктів",
         ),
       },
+      {
+        code: "03",
+        title: L("Write case pages", "Napisz case pages", "Написать страницы кейсов", "Написати сторінки кейсів"),
+        body: L(
+          "Turn each project into a short case: problem, role, process, result, link.",
+          "Zamień każdy projekt w krótki case: problem, rola, proces, wynik, link.",
+          "Преврати каждый проект в короткий кейс: проблема, роль, процесс, результат, ссылка.",
+          "Перетвори кожен проєкт на короткий кейс: проблема, роль, процес, результат, посилання.",
+        ),
+        doneWhen: L(
+          "Every selected project has a case page or expandable section",
+          "Każdy wybrany projekt ma stronę case albo rozwijaną sekcję",
+          "У каждого выбранного проекта есть страница кейса или раскрываемый блок",
+          "У кожного вибраного проєкту є сторінка кейсу або розкривний блок",
+        ),
+      },
+      {
+        code: "04",
+        title: L("Launch contact path", "Uruchom kontakt", "Запустить путь контакта", "Запустити шлях контакту"),
+        body: L(
+          "Connect email or booking, add social proof, deploy, check mobile and analytics.",
+          "Podłącz email lub booking, dodaj social proof, deploy, mobile i analitykę.",
+          "Подключи email или booking, добавь proof, деплой, проверь mobile и аналитику.",
+          "Підключи email або booking, додай proof, deploy, перевір mobile та аналітику.",
+        ),
+        doneWhen: L(
+          "A visitor can contact you from home and every case page",
+          "Gość może skontaktować się ze strony głównej i każdego case",
+          "Посетитель может связаться с главной и с каждого кейса",
+          "Відвідувач може зв'язатися з головної та кожного кейсу",
+        ),
+      },
     ]),
     risks: LA(
       ["Too many animations", "Fake project copy", "No real contact path"],
@@ -224,6 +256,38 @@ export const pipelines: ProjectPipeline[] = [
           "Production URL відкривається на телефоні, форма шле лист",
         ),
       },
+      {
+        code: "03",
+        title: L("Local SEO base", "Baza lokalnego SEO", "База локального SEO", "База локального SEO"),
+        body: L(
+          "Add service pages, city terms, metadata, sitemap, robots and Search Console.",
+          "Dodaj strony usług, miasto, metadata, sitemap, robots i Search Console.",
+          "Добавь страницы услуг, город, metadata, sitemap, robots и Search Console.",
+          "Додай сторінки послуг, місто, metadata, sitemap, robots і Search Console.",
+        ),
+        doneWhen: L(
+          "Home and service pages have unique titles and are submitted to GSC",
+          "Home i usługi mają unikalne title i są wysłane do GSC",
+          "Главная и услуги имеют уникальные title и отправлены в GSC",
+          "Головна і послуги мають унікальні title і надіслані в GSC",
+        ),
+      },
+      {
+        code: "04",
+        title: L("Trust and conversion", "Zaufanie i konwersja", "Доверие и конверсия", "Довіра і конверсія"),
+        body: L(
+          "Add reviews, real photos, FAQs, opening hours and test the lead path.",
+          "Dodaj opinie, realne zdjęcia, FAQ, godziny i przetestuj lead path.",
+          "Добавь отзывы, реальные фото, FAQ, часы работы и проверь путь заявки.",
+          "Додай відгуки, реальні фото, FAQ, години роботи і перевір шлях заявки.",
+        ),
+        doneWhen: L(
+          "Test lead reaches the owner and the page answers the top objections",
+          "Testowy lead trafia do właściciela, a strona zamyka główne obiekcje",
+          "Тестовая заявка доходит владельцу, а страница закрывает главные возражения",
+          "Тестова заявка доходить власнику, а сторінка закриває головні заперечення",
+        ),
+      },
     ]),
     risks: LA(
       ["Generic AI copy", "No form delivery", "Skipping Search Console"],
@@ -281,6 +345,24 @@ export const pipelines: ProjectPipeline[] = [
         title: L("Topic map", "Mapa tematów", "Карта тем", "Карта тем"),
         body: L("List pillars + 10 article titles with search intent.", "Lista filarów + 10 tytułów z intencją wyszukiwania.", "Список столпов + 10 заголовков с поисковым intent.", "Список стовпів + 10 заголовків з search intent."),
         doneWhen: L("Spreadsheet or markdown file exists in repo", "Arkusz lub plik markdown jest w repo", "Таблица или md-файл есть в repo", "Таблиця або md-файл є в repo"),
+      },
+      {
+        code: "02",
+        title: L("Content structure", "Struktura treści", "Структура контента", "Структура контенту"),
+        body: L("Create categories, author page, article template and internal linking rules.", "Kategorie, strona autora, szablon artykułu i zasady linkowania.", "Создай категории, страницу автора, шаблон статьи и правила перелинковки.", "Створи категорії, сторінку автора, шаблон статті і правила перелінковки."),
+        doneWhen: L("First article can be published from Markdown with schema", "Pierwszy artykuł publikuje się z Markdown ze schema", "Первая статья публикуется из Markdown со schema", "Перша стаття публікується з Markdown зі schema"),
+      },
+      {
+        code: "03",
+        title: L("Publish first cluster", "Opublikuj pierwszy klaster", "Опубликовать первый кластер", "Опублікувати перший кластер"),
+        body: L("Ship one pillar page plus 3–5 supporting articles with clear search intent.", "Wypuść pillar page + 3–5 artykułów wspierających.", "Выпусти pillar page и 3–5 supporting статей под intent.", "Випусти pillar page і 3–5 supporting статей під intent."),
+        doneWhen: L("Cluster is live, linked from navigation and in sitemap", "Klaster live, w nawigacji i sitemap", "Кластер live, в навигации и sitemap", "Кластер live, у навігації і sitemap"),
+      },
+      {
+        code: "04",
+        title: L("Measure and refresh", "Mierz i odświeżaj", "Измерять и обновлять", "Вимірювати й оновлювати"),
+        body: L("Connect GSC, track impressions, update weak pages and add links from new posts.", "Podłącz GSC, śledź impressions, popraw słabe strony i linkuj nowe posty.", "Подключи GSC, смотри impressions, обновляй слабые страницы и добавляй ссылки.", "Підключи GSC, дивись impressions, оновлюй слабкі сторінки і додавай links."),
+        doneWhen: L("First 30-day review has actions, not just traffic numbers", "Pierwszy 30-dniowy review ma akcje, nie tylko liczby", "Первый 30-дневный review содержит действия, не только цифры", "Перший 30-денний review має дії, не лише цифри"),
       },
     ]),
     risks: LA(
@@ -340,6 +422,24 @@ export const pipelines: ProjectPipeline[] = [
         body: L("CSV or sheet: name, price, SKU, image URL, description.", "CSV: nazwa, cena, SKU, obraz, opis.", "CSV: название, цена, SKU, фото, описание.", "CSV: назва, ціна, SKU, фото, опис."),
         doneWhen: L("10+ products imported to Shopify", "10+ produktów w Shopify", "10+ товаров в Shopify", "10+ товарів у Shopify"),
       },
+      {
+        code: "02",
+        title: L("Store setup", "Konfiguracja sklepu", "Настройка магазина", "Налаштування магазину"),
+        body: L("Configure theme, collections, shipping, taxes, payments and legal pages.", "Theme, kolekcje, wysyłka, podatki, płatności i strony prawne.", "Настрой theme, коллекции, доставку, налоги, оплату и legal pages.", "Налаштуй theme, колекції, доставку, податки, оплату і legal pages."),
+        doneWhen: L("Test product can be added to cart with correct shipping", "Produkt testowy trafia do koszyka z poprawną wysyłką", "Тестовый товар добавляется в корзину с правильной доставкой", "Тестовий товар додається в кошик з правильною доставкою"),
+      },
+      {
+        code: "03",
+        title: L("Checkout test", "Test checkoutu", "Тест checkout", "Тест checkout"),
+        body: L("Run a real test order, verify emails, payment capture, inventory and refund path.", "Zrób testowe zamówienie, maile, płatność, stan i refund.", "Сделай тестовый заказ: email, оплата, остатки и refund.", "Зроби тестове замовлення: email, оплата, залишки і refund."),
+        doneWhen: L("Owner receives order notification and can fulfill it", "Właściciel dostaje zamówienie i może je obsłużyć", "Владелец получает заказ и может его обработать", "Власник отримує замовлення і може його обробити"),
+      },
+      {
+        code: "04",
+        title: L("Launch traffic", "Ruch po launchu", "Трафик после запуска", "Трафік після запуску"),
+        body: L("Connect analytics, product SEO, merchant feeds or first ad campaign only after checkout works.", "Analityka, SEO produktów, feedy lub pierwsza reklama dopiero po checkout.", "Подключи аналитику, SEO товаров, feeds или рекламу только после рабочего checkout.", "Підключи аналітику, SEO товарів, feeds або рекламу лише після checkout."),
+        doneWhen: L("Traffic source points to live products with working checkout", "Źródło ruchu prowadzi do live produktów z działającym checkout", "Источник трафика ведёт на live товары с рабочим checkout", "Джерело трафіку веде на live товари з робочим checkout"),
+      },
     ]),
     risks: LA(
       ["Wrong tax/shipping", "Weak product copy", "No order notification test"],
@@ -397,6 +497,24 @@ export const pipelines: ProjectPipeline[] = [
         title: L("Ticket model", "Model biletów", "Модель билетов", "Модель квитків"),
         body: L("Define tiers, capacity, sale windows in a brief doc.", "Zdefiniuj poziomy, limit, okna sprzedaży w briefie.", "Опиши типы, лимит, окна продаж в brief.", "Опиши типи, ліміт, вікна продажу в brief."),
         doneWhen: L("Brief approved before any code", "Brief zatwierdzony przed kodem", "Brief согласован до кода", "Brief погоджений до коду"),
+      },
+      {
+        code: "02",
+        title: L("Checkout and webhooks", "Checkout i webhooki", "Checkout и webhook", "Checkout і webhook"),
+        body: L("Build Stripe checkout, webhook handling, ticket records and idempotency rules.", "Stripe checkout, webhooki, rekordy biletów i idempotencja.", "Собери Stripe checkout, webhook, записи билетов и idempotency.", "Збери Stripe checkout, webhook, записи квитків і idempotency."),
+        doneWhen: L("Test purchase creates exactly one paid ticket", "Testowy zakup tworzy dokładnie jeden bilet", "Тестовая покупка создаёт ровно один оплаченный билет", "Тестова покупка створює рівно один оплачений квиток"),
+      },
+      {
+        code: "03",
+        title: L("Ticket delivery", "Dostawa biletów", "Доставка билетов", "Доставка квитків"),
+        body: L("Send email tickets, QR codes, receipt copy and support contact.", "Wyślij bilety mailem, QR, receipt copy i kontakt support.", "Отправь билеты email, QR, receipt copy и контакт поддержки.", "Надішли квитки email, QR, receipt copy і контакт підтримки."),
+        doneWhen: L("Buyer receives ticket and can open it on phone", "Kupujący dostaje bilet i otwiera go na telefonie", "Покупатель получает билет и открывает на телефоне", "Покупець отримує квиток і відкриває на телефоні"),
+      },
+      {
+        code: "04",
+        title: L("Admin and check-in", "Admin i check-in", "Админка и check-in", "Адмінка і check-in"),
+        body: L("Add attendee list, export, QR scan, refund notes and event-day fallback.", "Lista uczestników, eksport, QR scan, refund notes i fallback.", "Добавь список гостей, export, QR scan, refund notes и fallback.", "Додай список гостей, export, QR scan, refund notes і fallback."),
+        doneWhen: L("Door team can validate tickets without developer help", "Obsługa wejścia sprawdza bilety bez developera", "Команда входа проверяет билеты без разработчика", "Команда входу перевіряє квитки без розробника"),
       },
     ]),
     risks: LA(
@@ -456,6 +574,24 @@ export const pipelines: ProjectPipeline[] = [
         body: L("One paid workflow, one role, one integration.", "Jeden płatny workflow, jedna rola, jedna integracja.", "Один платный workflow, одна роль, одна интеграция.", "Один платний workflow, одна роль, одна інтеграція."),
         doneWhen: L("Written MVP fits one page", "MVP mieści się na jednej stronie", "MVP помещается на одной странице", "MVP вміщується на одній сторінці"),
       },
+      {
+        code: "02",
+        title: L("Auth and data model", "Auth i model danych", "Auth и модель данных", "Auth і модель даних"),
+        body: L("Define users, orgs, roles, core tables and access rules before screens.", "Użytkownicy, orgs, role, tabele i dostęp przed ekranami.", "Опиши users, orgs, roles, таблицы и доступ до экранов.", "Опиши users, orgs, roles, таблиці й доступ до екранів."),
+        doneWhen: L("A user can sign in and see only their own workspace", "User loguje się i widzi tylko swój workspace", "Пользователь входит и видит только свой workspace", "Користувач входить і бачить лише свій workspace"),
+      },
+      {
+        code: "03",
+        title: L("Billing path", "Ścieżka billing", "Путь billing", "Шлях billing"),
+        body: L("Connect Stripe subscriptions, customer portal, webhook sync and plan gates.", "Subskrypcje Stripe, portal klienta, webhook sync i plan gates.", "Подключи Stripe subscriptions, portal, webhook sync и plan gates.", "Підключи Stripe subscriptions, portal, webhook sync і plan gates."),
+        doneWhen: L("Test subscription changes access without manual database edits", "Test subskrypcji zmienia dostęp bez ręcznej bazy", "Тестовая подписка меняет доступ без ручной базы", "Тестова підписка змінює доступ без ручної бази"),
+      },
+      {
+        code: "04",
+        title: L("Usage and support", "Usage i support", "Usage и support", "Usage і support"),
+        body: L("Add onboarding, usage limits, empty states, logs and support contact.", "Onboarding, limity, empty states, logi i support.", "Добавь onboarding, limits, empty states, logs и support.", "Додай onboarding, limits, empty states, logs і support."),
+        doneWhen: L("First customer can complete the paid workflow end to end", "Pierwszy klient kończy płatny workflow end to end", "Первый клиент проходит платный workflow end to end", "Перший клієнт проходить платний workflow end to end"),
+      },
     ]),
     risks: LA(
       ["Scope creep", "Auth bugs", "Billing edge cases"],
@@ -513,6 +649,24 @@ export const pipelines: ProjectPipeline[] = [
         title: L("Define one metric", "Jedna metryka", "Одна метрика", "Одна метрика"),
         body: L("Pick the one number the team checks every Monday.", "Wybierz liczbę, którą zespół sprawdza w każdy poniedziałek.", "Выбери цифру, которую команда смотрит каждый понедельник.", "Обери цифру, яку команда дивиться щопонеділка."),
         doneWhen: L("Metric loads from real data source", "Metryka ładuje się z prawdziwego źródła", "Метрика грузится из реального источника", "Метрика вантажиться з реального джерела"),
+      },
+      {
+        code: "02",
+        title: L("Input and permissions", "Input i uprawnienia", "Input и доступы", "Input і доступи"),
+        body: L("Define CSV/API sources, who can upload, who can see exports and what is private.", "Źródła CSV/API, upload, eksporty i dane prywatne.", "Опиши CSV/API источники, upload, exports и приватные данные.", "Опиши CSV/API джерела, upload, exports і приватні дані."),
+        doneWhen: L("A non-admin user cannot access restricted data", "Non-admin nie widzi danych z ograniczeniem", "Не-админ не видит закрытые данные", "Не-адмін не бачить закриті дані"),
+      },
+      {
+        code: "03",
+        title: L("Dashboard workflow", "Workflow dashboardu", "Workflow dashboard", "Workflow dashboard"),
+        body: L("Build upload, filters, summary cards, detail table and export path.", "Upload, filtry, karty, tabela szczegółów i eksport.", "Собери upload, filters, summary cards, таблицу и export.", "Збери upload, filters, summary cards, таблицю і export."),
+        doneWhen: L("Team can answer the weekly question in under two minutes", "Zespół odpowiada na pytanie tygodnia w 2 minuty", "Команда отвечает на недельный вопрос за 2 минуты", "Команда відповідає на тижневе питання за 2 хвилини"),
+      },
+      {
+        code: "04",
+        title: L("Ops handoff", "Przekazanie ops", "Передача ops", "Передача ops"),
+        body: L("Document refresh schedule, owner, backup export and failure alert.", "Harmonogram odświeżania, owner, backup export i alert.", "Документируй refresh, owner, backup export и alert.", "Задокументуй refresh, owner, backup export і alert."),
+        doneWhen: L("Someone else can run the tool without calling the developer", "Ktoś inny uruchamia narzędzie bez developera", "Другой человек запускает tool без разработчика", "Інша людина запускає tool без розробника"),
       },
     ]),
     risks: LA(
@@ -572,6 +726,24 @@ export const pipelines: ProjectPipeline[] = [
         body: L("Form submit → notify → spreadsheet row. Draw it on paper first.", "Formularz → notify → wiersz w arkuszu. Najpierw na papierze.", "Форма → уведомление → строка в таблице. Сначала на бумаге.", "Форма → notify → рядок у таблиці. Спочатку на папері."),
         doneWhen: L("Test submission creates row + email", "Test tworzy wiersz + email", "Тест создаёт строку + email", "Тест створює рядок + email"),
       },
+      {
+        code: "02",
+        title: L("Build with logging", "Buduj z logami", "Собрать с логами", "Зібрати з логами"),
+        body: L("Add each step with retries, error log, owner alert and sample payloads.", "Kroki z retry, error log, alert ownera i sample payloads.", "Добавь retry, error log, alert owner и sample payloads.", "Додай retry, error log, alert owner і sample payloads."),
+        doneWhen: L("A failed run creates an alert with enough context", "Nieudany run tworzy alert z kontekstem", "Падение создаёт alert с контекстом", "Падіння створює alert з контекстом"),
+      },
+      {
+        code: "03",
+        title: L("Deduplicate and rate-limit", "Dedup i rate-limit", "Dedup и rate-limit", "Dedup і rate-limit"),
+        body: L("Prevent duplicate leads, repeated emails, API limit crashes and infinite loops.", "Stop duplikatom leadów, maili, limitom API i pętlom.", "Останови дубли лидов, повторные email, API limits и loops.", "Зупини дублі leads, email, API limits і loops."),
+        doneWhen: L("Repeated test payload does not create duplicate customer records", "Powtórzony payload nie tworzy duplikatu klienta", "Повтор payload не создаёт дубль клиента", "Повтор payload не створює дубль клієнта"),
+      },
+      {
+        code: "04",
+        title: L("Monitor and hand off", "Monitoruj i przekaż", "Мониторинг и handoff", "Моніторинг і handoff"),
+        body: L("Create a runbook: how to pause, replay, rotate keys and check last successful run.", "Runbook: pauza, replay, rotacja keys, ostatni udany run.", "Runbook: pause, replay, rotate keys, last successful run.", "Runbook: pause, replay, rotate keys, last successful run."),
+        doneWhen: L("Owner can verify the automation worked today", "Owner sprawdza czy automatyzacja dziś działała", "Владелец может проверить, работала ли автоматизация сегодня", "Власник може перевірити, чи працювала автоматизація сьогодні"),
+      },
     ]),
     risks: LA(
       ["Silent failures", "No logging", "API key in repo"],
@@ -629,6 +801,24 @@ export const pipelines: ProjectPipeline[] = [
         title: L("Triage", "Triage", "Тriage", "Triage"),
         body: L("Can you deploy? Does form work? Is copy real?", "Czy deploy działa? Formularz? Copy realne?", "Деплой работает? Форма? Текст реальный?", "Deploy працює? Форма? Copy реальний?"),
         doneWhen: L("Priority list of 3 fixes written", "Lista 3 priorytetowych fixów", "Список из 3 приоритетных fix", "Список з 3 пріоритетних fix"),
+      },
+      {
+        code: "02",
+        title: L("Stabilize", "Stabilizacja", "Стабилизировать", "Стабілізувати"),
+        body: L("Back up, freeze scope, fix build, env vars, domain and form before new features.", "Backup, freeze scope, build, env vars, domena i forma przed features.", "Backup, freeze scope, build, env vars, домен и форма до features.", "Backup, freeze scope, build, env vars, домен і форма до features."),
+        doneWhen: L("Production deploy works and owner receives a test lead", "Production deploy działa i owner dostaje test lead", "Production deploy работает и владелец получает test lead", "Production deploy працює і власник отримує test lead"),
+      },
+      {
+        code: "03",
+        title: L("Fix business layer", "Napraw warstwę biznesową", "Починить бизнес-слой", "Полагодити бізнес-шар"),
+        body: L("Rewrite offer, CTA, metadata, tracking and obvious trust gaps.", "Oferta, CTA, metadata, tracking i braki zaufania.", "Перепиши оффер, CTA, metadata, tracking и trust gaps.", "Перепиши офер, CTA, metadata, tracking і trust gaps."),
+        doneWhen: L("The site says who it is for and how to contact/buy", "Strona mówi dla kogo jest i jak kupić/kontakt", "Сайт говорит для кого он и как связаться/купить", "Сайт каже для кого він і як зв'язатися/купити"),
+      },
+      {
+        code: "04",
+        title: L("Decide rebuild or iterate", "Rebuild czy iteracja", "Решить rebuild или итерация", "Вирішити rebuild чи ітерація"),
+        body: L("Compare repair cost to rebuild cost, then create a 7-day action plan.", "Porównaj koszt naprawy i rebuild, potem plan 7 dni.", "Сравни стоимость ремонта и rebuild, затем план на 7 дней.", "Порівняй вартість ремонту і rebuild, потім план на 7 днів."),
+        doneWhen: L("There is one written decision and next owner action", "Jest jedna decyzja i następna akcja ownera", "Есть одно решение и следующее действие владельца", "Є одне рішення і наступна дія власника"),
       },
     ]),
     risks: LA(

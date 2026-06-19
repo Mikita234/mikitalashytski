@@ -50,6 +50,17 @@ export default async function GuidePage({ params }: Props) {
   const labels = guideLabels[l];
   const currentIndex = guides.findIndex((g) => g.slug === guide.slug);
   const next = guides[(currentIndex + 1) % guides.length];
+  const relatedGuides = guide.related
+    ? guide.related
+        .map((relatedSlug) => guides.find((g) => g.slug === relatedSlug))
+        .filter((relatedGuide): relatedGuide is (typeof guides)[number] => Boolean(relatedGuide))
+    : guides
+        .filter(
+          (candidate) =>
+            candidate.slug !== guide.slug &&
+            candidate.tags.some((tag) => guide.tags.includes(tag)),
+        )
+        .slice(0, 3);
   const localePrefix = l === routing.defaultLocale ? "" : `/${l}`;
   const guideUrl = `${site.url}${localePrefix}/guides/${guide.slug}`;
 
@@ -179,6 +190,35 @@ export default async function GuidePage({ params }: Props) {
             </div>
           </VintageBlock>
         </div>
+
+        {relatedGuides.length > 0 && (
+          <section className="mt-10">
+            <VintageSectionHeader
+              tag={labels.related}
+              title={labels.related}
+              tagClassName="text-[var(--vhs-acid)]"
+            />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedGuides.map((relatedGuide) => (
+                <Link
+                  key={relatedGuide.slug}
+                  href={`/guides/${relatedGuide.slug}`}
+                  className="border border-white/10 bg-[#101014] p-5 hover:border-[var(--vhs-acid)]"
+                >
+                  <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                    {relatedGuide.tape}
+                  </span>
+                  <h2 className="mt-3 font-display text-xl uppercase leading-none text-[var(--vhs-white)]">
+                    {relatedGuide.title[l]}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                    {relatedGuide.description[l]}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         <div className="mt-12 border-t border-[var(--doom-stone)]/60 pt-8">
           <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--vhs-terminal)]">

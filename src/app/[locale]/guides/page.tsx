@@ -86,7 +86,7 @@ export default async function GuidesPage({
     body: p.honestNote[l],
   }));
 
-  const inSeriesGuides = [
+  const publishedMarketingGuides = [
     guides.find((g) => g.slug === "tiktok-for-small-business")!,
     guides.find((g) => g.slug === "google-ads-starter")!,
     guides.find((g) => g.slug === "yandex-for-ru-market")!,
@@ -228,7 +228,7 @@ export default async function GuidesPage({
             tagClassName="text-[var(--doom-ammo)]"
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {inSeriesGuides.map((guide) => (
+            {publishedMarketingGuides.map((guide) => (
               <Link
                 key={guide.slug}
                 href={`/guides/${guide.slug}`}
@@ -239,7 +239,7 @@ export default async function GuidesPage({
                     {guide.tape}
                   </span>
                   <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-acid)]">
-                    {gp.readyTag}
+                    {gp.comingTag}
                   </span>
                 </div>
                 <h2 className="mt-4 font-display text-2xl uppercase leading-none text-[var(--vhs-white)]">
@@ -272,7 +272,7 @@ export default async function GuidesPage({
                     {module.code}
                   </span>
                   <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
-                    {gp.comingTag}
+                    {roadmap.tag}
                   </span>
                 </div>
                 <h2 className="mt-4 font-display text-2xl uppercase leading-none text-[var(--vhs-white)]">

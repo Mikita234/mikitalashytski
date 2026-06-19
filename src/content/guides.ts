@@ -11,7 +11,11 @@ export type GuideSlug =
   | "google-search-console-setup"
   | "yandex-for-ru-market"
   | "frameworks-pick-2026"
-  | "website-launch-checklist-full";
+  | "website-launch-checklist-full"
+  | "seo-internal-linking"
+  | "homepage-seo-description"
+  | "google-business-profile"
+  | "form-tracking-conversions";
 
 export interface GuideStep {
   title: string;
@@ -31,6 +35,7 @@ export interface Guide {
   steps: Record<Locale, GuideStep[]>;
   mistakes: Record<Locale, string[]>;
   cta: Record<Locale, { title: string; body: string; bullets: string[] }>;
+  related?: GuideSlug[];
 }
 
 export interface GuideRoadmapModule {
@@ -108,6 +113,7 @@ export const guideLabels = {
     scrollHint: "← scroll →",
     scrollPrev: "Previous tape",
     scrollNext: "Next tape",
+    related: "Related guides",
   },
   pl: {
     all: "Wszystkie taśmy",
@@ -121,6 +127,7 @@ export const guideLabels = {
     scrollHint: "← przewiń →",
     scrollPrev: "Poprzednia taśma",
     scrollNext: "Następna taśma",
+    related: "Powiązane poradniki",
   },
   ru: {
     all: "Все кассеты",
@@ -134,6 +141,7 @@ export const guideLabels = {
     scrollHint: "← листай →",
     scrollPrev: "Предыдущая кассета",
     scrollNext: "Следующая кассета",
+    related: "Связанные гайды",
   },
   uk: {
     all: "Усі касети",
@@ -147,6 +155,7 @@ export const guideLabels = {
     scrollHint: "← гортай →",
     scrollPrev: "Попередня касета",
     scrollNext: "Наступна касета",
+    related: "Пов'язані гайди",
   },
 } as const;
 
@@ -1491,6 +1500,287 @@ export const guides: Guide[] = [
       ru: { title: "Нужен полный аудит запуска?", body: "Пройду этот чеклист по твоему URL и пришлю приоритеты.", bullets: ["Аудит всей кухни", "GSC + форма", "План на 30 дней"] },
       uk: { title: "Потрібен повний аудит запуску?", body: "Пройду цей чеклист по твоєму URL і надішлю пріоритети.", bullets: ["Аудит усієї кухні", "GSC + форма", "План на 30 днів"] },
     },
+    related: ["google-search-console-setup", "form-tracking-conversions", "seo-internal-linking"],
+  },
+  {
+    slug: "seo-internal-linking",
+    tape: "TAPE-12",
+    channel: "SEO-LINKS",
+    minutes: 8,
+    tags: ["SEO", "Internal links", "Content"],
+    title: {
+      en: "Internal links that help Google and users",
+      pl: "Linki wewnętrzne, które pomagają Google i ludziom",
+      ru: "Внутренние ссылки, которые помогают Google и людям",
+      uk: "Внутрішні посилання, які допомагають Google і людям",
+    },
+    description: {
+      en: "How to connect guides, service pages and pipeline pages so visitors move forward and search engines understand priority.",
+      pl: "Jak łączyć poradniki, usługi i pipeline, żeby użytkownik szedł dalej, a Google rozumiało priorytety.",
+      ru: "Как связывать гайды, услуги и pipeline-страницы, чтобы человек двигался дальше, а Google понимал приоритеты.",
+      uk: "Як зв'язувати гайди, послуги й pipeline, щоб людина рухалась далі, а Google розумів пріоритети.",
+    },
+    intro: {
+      en: "Internal linking is not decoration. It tells the visitor what to read next and tells search engines which pages matter most.",
+      pl: "Linkowanie wewnętrzne to nie dekoracja. Pokazuje użytkownikowi kolejny krok i mówi wyszukiwarce, które strony są ważne.",
+      ru: "Внутренние ссылки — не декор. Они показывают посетителю следующий шаг и объясняют поиску, какие страницы важнее.",
+      uk: "Внутрішні посилання — не декор. Вони показують наступний крок і пояснюють пошуку, які сторінки важливіші.",
+    },
+    outcome: {
+      en: ["Hub pages linked from guides", "Related articles on every guide", "Service CTAs from useful content", "No orphan pages"],
+      pl: ["Huby linkowane z poradników", "Powiązane artykuły przy każdym poradniku", "CTA usług w treści", "Brak orphan pages"],
+      ru: ["Hub-страницы связаны с гайдами", "Связанные статьи на каждом гайде", "CTA услуг из полезного контента", "Нет orphan pages"],
+      uk: ["Hub-сторінки пов'язані з гайдами", "Пов'язані статті на кожному гайді", "CTA послуг із корисного контенту", "Немає orphan pages"],
+    },
+    steps: {
+      en: [
+        { title: "Pick hub pages", body: "Use /guides, /pipeline, /pipeline/marketing and core service pages as hubs." },
+        { title: "Link by intent", body: "From SEO articles link to GSC, launch checklist and relevant pipeline pages, not random posts." },
+        { title: "Use descriptive anchors", body: "Anchor text should explain the next step: launch checklist, GSC setup, conversion tracking." },
+        { title: "Audit orphan pages", body: "Every useful page should be reachable from at least one hub and one related article." },
+      ],
+      pl: [
+        { title: "Wybierz huby", body: "/guides, /pipeline, /pipeline/marketing i główne usługi jako strony-huby." },
+        { title: "Linkuj według intencji", body: "Z artykułów SEO linkuj do GSC, checklisty launchu i pipeline, nie losowo." },
+        { title: "Opisowe anchory", body: "Anchor ma mówić co dalej: launch checklist, GSC setup, tracking konwersji." },
+        { title: "Sprawdź orphan pages", body: "Każda ważna strona ma mieć link z huba i powiązanego artykułu." },
+      ],
+      ru: [
+        { title: "Выбери hub-страницы", body: "Используй /guides, /pipeline, /pipeline/marketing и ключевые услуги как хабы." },
+        { title: "Линкуй по intent", body: "Из SEO-статей веди в GSC, launch checklist и нужные pipeline-страницы, а не куда попало." },
+        { title: "Пиши понятные anchors", body: "Текст ссылки должен объяснять следующий шаг: чеклист запуска, GSC, отслеживание заявок." },
+        { title: "Проверь orphan pages", body: "Каждая полезная страница должна быть доступна из хаба и из связанной статьи." },
+      ],
+      uk: [
+        { title: "Обери hub-сторінки", body: "Використовуй /guides, /pipeline, /pipeline/marketing і ключові послуги як хаби." },
+        { title: "Лінкуй за intent", body: "З SEO-статей веди в GSC, launch checklist і потрібні pipeline-сторінки, не випадково." },
+        { title: "Пиши зрозумілі anchors", body: "Текст посилання має пояснювати наступний крок: checklist запуску, GSC, tracking заявок." },
+        { title: "Перевір orphan pages", body: "Кожна корисна сторінка має бути доступна з хаба і пов'язаної статті." },
+      ],
+    },
+    mistakes: {
+      en: ["Only linking in the footer", "Using 'click here' anchors", "No links from guides to service pages"],
+      pl: ["Linki tylko w footerze", "Anchory typu 'kliknij tutaj'", "Brak linków z poradników do usług"],
+      ru: ["Ссылки только в footer", "Анкоры типа 'нажмите здесь'", "Нет ссылок из гайдов на услуги"],
+      uk: ["Посилання лише у footer", "Anchors типу 'натисни тут'", "Немає links з гайдів на послуги"],
+    },
+    cta: {
+      en: { title: "Need SEO structure?", body: "I can map hubs, guide links and conversion paths for your site.", bullets: ["Internal link map", "Hub cleanup", "SEO audit"] },
+      pl: { title: "Potrzebujesz struktury SEO?", body: "Rozpiszę huby, linki poradników i ścieżki konwersji.", bullets: ["Mapa linków", "Porządek hubów", "Audyt SEO"] },
+      ru: { title: "Нужна SEO-структура?", body: "Разложу хабы, связи гайдов и пути конверсии по сайту.", bullets: ["Карта перелинковки", "Чистка hub", "SEO-аудит"] },
+      uk: { title: "Потрібна SEO-структура?", body: "Розкладу хаби, зв'язки гайдів і шляхи конверсії.", bullets: ["Карта перелінковки", "Чистка hub", "SEO-аудит"] },
+    },
+    related: ["website-launch-checklist-full", "google-search-console-setup", "homepage-seo-description"],
+  },
+  {
+    slug: "homepage-seo-description",
+    tape: "TAPE-13",
+    channel: "SEO-COPY",
+    minutes: 7,
+    tags: ["SEO", "Copy", "Metadata"],
+    title: {
+      en: "Homepage title and description that do not waste Google",
+      pl: "Title i description strony głównej bez marnowania Google",
+      ru: "Title и description главной, которые не сливают Google",
+      uk: "Title і description головної, які не зливають Google",
+    },
+    description: {
+      en: "Write metadata, H1 and above-the-fold copy for a small business site so the page matches search intent and converts.",
+      pl: "Metadata, H1 i pierwszy ekran dla małej firmy: zgodność z intencją i konwersja.",
+      ru: "Metadata, H1 и первый экран для малого бизнеса: совпадение с intent и конверсия.",
+      uk: "Metadata, H1 і перший екран для малого бізнесу: збіг з intent і конверсія.",
+    },
+    intro: {
+      en: "Your homepage should say who you help, where, what you do and why the visitor should trust you. Metadata should say the same in search results.",
+      pl: "Strona główna ma mówić komu pomagasz, gdzie, co robisz i czemu można ci ufać. Metadata mówi to samo w wynikach.",
+      ru: "Главная должна говорить: кому помогаешь, где, что делаешь и почему тебе верить. Metadata говорит то же самое в выдаче.",
+      uk: "Головна має казати: кому допомагаєш, де, що робиш і чому тобі довіряти. Metadata каже те саме у видачі.",
+    },
+    outcome: {
+      en: ["Unique title under 60 chars", "Description under 160 chars", "One clear H1", "Hero copy that matches the offer"],
+      pl: ["Unikalny title do 60 znaków", "Description do 160 znaków", "Jedno jasne H1", "Hero zgodne z ofertą"],
+      ru: ["Уникальный title до 60 символов", "Description до 160 символов", "Один понятный H1", "Hero совпадает с оффером"],
+      uk: ["Унікальний title до 60 символів", "Description до 160 символів", "Один зрозумілий H1", "Hero збігається з офером"],
+    },
+    steps: {
+      en: [
+        { title: "Title formula", body: "Service + city or niche + proof. Example: Emergency plumber in Warsaw | 24/7 local help." },
+        { title: "Description formula", body: "Problem, solution, area, CTA. Do not stuff keywords." },
+        { title: "H1 formula", body: "Human version of the title. One H1, no vague 'We build dreams' copy." },
+        { title: "Match the CTA", body: "If the title promises booking, the first screen needs booking or contact immediately." },
+      ],
+      pl: [
+        { title: "Formuła title", body: "Usługa + miasto albo nisza + proof. Np. Hydraulik Warszawa | Awaria 24/7." },
+        { title: "Formuła description", body: "Problem, rozwiązanie, obszar, CTA. Bez upychania słów." },
+        { title: "Formuła H1", body: "Ludzka wersja title. Jedno H1, bez pustych haseł." },
+        { title: "CTA musi pasować", body: "Jeśli title obiecuje booking, pierwszy ekran ma mieć kontakt od razu." },
+      ],
+      ru: [
+        { title: "Формула title", body: "Услуга + город или ниша + proof. Например: Срочный сантехник Варшава | 24/7." },
+        { title: "Формула description", body: "Проблема, решение, география, CTA. Не набивай ключи." },
+        { title: "Формула H1", body: "Человеческая версия title. Один H1, без пустых лозунгов." },
+        { title: "CTA должен совпадать", body: "Если title обещает запись, первый экран сразу дает контакт или booking." },
+      ],
+      uk: [
+        { title: "Формула title", body: "Послуга + місто або ніша + proof. Наприклад: Терміновий сантехнік Варшава | 24/7." },
+        { title: "Формула description", body: "Проблема, рішення, географія, CTA. Не набивай ключі." },
+        { title: "Формула H1", body: "Людська версія title. Один H1, без порожніх слоганів." },
+        { title: "CTA має збігатися", body: "Якщо title обіцяє запис, перший екран одразу дає contact або booking." },
+      ],
+    },
+    mistakes: {
+      en: ["Same title on every page", "Description copied from hero", "Two H1 tags", "No city or service in metadata"],
+      pl: ["Ten sam title wszędzie", "Description skopiowany z hero", "Dwa H1", "Brak miasta lub usługi w metadata"],
+      ru: ["Одинаковый title везде", "Description скопирован из hero", "Два H1", "Нет города или услуги в metadata"],
+      uk: ["Однаковий title всюди", "Description скопійований з hero", "Два H1", "Немає міста або послуги в metadata"],
+    },
+    cta: {
+      en: { title: "Need copy cleanup?", body: "I can rewrite homepage metadata, H1 and CTA so SEO and conversion match.", bullets: ["Title/description", "Hero rewrite", "CTA audit"] },
+      pl: { title: "Potrzebujesz copy cleanup?", body: "Przepiszę metadata, H1 i CTA, żeby SEO pasowało do konwersji.", bullets: ["Title/description", "Hero rewrite", "Audyt CTA"] },
+      ru: { title: "Нужно почистить copy?", body: "Перепишу metadata, H1 и CTA, чтобы SEO совпадало с конверсией.", bullets: ["Title/description", "Hero rewrite", "Аудит CTA"] },
+      uk: { title: "Потрібно почистити copy?", body: "Перепишу metadata, H1 і CTA, щоб SEO збігалось із конверсією.", bullets: ["Title/description", "Hero rewrite", "Аудит CTA"] },
+    },
+    related: ["seo-internal-linking", "make-website-yourself", "website-launch-checklist-full"],
+  },
+  {
+    slug: "google-business-profile",
+    tape: "TAPE-14",
+    channel: "GBP",
+    minutes: 8,
+    tags: ["Google Business Profile", "Local SEO", "Marketing"],
+    title: {
+      en: "Google Business Profile for local services",
+      pl: "Google Business Profile dla usług lokalnych",
+      ru: "Google Business Profile для локальных услуг",
+      uk: "Google Business Profile для локальних послуг",
+    },
+    description: {
+      en: "Set up GBP after the website works: categories, services, photos, reviews and links back to the right pages.",
+      pl: "GBP po działającej stronie: kategorie, usługi, zdjęcia, opinie i linki do właściwych stron.",
+      ru: "GBP после рабочего сайта: категории, услуги, фото, отзывы и ссылки на правильные страницы.",
+      uk: "GBP після робочого сайту: категорії, послуги, фото, відгуки й links на правильні сторінки.",
+    },
+    intro: {
+      en: "For local business, GBP can beat a beautiful website. But it works best when the website, phone, categories and reviews say the same thing.",
+      pl: "Dla lokalnego biznesu GBP potrafi wygrać ze stroną. Działa najlepiej, gdy strona, telefon, kategorie i opinie mówią to samo.",
+      ru: "Для локального бизнеса GBP может быть сильнее красивого сайта. Но он работает, когда сайт, телефон, категории и отзывы говорят одно.",
+      uk: "Для локального бізнесу GBP може бути сильнішим за красивий сайт. Але він працює, коли сайт, телефон, категорії й відгуки кажуть одне.",
+    },
+    outcome: {
+      en: ["Verified GBP profile", "Correct primary category", "Services linked to website", "Review request process"],
+      pl: ["Zweryfikowany profil GBP", "Dobra główna kategoria", "Usługi połączone ze stroną", "Proces zbierania opinii"],
+      ru: ["Верифицированный GBP", "Правильная главная категория", "Услуги связаны с сайтом", "Процесс сбора отзывов"],
+      uk: ["Верифікований GBP", "Правильна головна категорія", "Послуги пов'язані з сайтом", "Процес збору відгуків"],
+    },
+    steps: {
+      en: [
+        { title: "Verify profile", body: "Use exact business name, address or service area, phone and website URL." },
+        { title: "Choose categories", body: "Primary category must match the money service, not a vague brand label." },
+        { title: "Add services and photos", body: "Each service should match a page or section on the website." },
+        { title: "Build review habit", body: "Ask every real customer for a review and reply with service/location language." },
+      ],
+      pl: [
+        { title: "Zweryfikuj profil", body: "Dokładna nazwa, adres lub obszar, telefon i URL strony." },
+        { title: "Wybierz kategorie", body: "Główna kategoria ma pasować do usługi, która zarabia." },
+        { title: "Dodaj usługi i zdjęcia", body: "Każda usługa powinna pasować do strony lub sekcji." },
+        { title: "Zbieraj opinie", body: "Proś realnych klientów o opinię i odpowiadaj językiem usług/lokalizacji." },
+      ],
+      ru: [
+        { title: "Верифицируй профиль", body: "Точное название, адрес или зона обслуживания, телефон и URL сайта." },
+        { title: "Выбери категории", body: "Главная категория должна совпадать с денежной услугой, а не абстрактным брендом." },
+        { title: "Добавь услуги и фото", body: "Каждая услуга должна совпадать со страницей или секцией на сайте." },
+        { title: "Собирай отзывы", body: "Проси каждого реального клиента оставить отзыв и отвечай с упоминанием услуги/локации." },
+      ],
+      uk: [
+        { title: "Верифікуй профіль", body: "Точна назва, адреса або зона обслуговування, телефон і URL сайту." },
+        { title: "Обери категорії", body: "Головна категорія має збігатися з грошовою послугою, не абстрактним брендом." },
+        { title: "Додай послуги й фото", body: "Кожна послуга має збігатися зі сторінкою або секцією на сайті." },
+        { title: "Збирай відгуки", body: "Проси реальних клієнтів залишати відгук і відповідай мовою послуг/локації." },
+      ],
+    },
+    mistakes: {
+      en: ["Wrong category", "No website link", "Stock photos", "Never asking for reviews"],
+      pl: ["Zła kategoria", "Brak linku do strony", "Stockowe zdjęcia", "Brak proszenia o opinie"],
+      ru: ["Неверная категория", "Нет ссылки на сайт", "Стоковые фото", "Не просите отзывы"],
+      uk: ["Невірна категорія", "Немає посилання на сайт", "Стокові фото", "Не просите відгуки"],
+    },
+    cta: {
+      en: { title: "Need local SEO setup?", body: "I can align GBP, site pages and Search Console for local leads.", bullets: ["GBP cleanup", "Local service pages", "Review flow"] },
+      pl: { title: "Potrzebujesz local SEO?", body: "Połączę GBP, strony usług i Search Console pod leady lokalne.", bullets: ["GBP cleanup", "Strony usług", "Proces opinii"] },
+      ru: { title: "Нужна настройка local SEO?", body: "Свяжу GBP, страницы услуг и Search Console под локальные заявки.", bullets: ["Чистка GBP", "Страницы услуг", "Процесс отзывов"] },
+      uk: { title: "Потрібне local SEO?", body: "Зв'яжу GBP, сторінки послуг і Search Console під локальні заявки.", bullets: ["Чистка GBP", "Сторінки послуг", "Процес відгуків"] },
+    },
+    related: ["google-search-console-setup", "homepage-seo-description", "website-launch-checklist-full"],
+  },
+  {
+    slug: "form-tracking-conversions",
+    tape: "TAPE-15",
+    channel: "CONVERT",
+    minutes: 8,
+    tags: ["Analytics", "Forms", "SEO", "Conversion"],
+    title: {
+      en: "Track forms and conversions before buying ads",
+      pl: "Śledź formularze i konwersje zanim kupisz reklamy",
+      ru: "Отслеживай формы и конверсии до покупки рекламы",
+      uk: "Відстежуй форми й конверсії до покупки реклами",
+    },
+    description: {
+      en: "A simple setup for form submissions, thank-you pages, analytics events and lead quality checks.",
+      pl: "Prosty setup dla formularzy, thank-you page, eventów analityki i jakości leadów.",
+      ru: "Простая схема для заявок, thank-you pages, analytics events и проверки качества лидов.",
+      uk: "Проста схема для заявок, thank-you pages, analytics events і перевірки якості лідів.",
+    },
+    intro: {
+      en: "Traffic is useless if you cannot tell which visitor became a lead. Track the form before spending money on ads or content.",
+      pl: "Ruch jest bezużyteczny, jeśli nie wiesz kto został leadem. Śledź formularz przed reklamą i contentem.",
+      ru: "Трафик бесполезен, если ты не понимаешь, кто стал лидом. Сначала отслеживай форму, потом реклама и контент.",
+      uk: "Трафік марний, якщо ти не розумієш, хто став лідом. Спочатку tracking форми, потім реклама і контент.",
+    },
+    outcome: {
+      en: ["Working contact form", "Thank-you or success state", "Analytics conversion event", "Lead quality notes"],
+      pl: ["Działający formularz", "Thank-you albo success state", "Event konwersji", "Notatki jakości leadów"],
+      ru: ["Рабочая форма", "Thank-you или success state", "Событие конверсии", "Заметки о качестве лидов"],
+      uk: ["Робоча форма", "Thank-you або success state", "Подія конверсії", "Нотатки якості лідів"],
+    },
+    steps: {
+      en: [
+        { title: "Make delivery real", body: "Test that the owner receives the message, not just that the button turns green." },
+        { title: "Add success URL or event", body: "Use a thank-you page or analytics event for every valid submission." },
+        { title: "Mark the source", body: "Keep UTMs from ads, social, GBP and guide pages so leads can be compared." },
+        { title: "Review quality", body: "Count leads that became conversations, not just raw form submits." },
+      ],
+      pl: [
+        { title: "Dostarczenie naprawdę działa", body: "Sprawdź, że właściciel dostaje wiadomość, nie tylko zielony przycisk." },
+        { title: "Success URL albo event", body: "Thank-you page lub event analityki dla każdego poprawnego zgłoszenia." },
+        { title: "Oznacz źródło", body: "Zachowaj UTM z reklam, social, GBP i poradników." },
+        { title: "Sprawdź jakość", body: "Licz leady, które stały się rozmową, nie same submit." },
+      ],
+      ru: [
+        { title: "Доставка реально работает", body: "Проверь, что владелец получает сообщение, а не просто кнопка стала зелёной." },
+        { title: "Success URL или event", body: "Thank-you page или analytics event для каждой валидной заявки." },
+        { title: "Помечай источник", body: "Сохраняй UTM из рекламы, social, GBP и гайдов, чтобы сравнивать лиды." },
+        { title: "Смотри качество", body: "Считай заявки, которые стали разговором, а не просто form submit." },
+      ],
+      uk: [
+        { title: "Доставка реально працює", body: "Перевір, що власник отримує повідомлення, а не просто кнопка стала зеленою." },
+        { title: "Success URL або event", body: "Thank-you page або analytics event для кожної валідної заявки." },
+        { title: "Позначай джерело", body: "Зберігай UTM з реклами, social, GBP і гайдів, щоб порівнювати leads." },
+        { title: "Дивись якість", body: "Рахуй заявки, які стали розмовою, а не просто form submit." },
+      ],
+    },
+    mistakes: {
+      en: ["No test email", "No conversion event", "Ads before tracking", "Counting spam as leads"],
+      pl: ["Brak testowego maila", "Brak eventu konwersji", "Reklamy przed trackingiem", "Spam liczony jako lead"],
+      ru: ["Нет тестового email", "Нет conversion event", "Реклама до tracking", "Спам считается лидами"],
+      uk: ["Немає тестового email", "Немає conversion event", "Реклама до tracking", "Спам рахується як leads"],
+    },
+    cta: {
+      en: { title: "Need conversion tracking?", body: "I can wire the form, analytics and lead routing before you spend on ads.", bullets: ["Form test", "Analytics event", "Lead routing"] },
+      pl: { title: "Potrzebujesz tracking konwersji?", body: "Podłączę formularz, analitykę i lead routing przed reklamami.", bullets: ["Test formularza", "Event analityki", "Lead routing"] },
+      ru: { title: "Нужен tracking конверсий?", body: "Подключу форму, аналитику и lead routing до рекламы.", bullets: ["Тест формы", "Analytics event", "Lead routing"] },
+      uk: { title: "Потрібен tracking конверсій?", body: "Підключу форму, аналітику і lead routing до реклами.", bullets: ["Тест форми", "Analytics event", "Lead routing"] },
+    },
+    related: ["google-ads-starter", "google-search-console-setup", "website-launch-checklist-full"],
   },
 ];
 
