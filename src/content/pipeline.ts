@@ -954,9 +954,9 @@ export const briefPage = {
 export const guidesPipelineUpdate = {
   en: {
     heroTag: "Pipeline school",
-    heroTitle: "Not blog posts — build pipelines",
+    heroTitle: "Guides for launch, SEO and automation",
     heroSubtitle:
-      "Choose project type, get stack recommendation, walk the 11-step beginner path or download skill packs. Manual guide tapes below.",
+      "Start with the project type, pick a stack, follow the beginner path, then use the practical guides below.",
     readyTag: "Ready now",
     readyTitle: "Use today",
     comingTag: "Published",
@@ -980,9 +980,9 @@ export const guidesPipelineUpdate = {
   },
   pl: {
     heroTag: "Szkoła pipeline",
-    heroTitle: "Nie posty — pipeline budowy",
+    heroTitle: "Poradniki o launchu, SEO i automatyzacji",
     heroSubtitle:
-      "Typ projektu, rekomendacja stacku, 11 kroków beginner albo skill pack. Ręczne taśmy poniżej.",
+      "Zacznij od typu projektu, wybierz stack, przejdź beginner path i użyj praktycznych poradników poniżej.",
     readyTag: "Gotowe teraz",
     readyTitle: "Użyj dziś",
     comingTag: "Opublikowane",
@@ -1006,9 +1006,9 @@ export const guidesPipelineUpdate = {
   },
   ru: {
     heroTag: "Школа пайплайнов",
-    heroTitle: "Не статьи — пайплайны сборки",
+    heroTitle: "Гайды по запуску, SEO и автоматизации",
     heroSubtitle:
-      "Тип проекта, рекомендация стека, 11 шагов для новичка или skill pack. Ручные кассеты — ниже.",
+      "Начни с типа проекта, выбери стек, пройди путь для новичка и используй практические гайды ниже.",
     readyTag: "Уже готово",
     readyTitle: "Можно использовать сегодня",
     comingTag: "Опубликовано",
@@ -1032,9 +1032,9 @@ export const guidesPipelineUpdate = {
   },
   uk: {
     heroTag: "Школа pipeline",
-    heroTitle: "Не статті — pipeline збірки",
+    heroTitle: "Гайди про запуск, SEO й автоматизацію",
     heroSubtitle:
-      "Тип проєкту, рекомендація stack, 11 кроків для новачка або skill pack. Ручні касети — нижче.",
+      "Почни з типу проєкту, обери stack, пройди шлях для новачка і використовуй практичні гайди нижче.",
     readyTag: "Уже готово",
     readyTitle: "Можна використати сьогодні",
     comingTag: "Опубліковано",
