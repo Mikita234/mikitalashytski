@@ -5,6 +5,7 @@ import { projectSlugs } from "@/content/projects";
 import { serviceSlugs } from "@/content/services";
 import { guideSlugs } from "@/content/guides";
 import { marketingPipelineSlugs } from "@/data/marketing-pipelines";
+import { pipelineSlugs } from "@/data/pipelines";
 
 const paths = [
   "",
@@ -14,6 +15,7 @@ const paths = [
   "/website-rescue",
   "/works",
   "/pipeline",
+  ...pipelineSlugs.map((slug) => `/pipeline/${slug}`),
   "/pipeline/beginner",
   "/pipeline/brief",
   "/pipeline/stacks",

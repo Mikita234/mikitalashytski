@@ -1,6 +1,7 @@
 // Site-wide config. Override via NEXT_PUBLIC_* env vars in production.
 function env(key: string, fallback: string) {
-  return process.env[key] ?? fallback;
+  const value = process.env[key];
+  return value?.trim() ? value : fallback;
 }
 
 export const site = {
