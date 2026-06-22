@@ -6,8 +6,9 @@ function env(key: string, fallback: string) {
 export const site = {
   name: "Mikita Lashytski",
   shortName: "ML",
-  domain: env("NEXT_PUBLIC_SITE_DOMAIN", "mikitalashytski.com"),
-  url: env("NEXT_PUBLIC_SITE_URL", "https://mikitalashytski.com"),
+  brandChannel: "CH404",
+  domain: env("NEXT_PUBLIC_SITE_DOMAIN", "www.mikitalashytski.com"),
+  url: env("NEXT_PUBLIC_SITE_URL", "https://www.mikitalashytski.com"),
   email: env("NEXT_PUBLIC_CONTACT_EMAIL", "mikitalashytski@gmail.com"),
   telegram: env("NEXT_PUBLIC_TELEGRAM_URL", "https://t.me/mikita_pl"),
   telegramHandle: env("NEXT_PUBLIC_TELEGRAM_HANDLE", "@mikita_pl"),
