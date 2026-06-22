@@ -19,6 +19,7 @@
     "placeholder": "placeholder — to be replaced with real data",
     "estimated": "estimated",
     "confirmed": "confirmed",
+    "languageCurrent": "Select language, current: {language}",
     "screenshotPlaceholder": "Screenshot coming — add file to public/cases/",
     "sources": {
       "gsc": "Google Search Console",
@@ -714,7 +715,8 @@
       "success": "Thanks — we'll clarify and update the guide",
       "error": "Could not send. Try again later.",
       "privacy": "Only the selected fragment is sent",
-      "shortcut": "After selecting, press ?"
+      "shortcut": "After selecting, press ?",
+      "dismiss": "Close dialog"
     }
   },
   "footer": {

@@ -8,10 +8,10 @@ export function TeletextPanel() {
         BUILDER INFO
       </div>
       <div className="mt-2 space-y-0.5">
-        <p className="bg-[#f00] px-1 text-white">▶ WHAT: sites / bots / auto</p>
+        <p className="teletext-badge--hot px-1">▶ WHAT: sites / bots / auto</p>
         <p className="bg-[#ff0] px-1 text-black">▶ HOW: fast + clear + selling</p>
         <p className="bg-[#0f0] px-1 text-black">▶ WHERE: remote / EU</p>
-        <p className="bg-[#f0f] px-1 text-white">▶ STATUS: accepting builds</p>
+        <p className="teletext-badge--magenta px-1">▶ STATUS: accepting builds</p>
       </div>
       <div className="mt-3 border-t border-white/20 pt-2 text-[#ccc]">
         <p>STACK: NEXT.JS TS</p>

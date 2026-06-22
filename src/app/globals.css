@@ -7,7 +7,7 @@
   --vhs-dirt: #2e2c28;
   --vhs-blue: #1a3a6e;
   --vhs-terminal: #6ecf8a;
-  --vhs-red: #c41e1e;
+  --vhs-red: #ef5555;
   --vhs-acid: #d4c47a;
   --vhs-beige: #e8d4a8;
   --vhs-yellow: #ffd700;
@@ -16,14 +16,18 @@
   --vhs-body: #d4d4de;
 
   /* Doom accent layer (~20–30%, layered on VHS) */
-  --doom-red: #aa2222;
+  --doom-red: #ee6666;
   --doom-blood: #6b1010;
   --doom-stone: #3a3028;
   --doom-stone-light: #5a4a38;
   --doom-panel: #1c0e0c;
   --doom-health: #44dd44;
   --doom-ammo: #ffcc00;
-  --doom-border: #884444;
+  --doom-border: #a85555;
+
+  /* Teletext badge fills — white text needs darker phosphor (WCAG AA 4.5:1) */
+  --teletext-red: #c50000;
+  --teletext-magenta: #880088;
 
   --background: var(--vhs-black);
   --foreground: var(--vhs-white);
@@ -266,6 +270,16 @@ body {
 }
 
 /* ─── Teletext grid ─── */
+.teletext-badge--hot {
+  background: var(--teletext-red);
+  color: #fff;
+}
+
+.teletext-badge--magenta {
+  background: var(--teletext-magenta);
+  color: #fff;
+}
+
 .teletext-grid {
   background-color: #000;
   background-image:

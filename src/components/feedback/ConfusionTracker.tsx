@@ -216,13 +216,14 @@ export function ConfusionTracker() {
       <AnimatePresence>
         {modalOpen && selection && (
           <>
-            <motion.div
+            <motion.button
+              type="button"
               className="fixed inset-0 z-[55] bg-black/40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: reduced ? 0 : 0.15 }}
-              aria-hidden
+              aria-label={t("dismiss")}
               onClick={dismiss}
             />
             <motion.div
@@ -246,7 +247,7 @@ export function ConfusionTracker() {
                 <button
                   type="button"
                   onClick={dismiss}
-                  aria-label="Close"
+                  aria-label={t("dismiss")}
                   className="flex h-4 w-4 shrink-0 items-center justify-center border border-t-white border-l-white border-b-[#404040] border-r-[#404040] bg-[#c0c0c0] text-[10px] font-bold text-black leading-none"
                 >
                   ✕

@@ -27,7 +27,8 @@
       "analytics": "analityka"
     },
     "estimated": "szacunek",
-    "confirmed": "potwierdzone"
+    "confirmed": "potwierdzone",
+    "languageCurrent": "Wybierz język, aktualny: {language}"
   },
   "theme": {
     "toggle": "Zmień motyw",
@@ -714,7 +715,8 @@
       "success": "Dzięki — wyjaśnimy i uzupełnimy przewodnik",
       "error": "Nie udało się wysłać. Spróbuj później.",
       "privacy": "Wysyłany jest tylko zaznaczony fragment",
-      "shortcut": "Po zaznaczeniu naciśnij ?"
+      "shortcut": "Po zaznaczeniu naciśnij ?",
+      "dismiss": "Zamknij okno"
     }
   },
   "footer": {

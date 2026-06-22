@@ -148,11 +148,11 @@ function RetroAdSlide({
             </p>
           )}
 
-          <h3
+          <p
             className={`retro-ad__headline ${reduced ? "" : "retro-ad__headline--animate"}${longCopy ? " retro-ad__headline--compact" : ""}`}
           >
             {copy.headline}
-          </h3>
+          </p>
 
           <p
             className={`retro-ad__subline ${reduced ? "" : "retro-ad__subline--animate"}${longCopy ? " retro-ad__subline--compact" : ""}`}

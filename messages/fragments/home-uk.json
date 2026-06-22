@@ -289,10 +289,10 @@
     "techPanelTitle": "P300 ТЕХ. СПЕЦИФІКАЦІЯ",
     "online": "● ОНЛАЙН",
     "specs": [
-      { "label": "РЕНДЕР", "value": "STATIC SSG", "bg": "#f00", "fg": "#fff" },
+      { "label": "РЕНДЕР", "value": "STATIC SSG", "bg": "#c50000", "fg": "#fff" },
       { "label": "ЛОКАЛІ", "value": "EN PL RU UA", "bg": "#ff0", "fg": "#000" },
       { "label": "JSON-LD", "value": "АКТИВНИЙ", "bg": "#0f0", "fg": "#000" },
-      { "label": "LLMS.TXT", "value": "ПУБЛІЧНИЙ", "bg": "#f0f", "fg": "#fff" },
+      { "label": "LLMS.TXT", "value": "ПУБЛІЧНИЙ", "bg": "#880088", "fg": "#fff" },
       { "label": "AI БОТИ", "value": "ДОЗВОЛЕНІ", "bg": "#00f", "fg": "#fff" },
       { "label": "АНІМАЦІЯ", "value": "REDUCED OK", "bg": "#333", "fg": "#ccc" }
     ],

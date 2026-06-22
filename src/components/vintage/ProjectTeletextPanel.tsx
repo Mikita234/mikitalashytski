@@ -18,12 +18,12 @@ export function ProjectTeletextPanel({
         {channel} {project.name}
       </div>
       <div className="mt-2 space-y-0.5">
-        <p className="bg-[#f00] px-1 text-white">▶ TYPE: {category}</p>
+        <p className="teletext-badge--hot px-1">▶ TYPE: {category}</p>
         <p className="bg-[#ff0] px-1 text-black">▶ YEAR: {project.year}</p>
         <p className="bg-[#0f0] px-1 text-black">
           ▶ DOMAINS: {project.domains.length}
         </p>
-        <p className="bg-[#f0f] px-1 text-white">
+        <p className="teletext-badge--magenta px-1">
           ▶ STACK: {project.stack.length} tech
         </p>
       </div>

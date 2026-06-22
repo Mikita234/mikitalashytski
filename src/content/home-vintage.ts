@@ -120,10 +120,10 @@ export const crtChannels = [
 export type CRTChannelType = typeof crtChannels[number]["type"];
 
 export const vintageUnderHoodSpecs = [
-  { label: "RENDER", value: "STATIC SSG", bg: "#f00", fg: "#fff" },
+  { label: "RENDER", value: "STATIC SSG", bg: "#c50000", fg: "#fff" },
   { label: "LOCALES", value: "EN PL RU UA", bg: "#ff0", fg: "#000" },
   { label: "JSON-LD", value: "ACTIVE", bg: "#0f0", fg: "#000" },
-  { label: "LLMS.TXT", value: "PUBLIC", bg: "#f0f", fg: "#fff" },
+  { label: "LLMS.TXT", value: "PUBLIC", bg: "#880088", fg: "#fff" },
   { label: "AI BOTS", value: "ALLOWED", bg: "#00f", fg: "#fff" },
   { label: "MOTION", value: "REDUCED OK", bg: "#333", fg: "#ccc" },
 ] as const;
