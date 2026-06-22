@@ -11,9 +11,9 @@
   "hero": {
     "broadcast": "TRANSMISJA NA ŻYWO",
     "title": "Strony, sklepy i automatyzacje, które naprawdę startują",
-    "subtitle": "Pomagam małym firmom przejść od pomysłu do działającego systemu: oferta, design, kod, domena, formularze, płatności, SEO, AI search i automatyzacja.",
+    "subtitle": "Pomagam małym firmom przejść od pomysłu do działającej strony, sklepu albo bota: oferta, design, kod, domena, formularze, płatności, SEO i automatyzacja rutyny.",
     "body": "Możesz zacząć od darmowych poradników. Jeśli utkniesz, zrobię audyt, naprawię albo zbuduję całość.",
-    "stack": ["Landingi", "Shopify", "BaseLinker", "Płatności", "Boty", "AI pipelines", "SEO"],
+    "stack": ["Landingi", "Shopify", "BaseLinker", "Płatności", "Boty", "Automatyzacja", "SEO"],
     "ctaOrder": "Omów projekt",
     "ctaWorks": "Zobacz realizacje",
     "ctaAudit": "Zrób sam",
@@ -38,7 +38,7 @@
       {
         "label": "DIY",
         "title": "Zrób sam",
-        "text": "Darmowe poradniki o Cursor, Codex, GitHub, Vercel, AI pipelines i human-in-the-loop.",
+        "text": "Darmowe poradniki o Cursor, Codex, GitHub, Vercel, uruchomieniu strony, SEO i bezpiecznej pracy z AI.",
         "cta": "Otwórz poradniki",
         "href": "/guides"
       },

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Mikita Lashytski — digital builder & full-cycle operator",
-    "description": "Websites, stores, automation and AI workflows for small business. Free guides, audit/rescue work and full-cycle builds.",
-    "ogTagline": "Websites · E-commerce · Bots · Automation · SEO · AI visibility"
+    "title": "Mikita Lashytski — websites, stores and automation for small business",
+    "description": "I build landing pages, business sites, Shopify stores, bots and practical automations. Start with free guides or send a project for review.",
+    "ogTagline": "Websites · Shopify · Bots · Automation · SEO · AI search"
   },
   "nav": {
     "home": "Home",
@@ -46,9 +46,9 @@
     },
     "hero": {
       "badge": "Available for new projects",
-      "titleTop": "Not a website.",
-      "titleAccent": "A system.",
-      "subtitle": "Vibe-coder and full-cycle operator. I take a project from idea to revenue: sourcing and operations, code, search visibility, AI answers and structured data. The pretty cover is the easy 10%.",
+      "titleTop": "Websites, stores",
+      "titleAccent": "and automation.",
+      "subtitle": "I turn small-business ideas into live pages, Shopify stores, bots and useful automations: offer, design, code, domain, forms, payments, SEO and launch.",
       "ctaPrimary": "See the work",
       "ctaSecondary": "How I work",
       "stat1": "live projects",
@@ -62,7 +62,7 @@
       "points": [
         {
           "title": "Operations, not just pixels",
-          "text": "Sourcing, EAN/GTIN, product cards, marketplace listings, payments and delivery — I run the whole loop, not only the front-end."
+          "text": "Sourcing, EAN/GTIN, product cards, marketplace listings, payments and delivery — I handle the shop work behind the front-end."
         },
         {
           "title": "Search visibility",
@@ -151,8 +151,8 @@
   "projects": {
     "mnsk7-tools": {
       "category": "E-commerce · Marketplace · B2B",
-      "tagline": "CNC milling-cutter shop with fast Polish delivery — and a full sourcing-to-listing operation behind it.",
-      "summary": "More than a website: I ran the whole operation. We sourced cutters from China, assigned EAN/GTIN codes, built product cards and listed across both the shop and Allegro — backed by a trust block of real marketplace reviews.",
+      "tagline": "CNC milling-cutter shop with fast Polish delivery, China sourcing, EAN/GTIN data and Allegro listings behind it.",
+      "summary": "More than a website: the project included sourcing cutters from China, assigning EAN/GTIN codes, building product cards and listing across both the shop and Allegro — backed by a trust block of real marketplace reviews.",
       "beforeAfter": {
         "before": [
           "Marketplace-only or scattered listings without a unified catalog",
@@ -207,12 +207,12 @@
         "skus": "products in the catalog",
         "ean": "cards with assigned EAN/GTIN"
       },
-      "problem": "Needed a CNC tool shop with full cycle: China sourcing, EAN/GTIN, product cards, Allegro + site — not just a storefront.",
+      "problem": "Needed a CNC tool shop that covered China sourcing, EAN/GTIN, product cards, Allegro listings and the website — not only a storefront.",
       "whatIDid": "Built the site, sourcing ops, 425 SKUs with EAN, Allegro integration, loyalty program and category SEO structure.",
-      "result": "3500+ Allegro orders, 383 reviews, live shop + marketplace, full ops cycle.",
+      "result": "3500+ Allegro orders, 383 reviews, live shop + marketplace, and a repeatable sourcing/listing process.",
       "nextSteps": "Public analytics screenshots, site GSC metrics, automated reporting.",
       "cardTitle": "MNSK7-TOOLS",
-      "cardDesc": "CNC shop + Allegro ops: 3500+ orders, 425 SKUs, EAN/GTIN sourcing pipeline."
+      "cardDesc": "CNC shop + Allegro ops: 3500+ orders, 425 SKUs, EAN/GTIN sourcing process."
     },
     "popular": {
       "category": "Sales · Ticketing · Automation",
@@ -698,8 +698,8 @@
   },
   "contact": {
     "tag": "Let's talk",
-    "title": "Need the whole stack, not just a cover?",
-    "subtitle": "Tell me about the project. If it needs operations, code, search and AI visibility under one roof — that's exactly what I do.",
+    "title": "Show me the project — I will map the next steps",
+    "subtitle": "Send the idea, deadline, budget and current links. I will answer with the cleanest path: landing, store, bot, SEO fix or full rebuild.",
     "telegram": "Telegram",
     "email": "Email",
     "github": "GitHub",
@@ -718,7 +718,7 @@
     }
   },
   "footer": {
-    "tagline": "Vibe-coder & full-cycle operator",
+    "tagline": "Websites, stores, bots and automation",
     "built": "Built with Next.js — JSON-LD, hreflang and llms.txt included.",
     "rights": "All rights reserved.",
     "nav": "Navigate",

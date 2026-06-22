@@ -11,9 +11,9 @@
   "hero": {
     "broadcast": "LIVE BROADCAST",
     "title": "Websites, stores and automations that actually launch",
-    "subtitle": "I help small businesses move from idea to a working system: offer, design, code, domain, forms, payments, SEO, AI search and automation.",
+    "subtitle": "I help small businesses move from idea to a live website, store or bot: offer, design, code, domain, forms, payments, SEO and routine automation.",
     "body": "Start with free guides. If it gets messy, I can audit, fix or build the whole thing.",
-    "stack": ["Landings", "Shopify", "BaseLinker", "Payments", "Bots", "AI pipelines", "SEO"],
+    "stack": ["Landings", "Shopify", "BaseLinker", "Payments", "Bots", "Automation", "SEO"],
     "ctaOrder": "Discuss project",
     "ctaWorks": "View works",
     "ctaAudit": "Do it yourself",
@@ -38,7 +38,7 @@
       {
         "label": "DIY",
         "title": "Build it yourself",
-        "text": "Free guides for Cursor, Codex, GitHub, Vercel, AI pipelines and human-in-the-loop workflows.",
+        "text": "Free guides for Cursor, Codex, GitHub, Vercel, site launch, SEO and safe AI-assisted work.",
         "cta": "Open guides",
         "href": "/guides"
       },

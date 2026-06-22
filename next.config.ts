@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.mikitalashytski.com" }],
+        destination: "https://mikitalashytski.com/:path*",
+        permanent: true,
+      },
+      {
         source: "/:locale(en|pl|ru|uk)/projects/kayer",
         destination: "/:locale/projects/kayer-pl",
         permanent: true,

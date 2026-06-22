@@ -176,9 +176,9 @@ export const guideLabels = {
 export const guideRoadmap: Record<Locale, GuideRoadmap> = {
   en: {
     tag: "AI coding school",
-    title: "AI-assisted coding system, not random prompting",
+    title: "Practical workflow for AI-assisted coding",
     subtitle:
-      "A practical setup for working with Cursor, Claude, Codex, model routing, scripts, repeatable pipelines and human review checkpoints.",
+      "How to use Cursor, Claude, Codex, scripts and human review checkpoints without turning the project into a messy AI draft.",
     modulesTitle: "What you can use from the system",
     setupTitle: "System setup path",
     setupSubtitle:
@@ -256,9 +256,9 @@ export const guideRoadmap: Record<Locale, GuideRoadmap> = {
   },
   pl: {
     tag: "Szkoła AI coding",
-    title: "System AI-assisted coding, nie losowe promptowanie",
+    title: "Praktyczny workflow do AI-assisted coding",
     subtitle:
-      "Praktyczny setup do pracy z Cursor, Claude, Codex, routingiem modeli, skryptami, powtarzalnymi pipeline i checkpointami human review.",
+      "Jak używać Cursor, Claude, Codex, skryptów i human review bez zamieniania projektu w chaotyczny draft AI.",
     modulesTitle: "Co możesz wykorzystać w systemie",
     setupTitle: "Ścieżka konfiguracji systemu",
     setupSubtitle:
@@ -336,9 +336,9 @@ export const guideRoadmap: Record<Locale, GuideRoadmap> = {
   },
   ru: {
     tag: "Школа AI-кодинга",
-    title: "Не набор промптов, а система AI-assisted coding",
+    title: "Практичный процесс работы с AI-кодингом",
     subtitle:
-      "Практическая система работы с Cursor, Claude, Codex, китайскими AI-моделями, skills, скриптами, пайплайнами и human-in-the-loop контролем.",
+      "Как использовать Cursor, Claude, Codex, скрипты и человеческую проверку так, чтобы проект не превратился в хаотичный AI-черновик.",
     modulesTitle: "Что можно забрать в работу",
     setupTitle: "Как по шагам настроить систему",
     setupSubtitle:
@@ -422,9 +422,9 @@ export const guideRoadmap: Record<Locale, GuideRoadmap> = {
   },
   uk: {
     tag: "Школа AI-кодингу",
-    title: "Не набір prompt, а система AI-assisted coding",
+    title: "Практичний процес роботи з AI-кодингом",
     subtitle:
-      "Практична система роботи з Cursor, Claude, Codex, китайськими AI-моделями, skills, скриптами, pipeline і human-in-the-loop контролем.",
+      "Як використовувати Cursor, Claude, Codex, скрипти й людську перевірку так, щоб проєкт не перетворився на хаотичний AI-чернетку.",
     modulesTitle: "Що можна забрати в роботу",
     setupTitle: "Як по кроках налаштувати систему",
     setupSubtitle:
@@ -583,8 +583,8 @@ export const guideTopicExpansion: Record<Locale, GuideTopicExpansion> = {
       },
       {
         code: "SYS-12",
-        title: "Personal operating system",
-        body: "A repeatable working system for every project: intake, brief, build, review, publish, measure and improve.",
+        title: "Repeatable project checklist",
+        body: "A practical checklist for every project: intake, brief, build, review, publish, measure and improve.",
         items: ["intake", "review", "iteration"],
       },
     ],

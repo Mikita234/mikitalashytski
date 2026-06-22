@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Mikita Lashytski — digital builder i operator pełnego cyklu",
-    "description": "Strony, sklepy, automatyzacja i workflow AI dla małego biznesu. Darmowe poradniki, audyt/rescue i pełne buildy.",
-    "ogTagline": "Strony · E-commerce · Boty · Automatyzacja · SEO · Widoczność w AI"
+    "title": "Mikita Lashytski — strony, sklepy i automatyzacje dla małych firm",
+    "description": "Buduję landingi, strony biznesowe, sklepy Shopify, boty i praktyczne automatyzacje. Zacznij od poradników albo wyślij projekt do oceny.",
+    "ogTagline": "Strony · Shopify · Boty · Automatyzacja · SEO · AI search"
   },
   "nav": {
     "home": "Start",
@@ -48,7 +48,7 @@
       "badge": "Otwarty na nowe projekty",
       "titleTop": "To nie strona.",
       "titleAccent": "To system.",
-      "subtitle": "Vibe-coder i operator pełnego cyklu. Prowadzę projekt od pomysłu do przychodu: zakupy i operacje, kod, widoczność w wyszukiwarce, odpowiedzi AI i dane strukturalne. Ładna okładka to łatwe 10%.",
+      "subtitle": "Zamieniam pomysły małych firm w działające strony, sklepy Shopify, boty i praktyczne automatyzacje: oferta, design, kod, domena, formularze, płatności, SEO i start.",
       "ctaPrimary": "Zobacz prace",
       "ctaSecondary": "Jak pracuję",
       "stat1": "działających projektów",
@@ -62,7 +62,7 @@
       "points": [
         {
           "title": "Operacje, nie tylko piksele",
-          "text": "Zakupy, EAN/GTIN, karty produktów, listingi na marketplace, płatności i dostawa — prowadzę cały cykl, nie tylko front-end."
+          "text": "Zakupy, EAN/GTIN, karty produktów, listingi na marketplace, płatności i dostawa — prowadzę pracę sklepu za front-endem."
         },
         {
           "title": "Widoczność w wyszukiwarce",
@@ -118,14 +118,14 @@
     }
   },
   "projectPage": {
-    "overview": "Обзор",
-    "role": "Моя роль / внутрянка",
-    "ops": "Операционный цикл",
-    "stack": "Стек",
-    "integrations": "Интеграции",
-    "seo": "Поисковая выдача",
-    "ai": "AI-выдача",
-    "schema": "Структурированные данные",
+    "overview": "Przegląd",
+    "role": "Moja rola",
+    "ops": "Operacje",
+    "stack": "Stack",
+    "integrations": "Integracje",
+    "seo": "Widoczność w Google",
+    "ai": "Widoczność w AI",
+    "schema": "Dane strukturalne",
     "schemaNote": "Wdrożone typy Schema.org z prawem do rich results.",
     "next": "Następny projekt",
     "live": "Online",
@@ -151,7 +151,7 @@
   "projects": {
     "mnsk7-tools": {
       "category": "E-commerce · Marketplace · B2B",
-      "tagline": "Sklep z frezami CNC z szybką dostawą w Polsce — z pełną operacją od zakupu do listingu w tle.",
+      "tagline": "Sklep z frezami CNC z szybką dostawą w Polsce, zakupami z Chin, EAN/GTIN i listingami Allegro w tle.",
       "summary": "To więcej niż strona: prowadziłem całą operację. Sprowadzaliśmy frezy z Chin, nadawaliśmy kody EAN/GTIN, tworzyliśmy karty produktów i listowaliśmy w sklepie i na Allegro — z blokiem zaufania z realnych opinii marketplace.",
       "beforeAfter": {
         "before": [
@@ -207,12 +207,12 @@
         "skus": "produktów w katalogu",
         "ean": "kart z nadanym EAN/GTIN"
       },
-      "problem": "Potrzebny był sklep z frezami CNC z pełnym cyklem: import z Chin, EAN/GTIN, karty, Allegro + strona — nie tylko witryna.",
+      "problem": "Potrzebny był sklep z frezami CNC obejmujący import z Chin, EAN/GTIN, karty produktów, listingi Allegro i stronę — nie tylko witryna.",
       "whatIDid": "Zbudowałem stronę, operacje zakupów, 425 SKU z EAN, integrację Allegro, program lojalnościowy i strukturę SEO kategorii.",
-      "result": "3500+ zamówień na Allegro, 383 opinie, żywy sklep + marketplace, pełny cykl ops.",
+      "result": "3500+ zamówień na Allegro, 383 opinie, żywy sklep + marketplace i powtarzalny proces zakupów/listingu.",
       "nextSteps": "Publiczne screenshoty analityki, metryki GSC strony, automatyzacja raportów.",
       "cardTitle": "MNSK7-TOOLS",
-      "cardDesc": "Sklep CNC + Allegro: 3500+ zamówień, 425 SKU, pipeline EAN/GTIN."
+      "cardDesc": "Sklep CNC + Allegro: 3500+ zamówień, 425 SKU, proces EAN/GTIN."
     },
     "popular": {
       "category": "Sprzedaż · Bilety · Automatyzacja",
@@ -664,8 +664,8 @@
   },
   "about": {
     "tag": "Jak pracuję",
-    "title": "Pełny cykl, nie fragment",
-    "intro": "Jestem digital builderem i operatorem pełnego cyklu dla małego biznesu. Nie oddaję projektu i nie znikam — biorę odpowiedzialność za wynik: od zakupów i operacji do momentu, gdy projekt pojawia się w Google i odpowiedziach AI. Oto cykl, który prowadzę w każdym projekcie.",
+    "title": "Od pomysłu do działającego projektu",
+    "intro": "Buduję strony, sklepy, boty i automatyzacje dla małych firm. Przed startem porządkuję ofertę, zakres, dane, integracje, SEO i plan publikacji.",
     "steps": [
       {
         "title": "Wysyłasz pomysł",
@@ -698,8 +698,8 @@
   },
   "contact": {
     "tag": "Porozmawiajmy",
-    "title": "Potrzebujesz całego stacku, nie tylko okładki?",
-    "subtitle": "Opowiedz o projekcie. Jeśli potrzebuje operacji, kodu, widoczności w wyszukiwarce i AI pod jednym dachem — to dokładnie to, co robię.",
+    "title": "Pokaż projekt — rozpiszę następne kroki",
+    "subtitle": "Wyślij pomysł, termin, budżet i obecne linki. Odpowiem najprostszą ścieżką: landing, sklep, bot, poprawki SEO albo przebudowa.",
     "telegram": "Telegram",
     "email": "E-mail",
     "github": "GitHub",
@@ -718,7 +718,7 @@
     }
   },
   "footer": {
-    "tagline": "Vibe-coder i operator pełnego cyklu",
+    "tagline": "Strony, sklepy, boty i automatyzacja",
     "built": "Zbudowane na Next.js — z JSON-LD, hreflang i llms.txt.",
     "rights": "Wszelkie prawa zastrzeżone.",
     "nav": "Nawigacja",

@@ -99,7 +99,7 @@ export default async function LocaleLayout({
     "@type": "Person",
     name: site.name,
     url: site.url,
-    jobTitle: "Digital builder & full-cycle operator",
+    jobTitle: "Websites, stores and automation builder",
     knowsAbout: [
       "E-commerce",
       "Technical SEO",
