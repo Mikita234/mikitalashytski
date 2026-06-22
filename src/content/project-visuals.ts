@@ -13,6 +13,8 @@ export const projectVisuals: Record<
     accent: string;
     accentGlow: string;
     channel: string;
+    /** Same-origin thumbnail for hero TV previews (avoids mshots on LCP path). */
+    tvPreview?: string;
   }
 > = {
   "kayer-pl": {
@@ -21,6 +23,7 @@ export const projectVisuals: Record<
     accent: "#8b5cf6",
     accentGlow: "rgba(139,92,246,0.35)",
     channel: "CH-01",
+    tvPreview: "/retro-tv-kayer-preview.png",
   },
   "kayer-ua": {
     domain: "kayer.ua",
@@ -52,6 +55,18 @@ export const projectVisuals: Record<
   },
 };
 
+const TV_PREVIEW_WIDTH = 150;
+
 export function screenshotUrl(url: string, width = 900) {
   return `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=${width}`;
+}
+
+/** Hero TV slot (~125px tall); prefer local static assets over mshots. */
+export function tvPreviewSrc(
+  siteUrl: string,
+  localPath?: string,
+  width = TV_PREVIEW_WIDTH,
+) {
+  if (localPath) return localPath;
+  return screenshotUrl(siteUrl, width);
 }

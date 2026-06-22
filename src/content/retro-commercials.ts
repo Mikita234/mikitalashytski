@@ -21,6 +21,7 @@ export interface RetroCommercial {
   priceOnlyPln?: number;
   priceBadge?: PriceBadge;
   sitePreviewUrl?: string;
+  sitePreviewLocal?: string;
   sitePreviewLabel?: string;
   showBrowserChrome?: boolean;
 }
@@ -45,6 +46,7 @@ export const retroCommercials: RetroCommercial[] = [
     visualStyle: "gradient-90s",
     duration: 13000,
     sitePreviewUrl: projectVisuals["kayer-pl"].url,
+    sitePreviewLocal: projectVisuals["kayer-pl"].tvPreview,
     sitePreviewLabel: projectVisuals["kayer-pl"].domain,
     showBrowserChrome: true,
   },
@@ -80,6 +82,7 @@ export const retroCommercials: RetroCommercial[] = [
     visualStyle: "case-spot",
     duration: 13000,
     sitePreviewUrl: projectVisuals["kayer-pl"].url,
+    sitePreviewLocal: projectVisuals["kayer-pl"].tvPreview,
     sitePreviewLabel: projectVisuals["kayer-pl"].domain,
     showBrowserChrome: true,
   },

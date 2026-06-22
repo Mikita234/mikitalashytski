@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { retroCommercials } from "@/content/retro-commercials";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -8,9 +9,15 @@ import { useTvChannel } from "./tv-channel-context";
 export function RetroAdAmbientBg() {
   const { index } = useTvChannel();
   const reduced = useReducedMotion();
+  const [animateEnter, setAnimateEnter] = useState(false);
   const ad = retroCommercials[index];
   const showStarburst =
     ad.visualStyle === "starburst" || ad.visualStyle === "infomercial";
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setAnimateEnter(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   return (
     <div className="retro-ad-ambient" aria-hidden>
@@ -20,7 +27,7 @@ export function RetroAdAmbientBg() {
           className={`retro-ad-ambient__wash retro-ad-ambient--${ad.era} retro-ad-ambient--${ad.visualStyle}${
             reduced ? " retro-ad-ambient--static" : ""
           }`}
-          initial={reduced ? false : { opacity: 0 }}
+          initial={reduced || !animateEnter ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={reduced ? undefined : { opacity: 0 }}
           transition={{ duration: reduced ? 0 : 1.2, ease: "easeInOut" }}

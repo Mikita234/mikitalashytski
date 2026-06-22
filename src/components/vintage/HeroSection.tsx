@@ -2,27 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
+import { HeroWorkstation } from "@/components/animations/HeroWorkstation";
 import { GlitchText } from "./GlitchText";
 import { VHSButton } from "./VHSButton";
-import dynamic from "next/dynamic";
-
-const HeroWorkstation = dynamic(
-  () =>
-    import("@/components/animations/HeroWorkstation").then((m) => ({
-      default: m.HeroWorkstation,
-    })),
-  {
-    ssr: false,
-    loading: () => (
-      <div
-        className="hero-workstation-placeholder mx-auto w-full max-w-md"
-        aria-hidden
-      >
-        <div className="aspect-[4/3] animate-pulse rounded-[1.25rem] bg-gradient-to-b from-[#3a3a42] to-[#1a1a1e]" />
-      </div>
-    ),
-  },
-);
 import { MarqueeTicker } from "./MarqueeTicker";
 import { DoomCornerFrame } from "./DoomCornerFrame";
 

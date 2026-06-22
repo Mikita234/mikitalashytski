@@ -10,7 +10,7 @@ import {
   type RetroCommercial,
 } from "@/content/retro-commercials";
 import { site } from "@/content/site";
-import { screenshotUrl } from "@/content/project-visuals";
+import { tvPreviewSrc } from "@/content/project-visuals";
 import { ScanlineOverlay } from "@/components/vintage/ScanlineOverlay";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { trackEvent } from "@/lib/analytics";
@@ -54,6 +54,25 @@ function useResolvedAd(ad: RetroCommercial): ResolvedAd {
   }, [ad, locale, t]);
 }
 
+function useDeferredExternalPreview(enabled: boolean) {
+  const [ready, setReady] = useState(!enabled);
+
+  useEffect(() => {
+    if (!enabled) return;
+
+    const activate = () => setReady(true);
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(activate, { timeout: 2500 });
+      return () => window.cancelIdleCallback(id);
+    }
+
+    const timer = window.setTimeout(activate, 1500);
+    return () => window.clearTimeout(timer);
+  }, [enabled]);
+
+  return ready;
+}
+
 function RetroAdSitePreview({
   ad,
   reduced,
@@ -65,25 +84,33 @@ function RetroAdSitePreview({
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const label = ad.sitePreviewLabel ?? ad.sitePreviewUrl ?? "";
+  const useExternalPreview = Boolean(ad.sitePreviewUrl && !ad.sitePreviewLocal);
+  const externalReady = useDeferredExternalPreview(useExternalPreview);
+  const previewSrc =
+    ad.sitePreviewUrl &&
+    (ad.sitePreviewLocal || externalReady)
+      ? tvPreviewSrc(ad.sitePreviewUrl, ad.sitePreviewLocal)
+      : null;
 
   if (!ad.sitePreviewUrl) return null;
 
   const preview = (
     <div className="retro-ad__preview-screen">
-      {!failed && (
+      {previewSrc && !failed && (
         <Image
-          src={screenshotUrl(ad.sitePreviewUrl, 400)}
+          src={previewSrc}
           alt={`Preview of ${label}`}
           width={200}
           height={125}
           className={`retro-ad__preview-img ${loaded ? "retro-ad__preview-img--loaded" : ""}`}
-          loading="lazy"
-          unoptimized
+          loading={ad.sitePreviewLocal ? "eager" : "lazy"}
+          fetchPriority={ad.sitePreviewLocal ? "high" : "low"}
+          unoptimized={!ad.sitePreviewLocal}
           onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}
         />
       )}
-      {(!loaded || failed) && (
+      {(!previewSrc || !loaded || failed) && (
         <div className="retro-ad__preview-placeholder">
           <span className="retro-ad__preview-domain">{label}</span>
           <span className="retro-ad__preview-status">
@@ -195,7 +222,13 @@ export function PhilipsCrtTv() {
   const { index, setIndex } = useTvChannel();
   const [paused, setPaused] = useState(false);
   const [glitch, setGlitch] = useState(false);
+  const [animateChannelEnter, setAnimateChannelEnter] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setAnimateChannelEnter(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   const ad = retroCommercials[index];
   const copy = useResolvedAd(ad);
@@ -252,7 +285,11 @@ export function PhilipsCrtTv() {
                     className={`retro-ad retro-ad--${ad.era} retro-ad--${ad.visualStyle}${
                       ad.sitePreviewUrl ? " retro-ad--with-preview" : ""
                     }`}
-                    initial={reduced ? false : { opacity: 0, scale: 0.97 }}
+                    initial={
+                      reduced || !animateChannelEnter
+                        ? false
+                        : { opacity: 0, scale: 0.97 }
+                    }
                     animate={{ opacity: 1, scale: 1 }}
                     exit={reduced ? undefined : { opacity: 0, filter: "brightness(1.4)" }}
                     transition={{ duration: reduced ? 0 : 0.45 }}
