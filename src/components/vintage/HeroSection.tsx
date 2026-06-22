@@ -92,9 +92,9 @@ export function HeroSection() {
                   {t("ctaWorks")}
                 </VHSButton>
                 <VHSButton
-                  href="/order?service=audit"
+                  href="/guides"
                   variant="secondary"
-                  onClick={() => trackEvent("CTA Click", { location: "hero", type: "audit" })}
+                  onClick={() => trackEvent("CTA Click", { location: "hero", type: "diy" })}
                 >
                   {t("ctaAudit")}
                 </VHSButton>
