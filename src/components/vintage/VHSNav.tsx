@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { sellNav } from "@/content/selling";
-import { site } from "@/content/site";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { Link } from "@/i18n/navigation";
 import { useState } from "react";
@@ -68,22 +68,7 @@ export function VHSNav() {
   return (
     <header className="sticky top-0 z-50 border-b-2 border-[var(--vhs-dirt)] bg-[#0d0d0d]/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="group flex items-center gap-2.5">
-          <span
-            className="flex h-7 w-7 shrink-0 items-center justify-center border border-[var(--vhs-terminal)]/35 bg-[#121214] font-display text-[11px] font-bold text-[var(--vhs-terminal)] shadow-[inset_0_0_10px_rgba(57,255,20,0.06)] transition-colors group-hover:border-[var(--vhs-acid)]/50 group-hover:text-[var(--vhs-acid)]"
-            aria-hidden
-          >
-            {site.shortName}
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="font-display text-[11px] uppercase tracking-wide text-[var(--vhs-white)] transition-colors group-hover:text-[var(--vhs-acid)] sm:text-xs">
-              {site.name}
-            </span>
-            <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[var(--vhs-muted)]">
-              {site.domain}
-            </span>
-          </span>
-        </Link>
+        <BrandLogo />
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
           {sellNav.map((item) => (

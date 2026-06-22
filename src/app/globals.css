@@ -281,6 +281,54 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+/* Brand logo — inset HUD focus instead of outer acid box */
+.brand-logo:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 1px rgba(51, 255, 102, 0.45),
+    0 0 0 2px rgba(10, 10, 10, 0.95),
+    0 0 12px rgba(51, 255, 102, 0.15);
+}
+
+.brand-logo__mark-glow {
+  box-shadow:
+    inset 0 0 12px rgba(51, 255, 102, 0.12),
+    0 0 16px rgba(196, 30, 30, 0.08);
+  border-radius: 2px;
+}
+
+.brand-logo__name {
+  text-shadow: 0 0 20px rgba(51, 255, 102, 0);
+  transition:
+    color 0.2s ease,
+    text-shadow 0.3s ease;
+}
+
+.group:hover .brand-logo__name,
+.brand-logo:focus-visible .brand-logo__name {
+  text-shadow: 0 0 18px rgba(204, 255, 0, 0.12);
+}
+
+@keyframes brand-rec-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.brand-rec-pulse {
+  animation: brand-rec-pulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-rec-pulse {
+    animation: none;
+  }
+}
+
 ::selection {
   background: rgba(204, 255, 0, 0.25);
   color: #fff;

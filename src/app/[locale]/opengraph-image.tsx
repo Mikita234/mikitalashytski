@@ -54,7 +54,7 @@ export default function OgImage() {
           </div>
           <div style={{ fontSize: 22, color: "#8a8a94" }}>{site.domain}</div>
           <div style={{ fontSize: 18, color: "#33ff66", marginLeft: "auto" }}>
-            CH-404 LIVE
+            {`${site.brandChannel} LIVE`}
           </div>
         </div>
 
