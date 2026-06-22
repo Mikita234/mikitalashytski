@@ -33,11 +33,11 @@ export function HeroSection() {
   return (
     <section id="hero" className="relative overflow-hidden section-glow-terminal">
       <div
-        className="pointer-events-none absolute -left-20 top-0 h-64 w-64 rounded-full bg-[var(--vhs-blue)] opacity-20 blur-[100px]"
+        className="pointer-events-none absolute -left-20 top-0 h-64 w-64 rounded-full bg-[var(--vhs-blue)] opacity-15 blur-[100px]"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -right-10 top-20 h-48 w-48 rounded-full bg-[var(--doom-red)] opacity-15 blur-[80px]"
+        className="pointer-events-none absolute -right-10 top-20 h-48 w-48 rounded-full bg-[var(--vhs-beige)] opacity-[0.08] blur-[80px]"
         aria-hidden
       />
 

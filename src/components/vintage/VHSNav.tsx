@@ -66,7 +66,7 @@ export function VHSNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-[var(--vhs-dirt)] bg-[#0d0d0d]/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[var(--vhs-black)]/88 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <BrandLogo />
 
