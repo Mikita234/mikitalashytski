@@ -248,7 +248,7 @@
       },
       "problem": "Popular Poet — театральная студия для украинско-/русскоязычных эмигрантов в Польше. Весь интернет-присутствие — Instagram: нет своего сайта, индексации в поиске, инфраструктуры продаж. Комиссионные билетные платформы берут процент и не приводят трафик к нишевому эмигрантскому театру. Нужны витрина курсов, своя касса и видимость в Google и AI-поиске — не ещё одна воронка только через соцсети. Плюс ~4 события в неделю создавались вручную — рутинный ввод данных, который съедал часы каждую неделю.",
       "whatIDid": "Построил popularpoet.pl как трёхъязычную витрину курсов (PL/UA/RU) и populartickets.pl как собственную кассу на Next.js + Supabase + Vercel. Реализовал админ-панель для событий и курсов, Resend для транзакционных писем, check-in для верификации билетов на входе и structured data для локального + мультиязычного SEO. Настроил Google Business Profile. Чтобы убрать еженедельную рутину публикации, собрал event-бота на бесплатном Gemini: закидываешь фото и сырой текст — бот парсит структурированные события, выдаёт готовые страницы и пингует Bing (и аналоги) о новых URL. Система заменяет комиссионные платформы собственной инфраструктурой, которую находят, цитируют и держат актуальной в AI-поиске — без ручного ввода событий.",
-      "result": "Два живых домена — popularpoet.pl и populartickets.pl — с полным операционным стеком: админка, check-in, Resend, трёхъязычный контент и GBP. Публикация ~4 событий в неделю автоматизирована: фото/текст → Gemini → страницы → пинг Bing — часы сэкономлены на еженедельной ops. Реальный результат: через 2 недели после запуска органический трафик из AI-поиска конвертировался в продажи билетов. Не визитка — digital-инфраструктура для эмигрантского театра с автоматизацией еженедельных публикаций.",
+      "result": "Два живых домена — popularpoet.pl и populartickets.pl — с полным операционным стеком: админка, check-in, Resend, трёхъязычный контент и GBP. Публикация ~4 событий в неделю автоматизирована: фото/текст → Gemini → страницы → пинг Bing — часы сэкономлены на еженедельной ops. Реальный результат: через 2 недели после запуска органический трафик из AI-поиска конвертировался в продажи билетов. По populartickets.pl в GSC за 3 месяца уже есть ранняя поисковая база: 25 кликов, 223 показа, CTR 11,2% и средняя позиция 4,3. PageSpeed/Lighthouse от 23 июня 2026: popularpoet.pl — mobile 94, desktop 100; populartickets.pl — mobile 90, desktop 98; Accessibility, Best Practices, SEO — 100; Agent view — 3/3. Не визитка — digital-инфраструктура для эмигрантского театра с автоматизацией еженедельных публикаций.",
       "nextSteps": [
         "Скрин: только Instagram до vs витрина курсов popularpoet.pl",
         "Скрин: checkout populartickets.pl и подтверждение билета (Resend email)",
@@ -259,8 +259,10 @@
         "Скрин: трёхъязычные страницы PL / UA / RU и языковой роутинг",
         "Скрин: Google Business Profile и локальная выдача",
         "Скрин: AI-поиск / GSC — органический трафик после запуска",
-        "Добавить детальные GSC-метрики и конверсию (placeholder до экспорта)",
-        "Запустить и опубликовать Lighthouse для обоих доменов"
+        "Подготовить безопасный GSC-скрин populartickets.pl: 25 кликов, 223 показа, CTR 11,2%, позиция 4,3.",
+        "Усилить страницы под запросы с показами без кликов: «мероприятия в варшаве», «warszawa wydarzenia dzisiaj», «выходные в польше».",
+        "Добавить конверсию из аналитики: какие поисковые визиты переходят в покупку билета.",
+        "Подготовить безопасные PageSpeed proof-скрины для обоих доменов"
       ],
       "role": [
         "Спроектировал двухсайтовую digital-инфраструктуру: popularpoet.pl (курсы) + populartickets.pl (билеты).",
@@ -294,7 +296,9 @@
         "Мультиязычный контент PL/UA/RU с hreflang под запросы эмигрантской аудитории.",
         "FAQ-разметка под целевые вопросы о театре и курсах.",
         "Google Business Profile в локальной поисковой выдаче.",
-        "Автоматические страницы событий + пинг Bing для быстрой индексации еженедельных афиш."
+        "Автоматические страницы событий + пинг Bing для быстрой индексации еженедельных афиш.",
+        "GSC для populartickets.pl за 3 месяца: 25 кликов, 223 показа, CTR 11,2%, средняя позиция 4,3 — объём маленький, но позиции и CTR сильные для старта.",
+        "PageSpeed/Lighthouse proof: popularpoet.pl mobile 94 / desktop 100, populartickets.pl mobile 90 / desktop 98, SEO 100 на обоих доменах."
       ],
       "ai": [
         "Course / Event / LocalBusiness schema — machine-readable offering для AI-ответов.",
@@ -310,7 +314,16 @@
         "aiSales": "AI organic → продажи билетов после запуска",
         "ticketing": "касса (без комиссии)",
         "checkin": "check-in билетов на входе",
-        "lighthouse": "Lighthouse Performance"
+        "ticketsGscClicks": "клики populartickets за 3 месяца",
+        "ticketsGscImpressions": "показы populartickets за 3 месяца",
+        "ticketsGscCtr": "CTR populartickets",
+        "ticketsGscPosition": "средняя позиция populartickets",
+        "poetMobilePerf": "popularpoet mobile performance",
+        "poetDesktopPerf": "popularpoet desktop performance",
+        "ticketsMobilePerf": "populartickets mobile performance",
+        "ticketsDesktopPerf": "populartickets desktop performance",
+        "lighthouseHundreds": "Accessibility / Best Practices / SEO",
+        "agentView": "agent view checks"
       },
       "cardTitle": "Popular Poet — система продаж",
       "cardDesc": "Витрина курсов + своя касса + бот Gemini (~4 события/нед.). AI organic → продажи билетов за 2 нед."
@@ -522,18 +535,14 @@
       },
       "problem": "KAYER.PL работал на WooCommerce/WordPress: каждое обновление товара, промо и перевода — ручная работа в админке, без automation-first workflow на трёх языках. KAYER.UA требовал отдельную рыночно-готовую украинскую систему — не копию PL — с локальной доставкой, учётом и партнёрскими процессами.",
       "whatIDid": "KAYER.PL: миграция WooCommerce → Shopify, кастомизация темы через AI-assisted development, BaseLinker product sync, мультиязычный контент-пайплайн PL/UA/EN (OpenAI + Python), скрипты для сокращения повторяющихся ops. KAYER.UA: отдельный украинский рынок на Shopify — UX «уведомить о наличии», мотивация подрядчиков/партнёров, Dilovod + Nova Poshta через Flu.io и тот же automation-first контент, адаптированный под UA.",
-      "result": "Два живых домена — kayer.pl и kayer.ua. PL: Shopify с BaseLinker sync, структурированным мультиязычным контентом и промо-контуром вместо ручной админки. UA: отдельная рыночно-готовая система с локальными интеграциями, подпиской на наличие и мотивацией партнёров — не перевод PL-клона.",
+      "result": "KAYER.PL уже получает измеримый органический спрос из Google. За 3 месяца в Search Console (22.03.2026–21.06.2026): 1,85 тыс. кликов, 31,5 тыс. показов, CTR 5,9% и средняя позиция 7,7. Главная /pl-pl отдельно выросла на 385%. Desktop-аудит PageSpeed/Lighthouse от 23 июня 2026 показывает: Performance 94, Accessibility 97, Best Practices 92, SEO 100, Agent view 3/3. Это не просто миграция на Shopify — каталог и главная начали работать как входные страницы из поиска.",
       "nextSteps": [
-        "Скрин: legacy WooCommerce admin vs новый Shopify",
-        "Скрин: главная и карточка товара Shopify (PL + UA)",
-        "Скрин: BaseLinker sync и маппинг каталога",
-        "Скрин: мультиязычные описания товаров (PL / UA / EN)",
-        "Скрин: Python-скрипты и flow «идея промо → контент»",
-        "Скрин: UA UX «уведомить о наличии»",
-        "Скрин: интеграции Nova Poshta, Flu.io и Dilovod",
-        "Скрин: система мотивации подрядчиков и mobile",
-        "Добавить реальные GSC-трафик, заказы и конверсию (placeholder до экспорта)",
-        "Запустить и опубликовать Lighthouse для обоих доменов"
+        "Сохранить безопасные GSC-скрины как proof-ассеты без приватных данных.",
+        "Разобрать страницы, которые уже получают клики: главная, Luxio collection, Luxio Pure, Luxio Delicate, Compact LED.",
+        "Усилить title, description, внутренние ссылки и контент на растущих product/category pages.",
+        "Добавить короткие buyer guides под Luxio и Akzentz, чтобы поисковый трафик вёл не только на товары, но и на объясняющий контент.",
+        "Связать Search Console с продажами/формами, чтобы видеть не только клики, но и коммерческий результат.",
+        "Добрать mobile PageSpeed и реальные field data, когда Google накопит достаточно пользовательских данных."
       ],
       "role": [
         "Вёл миграцию KAYER.PL: WooCommerce/WordPress → Shopify, тема и product/content workflows.",
@@ -557,10 +566,12 @@
         "Кросс-доменная архитектура kayer.pl / kayer.ua"
       ],
       "seo": [
-        "Карточки и категории структурированы под поиск на обоих рынках.",
-        "Мультиязычный контент PL/UA/EN с hreflang и чистой индексацией.",
-        "Туториалы Luxio как long-tail SEO для PL.",
-        "Украинский контент и локальная презентация товаров для UA."
+        "Search Console за 3 месяца (22.03.2026–21.06.2026): 1,85 тыс. кликов и 31,5 тыс. показов.",
+        "Качество выдачи сильное: CTR 5,9% и средняя позиция 7,7.",
+        "Главная https://kayer.pl/pl-pl выросла на 385% по рекомендации GSC.",
+        "В топе контента уже не только главная, но и Luxio collection/product pages: Luxio Pure, Luxio Delicate, Compact LED.",
+        "Desktop PageSpeed/Lighthouse на https://kayer.pl/pl-pl: Performance 94, Accessibility 97, Best Practices 92, SEO 100, Agent view 3/3.",
+        "Следующий SEO-фокус: закрепить растущие страницы через тексты, внутренние ссылки и понятные buyer guides."
       ],
       "ai": [
         "OpenAI pipeline для мультиязычных описаний и промо-контента на PL/UA/EN.",
@@ -569,7 +580,16 @@
         "Product + Offer + Review schema — каталог машиночитаемый для поиска и AI-ответов."
       ],
       "metrics": {
-        "migration": "PL migration time (est.)",
+        "gscClicks": "клики в веб-поиске GSC",
+        "gscImpressions": "показы в веб-поиске GSC",
+        "gscCtr": "средний CTR в GSC",
+        "gscPosition": "средняя позиция в GSC",
+        "homeGrowth": "рост главной /pl-pl в GSC",
+        "desktopPerformance": "desktop Lighthouse performance",
+        "desktopAccessibility": "desktop accessibility",
+        "desktopBestPractices": "desktop best practices",
+        "desktopSeo": "desktop SEO score",
+        "agentView": "agent view checks",
         "integrations": "operational integrations",
         "skus": "SKUs in catalog",
         "manual": "manual ops reduced (est.)",
@@ -606,18 +626,14 @@
       },
       "problem": "KAYER.PL работал на WooCommerce/WordPress: каждое обновление товара, промо и перевода — ручная работа в админке, без automation-first workflow на трёх языках. KAYER.UA требовал отдельную рыночно-готовую украинскую систему — не копию PL — с локальной доставкой, учётом и партнёрскими процессами.",
       "whatIDid": "KAYER.PL: миграция WooCommerce → Shopify, кастомизация темы через AI-assisted development, BaseLinker product sync, мультиязычный контент-пайплайн PL/UA/EN (OpenAI + Python), скрипты для сокращения повторяющихся ops. KAYER.UA: отдельный украинский рынок на Shopify — UX «уведомить о наличии», мотивация подрядчиков/партнёров, Dilovod + Nova Poshta через Flu.io и тот же automation-first контент, адаптированный под UA.",
-      "result": "Два живых домена — kayer.pl и kayer.ua. PL: Shopify с BaseLinker sync, структурированным мультиязычным контентом и промо-контуром вместо ручной админки. UA: отдельная рыночно-готовая система с локальными интеграциями, подпиской на наличие и мотивацией партнёров — не перевод PL-клона.",
+      "result": "KAYER.UA уже даёт измеримый органический спрос из Google. За 3 месяца в Search Console: 395 кликов, 2,17 тыс. показов, CTR 18,2% и средняя позиция 5,7. За последние 28 дней: 272 клика (+55%) и 1,76 тыс. показов (+77%). Главная /uk-ua получила 203 клика (+80%), а новые товарные страницы Luxio Coy, Luxio Top и Luxio Lipgloss начали получать клики с нуля.",
       "nextSteps": [
-        "Скрин: legacy WooCommerce admin vs новый Shopify",
-        "Скрин: главная и карточка товара Shopify (PL + UA)",
-        "Скрин: BaseLinker sync и маппинг каталога",
-        "Скрин: мультиязычные описания товаров (PL / UA / EN)",
-        "Скрин: Python-скрипты и flow «идея промо → контент»",
-        "Скрин: UA UX «уведомить о наличии»",
-        "Скрин: интеграции Nova Poshta, Flu.io и Dilovod",
-        "Скрин: система мотивации подрядчиков и mobile",
-        "Добавить реальные GSC-трафик, заказы и конверсию (placeholder до экспорта)",
-        "Запустить и опубликовать Lighthouse для обоих доменов"
+        "Подготовить безопасные скрины Search Console: 3 месяца и последние 28 дней без приватных данных аккаунта.",
+        "Разобрать страницы, которые уже получают клики: главная /uk-ua, Luxio Coy, Luxio Top, Luxio Lipgloss.",
+        "Усилить title, description, внутренние ссылки и текст на карточках, где клики появились с нуля.",
+        "Добавить короткие покупательские гайды по Luxio для UA-рынка: оттенки, база, топ, совместимость.",
+        "Связать Search Console с заказами или формами, чтобы показать не только трафик, но и коммерческий результат.",
+        "Добавить PageSpeed/Lighthouse-скрины для kayer.ua, когда будет финальный аудит по мобильной и desktop-версии."
       ],
       "role": [
         "Вёл миграцию KAYER.PL: WooCommerce/WordPress → Shopify, тема и product/content workflows.",
@@ -644,7 +660,9 @@
         "Карточки и категории структурированы под поиск на обоих рынках.",
         "Мультиязычный контент PL/UA/EN с hreflang и чистой индексацией.",
         "Туториалы Luxio как long-tail SEO для PL.",
-        "Украинский контент и локальная презентация товаров для UA."
+        "Украинский контент и локальная презентация товаров для UA.",
+        "GSC за 3 месяца по kayer.ua: 395 кликов, 2,17 тыс. показов, CTR 18,2%, средняя позиция 5,7.",
+        "GSC за последние 28 дней: 272 клика (+55%) и 1,76 тыс. показов (+77%); главная /uk-ua — 203 клика (+80%)."
       ],
       "ai": [
         "OpenAI pipeline для мультиязычных описаний и промо-контента на PL/UA/EN.",
@@ -653,11 +671,18 @@
         "Product + Offer + Review schema — каталог машиночитаемый для поиска и AI-ответов."
       ],
       "metrics": {
-        "market": "target market",
+        "gscClicks": "клики за 3 месяца",
+        "gscImpressions": "показы за 3 месяца",
+        "gscCtr": "CTR за 3 месяца",
+        "gscPosition": "средняя позиция",
+        "last28Clicks": "клики за 28 дней",
+        "last28Impressions": "показы за 28 дней",
+        "homeClicks": "клики главной /uk-ua",
+        "homeGrowth": "рост главной",
+        "newProductClicks": "клики новых товаров",
         "integrations": "local integrations",
         "notify": "notify-when-available",
-        "partners": "partner motivation",
-        "lighthouse": "Lighthouse performance"
+        "partners": "partner motivation"
       },
       "cardTitle": "KAYER.UA — украинский рынок",
       "cardDesc": "Отдельный UA-магазин: Nova Poshta, Dilovod, подписка на наличие — не клон PL."

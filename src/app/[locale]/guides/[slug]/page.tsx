@@ -161,7 +161,7 @@ export default async function GuidePage({ params }: Props) {
                 </span>
                 <div>
                   <h2 className="type-h3">{step.title}</h2>
-                  <p className="mt-2 text-base leading-relaxed text-[var(--vhs-muted)]">
+                  <p className="mt-2 whitespace-pre-line text-base leading-relaxed text-[var(--vhs-muted)]">
                     {step.body}
                   </p>
                 </div>

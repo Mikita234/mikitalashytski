@@ -248,7 +248,7 @@
       },
       "problem": "Popular Poet is a theatre studio for Ukrainian/Russian-speaking emigrants in Poland. Their entire internet presence was Instagram — no owned site, no search indexing, no sales infrastructure. Commission ticketing platforms charge fees and don't drive traffic to a niche emigrant theatre audience. They needed a course vitrine, their own ticket office, and visibility in Google and AI search — not another social-only funnel. On top of that, ~4 events per week had to be created manually — tedious data entry that ate hours every week.",
       "whatIDid": "Built popularpoet.pl as a trilingual course showcase (PL/UA/RU) and populartickets.pl as a proprietary box office on Next.js + Supabase + Vercel. Implemented admin panel for events and courses, Resend for transactional email, on-site check-in for ticket verification, and structured data for local + multilingual SEO. Set up Google Business Profile. To kill weekly publishing friction, built a Gemini-powered event bot on the free tier: drop photos and raw text, the bot parses structured events, outputs ready pages, and pings Bing (and similar indexing) about new URLs. The system replaces commission platforms with owned infrastructure that can be found, cited, and kept fresh by AI search — without manual event entry.",
-      "result": "Two live domains — popularpoet.pl and populartickets.pl — with full operational stack: admin, check-in, Resend, trilingual content and GBP. Event publishing automated for ~4 shows/week: photo/text → Gemini → pages → Bing ping — hours saved on weekly ops. Real outcome: within 2 weeks of launch, organic traffic from AI search converted to ticket sales. Not a brochure site — a digital infrastructure layer for emigrant theatre with automation-first weekly publishing.",
+      "result": "Two live domains — popularpoet.pl and populartickets.pl — with full operational stack: admin, check-in, Resend, trilingual content and GBP. Event publishing automated for ~4 shows/week: photo/text → Gemini → pages → Bing ping — hours saved on weekly ops. Real outcome: within 2 weeks of launch, organic traffic from AI search converted to ticket sales. For populartickets.pl, GSC already shows an early search base over 3 months: 25 clicks, 223 impressions, 11.2% CTR and 4.3 average position. PageSpeed/Lighthouse from 23 June 2026: popularpoet.pl — mobile 94, desktop 100; populartickets.pl — mobile 90, desktop 98; Accessibility, Best Practices and SEO are 100; Agent view is 3/3. Not a brochure site — a digital infrastructure layer for emigrant theatre with automation-first weekly publishing.",
       "nextSteps": [
         "Screenshot: Instagram-only before vs popularpoet.pl course vitrine",
         "Screenshot: populartickets.pl checkout and ticket confirmation (Resend email)",
@@ -259,8 +259,10 @@
         "Screenshot: trilingual PL / UA / RU pages and language routing",
         "Screenshot: Google Business Profile and local search presence",
         "Screenshot: AI search / GSC evidence of organic traffic post-launch",
-        "Add detailed GSC and conversion metrics (placeholder until export)",
-        "Run and publish Lighthouse scores for both domains"
+        "Prepare a safe GSC screenshot for populartickets.pl: 25 clicks, 223 impressions, 11.2% CTR and 4.3 average position.",
+        "Strengthen pages for queries with impressions but no clicks yet: “мероприятия в варшаве”, “warszawa wydarzenia dzisiaj”, “выходные в польше”.",
+        "Add conversion analytics: which search visits become ticket purchases.",
+        "Prepare safe PageSpeed proof screenshots for both domains"
       ],
       "role": [
         "Architected two-site digital infrastructure: popularpoet.pl (courses) + populartickets.pl (ticketing).",
@@ -294,7 +296,9 @@
         "Multilingual PL/UA/RU content with hreflang for emigrant audience queries.",
         "FAQ schema answering high-intent theatre and course questions.",
         "Google Business Profile wired into local search footprint.",
-        "Automated event pages + Bing ping for faster indexing of weekly show listings."
+        "Automated event pages + Bing ping for faster indexing of weekly show listings.",
+        "3-month GSC for populartickets.pl: 25 clicks, 223 impressions, 11.2% CTR and 4.3 average position — low volume, but strong early quality.",
+        "PageSpeed/Lighthouse proof: popularpoet.pl mobile 94 / desktop 100, populartickets.pl mobile 90 / desktop 98, SEO 100 on both domains."
       ],
       "ai": [
         "Course / Event / LocalBusiness schema — machine-readable offering for AI answers.",
@@ -310,7 +314,16 @@
         "aiSales": "AI organic → ticket sales post-launch",
         "ticketing": "box office (no commission)",
         "checkin": "on-site ticket check-in",
-        "lighthouse": "Lighthouse performance"
+        "ticketsGscClicks": "populartickets 3-month clicks",
+        "ticketsGscImpressions": "populartickets 3-month impressions",
+        "ticketsGscCtr": "populartickets CTR",
+        "ticketsGscPosition": "populartickets average position",
+        "poetMobilePerf": "popularpoet mobile performance",
+        "poetDesktopPerf": "popularpoet desktop performance",
+        "ticketsMobilePerf": "populartickets mobile performance",
+        "ticketsDesktopPerf": "populartickets desktop performance",
+        "lighthouseHundreds": "Accessibility / Best Practices / SEO",
+        "agentView": "agent view checks"
       },
       "cardTitle": "Popular Poet — Sales system",
       "cardDesc": "Course vitrine + own box office + Gemini bot (~4 events/week). AI organic → ticket sales in 2 weeks."
@@ -522,18 +535,14 @@
       },
       "problem": "KAYER.PL ran on WooCommerce: every product update and promo meant manual admin work with no automation-first workflow.",
       "whatIDid": "Led WooCommerce → Shopify migration, BaseLinker sync, Python + OpenAI content pipeline for PL/EN, and scripts to cut repetitive ops.",
-      "result": "Live kayer.pl on Shopify with BaseLinker sync, structured content and a promotion pipeline that replaces manual admin work.",
+      "result": "KAYER.PL now has measurable organic demand from Google. In Search Console over 3 months (22 Mar 2026–21 Jun 2026): 1.85k clicks, 31.5k impressions, 5.9% CTR and 7.7 average position. The /pl-pl home page also has a separate +385% growth signal. The desktop PageSpeed/Lighthouse audit from 23 June 2026 shows Performance 94, Accessibility 97, Best Practices 92, SEO 100 and Agent view 3/3. This is not only a Shopify migration — the home page and catalog pages started working as search entry points.",
       "nextSteps": [
-        "Screenshot: legacy WooCommerce admin vs new Shopify",
-        "Screenshot: Shopify homepage and product page (PL + UA)",
-        "Screenshot: BaseLinker sync and catalog mapping",
-        "Screenshot: multilingual product descriptions (PL / UA / EN)",
-        "Screenshot: Python automation scripts and promo idea → content flow",
-        "Screenshot: UA notify-when-available UX",
-        "Screenshot: Nova Poshta, Flu.io and Dilovod integrations",
-        "Screenshot: contractor motivation system and mobile views",
-        "Add real GSC traffic, orders and conversion metrics (placeholder until export)",
-        "Run and publish Lighthouse scores for both domains"
+        "Prepare safe GSC proof screenshots without exposing private account data.",
+        "Review the pages already getting clicks: home, Luxio collection, Luxio Pure, Luxio Delicate and Compact LED.",
+        "Improve title, description, internal links and product copy on growing product/category pages.",
+        "Add short buyer guides for Luxio and Akzentz so search traffic lands on helpful explanation, not only product cards.",
+        "Connect Search Console with sales/forms to measure commercial outcome, not only clicks.",
+        "Add mobile PageSpeed and real field data once Google has enough user data."
       ],
       "role": [
         "Led KAYER.PL migration: WooCommerce/WordPress → Shopify, theme and product/content workflows.",
@@ -557,10 +566,12 @@
         "Cross-domain architecture kayer.pl / kayer.ua"
       ],
       "seo": [
-        "Product and category pages structured for search on both markets.",
-        "Multilingual PL/UA/EN content with hreflang and clean indexing.",
-        "Luxio tutorials as long-tail SEO for PL.",
-        "Ukrainian content and local product presentation for UA."
+        "Search Console over 3 months (22 Mar 2026–21 Jun 2026): 1.85k clicks and 31.5k impressions.",
+        "Search quality is strong: 5.9% CTR and 7.7 average position.",
+        "The https://kayer.pl/pl-pl home page is flagged by GSC with +385% growth.",
+        "Top content is not only the home page: Luxio collection/product pages already attract clicks, including Luxio Pure, Luxio Delicate and Compact LED.",
+        "Desktop PageSpeed/Lighthouse for https://kayer.pl/pl-pl: Performance 94, Accessibility 97, Best Practices 92, SEO 100 and Agent view 3/3.",
+        "Next SEO focus: strengthen growing pages with better copy, internal links and practical buyer guides."
       ],
       "ai": [
         "OpenAI pipeline for multilingual descriptions and promo content in PL/UA/EN.",
@@ -569,7 +580,16 @@
         "Product + Offer + Review schema — machine-readable catalog for search and AI answers."
       ],
       "metrics": {
-        "migration": "PL migration time (est.)",
+        "gscClicks": "GSC web-search clicks",
+        "gscImpressions": "GSC web-search impressions",
+        "gscCtr": "average GSC CTR",
+        "gscPosition": "average GSC position",
+        "homeGrowth": "GSC growth for /pl-pl home",
+        "desktopPerformance": "desktop Lighthouse performance",
+        "desktopAccessibility": "desktop accessibility",
+        "desktopBestPractices": "desktop best practices",
+        "desktopSeo": "desktop SEO score",
+        "agentView": "agent view checks",
         "integrations": "operational integrations",
         "skus": "SKUs in catalog",
         "manual": "manual ops reduced (est.)",
@@ -606,18 +626,14 @@
       },
       "problem": "Ukraine needed a market-ready system — not a Polish copy — with local delivery, accounting and partner workflows.",
       "whatIDid": "Built separate Ukrainian Shopify storefront with notify-when-available UX, partner motivation, Dilovod + Nova Poshta via Flu.io.",
-      "result": "Live kayer.ua with local integrations, availability subscriptions and partner motivation — not a translated PL clone.",
+      "result": "KAYER.UA already shows measurable organic demand from Google. In Search Console over 3 months: 395 clicks, 2.17k impressions, 18.2% CTR and 5.7 average position. Over the last 28 days: 272 clicks (+55%) and 1.76k impressions (+77%). The /uk-ua home page received 203 clicks (+80%), while new Luxio Coy, Luxio Top and Luxio Lipgloss product pages started getting clicks from zero.",
       "nextSteps": [
-        "Screenshot: legacy WooCommerce admin vs new Shopify",
-        "Screenshot: Shopify homepage and product page (PL + UA)",
-        "Screenshot: BaseLinker sync and catalog mapping",
-        "Screenshot: multilingual product descriptions (PL / UA / EN)",
-        "Screenshot: Python automation scripts and promo idea → content flow",
-        "Screenshot: UA notify-when-available UX",
-        "Screenshot: Nova Poshta, Flu.io and Dilovod integrations",
-        "Screenshot: contractor motivation system and mobile views",
-        "Add real GSC traffic, orders and conversion metrics (placeholder until export)",
-        "Run and publish Lighthouse scores for both domains"
+        "Prepare safe Search Console screenshots for the 3-month and last-28-days views without private account data.",
+        "Review the pages already getting clicks: /uk-ua home, Luxio Coy, Luxio Top and Luxio Lipgloss.",
+        "Improve titles, descriptions, internal links and product copy on pages where clicks started from zero.",
+        "Add short buyer guides for the UA market: Luxio shades, base, top coat and compatibility.",
+        "Connect Search Console with orders or forms so the case can show commercial impact, not only traffic.",
+        "Add PageSpeed/Lighthouse screenshots for kayer.ua after the final mobile and desktop audit."
       ],
       "role": [
         "Led KAYER.PL migration: WooCommerce/WordPress → Shopify, theme and product/content workflows.",
@@ -644,7 +660,9 @@
         "Product and category pages structured for search on both markets.",
         "Multilingual PL/UA/EN content with hreflang and clean indexing.",
         "Luxio tutorials as long-tail SEO for PL.",
-        "Ukrainian content and local product presentation for UA."
+        "Ukrainian content and local product presentation for UA.",
+        "3-month GSC for kayer.ua: 395 clicks, 2.17k impressions, 18.2% CTR and 5.7 average position.",
+        "Last 28 days in GSC: 272 clicks (+55%) and 1.76k impressions (+77%); /uk-ua home page — 203 clicks (+80%)."
       ],
       "ai": [
         "OpenAI pipeline for multilingual descriptions and promo content in PL/UA/EN.",
@@ -653,11 +671,18 @@
         "Product + Offer + Review schema — machine-readable catalog for search and AI answers."
       ],
       "metrics": {
-        "market": "target market",
+        "gscClicks": "3-month clicks",
+        "gscImpressions": "3-month impressions",
+        "gscCtr": "3-month CTR",
+        "gscPosition": "average position",
+        "last28Clicks": "28-day clicks",
+        "last28Impressions": "28-day impressions",
+        "homeClicks": "/uk-ua home clicks",
+        "homeGrowth": "home page growth",
+        "newProductClicks": "new product clicks",
         "integrations": "local integrations",
         "notify": "notify-when-available",
-        "partners": "partner motivation",
-        "lighthouse": "Lighthouse performance"
+        "partners": "partner motivation"
       },
       "cardTitle": "KAYER.UA — Ukrainian market",
       "cardDesc": "Dedicated UA storefront: Nova Poshta, Dilovod, notify-when-available — not a translated PL clone."
