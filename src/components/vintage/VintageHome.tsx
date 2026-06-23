@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useCallback } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { formatPriceFrom } from "@/lib/pricing";
 import {
@@ -12,7 +11,6 @@ import { Link } from "@/i18n/navigation";
 import { GuideTapeArchive } from "@/components/guides/GuideTapeArchive";
 import { PopupWindow } from "./PopupWindow";
 import { servicePackages } from "@/content/services";
-import { SignalIntro } from "./SignalIntro";
 import { HeroSection } from "./HeroSection";
 import { PackageCard } from "./PackageCard";
 import { PricingSection } from "./PricingSection";
@@ -52,8 +50,6 @@ const salesPathVisuals = [
 ] as const;
 
 export function VintageHome() {
-  const [introDone, setIntroDone] = useState(false);
-  const handleIntroDone = useCallback(() => setIntroDone(true), []);
   const locale = useLocale();
   const l = locale as Locale;
   const t = useTranslations("home");
@@ -75,13 +71,7 @@ export function VintageHome() {
 
   return (
     <>
-      <SignalIntro onDone={handleIntroDone} />
-
-      <div
-        className={`transition-opacity duration-300 ${
-          introDone ? "opacity-100" : "opacity-0"
-        }`}
-      >
+      <div>
         <PopupWindow
           title={popups[0].title}
           text={popups[0].text}

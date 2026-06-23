@@ -10,7 +10,6 @@ import {
   type RetroCommercial,
 } from "@/content/retro-commercials";
 import { site } from "@/content/site";
-import { tvPreviewSrc } from "@/content/project-visuals";
 import { ScanlineOverlay } from "@/components/vintage/ScanlineOverlay";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { trackEvent } from "@/lib/analytics";
@@ -54,25 +53,6 @@ function useResolvedAd(ad: RetroCommercial): ResolvedAd {
   }, [ad, locale, t]);
 }
 
-function useDeferredExternalPreview(enabled: boolean) {
-  const [ready, setReady] = useState(!enabled);
-
-  useEffect(() => {
-    if (!enabled) return;
-
-    const activate = () => setReady(true);
-    if (typeof window.requestIdleCallback === "function") {
-      const id = window.requestIdleCallback(activate, { timeout: 2500 });
-      return () => window.cancelIdleCallback(id);
-    }
-
-    const timer = window.setTimeout(activate, 1500);
-    return () => window.clearTimeout(timer);
-  }, [enabled]);
-
-  return ready;
-}
-
 function RetroAdSitePreview({
   ad,
   reduced,
@@ -84,13 +64,7 @@ function RetroAdSitePreview({
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const label = ad.sitePreviewLabel ?? ad.sitePreviewUrl ?? "";
-  const useExternalPreview = Boolean(ad.sitePreviewUrl && !ad.sitePreviewLocal);
-  const externalReady = useDeferredExternalPreview(useExternalPreview);
-  const previewSrc =
-    ad.sitePreviewUrl &&
-    (ad.sitePreviewLocal || externalReady)
-      ? tvPreviewSrc(ad.sitePreviewUrl, ad.sitePreviewLocal)
-      : null;
+  const previewSrc = ad.sitePreviewLocal ?? null;
 
   if (!ad.sitePreviewUrl) return null;
 
@@ -103,9 +77,8 @@ function RetroAdSitePreview({
           width={200}
           height={125}
           className={`retro-ad__preview-img ${loaded ? "retro-ad__preview-img--loaded" : ""}`}
-          loading={ad.sitePreviewLocal ? "eager" : "lazy"}
-          fetchPriority={ad.sitePreviewLocal ? "high" : "low"}
-          unoptimized={!ad.sitePreviewLocal}
+          loading="eager"
+          fetchPriority="high"
           onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}
         />
