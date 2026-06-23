@@ -4,6 +4,7 @@ import { site } from "@/content/site";
 import { projectSlugs } from "@/content/projects";
 import { serviceSlugs } from "@/content/services";
 import { guideSlugs } from "@/content/guides";
+import { marketPages, getMarketPagePath } from "@/content/market-pages";
 import { marketingPipelineSlugs } from "@/data/marketing-pipelines";
 import { pipelineSlugs } from "@/data/pipelines";
 
@@ -33,7 +34,7 @@ function url(locale: string, path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return paths.flatMap((path) =>
+  const localizedCore = paths.flatMap((path) =>
     routing.locales.map((locale) => ({
       url: url(locale, path),
       lastModified: new Date(),
@@ -46,4 +47,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     })),
   );
+
+  const marketEntries = marketPages.map((page) => ({
+    url: url(page.locale, getMarketPagePath(page)),
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...localizedCore, ...marketEntries];
 }

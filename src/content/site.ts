@@ -20,4 +20,5 @@ export const site = {
     "https://www.linkedin.com/in/mikitalashytski",
   ),
   plausibleDomain: env("NEXT_PUBLIC_PLAUSIBLE_DOMAIN", ""),
+  clarityProjectId: env("NEXT_PUBLIC_CLARITY_PROJECT_ID", ""),
 } as const;

@@ -8,6 +8,8 @@ import { Providers } from "@/components/providers";
 import { VintageShell } from "@/components/vintage/VintageShell";
 import { JsonLd } from "@/components/json-ld";
 import { PlausibleScript } from "@/components/analytics/PlausibleScript";
+import { ClarityInit } from "@/components/analytics/ClarityInit";
+import { ConversionTracker } from "@/components/analytics/ConversionTracker";
 import { site } from "@/content/site";
 import { buildSeoMetadata } from "@/lib/seo";
 import "../globals.css";
@@ -144,8 +146,10 @@ export default async function LocaleLayout({
     >
       <body className="min-h-dvh">
         <PlausibleScript />
+        <ClarityInit />
         <Providers>
           <NextIntlClientProvider>
+            <ConversionTracker />
             <JsonLd data={[orgLd, personLd, websiteLd, professionalServiceLd]} />
             <VintageShell>{children}</VintageShell>
           </NextIntlClientProvider>

@@ -6,6 +6,7 @@ import {
   vintageWorksHome,
 } from "@/content/home-vintage";
 import { guideIntro, guideLabels, guides } from "@/content/guides";
+import { getMarketPagePath, getMarketPagesForLocale } from "@/content/market-pages";
 import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { GuideTapeArchive } from "@/components/guides/GuideTapeArchive";
@@ -49,6 +50,33 @@ const salesPathVisuals = [
   },
 ] as const;
 
+const marketLabels: Record<Locale, { tag: string; title: string; subtitle: string; cta: string }> = {
+  en: {
+    tag: "Market entry",
+    title: "Find the right page for your market",
+    subtitle: "Europe-first entry points for business websites, e-commerce and website rescue.",
+    cta: "Open page",
+  },
+  pl: {
+    tag: "Wejście na rynek",
+    title: "Wybierz stronę pod swój rynek",
+    subtitle: "Strony startowe dla firm w Polsce: usługi, e-commerce i SEO.",
+    cta: "Otwórz stronę",
+  },
+  ru: {
+    tag: "Вход по рынку",
+    title: "Выбери страницу под свой рынок",
+    subtitle: "Отдельные входы для сайта бизнеса, аудита и SEO-разбора.",
+    cta: "Открыть страницу",
+  },
+  uk: {
+    tag: "Вхід за ринком",
+    title: "Обери сторінку під свій ринок",
+    subtitle: "Окремі входи для сайту бізнесу, SEO-бази і запуску заявки.",
+    cta: "Відкрити сторінку",
+  },
+};
+
 export function VintageHome() {
   const locale = useLocale();
   const l = locale as Locale;
@@ -62,6 +90,8 @@ export function VintageHome() {
     subtitle: string;
     items: { label: string; title: string; text: string; cta: string; href: string }[];
   };
+  const marketPages = getMarketPagesForLocale(l);
+  const marketCopy = marketLabels[l];
 
   const timelineSteps = processSteps.map((s, i) => ({
     step: String(i + 1).padStart(2, "0"),
@@ -161,6 +191,40 @@ export function VintageHome() {
                   tag={p.tag}
                   href={p.href}
                 />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-[var(--doom-stone)]/40 bg-[#101014] section-spacing">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <VintageSectionHeader
+              tag={marketCopy.tag}
+              title={marketCopy.title}
+              subtitle={marketCopy.subtitle}
+              tagClassName="text-[var(--vhs-terminal)]"
+            />
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {marketPages.map((page) => (
+                <DoomCornerFrame key={`${page.market}-${page.slug}`}>
+                  <Link
+                    href={getMarketPagePath(page)}
+                    className="group block min-h-[260px] border-2 border-[var(--doom-stone)] bg-[#141418] p-5 transition-colors hover:border-[var(--vhs-acid)]"
+                  >
+                    <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                      {page.region}
+                    </span>
+                    <h3 className="mt-4 font-display text-3xl uppercase leading-none text-[var(--vhs-white)]">
+                      {page.title}
+                    </h3>
+                    <p className="mt-4 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                      {page.description}
+                    </p>
+                    <p className="mt-5 font-mono text-[10px] uppercase tracking-widest text-[var(--vhs-acid)]">
+                      {marketCopy.cta} →
+                    </p>
+                  </Link>
+                </DoomCornerFrame>
               ))}
             </div>
           </div>

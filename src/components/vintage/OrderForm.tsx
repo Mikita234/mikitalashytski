@@ -60,9 +60,11 @@ export function OrderForm() {
 
       if (res.status === 503) {
         setState("error");
+        trackEvent("Order Error", { service, reason: "telegram_not_configured" });
         return;
       }
     } catch {
+      trackEvent("Order Error", { service, reason: "network" });
       // network error — fall through to mailto
     } finally {
       setSubmitting(false);
@@ -83,6 +85,7 @@ export function OrderForm() {
         .filter(Boolean)
         .join("\n"),
     );
+    trackEvent("Order Mailto Fallback", { service });
     window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
     setState("sent");
   }

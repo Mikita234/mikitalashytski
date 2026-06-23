@@ -10,9 +10,9 @@
   },
   "hero": {
     "broadcast": "TRANSMISJA NA ŻYWO",
-    "title": "Strony, sklepy i automatyzacje, które naprawdę startują",
-    "subtitle": "Pomagam małym firmom przejść od pomysłu do działającej strony, sklepu albo bota: oferta, design, kod, domena, formularze, płatności, SEO i automatyzacja rutyny.",
-    "body": "Możesz zacząć od darmowych poradników. Jeśli utkniesz, zrobię audyt, naprawię albo zbuduję całość.",
+    "title": "Strony i SEO dla małych firm w Polsce i Europie",
+    "subtitle": "Pomagam małym firmom w Polsce, Europie, Ukrainie i Białorusi uruchamiać strony, Shopify sklepy i automatyzacje: oferta, design, kod, domena, formularze, płatności, Search Console i SEO.",
+    "body": "Zacznij od poradników, wybierz stronę rynkową albo wyślij projekt do praktycznego audytu.",
     "stack": ["Landingi", "Shopify", "BaseLinker", "Płatności", "Boty", "Automatyzacja", "SEO"],
     "ctaOrder": "Omów projekt",
     "ctaWorks": "Zobacz realizacje",

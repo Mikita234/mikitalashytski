@@ -76,7 +76,7 @@ export function VintageBulletList({
   items,
   accent = "bg-[var(--vhs-acid)]",
 }: {
-  items: string[];
+  items: readonly string[];
   accent?: string;
 }) {
   return (
