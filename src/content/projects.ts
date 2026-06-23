@@ -93,8 +93,9 @@ export const projects: Project[] = [
     lists: ["role", "ops", "integrations", "seo", "ai"],
     caseStudyBlocks: ["beforeAfter", "systemFlow"],
     screenshots: [
-      "/cases/kayer/shopify-home.webp",
-      "/cases/kayer/baselinker.webp",
+      "/cases/kayer/pl-gsc-3-months.png",
+      "/cases/kayer/pl-top-pages.png",
+      "/cases/kayer/pl-pagespeed-desktop.png",
     ],
   },
   {
@@ -139,7 +140,10 @@ export const projects: Project[] = [
     ],
     lists: ["role", "ops", "integrations", "seo", "ai"],
     caseStudyBlocks: ["beforeAfter", "systemFlow"],
-    screenshots: ["/cases/kayer/ua-notify.webp"],
+    screenshots: [
+      "/cases/kayer/ua-gsc-28-days.png",
+      "/cases/kayer/ua-gsc-3-months.png",
+    ],
   },
   {
     slug: "mnsk7-tools",
@@ -234,9 +238,11 @@ export const projects: Project[] = [
     lists: ["role", "ops", "integrations", "seo", "ai"],
     caseStudyBlocks: ["beforeAfter", "systemFlow"],
     screenshots: [
-      "/cases/popular/vitrine.webp",
-      "/cases/popular/tickets.webp",
-      "/cases/popular/bot.webp",
+      "/cases/popular/tickets-gsc-3-months.png",
+      "/cases/popular/poet-pagespeed-mobile.png",
+      "/cases/popular/poet-pagespeed-desktop.png",
+      "/cases/popular/tickets-pagespeed-mobile.png",
+      "/cases/popular/tickets-pagespeed-desktop.png",
     ],
   },
   {
