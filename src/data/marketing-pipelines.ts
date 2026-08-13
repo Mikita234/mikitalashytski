@@ -15,6 +15,12 @@ export interface MarketingPhase {
   doneWhen: Record<Locale, string>;
 }
 
+export interface MarketingSeoArticle {
+  label: string;
+  intro: string;
+  sections: { heading: string; paragraphs: string[] }[];
+}
+
 export interface MarketingPipeline {
   id: MarketingPipelineSlug;
   tag: string;
@@ -27,6 +33,7 @@ export interface MarketingPipeline {
   relatedStacks: string[];
   phases: MarketingPhase[];
   risks: Record<Locale, string[]>;
+  seoArticle?: Partial<Record<Locale, MarketingSeoArticle>>;
 }
 
 const L = (en: string, pl: string, ru: string, uk: string) =>
@@ -42,13 +49,13 @@ export const marketingPipelines: MarketingPipeline[] = [
     title: L(
       "Social & local visibility",
       "Social media i widoczność lokalna",
-      "Соцсети и локальная видимость",
+      "Как продвигать локальный бизнес в Google и соцсетях?",
       "Соцмережі та локальна видимість",
     ),
     description: L(
       "TikTok, Instagram, Google Business Profile — when you need them and when ads make sense.",
       "TikTok, Instagram, Google Business Profile — kiedy potrzebne i kiedy reklamy mają sens.",
-      "TikTok, Instagram, Google Business Profile — когда нужны и когда имеет смысл реклама.",
+      "Практический план локального продвижения через Google Business Profile, сайт, Instagram, TikTok, отзывы, аналитику и управляемую рекламу.",
       "TikTok, Instagram, Google Business Profile — коли потрібні й коли має сенс реклама.",
     ),
     honestNote: L(
@@ -57,6 +64,45 @@ export const marketingPipelines: MarketingPipeline[] = [
       "TikTok — опционально. Google Business Profile — обязателен для локальных услуг.",
       "TikTok — опційно. Google Business Profile — обовʼязковий для локальних послуг.",
     ),
+    seoArticle: {
+      ru: {
+        label: "Практический гайд · 5 минут",
+        intro:
+          "Локальный маркетинг малого бизнеса начинается с Google Business Profile, понятного сайта и регулярного контента в социальных сетях. Профиль компании приводит клиентов из карт, сайт превращает интерес в заявку, а Instagram и TikTok показывают реальные работы, команду и полезный опыт ежедневно.",
+        sections: [
+          {
+            heading: "Как оформить Google Business Profile?",
+            paragraphs: [
+              "Заполните название, основную категорию, адрес или территорию обслуживания, телефон, часы работы и ссылку на подходящую страницу сайта. Загрузите логотип, фасад, интерьер, команду и примеры выполненных работ. Описание компании должно конкретно называть услугу, город и ключевую пользу для клиента. Добавляйте новые фотографии и публикации каждый месяц. После каждого заказа отправляйте клиенту прямую ссылку на форму отзыва и отвечайте на все полученные оценки содержательно.",
+            ],
+          },
+          {
+            heading: "Как связать профиль компании с сайтом?",
+            paragraphs: [
+              "Ссылка из Google должна вести на страницу, которая подтверждает тот же адрес, телефон, график и перечень услуг. Разместите понятный заголовок, реальные фотографии, цены или принцип расчёта, отзывы, районы обслуживания и заметный способ связи. Для каждой важной услуги подготовьте отдельную страницу с конкретным ответом на запрос клиента. UTM-метка в ссылке профиля покажет визиты, звонки и заявки из карт в аналитике.",
+            ],
+          },
+          {
+            heading: "Какой контент публиковать в Instagram и TikTok?",
+            paragraphs: [
+              "Стройте контент вокруг реальной работы: короткий процесс, результат, ответ на частый вопрос, знакомство с сотрудником и полезный совет. Один съёмочный день может дать несколько вертикальных роликов, фотографии и Stories на неделю. Первые секунды сразу называют проблему или результат, титры помогают смотреть ролик с выключенным звуком, а финальная фраза ведёт на сайт, звонок или сообщение. Регулярный ритм укрепляет узнаваемость и доверие.",
+            ],
+          },
+          {
+            heading: "Когда запускать локальную рекламу?",
+            paragraphs: [
+              "Запускайте рекламу после проверки сайта, формы, звонка и аналитики. Выберите одну услугу, один регион и одно целевое действие. Google Ads помогает перехватывать сформированный спрос, Meta показывает предложение подходящей аудитории по интересам и географии. Начальный бюджет задаётся лимитом на месяц, а объявления получают отдельные UTM-метки. Через две недели сравните стоимость звонка, формы и качественной заявки по каждому каналу.",
+            ],
+          },
+          {
+            heading: "Как измерять результат локального маркетинга?",
+            paragraphs: [
+              "Еженедельно фиксируйте показы профиля, переходы на сайт, звонки, построенные маршруты, сообщения и заполненные формы. Добавьте источник обращения в CRM или простую таблицу. Отдельно считайте качественные заявки, продажи и выручку. Такой отчёт показывает каналы, которые приводят клиентов, и темы контента, которые поддерживают решение о покупке. Следующий бюджет направляйте в связку с подтверждённой конверсией.",
+            ],
+          },
+        ],
+      },
+    },
     bestFor: LA(
       ["Plumber, salon, cafe with local clients", "You can film 30-second clips", "You want phone calls from maps"],
       ["Hydraulik, salon, kawiarnia z lokalnymi klientami", "Możesz nagrać 30-sekundowe klipy", "Chcesz telefony z map"],
@@ -66,7 +112,7 @@ export const marketingPipelines: MarketingPipeline[] = [
     avoidIf: LA(
       ["B2B only with no visual work", "You hate being on camera and won't hire someone"],
       ["Tylko B2B bez wizualnej pracy", "Nie chcesz być przed kamerą i nie zatrudnisz nikogo"],
-      ["Только B2B без визуальной работы", "Не хочешь на камеру и не наймёшь съёмку"],
+      ["Для узкого B2B подготовьте экспертный формат", "Передайте съёмку сотруднику или подрядчику"],
       ["Лише B2B без візуальної роботи", "Не хочеш на камеру й не наймеш зйомку"],
     ),
     relatedGuides: ["tiktok-for-small-business", "website-launch-checklist-full"],
@@ -74,7 +120,7 @@ export const marketingPipelines: MarketingPipeline[] = [
     phases: [
       {
         code: "01",
-        title: L("Google Business Profile first", "Najpierw Google Business Profile", "Сначала Google Business Profile", "Спочатку Google Business Profile"),
+        title: L("Google Business Profile first", "Najpierw Google Business Profile", "Как запустить Google Business Profile?", "Спочатку Google Business Profile"),
         body: L(
           "Go to business.google.com → create profile → add real address, hours, phone, 5+ photos. Verify by postcard or phone.",
           "Wejdź na business.google.com → utwórz profil → prawdziwy adres, godziny, telefon, 5+ zdjęć. Weryfikacja pocztą lub telefonem.",
@@ -90,7 +136,7 @@ export const marketingPipelines: MarketingPipeline[] = [
       },
       {
         code: "02",
-        title: L("TikTok Business (optional)", "TikTok Business (opcjonalnie)", "TikTok Business (опционально)", "TikTok Business (опційно)"),
+        title: L("TikTok Business (optional)", "TikTok Business (opcjonalnie)", "Как подготовить TikTok Business?", "TikTok Business (опційно)"),
         body: L(
           "tiktok.com/business → switch to Business account → link website → post 3 clips: who you are, one job done, one tip. 15–30 sec, vertical.",
           "tiktok.com/business → konto Business → link do strony → 3 klipy: kim jesteś, jedna robota, jedna porada. 15–30 sek, pion.",
@@ -106,7 +152,7 @@ export const marketingPipelines: MarketingPipeline[] = [
       },
       {
         code: "03",
-        title: L("Instagram basics", "Podstawy Instagram", "Базовый Instagram", "Базовий Instagram"),
+        title: L("Instagram basics", "Podstawy Instagram", "Как оформить Instagram бизнеса?", "Базовий Instagram"),
         body: L(
           "Business account → same photos as site → Stories weekly → link in bio to contact form. Reuse TikTok clips as Reels.",
           "Konto firmowe → te same zdjęcia co na stronie → Stories co tydzień → link w bio do formularza. TikTok jako Reels.",
@@ -122,7 +168,7 @@ export const marketingPipelines: MarketingPipeline[] = [
       },
       {
         code: "04",
-        title: L("When to turn on ads", "Kiedy włączyć reklamy", "Когда включать рекламу", "Коли вмикати рекламу"),
+        title: L("When to turn on ads", "Kiedy włączyć reklamy", "Как запустить первую рекламу?", "Коли вмикати рекламу"),
         body: L(
           "Ads only after: site works, form sends email, GSC connected. Start with Google Ads local or Meta — budget cap 300–500/month, one offer.",
           "Reklamy dopiero gdy: strona działa, formularz wysyła mail, GSC podpięte. Start Google Ads lokalnie lub Meta — limit 300–500/mies., jedna oferta.",
@@ -140,7 +186,7 @@ export const marketingPipelines: MarketingPipeline[] = [
     risks: LA(
       ["Posting before site is live", "Fake stock photos on GBP", "Boosting posts with no tracking"],
       ["Posty zanim strona live", "Stockowe zdjęcia w GBP", "Boost postów bez śledzenia"],
-      ["Посты до живого сайта", "Стоковые фото в GBP", "Буст постов без отслеживания"],
+      ["Сначала проверьте сайт и контакты", "Публикуйте реальные фотографии в GBP", "Добавляйте UTM-метки каждому продвижению"],
       ["Пости до live сайту", "Стокові фото в GBP", "Буст постів без відстеження"],
     ),
   },

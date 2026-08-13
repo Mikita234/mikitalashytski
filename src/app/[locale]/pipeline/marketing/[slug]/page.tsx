@@ -51,28 +51,60 @@ export default async function MarketingPipelineDetailPage({ params }: Props) {
 
   const l = locale as Locale;
   const labels = pipelineLabels[l];
+  const seoArticle = pipeline.seoArticle?.[l];
+  const sectionLabels = seoArticle
+    ? {
+        bestFor: "Для каких компаний подходит этот план?",
+        avoidIf: "Что стоит подготовить заранее?",
+        relatedStack: "Какие инструменты понадобятся?",
+        phases: "Как запустить локальное продвижение?",
+        guides: "Какие материалы помогут с внедрением?",
+        risks: "Как поддерживать качество маркетинга?",
+      }
+    : {
+        bestFor: labels.bestFor,
+        avoidIf: labels.avoidIf,
+        relatedStack: "Related stack",
+        phases: pipeline.title[l],
+        guides: "Related guides",
+        risks: labels.risks,
+      };
+
+  const howToLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: pipeline.title[l],
+    description: pipeline.description[l],
+    inLanguage: l,
+    step: pipeline.phases.map((phase, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: phase.title[l],
+      text: phase.body[l],
+    })),
+  };
+  const faqLd = seoArticle
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: seoArticle.sections.map((section) => ({
+          "@type": "Question",
+          name: section.heading,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: section.paragraphs.join(" "),
+          },
+        })),
+      }
+    : null;
 
   return (
     <>
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          name: pipeline.title[l],
-          description: pipeline.description[l],
-          inLanguage: l,
-          step: pipeline.phases.map((phase, i) => ({
-            "@type": "HowToStep",
-            position: i + 1,
-            name: phase.title[l],
-            text: phase.body[l],
-          })),
-        }}
-      />
+      <JsonLd data={faqLd ? [howToLd, faqLd] : howToLd} />
       <VintagePageHeader
         tag={pipeline.tag}
         title={pipeline.title[l]}
-        subtitle={pipeline.description[l]}
+        subtitle={seoArticle?.intro ?? pipeline.description[l]}
       />
 
       <article className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
@@ -83,15 +115,52 @@ export default async function MarketingPipelineDetailPage({ params }: Props) {
           ← Marketing hub
         </Link>
 
+        {seoArticle && (
+          <section className="mt-10 overflow-hidden border-2 border-[var(--doom-stone)] bg-[#101014]">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-[#17171c] px-5 py-3">
+              <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--vhs-terminal)]">
+                ● {seoArticle.label}
+              </p>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
+                GBP / SOCIAL / LOCAL / 2026
+              </span>
+            </div>
+            <div className="grid gap-x-10 gap-y-10 p-5 sm:p-8 lg:grid-cols-2">
+              {seoArticle.sections.map((section, index) => (
+                <section
+                  key={section.heading}
+                  className={index === 0 ? "lg:col-span-2 lg:max-w-4xl" : undefined}
+                >
+                  <div className="mb-4 flex items-start gap-3">
+                    <span className="mt-1 font-mono text-[10px] text-[var(--vhs-acid)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h2 className="font-display text-3xl uppercase leading-none text-[var(--vhs-white)] sm:text-4xl">
+                      {section.heading}
+                    </h2>
+                  </div>
+                  <div className="space-y-4 border-l border-white/10 pl-7">
+                    {section.paragraphs.map((paragraph) => (
+                      <p key={paragraph} className="text-[15px] leading-7 text-[var(--vhs-body)]">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </section>
+        )}
+
         <p className="mt-8 border-l-4 border-[var(--vhs-acid)] pl-4 text-sm leading-relaxed text-[var(--vhs-body)] sm:text-base">
           {pipeline.honestNote[l]}
         </p>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          <VintageBlock title={labels.bestFor}>
+          <VintageBlock title={sectionLabels.bestFor}>
             <VintageBulletList items={pipeline.bestFor[l]} />
           </VintageBlock>
-          <VintageBlock title={labels.avoidIf}>
+          <VintageBlock title={sectionLabels.avoidIf}>
             <VintageBulletList items={pipeline.avoidIf[l]} accent="bg-[var(--vhs-red)]" />
           </VintageBlock>
         </div>
@@ -99,7 +168,7 @@ export default async function MarketingPipelineDetailPage({ params }: Props) {
         <section className="mt-10">
           <VintageSectionHeader
             tag="TOOLS"
-            title="Related stack"
+            title={sectionLabels.relatedStack}
             tagClassName="text-[var(--vhs-acid)]"
           />
           <div className="flex flex-wrap gap-2">
@@ -121,7 +190,7 @@ export default async function MarketingPipelineDetailPage({ params }: Props) {
         <section className="mt-10">
           <VintageSectionHeader
             tag={labels.buildPhases}
-            title={pipeline.title[l]}
+            title={sectionLabels.phases}
             tagClassName="text-[var(--vhs-terminal)]"
           />
           <div className="grid gap-4">
@@ -151,7 +220,7 @@ export default async function MarketingPipelineDetailPage({ params }: Props) {
         </section>
 
         <section className="mt-10">
-          <VintageSectionHeader tag="GUIDES" title="Related guides" tagClassName="text-[var(--doom-ammo)]" />
+          <VintageSectionHeader tag="GUIDES" title={sectionLabels.guides} tagClassName="text-[var(--doom-ammo)]" />
           <div className="flex flex-wrap gap-3">
             {pipeline.relatedGuides.map((guideSlug) => (
               <VHSButton key={guideSlug} href={`/guides/${guideSlug}`} variant="secondary">
@@ -162,7 +231,7 @@ export default async function MarketingPipelineDetailPage({ params }: Props) {
         </section>
 
         <div className="mt-10">
-          <VintageBlock title={labels.risks}>
+          <VintageBlock title={sectionLabels.risks}>
             <VintageBulletList items={pipeline.risks[l]} accent="bg-[var(--vhs-red)]" />
           </VintageBlock>
         </div>
