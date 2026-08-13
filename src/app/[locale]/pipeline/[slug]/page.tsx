@@ -53,13 +53,13 @@ export default async function PipelineDetailPage({ params }: Props) {
   const seoArticle = pipeline.seoArticle?.[l];
   const sectionLabels = seoArticle
     ? {
-        bestFor: "Для каких задач подходит автоматизация?",
-        avoidIf: "Что стоит подготовить перед автоматизацией?",
-        requiredInputs: "Какие данные нужны для старта?",
-        recommendedStack: "Какие инструменты подходят для сценария?",
+        bestFor: "Для каких задач подходит этот план?",
+        avoidIf: "Что стоит подготовить заранее?",
+        requiredInputs: "Какие материалы нужны для старта?",
+        recommendedStack: "Какие инструменты подходят проекту?",
         buildPhases: "Как проходит внедрение?",
-        buildTitle: "Как собрать пайплайн автоматизации?",
-        risks: "Как поддерживать стабильную работу?",
+        buildTitle: "Как реализовать проект по шагам?",
+        risks: "Как поддерживать качество результата?",
         rejected: "Какие решения стоит проверить заранее?",
         rescueTriggers: "Когда полезен технический разбор?",
       }
@@ -130,7 +130,7 @@ export default async function PipelineDetailPage({ params }: Props) {
                 ● {seoArticle.label}
               </p>
               <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
-                n8n / CRM / API / 2026
+                {pipeline.tag} / SEO / AEO / 2026
               </span>
             </div>
 
