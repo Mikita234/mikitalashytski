@@ -1108,7 +1108,7 @@ export const guides: Guide[] = [
     title: {
       en: "Prompts for Cursor that do not produce junk",
       pl: "Prompty do Cursora, które nie robią śmieci",
-      ru: "Промпты для Cursor, чтобы он не делал мусор",
+      ru: "Промпты для точной работы Cursor",
       uk: "Промпти для Cursor, щоб він не робив сміття",
     },
     description: {

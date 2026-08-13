@@ -91,7 +91,7 @@
     },
     "underHood": {
       "tag": "Под капотом",
-      "title": "Чего не видно на обложке",
+      "title": "Что работает под капотом",
       "subtitle": "Этот сайт сам по себе демо: идеальный Lighthouse, JSON-LD на самом себе, hreflang по локалям, sitemap и llms.txt.",
       "cards": [
         {

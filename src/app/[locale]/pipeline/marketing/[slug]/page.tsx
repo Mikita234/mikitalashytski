@@ -57,7 +57,7 @@ export default async function MarketingPipelineDetailPage({ params }: Props) {
         bestFor: "Для каких компаний подходит этот план?",
         avoidIf: "Что стоит подготовить заранее?",
         relatedStack: "Какие инструменты понадобятся?",
-        phases: "Как запустить локальное продвижение?",
+        phases: "Как внедрить этот план?",
         guides: "Какие материалы помогут с внедрением?",
         risks: "Как поддерживать качество маркетинга?",
       }
@@ -122,7 +122,7 @@ export default async function MarketingPipelineDetailPage({ params }: Props) {
                 ● {seoArticle.label}
               </p>
               <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--vhs-muted)]">
-                GBP / SOCIAL / LOCAL / 2026
+                {pipeline.tag} / SEO / AEO / 2026
               </span>
             </div>
             <div className="grid gap-x-10 gap-y-10 p-5 sm:p-8 lg:grid-cols-2">

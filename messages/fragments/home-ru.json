@@ -257,7 +257,7 @@
   "pricing": {
     "tag": "ПРАЙС",
     "title": "Стартовые цены",
-    "subtitle": "Диапазоны, не фикс. Аудит: €115–€205. Цены в EUR, выставление счёта гибкое.",
+    "subtitle": "Гибкие диапазоны: аудит €115–€205. Цены указаны в EUR, формат счёта подстраивается под проект.",
     "caption": "Цены «от» — точная сумма после короткого разговора.",
     "service": "Услуга",
     "from": "От",
@@ -285,13 +285,13 @@
   },
   "underHood": {
     "tag": "ПОД КАПОТОМ",
-    "title": "Чего не видно на обложке",
+    "title": "Что работает под капотом",
     "subtitle": "Сайт демонстрирует себя сам: JSON-LD, hreflang, sitemap, llms.txt, статический SSG.",
     "cards": [
       { "title": "Структурированные данные", "text": "Organization + Person + WebSite JSON-LD на каждой странице." },
       { "title": "Под AI-ответы", "text": "Публичный llms.txt и robots.txt для GPTBot, PerplexityBot, ClaudeBot." },
       { "title": "Мультиязычная архитектура", "text": "EN / PL / RU / UA с полным hreflang." },
-      { "title": "Производительность как фича", "text": "SSG, минимум JS, Core Web Vitals в зелёной зоне." }
+      { "title": "Скорость усиливает конверсию", "text": "SSG, компактный JavaScript и Core Web Vitals в зелёной зоне." }
     ],
     "viewSource": "Исходный код → JSON-LD",
     "techPanelTitle": "P300 ТЕХ. СПЕЦИФИКАЦИЯ",
@@ -318,7 +318,7 @@
     "ctaOrder": "Отправить бриф",
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
-    "startFrom": "СТАРТ ОТ ИДЕИ — НЕ ОТ ШАБЛОНА",
+    "startFrom": "СТАРТ ОТ ЗАДАЧИ И РЕЗУЛЬТАТА",
     "liveBadge": "● В ЭФИРЕ",
     "hpLabel": "HP",
     "recLabel": "REC"
