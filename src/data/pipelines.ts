@@ -25,6 +25,12 @@ export interface LocalizedBuildPhase {
   doneWhen: Record<Locale, string>;
 }
 
+export interface PipelineSeoArticle {
+  label: string;
+  intro: string;
+  sections: { heading: string; paragraphs: string[] }[];
+}
+
 export interface ProjectPipeline {
   id: PipelineSlug;
   tag: string;
@@ -40,6 +46,7 @@ export interface ProjectPipeline {
   buildPhases: LocalizedBuildPhase[];
   risks: Record<Locale, string[]>;
   rescueTriggers: Record<Locale, string[]>;
+  seoArticle?: Partial<Record<Locale, PipelineSeoArticle>>;
   isDefault?: boolean;
 }
 
@@ -685,13 +692,57 @@ export const pipelines: ProjectPipeline[] = [
   {
     id: "automation",
     tag: "PIPE-08",
-    title: L("Automation pipeline", "Pipeline automatyzacji", "Пайплайн автоматизации", "Pipeline автоматизації"),
+    title: L(
+      "Automation pipeline",
+      "Pipeline automatyzacji",
+      "Как автоматизировать бизнес через n8n, CRM и Telegram?",
+      "Pipeline автоматизації",
+    ),
     description: L(
       "n8n / scripts connecting forms, CRM, email, Telegram — after the site works.",
       "n8n / skrypty łączące formularze, CRM, email, Telegram — po działającej stronie.",
-      "n8n / скрипты: форма → CRM → email → Telegram — после рабочего сайта.",
+      "Практический план автоматизации заявок: n8n, CRM, email, Telegram, логи, защита от повторов, тестирование и измеримые метрики.",
       "n8n / скрипти: форма → CRM → email → Telegram — після робочого сайту.",
     ),
+    seoArticle: {
+      ru: {
+        label: "Практический гайд · 5 минут",
+        intro:
+          "Автоматизация бизнеса связывает сайт, формы, CRM, почту и Telegram в единый управляемый процесс. Заявка автоматически получает ответственного, фиксируется в системе, запускает уведомление и сохраняет историю действий. Такой сценарий ускоряет обработку лидов, снижает ручную нагрузку и делает результат измеримым каждый день.",
+        sections: [
+          {
+            heading: "Какие процессы стоит автоматизировать в первую очередь?",
+            paragraphs: [
+              "Начните с действий, которые команда повторяет ежедневно по понятным правилам. Хороший кандидат имеет чёткий триггер, одинаковый набор данных и проверяемый результат. Обычно это распределение заявок, уведомления о заказах, перенос контактов в CRM, подготовка счетов, публикация контента и регулярные отчёты. Запишите текущий процесс шаг за шагом, укажите ответственного и измерьте время выполнения. Такая карта показывает приоритеты и ожидаемую экономию.",
+            ],
+          },
+          {
+            heading: "Как выбрать инструмент для автоматизации?",
+            paragraphs: [
+              "n8n удобно соединяет формы, таблицы, CRM, почту, Telegram и популярные API через визуальный сценарий. Команда получает понятную схему, историю запусков и быстрые изменения. Собственный скрипт подходит для сложной обработки данных, высокой нагрузки и специальных правил бизнеса. Выбор опирается на объём операций, доступные интеграции, требования к хранению данных и человека, который будет сопровождать систему после запуска.",
+            ],
+          },
+          {
+            heading: "Как выглядит надёжный сценарий автоматизации?",
+            paragraphs: [
+              "Надёжный workflow принимает данные, проверяет обязательные поля, присваивает уникальный идентификатор и выполняет шаги в заданном порядке. Каждый запуск сохраняет статус, время, входные данные и понятное сообщение об ошибке. Повторные попытки обрабатывают временные сбои сервисов, дедупликация защищает CRM от повторных лидов, а лимиты запросов поддерживают стабильную работу API. Ответственный получает уведомление с контекстом и ссылкой на конкретный запуск.",
+            ],
+          },
+          {
+            heading: "Как проверить автоматизацию перед запуском?",
+            paragraphs: [
+              "Подготовьте тестовые сценарии для обычной заявки, пустого поля, повторной отправки, временного сбоя API и крупного файла. Проверьте итоговую запись в CRM, письмо клиенту, уведомление менеджеру и журнал событий. Затем проведите ограниченный запуск на реальных данных и сравните результат с ручным процессом. Инструкция по паузе, повторному запуску и замене ключей помогает владельцу уверенно управлять системой.",
+            ],
+          },
+          {
+            heading: "Как измерять пользу автоматизации?",
+            paragraphs: [
+              "Зафиксируйте время обработки до запуска, количество операций в месяц, долю ошибок и скорость первого ответа клиенту. После внедрения отслеживайте успешные запуски, повторные попытки, экономию часов и конверсию заявок. Простой еженедельный отчёт показывает реальную ценность системы. Следующий сценарий добавляйте после стабильной работы первого потока и подтверждённой пользы для команды.",
+            ],
+          },
+        ],
+      },
+    },
     bestFor: LA(
       ["Lead routing", "Order notifications", "Content prep scripts"],
       ["Routing leadów", "Powiadomienia o zamówieniach", "Skrypty prep contentu"],
@@ -701,7 +752,7 @@ export const pipelines: ProjectPipeline[] = [
     avoidIf: LA(
       ["No live website yet", "One-off task with no repeat"],
       ["Brak live strony", "Jednorazowe zadanie bez powtórzeń"],
-      ["Ещё нет живого сайта", "Разовая задача без повторений"],
+      ["Сначала запустите сайт и проверьте форму", "Выбирайте процесс с регулярными повторениями"],
       ["Ще немає live сайту", "Разова задача без повторень"],
     ),
     requiredInputs: LA(
@@ -715,32 +766,32 @@ export const pipelines: ProjectPipeline[] = [
     rejectedOptions: LA(
       ["Automate before form works", "Zapier for 500 runs/month at scale"],
       ["Automatyzacja zanim forma działa", "Zapier na skalę 500 runów"],
-      ["Автоматизация до рабочей формы", "Zapier на масштабе"],
+      ["Запускайте автоматизацию после проверки формы", "Рассчитайте стоимость Zapier при 500+ запусках"],
       ["Автоматизація до робочої форми", "Zapier у масштабі"],
     ),
     skillPackFiles: ["01-start-here.md", "02-business-brief.md", "agent-instructions.md", "deploy-checklist.md"],
     buildPhases: phases([
       {
         code: "01",
-        title: L("Map one flow", "Jeden flow", "Один flow", "Один flow"),
+        title: L("Map one flow", "Jeden flow", "Как описать первый поток?", "Один flow"),
         body: L("Form submit → notify → spreadsheet row. Draw it on paper first.", "Formularz → notify → wiersz w arkuszu. Najpierw na papierze.", "Форма → уведомление → строка в таблице. Сначала на бумаге.", "Форма → notify → рядок у таблиці. Спочатку на папері."),
         doneWhen: L("Test submission creates row + email", "Test tworzy wiersz + email", "Тест создаёт строку + email", "Тест створює рядок + email"),
       },
       {
         code: "02",
-        title: L("Build with logging", "Buduj z logami", "Собрать с логами", "Зібрати з логами"),
+        title: L("Build with logging", "Buduj z logami", "Как добавить логи и алерты?", "Зібрати з логами"),
         body: L("Add each step with retries, error log, owner alert and sample payloads.", "Kroki z retry, error log, alert ownera i sample payloads.", "Добавь retry, error log, alert owner и sample payloads.", "Додай retry, error log, alert owner і sample payloads."),
         doneWhen: L("A failed run creates an alert with enough context", "Nieudany run tworzy alert z kontekstem", "Падение создаёт alert с контекстом", "Падіння створює alert з контекстом"),
       },
       {
         code: "03",
-        title: L("Deduplicate and rate-limit", "Dedup i rate-limit", "Dedup и rate-limit", "Dedup і rate-limit"),
+        title: L("Deduplicate and rate-limit", "Dedup i rate-limit", "Как защитить данные от повторов?", "Dedup і rate-limit"),
         body: L("Prevent duplicate leads, repeated emails, API limit crashes and infinite loops.", "Stop duplikatom leadów, maili, limitom API i pętlom.", "Останови дубли лидов, повторные email, API limits и loops.", "Зупини дублі leads, email, API limits і loops."),
-        doneWhen: L("Repeated test payload does not create duplicate customer records", "Powtórzony payload nie tworzy duplikatu klienta", "Повтор payload не создаёт дубль клиента", "Повтор payload не створює дубль клієнта"),
+        doneWhen: L("Repeated test payload does not create duplicate customer records", "Powtórzony payload nie tworzy duplikatu klienta", "Повтор payload сохраняет одну запись клиента", "Повтор payload не створює дубль клієнта"),
       },
       {
         code: "04",
-        title: L("Monitor and hand off", "Monitoruj i przekaż", "Мониторинг и handoff", "Моніторинг і handoff"),
+        title: L("Monitor and hand off", "Monitoruj i przekaż", "Как передать сценарий владельцу?", "Моніторинг і handoff"),
         body: L("Create a runbook: how to pause, replay, rotate keys and check last successful run.", "Runbook: pauza, replay, rotacja keys, ostatni udany run.", "Runbook: pause, replay, rotate keys, last successful run.", "Runbook: pause, replay, rotate keys, last successful run."),
         doneWhen: L("Owner can verify the automation worked today", "Owner sprawdza czy automatyzacja dziś działała", "Владелец может проверить, работала ли автоматизация сегодня", "Власник може перевірити, чи працювала автоматизація сьогодні"),
       },
@@ -748,13 +799,13 @@ export const pipelines: ProjectPipeline[] = [
     risks: LA(
       ["Silent failures", "No logging", "API key in repo"],
       ["Ciche błędy", "Brak logów", "API key w repo"],
-      ["Тихие падения", "Нет логов", "API key в repo"],
+      ["Настройте алерты для каждого сбоя", "Сохраняйте логи каждого запуска", "Храните API key в secret storage"],
       ["Тихі падіння", "Немає логів", "API key у repo"],
     ),
     rescueTriggers: LA(
       ["Workflow stopped", "Duplicate leads", "Rate limit hit"],
       ["Workflow stanął", "Duplikaty leadów", "Rate limit"],
-      ["Workflow встал", "Дубли лидов", "Rate limit"],
+      ["Workflow требует восстановления", "CRM получает повторные лиды", "API достигает rate limit"],
       ["Workflow зупинився", "Дублі лідів", "Rate limit"],
     ),
   },

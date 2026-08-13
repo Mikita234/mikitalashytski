@@ -10,9 +10,16 @@
   },
   "hero": {
     "broadcast": "LIVE BROADCAST",
-    "title": "Websites and SEO systems for small businesses in Europe",
-    "subtitle": "I help small businesses in Europe, Ukraine and Belarus launch websites, Shopify stores and automations: offer, design, code, domain, forms, payments, Search Console and SEO.",
-    "body": "Start with free guides, open a market page, or send the project for a practical audit and build plan.",
+    "studioLabel": "Independent web development studio · Warsaw",
+    "availability": "Booking selected projects · Q3 2026",
+    "title": "Web products built for action",
+    "subtitle": "A web development studio for service brands and small businesses: strategy, distinctive design, production code, SEO and the complete path from first visit to enquiry.",
+    "body": "Every build connects the visible page with forms, payments, analytics, local search and practical workflows your team can use from day one.",
+    "proofs": [
+      { "value": "10+", "label": "live digital products" },
+      { "value": "4", "label": "languages shipped" },
+      { "value": "90+", "label": "performance target" }
+    ],
     "stack": ["Landings", "Shopify", "BaseLinker", "Payments", "Bots", "Automation", "SEO"],
     "ctaOrder": "Discuss project",
     "ctaWorks": "View works",
@@ -236,6 +243,7 @@
     "viewAll": "All works",
     "browseArchive": "Back to hero TV",
     "openCase": "View case",
+    "visitLive": "Visit live site",
     "filters": {
       "all": "All",
       "ecommerce": "E-commerce",

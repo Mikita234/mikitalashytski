@@ -10,9 +10,16 @@
   },
   "hero": {
     "broadcast": "TRANSMISJA NA ŻYWO",
-    "title": "Strony i SEO dla małych firm w Polsce i Europie",
-    "subtitle": "Pomagam małym firmom w Polsce, Europie, Ukrainie i Białorusi uruchamiać strony, Shopify sklepy i automatyzacje: oferta, design, kod, domena, formularze, płatności, Search Console i SEO.",
-    "body": "Zacznij od poradników, wybierz stronę rynkową albo wyślij projekt do praktycznego audytu.",
+    "studioLabel": "Niezależne studio internetowe · Warszawa",
+    "availability": "Wybrane projekty · Q3 2026",
+    "title": "Produkty webowe stworzone do działania",
+    "subtitle": "Studio internetowe dla marek usługowych i małych firm: strategia, wyrazisty design, produkcyjny kod, SEO oraz pełna ścieżka od pierwszej wizyty do zapytania.",
+    "body": "Każdy projekt łączy warstwę wizualną z formularzami, płatnościami, analityką, lokalnym SEO i praktycznym workflow gotowym od pierwszego dnia.",
+    "proofs": [
+      { "value": "10+", "label": "działających produktów" },
+      { "value": "4", "label": "wdrożone języki" },
+      { "value": "90+", "label": "cel performance" }
+    ],
     "stack": ["Landingi", "Shopify", "BaseLinker", "Płatności", "Boty", "Automatyzacja", "SEO"],
     "ctaOrder": "Omów projekt",
     "ctaWorks": "Zobacz realizacje",
@@ -236,6 +243,7 @@
     "viewAll": "Wszystkie realizacje",
     "browseArchive": "Do TV w hero",
     "openCase": "Zobacz case",
+    "visitLive": "Otwórz stronę live",
     "filters": {
       "all": "Wszystko",
       "ecommerce": "E-commerce",

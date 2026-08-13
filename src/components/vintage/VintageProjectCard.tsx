@@ -44,18 +44,21 @@ export function VintageProjectCard({
   const t = useTranslations("home.works");
   const isWin98 = style === "win98";
   const isHash = href.startsWith("#");
+  const isExternal = href.startsWith("http");
 
   const inner = (
     <>
       <ProjectMiniPreview slug={slug} title={title} className="mb-4" />
 
-      <div className="mb-3 flex items-start justify-between gap-2">
+      <div className="mb-4 flex items-center justify-between gap-3 border-b border-white/10 pb-3">
         <span
           className={`shrink-0 px-1.5 py-0.5 font-mono text-[8px] font-bold uppercase ${statusColors[status]}`}
         >
           {status}
         </span>
-        <span className="font-mono text-[8px] text-[var(--vhs-muted)]">{domain}</span>
+        <span className="truncate font-mono text-[9px] tracking-wide text-[var(--vhs-muted)]">
+          {domain}
+        </span>
         {style === "vhs" && (
           <span className="font-mono text-[8px] text-[var(--vhs-red)] rec-blink">
             ● REC
@@ -64,14 +67,14 @@ export function VintageProjectCard({
       </div>
 
       <h3
-        className={`font-display text-lg uppercase tracking-wide sm:text-xl ${
+        className={`font-display text-2xl uppercase leading-none tracking-wide sm:text-3xl ${
           isWin98 ? "text-black" : "text-[var(--vhs-white)]"
         }`}
       >
         {title}
       </h3>
       <p
-        className={`mt-2 text-xs leading-relaxed sm:text-sm ${
+        className={`mt-3 min-h-[4.5rem] text-xs leading-relaxed sm:text-sm ${
           isWin98 ? "text-[#333]" : "text-[var(--vhs-muted)]"
         }`}
       >
@@ -94,16 +97,16 @@ export function VintageProjectCard({
       </div>
 
       <span
-        className={`mt-4 inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest ${
+        className={`mt-5 inline-flex items-center gap-2 border-t border-current/20 pt-3 font-mono text-[10px] uppercase tracking-widest ${
           isWin98 ? "text-[#000080]" : "text-[var(--vhs-acid)]"
         }`}
       >
-        {t("openCase")} →
+        {isExternal ? t("visitLive") : t("openCase")} <span aria-hidden>↗</span>
       </span>
     </>
   );
 
-  const cls = `group block overflow-hidden border-2 transition-transform hover:-translate-y-1 ${styleClasses[style]} ${
+  const cls = `group block min-h-full overflow-hidden border-2 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[var(--vhs-acid)] hover:shadow-[0_18px_50px_-24px_rgba(212,196,122,0.45)] ${styleClasses[style]} ${
     style === "vhs" ? "vhs-card-tape" : ""
   }`;
 
@@ -114,6 +117,14 @@ export function VintageProjectCard({
   if (isHash) {
     return (
       <a href={href} className={cls}>
+        {body}
+      </a>
+    );
+  }
+
+  if (isExternal) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
         {body}
       </a>
     );

@@ -61,6 +61,33 @@ const vintageWorkEntries: VintageWorkEntry[] = [
     domain: "alesyatakun.by",
   },
   {
+    slug: "ideaactors",
+    category: "websites",
+    tags: ["Next.js", "i18n", "Local SEO", "Booking"],
+    status: "LIVE",
+    href: "https://ideaactors.pl",
+    style: "ad",
+    domain: "ideaactors.pl",
+  },
+  {
+    slug: "flexiprzeprowadzki",
+    category: "websites",
+    tags: ["Local SEO", "Calculator", "Lead flow", "Next.js"],
+    status: "LIVE",
+    href: "https://flexiprzeprowadzki.pl",
+    style: "tv",
+    domain: "flexiprzeprowadzki.pl",
+  },
+  {
+    slug: "velixo",
+    category: "websites",
+    tags: ["Next.js", "B2B", "Service SEO", "Lead flow"],
+    status: "LIVE",
+    href: "https://velixo-five.vercel.app/",
+    style: "teletext",
+    domain: "velixo-five.vercel.app",
+  },
+  {
     slug: "event-bot",
     category: "bots",
     tags: ["Gemini", "Automation", "Bing ping", "Popular Poet"],
@@ -89,9 +116,16 @@ const vintageWorkEntries: VintageWorkEntry[] = [
   },
 ];
 
-/** Featured on homepage — 4 flagships */
+/** Featured on homepage — recent flagship builds */
 export const vintageWorksHome = vintageWorkEntries.filter((w) =>
-  ["kayer-pl", "kayer-ua", "popular", "mnsk7-tools"].includes(w.slug),
+  [
+    "ideaactors",
+    "flexiprzeprowadzki",
+    "velixo",
+    "popular",
+    "kayer-pl",
+    "mnsk7-tools",
+  ].includes(w.slug),
 );
 
 export const vintageWorks = vintageWorkEntries;

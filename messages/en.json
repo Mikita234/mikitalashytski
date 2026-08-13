@@ -328,6 +328,18 @@
       "cardTitle": "Popular Poet — Sales system",
       "cardDesc": "Course vitrine + own box office + Gemini bot (~4 events/week). AI organic → ticket sales in 2 weeks."
     },
+    "ideaactors": {
+      "cardTitle": "IDEA Actors — theatre studio",
+      "cardDesc": "A multilingual Warsaw studio website with age-group programmes, trial-class booking, local SEO and a focused mobile enquiry path."
+    },
+    "flexiprzeprowadzki": {
+      "cardTitle": "Flexi — moving services",
+      "cardDesc": "A conversion-led local service website with instant pricing, a moving calculator, real project proof and district-level SEO for Warsaw."
+    },
+    "velixo": {
+      "cardTitle": "Velixo Partner — workforce B2B",
+      "cardDesc": "A full B2B service website for staffing and process outsourcing, with industry pages, city SEO and two focused enquiry paths."
+    },
     "alesyatakun": {
       "category": "Personal brand · Payments",
       "tagline": "A psychologist's site with secure online payment and a pay-what-fits booking flow.",

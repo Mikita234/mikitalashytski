@@ -3,7 +3,10 @@ export type ProjectSlug =
   | "kayer-ua"
   | "mnsk7-tools"
   | "popular"
-  | "alesyatakun";
+  | "alesyatakun"
+  | "ideaactors"
+  | "flexiprzeprowadzki"
+  | "velixo";
 
 export const projectVisuals: Record<
   ProjectSlug,
@@ -52,6 +55,27 @@ export const projectVisuals: Record<
     accent: "#f43f5e",
     accentGlow: "rgba(244,63,94,0.35)",
     channel: "CH-04",
+  },
+  ideaactors: {
+    domain: "ideaactors.pl",
+    url: "https://ideaactors.pl",
+    accent: "#d9a6ff",
+    accentGlow: "rgba(217,166,255,0.35)",
+    channel: "CH-05",
+  },
+  flexiprzeprowadzki: {
+    domain: "flexiprzeprowadzki.pl",
+    url: "https://flexiprzeprowadzki.pl",
+    accent: "#ff7a38",
+    accentGlow: "rgba(255,122,56,0.35)",
+    channel: "CH-06",
+  },
+  velixo: {
+    domain: "velixo-five.vercel.app",
+    url: "https://velixo-five.vercel.app/",
+    accent: "#9f7aea",
+    accentGlow: "rgba(159,122,234,0.35)",
+    channel: "CH-07",
   },
 };
 

@@ -315,7 +315,7 @@ export function VintageHome() {
               subtitle={t("works.subtitle")}
               tagClassName="text-[var(--vhs-terminal)]"
             />
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {vintageWorksHome.map((w) => (
                 <VintageProjectCard
                   key={w.slug}
