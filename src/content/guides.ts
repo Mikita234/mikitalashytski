@@ -11,6 +11,7 @@ export type GuideSlug =
   | "google-search-console-setup"
   | "yandex-for-ru-market"
   | "frameworks-pick-2026"
+  | "check-website-before-rebuild"
   | "website-launch-checklist-full"
   | "seo-internal-linking"
   | "homepage-seo-description"
@@ -835,24 +836,25 @@ export const guideContentClusters: GuideContentCluster[] = [
   {
     code: "CL-01",
     title: {
-      en: "Launch and technical SEO",
-      pl: "Launch i techniczne SEO",
-      ru: "Запуск и техническое SEO",
-      uk: "Запуск і технічне SEO",
+      en: "Audit, migration and technical SEO",
+      pl: "Audyt, migracja i techniczne SEO",
+      ru: "Аудит, миграция и техническое SEO",
+      uk: "Аудит, міграція й технічне SEO",
     },
     body: {
-      en: "From a live site to indexing, Search Console, internal links and AI-readable files.",
-      pl: "Od działającej strony do indeksacji, Search Console, linków wewnętrznych i plików czytelnych dla AI.",
-      ru: "От живого сайта до индексации, Search Console, внутренних ссылок и файлов, понятных AI.",
-      uk: "Від live-сайту до індексації, Search Console, внутрішніх links і файлів, зрозумілих AI.",
+      en: "From current-site evidence to safe migration, indexing, Search Console, internal links and AI-readable files.",
+      pl: "Od danych obecnej strony do bezpiecznej migracji, indeksacji, Search Console, linków wewnętrznych i plików czytelnych dla AI.",
+      ru: "От данных текущего сайта до безопасной миграции, индексации, Search Console, внутренних ссылок и файлов, понятных AI.",
+      uk: "Від даних поточного сайту до безпечної міграції, індексації, Search Console, внутрішніх links і файлів, зрозумілих AI.",
     },
     guides: [
+      "check-website-before-rebuild",
       "website-launch-checklist-full",
       "google-search-console-setup",
       "seo-internal-linking",
       "ai-search-llms-txt",
     ],
-    href: "/guides/website-launch-checklist-full",
+    href: "/guides/check-website-before-rebuild",
   },
   {
     code: "CL-02",
@@ -1586,6 +1588,192 @@ export const guides: Guide[] = [
       ru: { title: "Путаница со стеком?", body: "Кидай brief. Подберу стек + хостинг на одной странице.", bullets: ["Разбор brief", "Выбор стека", "Промпт для Cursor"] },
       uk: { title: "Плутанина зі stack?", body: "Кидай brief. Підберу stack + хостинг на одній сторінці.", bullets: ["Розбір brief", "Вибір stack", "Промпт для Cursor"] },
     },
+  },
+  {
+    slug: "check-website-before-rebuild",
+    tape: "TAPE-22",
+    channel: "REBUILD",
+    minutes: 9,
+    tags: ["Audit", "Rescue", "SEO", "Rebuild"],
+    title: {
+      en: "How do you check a website before a rebuild?",
+      pl: "Jak sprawdzić stronę przed przebudową?",
+      ru: "Как проверить сайт перед rebuild?",
+      uk: "Як перевірити сайт перед rebuild?",
+    },
+    description: {
+      en: "A practical pre-rebuild audit: goals, analytics, search data, conversion paths, URL inventory, integrations and a clear rescue-versus-rebuild decision.",
+      pl: "Praktyczny audyt przed przebudową: cele, analityka, dane z wyszukiwarki, ścieżki konwersji, adresy URL, integracje i jasna decyzja rescue albo rebuild.",
+      ru: "Практический аудит перед rebuild: цели, аналитика, поисковые данные, конверсионные пути, URL, интеграции и ясное решение между rescue и полной пересборкой.",
+      uk: "Практичний аудит перед rebuild: цілі, аналітика, пошукові дані, шляхи конверсії, URL, інтеграції та чітке рішення між rescue і повною перебудовою.",
+    },
+    intro: {
+      en: "Before rebuilding a website, define the business goal, export analytics and search data, test every key action, inventory URLs and integrations, then rank findings by impact. This evidence shows whether a focused rescue or a full rebuild creates the strongest result.",
+      pl: "Przed przebudową strony określ cel biznesowy, wyeksportuj dane analityczne i wyszukiwarki, przetestuj kluczowe działania, zinwentaryzuj adresy URL i integracje, a następnie uporządkuj wnioski według wpływu. Te dowody wskazują najlepszy zakres rescue albo pełnego rebuild.",
+      ru: "Перед rebuild зафиксируйте бизнес-цель, выгрузите аналитику и поисковые данные, проверьте ключевые действия, соберите список URL и интеграций, затем расставьте находки по влиянию. Эти доказательства показывают оптимальный формат: точечный rescue или полная пересборка.",
+      uk: "Перед rebuild зафіксуйте бізнес-ціль, вивантажте аналітику й пошукові дані, перевірте ключові дії, зберіть список URL та інтеграцій, потім розставте знахідки за впливом. Ці докази показують оптимальний формат: точковий rescue або повна перебудова.",
+    },
+    outcome: {
+      en: [
+        "A measurable goal and current baseline",
+        "A keep, improve and retire inventory",
+        "A safe URL and integration migration map",
+        "A prioritized rescue or rebuild plan",
+      ],
+      pl: [
+        "Mierzalny cel i obecny punkt odniesienia",
+        "Lista elementów do zachowania, poprawy i wycofania",
+        "Bezpieczna mapa migracji URL oraz integracji",
+        "Priorytetowy plan rescue albo rebuild",
+      ],
+      ru: [
+        "Измеримая цель и текущая точка отсчёта",
+        "Список элементов для сохранения, усиления и архивирования",
+        "Безопасная карта переноса URL и интеграций",
+        "Приоритетный план rescue или rebuild",
+      ],
+      uk: [
+        "Вимірювана ціль і поточна точка відліку",
+        "Список елементів для збереження, посилення й архівування",
+        "Безпечна карта перенесення URL та інтеграцій",
+        "Пріоритетний план rescue або rebuild",
+      ],
+    },
+    steps: {
+      en: [
+        {
+          title: "What business result should the rebuild improve?",
+          body: "Choose one primary result: qualified leads, purchases, bookings or applications. Record the current monthly number, conversion rate and lead quality. Add a target and review date. This gives the project a measurable finish line and keeps visual preferences connected to business value.",
+        },
+        {
+          title: "Which data reveals the site’s current strengths?",
+          body: "Export the last 90 days from Search Console and your analytics tool. List landing pages with clicks, impressions, conversions and valuable backlinks. Capture Core Web Vitals and branded queries. Mark assets worth preserving so the new release carries proven visibility and demand forward.",
+        },
+        {
+          title: "How should you test the visitor journey?",
+          body: "Open the site on a phone and complete the path from landing page to form, checkout or booking. Check navigation, buttons, validation, confirmation and contact fallbacks. Record each finding with a URL, screenshot, expected action and business impact so implementation stays precise.",
+        },
+        {
+          title: "What needs a migration map?",
+          body: "Inventory every indexable URL, title, H1, useful section, downloadable file, schema type and tracking event. Add forms, CRM, payments, email, domains and third-party scripts. Map old URLs to final destinations with 301 redirects and assign an owner to every integration test.",
+        },
+        {
+          title: "How do you choose rescue or full rebuild?",
+          body: "Score every issue by business impact, effort and release risk. A rescue sprint fits a sound structure with several high-value fixes. A full rebuild fits projects where content model, navigation, technology and conversion flow all limit growth. Write the decision beside the evidence and budget range.",
+        },
+      ],
+      pl: [
+        {
+          title: "Jaki wynik biznesowy ma poprawić przebudowa?",
+          body: "Wybierz jeden główny wynik: wartościowe zapytania, zakupy, rezerwacje albo aplikacje. Zapisz obecną liczbę miesięczną, współczynnik konwersji i jakość leadów. Dodaj cel oraz datę weryfikacji. Projekt zyskuje mierzalną metę, a decyzje wizualne pozostają połączone z wartością biznesową.",
+        },
+        {
+          title: "Które dane pokazują obecne mocne strony strony?",
+          body: "Wyeksportuj ostatnie 90 dni z Search Console i narzędzia analitycznego. Zapisz landing pages z kliknięciami, wyświetleniami, konwersjami oraz wartościowymi linkami. Dodaj Core Web Vitals i zapytania brandowe. Oznacz zasoby warte zachowania, aby nowa wersja przejęła sprawdzoną widoczność i popyt.",
+        },
+        {
+          title: "Jak przetestować ścieżkę odwiedzającego?",
+          body: "Otwórz stronę na telefonie i przejdź od wejścia do formularza, zakupu albo rezerwacji. Sprawdź nawigację, przyciski, walidację, potwierdzenie i kontakty zapasowe. Zapisz każdy wniosek z adresem URL, zrzutem, oczekiwanym działaniem oraz wpływem biznesowym, aby wdrożenie pozostało precyzyjne.",
+        },
+        {
+          title: "Co wymaga mapy migracji?",
+          body: "Zinwentaryzuj każdy indeksowany URL, title, H1, użyteczną sekcję, plik, typ schema i zdarzenie analityczne. Dodaj formularze, CRM, płatności, email, domeny oraz skrypty zewnętrzne. Połącz stare adresy z docelowymi przez przekierowania 301 i przypisz właściciela każdemu testowi integracji.",
+        },
+        {
+          title: "Jak wybrać rescue albo pełny rebuild?",
+          body: "Oceń każdą kwestię według wpływu biznesowego, nakładu i ryzyka publikacji. Rescue sprint pasuje do solidnej struktury z kilkoma wartościowymi poprawkami. Pełny rebuild pasuje do projektu, w którym model treści, nawigacja, technologia i konwersja ograniczają wzrost. Zapisz decyzję razem z dowodami i budżetem.",
+        },
+      ],
+      ru: [
+        {
+          title: "Какой бизнес-результат должен улучшить rebuild?",
+          body: "Выберите один главный результат: целевые заявки, покупки, бронирования или регистрации. Запишите текущее месячное значение, конверсию и качество обращений. Добавьте целевой показатель и дату проверки. Проект получает измеримый финиш, а визуальные решения сохраняют связь с бизнес-ценностью.",
+        },
+        {
+          title: "Какие данные показывают сильные стороны сайта?",
+          body: "Выгрузите последние 90 дней из Search Console и системы аналитики. Отметьте посадочные страницы с кликами, показами, конверсиями и ценными ссылками. Добавьте Core Web Vitals и брендовые запросы. Составьте список активов для сохранения, чтобы новая версия унаследовала подтверждённую видимость и спрос.",
+        },
+        {
+          title: "Как проверить путь посетителя?",
+          body: "Откройте сайт на телефоне и пройдите путь от входа до формы, покупки или бронирования. Проверьте навигацию, кнопки, валидацию, подтверждение и резервные контакты. Оформите каждую находку через URL, скриншот, ожидаемое действие и влияние на бизнес — команда получит точную задачу.",
+        },
+        {
+          title: "Что включить в карту миграции?",
+          body: "Соберите индексируемые URL, title, H1, полезные секции, файлы, типы schema и события аналитики. Добавьте формы, CRM, платежи, email, домены и внешние скрипты. Свяжите старые адреса с целевыми через редиректы 301 и назначьте ответственного за каждую проверку интеграции.",
+        },
+        {
+          title: "Как выбрать rescue или полную пересборку?",
+          body: "Оцените каждую проблему по влиянию на бизнес, объёму работы и риску релиза. Rescue sprint подходит крепкой структуре с несколькими ценными исправлениями. Полная пересборка подходит проекту, где модель контента, навигация, технология и конверсионный путь ограничивают рост. Зафиксируйте решение рядом с доказательствами и бюджетом.",
+        },
+      ],
+      uk: [
+        {
+          title: "Який бізнес-результат має покращити rebuild?",
+          body: "Оберіть один головний результат: цільові заявки, покупки, бронювання або реєстрації. Запишіть поточне місячне значення, конверсію та якість звернень. Додайте цільовий показник і дату перевірки. Проєкт отримує вимірюваний фініш, а візуальні рішення зберігають зв’язок із бізнес-цінністю.",
+        },
+        {
+          title: "Які дані показують сильні сторони сайту?",
+          body: "Вивантажте останні 90 днів із Search Console та системи аналітики. Позначте посадкові сторінки з кліками, показами, конверсіями й цінними посиланнями. Додайте Core Web Vitals і брендові запити. Складіть список активів для збереження, щоб нова версія успадкувала підтверджену видимість і попит.",
+        },
+        {
+          title: "Як перевірити шлях відвідувача?",
+          body: "Відкрийте сайт на телефоні та пройдіть шлях від входу до форми, покупки або бронювання. Перевірте навігацію, кнопки, валідацію, підтвердження й резервні контакти. Оформіть кожну знахідку через URL, скриншот, очікувану дію та вплив на бізнес — команда отримає точне завдання.",
+        },
+        {
+          title: "Що включити до карти міграції?",
+          body: "Зберіть індексовані URL, title, H1, корисні секції, файли, типи schema та події аналітики. Додайте форми, CRM, платежі, email, домени й зовнішні скрипти. Зв’яжіть старі адреси з цільовими через редиректи 301 і призначте відповідального за кожну перевірку інтеграції.",
+        },
+        {
+          title: "Як обрати rescue або повну перебудову?",
+          body: "Оцініть кожну проблему за впливом на бізнес, обсягом роботи та ризиком релізу. Rescue sprint пасує міцній структурі з кількома цінними виправленнями. Повна перебудова пасує проєкту, де модель контенту, навігація, технологія й конверсійний шлях обмежують зростання. Зафіксуйте рішення поруч із доказами та бюджетом.",
+        },
+      ],
+    },
+    mistakes: {
+      en: [
+        "Export performance data before editing templates",
+        "Assign an owner to every form and integration",
+        "Verify redirects and conversion events on staging",
+      ],
+      pl: [
+        "Wyeksportuj dane przed edycją szablonów",
+        "Przypisz właściciela do formularzy i integracji",
+        "Sprawdź przekierowania oraz konwersje na stagingu",
+      ],
+      ru: [
+        "Выгрузите данные до редактирования шаблонов",
+        "Назначьте владельца каждой формы и интеграции",
+        "Проверьте редиректы и конверсии на staging",
+      ],
+      uk: [
+        "Вивантажте дані до редагування шаблонів",
+        "Призначте власника кожної форми та інтеграції",
+        "Перевірте редиректи й конверсії на staging",
+      ],
+    },
+    cta: {
+      en: {
+        title: "Would a focused audit clarify the rebuild?",
+        body: "Send the current URL and primary business goal. You receive evidence, priorities and the recommended implementation format.",
+        bullets: ["Technical and conversion review", "Rescue versus rebuild decision", "Prioritized action plan"],
+      },
+      pl: {
+        title: "Czy konkretny audyt wyjaśni zakres przebudowy?",
+        body: "Wyślij obecny URL i główny cel biznesowy. Otrzymasz dowody, priorytety oraz rekomendowany format wdrożenia.",
+        bullets: ["Przegląd techniczny i konwersyjny", "Decyzja rescue albo rebuild", "Priorytetowy plan działania"],
+      },
+      ru: {
+        title: "Поможет ли точечный аудит определить формат rebuild?",
+        body: "Пришлите текущий URL и главную бизнес-цель. Вы получите доказательства, приоритеты и рекомендуемый формат внедрения.",
+        bullets: ["Технический и конверсионный разбор", "Решение между rescue и rebuild", "Приоритетный план действий"],
+      },
+      uk: {
+        title: "Чи допоможе точковий аудит визначити формат rebuild?",
+        body: "Надішліть поточний URL і головну бізнес-ціль. Ви отримаєте докази, пріоритети та рекомендований формат впровадження.",
+        bullets: ["Технічний і конверсійний розбір", "Рішення між rescue і rebuild", "Пріоритетний план дій"],
+      },
+    },
+    related: ["website-launch-checklist-full", "ai-website-mistakes", "when-to-hire"],
   },
   {
     slug: "website-launch-checklist-full",

@@ -49,6 +49,11 @@ const guideConversions: Record<GuideSlug, GuideConversion> = {
   "google-search-console-setup": { lane: "diy", href: "/pipeline/marketing" },
   "yandex-for-ru-market": { lane: "diy", href: "/pipeline/marketing" },
   "frameworks-pick-2026": { lane: "diy", href: "/pipeline/beginner" },
+  "check-website-before-rebuild": {
+    lane: "rescue",
+    href: "/website-rescue",
+    service: "audit",
+  },
   "website-launch-checklist-full": {
     lane: "rescue",
     href: "/website-rescue",
@@ -163,6 +168,8 @@ export default async function GuidePage({ params }: Props) {
   const localePrefix = l === routing.defaultLocale ? "" : `/${l}`;
   const guideUrl = `${site.url}${localePrefix}/guides/${guide.slug}`;
   const conversion = guideConversions[guide.slug];
+  const isRebuildAudit = guide.slug === "check-website-before-rebuild";
+  const publishedAt = isRebuildAudit ? "2026-08-17" : "2026-06-19";
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -171,8 +178,8 @@ export default async function GuidePage({ params }: Props) {
     description: guide.description[l],
     author: { "@type": "Person", name: site.name, url: site.url },
     publisher: { "@type": "Organization", name: site.name, url: site.url },
-    datePublished: "2026-06-19",
-    dateModified: "2026-06-19",
+    datePublished: publishedAt,
+    dateModified: publishedAt,
     inLanguage: l,
     mainEntityOfPage: guideUrl,
     keywords: guide.tags.join(", "),
@@ -197,9 +204,21 @@ export default async function GuidePage({ params }: Props) {
     ],
   };
 
+  const faqLd = isRebuildAudit
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: guide.steps[l].map((step) => ({
+          "@type": "Question",
+          name: step.title,
+          acceptedAnswer: { "@type": "Answer", text: step.body },
+        })),
+      }
+    : null;
+
   return (
     <>
-      <JsonLd data={[articleLd, breadcrumbLd]} />
+      <JsonLd data={faqLd ? [articleLd, breadcrumbLd, faqLd] : [articleLd, breadcrumbLd]} />
       <VintagePageHeader
         tag={`${guide.tape} / ${guide.channel}`}
         title={guide.title[l]}
