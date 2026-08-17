@@ -18,6 +18,28 @@ const marketSectionLabels: Record<Locale, { tag: string; title: string; cta: str
   uk: { tag: "Сторінки ринків", title: "Входи за регіонами", cta: "Відкрити сторінку" },
 };
 
+const resourceLabels: Record<
+  Locale,
+  { tag: string; title: string; guide: string; pipeline: string }
+> = {
+  en: { tag: "Next steps", title: "Guide and implementation plan", guide: "Read guide", pipeline: "Open pipeline" },
+  pl: { tag: "Kolejne kroki", title: "Poradnik i plan wdrożenia", guide: "Czytaj poradnik", pipeline: "Otwórz pipeline" },
+  ru: { tag: "Следующие шаги", title: "Гайд и план внедрения", guide: "Читать гайд", pipeline: "Открыть пайплайн" },
+  uk: { tag: "Наступні кроки", title: "Гайд і план впровадження", guide: "Читати гайд", pipeline: "Відкрити pipeline" },
+};
+
+const serviceResources: Record<
+  ServiceSlug,
+  { guide: string; pipeline: string }
+> = {
+  landing: { guide: "service-page-that-converts", pipeline: "business-site" },
+  business: { guide: "service-page-that-converts", pipeline: "business-site" },
+  ecommerce: { guide: "website-launch-checklist-full", pipeline: "ecommerce" },
+  automation: { guide: "cursor-prompts", pipeline: "automation" },
+  audit: { guide: "website-launch-checklist-full", pipeline: "rescue" },
+  creative: { guide: "case-study-proof-structure", pipeline: "portfolio" },
+};
+
 export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
   const meta = getServiceMeta(slug)!;
   const locale = await getLocale();
@@ -34,6 +56,9 @@ export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
   const deliverables = t.raw("deliverables") as string[];
   const marketPages = getMarketPagesForService(l, slug);
   const marketLabels = marketSectionLabels[l];
+  const resources = serviceResources[slug];
+  const resourcesCopy = resourceLabels[l];
+  const orderService = slug === "creative" ? "business" : slug;
 
   const faqLd = {
     "@context": "https://schema.org",
@@ -149,7 +174,7 @@ export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
         <div className="mt-8 rounded border border-[var(--doom-stone)] bg-[var(--doom-panel)] p-6 text-center">
           <p className="type-h3">{tc("ctaMid")}</p>
           <div className="mt-4">
-            <VHSButton href={`/order?service=${slug === "automation" ? "automation" : slug}`} variant="primary">
+            <VHSButton href={`/order?service=${orderService}`} variant="primary">
               {tc("ctaMidButton")} →
             </VHSButton>
           </div>
@@ -165,6 +190,22 @@ export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
             </div>
           </VintageBlock>
         </div>
+
+        <section className="mt-10 border-t border-[var(--doom-stone)]/50 pt-10">
+          <VintageSectionHeader
+            tag={resourcesCopy.tag}
+            title={resourcesCopy.title}
+            tagClassName="text-[var(--vhs-acid)]"
+          />
+          <div className="grid gap-3 sm:grid-cols-2">
+            <VHSButton href={`/guides/${resources.guide}`} variant="secondary">
+              {resourcesCopy.guide} →
+            </VHSButton>
+            <VHSButton href={`/pipeline/${resources.pipeline}`} variant="secondary">
+              {resourcesCopy.pipeline} →
+            </VHSButton>
+          </div>
+        </section>
 
         {marketPages.length > 0 && (
           <section className="mt-10 border-t border-[var(--doom-stone)]/50 pt-10">
@@ -214,7 +255,7 @@ export async function ServicePageContent({ slug }: { slug: ServiceSlug }) {
         </div>
 
         <div className="mt-10 text-center">
-          <VHSButton href={`/order?service=${slug === "creative" ? "business" : slug}`} variant="primary">
+          <VHSButton href={`/order?service=${orderService}`} variant="primary">
             {t("ctaBottom")} →
           </VHSButton>
         </div>

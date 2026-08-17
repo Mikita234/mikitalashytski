@@ -12,11 +12,108 @@ import {
 import { VHSButton } from "@/components/vintage/VHSButton";
 import { buildSeoMetadata } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
-import { getGuide, guideLabels, guides } from "@/content/guides";
+import {
+  getGuide,
+  guideLabels,
+  guides,
+  type GuideSlug,
+} from "@/content/guides";
 import { site } from "@/content/site";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
+};
+
+type GuideConversion = {
+  lane: "diy" | "rescue" | "build";
+  href: string;
+  service?: string;
+};
+
+const guideConversions: Record<GuideSlug, GuideConversion> = {
+  "make-website-yourself": { lane: "diy", href: "/pipeline/beginner" },
+  "cursor-github-vercel": { lane: "diy", href: "/pipeline/beginner" },
+  "cursor-prompts": { lane: "diy", href: "/pipeline/automation" },
+  "ai-website-mistakes": {
+    lane: "rescue",
+    href: "/website-rescue",
+    service: "audit",
+  },
+  "when-to-hire": {
+    lane: "rescue",
+    href: "/website-rescue",
+    service: "audit",
+  },
+  "tiktok-for-small-business": { lane: "diy", href: "/pipeline/marketing" },
+  "google-ads-starter": { lane: "diy", href: "/pipeline/marketing" },
+  "google-search-console-setup": { lane: "diy", href: "/pipeline/marketing" },
+  "yandex-for-ru-market": { lane: "diy", href: "/pipeline/marketing" },
+  "frameworks-pick-2026": { lane: "diy", href: "/pipeline/beginner" },
+  "website-launch-checklist-full": {
+    lane: "rescue",
+    href: "/website-rescue",
+    service: "audit",
+  },
+  "seo-internal-linking": { lane: "diy", href: "/pipeline/marketing" },
+  "homepage-seo-description": {
+    lane: "build",
+    href: "/order?service=business",
+    service: "business",
+  },
+  "google-business-profile": {
+    lane: "build",
+    href: "/order?service=business",
+    service: "business",
+  },
+  "form-tracking-conversions": {
+    lane: "build",
+    href: "/order?service=automation",
+    service: "automation",
+  },
+  "service-page-that-converts": {
+    lane: "build",
+    href: "/order?service=business",
+    service: "business",
+  },
+  "case-study-proof-structure": {
+    lane: "build",
+    href: "/order?service=business",
+    service: "business",
+  },
+  "safe-case-screenshots": {
+    lane: "rescue",
+    href: "/website-rescue",
+    service: "audit",
+  },
+  "seo-content-clusters": { lane: "diy", href: "/pipeline/marketing" },
+  "ai-search-llms-txt": { lane: "diy", href: "/pipeline/marketing" },
+  "analytics-without-ga4": { lane: "diy", href: "/pipeline/marketing" },
+};
+
+const conversionLabels: Record<
+  Locale,
+  Record<GuideConversion["lane"], string>
+> = {
+  en: {
+    diy: "Continue with the DIY plan",
+    rescue: "Open website rescue",
+    build: "Discuss implementation",
+  },
+  pl: {
+    diy: "Kontynuuj z planem DIY",
+    rescue: "Otwórz website rescue",
+    build: "Omów wdrożenie",
+  },
+  ru: {
+    diy: "Продолжить по плану DIY",
+    rescue: "Открыть Website Rescue",
+    build: "Обсудить внедрение",
+  },
+  uk: {
+    diy: "Продовжити за планом DIY",
+    rescue: "Відкрити Website Rescue",
+    build: "Обговорити впровадження",
+  },
 };
 
 export function generateStaticParams() {
@@ -65,6 +162,7 @@ export default async function GuidePage({ params }: Props) {
         .slice(0, 3);
   const localePrefix = l === routing.defaultLocale ? "" : `/${l}`;
   const guideUrl = `${site.url}${localePrefix}/guides/${guide.slug}`;
+  const conversion = guideConversions[guide.slug];
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -186,8 +284,17 @@ export default async function GuidePage({ params }: Props) {
               accent="bg-[var(--vhs-terminal)]"
             />
             <div className="mt-6">
-              <VHSButton href="/order" variant="primary">
-                Rescue / audit →
+              <VHSButton
+                href={conversion.href}
+                variant="primary"
+                analytics={{
+                  event: "visitor_lane_click",
+                  location: "guide_cta",
+                  lane: conversion.lane,
+                  service: conversion.service,
+                }}
+              >
+                {conversionLabels[l][conversion.lane]} →
               </VHSButton>
             </div>
           </VintageBlock>

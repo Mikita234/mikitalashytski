@@ -21,6 +21,7 @@ import { CaseScreenshotGallery } from "@/components/vintage/CaseScreenshotGaller
 import { VHSButton } from "@/components/vintage/VHSButton";
 import { projectVisuals, type ProjectSlug } from "@/content/project-visuals";
 import { vintageWorks } from "@/content/home-vintage";
+import type { ServiceSlug } from "@/content/services";
 import { site } from "@/content/site";
 import {
   projects,
@@ -82,9 +83,21 @@ const cardStyle: Record<string, "vhs" | "tv" | "teletext" | "ad" | "win98"> = {
   astrologichnaya: "teletext",
 };
 
+const projectServices: Record<string, ServiceSlug> = {
+  "kayer-pl": "ecommerce",
+  "kayer-ua": "ecommerce",
+  "mnsk7-tools": "ecommerce",
+  popular: "business",
+  alesyatakun: "business",
+  "event-bot": "automation",
+  "lead-scraping": "automation",
+  astrologichnaya: "creative",
+};
+
 export function VintageProjectContent({ project }: { project: Project }) {
   const t = useTranslations(`projects.${project.slug}`);
   const tProjects = useTranslations("projects");
+  const tServices = useTranslations("services");
   const pp = useTranslations("projectPage");
   const common = useTranslations("common");
 
@@ -99,6 +112,8 @@ export function VintageProjectContent({ project }: { project: Project }) {
   const dot = accentMap[project.accent];
   const baStyle = beforeAfterStyle[project.accent];
   const textAccent = accentText[project.accent];
+  const relatedService = projectServices[slug] ?? "business";
+  const orderService = relatedService === "creative" ? "business" : relatedService;
 
   const role = t.raw("role") as string[];
   const ops = t.raw("ops") as string[];
@@ -284,11 +299,28 @@ export function VintageProjectContent({ project }: { project: Project }) {
               {pp("salesNoteBody")}
             </p>
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              <VHSButton href="/order" variant="primary">
+              <VHSButton
+                href={`/order?service=${orderService}`}
+                variant="primary"
+                analytics={{
+                  event: "visitor_lane_click",
+                  location: "case_summary",
+                  lane: "build",
+                  service: orderService,
+                }}
+              >
                 {pp("ctaOrder")} →
               </VHSButton>
-              <VHSButton href="/guides" variant="secondary">
-                {pp("ctaGuides")} →
+              <VHSButton
+                href={`/services/${relatedService}`}
+                variant="secondary"
+                analytics={{
+                  event: "service_open",
+                  location: "case_summary",
+                  service: relatedService,
+                }}
+              >
+                {tServices(`${relatedService}.title`)} →
               </VHSButton>
             </div>
           </div>
@@ -462,8 +494,28 @@ export function VintageProjectContent({ project }: { project: Project }) {
         )}
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <VHSButton href="/order" variant="primary">
+          <VHSButton
+            href={`/order?service=${orderService}`}
+            variant="primary"
+            analytics={{
+              event: "visitor_lane_click",
+              location: "case_footer",
+              lane: "build",
+              service: orderService,
+            }}
+          >
             {pp("ctaOrder")} →
+          </VHSButton>
+          <VHSButton
+            href={`/services/${relatedService}`}
+            variant="secondary"
+            analytics={{
+              event: "service_open",
+              location: "case_footer",
+              service: relatedService,
+            }}
+          >
+            {tServices(`${relatedService}.title`)} →
           </VHSButton>
           <VHSButton href="/guides" variant="secondary">
             {pp("ctaGuides")} →
