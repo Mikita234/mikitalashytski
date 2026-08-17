@@ -54,6 +54,11 @@ const guideConversions: Record<GuideSlug, GuideConversion> = {
     href: "/website-rescue",
     service: "audit",
   },
+  "choose-landing-business-site-or-store": {
+    lane: "build",
+    href: "/order?service=business",
+    service: "business",
+  },
   "website-launch-checklist-full": {
     lane: "rescue",
     href: "/website-rescue",

@@ -12,6 +12,7 @@ export type GuideSlug =
   | "yandex-for-ru-market"
   | "frameworks-pick-2026"
   | "check-website-before-rebuild"
+  | "choose-landing-business-site-or-store"
   | "website-launch-checklist-full"
   | "seo-internal-linking"
   | "homepage-seo-description"
@@ -871,12 +872,13 @@ export const guideContentClusters: GuideContentCluster[] = [
       uk: "Metadata головної, структура послуги, local profile і реклама без зливу кліків.",
     },
     guides: [
+      "choose-landing-business-site-or-store",
       "homepage-seo-description",
       "service-page-that-converts",
       "google-business-profile",
       "google-ads-starter",
     ],
-    href: "/guides/service-page-that-converts",
+    href: "/guides/choose-landing-business-site-or-store",
   },
   {
     code: "CL-03",
@@ -1588,6 +1590,80 @@ export const guides: Guide[] = [
       ru: { title: "Путаница со стеком?", body: "Кидай brief. Подберу стек + хостинг на одной странице.", bullets: ["Разбор brief", "Выбор стека", "Промпт для Cursor"] },
       uk: { title: "Плутанина зі stack?", body: "Кидай brief. Підберу stack + хостинг на одній сторінці.", bullets: ["Розбір brief", "Вибір stack", "Промпт для Cursor"] },
     },
+  },
+  {
+    slug: "choose-landing-business-site-or-store",
+    tape: "TAPE-23",
+    channel: "FORMAT",
+    minutes: 8,
+    tags: ["Brief", "Landing", "Business website", "E-commerce"],
+    title: {
+      en: "How do you choose a landing page, business website or online store?",
+      pl: "Jak wybrać landing page, stronę firmową albo sklep internetowy?",
+      ru: "Как выбрать лендинг, бизнес-сайт или интернет-магазин?",
+      uk: "Як обрати лендинг, бізнес-сайт або інтернет-магазин?",
+    },
+    description: {
+      en: "Choose the website format from the offer, number of customer journeys, search demand, catalog operations and the action that creates revenue.",
+      pl: "Wybierz format strony na podstawie oferty, liczby ścieżek klienta, popytu w wyszukiwarce, obsługi katalogu i działania, które tworzy przychód.",
+      ru: "Выберите формат сайта по офферу, количеству клиентских путей, поисковому спросу, работе с каталогом и действию, которое приносит выручку.",
+      uk: "Оберіть формат сайту за офером, кількістю клієнтських шляхів, пошуковим попитом, роботою з каталогом і дією, що приносить дохід.",
+    },
+    intro: {
+      en: "Choose a landing page for one offer and one conversion path, a business website for several services and search topics, and an online store for a managed catalog with checkout. Start from customer actions and operations, then size design and technology.",
+      pl: "Wybierz landing page dla jednej oferty i jednej ścieżki konwersji, stronę firmową dla kilku usług oraz tematów wyszukiwania, a sklep dla zarządzanego katalogu z checkoutem. Zacznij od działań klienta i operacji, a potem dobierz projekt oraz technologię.",
+      ru: "Выбирайте лендинг для одного оффера и одного конверсионного пути, бизнес-сайт для нескольких услуг и поисковых тем, интернет-магазин для управляемого каталога с checkout. Сначала определите действия клиента и операционные процессы, затем подберите дизайн и технологию.",
+      uk: "Обирайте лендинг для одного офера й одного конверсійного шляху, бізнес-сайт для кількох послуг і пошукових тем, інтернет-магазин для керованого каталогу з checkout. Спочатку визначте дії клієнта та операційні процеси, потім доберіть дизайн і технологію.",
+    },
+    outcome: {
+      en: ["A justified website format", "A focused first-release scope", "A list of required content and functions", "A suitable service and budget range"],
+      pl: ["Uzasadniony format strony", "Skupiony zakres pierwszej wersji", "Lista potrzebnych treści i funkcji", "Odpowiednia usługa oraz zakres budżetu"],
+      ru: ["Обоснованный формат сайта", "Сфокусированный объём первого релиза", "Список нужного контента и функций", "Подходящая услуга и диапазон бюджета"],
+      uk: ["Обґрунтований формат сайту", "Сфокусований обсяг першого релізу", "Список потрібного контенту й функцій", "Відповідна послуга та діапазон бюджету"],
+    },
+    steps: {
+      en: [
+        { title: "When does a landing page fit the task?", body: "Use a landing page when one audience receives one focused offer and moves toward one main action. Typical cases include a campaign, event, new service, lead magnet or early demand test. Prepare a clear promise, proof, pricing logic, answers to objections and a form or booking link." },
+        { title: "When does a business website create more value?", body: "Choose a business website when customers compare several services, locations, industries or cases. Separate pages let each search intent receive a precise answer and internal links. Plan a homepage, service pages, about, cases, FAQ and contact path, then assign an owner for regular content updates." },
+        { title: "When does the project need an online store?", body: "Choose a store when visitors select products or variants, see availability, pay online and expect order communication. Scope catalog structure, filters, taxes, delivery, payments, returns, stock and analytics. Include daily operations: who imports products, updates prices, processes orders and supports customers." },
+        { title: "Which questions reveal the right scope?", body: "Count offers, page templates, languages, products, monthly orders and integrations. Identify the primary traffic sources and actions. Check who edits content and how often. These answers expose the real system behind the screen and show whether a focused page, structured website or commerce platform fits." },
+        { title: "How should you plan the first release?", body: "Select the smallest release that completes the core customer journey and produces measurable data. Put essential content, tracking, forms and operational integrations into launch scope. Move additional languages, content clusters, loyalty, advanced filtering and automation into named stages with owners, budgets and review dates." },
+      ],
+      pl: [
+        { title: "Kiedy landing page pasuje do zadania?", body: "Wybierz landing page, gdy jedna grupa odbiorców otrzymuje konkretną ofertę i przechodzi do jednego głównego działania. Typowe zastosowania to kampania, wydarzenie, nowa usługa, lead magnet lub test popytu. Przygotuj obietnicę, dowody, logikę ceny, odpowiedzi na pytania oraz formularz albo rezerwację." },
+        { title: "Kiedy strona firmowa daje większą wartość?", body: "Wybierz stronę firmową, gdy klienci porównują kilka usług, lokalizacji, branż lub realizacji. Osobne podstrony precyzyjnie odpowiadają na intencje wyszukiwania i tworzą linkowanie wewnętrzne. Zaplanuj homepage, usługi, firmę, case studies, FAQ oraz kontakt, a następnie wyznacz właściciela aktualizacji treści." },
+        { title: "Kiedy projekt potrzebuje sklepu internetowego?", body: "Wybierz sklep, gdy odwiedzający wybierają produkty lub warianty, widzą dostępność, płacą online i otrzymują komunikację o zamówieniu. Określ katalog, filtry, podatki, dostawę, płatności, zwroty, magazyn i analitykę. Dodaj codzienne operacje: import produktów, ceny, obsługę zamówień i klientów." },
+        { title: "Które pytania pokazują właściwy zakres?", body: "Policz oferty, szablony podstron, języki, produkty, miesięczne zamówienia i integracje. Wskaż główne źródła ruchu oraz działania. Sprawdź, kto edytuje treść i jak często. Odpowiedzi pokazują prawdziwy system za ekranem i kierują do skupionej strony, rozbudowanego serwisu albo platformy commerce." },
+        { title: "Jak zaplanować pierwszą wersję?", body: "Wybierz najmniejszą wersję, która domyka główną ścieżkę klienta i dostarcza mierzalne dane. Umieść w zakresie startowym kluczową treść, tracking, formularze oraz integracje operacyjne. Kolejne języki, klastry treści, lojalność, zaawansowane filtry i automatyzacje wpisz do nazwanych etapów z właścicielem, budżetem i datą oceny." },
+      ],
+      ru: [
+        { title: "Когда задаче подходит лендинг?", body: "Выбирайте лендинг, когда одна аудитория получает сфокусированный оффер и движется к одному главному действию. Типичные задачи: кампания, событие, новая услуга, лид-магнит или проверка спроса. Подготовьте ясное обещание, доказательства, логику цены, ответы на вопросы и форму либо ссылку бронирования." },
+        { title: "Когда бизнес-сайт создаёт больше ценности?", body: "Выбирайте бизнес-сайт, когда клиенты сравнивают несколько услуг, локаций, отраслей или кейсов. Отдельные страницы дают точный ответ каждому поисковому интенту и создают внутренние связи. Запланируйте главную, услуги, информацию о компании, кейсы, FAQ и контактный путь, затем назначьте владельца обновлений." },
+        { title: "Когда проекту нужен интернет-магазин?", body: "Выбирайте магазин, когда посетители подбирают товары или варианты, видят наличие, платят онлайн и получают сообщения о заказе. Опишите каталог, фильтры, налоги, доставку, платежи, возвраты, склад и аналитику. Добавьте ежедневные процессы: импорт товаров, обновление цен, обработку заказов и поддержку покупателей." },
+        { title: "Какие вопросы показывают подходящий объём?", body: "Посчитайте офферы, шаблоны страниц, языки, товары, месячные заказы и интеграции. Укажите основные источники трафика и действия. Определите владельца контента и частоту обновлений. Ответы раскрывают реальную систему за экраном и направляют к лендингу, структурированному сайту или commerce-платформе." },
+        { title: "Как спланировать первый релиз?", body: "Выберите компактный релиз, который завершает главный путь клиента и даёт измеримые данные. Включите в запуск основной контент, аналитику, формы и операционные интеграции. Дополнительные языки, контентные кластеры, лояльность, расширенные фильтры и автоматизацию распределите по этапам с ответственными, бюджетами и датами проверки." },
+      ],
+      uk: [
+        { title: "Коли завданню пасує лендинг?", body: "Обирайте лендинг, коли одна аудиторія отримує сфокусований офер і рухається до однієї головної дії. Типові завдання: кампанія, подія, нова послуга, лід-магніт або перевірка попиту. Підготуйте чітку обіцянку, докази, логіку ціни, відповіді на питання та форму або посилання бронювання." },
+        { title: "Коли бізнес-сайт створює більше цінності?", body: "Обирайте бізнес-сайт, коли клієнти порівнюють кілька послуг, локацій, галузей або кейсів. Окремі сторінки дають точну відповідь кожному пошуковому інтенту й створюють внутрішні зв’язки. Заплануйте головну, послуги, інформацію про компанію, кейси, FAQ та контактний шлях, потім призначте власника оновлень." },
+        { title: "Коли проєкту потрібен інтернет-магазин?", body: "Обирайте магазин, коли відвідувачі підбирають товари або варіанти, бачать наявність, платять онлайн і отримують повідомлення про замовлення. Опишіть каталог, фільтри, податки, доставку, платежі, повернення, склад та аналітику. Додайте щоденні процеси: імпорт товарів, оновлення цін, обробку замовлень і підтримку покупців." },
+        { title: "Які питання показують відповідний обсяг?", body: "Порахуйте офери, шаблони сторінок, мови, товари, місячні замовлення та інтеграції. Вкажіть основні джерела трафіку й дії. Визначте власника контенту та частоту оновлень. Відповіді розкривають реальну систему за екраном і спрямовують до лендингу, структурованого сайту або commerce-платформи." },
+        { title: "Як спланувати перший реліз?", body: "Оберіть компактний реліз, який завершує головний шлях клієнта й дає вимірювані дані. Включіть у запуск основний контент, аналітику, форми та операційні інтеграції. Додаткові мови, контентні кластери, лояльність, розширені фільтри й автоматизацію розподіліть за етапами з відповідальними, бюджетами та датами перевірки." },
+      ],
+    },
+    mistakes: {
+      en: ["Choose from customer actions and operations", "Price the complete first-release scope", "Assign content and system owners"],
+      pl: ["Wybieraj według działań klientów i operacji", "Wyceń pełny zakres pierwszej wersji", "Przypisz właścicieli treści oraz systemów"],
+      ru: ["Выбирайте по действиям клиентов и операциям", "Оценивайте полный объём первого релиза", "Назначайте владельцев контента и систем"],
+      uk: ["Обирайте за діями клієнтів та операціями", "Оцінюйте повний обсяг першого релізу", "Призначайте власників контенту й систем"],
+    },
+    cta: {
+      en: { title: "Want a format recommendation for your project?", body: "Send the offer, current URL and desired customer action. You receive a suitable format and first-release scope.", bullets: ["Format decision", "Initial scope", "Budget direction"] },
+      pl: { title: "Chcesz rekomendację formatu dla projektu?", body: "Wyślij ofertę, obecny URL i oczekiwane działanie klienta. Otrzymasz odpowiedni format oraz zakres pierwszej wersji.", bullets: ["Wybór formatu", "Zakres startowy", "Kierunek budżetu"] },
+      ru: { title: "Нужна рекомендация формата для проекта?", body: "Пришлите оффер, текущий URL и желаемое действие клиента. Вы получите подходящий формат и объём первого релиза.", bullets: ["Выбор формата", "Стартовый объём", "Ориентир бюджета"] },
+      uk: { title: "Потрібна рекомендація формату для проєкту?", body: "Надішліть офер, поточний URL і бажану дію клієнта. Ви отримаєте відповідний формат та обсяг першого релізу.", bullets: ["Вибір формату", "Стартовий обсяг", "Орієнтир бюджету"] },
+    },
+    related: ["service-page-that-converts", "frameworks-pick-2026", "website-launch-checklist-full"],
   },
   {
     slug: "check-website-before-rebuild",
