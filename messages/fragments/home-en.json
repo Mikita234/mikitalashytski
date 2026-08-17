@@ -13,14 +13,14 @@
   "hero": {
     "broadcast": "LIVE BROADCAST",
     "studioLabel": "Independent web development studio · Warsaw",
-    "availability": "Booking selected projects · Q3 2026",
-    "title": "Web products built for action",
-    "subtitle": "A web development studio for service brands and small businesses: strategy, distinctive design, production code, SEO and the complete path from first visit to enquiry.",
-    "body": "Every build connects the visible page with forms, payments, analytics, local search and practical workflows your team can use from day one.",
+    "availability": "Booking projects for Q3 2026",
+    "title": "Websites, online stores and automation for small businesses",
+    "subtitle": "I design and build landing pages, company websites, online stores and internal tools. The work covers structure, visual design, development, SEO and service integrations.",
+    "body": "Forms deliver enquiries, payments complete correctly, analytics records results, and your team receives clear operating instructions.",
     "proofs": [
-      { "value": "10+", "label": "live digital products" },
-      { "value": "4", "label": "languages shipped" },
-      { "value": "90+", "label": "performance target" }
+      { "value": "10+", "label": "portfolio projects" },
+      { "value": "4", "label": "language versions" },
+      { "value": "90+", "label": "Lighthouse target" }
     ],
     "stack": ["Landings", "Shopify", "BaseLinker", "Payments", "Bots", "Automation", "SEO"],
     "ctaOrder": "Discuss project",
@@ -40,28 +40,28 @@
     }
   },
   "salesPath": {
-    "tag": "HOW TO START",
-    "title": "Three clean entry points",
-    "subtitle": "Pick what is cheaper in time and risk right now: DIY, rescue audit or full build.",
+    "tag": "WAYS TO WORK",
+    "title": "Choose the right format for your project",
+    "subtitle": "Follow the free guides, request an audit of an existing website, or commission the complete project.",
     "items": [
       {
-        "label": "DIY",
-        "title": "Build it yourself",
+        "label": "GUIDES",
+        "title": "Build the site yourself",
         "text": "Free guides for Cursor, Codex, GitHub, Vercel, site launch, SEO and safe AI-assisted work.",
         "cta": "Open guides",
         "href": "/guides"
       },
       {
-        "label": "RESCUE",
-        "title": "Audit and fix",
-        "text": "For broken Cursor projects, domain issues, dead forms, messy layouts or AI-demo-looking sites.",
-        "cta": "Book audit",
+        "label": "AUDIT",
+        "title": "Review and improve a website",
+        "text": "I review the code, mobile layout, forms, domain, speed and SEO, then return a prioritized action list.",
+        "cta": "Request an audit",
         "href": "/website-rescue"
       },
       {
-        "label": "BUILD",
-        "title": "Full build",
-        "text": "Landing page, business site, Shopify/e-commerce, ticketing, bot or automation with launch and handoff.",
+        "label": "DEVELOPMENT",
+        "title": "Commission a new project",
+        "text": "I build landing pages, company websites, stores, ticketing systems, bots and automations, including launch and handover.",
         "cta": "Send brief",
         "href": "/order"
       }
@@ -165,9 +165,9 @@
     "hudStatus": "STATUS"
   },
   "packages": {
-    "tag": "PACKAGES",
-    "title": "What you can order",
-    "subtitle": "Packages mapped to business situations: test demand, fix a site, launch a store or remove manual work.",
+    "tag": "SERVICES",
+    "title": "Services and starting budgets",
+    "subtitle": "Review the deliverables, typical timing, starting price and relevant case for each service.",
     "from": "from",
     "timeline": "Timeline",
     "order": "Order this",
@@ -214,8 +214,8 @@
     }
   },
   "trust": {
-    "tag": "TRUST",
-    "title": "Built with real business constraints",
+    "tag": "EXPERIENCE",
+    "title": "Work I have already delivered",
     "facts": [
       "E-commerce logistics and marketplace ops",
       "Shopify / WordPress / BaseLinker integrations",
@@ -230,11 +230,11 @@
     "title": "Tools I work with"
   },
   "proof": {
-    "tag": "PROOF",
-    "title": "Real projects, real constraints",
+    "tag": "RESULTS",
+    "title": "Selected results",
     "items": [
       { "label": "KAYER", "value": "2 markets · 3 langs" },
-      { "label": "Popular", "value": "AI → sales in 2 wks" },
+      { "label": "Popular", "value": "ticket sales launched in 2 weeks" },
       { "label": "MNSK7", "value": "3500+ Allegro orders" },
       { "label": "Alesya Takun", "value": "Payments · booking live" }
     ]
@@ -279,14 +279,14 @@
   },
   "process": {
     "tag": "INSTRUCTION MANUAL",
-    "title": "Process",
+    "title": "How the work proceeds",
     "more": "More about approach",
     "steps": [
-      { "title": "You send the idea", "desc": "Raw text is fine: landing, store, bot, migration or audit." },
-      { "title": "I structure it", "desc": "Pages, features, integrations, timeline and work plan." },
-      { "title": "We validate fast", "desc": "Prototype or audit draft — shape before a long presentation." },
-      { "title": "Build and go live", "desc": "Site, forms, payments, bots, SEO base, domain, instructions." },
-      { "title": "Iterate for results", "desc": "Content, automation, SEO — what brings leads and sales." }
+      { "title": "Project context", "desc": "You send the project description, current URL, preferred timing and budget range." },
+      { "title": "Plan and estimate", "desc": "I propose the structure, functions, stages, cost and delivery schedule." },
+      { "title": "Prototype", "desc": "We confirm the content and logic of the main screens before full development." },
+      { "title": "Development and launch", "desc": "I build the site, connect services, test mobile, SEO, forms and the domain." },
+      { "title": "Ongoing support", "desc": "After launch, I can help with content, analytics, SEO and automation." }
     ]
   },
   "underHood": {

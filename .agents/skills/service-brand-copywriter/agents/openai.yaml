@@ -1,0 +1,4 @@
+interface:
+  display_name: "Service Brand Copywriter"
+  short_description: "Rewrites site copy in a credible service voice"
+  default_prompt: "Use $service-brand-copywriter to rewrite this website copy in a direct, credible service-brand voice."

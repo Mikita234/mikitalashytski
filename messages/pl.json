@@ -153,7 +153,7 @@
     "mnsk7-tools": {
       "category": "E-commerce · Marketplace · B2B",
       "tagline": "Sklep z frezami CNC z szybką dostawą w Polsce, zakupami z Chin, EAN/GTIN i listingami Allegro w tle.",
-      "summary": "To więcej niż strona: prowadziłem całą operację. Sprowadzaliśmy frezy z Chin, nadawaliśmy kody EAN/GTIN, tworzyliśmy karty produktów i listowaliśmy w sklepie i na Allegro — z blokiem zaufania z realnych opinii marketplace.",
+      "summary": "Projekt objął całą operację e-commerce: sourcing frezów z Chin, nadawanie kodów EAN/GTIN, przygotowanie danych produktów, publikację w sklepie i na Allegro oraz prezentację zweryfikowanych opinii marketplace.",
       "beforeAfter": {
         "before": [
           "Tylko marketplace lub rozproszone listingi bez jednego katalogu",
@@ -564,7 +564,7 @@
         "Połączyłem sklep UA z Dilovod, Nova Poshta (Flu.io) i automatyzacjami AI."
       ],
       "ops": [
-        "PL: automation-first workflow produktów, treści i promocji — od pomysłu do publikacji.",
+        "PL: proces automatyzacji produktów, treści i promocji, zakończony kontrolą przed publikacją.",
         "PL: synchronizacja katalogu i danych produktowych przez BaseLinker.",
         "PL: weryfikacja salonu/uprawnień B2B — profesjonalny kanał Akzentz/Luxio.",
         "UA: logika dostępności z subskrypcją „powiadom po pojawieniu się” zamiast martwego out-of-stock.",
@@ -581,7 +581,7 @@
         "Search Console za 3 miesiące (22.03.2026–21.06.2026): 1,85 tys. kliknięć i 31,5 tys. wyświetleń.",
         "Jakość wyników jest mocna: CTR 5,9% i średnia pozycja 7,7.",
         "Strona główna https://kayer.pl/pl-pl ma w GSC wzrost +385%.",
-        "W top content są już nie tylko home, ale też strony Luxio collection/product: Luxio Pure, Luxio Delicate i Compact LED.",
+        "Wśród najczęściej odwiedzanych treści są strona główna oraz strony kolekcji i produktów Luxio: Pure, Delicate i Compact LED.",
         "Desktop PageSpeed/Lighthouse dla https://kayer.pl/pl-pl: Performance 94, Accessibility 97, Best Practices 92, SEO 100 i Agent view 3/3.",
         "Kolejny fokus SEO: wzmocnić rosnące strony tekstem, linkowaniem wewnętrznym i praktycznymi buyer guides."
       ],
@@ -655,7 +655,7 @@
         "Połączyłem sklep UA z Dilovod, Nova Poshta (Flu.io) i automatyzacjami AI."
       ],
       "ops": [
-        "PL: automation-first workflow produktów, treści i promocji — od pomysłu do publikacji.",
+        "PL: proces automatyzacji produktów, treści i promocji, zakończony kontrolą przed publikacją.",
         "PL: synchronizacja katalogu i danych produktowych przez BaseLinker.",
         "PL: weryfikacja salonu/uprawnień B2B — profesjonalny kanał Akzentz/Luxio.",
         "UA: logika dostępności z subskrypcją „powiadom po pojawieniu się” zamiast martwego out-of-stock.",
@@ -702,7 +702,7 @@
   },
   "about": {
     "tag": "Jak pracuję",
-    "title": "Od pomysłu do działającego projektu",
+    "title": "Jak pracuję nad projektem",
     "intro": "Buduję strony, sklepy, boty i automatyzacje dla małych firm. Przed startem porządkuję ofertę, zakres, dane, integracje, SEO i plan publikacji.",
     "steps": [
       {

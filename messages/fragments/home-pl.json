@@ -13,14 +13,14 @@
   "hero": {
     "broadcast": "TRANSMISJA NA ŻYWO",
     "studioLabel": "Niezależne studio internetowe · Warszawa",
-    "availability": "Wybrane projekty · Q3 2026",
-    "title": "Produkty webowe stworzone do działania",
-    "subtitle": "Studio internetowe dla marek usługowych i małych firm: strategia, wyrazisty design, produkcyjny kod, SEO oraz pełna ścieżka od pierwszej wizyty do zapytania.",
-    "body": "Każdy projekt łączy warstwę wizualną z formularzami, płatnościami, analityką, lokalnym SEO i praktycznym workflow gotowym od pierwszego dnia.",
+    "availability": "Przyjmuję projekty na Q3 2026",
+    "title": "Strony, sklepy internetowe i automatyzacje dla małych firm",
+    "subtitle": "Projektuję i wdrażam landing pages, strony firmowe, sklepy internetowe oraz narzędzia wewnętrzne. Zakres obejmuje strukturę, projekt graficzny, development, SEO i integracje.",
+    "body": "Formularze dostarczają zapytania, płatności działają poprawnie, analityka zapisuje wyniki, a zespół otrzymuje jasną instrukcję obsługi.",
     "proofs": [
-      { "value": "10+", "label": "działających produktów" },
-      { "value": "4", "label": "wdrożone języki" },
-      { "value": "90+", "label": "cel performance" }
+      { "value": "10+", "label": "projektów w portfolio" },
+      { "value": "4", "label": "wersje językowe" },
+      { "value": "90+", "label": "cel Lighthouse" }
     ],
     "stack": ["Landingi", "Shopify", "BaseLinker", "Płatności", "Boty", "Automatyzacja", "SEO"],
     "ctaOrder": "Omów projekt",
@@ -40,28 +40,28 @@
     }
   },
   "salesPath": {
-    "tag": "JAK ZACZĄĆ",
-    "title": "Trzy proste wejścia",
-    "subtitle": "Wybierz, co dziś jest tańsze pod względem czasu i ryzyka: DIY, audyt rescue albo pełny build.",
+    "tag": "FORMY WSPÓŁPRACY",
+    "title": "Wybierz odpowiedni format",
+    "subtitle": "Skorzystaj z bezpłatnych poradników, zamów audyt istniejącej strony albo powierz mi całą realizację.",
     "items": [
       {
-        "label": "DIY",
+        "label": "PORADNIKI",
         "title": "Zrób sam",
         "text": "Darmowe poradniki o Cursor, Codex, GitHub, Vercel, uruchomieniu strony, SEO i bezpiecznej pracy z AI.",
         "cta": "Otwórz poradniki",
         "href": "/guides"
       },
       {
-        "label": "RESCUE",
-        "title": "Audyt i naprawa",
-        "text": "Gdy Cursor zepsuł projekt, domena nie działa, formularz nie wysyła albo strona wygląda jak demo AI.",
+        "label": "AUDYT",
+        "title": "Audyt i poprawa strony",
+        "text": "Sprawdzę kod, wersję mobilną, formularze, domenę, szybkość i SEO, a potem przygotuję listę zadań według priorytetu.",
         "cta": "Zamów audyt",
         "href": "/website-rescue"
       },
       {
-        "label": "BUILD",
-        "title": "Pełna budowa",
-        "text": "Landing, strona biznesowa, Shopify/e-commerce, bilety, bot albo automatyzacja z launch i handoff.",
+        "label": "REALIZACJA",
+        "title": "Nowy projekt",
+        "text": "Zbuduję landing page, stronę firmową, sklep, system biletowy, bota lub automatyzację wraz z publikacją i przekazaniem.",
         "cta": "Wyślij brief",
         "href": "/order"
       }
@@ -165,9 +165,9 @@
     "hudStatus": "STATUS"
   },
   "packages": {
-    "tag": "PAKIETY",
-    "title": "Co możesz zamówić",
-    "subtitle": "Pakiety pod konkretne sytuacje: test popytu, naprawa strony, start sklepu albo usunięcie ręcznej pracy.",
+    "tag": "USŁUGI",
+    "title": "Usługi i budżety początkowe",
+    "subtitle": "Sprawdź zakres, typowy termin, cenę początkową oraz powiązane case study dla każdej usługi.",
     "from": "od",
     "timeline": "Termin",
     "order": "Zamów",
@@ -214,8 +214,8 @@
     }
   },
   "trust": {
-    "tag": "ZAUFAJ",
-    "title": "Budowane z realnych ograniczeń biznesowych",
+    "tag": "DOŚWIADCZENIE",
+    "title": "Zadania, które już realizowałem",
     "facts": [
       "Logistyka e-commerce i operacje marketplace",
       "Integracje Shopify / WordPress / BaseLinker",
@@ -230,11 +230,11 @@
     "title": "Narzędzia, z którymi pracuję"
   },
   "proof": {
-    "tag": "DOWODY",
-    "title": "Prawdziwe projekty, prawdziwe ograniczenia",
+    "tag": "WYNIKI",
+    "title": "Wybrane wyniki",
     "items": [
       { "label": "KAYER", "value": "2 rynki · 3 języki" },
-      { "label": "Popular", "value": "AI → sprzedaż w 2 tyg." },
+      { "label": "Popular", "value": "sprzedaż biletów w 2 tygodnie" },
       { "label": "MNSK7", "value": "3500+ zamówień Allegro" },
       { "label": "Alesya Takun", "value": "Płatności · rezerwacje" }
     ]
@@ -279,7 +279,7 @@
   },
   "process": {
     "tag": "INSTRUKCJA",
-    "title": "Proces",
+    "title": "Jak przebiega współpraca",
     "more": "Więcej o podejściu",
     "steps": [
       { "title": "Wysyłasz pomysł", "desc": "Surowy tekst wystarczy: landing, sklep, bot, migracja lub audyt." },
