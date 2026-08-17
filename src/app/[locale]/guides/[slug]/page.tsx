@@ -59,6 +59,11 @@ const guideConversions: Record<GuideSlug, GuideConversion> = {
     href: "/order?service=business",
     service: "business",
   },
+  "shopify-woocommerce-migration-plan": {
+    lane: "build",
+    href: "/order?service=ecommerce",
+    service: "ecommerce",
+  },
   "website-launch-checklist-full": {
     lane: "rescue",
     href: "/website-rescue",
@@ -173,8 +178,13 @@ export default async function GuidePage({ params }: Props) {
   const localePrefix = l === routing.defaultLocale ? "" : `/${l}`;
   const guideUrl = `${site.url}${localePrefix}/guides/${guide.slug}`;
   const conversion = guideConversions[guide.slug];
-  const isRebuildAudit = guide.slug === "check-website-before-rebuild";
-  const publishedAt = isRebuildAudit ? "2026-08-17" : "2026-06-19";
+  const isNewHighIntentGuide = [
+    "check-website-before-rebuild",
+    "choose-landing-business-site-or-store",
+    "shopify-woocommerce-migration-plan",
+  ].includes(guide.slug);
+  const hasQuestionSteps = guide.steps[l].every((step) => step.title.trim().endsWith("?"));
+  const publishedAt = isNewHighIntentGuide ? "2026-08-17" : "2026-06-19";
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -209,7 +219,7 @@ export default async function GuidePage({ params }: Props) {
     ],
   };
 
-  const faqLd = isRebuildAudit
+  const faqLd = hasQuestionSteps
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",

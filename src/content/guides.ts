@@ -13,6 +13,7 @@ export type GuideSlug =
   | "frameworks-pick-2026"
   | "check-website-before-rebuild"
   | "choose-landing-business-site-or-store"
+  | "shopify-woocommerce-migration-plan"
   | "website-launch-checklist-full"
   | "seo-internal-linking"
   | "homepage-seo-description"
@@ -850,6 +851,7 @@ export const guideContentClusters: GuideContentCluster[] = [
     },
     guides: [
       "check-website-before-rebuild",
+      "shopify-woocommerce-migration-plan",
       "website-launch-checklist-full",
       "google-search-console-setup",
       "seo-internal-linking",
@@ -1590,6 +1592,80 @@ export const guides: Guide[] = [
       ru: { title: "Путаница со стеком?", body: "Кидай brief. Подберу стек + хостинг на одной странице.", bullets: ["Разбор brief", "Выбор стека", "Промпт для Cursor"] },
       uk: { title: "Плутанина зі stack?", body: "Кидай brief. Підберу stack + хостинг на одній сторінці.", bullets: ["Розбір brief", "Вибір stack", "Промпт для Cursor"] },
     },
+  },
+  {
+    slug: "shopify-woocommerce-migration-plan",
+    tape: "TAPE-24",
+    channel: "MIGRATE",
+    minutes: 9,
+    tags: ["E-commerce", "Shopify", "WooCommerce", "SEO"],
+    title: {
+      en: "How do you prepare a Shopify or WooCommerce migration?",
+      pl: "Jak przygotować migrację Shopify albo WooCommerce?",
+      ru: "Как подготовить миграцию Shopify или WooCommerce?",
+      uk: "Як підготувати міграцію Shopify або WooCommerce?",
+    },
+    description: {
+      en: "A practical store migration plan covering product data, customer operations, redirects, integrations, testing, launch and post-release checks.",
+      pl: "Praktyczny plan migracji sklepu: dane produktów, obsługa klientów, przekierowania, integracje, testy, publikacja i kontrola po starcie.",
+      ru: "Практический план миграции магазина: товары, клиентские процессы, редиректы, интеграции, тестирование, запуск и контроль после релиза.",
+      uk: "Практичний план міграції магазину: товари, клієнтські процеси, редиректи, інтеграції, тестування, запуск і контроль після релізу.",
+    },
+    intro: {
+      en: "Prepare a store migration by freezing the source inventory, cleaning product and customer data, mapping every valuable URL, rebuilding integrations in staging, testing complete orders and reconciling records after launch. A documented cutoff plan keeps revenue, search visibility and daily operations stable.",
+      pl: "Przygotuj migrację sklepu przez zamknięcie spisu źródłowego, uporządkowanie danych produktów i klientów, mapowanie wartościowych URL, odtworzenie integracji na stagingu, test pełnych zamówień oraz uzgodnienie rekordów po publikacji. Udokumentowany plan przełączenia stabilizuje przychód, widoczność i codzienne operacje.",
+      ru: "Подготовьте миграцию магазина: зафиксируйте исходные данные, очистите товары и клиентов, сопоставьте ценные URL, соберите интеграции на staging, проведите полные тестовые заказы и сверьте записи после запуска. Документированный план переключения сохраняет выручку, поисковую видимость и ежедневные процессы.",
+      uk: "Підготуйте міграцію магазину: зафіксуйте вихідні дані, очистьте товари й клієнтів, зіставте цінні URL, зберіть інтеграції на staging, проведіть повні тестові замовлення та звірте записи після запуску. Документований план перемикання зберігає дохід, пошукову видимість і щоденні процеси.",
+    },
+    outcome: {
+      en: ["A clean migration inventory", "A product and URL mapping", "A tested checkout and integration plan", "A controlled launch and reconciliation checklist"],
+      pl: ["Czysty spis migracyjny", "Mapowanie produktów i URL", "Przetestowany checkout oraz integracje", "Kontrolowany launch i checklista uzgodnienia"],
+      ru: ["Чистый реестр миграции", "Карта товаров и URL", "Проверенный checkout и план интеграций", "Контролируемый запуск и чеклист сверки"],
+      uk: ["Чистий реєстр міграції", "Карта товарів і URL", "Перевірений checkout і план інтеграцій", "Контрольований запуск і чекліст звірки"],
+    },
+    steps: {
+      en: [
+        { title: "Which source data should you inventory?", body: "Export products, variants, images, collections, attributes, stock, prices, discounts, customers, orders, reviews and gift cards. Record identifiers and data owners. Clean duplicates and invalid values in a working copy. Keep the original export timestamped so every later transformation remains traceable." },
+        { title: "How do you choose and model the target store?", body: "Choose from catalog size, editing workflow, checkout markets, payments, tax, shipping and integration support. Map source fields to target fields before import. Create representative products for simple, variable, discounted and unavailable items, then let the operational team confirm the editing experience." },
+        { title: "How do you protect search visibility?", body: "Export indexed URLs, organic landing pages, metadata, canonicals, schema and backlinks. Define the final URL pattern and create a one-to-one 301 map for valuable pages. Preserve useful category copy and product information. Crawl staging and verify status codes, internal links, sitemap and robots rules." },
+        { title: "Which customer journeys require testing?", body: "Test search, filters, product variants, stock, discounts, cart, guest checkout, accounts, payments, taxes, shipping, transactional email, refunds and analytics. Use sandbox transactions for every payment and delivery combination. Assign expected results and owners, then store evidence for each completed scenario." },
+        { title: "How should the launch and reconciliation run?", body: "Set a source-data cutoff, final delta export, DNS window and rollback owner. Import changed products, customers and orders, then switch traffic during a quiet period. Place real monitored orders after launch. Compare totals, revenue, stock, payment settlements, redirects and search coverage on a scheduled checklist." },
+      ],
+      pl: [
+        { title: "Które dane źródłowe trzeba zinwentaryzować?", body: "Wyeksportuj produkty, warianty, zdjęcia, kolekcje, atrybuty, stany, ceny, rabaty, klientów, zamówienia, opinie i karty podarunkowe. Zapisz identyfikatory oraz właścicieli danych. Oczyść duplikaty i błędne wartości w kopii roboczej. Zachowaj oryginalny eksport z datą, aby śledzić każdą transformację." },
+        { title: "Jak wybrać i zaprojektować sklep docelowy?", body: "Wybieraj według wielkości katalogu, procesu edycji, rynków checkoutu, płatności, podatków, dostawy oraz integracji. Zmapuj pola źródłowe do docelowych przed importem. Utwórz reprezentatywne produkty proste, wariantowe, promocyjne i niedostępne, a następnie poproś zespół operacyjny o potwierdzenie procesu edycji." },
+        { title: "Jak zabezpieczyć widoczność w wyszukiwarce?", body: "Wyeksportuj indeksowane URL, organiczne landing pages, metadata, canonical, schema i backlinki. Ustal finalny wzór adresów oraz mapę 301 dla wartościowych stron. Zachowaj użyteczne opisy kategorii i produktów. Przeskanuj staging i sprawdź statusy, linkowanie wewnętrzne, sitemap oraz reguły robots." },
+        { title: "Które ścieżki klienta wymagają testu?", body: "Przetestuj wyszukiwarkę, filtry, warianty, stany, rabaty, koszyk, checkout, konta, płatności, podatki, dostawę, emaile transakcyjne, zwroty i analitykę. Użyj transakcji sandbox dla każdej kombinacji płatności oraz dostawy. Przypisz oczekiwane wyniki i właścicieli, a potem zapisz dowody wykonania." },
+        { title: "Jak przeprowadzić launch i uzgodnienie danych?", body: "Ustal cutoff danych źródłowych, finalny eksport zmian, okno DNS i właściciela rollbacku. Zaimportuj zmienione produkty, klientów oraz zamówienia, potem przełącz ruch w spokojnym czasie. Złóż monitorowane zamówienia. Porównaj sumy, przychód, stany, rozliczenia płatności, przekierowania i coverage według harmonogramu." },
+      ],
+      ru: [
+        { title: "Какие исходные данные нужно собрать?", body: "Выгрузите товары, варианты, изображения, коллекции, атрибуты, остатки, цены, скидки, клиентов, заказы, отзывы и подарочные карты. Зафиксируйте идентификаторы и владельцев данных. Очистите дубли и ошибочные значения в рабочей копии. Сохраните исходный экспорт с датой для отслеживания преобразований." },
+        { title: "Как выбрать и спроектировать целевой магазин?", body: "Выбирайте по размеру каталога, процессу редактирования, рынкам checkout, платежам, налогам, доставке и поддержке интеграций. Сопоставьте исходные поля с целевыми до импорта. Создайте примеры простых, вариантных, акционных и временно недоступных товаров, затем подтвердите процесс редактирования с операционной командой." },
+        { title: "Как сохранить поисковую видимость?", body: "Выгрузите индексируемые URL, органические посадочные страницы, metadata, canonical, schema и ценные ссылки. Определите финальный шаблон адресов и создайте карту 301 для важных страниц. Сохраните полезные описания категорий и товаров. Просканируйте staging, проверьте статусы, внутренние ссылки, sitemap и robots." },
+        { title: "Какие клиентские пути требуют проверки?", body: "Проверьте поиск, фильтры, варианты, остатки, скидки, корзину, checkout, аккаунты, платежи, налоги, доставку, транзакционные письма, возвраты и аналитику. Используйте sandbox-транзакции для каждой комбинации оплаты и доставки. Назначьте ожидаемый результат и ответственного, затем сохраните доказательства выполнения каждого сценария." },
+        { title: "Как провести запуск и сверку данных?", body: "Установите момент фиксации исходных данных, финальный экспорт изменений, окно DNS и владельца rollback. Импортируйте изменённые товары, клиентов и заказы, затем переключите трафик в спокойный период. Оформите реальные контролируемые заказы. Сверьте суммы, выручку, остатки, платежи, редиректы и поисковое покрытие по расписанию." },
+      ],
+      uk: [
+        { title: "Які вихідні дані потрібно зібрати?", body: "Вивантажте товари, варіанти, зображення, колекції, атрибути, залишки, ціни, знижки, клієнтів, замовлення, відгуки та подарункові картки. Зафіксуйте ідентифікатори й власників даних. Очистьте дублікати та помилкові значення в робочій копії. Збережіть вихідний експорт із датою для відстеження перетворень." },
+        { title: "Як обрати та спроєктувати цільовий магазин?", body: "Обирайте за розміром каталогу, процесом редагування, ринками checkout, платежами, податками, доставкою й підтримкою інтеграцій. Зіставте вихідні поля з цільовими до імпорту. Створіть приклади простих, варіантних, акційних і тимчасово недоступних товарів, потім підтвердьте процес редагування з операційною командою." },
+        { title: "Як зберегти пошукову видимість?", body: "Вивантажте індексовані URL, органічні посадкові сторінки, metadata, canonical, schema та цінні посилання. Визначте фінальний шаблон адрес і створіть карту 301 для важливих сторінок. Збережіть корисні описи категорій і товарів. Проскануйте staging, перевірте статуси, внутрішні посилання, sitemap і robots." },
+        { title: "Які клієнтські шляхи потребують перевірки?", body: "Перевірте пошук, фільтри, варіанти, залишки, знижки, кошик, checkout, акаунти, платежі, податки, доставку, транзакційні листи, повернення й аналітику. Використовуйте sandbox-транзакції для кожної комбінації оплати та доставки. Призначте очікуваний результат і відповідального, потім збережіть докази виконання кожного сценарію." },
+        { title: "Як провести запуск і звірку даних?", body: "Встановіть момент фіксації вихідних даних, фінальний експорт змін, вікно DNS і власника rollback. Імпортуйте змінені товари, клієнтів та замовлення, потім перемкніть трафік у спокійний період. Оформіть реальні контрольовані замовлення. Звірте суми, дохід, залишки, платежі, редиректи й пошукове покриття за розкладом." },
+      ],
+    },
+    mistakes: {
+      en: ["Freeze and timestamp source exports", "Test complete orders in staging", "Reconcile business and search data after launch"],
+      pl: ["Zamknij i oznacz datą eksporty źródłowe", "Testuj pełne zamówienia na stagingu", "Uzgodnij dane biznesowe i search po starcie"],
+      ru: ["Фиксируйте дату исходных экспортов", "Проводите полные заказы на staging", "Сверяйте бизнес-данные и поиск после запуска"],
+      uk: ["Фіксуйте дату вихідних експортів", "Проводьте повні замовлення на staging", "Звіряйте бізнес-дані й пошук після запуску"],
+    },
+    cta: {
+      en: { title: "Need a migration scope for your store?", body: "Send the current platform, target market and catalog size. You receive the migration stages, risks and budget direction.", bullets: ["Data and SEO inventory", "Checkout test plan", "Controlled launch scope"] },
+      pl: { title: "Potrzebujesz zakresu migracji sklepu?", body: "Wyślij obecną platformę, rynek docelowy i wielkość katalogu. Otrzymasz etapy migracji, ryzyka i kierunek budżetu.", bullets: ["Spis danych i SEO", "Plan testów checkoutu", "Kontrolowany zakres launchu"] },
+      ru: { title: "Нужен план миграции магазина?", body: "Пришлите текущую платформу, целевой рынок и размер каталога. Вы получите этапы миграции, риски и ориентир бюджета.", bullets: ["Реестр данных и SEO", "План тестов checkout", "Контролируемый объём запуска"] },
+      uk: { title: "Потрібен план міграції магазину?", body: "Надішліть поточну платформу, цільовий ринок і розмір каталогу. Ви отримаєте етапи міграції, ризики та орієнтир бюджету.", bullets: ["Реєстр даних і SEO", "План тестів checkout", "Контрольований обсяг запуску"] },
+    },
+    related: ["choose-landing-business-site-or-store", "website-launch-checklist-full", "google-search-console-setup"],
   },
   {
     slug: "choose-landing-business-site-or-store",
