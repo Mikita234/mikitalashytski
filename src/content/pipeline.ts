@@ -1246,10 +1246,24 @@ export const stacksPractical = {
 export const briefPage = {
   en: {
     tag: "Brief builder",
-    title: "Answer in human language — get pipeline + stack + risks",
-    subtitle: "No AI API. Rule-based recommendation you can copy into Cursor.",
+    title: "What should a small-business website brief include?",
+    subtitle: "A useful website brief states the business goal, audience, offer, primary action, page list, available content, required integrations, budget range, deadline and decision owner. These inputs let a designer or developer estimate scope and recommend the right format.",
     submit: "Get recommendation",
     resultTitle: "Your recommendation",
+    seo: {
+      label: "Practical brief",
+      intro: "Write the brief in plain business language. One or two specific sentences per item create enough context for an initial proposal. Add links, examples and real figures where available. The first version can fit on one page and become more detailed after the implementation format is selected.",
+      sections: [
+        { heading: "What business context should you describe?", body: "State what the company sells, where it operates and what currently generates customers. Add the reason for the project: a new offer, weak lead quality, slow editing, an outdated store or entry into another market. Include the current website and the person who approves scope, content and launch." },
+        { heading: "How should you define the audience and action?", body: "Name the primary customer, their situation and the question they need answered before choosing. Select one main website action: send a qualified enquiry, buy, book, call or visit a location. Add a measurable target such as monthly enquiries, conversion rate or completed purchases so success has a shared definition." },
+        { heading: "Which pages and content belong in the brief?", body: "List the expected pages and mark the content already available for each one: copy, photographs, prices, cases, reviews, legal text and translations. Share two or three references and explain the useful element in each. Assign a content owner and a date for delivering the first complete materials." },
+        { heading: "Which functions and integrations should you list?", body: "Describe forms, payments, booking, product catalog, search, accounts, CRM, email, analytics, consent, languages and internal tools. Mention the systems already in use and who controls access. Rank each function as essential for launch or suitable for a later stage to keep the first release focused." },
+        { heading: "How do budget and timing shape the recommendation?", body: "Give a realistic budget range, preferred launch date and any fixed campaign or event. State who supplies content, who reviews the result and how quickly feedback arrives. A range supports useful choices: landing page, business website, store, automation, rescue sprint or a phased release with clear milestones." },
+      ],
+      builderTitle: "Ready to assemble the first brief?",
+      builderBody: "Answer the fields below to receive a rule-based pipeline, stack and risk summary that you can copy into Cursor or send with an enquiry.",
+      cta: "Discuss the brief",
+    },
     fields: {
       businessType: "What kind of business?",
       sitePurpose: "What should the site do?",
@@ -1287,10 +1301,24 @@ export const briefPage = {
   },
   pl: {
     tag: "Brief builder",
-    title: "Odpowiedz po ludzku — dostaniesz pipeline + stack + ryzyka",
-    subtitle: "Bez AI API. Reguły, które skopiujesz do Cursora.",
+    title: "Co powinien zawierać brief strony dla małej firmy?",
+    subtitle: "Dobry brief opisuje cel biznesowy, odbiorców, ofertę, główne działanie, listę podstron, dostępne treści, potrzebne integracje, zakres budżetu, termin oraz osobę decyzyjną. Te dane pozwalają szybko oszacować zakres i dobrać właściwy format realizacji.",
     submit: "Pokaż rekomendację",
     resultTitle: "Twoja rekomendacja",
+    seo: {
+      label: "Praktyczny brief",
+      intro: "Napisz brief prostym językiem biznesowym. Jedno lub dwa konkretne zdania na każdy punkt dają kontekst potrzebny do pierwszej propozycji. Dodaj linki, przykłady i prawdziwe liczby, gdy są dostępne. Pierwsza wersja może zmieścić się na jednej stronie i rozwinąć po wyborze formatu wdrożenia.",
+      sections: [
+        { heading: "Jaki kontekst biznesowy warto opisać?", body: "Napisz, co firma sprzedaje, gdzie działa i skąd obecnie pozyskuje klientów. Dodaj powód projektu: nowa oferta, jakość leadów, szybkość edycji, rozwój sklepu albo wejście na kolejny rynek. Wstaw adres obecnej strony oraz wskaż osobę zatwierdzającą zakres, treść i publikację." },
+        { heading: "Jak określić odbiorcę i główne działanie?", body: "Nazwij głównego klienta, jego sytuację oraz pytanie, na które potrzebuje odpowiedzi przed wyborem. Wskaż jedno najważniejsze działanie: wysłanie zapytania, zakup, rezerwację, telefon albo wizytę. Dodaj mierzalny cel, na przykład liczbę zapytań, konwersję lub zakupy, aby zespół wspólnie rozumiał sukces." },
+        { heading: "Jakie podstrony i treści wpisać do briefu?", body: "Wypisz planowane podstrony i oznacz materiały dostępne dla każdej z nich: teksty, zdjęcia, ceny, case studies, opinie, treści prawne i tłumaczenia. Dodaj dwa lub trzy przykłady i opisz wartościowy element każdego. Wyznacz właściciela treści oraz termin przekazania pierwszego kompletnego zestawu." },
+        { heading: "Jakie funkcje i integracje trzeba wymienić?", body: "Opisz formularze, płatności, rezerwacje, katalog, wyszukiwarkę, konta, CRM, email, analitykę, zgody, języki i narzędzia wewnętrzne. Wskaż używane systemy oraz właściciela dostępów. Oznacz funkcje kluczowe na start i elementy kolejnego etapu, aby pierwsza publikacja zachowała wyraźny zakres." },
+        { heading: "Jak budżet i termin wpływają na rekomendację?", body: "Podaj realistyczny zakres budżetu, preferowaną datę publikacji oraz stały termin kampanii lub wydarzenia. Określ, kto dostarcza treść, kto ocenia rezultat i jak szybko przekazuje feedback. Zakres pozwala wybrać landing page, stronę firmową, sklep, automatyzację, rescue sprint albo wdrożenie etapowe." },
+      ],
+      builderTitle: "Chcesz złożyć pierwszą wersję briefu?",
+      builderBody: "Odpowiedz na pola poniżej, aby otrzymać regułową rekomendację pipeline, stacku i ryzyk, gotową do skopiowania do Cursora albo wysłania z zapytaniem.",
+      cta: "Omów brief",
+    },
     fields: {
       businessType: "Jaki biznes?",
       sitePurpose: "Co ma robić strona?",
@@ -1328,10 +1356,24 @@ export const briefPage = {
   },
   ru: {
     tag: "Конструктор brief",
-    title: "Ответь по-человечески — получишь пайплайн + стек + риски",
-    subtitle: "Без AI API. Правила, результат можно скопировать в Cursor.",
+    title: "Что подготовить для brief сайта малого бизнеса?",
+    subtitle: "Полезный brief фиксирует бизнес-цель, аудиторию, оффер, главное действие, список страниц, готовый контент, интеграции, диапазон бюджета, срок и ответственного за решение. Эти данные помогают быстро оценить объём и предложить подходящий формат разработки.",
     submit: "Получить рекомендацию",
     resultTitle: "Твоя рекомендация",
+    seo: {
+      label: "Практический brief",
+      intro: "Пишите brief обычным деловым языком. Одно или два конкретных предложения на каждый пункт создают достаточный контекст для первого предложения. Добавляйте ссылки, примеры и реальные цифры. Первая версия спокойно помещается на одной странице и получает детали после выбора формата внедрения.",
+      sections: [
+        { heading: "Какой бизнес-контекст стоит описать?", body: "Укажите, что продаёт компания, где работает и какие каналы сейчас приводят клиентов. Добавьте причину проекта: новый оффер, качество заявок, скорость редактирования, развитие магазина или выход на другой рынок. Приложите текущий сайт и назовите человека, который утверждает объём, контент и запуск." },
+        { heading: "Как определить аудиторию и главное действие?", body: "Опишите основного клиента, его ситуацию и вопрос перед выбором. Выберите одно главное действие на сайте: отправить целевую заявку, купить, забронировать, позвонить или приехать. Добавьте измеримую цель — количество обращений за месяц, конверсию или покупки — чтобы вся команда одинаково понимала результат." },
+        { heading: "Какие страницы и материалы включить в brief?", body: "Перечислите планируемые страницы и отметьте готовые материалы для каждой: тексты, фотографии, цены, кейсы, отзывы, юридические документы и переводы. Добавьте два или три референса и объясните полезный элемент каждого. Назначьте владельца контента и дату передачи первого полного комплекта." },
+        { heading: "Какие функции и интеграции нужно перечислить?", body: "Опишите формы, платежи, бронирование, каталог, поиск, аккаунты, CRM, email, аналитику, согласия, языки и внутренние инструменты. Укажите действующие системы и владельцев доступов. Разделите функции на обязательные для запуска и подходящие следующему этапу — первая версия сохранит ясный фокус." },
+        { heading: "Как бюджет и срок влияют на рекомендацию?", body: "Дайте реалистичный диапазон бюджета, желаемую дату запуска и фиксированный срок кампании или события. Укажите, кто поставляет контент, принимает результат и как быстро даёт обратную связь. Диапазон помогает выбрать лендинг, бизнес-сайт, магазин, автоматизацию, rescue sprint или поэтапный релиз." },
+      ],
+      builderTitle: "Готовы собрать первую версию brief?",
+      builderBody: "Ответьте на поля ниже и получите рекомендацию по pipeline, стеку и рискам на основе правил. Результат можно скопировать в Cursor или отправить вместе с заявкой.",
+      cta: "Обсудить brief",
+    },
     fields: {
       businessType: "Какой бизнес?",
       sitePurpose: "Что сайт должен делать?",
@@ -1369,10 +1411,24 @@ export const briefPage = {
   },
   uk: {
     tag: "Конструктор brief",
-    title: "Відповідай по-людськи — отримаєш pipeline + stack + ризики",
-    subtitle: "Без AI API. Правила, результат можна скопіювати в Cursor.",
+    title: "Що підготувати для brief сайту малого бізнесу?",
+    subtitle: "Корисний brief фіксує бізнес-ціль, аудиторію, офер, головну дію, список сторінок, готовий контент, інтеграції, діапазон бюджету, термін і відповідального за рішення. Ці дані допомагають швидко оцінити обсяг і запропонувати відповідний формат розробки.",
     submit: "Отримати рекомендацію",
     resultTitle: "Твоя рекомендація",
+    seo: {
+      label: "Практичний brief",
+      intro: "Пишіть brief звичайною діловою мовою. Одне або два конкретні речення на кожен пункт створюють достатній контекст для першої пропозиції. Додавайте посилання, приклади та реальні цифри. Перша версія спокійно вміщується на одній сторінці й отримує деталі після вибору формату впровадження.",
+      sections: [
+        { heading: "Який бізнес-контекст варто описати?", body: "Вкажіть, що продає компанія, де працює і які канали зараз приводять клієнтів. Додайте причину проєкту: новий офер, якість заявок, швидкість редагування, розвиток магазину або вихід на інший ринок. Додайте поточний сайт і назвіть людину, яка затверджує обсяг, контент та запуск." },
+        { heading: "Як визначити аудиторію та головну дію?", body: "Опишіть основного клієнта, його ситуацію та питання перед вибором. Оберіть одну головну дію на сайті: надіслати цільову заявку, купити, забронювати, зателефонувати або приїхати. Додайте вимірювану ціль — кількість звернень за місяць, конверсію чи покупки — щоб команда однаково розуміла результат." },
+        { heading: "Які сторінки та матеріали включити до brief?", body: "Перелічіть заплановані сторінки та позначте готові матеріали для кожної: тексти, фотографії, ціни, кейси, відгуки, юридичні документи й переклади. Додайте два або три референси та поясніть корисний елемент кожного. Призначте власника контенту й дату передачі першого повного комплекту." },
+        { heading: "Які функції та інтеграції треба перелічити?", body: "Опишіть форми, платежі, бронювання, каталог, пошук, акаунти, CRM, email, аналітику, згоди, мови та внутрішні інструменти. Вкажіть чинні системи й власників доступів. Розділіть функції на обов’язкові для запуску та доречні наступному етапу — перша версія збереже чіткий фокус." },
+        { heading: "Як бюджет і термін впливають на рекомендацію?", body: "Дайте реалістичний діапазон бюджету, бажану дату запуску та фіксований термін кампанії або події. Вкажіть, хто постачає контент, приймає результат і як швидко дає зворотний зв’язок. Діапазон допомагає обрати лендинг, бізнес-сайт, магазин, автоматизацію, rescue sprint або поетапний реліз." },
+      ],
+      builderTitle: "Готові зібрати першу версію brief?",
+      builderBody: "Дайте відповіді в полях нижче й отримайте рекомендацію щодо pipeline, stack та ризиків на основі правил. Результат можна скопіювати в Cursor або надіслати разом із заявкою.",
+      cta: "Обговорити brief",
+    },
     fields: {
       businessType: "Який бізнес?",
       sitePurpose: "Що сайт має робити?",
