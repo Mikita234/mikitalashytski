@@ -1302,21 +1302,21 @@
         },
         "services": {
           "common": {
-            "backToPackages": "← All packages",
+            "backToPackages": "← All services",
             "from": "from",
-            "forWho": "Good fit if you",
-            "notForWho": "Probably not for you if",
-            "exampleResult": "Example outcome",
-            "process": "How we work",
-            "clientProvides": "What you send me",
-            "deliverables": "What you get",
+            "forWho": "This service fits when",
+            "notForWho": "Choose another format when",
+            "exampleResult": "Example from a project",
+            "process": "Stages of work",
+            "clientProvides": "Materials needed to start",
+            "deliverables": "Included in the service",
             "miniCase": "Similar project",
             "viewCase": "Open case",
             "faq": "Questions",
-            "ctaMid": "Ready to talk?",
-            "ctaMidButton": "Send your brief",
-            "problem": "The problem",
-            "solution": "What I do",
+            "ctaMid": "Send the project details for an estimate",
+            "ctaMidButton": "Request an estimate",
+            "problem": "Client situation",
+            "solution": "Proposed work",
             "timelines": {
               "landing": "3–7 days",
               "business": "1–3 weeks",
@@ -2333,31 +2333,31 @@
           "source": "src/content/guides.ts",
           "line": 122,
           "path": "guideLabels.en.all",
-          "text": "All guide tapes"
+          "text": "All guides"
         },
         {
           "source": "src/content/guides.ts",
           "line": 123,
           "path": "guideLabels.en.outcome",
-          "text": "What you will have"
+          "text": "Result of the guide"
         },
         {
           "source": "src/content/guides.ts",
           "line": 124,
           "path": "guideLabels.en.steps",
-          "text": "Steps"
+          "text": "Instructions"
         },
         {
           "source": "src/content/guides.ts",
           "line": 125,
           "path": "guideLabels.en.mistakes",
-          "text": "Common failure points"
+          "text": "Check before publishing"
         },
         {
           "source": "src/content/guides.ts",
           "line": 126,
           "path": "guideLabels.en.next",
-          "text": "Next tape"
+          "text": "Next guide"
         },
         {
           "source": "src/content/guides.ts",
@@ -10221,21 +10221,21 @@
         },
         "services": {
           "common": {
-            "backToPackages": "← Wszystkie pakiety",
+            "backToPackages": "← Wszystkie usługi",
             "from": "od",
-            "forWho": "Dobry wybór, jeśli",
-            "notForWho": "Raczej nie dla Ciebie, jeśli",
-            "exampleResult": "Przykładowy efekt",
-            "process": "Jak pracujemy",
-            "clientProvides": "Co ode mnie dostaję",
-            "deliverables": "Co dostajesz",
+            "forWho": "Ta usługa pasuje, gdy",
+            "notForWho": "Wybierz inny format, gdy",
+            "exampleResult": "Przykład z realizacji",
+            "process": "Etapy pracy",
+            "clientProvides": "Materiały potrzebne na start",
+            "deliverables": "Zakres usługi",
             "miniCase": "Podobny projekt",
             "viewCase": "Otwórz case",
             "faq": "Pytania",
-            "ctaMid": "Gotowy na rozmowę?",
-            "ctaMidButton": "Wyślij brief",
-            "problem": "Problem",
-            "solution": "Co robię",
+            "ctaMid": "Wyślij szczegóły projektu do wyceny",
+            "ctaMidButton": "Poproś o wycenę",
+            "problem": "Sytuacja klienta",
+            "solution": "Proponowany zakres",
             "timelines": {
               "landing": "3–7 dni",
               "business": "1–3 tygodnie",
@@ -11252,31 +11252,31 @@
           "source": "src/content/guides.ts",
           "line": 136,
           "path": "guideLabels.pl.all",
-          "text": "Wszystkie taśmy"
+          "text": "Wszystkie poradniki"
         },
         {
           "source": "src/content/guides.ts",
           "line": 137,
           "path": "guideLabels.pl.outcome",
-          "text": "Co będziesz mieć"
+          "text": "Rezultat poradnika"
         },
         {
           "source": "src/content/guides.ts",
           "line": 138,
           "path": "guideLabels.pl.steps",
-          "text": "Kroki"
+          "text": "Instrukcja"
         },
         {
           "source": "src/content/guides.ts",
           "line": 139,
           "path": "guideLabels.pl.mistakes",
-          "text": "Typowe problemy"
+          "text": "Sprawdź przed publikacją"
         },
         {
           "source": "src/content/guides.ts",
           "line": 140,
           "path": "guideLabels.pl.next",
-          "text": "Następna taśma"
+          "text": "Następny poradnik"
         },
         {
           "source": "src/content/guides.ts",
@@ -19134,21 +19134,21 @@
         },
         "services": {
           "common": {
-            "backToPackages": "← Все пакеты",
+            "backToPackages": "← Все услуги",
             "from": "от",
-            "forWho": "Подходит, если",
-            "notForWho": "Скорее не подходит, если",
-            "exampleResult": "Пример результата",
-            "process": "Как работаем",
-            "clientProvides": "Что вы присылаете",
-            "deliverables": "Что вы получаете",
+            "forWho": "Эта услуга подходит, когда",
+            "notForWho": "Выберите другой формат, когда",
+            "exampleResult": "Пример из проекта",
+            "process": "Этапы работы",
+            "clientProvides": "Материалы для начала работы",
+            "deliverables": "Что входит в услугу",
             "miniCase": "Похожий проект",
             "viewCase": "Открыть кейс",
             "faq": "Вопросы",
-            "ctaMid": "Готовы обсудить?",
-            "ctaMidButton": "Отправить бриф",
-            "problem": "Проблема",
-            "solution": "Что я делаю",
+            "ctaMid": "Пришлите описание проекта для оценки",
+            "ctaMidButton": "Получить оценку",
+            "problem": "Ситуация клиента",
+            "solution": "Предлагаемый объём работы",
             "timelines": {
               "landing": "3–7 дней",
               "business": "1–3 недели",
@@ -20165,19 +20165,19 @@
           "source": "src/content/guides.ts",
           "line": 150,
           "path": "guideLabels.ru.all",
-          "text": "Все кассеты"
+          "text": "Все гайды"
         },
         {
           "source": "src/content/guides.ts",
           "line": 151,
           "path": "guideLabels.ru.outcome",
-          "text": "Что получится"
+          "text": "Результат после выполнения"
         },
         {
           "source": "src/content/guides.ts",
           "line": 152,
           "path": "guideLabels.ru.steps",
-          "text": "Шаги"
+          "text": "Инструкция"
         },
         {
           "source": "src/content/guides.ts",
@@ -20189,7 +20189,7 @@
           "source": "src/content/guides.ts",
           "line": 154,
           "path": "guideLabels.ru.next",
-          "text": "Следующая кассета"
+          "text": "Следующий гайд"
         },
         {
           "source": "src/content/guides.ts",
@@ -29163,21 +29163,21 @@
         },
         "services": {
           "common": {
-            "backToPackages": "← Усі пакети",
+            "backToPackages": "← Усі послуги",
             "from": "від",
-            "forWho": "Підходить, якщо",
-            "notForWho": "Швидше не для вас, якщо",
-            "exampleResult": "Приклад результату",
-            "process": "Як працюємо",
-            "clientProvides": "Що ви надсилаєте",
-            "deliverables": "Що ви отримуєте",
+            "forWho": "Ця послуга пасує, коли",
+            "notForWho": "Оберіть інший формат, коли",
+            "exampleResult": "Приклад із проєкту",
+            "process": "Етапи роботи",
+            "clientProvides": "Матеріали для початку роботи",
+            "deliverables": "Що входить до послуги",
             "miniCase": "Схожий проєкт",
             "viewCase": "Відкрити кейс",
             "faq": "Питання",
-            "ctaMid": "Готові обговорити?",
-            "ctaMidButton": "Надіслати бриф",
-            "problem": "Проблема",
-            "solution": "Що я роблю",
+            "ctaMid": "Надішліть опис проєкту для оцінки",
+            "ctaMidButton": "Отримати оцінку",
+            "problem": "Ситуація клієнта",
+            "solution": "Запропонований обсяг роботи",
             "timelines": {
               "landing": "3–7 днів",
               "business": "1–3 тижні",
@@ -30194,19 +30194,19 @@
           "source": "src/content/guides.ts",
           "line": 164,
           "path": "guideLabels.uk.all",
-          "text": "Усі касети"
+          "text": "Усі гайди"
         },
         {
           "source": "src/content/guides.ts",
           "line": 165,
           "path": "guideLabels.uk.outcome",
-          "text": "Що отримаєш"
+          "text": "Результат після виконання"
         },
         {
           "source": "src/content/guides.ts",
           "line": 166,
           "path": "guideLabels.uk.steps",
-          "text": "Кроки"
+          "text": "Інструкція"
         },
         {
           "source": "src/content/guides.ts",
@@ -30218,7 +30218,7 @@
           "source": "src/content/guides.ts",
           "line": 168,
           "path": "guideLabels.uk.next",
-          "text": "Наступна касета"
+          "text": "Наступний гайд"
         },
         {
           "source": "src/content/guides.ts",

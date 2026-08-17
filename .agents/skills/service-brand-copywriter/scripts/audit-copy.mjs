@@ -17,6 +17,8 @@ const patterns = [
   { id: "website-that-works", re: /сайт,? который работает|website that works|stron[ay],? któr[ae] działa|сайт,? який працює/iu },
   { id: "no-fluff", re: /без воды|no fluff|bez lania wody|без води/iu },
   { id: "digital-presence", re: /цифровое присутствие|digital presence|cyfrowa obecność|цифрова присутність/iu },
+  { id: "generic-outcome", re: /^(?:что получится|what you will have|co będziesz mieć|що отримаєш)$/iu },
+  { id: "soft-rejection", re: /probably not for you|скорее не подходит|raczej nie dla ciebie|швидше не для вас/iu },
 ];
 
 const findings = [];
