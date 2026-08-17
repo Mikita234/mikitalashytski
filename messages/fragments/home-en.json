@@ -325,6 +325,16 @@
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
     "startFrom": "START FROM THE IDEA — NOT A TEMPLATE",
+    "processTag": "WHAT HAPPENS NEXT",
+    "processTitle": "Three steps from request to clear scope",
+    "processSteps": [
+      { "title": "I review the context", "text": "I check the task, current site, goal, budget range and timing." },
+      { "title": "You receive options", "text": "I reply with one or two suitable formats and the first useful recommendation." },
+      { "title": "We fix the scope", "text": "After your choice, we confirm deliverables, price, timeline and start." }
+    ],
+    "prepareTitle": "What helps me answer accurately?",
+    "prepareItems": ["Current URL or project state", "Desired business result", "Preferred deadline", "Budget range", "Existing content and access"],
+    "asyncNote": "You can start in writing through the form, Telegram or email. A call becomes useful when the scope needs a live discussion.",
     "liveBadge": "● LIVE",
     "hpLabel": "HP",
     "recLabel": "REC"
@@ -355,6 +365,8 @@
       "flexible": "Flexible"
     },
     "success": "Request received. I'll check the task and reply with next steps.",
+    "successResponse": "Expected response: within one business day.",
+    "successSummary": "Request summary",
     "error": "Could not send automatically — try Telegram or email below.",
     "submit": "ORDER BUILD",
     "submitting": "SENDING...",

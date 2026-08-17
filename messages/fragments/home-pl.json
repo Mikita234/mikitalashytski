@@ -325,6 +325,16 @@
     "ctaTelegram": "Telegram",
     "ctaEmail": "Email",
     "startFrom": "START OD POMYSŁU — NIE OD SZABLONU",
+    "processTag": "CO DALEJ",
+    "processTitle": "Trzy kroki od zgłoszenia do jasnego zakresu",
+    "processSteps": [
+      { "title": "Sprawdzam kontekst", "text": "Czytam zadanie, obecną stronę, cel, budżet i termin." },
+      { "title": "Otrzymujesz warianty", "text": "Odpowiadam z jednym lub dwoma formatami i pierwszą użyteczną rekomendacją." },
+      { "title": "Ustalamy zakres", "text": "Po wyborze potwierdzamy rezultat, cenę, termin i start." }
+    ],
+    "prepareTitle": "Co pomoże odpowiedzieć precyzyjnie?",
+    "prepareItems": ["Aktualny URL lub stan projektu", "Oczekiwany wynik biznesowy", "Preferowany termin", "Zakres budżetu", "Dostępne treści i dostępy"],
+    "asyncNote": "Możesz zacząć pisemnie przez formularz, Telegram lub email. Rozmowa przydaje się, gdy zakres wymaga wspólnego omówienia.",
     "liveBadge": "● NA ŻYWO",
     "hpLabel": "HP",
     "recLabel": "REC"
@@ -355,6 +365,8 @@
       "flexible": "Elastycznie"
     },
     "success": "Zgłoszenie przyjęte. Sprawdzę zadanie i odpowiem z kolejnymi krokami.",
+    "successResponse": "Oczekiwana odpowiedź: w ciągu jednego dnia roboczego.",
+    "successSummary": "Podsumowanie zgłoszenia",
     "error": "Nie udało się wysłać automatycznie — spróbuj Telegram lub e-mail.",
     "submit": "ZAMÓW BUILD",
     "submitting": "WYSYŁAM...",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { buildSeoMetadata } from "@/lib/seo";
 import { site } from "@/content/site";
+import { JsonLd } from "@/components/json-ld";
 import {
   VintageBlock,
   VintageBulletList,
@@ -53,6 +54,32 @@ const copy = {
       "You need a full brand strategy deck before fixing obvious site friction.",
       "You want bulk cold-email claims without checking the actual website.",
     ],
+    sampleTitle: "What does one audit finding look like?",
+    sampleIntro: "Every recommendation connects visible evidence with business impact and a concrete next action.",
+    sampleLabels: ["Finding", "Evidence", "Impact", "Action"],
+    sample: [
+      "The mobile first screen hides the primary contact path.",
+      "At 390 px width, the first call or form link appears after three screen heights.",
+      "Ready buyers spend extra time searching for the next step.",
+      "Place one primary CTA beside the offer and repeat it after proof.",
+    ],
+    outcomesTitle: "What can happen after the audit?",
+    outcomes: [
+      { title: "Keep", body: "The current site has a solid base and receives a prioritized improvement list." },
+      { title: "Rescue sprint", body: "A focused sprint repairs the highest-impact conversion and technical issues." },
+      { title: "Rebuild", body: "A new build starts from confirmed requirements, reusable assets and a clear scope." },
+    ],
+    faqTitle: "What do clients usually ask?",
+    faqs: [
+      { q: "What should I send?", a: "Send the public URL, business goal, main concern and any available analytics or Search Console context." },
+      { q: "Which platforms can you review?", a: "WordPress, Wix, Shopify, Next.js, Astro and custom sites can all be reviewed through the visitor path and technical signals." },
+      { q: "Can the audit fee count toward implementation?", a: "Yes. The fee can be credited toward an agreed rescue sprint or rebuild started within 14 days." },
+      { q: "What result should I expect?", a: "You receive evidence, priorities and an implementation decision. Search growth depends on the market, content and completed work." },
+    ],
+    linksTitle: "Where can you continue?",
+    links: ["Audit service", "Rescue pipeline", "Launch checklist", "Relevant case"],
+    bottomTitle: "Ready for a concrete diagnosis?",
+    bottomBody: "Send the URL and the business result you want. I will confirm the audit scope and the first useful step.",
   },
   pl: {
     tag: "Audyt rescue strony",
@@ -96,6 +123,32 @@ const copy = {
       "Potrzebujesz dużej strategii marki zanim naprawimy oczywiste tarcia na stronie.",
       "Chcesz masowych cold-email claimów bez sprawdzania realnej strony.",
     ],
+    sampleTitle: "Jak wygląda jeden punkt audytu?",
+    sampleIntro: "Każda rekomendacja łączy widoczny dowód, wpływ biznesowy i konkretne następne działanie.",
+    sampleLabels: ["Problem", "Dowód", "Wpływ", "Działanie"],
+    sample: [
+      "Pierwszy ekran mobile ukrywa główną ścieżkę kontaktu.",
+      "Przy szerokości 390 px pierwszy telefon lub formularz pojawia się po trzech ekranach.",
+      "Zdecydowany klient poświęca dodatkowy czas na szukanie kolejnego kroku.",
+      "Umieścić jedno główne CTA obok oferty i powtórzyć je po dowodach.",
+    ],
+    outcomesTitle: "Co może wydarzyć się po audycie?",
+    outcomes: [
+      { title: "Zachować", body: "Obecna strona ma dobrą bazę i otrzymuje priorytetową listę ulepszeń." },
+      { title: "Rescue sprint", body: "Krótki sprint naprawia najważniejsze problemy konwersji i techniki." },
+      { title: "Rebuild", body: "Nowa wersja startuje z potwierdzonych wymagań, materiałów i jasnego zakresu." },
+    ],
+    faqTitle: "O co najczęściej pytają klienci?",
+    faqs: [
+      { q: "Co mam wysłać?", a: "Wyślij publiczny URL, cel biznesowy, główną obawę oraz dostępny kontekst z analityki lub Search Console." },
+      { q: "Jakie platformy możesz sprawdzić?", a: "WordPress, Wix, Shopify, Next.js, Astro i rozwiązania custom można ocenić przez ścieżkę użytkownika i sygnały techniczne." },
+      { q: "Czy koszt audytu przechodzi na wdrożenie?", a: "Tak. Koszt można odliczyć od uzgodnionego rescue sprintu lub rebuild rozpoczętego w ciągu 14 dni." },
+      { q: "Jakiego wyniku oczekiwać?", a: "Otrzymasz dowody, priorytety i decyzję wdrożeniową. Wzrost z wyszukiwarki zależy od rynku, treści i wykonanych działań." },
+    ],
+    linksTitle: "Gdzie przejść dalej?",
+    links: ["Usługa audytu", "Pipeline rescue", "Checklista startu", "Powiązany case"],
+    bottomTitle: "Gotowy na konkretną diagnozę?",
+    bottomBody: "Wyślij URL i oczekiwany wynik biznesowy. Potwierdzę zakres audytu i pierwszy użyteczny krok.",
   },
   ru: {
     tag: "Rescue-аудит сайта",
@@ -103,19 +156,19 @@ const copy = {
     description:
       "Прикладной rescue-аудит для сайта малого бизнеса: mobile CTA, формы, запись, доверие, базовое SEO и самые быстрые правки.",
     intro:
-      "Я не начинаю с продажи редизайна. Сначала проверяю путь живого посетителя с телефона до звонка, формы или записи, а потом показываю, что чинить первым.",
+      "Сначала я проверяю путь живого посетителя с телефона до звонка, формы или записи. Затем показываю приоритетные исправления и подходящий формат развития сайта.",
     price: "От 500 PLN / 115 EUR",
     timeline: "2-5 рабочих дней",
     primaryCta: "Заказать rescue-аудит",
     secondaryCta: "Отправить URL в Telegram",
-    whyTitle: "Когда это нужно",
+    whyTitle: "Когда аудит приносит пользу?",
     why: [
-      "Сайт есть, но заявок мало или они идут нестабильно.",
-      "С телефона трудно быстро найти звонок, форму или запись.",
-      "Непонятно, чинить текущий сайт или собирать новый.",
-      "Сайт уже собран через AI/Cursor, но выглядит как недоведённый черновик.",
+      "Сайт получает мало заявок или показывает нестабильный результат.",
+      "Мобильный путь к звонку, форме или записи требует упрощения.",
+      "Команде нужен аргументированный выбор между ремонтом и новой сборкой.",
+      "Проект после AI/Cursor требует production-проверки и завершения.",
     ],
-    checksTitle: "Что проверяю",
+    checksTitle: "Что входит в проверку?",
     checks: [
       "Первый экран на mobile, CTA и путь click-to-call.",
       "Формы, booking-ссылки, контактные варианты и понятный следующий шаг.",
@@ -123,22 +176,48 @@ const copy = {
       "Доверие рядом с конверсией: отзывы, доказательства, фото, кейсы.",
       "Простую технику: schema, canonical, sitemap и сломанные места в пути.",
     ],
-    outputTitle: "Что получите",
+    outputTitle: "Какой результат вы получите?",
     output: [
       "Короткий письменный аудит с 3-7 приоритетными правками.",
       "Пояснение, что чинится быстро, а где уже нужна пересборка.",
       "Оценку rescue sprint, если внедрение имеет смысл.",
       "Стоимость аудита можно зачесть в rescue sprint или rebuild в течение 14 дней.",
     ],
-    proofTitle: "Почему это не generic SEO-отчёт",
+    proofTitle: "Как аудит подтверждает выводы?",
     proof:
-      "Аудит строится на конкретных проверках, а не на случайных claim-ах. Если я пишу, что чего-то нет, это должно быть видно в странице/коде или отмечено как пункт для ручной проверки.",
-    notTitle: "Не подойдёт, если",
+      "Каждый вывод опирается на страницу, код, измерение или отмеченную ручную проверку. Рекомендация связывает факт, влияние на путь клиента, приоритет и конкретное действие.",
+    notTitle: "Когда выбрать другой формат?",
     not: [
-      "Нужны гарантированные позиции в Google.",
-      "Нужна большая бренд-стратегия до исправления очевидных проблем сайта.",
-      "Нужны массовые cold-email claims без проверки реальной страницы.",
+      "Цель проекта сформулирована как гарантированная позиция в Google.",
+      "Приоритетом выступает большая бренд-стратегия до работы с сайтом.",
+      "Массовая cold-email система требует отдельного процесса верификации лидов.",
     ],
+    sampleTitle: "Как выглядит один пункт аудита?",
+    sampleIntro: "Каждая рекомендация связывает видимый факт, бизнес-влияние и конкретное следующее действие.",
+    sampleLabels: ["Наблюдение", "Доказательство", "Влияние", "Действие"],
+    sample: [
+      "Первый экран мобильной версии скрывает основной путь к контакту.",
+      "При ширине 390 px первая ссылка на звонок или форму появляется через три экрана.",
+      "Готовый к обращению посетитель тратит дополнительное время на поиск следующего шага.",
+      "Разместить один главный CTA рядом с оффером и повторить его после доказательств.",
+    ],
+    outcomesTitle: "Что происходит после аудита?",
+    outcomes: [
+      { title: "Сохранить", body: "Текущий сайт имеет хорошую основу и получает приоритетный список улучшений." },
+      { title: "Rescue sprint", body: "Короткий sprint исправляет самые важные проблемы конверсии и технической части." },
+      { title: "Rebuild", body: "Новая версия стартует с подтверждённых требований, полезных материалов и ясного scope." },
+    ],
+    faqTitle: "Что обычно спрашивают перед аудитом?",
+    faqs: [
+      { q: "Что прислать для старта?", a: "Пришлите публичный URL, бизнес-цель, главный вопрос и доступный контекст из аналитики или Search Console." },
+      { q: "Какие платформы можно проверить?", a: "WordPress, Wix, Shopify, Next.js, Astro и custom-сайты проверяются через путь посетителя и технические сигналы." },
+      { q: "Можно ли зачесть аудит во внедрение?", a: "Да. Стоимость засчитывается в согласованный rescue sprint или rebuild, начатый в течение 14 дней." },
+      { q: "Какой эффект ожидать?", a: "Вы получите доказательства, приоритеты и решение по внедрению. Рост поиска зависит от рынка, контента и выполненных работ." },
+    ],
+    linksTitle: "Куда перейти дальше?",
+    links: ["Услуга аудита", "Rescue pipeline", "Чеклист запуска", "Связанный кейс"],
+    bottomTitle: "Готовы получить конкретный диагноз?",
+    bottomBody: "Пришлите URL и желаемый бизнес-результат. Я подтвержу объём аудита и первый полезный шаг.",
   },
   uk: {
     tag: "Rescue-аудит сайту",
@@ -182,10 +261,43 @@ const copy = {
       "Потрібна велика бренд-стратегія до виправлення очевидних проблем сайту.",
       "Потрібні масові cold-email claims без перевірки реальної сторінки.",
     ],
+    sampleTitle: "Як виглядає один пункт аудиту?",
+    sampleIntro: "Кожна рекомендація поєднує видимий факт, бізнес-вплив і конкретну наступну дію.",
+    sampleLabels: ["Спостереження", "Доказ", "Вплив", "Дія"],
+    sample: [
+      "Перший екран mobile приховує основний шлях до контакту.",
+      "За ширини 390 px перше посилання на дзвінок або форму з'являється через три екрани.",
+      "Готовий до звернення відвідувач витрачає додатковий час на пошук наступного кроку.",
+      "Розмістити один головний CTA поруч з офером і повторити його після доказів.",
+    ],
+    outcomesTitle: "Що відбувається після аудиту?",
+    outcomes: [
+      { title: "Зберегти", body: "Поточний сайт має добру основу й отримує пріоритетний список покращень." },
+      { title: "Rescue sprint", body: "Короткий sprint виправляє найважливіші проблеми конверсії й технічної частини." },
+      { title: "Rebuild", body: "Нова версія стартує з підтверджених вимог, корисних матеріалів і чіткого scope." },
+    ],
+    faqTitle: "Що зазвичай питають перед аудитом?",
+    faqs: [
+      { q: "Що надіслати для старту?", a: "Надішліть публічний URL, бізнес-мету, головне питання та доступний контекст з аналітики або Search Console." },
+      { q: "Які платформи можна перевірити?", a: "WordPress, Wix, Shopify, Next.js, Astro і custom-сайти перевіряються через шлях відвідувача й технічні сигнали." },
+      { q: "Чи можна зарахувати аудит у впровадження?", a: "Так. Вартість зараховується в погоджений rescue sprint або rebuild, розпочатий протягом 14 днів." },
+      { q: "Якого ефекту очікувати?", a: "Ви отримаєте докази, пріоритети та рішення щодо впровадження. Зростання пошуку залежить від ринку, контенту й виконаних робіт." },
+    ],
+    linksTitle: "Куди перейти далі?",
+    links: ["Послуга аудиту", "Rescue pipeline", "Чеклист запуску", "Пов'язаний кейс"],
+    bottomTitle: "Готові отримати конкретний діагноз?",
+    bottomBody: "Надішліть URL і бажаний бізнес-результат. Я підтверджу обсяг аудиту та перший корисний крок.",
   },
 } as const;
 
 type Locale = keyof typeof copy;
+
+const rescueLinks = [
+  "/services/audit",
+  "/pipeline/rescue",
+  "/guides/website-launch-checklist-full",
+  "/projects/lead-scraping",
+] as const;
 
 function getCopy(locale: string) {
   return copy[(locale in copy ? locale : "en") as Locale];
@@ -214,9 +326,45 @@ export default async function WebsiteRescuePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = getCopy(locale);
+  const localePrefix = locale === "en" ? "" : `/${locale}`;
+  const pageUrl = `${site.url}${localePrefix}/website-rescue`;
+
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: t.title,
+    description: t.description,
+    url: pageUrl,
+    provider: {
+      "@type": "Person",
+      name: site.name,
+      url: site.url,
+    },
+    offers: {
+      "@type": "Offer",
+      price: "500",
+      priceCurrency: "PLN",
+      url: pageUrl,
+      availability: "https://schema.org/InStock",
+    },
+  };
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
 
   return (
     <>
+      <JsonLd data={[serviceLd, faqLd]} />
       <VintagePageHeader tag={t.tag} title={t.title} subtitle={t.description} />
 
       <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
@@ -286,6 +434,107 @@ export default async function WebsiteRescuePage({
           <VintageBlock title={t.notTitle}>
             <VintageBulletList items={[...t.not]} accent="bg-[var(--vhs-red)]" />
           </VintageBlock>
+        </section>
+
+        <section className="mt-14">
+          <VintageSectionHeader
+            tag="SAMPLE / P1"
+            title={t.sampleTitle}
+            subtitle={t.sampleIntro}
+            tagClassName="text-[var(--vhs-terminal)]"
+          />
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            {t.sample.map((value, index) => (
+              <div
+                key={t.sampleLabels[index]}
+                className="border border-white/10 bg-[#101014] p-5"
+              >
+                <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-[var(--vhs-terminal)]">
+                  {String(index + 1).padStart(2, "0")} · {t.sampleLabels[index]}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-body)]">
+                  {value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <VintageSectionHeader tag="NEXT" title={t.outcomesTitle} />
+          <div className="grid gap-4 md:grid-cols-3">
+            {t.outcomes.map((outcome, index) => (
+              <VintageBlock key={outcome.title} title={`${index + 1}. ${outcome.title}`}>
+                <p className="type-body">{outcome.body}</p>
+              </VintageBlock>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <VintageSectionHeader tag="FAQ" title={t.faqTitle} />
+            <div className="space-y-3">
+              {t.faqs.map((item) => (
+                <details
+                  key={item.q}
+                  className="group border border-white/10 bg-[#101014] p-5"
+                >
+                  <summary className="cursor-pointer font-display text-xl uppercase text-[var(--vhs-white)] marker:text-[var(--vhs-terminal)]">
+                    {item.q}
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--vhs-muted)]">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <VintageSectionHeader tag="LINKS" title={t.linksTitle} />
+            <div className="flex flex-col gap-3">
+              {rescueLinks.map((href, index) => (
+                <VHSButton key={href} href={href} variant="secondary">
+                  {t.links[index]} →
+                </VHSButton>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-14 border-2 border-[var(--vhs-acid)] bg-[#101014] p-6 sm:p-8">
+          <p className="font-display text-3xl uppercase text-[var(--vhs-white)]">
+            {t.bottomTitle}
+          </p>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[var(--vhs-muted)]">
+            {t.bottomBody}
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <VHSButton
+              href="/order?service=audit"
+              analytics={{
+                event: "rescue_cta_click",
+                location: "rescue_bottom",
+                service: "audit",
+              }}
+            >
+              {t.primaryCta}
+            </VHSButton>
+            <VHSButton
+              href={site.telegram}
+              variant="secondary"
+              external
+              analytics={{
+                event: "rescue_cta_click",
+                location: "rescue_bottom",
+                service: "audit",
+                channel: "telegram",
+              }}
+            >
+              {t.secondaryCta}
+            </VHSButton>
+          </div>
         </section>
       </main>
     </>

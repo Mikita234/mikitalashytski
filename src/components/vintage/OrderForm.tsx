@@ -137,19 +137,46 @@ export function OrderForm() {
         {state === "sent" ? (
           <div className="space-y-3 text-center">
             <p className="font-mono text-sm font-bold text-black">{t("success")}</p>
-            <VHSButton
-              href={site.telegram}
-              variant="primary"
-              external
-              analytics={{
-                event: "order_fallback_click",
-                location: "order_success",
-                service,
-                channel: "telegram",
-              }}
-            >
-              {site.telegramHandle}
-            </VHSButton>
+            <p className="font-mono text-xs text-black/75">{t("successResponse")}</p>
+            <div className="border border-[#808080] bg-white p-3 text-left font-mono text-xs text-black">
+              <p className="mb-2 font-bold uppercase">{t("successSummary")}</p>
+              <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+                <dt>{t("labels.service")}:</dt>
+                <dd>{t(`services.${service}`)}</dd>
+                <dt>{t("labels.budget")}:</dt>
+                <dd>{t(`budgets.${budget}`)}</dd>
+                <dt>{t("labels.timeline")}:</dt>
+                <dd>{t(`timelines.${timeline}`)}</dd>
+              </dl>
+            </div>
+            <div className="flex flex-wrap justify-center gap-2">
+              <VHSButton
+                href={site.telegram}
+                variant="primary"
+                external
+                analytics={{
+                  event: "order_fallback_click",
+                  location: "order_success",
+                  service,
+                  channel: "telegram",
+                }}
+              >
+                {site.telegramHandle}
+              </VHSButton>
+              <VHSButton
+                href={`mailto:${site.email}`}
+                variant="secondary"
+                external
+                analytics={{
+                  event: "order_fallback_click",
+                  location: "order_success",
+                  service,
+                  channel: "email",
+                }}
+              >
+                {site.email}
+              </VHSButton>
+            </div>
           </div>
         ) : (
           <>
