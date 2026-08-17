@@ -3,7 +3,8 @@
 import { useLocale, useTranslations } from "next-intl";
 import { formatPriceFrom } from "@/lib/pricing";
 import {
-  vintageWorksHome,
+  vintageProofHome,
+  vintageWorksHomeArchive,
 } from "@/content/home-vintage";
 import { guideIntro, guideLabels, guides } from "@/content/guides";
 import { getMarketPagePath, getMarketPagesForLocale } from "@/content/market-pages";
@@ -11,7 +12,7 @@ import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { GuideTapeArchive } from "@/components/guides/GuideTapeArchive";
 import { PopupWindow } from "./PopupWindow";
-import { servicePackages } from "@/content/services";
+import { serviceMeta, servicePackages } from "@/content/services";
 import { HeroSection } from "./HeroSection";
 import { PackageCard } from "./PackageCard";
 import { PricingSection } from "./PricingSection";
@@ -180,6 +181,36 @@ export function VintageHome() {
         </section>
 
         <section
+          id="works"
+          className="scroll-mt-20 border-t border-[var(--doom-stone)]/40 bg-[#0c0c0e] section-glow-terminal section-spacing"
+        >
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <VintageSectionHeader
+              tag={t("works.proofTag")}
+              title={t("works.proofTitle")}
+              subtitle={t("works.proofSubtitle")}
+              tagClassName="text-[var(--vhs-terminal)]"
+            />
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {vintageProofHome.map((work) => (
+                <VintageProjectCard
+                  key={work.slug}
+                  slug={work.slug}
+                  title={tProjects(`${work.slug}.cardTitle`)}
+                  desc={tProjects(`${work.slug}.cardDesc`)}
+                  tags={work.tags}
+                  status={work.status}
+                  href={work.href}
+                  style={work.style}
+                  domain={work.domain}
+                  analyticsLocation="home_proof"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
           id="packages"
           className="scroll-mt-20 border-t border-[var(--doom-stone)]/40 section-spacing"
         >
@@ -201,6 +232,7 @@ export function VintageHome() {
                   timeline={t(`packages.timelines.${p.timelineKey}`)}
                   tag={p.tag}
                   href={p.href}
+                  caseHref={`/projects/${serviceMeta[p.id].caseSlug}`}
                 />
               ))}
             </div>
@@ -316,7 +348,7 @@ export function VintageHome() {
         </section>
 
         <section
-          id="works"
+          id="work-archive"
           className="scroll-mt-20 border-t border-[var(--doom-stone)]/40 bg-[#0c0c0e] section-glow-terminal section-spacing"
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -327,7 +359,7 @@ export function VintageHome() {
               tagClassName="text-[var(--vhs-terminal)]"
             />
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {vintageWorksHome.map((w) => (
+              {vintageWorksHomeArchive.map((w) => (
                 <VintageProjectCard
                   key={w.slug}
                   slug={w.slug}
@@ -338,6 +370,7 @@ export function VintageHome() {
                   href={w.href}
                   style={w.style}
                   domain={w.domain}
+                  analyticsLocation="home_work_archive"
                 />
               ))}
             </div>

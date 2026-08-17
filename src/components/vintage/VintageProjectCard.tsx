@@ -29,6 +29,7 @@ type VintageWorkCardProps = {
   href: string;
   style: keyof typeof styleClasses;
   domain: string;
+  analyticsLocation?: string;
 };
 
 export function VintageProjectCard({
@@ -40,6 +41,7 @@ export function VintageProjectCard({
   href,
   style,
   domain,
+  analyticsLocation,
 }: VintageWorkCardProps) {
   const t = useTranslations("home.works");
   const isWin98 = style === "win98";
@@ -116,7 +118,12 @@ export function VintageProjectCard({
 
   if (isHash) {
     return (
-      <a href={href} className={cls}>
+      <a
+        href={href}
+        className={cls}
+        data-analytics-event="case_open"
+        data-analytics-location={analyticsLocation}
+      >
         {body}
       </a>
     );
@@ -124,14 +131,26 @@ export function VintageProjectCard({
 
   if (isExternal) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cls}
+        data-analytics-event="case_open"
+        data-analytics-location={analyticsLocation}
+      >
         {body}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={cls}>
+    <Link
+      href={href}
+      className={cls}
+      data-analytics-event="case_open"
+      data-analytics-location={analyticsLocation}
+    >
       {body}
     </Link>
   );

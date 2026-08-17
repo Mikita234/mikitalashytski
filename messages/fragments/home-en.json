@@ -25,7 +25,7 @@
     "stack": ["Landings", "Shopify", "BaseLinker", "Payments", "Bots", "Automation", "SEO"],
     "ctaOrder": "Discuss project",
     "ctaWorks": "View works",
-    "ctaAudit": "Do it yourself",
+    "ctaRescue": "Review current site",
     "tvLabel": "BUILDER-TV 2001",
     "phone": {
       "ariaLabel": "Pick up the phone",
@@ -171,6 +171,7 @@
     "from": "from",
     "timeline": "Timeline",
     "order": "Order this",
+    "case": "Case",
     "details": "Details",
     "items": {
       "landing": {
@@ -240,6 +241,9 @@
   },
   "works": {
     "tag": "PROJECTS",
+    "proofTag": "PROOF BY PROBLEM",
+    "proofTitle": "Three business problems already solved",
+    "proofSubtitle": "A store with operations, an event ticketing flow and a service website built around real customer actions.",
     "title": "Selected work",
     "subtitle": "From e-commerce and marketplaces to automation and service sites. Same cases featured on TV in the hero ↑",
     "viewAll": "All works",

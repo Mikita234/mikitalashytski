@@ -12,6 +12,7 @@ type PackageCardProps = {
   timeline: string;
   tag: string;
   href: string;
+  caseHref: string;
 };
 
 const icons: Record<string, string> = {
@@ -28,6 +29,7 @@ export function PackageCard({
   timeline,
   tag,
   href,
+  caseHref,
 }: PackageCardProps) {
   const t = useTranslations("home.packages");
   const title = t(`items.${id}.title`);
@@ -35,10 +37,7 @@ export function PackageCard({
 
   return (
     <DoomCornerFrame>
-      <Link
-        href={href}
-        className="group block border-2 border-[var(--doom-stone)] bg-[#141418] transition-transform hover:-translate-y-1 hover:border-[var(--doom-red)]/60"
-      >
+      <div className="group border-2 border-[var(--doom-stone)] bg-[#141418] transition-transform hover:-translate-y-1 hover:border-[var(--doom-red)]/60">
         <div className="flex h-14 items-center justify-center border-b border-[var(--doom-stone)] bg-gradient-to-r from-[var(--doom-blood)]/40 to-transparent">
           <span className="font-mono text-2xl text-[var(--doom-ammo)]">
             {icons[tag] ?? "●"}
@@ -62,11 +61,34 @@ export function PackageCard({
             variant="ammo"
             className="mt-4"
           />
-          <span className="mt-4 inline-block font-[family-name:var(--font-doom)] text-[8px] uppercase tracking-widest text-[var(--vhs-acid)] group-hover:text-[var(--doom-health)]">
-            {t("details")} →
-          </span>
+          <div className="mt-5 grid grid-cols-2 gap-2 border-t border-white/10 pt-4">
+            <Link
+              href={href}
+              className="inline-flex items-center justify-center border border-[var(--doom-stone-light)] px-2 py-2 font-[family-name:var(--font-doom)] text-[8px] uppercase tracking-widest text-[var(--vhs-beige)] transition-colors hover:border-[var(--vhs-acid)] hover:text-[var(--vhs-acid)]"
+            >
+              {t("details")} →
+            </Link>
+            <Link
+              href={caseHref}
+              className="inline-flex items-center justify-center border border-[var(--doom-stone-light)] px-2 py-2 font-[family-name:var(--font-doom)] text-[8px] uppercase tracking-widest text-[var(--vhs-beige)] transition-colors hover:border-[var(--vhs-terminal)] hover:text-[var(--vhs-terminal)]"
+              data-analytics-event="case_open"
+              data-analytics-location="home_package"
+              data-analytics-service={id}
+            >
+              {t("case")} →
+            </Link>
+            <Link
+              href={`/order?service=${id}`}
+              className="col-span-2 inline-flex items-center justify-center border border-[var(--vhs-acid)] bg-[var(--vhs-acid)] px-2 py-2 font-[family-name:var(--font-doom)] text-[8px] uppercase tracking-widest text-black transition-colors hover:bg-[var(--vhs-terminal)]"
+              data-analytics-event="order_open"
+              data-analytics-location="home_package"
+              data-analytics-service={id}
+            >
+              {t("order")} →
+            </Link>
+          </div>
         </div>
-      </Link>
+      </div>
     </DoomCornerFrame>
   );
 }

@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildSeoMetadata } from "@/lib/seo";
 import { site } from "@/content/site";
 import { VintagePageHeader } from "@/components/vintage/VintagePage";
-import { OrderForm } from "@/components/vintage/OrderForm";
+import {
+  OrderForm,
+  OrderFormFallback,
+} from "@/components/vintage/OrderForm";
 import { VHSButton } from "@/components/vintage/VHSButton";
 
 export async function generateMetadata({
@@ -54,7 +58,9 @@ export default async function OrderPage({
           ))}
         </div>
 
-        <OrderForm />
+        <Suspense fallback={<OrderFormFallback />}>
+          <OrderForm />
+        </Suspense>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <VHSButton

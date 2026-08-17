@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import {
   orderServiceKeys,
   orderBudgetKeys,
@@ -12,14 +13,33 @@ import { trackEvent } from "@/lib/analytics";
 import { VHSButton } from "./VHSButton";
 
 type FormState = "idle" | "sent" | "error";
+type OrderServiceKey = (typeof orderServiceKeys)[number];
+
+function isOrderServiceKey(value: string | null): value is OrderServiceKey {
+  return orderServiceKeys.some((key) => key === value);
+}
+
+export function OrderFormFallback() {
+  return (
+    <div
+      className="mx-auto h-[38rem] max-w-2xl animate-pulse border-2 border-white/30 bg-[#c0c0c0]/70"
+      aria-hidden
+    />
+  );
+}
 
 export function OrderForm() {
   const t = useTranslations("home.form");
+  const searchParams = useSearchParams();
+  const requestedService = searchParams.get("service");
+  const initialService = isOrderServiceKey(requestedService)
+    ? requestedService
+    : orderServiceKeys[0];
   const [state, setState] = useState<FormState>("idle");
   const [submitting, setSubmitting] = useState(false);
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const [service, setService] = useState<string>(orderServiceKeys[0]);
+  const [service, setService] = useState<OrderServiceKey>(initialService);
   const [budget, setBudget] = useState<string>(orderBudgetKeys[5]);
   const [timeline, setTimeline] = useState<string>(orderTimelineKeys[3]);
   const [website, setWebsite] = useState("");
@@ -153,7 +173,16 @@ export function OrderForm() {
               <label htmlFor="order-service" className="mb-1 block font-mono text-xs font-bold text-black">
                 {t("labels.service")} *
               </label>
-              <select id="order-service" value={service} onChange={(e) => setService(e.target.value)} className={inputCls}>
+              <select
+                id="order-service"
+                value={service}
+                onChange={(event) => {
+                  if (isOrderServiceKey(event.target.value)) {
+                    setService(event.target.value);
+                  }
+                }}
+                className={inputCls}
+              >
                 {orderServiceKeys.map((key) => (
                   <option key={key} value={key}>
                     {t(`services.${key}`)}

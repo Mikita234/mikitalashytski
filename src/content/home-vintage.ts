@@ -128,6 +128,17 @@ export const vintageWorksHome = vintageWorkEntries.filter((w) =>
   ].includes(w.slug),
 );
 
+/** First commercial proof block: commerce, ticketing and local services. */
+const proofHomeSlugs = ["kayer-pl", "popular", "ideaactors"] as const;
+
+export const vintageProofHome = vintageWorkEntries.filter((work) =>
+  proofHomeSlugs.some((slug) => slug === work.slug),
+);
+
+export const vintageWorksHomeArchive = vintageWorksHome.filter(
+  (work) => !proofHomeSlugs.some((slug) => slug === work.slug),
+);
+
 export const vintageWorks = vintageWorkEntries;
 
 export const crtProjectChannels = [

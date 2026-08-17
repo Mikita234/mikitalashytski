@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { HeroWorkstation } from "@/components/animations/HeroWorkstation";
+import { Link } from "@/i18n/navigation";
 import { GlitchText } from "./GlitchText";
 import { VHSButton } from "./VHSButton";
 import { MarqueeTicker } from "./MarqueeTicker";
@@ -70,6 +71,15 @@ export function HeroSection() {
               ))}
             </div>
 
+            <Link
+              href="/works"
+              className="mt-3 inline-flex font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--vhs-terminal)] transition-colors hover:text-[var(--vhs-white)]"
+              data-analytics-event="works_open"
+              data-analytics-location="hero_proof"
+            >
+              {t("ctaWorks")} →
+            </Link>
+
             <div className="mt-6 flex flex-wrap gap-2">
               {stack.map((chip) => (
                 <span
@@ -94,22 +104,16 @@ export function HeroSection() {
                 {t("ctaOrder")}
               </VHSButton>
               <VHSButton
-                href="/works"
-                variant="secondary"
-                analytics={{ event: "works_open", location: "hero" }}
-              >
-                {t("ctaWorks")}
-              </VHSButton>
-              <VHSButton
-                href="/guides"
+                href="/website-rescue"
                 variant="secondary"
                 analytics={{
                   event: "visitor_lane_click",
                   location: "hero",
-                  lane: "diy",
+                  lane: "rescue",
+                  service: "audit",
                 }}
               >
-                {t("ctaAudit")}
+                {t("ctaRescue")}
               </VHSButton>
             </div>
           </div>

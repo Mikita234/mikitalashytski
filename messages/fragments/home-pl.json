@@ -25,7 +25,7 @@
     "stack": ["Landingi", "Shopify", "BaseLinker", "Płatności", "Boty", "Automatyzacja", "SEO"],
     "ctaOrder": "Omów projekt",
     "ctaWorks": "Zobacz realizacje",
-    "ctaAudit": "Zrób sam",
+    "ctaRescue": "Sprawdź obecną stronę",
     "tvLabel": "BUILDER-TV 2001",
     "phone": {
       "ariaLabel": "Odbierz telefon",
@@ -171,6 +171,7 @@
     "from": "od",
     "timeline": "Termin",
     "order": "Zamów",
+    "case": "Case study",
     "details": "Szczegóły",
     "items": {
       "landing": {
@@ -240,6 +241,9 @@
   },
   "works": {
     "tag": "PROJEKTY",
+    "proofTag": "DOWÓD W PRAKTYCE",
+    "proofTitle": "Trzy rozwiązane problemy biznesowe",
+    "proofSubtitle": "Sklep z operacjami, sprzedaż biletów na wydarzenia i strona usługowa zbudowana wokół realnych działań klientów.",
     "title": "Wybrane realizacje",
     "subtitle": "Od e-commerce i marketplace po automatyzację i strony usługowe. Te same case'y w reklamie na TV w hero ↑",
     "viewAll": "Wszystkie realizacje",

@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildSeoMetadata } from "@/lib/seo";
 import { site } from "@/content/site";
 import { VintagePageHeader } from "@/components/vintage/VintagePage";
-import { OrderForm } from "@/components/vintage/OrderForm";
+import {
+  OrderForm,
+  OrderFormFallback,
+} from "@/components/vintage/OrderForm";
 import { VHSButton } from "@/components/vintage/VHSButton";
 
 export async function generateMetadata({
@@ -55,17 +59,37 @@ export default async function ContactPage({
           ))}
         </div>
 
-        <OrderForm />
+        <Suspense fallback={<OrderFormFallback />}>
+          <OrderForm />
+        </Suspense>
 
         <p className="mx-auto mt-8 max-w-md text-center font-mono text-xs text-[var(--vhs-muted)]">
           {t("note")}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <VHSButton href={site.telegram} variant="secondary" external>
+          <VHSButton
+            href={site.telegram}
+            variant="secondary"
+            external
+            analytics={{
+              event: "order_fallback_click",
+              location: "contact_page",
+              channel: "telegram",
+            }}
+          >
             Telegram — {site.telegramHandle}
           </VHSButton>
-          <VHSButton href={`mailto:${site.email}`} variant="secondary" external>
+          <VHSButton
+            href={`mailto:${site.email}`}
+            variant="secondary"
+            external
+            analytics={{
+              event: "order_fallback_click",
+              location: "contact_page",
+              channel: "email",
+            }}
+          >
             {site.email}
           </VHSButton>
         </div>
