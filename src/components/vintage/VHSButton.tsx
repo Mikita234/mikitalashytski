@@ -11,6 +11,13 @@ type VHSButtonProps = {
   variant?: "primary" | "secondary";
   className?: string;
   external?: boolean;
+  analytics?: {
+    event: string;
+    location?: string;
+    lane?: string;
+    service?: string;
+    channel?: string;
+  };
 };
 
 export function VHSButton({
@@ -20,6 +27,7 @@ export function VHSButton({
   variant = "primary",
   className = "",
   external,
+  analytics,
 }: VHSButtonProps) {
   const t = useTranslations("home.vhsButton");
   const [hover, setHover] = useState(false);
@@ -52,6 +60,15 @@ export function VHSButton({
   );
 
   const cls = `${base} ${variants[variant]} ${className}`;
+  const analyticsProps = analytics
+    ? {
+        "data-analytics-event": analytics.event,
+        "data-analytics-location": analytics.location,
+        "data-analytics-lane": analytics.lane,
+        "data-analytics-service": analytics.service,
+        "data-analytics-channel": analytics.channel,
+      }
+    : {};
 
   if (href) {
     const isExternal =
@@ -68,6 +85,7 @@ export function VHSButton({
           onMouseLeave={() => setHover(false)}
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+          {...analyticsProps}
         >
           {content}
         </a>
@@ -80,6 +98,7 @@ export function VHSButton({
         onClick={onClick}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+        {...analyticsProps}
       >
         {content}
       </Link>
@@ -93,6 +112,7 @@ export function VHSButton({
       className={cls}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      {...analyticsProps}
     >
       {content}
     </button>

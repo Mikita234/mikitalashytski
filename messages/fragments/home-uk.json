@@ -2,6 +2,8 @@
   "nav": {
     "home": "ГОЛОВНА",
     "works": "РОБОТИ",
+    "rescue": "RESCUE",
+    "services": "ПОСЛУГИ",
     "pipeline": "PIPELINE",
     "guides": "ГАЙДИ",
     "packages": "ПАКЕТИ",
@@ -31,7 +33,7 @@
       "ringing": "ДЗВІНОК",
       "title": "Зніміть трубку!",
       "ctaTelegram": "НАПИСАТИ В TELEGRAM",
-      "ctaCall": "ПОДЗВОНИТИ",
+      "ctaCall": "НАПИСАТИ НА EMAIL",
       "ctaOrder": "ЗАМОВИТИ ПРОЄКТ",
       "close": "Закрити",
       "dismiss": "Сховати телефон"
@@ -54,7 +56,7 @@
         "title": "Розібрати й полагодити",
         "text": "Якщо Cursor зламав проєкт, домен не працює, форма не відправляє або сайт виглядає як AI-демо.",
         "cta": "Замовити аудит",
-        "href": "/services/audit"
+        "href": "/website-rescue"
       },
       {
         "label": "BUILD",

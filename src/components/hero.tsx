@@ -79,7 +79,7 @@ export function Hero() {
           className="mt-9 flex flex-wrap items-center gap-3"
         >
           <Link
-            href="/#projects"
+            href="/#works"
             className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition-transform hover:scale-[1.03]"
           >
             {t("ctaPrimary")}

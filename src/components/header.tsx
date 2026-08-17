@@ -6,9 +6,10 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { ThemeToggle } from "./theme-toggle";
 import { LanguageSwitcher } from "./language-switcher";
 import { site } from "@/content/site";
+import { sellNav } from "@/content/selling";
 
 export function Header() {
-  const t = useTranslations("nav");
+  const t = useTranslations("home.nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -23,12 +24,10 @@ export function Header() {
   // Homepage has its own VHS navigation
   if (pathname === "/") return null;
 
-  const links = [
-    { href: "/", label: t("home") },
-    { href: "/#projects", label: t("projects") },
-    { href: "/about", label: t("about") },
-    { href: "/contact", label: t("contact") },
-  ];
+  const links = sellNav.map((item) => ({
+    href: item.href,
+    label: t(item.key),
+  }));
 
   return (
     <header
@@ -65,7 +64,7 @@ export function Header() {
           <ThemeToggle />
           <button
             type="button"
-            aria-label={t("menu")}
+            aria-label="Menu"
             onClick={() => setOpen((v) => !v)}
             className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted md:hidden"
           >

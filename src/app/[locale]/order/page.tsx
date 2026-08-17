@@ -57,10 +57,28 @@ export default async function OrderPage({
         <OrderForm />
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <VHSButton href={site.telegram} variant="secondary" external>
+          <VHSButton
+            href={site.telegram}
+            variant="secondary"
+            external
+            analytics={{
+              event: "order_fallback_click",
+              location: "order_page",
+              channel: "telegram",
+            }}
+          >
             Telegram — {site.telegramHandle}
           </VHSButton>
-          <VHSButton href={`mailto:${site.email}`} variant="secondary" external>
+          <VHSButton
+            href={`mailto:${site.email}`}
+            variant="secondary"
+            external
+            analytics={{
+              event: "order_fallback_click",
+              location: "order_page",
+              channel: "email",
+            }}
+          >
             {site.email}
           </VHSButton>
         </div>

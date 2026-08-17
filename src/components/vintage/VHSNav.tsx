@@ -34,7 +34,7 @@ function NavItem({
     </>
   );
 
-  if (href.includes("#")) {
+  if (href.startsWith("#")) {
     return (
       <a
         href={href}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { trackEvent } from "@/lib/analytics";
 import { HeroWorkstation } from "@/components/animations/HeroWorkstation";
 import { GlitchText } from "./GlitchText";
 import { VHSButton } from "./VHSButton";
@@ -86,21 +85,29 @@ export function HeroSection() {
               <VHSButton
                 href="/order"
                 variant="primary"
-                onClick={() => trackEvent("CTA Click", { location: "hero", type: "order" })}
+                analytics={{
+                  event: "visitor_lane_click",
+                  location: "hero",
+                  lane: "build",
+                }}
               >
                 {t("ctaOrder")}
               </VHSButton>
               <VHSButton
                 href="/works"
                 variant="secondary"
-                onClick={() => trackEvent("CTA Click", { location: "hero", type: "works" })}
+                analytics={{ event: "works_open", location: "hero" }}
               >
                 {t("ctaWorks")}
               </VHSButton>
               <VHSButton
                 href="/guides"
                 variant="secondary"
-                onClick={() => trackEvent("CTA Click", { location: "hero", type: "diy" })}
+                analytics={{
+                  event: "visitor_lane_click",
+                  location: "hero",
+                  lane: "diy",
+                }}
               >
                 {t("ctaAudit")}
               </VHSButton>

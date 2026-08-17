@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import {
   orderServiceKeys,
@@ -24,12 +24,19 @@ export function OrderForm() {
   const [timeline, setTimeline] = useState<string>(orderTimelineKeys[3]);
   const [website, setWebsite] = useState("");
   const [message, setMessage] = useState("");
+  const startedRef = useRef(false);
+
+  function handleFormStart() {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    trackEvent("order_form_start", { service });
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSubmitting(true);
     setState("idle");
-    trackEvent("Order Submit", { service, budget, timeline });
+    trackEvent("order_submit", { service, budget, timeline });
 
     const serviceLabel = t(`services.${service}`);
     const budgetLabel = t(`budgets.${budget}`);
@@ -54,17 +61,17 @@ export function OrderForm() {
 
       if (res.ok) {
         setState("sent");
-        trackEvent("Order Success", { service });
+        trackEvent("order_success", { service });
         return;
       }
 
       if (res.status === 503) {
         setState("error");
-        trackEvent("Order Error", { service, reason: "telegram_not_configured" });
+        trackEvent("order_error", { service, reason: "telegram_not_configured" });
         return;
       }
     } catch {
-      trackEvent("Order Error", { service, reason: "network" });
+      trackEvent("order_error", { service, reason: "network" });
       // network error — fall through to mailto
     } finally {
       setSubmitting(false);
@@ -85,7 +92,7 @@ export function OrderForm() {
         .filter(Boolean)
         .join("\n"),
     );
-    trackEvent("Order Mailto Fallback", { service });
+    trackEvent("order_fallback_click", { service, channel: "email" });
     window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
     setState("sent");
   }
@@ -102,11 +109,25 @@ export function OrderForm() {
         <span className="shrink-0 font-mono text-[9px] text-white/70 rec-blink">{t("recBadge")}</span>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4 p-4">
+      <form
+        onSubmit={handleSubmit}
+        onFocusCapture={handleFormStart}
+        className="space-y-4 p-4"
+      >
         {state === "sent" ? (
           <div className="space-y-3 text-center">
             <p className="font-mono text-sm font-bold text-black">{t("success")}</p>
-            <VHSButton href={site.telegram} variant="primary" external>
+            <VHSButton
+              href={site.telegram}
+              variant="primary"
+              external
+              analytics={{
+                event: "order_fallback_click",
+                location: "order_success",
+                service,
+                channel: "telegram",
+              }}
+            >
               {site.telegramHandle}
             </VHSButton>
           </div>

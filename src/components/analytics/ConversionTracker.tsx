@@ -26,10 +26,14 @@ export function ConversionTracker() {
       const href = link.getAttribute("href") ?? "";
       if (!href || href.startsWith("#")) return;
 
-      const eventName = classifyLink(href);
+      const eventName = link.dataset.analyticsEvent || classifyLink(href);
       if (!eventName) return;
 
       trackEvent(eventName, {
+        location: link.dataset.analyticsLocation || getLocation(link),
+        lane: link.dataset.analyticsLane || "",
+        service: link.dataset.analyticsService || getService(href),
+        channel: link.dataset.analyticsChannel || "",
         from: pathname,
         href: normalizeHref(href),
         label: normalizeLabel(link.innerText),
@@ -44,14 +48,27 @@ export function ConversionTracker() {
 }
 
 function classifyLink(href: string) {
-  if (isTelegramLink(href)) return "Telegram Click";
-  if (href.startsWith("mailto:")) return "Email Click";
-  if (isOrderLink(href)) return "Order Click";
-  if (isMarketPageLink(href)) return "Market Page Click";
-  if (href.includes("/services/")) return "Service Click";
-  if (href.includes("/projects/")) return "Case Click";
-  if (href.includes("/guides/")) return "Guide Click";
+  if (isTelegramLink(href) || href.startsWith("mailto:")) return "contact_click";
+  if (href.includes("/website-rescue")) return "rescue_open";
+  if (isOrderLink(href)) return "order_open";
+  if (isMarketPageLink(href)) return "market_page_open";
+  if (href.includes("/services/")) return "service_open";
+  if (href.includes("/projects/")) return "case_open";
+  if (href.includes("/guides")) return "guide_open";
+  if (href.includes("/works")) return "works_open";
   return null;
+}
+
+function getLocation(link: HTMLAnchorElement) {
+  if (link.closest("header")) return "navigation";
+  if (link.closest("footer")) return "footer";
+  if (link.closest("#hero")) return "hero";
+  return "content";
+}
+
+function getService(href: string) {
+  const match = stripOrigin(href).match(/\/services\/([^/?#]+)/);
+  return match?.[1] ?? "";
 }
 
 function isTelegramLink(href: string) {

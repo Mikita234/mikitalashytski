@@ -13,15 +13,19 @@ declare global {
 
 export function trackEvent(name: string, props?: Record<string, string>) {
   if (typeof window === "undefined") return;
-  const safeProps = props ? sanitizeProps(props) : undefined;
-  window.plausible?.(name, safeProps ? { props: safeProps } : undefined);
-  window.dataLayer?.push({ event: name, ...(safeProps ?? {}) });
+  const safeProps = sanitizeProps({
+    locale: document.documentElement.lang,
+    path: window.location.pathname,
+    ...(props ?? {}),
+  });
+  window.plausible?.(name, { props: safeProps });
+  window.dataLayer?.push({ event: name, ...safeProps });
   if (typeof window.clarity === "function") {
     Clarity.event(name);
   }
 
   if (process.env.NODE_ENV === "development") {
-    console.info("[analytics]", name, safeProps ?? {});
+    console.info("[analytics]", name, safeProps);
   }
 }
 

@@ -232,8 +232,27 @@ export default async function WebsiteRescuePage({
               </span>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <VHSButton href="/order">{t.primaryCta}</VHSButton>
-              <VHSButton href={site.telegram} variant="secondary" external>
+              <VHSButton
+                href="/order"
+                analytics={{
+                  event: "rescue_cta_click",
+                  location: "rescue_intro",
+                  service: "audit",
+                }}
+              >
+                {t.primaryCta}
+              </VHSButton>
+              <VHSButton
+                href={site.telegram}
+                variant="secondary"
+                external
+                analytics={{
+                  event: "rescue_cta_click",
+                  location: "rescue_intro",
+                  service: "audit",
+                  channel: "telegram",
+                }}
+              >
                 {t.secondaryCta}
               </VHSButton>
             </div>

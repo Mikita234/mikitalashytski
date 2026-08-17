@@ -2,6 +2,8 @@
   "nav": {
     "home": "GŁÓWNA",
     "works": "REALIZACJE",
+    "rescue": "RATUNEK",
+    "services": "USŁUGI",
     "pipeline": "PIPELINE",
     "guides": "PORADNIKI",
     "packages": "PAKIETY",
@@ -31,7 +33,7 @@
       "ringing": "DZWONI",
       "title": "Odbierz!",
       "ctaTelegram": "NAPISZ NA TELEGRAM",
-      "ctaCall": "ZADZWOŃ",
+      "ctaCall": "WYŚLIJ EMAIL",
       "ctaOrder": "ZAMÓW PROJEKT",
       "close": "Zamknij",
       "dismiss": "Ukryj telefon"
@@ -54,7 +56,7 @@
         "title": "Audyt i naprawa",
         "text": "Gdy Cursor zepsuł projekt, domena nie działa, formularz nie wysyła albo strona wygląda jak demo AI.",
         "cta": "Zamów audyt",
-        "href": "/services/audit"
+        "href": "/website-rescue"
       },
       {
         "label": "BUILD",

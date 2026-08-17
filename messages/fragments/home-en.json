@@ -2,6 +2,8 @@
   "nav": {
     "home": "HOME",
     "works": "WORKS",
+    "rescue": "RESCUE",
+    "services": "SERVICES",
     "pipeline": "PIPELINE",
     "guides": "GUIDES",
     "packages": "PACKAGES",
@@ -31,7 +33,7 @@
       "ringing": "RINGING",
       "title": "Pick up!",
       "ctaTelegram": "MESSAGE ON TELEGRAM",
-      "ctaCall": "CALL NOW",
+      "ctaCall": "SEND EMAIL",
       "ctaOrder": "ORDER A PROJECT",
       "close": "Close",
       "dismiss": "Hide phone"
@@ -54,7 +56,7 @@
         "title": "Audit and fix",
         "text": "For broken Cursor projects, domain issues, dead forms, messy layouts or AI-demo-looking sites.",
         "cta": "Book audit",
-        "href": "/services/audit"
+        "href": "/website-rescue"
       },
       {
         "label": "BUILD",

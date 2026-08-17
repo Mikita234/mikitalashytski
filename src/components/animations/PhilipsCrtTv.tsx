@@ -12,7 +12,6 @@ import {
 import { site } from "@/content/site";
 import { ScanlineOverlay } from "@/components/vintage/ScanlineOverlay";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { trackEvent } from "@/lib/analytics";
 import { getLocalizedPrice } from "@/lib/pricing";
 import { useTvChannel } from "./tv-channel-context";
 
@@ -163,9 +162,8 @@ function RetroAdSlide({
           <Link
             href={ad.ctaHref}
             className="retro-ad__cta"
-            onClick={() =>
-              trackEvent("CTA Click", { location: "hero-tv", type: ad.id })
-            }
+            data-analytics-location="hero_tv"
+            data-analytics-service={ad.id}
           >
             ☎ {copy.cta}
           </Link>

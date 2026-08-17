@@ -2,6 +2,8 @@
   "nav": {
     "home": "ГЛАВНАЯ",
     "works": "РАБОТЫ",
+    "rescue": "RESCUE",
+    "services": "УСЛУГИ",
     "pipeline": "ПАЙПЛАЙН",
     "guides": "ГАЙДЫ",
     "packages": "ПАКЕТЫ",
@@ -31,7 +33,7 @@
       "ringing": "ЗВОНОК",
       "title": "Снимите трубку!",
       "ctaTelegram": "НАПИСАТЬ В TELEGRAM",
-      "ctaCall": "ПОЗВОНИТЬ",
+      "ctaCall": "НАПИСАТЬ НА EMAIL",
       "ctaOrder": "ЗАКАЗАТЬ ПРОЕКТ",
       "close": "Закрыть",
       "dismiss": "Скрыть телефон"
@@ -54,7 +56,7 @@
         "title": "Разобрать и починить",
         "text": "Если Cursor сломал проект, домен не подключился, форма не отправляет заявки или сайт выглядит как AI-демка.",
         "cta": "Заказать аудит",
-        "href": "/services/audit"
+        "href": "/website-rescue"
       },
       {
         "label": "BUILD",

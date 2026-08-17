@@ -3,9 +3,9 @@
 export const sellNav = [
   { href: "/", key: "home" },
   { href: "/works", key: "works" },
-  { href: "/pipeline", key: "pipeline" },
+  { href: "/website-rescue", key: "rescue" },
+  { href: "/#packages", key: "services" },
   { href: "/guides", key: "guides" },
-  { href: "/#packages", key: "packages" },
   { href: "/about", key: "approach" },
   { href: "/order", key: "order" },
 ] as const;

@@ -8,7 +8,6 @@ import { Link } from "@/i18n/navigation";
 import { site } from "@/content/site";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { RetroPhoneHandset } from "@/components/vintage/RetroPhoneHandset";
-import { trackEvent } from "@/lib/analytics";
 
 type PhoneCallOverlayProps = {
   open: boolean;
@@ -140,32 +139,30 @@ export function PhoneCallOverlay({ open, onClose, origin }: PhoneCallOverlayProp
                   className="phone-call-overlay__btn phone-call-overlay__btn--primary"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => {
-                    trackEvent("CTA Click", { location: "hero-phone", type: "telegram" });
-                    onClose();
-                  }}
+                  data-analytics-event="contact_click"
+                  data-analytics-location="hero_phone"
+                  data-analytics-channel="telegram"
+                  onClick={onClose}
                 >
                   <span aria-hidden>📱</span> {t("ctaTelegram")} {site.telegramHandle}
                 </a>
                 <a
-                  href={site.telegram}
+                  href={`mailto:${site.email}`}
                   className="phone-call-overlay__btn phone-call-overlay__btn--call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    trackEvent("CTA Click", { location: "hero-phone", type: "call" });
-                    onClose();
-                  }}
+                  data-analytics-event="contact_click"
+                  data-analytics-location="hero_phone"
+                  data-analytics-channel="email"
+                  onClick={onClose}
                 >
-                  <span aria-hidden>☎</span> {t("ctaCall")}
+                  <span aria-hidden>✉</span> {t("ctaCall")}
                 </a>
                 <Link
                   href="/order"
                   className="phone-call-overlay__btn phone-call-overlay__btn--order"
-                  onClick={() => {
-                    trackEvent("CTA Click", { location: "hero-phone", type: "order" });
-                    onClose();
-                  }}
+                  data-analytics-event="visitor_lane_click"
+                  data-analytics-location="hero_phone"
+                  data-analytics-lane="build"
+                  onClick={onClose}
                 >
                   {t("ctaOrder")}
                 </Link>

@@ -50,6 +50,8 @@ const salesPathVisuals = [
   },
 ] as const;
 
+const salesPathLanes = ["diy", "rescue", "build"] as const;
+
 const marketLabels: Record<Locale, { tag: string; title: string; subtitle: string; cta: string }> = {
   en: {
     tag: "Market entry",
@@ -156,7 +158,16 @@ export function VintageHome() {
                         {item.text}
                       </p>
                       <div className="mt-6 border-t border-white/10 pt-4">
-                        <VHSButton href={item.href} variant="secondary" className="w-full">
+                        <VHSButton
+                          href={item.href}
+                          variant="secondary"
+                          className="w-full"
+                          analytics={{
+                            event: "visitor_lane_click",
+                            location: "home_sales_path",
+                            lane: salesPathLanes[index],
+                          }}
+                        >
                           {item.cta} →
                         </VHSButton>
                       </div>
