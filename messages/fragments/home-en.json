@@ -8,7 +8,12 @@
     "guides": "GUIDES",
     "packages": "PACKAGES",
     "approach": "APPROACH",
-    "order": "ORDER"
+    "order": "ORDER",
+    "soundPlay": "PLAY TRACK",
+    "soundStop": "STOP TRACK",
+    "soundAriaPlay": "Play the 25-second site soundtrack",
+    "soundAriaStop": "Stop the site soundtrack",
+    "soundTitle": "THE PAK — ДЭФО · first 25 seconds"
   },
   "hero": {
     "broadcast": "LIVE BROADCAST",

@@ -8,7 +8,7 @@
       "ru",
       "uk"
     ],
-    "sourceCount": 133,
+    "sourceCount": 134,
     "note": "Editorial inventory generated from runtime messages, localized content data, and visible JSX text. Edit source files, then regenerate this file."
   },
   "locales": {
@@ -60,7 +60,12 @@
             "guides": "GUIDES",
             "packages": "PACKAGES",
             "approach": "APPROACH",
-            "order": "ORDER"
+            "order": "ORDER",
+            "soundPlay": "PLAY TRACK",
+            "soundStop": "STOP TRACK",
+            "soundAriaPlay": "Play the 25-second site soundtrack",
+            "soundAriaStop": "Stop the site soundtrack",
+            "soundTitle": "THE PAK — ДЭФО · first 25 seconds"
           },
           "hero": {
             "broadcast": "LIVE BROADCAST",
@@ -9006,7 +9011,12 @@
             "guides": "PORADNIKI",
             "packages": "PAKIETY",
             "approach": "PROCES",
-            "order": "ZAMÓW"
+            "order": "ZAMÓW",
+            "soundPlay": "WŁĄCZ UTWÓR",
+            "soundStop": "ZATRZYMAJ",
+            "soundAriaPlay": "Odtwórz 25-sekundowy fragment utworu",
+            "soundAriaStop": "Zatrzymaj utwór",
+            "soundTitle": "THE PAK — ДЭФО · pierwsze 25 sekund"
           },
           "hero": {
             "broadcast": "TRANSMISJA NA ŻYWO",
@@ -17946,7 +17956,12 @@
             "guides": "ГАЙДЫ",
             "packages": "ПАКЕТЫ",
             "approach": "ПОДХОД",
-            "order": "ЗАКАЗ"
+            "order": "ЗАКАЗ",
+            "soundPlay": "ВКЛЮЧИТЬ ТРЕК",
+            "soundStop": "ОСТАНОВИТЬ",
+            "soundAriaPlay": "Включить 25-секундный фрагмент трека",
+            "soundAriaStop": "Остановить трек",
+            "soundTitle": "THE PAK — ДЭФО · первые 25 секунд"
           },
           "hero": {
             "broadcast": "ПРЯМОЙ ЭФИР",
@@ -28002,7 +28017,12 @@
             "guides": "ГАЙДИ",
             "packages": "ПАКЕТИ",
             "approach": "ПІДХІД",
-            "order": "ЗАМОВИТИ"
+            "order": "ЗАМОВИТИ",
+            "soundPlay": "УВІМКНУТИ ТРЕК",
+            "soundStop": "ЗУПИНИТИ",
+            "soundAriaPlay": "Увімкнути 25-секундний фрагмент треку",
+            "soundAriaStop": "Зупинити трек",
+            "soundTitle": "THE PAK — ДЭФО · перші 25 секунд"
           },
           "hero": {
             "broadcast": "ПРЯМИЙ ЕФІР",
@@ -37284,22 +37304,22 @@
     },
     {
       "source": "src/components/vintage/VHSNav.tsx",
-      "line": 30,
+      "line": 31,
       "text": "▶ PLAY"
     },
     {
       "source": "src/components/vintage/VHSNav.tsx",
-      "line": 73,
+      "line": 74,
       "text": "Main"
     },
     {
       "source": "src/components/vintage/VHSNav.tsx",
-      "line": 83,
+      "line": 85,
       "text": "Menu"
     },
     {
       "source": "src/components/vintage/VHSNav.tsx",
-      "line": 96,
+      "line": 98,
       "text": "Mobile"
     },
     {

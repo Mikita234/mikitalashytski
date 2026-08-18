@@ -6,6 +6,7 @@ import { BrandLogo } from "@/components/brand/BrandLogo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { Link } from "@/i18n/navigation";
 import { useState } from "react";
+import { SiteSoundtrack } from "./SiteSoundtrack";
 
 function NavItem({
   href,
@@ -77,6 +78,7 @@ export function VHSNav() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <SiteSoundtrack />
           <LanguageSwitcher />
           <button
             type="button"

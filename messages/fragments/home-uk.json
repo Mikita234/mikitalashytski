@@ -8,7 +8,12 @@
     "guides": "ГАЙДИ",
     "packages": "ПАКЕТИ",
     "approach": "ПІДХІД",
-    "order": "ЗАМОВИТИ"
+    "order": "ЗАМОВИТИ",
+    "soundPlay": "УВІМКНУТИ ТРЕК",
+    "soundStop": "ЗУПИНИТИ",
+    "soundAriaPlay": "Увімкнути 25-секундний фрагмент треку",
+    "soundAriaStop": "Зупинити трек",
+    "soundTitle": "THE PAK — ДЭФО · перші 25 секунд"
   },
   "hero": {
     "broadcast": "ПРЯМИЙ ЕФІР",
