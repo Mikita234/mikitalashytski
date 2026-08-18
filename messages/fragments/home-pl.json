@@ -9,11 +9,12 @@
     "packages": "PAKIETY",
     "approach": "PROCES",
     "order": "ZAMÓW",
-    "soundPlay": "WŁĄCZ UTWÓR",
-    "soundStop": "ZATRZYMAJ",
-    "soundAriaPlay": "Odtwórz 25-sekundowy fragment utworu",
-    "soundAriaStop": "Zatrzymaj utwór",
-    "soundTitle": "THE PAK — ДЭФО · pierwsze 25 sekund"
+    "soundPlay": "WŁĄCZ DŹWIĘK",
+    "soundCompact": "DŹWIĘK",
+    "soundStop": "PAUZA",
+    "soundAriaPlay": "Włącz dźwięk strony",
+    "soundAriaStop": "Wstrzymaj dźwięk strony",
+    "soundTitle": "Włącz dźwięk"
   },
   "hero": {
     "broadcast": "TRANSMISJA NA ŻYWO",

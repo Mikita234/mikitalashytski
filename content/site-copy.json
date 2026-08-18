@@ -61,11 +61,12 @@
             "packages": "PACKAGES",
             "approach": "APPROACH",
             "order": "ORDER",
-            "soundPlay": "PLAY TRACK",
-            "soundStop": "STOP TRACK",
-            "soundAriaPlay": "Play the 25-second site soundtrack",
-            "soundAriaStop": "Stop the site soundtrack",
-            "soundTitle": "THE PAK — ДЭФО · first 25 seconds"
+            "soundPlay": "TURN IT UP",
+            "soundCompact": "SOUND",
+            "soundStop": "PAUSE",
+            "soundAriaPlay": "Turn on the site sound",
+            "soundAriaStop": "Pause the site sound",
+            "soundTitle": "Turn on the sound"
           },
           "hero": {
             "broadcast": "LIVE BROADCAST",
@@ -9012,11 +9013,12 @@
             "packages": "PAKIETY",
             "approach": "PROCES",
             "order": "ZAMÓW",
-            "soundPlay": "WŁĄCZ UTWÓR",
-            "soundStop": "ZATRZYMAJ",
-            "soundAriaPlay": "Odtwórz 25-sekundowy fragment utworu",
-            "soundAriaStop": "Zatrzymaj utwór",
-            "soundTitle": "THE PAK — ДЭФО · pierwsze 25 sekund"
+            "soundPlay": "WŁĄCZ DŹWIĘK",
+            "soundCompact": "DŹWIĘK",
+            "soundStop": "PAUZA",
+            "soundAriaPlay": "Włącz dźwięk strony",
+            "soundAriaStop": "Wstrzymaj dźwięk strony",
+            "soundTitle": "Włącz dźwięk"
           },
           "hero": {
             "broadcast": "TRANSMISJA NA ŻYWO",
@@ -17957,11 +17959,12 @@
             "packages": "ПАКЕТЫ",
             "approach": "ПОДХОД",
             "order": "ЗАКАЗ",
-            "soundPlay": "ВКЛЮЧИТЬ ТРЕК",
-            "soundStop": "ОСТАНОВИТЬ",
-            "soundAriaPlay": "Включить 25-секундный фрагмент трека",
-            "soundAriaStop": "Остановить трек",
-            "soundTitle": "THE PAK — ДЭФО · первые 25 секунд"
+            "soundPlay": "ВРУБИТЬ ЗВУК",
+            "soundCompact": "ЗВУК",
+            "soundStop": "ПАУЗА",
+            "soundAriaPlay": "Включить звук на сайте",
+            "soundAriaStop": "Поставить звук на паузу",
+            "soundTitle": "Врубить звук"
           },
           "hero": {
             "broadcast": "ПРЯМОЙ ЭФИР",
@@ -28018,11 +28021,12 @@
             "packages": "ПАКЕТИ",
             "approach": "ПІДХІД",
             "order": "ЗАМОВИТИ",
-            "soundPlay": "УВІМКНУТИ ТРЕК",
-            "soundStop": "ЗУПИНИТИ",
-            "soundAriaPlay": "Увімкнути 25-секундний фрагмент треку",
-            "soundAriaStop": "Зупинити трек",
-            "soundTitle": "THE PAK — ДЭФО · перші 25 секунд"
+            "soundPlay": "УВІМКНУТИ ЗВУК",
+            "soundCompact": "ЗВУК",
+            "soundStop": "ПАУЗА",
+            "soundAriaPlay": "Увімкнути звук на сайті",
+            "soundAriaStop": "Поставити звук на паузу",
+            "soundTitle": "Увімкнути звук"
           },
           "hero": {
             "broadcast": "ПРЯМИЙ ЕФІР",

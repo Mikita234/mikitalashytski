@@ -9,11 +9,12 @@
     "packages": "ПАКЕТИ",
     "approach": "ПІДХІД",
     "order": "ЗАМОВИТИ",
-    "soundPlay": "УВІМКНУТИ ТРЕК",
-    "soundStop": "ЗУПИНИТИ",
-    "soundAriaPlay": "Увімкнути 25-секундний фрагмент треку",
-    "soundAriaStop": "Зупинити трек",
-    "soundTitle": "THE PAK — ДЭФО · перші 25 секунд"
+    "soundPlay": "УВІМКНУТИ ЗВУК",
+    "soundCompact": "ЗВУК",
+    "soundStop": "ПАУЗА",
+    "soundAriaPlay": "Увімкнути звук на сайті",
+    "soundAriaStop": "Поставити звук на паузу",
+    "soundTitle": "Увімкнути звук"
   },
   "hero": {
     "broadcast": "ПРЯМИЙ ЕФІР",
