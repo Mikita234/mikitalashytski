@@ -8,7 +8,7 @@
       "ru",
       "uk"
     ],
-    "sourceCount": 132,
+    "sourceCount": 133,
     "note": "Editorial inventory generated from runtime messages, localized content data, and visible JSX text. Edit source files, then regenerate this file."
   },
   "locales": {
@@ -66,21 +66,22 @@
             "broadcast": "LIVE BROADCAST",
             "studioLabel": "Independent web development studio · Warsaw",
             "availability": "Booking projects for Q3 2026",
+            "eyebrow": "Websites · online stores · automation · SEO",
             "title": "Websites, online stores and automation for small businesses",
             "subtitle": "I design and build landing pages, company websites, online stores and internal tools. The work covers structure, visual design, development, SEO and service integrations.",
             "body": "Forms deliver enquiries, payments complete correctly, analytics records results, and your team receives clear operating instructions.",
             "proofs": [
               {
+                "value": "from €350",
+                "label": "landing page"
+              },
+              {
                 "value": "10+",
-                "label": "portfolio projects"
+                "label": "published projects"
               },
               {
-                "value": "4",
-                "label": "language versions"
-              },
-              {
-                "value": "90+",
-                "label": "Lighthouse target"
+                "value": "1 day",
+                "label": "first reply"
               }
             ],
             "stack": [
@@ -106,6 +107,32 @@
               "ctaOrder": "ORDER A PROJECT",
               "close": "Close",
               "dismiss": "Hide phone"
+            }
+          },
+          "evidence": {
+            "tag": "RESULTS FROM LIVE PROJECTS",
+            "title": "What results can you inspect?",
+            "subtitle": "Two published Google Search Console reports show the source, reporting period and exact search metrics. Open either case to review the wider scope and implementation.",
+            "counter": "2 published reports",
+            "items": {
+              "kayer": {
+                "project": "KAYER.PL · E-COMMERCE",
+                "result": "1.85k Google clicks in 3 months",
+                "details": "31.5k impressions · 5.9% CTR · 7.7 average position",
+                "source": "Google Search Console",
+                "period": "22 Mar–21 Jun 2026",
+                "cta": "Open the KAYER.PL case",
+                "alt": "Google Search Console report for KAYER.PL showing 1.85k clicks and 31.5k impressions over three months"
+              },
+              "popular": {
+                "project": "POPULAR TICKETS · TICKETING",
+                "result": "11.2% CTR for the ticketing website",
+                "details": "25 clicks · 223 impressions · 4.3 average position during the first months after launch",
+                "source": "Google Search Console",
+                "period": "3-month report · Jun 2026",
+                "cta": "Open the Popular Tickets case",
+                "alt": "Google Search Console report for Popular Tickets showing 25 clicks, 223 impressions and 11.2 percent CTR"
+              }
             }
           },
           "salesPath": {
@@ -2277,25 +2304,25 @@
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 58,
+          "line": 59,
           "path": "marketLabels.en.tag",
           "text": "Market entry"
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 59,
+          "line": 60,
           "path": "marketLabels.en.title",
           "text": "Find the right page for your market"
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 60,
+          "line": 61,
           "path": "marketLabels.en.subtitle",
           "text": "Europe-first entry points for business websites, e-commerce and website rescue."
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 61,
+          "line": 62,
           "path": "marketLabels.en.cta",
           "text": "Open page"
         },
@@ -8985,21 +9012,22 @@
             "broadcast": "TRANSMISJA NA ŻYWO",
             "studioLabel": "Niezależne studio internetowe · Warszawa",
             "availability": "Przyjmuję projekty na Q3 2026",
+            "eyebrow": "Strony · sklepy internetowe · automatyzacja · SEO",
             "title": "Strony, sklepy internetowe i automatyzacje dla małych firm",
             "subtitle": "Projektuję i wdrażam landing pages, strony firmowe, sklepy internetowe oraz narzędzia wewnętrzne. Zakres obejmuje strukturę, projekt graficzny, development, SEO i integracje.",
             "body": "Formularze dostarczają zapytania, płatności działają poprawnie, analityka zapisuje wyniki, a zespół otrzymuje jasną instrukcję obsługi.",
             "proofs": [
               {
+                "value": "od 1 500 PLN",
+                "label": "landing page"
+              },
+              {
                 "value": "10+",
-                "label": "projektów w portfolio"
+                "label": "opublikowanych projektów"
               },
               {
-                "value": "4",
-                "label": "wersje językowe"
-              },
-              {
-                "value": "90+",
-                "label": "cel Lighthouse"
+                "value": "1 dzień",
+                "label": "pierwsza odpowiedź"
               }
             ],
             "stack": [
@@ -9025,6 +9053,32 @@
               "ctaOrder": "ZAMÓW PROJEKT",
               "close": "Zamknij",
               "dismiss": "Ukryj telefon"
+            }
+          },
+          "evidence": {
+            "tag": "WYNIKI DZIAŁAJĄCYCH PROJEKTÓW",
+            "title": "Jakie wyniki możesz sprawdzić?",
+            "subtitle": "Dwa opublikowane raporty Google Search Console pokazują źródło, okres oraz dokładne dane z wyszukiwarki. Otwórz case study, aby zobaczyć pełny zakres wdrożenia.",
+            "counter": "2 opublikowane raporty",
+            "items": {
+              "kayer": {
+                "project": "KAYER.PL · E-COMMERCE",
+                "result": "1,85 tys. kliknięć z Google w 3 miesiące",
+                "details": "31,5 tys. wyświetleń · CTR 5,9% · średnia pozycja 7,7",
+                "source": "Google Search Console",
+                "period": "22.03–21.06.2026",
+                "cta": "Otwórz case study KAYER.PL",
+                "alt": "Raport Google Search Console dla KAYER.PL z wynikiem 1,85 tysiąca kliknięć i 31,5 tysiąca wyświetleń w ciągu trzech miesięcy"
+              },
+              "popular": {
+                "project": "POPULAR TICKETS · BILETY",
+                "result": "CTR 11,2% dla strony biletowej",
+                "details": "25 kliknięć · 223 wyświetlenia · średnia pozycja 4,3 w pierwszych miesiącach po uruchomieniu",
+                "source": "Google Search Console",
+                "period": "raport 3-miesięczny · 06.2026",
+                "cta": "Otwórz case study Popular Tickets",
+                "alt": "Raport Google Search Console dla Popular Tickets z wynikiem 25 kliknięć, 223 wyświetleń i CTR 11,2 procent"
+              }
             }
           },
           "salesPath": {
@@ -11196,25 +11250,25 @@
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 64,
+          "line": 65,
           "path": "marketLabels.pl.tag",
           "text": "Wejście na rynek"
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 65,
+          "line": 66,
           "path": "marketLabels.pl.title",
           "text": "Wybierz stronę pod swój rynek"
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 66,
+          "line": 67,
           "path": "marketLabels.pl.subtitle",
           "text": "Strony startowe dla firm w Polsce: usługi, e-commerce i SEO."
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 67,
+          "line": 68,
           "path": "marketLabels.pl.cta",
           "text": "Otwórz stronę"
         },
@@ -17898,21 +17952,22 @@
             "broadcast": "ПРЯМОЙ ЭФИР",
             "studioLabel": "Независимая интернет-студия · Варшава",
             "availability": "Принимаю проекты на Q3 2026",
+            "eyebrow": "Сайты · интернет-магазины · автоматизация · SEO",
             "title": "Сайты, интернет-магазины и автоматизация для малого бизнеса",
             "subtitle": "Проектирую и запускаю лендинги, сайты компаний, интернет-магазины и внутренние инструменты. Беру на себя структуру, дизайн, разработку, SEO и подключение рабочих сервисов.",
             "body": "Формы отправляют заявки, платежи проходят, аналитика фиксирует результат, а команда получает понятную инструкцию по работе с сайтом.",
             "proofs": [
               {
+                "value": "от €350",
+                "label": "лендинг"
+              },
+              {
                 "value": "10+",
-                "label": "проектов в портфолио"
+                "label": "опубликованных проектов"
               },
               {
-                "value": "4",
-                "label": "языковые версии сайта"
-              },
-              {
-                "value": "90+",
-                "label": "цель Lighthouse"
+                "value": "1 день",
+                "label": "первый ответ"
               }
             ],
             "stack": [
@@ -17938,6 +17993,32 @@
               "ctaOrder": "ЗАКАЗАТЬ ПРОЕКТ",
               "close": "Закрыть",
               "dismiss": "Скрыть телефон"
+            }
+          },
+          "evidence": {
+            "tag": "РЕЗУЛЬТАТЫ РАБОТАЮЩИХ ПРОЕКТОВ",
+            "title": "Какие результаты можно проверить?",
+            "subtitle": "Два опубликованных отчёта Google Search Console показывают источник, период и точные метрики поиска. В каждом кейсе описаны объём работы и техническая реализация.",
+            "counter": "2 опубликованных отчёта",
+            "items": {
+              "kayer": {
+                "project": "KAYER.PL · ИНТЕРНЕТ-МАГАЗИН",
+                "result": "1,85 тыс. кликов из Google за 3 месяца",
+                "details": "31,5 тыс. показов · CTR 5,9% · средняя позиция 7,7",
+                "source": "Google Search Console",
+                "period": "22.03–21.06.2026",
+                "cta": "Открыть кейс KAYER.PL",
+                "alt": "Отчёт Google Search Console для KAYER.PL с результатом 1,85 тысячи кликов и 31,5 тысячи показов за три месяца"
+              },
+              "popular": {
+                "project": "POPULAR TICKETS · БИЛЕТЫ",
+                "result": "CTR 11,2% у билетного сайта",
+                "details": "25 кликов · 223 показа · средняя позиция 4,3 в первые месяцы после запуска",
+                "source": "Google Search Console",
+                "period": "отчёт за 3 месяца · 06.2026",
+                "cta": "Открыть кейс Popular Tickets",
+                "alt": "Отчёт Google Search Console для Popular Tickets с результатом 25 кликов, 223 показа и CTR 11,2 процента"
+              }
             }
           },
           "salesPath": {
@@ -20109,25 +20190,25 @@
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 70,
+          "line": 71,
           "path": "marketLabels.ru.tag",
           "text": "Вход по рынку"
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 71,
+          "line": 72,
           "path": "marketLabels.ru.title",
           "text": "Выбери страницу под свой рынок"
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 72,
+          "line": 73,
           "path": "marketLabels.ru.subtitle",
           "text": "Отдельные входы для сайта бизнеса, аудита и SEO-разбора."
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 73,
+          "line": 74,
           "path": "marketLabels.ru.cta",
           "text": "Открыть страницу"
         },
@@ -27927,21 +28008,22 @@
             "broadcast": "ПРЯМИЙ ЕФІР",
             "studioLabel": "Незалежна вебстудія · Варшава",
             "availability": "Приймаю проєкти на Q3 2026",
+            "eyebrow": "Сайти · інтернет-магазини · автоматизація · SEO",
             "title": "Сайти, інтернет-магазини й автоматизація для малого бізнесу",
             "subtitle": "Проєктую та запускаю лендинги, сайти компаній, інтернет-магазини й внутрішні інструменти. Робота охоплює структуру, дизайн, розробку, SEO та підключення сервісів.",
             "body": "Форми доставляють заявки, платежі проходять коректно, аналітика фіксує результат, а команда отримує зрозумілу інструкцію з роботи із сайтом.",
             "proofs": [
               {
+                "value": "від €350",
+                "label": "лендінг"
+              },
+              {
                 "value": "10+",
-                "label": "проєктів у портфоліо"
+                "label": "опублікованих проєктів"
               },
               {
-                "value": "4",
-                "label": "мовні версії"
-              },
-              {
-                "value": "90+",
-                "label": "ціль Lighthouse"
+                "value": "1 день",
+                "label": "перша відповідь"
               }
             ],
             "stack": [
@@ -27967,6 +28049,32 @@
               "ctaOrder": "ЗАМОВИТИ ПРОЄКТ",
               "close": "Закрити",
               "dismiss": "Сховати телефон"
+            }
+          },
+          "evidence": {
+            "tag": "РЕЗУЛЬТАТИ ДІЮЧИХ ПРОЄКТІВ",
+            "title": "Які результати можна перевірити?",
+            "subtitle": "Два опубліковані звіти Google Search Console показують джерело, період і точні пошукові метрики. У кожному кейсі описані обсяг роботи та технічна реалізація.",
+            "counter": "2 опубліковані звіти",
+            "items": {
+              "kayer": {
+                "project": "KAYER.PL · ІНТЕРНЕТ-МАГАЗИН",
+                "result": "1,85 тис. кліків із Google за 3 місяці",
+                "details": "31,5 тис. показів · CTR 5,9% · середня позиція 7,7",
+                "source": "Google Search Console",
+                "period": "22.03–21.06.2026",
+                "cta": "Відкрити кейс KAYER.PL",
+                "alt": "Звіт Google Search Console для KAYER.PL із результатом 1,85 тисячі кліків і 31,5 тисячі показів за три місяці"
+              },
+              "popular": {
+                "project": "POPULAR TICKETS · КВИТКИ",
+                "result": "CTR 11,2% для квиткового сайту",
+                "details": "25 кліків · 223 покази · середня позиція 4,3 у перші місяці після запуску",
+                "source": "Google Search Console",
+                "period": "звіт за 3 місяці · 06.2026",
+                "cta": "Відкрити кейс Popular Tickets",
+                "alt": "Звіт Google Search Console для Popular Tickets із результатом 25 кліків, 223 покази та CTR 11,2 відсотка"
+              }
             }
           },
           "salesPath": {
@@ -30138,25 +30246,25 @@
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 76,
+          "line": 77,
           "path": "marketLabels.uk.tag",
           "text": "Вхід за ринком"
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 77,
+          "line": 78,
           "path": "marketLabels.uk.title",
           "text": "Обери сторінку під свій ринок"
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 78,
+          "line": 79,
           "path": "marketLabels.uk.subtitle",
           "text": "Окремі входи для сайту бізнесу, SEO-бази і запуску заявки."
         },
         {
           "source": "src/components/vintage/VintageHome.tsx",
-          "line": 79,
+          "line": 80,
           "path": "marketLabels.uk.cta",
           "text": "Відкрити сторінку"
         },
@@ -37025,11 +37133,6 @@
       "text": "screensaver.exe"
     },
     {
-      "source": "src/components/vintage/HeroSection.tsx",
-      "line": 41,
-      "text": "Strategy / Design / Development / SEO"
-    },
-    {
       "source": "src/components/vintage/PopupWindow.tsx",
       "line": 56,
       "text": "Close"
@@ -37201,7 +37304,7 @@
     },
     {
       "source": "src/components/vintage/VintageHome.tsx",
-      "line": 294,
+      "line": 296,
       "text": "● DIY → rescue → build"
     },
     {

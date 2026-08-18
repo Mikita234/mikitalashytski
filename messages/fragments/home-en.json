@@ -14,13 +14,14 @@
     "broadcast": "LIVE BROADCAST",
     "studioLabel": "Independent web development studio · Warsaw",
     "availability": "Booking projects for Q3 2026",
+    "eyebrow": "Websites · online stores · automation · SEO",
     "title": "Websites, online stores and automation for small businesses",
     "subtitle": "I design and build landing pages, company websites, online stores and internal tools. The work covers structure, visual design, development, SEO and service integrations.",
     "body": "Forms deliver enquiries, payments complete correctly, analytics records results, and your team receives clear operating instructions.",
     "proofs": [
-      { "value": "10+", "label": "portfolio projects" },
-      { "value": "4", "label": "language versions" },
-      { "value": "90+", "label": "Lighthouse target" }
+      { "value": "from €350", "label": "landing page" },
+      { "value": "10+", "label": "published projects" },
+      { "value": "1 day", "label": "first reply" }
     ],
     "stack": ["Landings", "Shopify", "BaseLinker", "Payments", "Bots", "Automation", "SEO"],
     "ctaOrder": "Discuss project",
@@ -37,6 +38,32 @@
       "ctaOrder": "ORDER A PROJECT",
       "close": "Close",
       "dismiss": "Hide phone"
+    }
+  },
+  "evidence": {
+    "tag": "RESULTS FROM LIVE PROJECTS",
+    "title": "What results can you inspect?",
+    "subtitle": "Two published Google Search Console reports show the source, reporting period and exact search metrics. Open either case to review the wider scope and implementation.",
+    "counter": "2 published reports",
+    "items": {
+      "kayer": {
+        "project": "KAYER.PL · E-COMMERCE",
+        "result": "1.85k Google clicks in 3 months",
+        "details": "31.5k impressions · 5.9% CTR · 7.7 average position",
+        "source": "Google Search Console",
+        "period": "22 Mar–21 Jun 2026",
+        "cta": "Open the KAYER.PL case",
+        "alt": "Google Search Console report for KAYER.PL showing 1.85k clicks and 31.5k impressions over three months"
+      },
+      "popular": {
+        "project": "POPULAR TICKETS · TICKETING",
+        "result": "11.2% CTR for the ticketing website",
+        "details": "25 clicks · 223 impressions · 4.3 average position during the first months after launch",
+        "source": "Google Search Console",
+        "period": "3-month report · Jun 2026",
+        "cta": "Open the Popular Tickets case",
+        "alt": "Google Search Console report for Popular Tickets showing 25 clicks, 223 impressions and 11.2 percent CTR"
+      }
     }
   },
   "salesPath": {

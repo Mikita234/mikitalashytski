@@ -14,6 +14,7 @@ import { GuideTapeArchive } from "@/components/guides/GuideTapeArchive";
 import { PopupWindow } from "./PopupWindow";
 import { serviceMeta, servicePackages } from "@/content/services";
 import { HeroSection } from "./HeroSection";
+import { HomepageEvidence } from "./HomepageEvidence";
 import { PackageCard } from "./PackageCard";
 import { PricingSection } from "./PricingSection";
 import { VintageProjectCard } from "./VintageProjectCard";
@@ -119,6 +120,7 @@ export function VintageHome() {
         />
 
         <HeroSection />
+        <HomepageEvidence />
 
         <section
           id="start"

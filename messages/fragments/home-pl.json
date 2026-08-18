@@ -14,13 +14,14 @@
     "broadcast": "TRANSMISJA NA ŻYWO",
     "studioLabel": "Niezależne studio internetowe · Warszawa",
     "availability": "Przyjmuję projekty na Q3 2026",
+    "eyebrow": "Strony · sklepy internetowe · automatyzacja · SEO",
     "title": "Strony, sklepy internetowe i automatyzacje dla małych firm",
     "subtitle": "Projektuję i wdrażam landing pages, strony firmowe, sklepy internetowe oraz narzędzia wewnętrzne. Zakres obejmuje strukturę, projekt graficzny, development, SEO i integracje.",
     "body": "Formularze dostarczają zapytania, płatności działają poprawnie, analityka zapisuje wyniki, a zespół otrzymuje jasną instrukcję obsługi.",
     "proofs": [
-      { "value": "10+", "label": "projektów w portfolio" },
-      { "value": "4", "label": "wersje językowe" },
-      { "value": "90+", "label": "cel Lighthouse" }
+      { "value": "od 1 500 PLN", "label": "landing page" },
+      { "value": "10+", "label": "opublikowanych projektów" },
+      { "value": "1 dzień", "label": "pierwsza odpowiedź" }
     ],
     "stack": ["Landingi", "Shopify", "BaseLinker", "Płatności", "Boty", "Automatyzacja", "SEO"],
     "ctaOrder": "Omów projekt",
@@ -37,6 +38,32 @@
       "ctaOrder": "ZAMÓW PROJEKT",
       "close": "Zamknij",
       "dismiss": "Ukryj telefon"
+    }
+  },
+  "evidence": {
+    "tag": "WYNIKI DZIAŁAJĄCYCH PROJEKTÓW",
+    "title": "Jakie wyniki możesz sprawdzić?",
+    "subtitle": "Dwa opublikowane raporty Google Search Console pokazują źródło, okres oraz dokładne dane z wyszukiwarki. Otwórz case study, aby zobaczyć pełny zakres wdrożenia.",
+    "counter": "2 opublikowane raporty",
+    "items": {
+      "kayer": {
+        "project": "KAYER.PL · E-COMMERCE",
+        "result": "1,85 tys. kliknięć z Google w 3 miesiące",
+        "details": "31,5 tys. wyświetleń · CTR 5,9% · średnia pozycja 7,7",
+        "source": "Google Search Console",
+        "period": "22.03–21.06.2026",
+        "cta": "Otwórz case study KAYER.PL",
+        "alt": "Raport Google Search Console dla KAYER.PL z wynikiem 1,85 tysiąca kliknięć i 31,5 tysiąca wyświetleń w ciągu trzech miesięcy"
+      },
+      "popular": {
+        "project": "POPULAR TICKETS · BILETY",
+        "result": "CTR 11,2% dla strony biletowej",
+        "details": "25 kliknięć · 223 wyświetlenia · średnia pozycja 4,3 w pierwszych miesiącach po uruchomieniu",
+        "source": "Google Search Console",
+        "period": "raport 3-miesięczny · 06.2026",
+        "cta": "Otwórz case study Popular Tickets",
+        "alt": "Raport Google Search Console dla Popular Tickets z wynikiem 25 kliknięć, 223 wyświetleń i CTR 11,2 procent"
+      }
     }
   },
   "salesPath": {

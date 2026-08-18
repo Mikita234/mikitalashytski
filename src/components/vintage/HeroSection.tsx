@@ -38,7 +38,7 @@ export function HeroSection() {
             />
 
             <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--vhs-acid)]">
-              Strategy / Design / Development / SEO
+              {t("eyebrow")}
             </p>
 
             <h1 className="deathcore-title mt-5 text-[clamp(3rem,8vw,6.5rem)] text-[var(--vhs-white)]">
