@@ -39,18 +39,18 @@ export function RetroPhoneHandset({
       >
         <defs>
           <linearGradient id={body} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#2e2e34" />
-            <stop offset="18%" stopColor="#1c1c22" />
-            <stop offset="55%" stopColor="#121218" />
-            <stop offset="82%" stopColor="#1a1a20" />
-            <stop offset="100%" stopColor="#25252c" />
+            <stop offset="0%" stopColor="#ff5b9a" />
+            <stop offset="18%" stopColor="#ed2f73" />
+            <stop offset="55%" stopColor="#a90f4d" />
+            <stop offset="82%" stopColor="#c4185d" />
+            <stop offset="100%" stopColor="#ff3f83" />
           </linearGradient>
           <linearGradient id={edge} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.18)" />
-            <stop offset="12%" stopColor="rgba(255,255,255,0.06)" />
+            <stop offset="0%" stopColor="rgba(255,255,255,0.42)" />
+            <stop offset="12%" stopColor="rgba(255,255,255,0.16)" />
             <stop offset="50%" stopColor="rgba(255,255,255,0)" />
-            <stop offset="88%" stopColor="rgba(255,255,255,0.04)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0.14)" />
+            <stop offset="88%" stopColor="rgba(255,255,255,0.1)" />
+            <stop offset="100%" stopColor="rgba(255,255,255,0.28)" />
           </linearGradient>
           <linearGradient id={screen} x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#0a1218" />
@@ -87,16 +87,16 @@ export function RetroPhoneHandset({
           {/* Top shoulder flare */}
           <path
             d="M12 26 C12 22 16 19 24 19 H48 C56 19 60 22 60 26 V30 H12 Z"
-            fill="#222228"
-            stroke="#33333c"
+            fill="#b51559"
+            stroke="#ff6aa3"
             strokeWidth="0.75"
           />
 
           {/* Bottom boot / mouthpiece chin */}
           <path
             d="M10 128 C10 134 14 146 24 148 H48 C58 146 62 134 62 128 V142 H10 Z"
-            fill="#18181e"
-            stroke="#2e2e36"
+            fill="#8c0c40"
+            stroke="#d92b70"
             strokeWidth="0.75"
           />
 
@@ -108,7 +108,7 @@ export function RetroPhoneHandset({
               y1={y}
               x2="15.5"
               y2={y + 4}
-              stroke="#2a2a32"
+              stroke="#7e1946"
               strokeWidth="1.2"
               strokeLinecap="round"
             />
@@ -120,14 +120,14 @@ export function RetroPhoneHandset({
               y1={y}
               x2="56.5"
               y2={y + 4}
-              stroke="#08080c"
+              stroke="#5b0a2d"
               strokeWidth="1.2"
               strokeLinecap="round"
             />
           ))}
 
           {/* Front face highlight stripe */}
-          <rect x="18" y="22" width="36" height="118" rx="2" fill={`url(#${edge})`} opacity="0.55" />
+          <rect x="18" y="22" width="36" height="118" rx="2" fill={`url(#${edge})`} opacity="0.72" />
 
           {/* Speaker grille — earpiece */}
           <rect x="22" y="28" width="28" height="10" rx="1.5" fill="#0e0e12" stroke="#2a2a32" strokeWidth="0.75" />
@@ -191,7 +191,7 @@ export function RetroPhoneHandset({
 
           {/* Bottom speaker ridges */}
           {[122, 126, 130, 134].map((y) => (
-            <rect key={`ridge-${y}`} x="20" y={y} width="32" height="1.5" rx="0.5" fill="#222228" stroke="#33333c" strokeWidth="0.3" />
+            <rect key={`ridge-${y}`} x="20" y={y} width="32" height="1.5" rx="0.5" fill="#8c0c40" stroke="#d92b70" strokeWidth="0.3" />
           ))}
 
           {/* Specular edge highlights */}

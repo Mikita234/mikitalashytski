@@ -290,6 +290,8 @@ export const projects: Project[] = [
     lists: ["role", "ops", "integrations", "seo", "ai"],
     caseStudyBlocks: ["beforeAfter", "systemFlow"],
     screenshots: [
+      "/cases/popular/poet-pagespeed-report-desktop.webp",
+      "/cases/popular/poet-pagespeed-report-mobile.webp",
       "/cases/popular/tickets-gsc-3-months.png",
       "/cases/popular/poet-pagespeed-mobile.png",
       "/cases/popular/poet-pagespeed-desktop.png",
