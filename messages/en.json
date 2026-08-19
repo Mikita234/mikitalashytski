@@ -519,12 +519,12 @@
       "cardTitle": "Astrologichnaya",
       "cardDesc": "Branding and website for a creative project — in progress."
     },
-    "diloshop-checkout": {
+    "kayer-checkout-operations": {
       "category": "E-commerce · Checkout · Operations automation",
       "tagline": "One KAYER UA order flow from the Shopify cart through local payment and delivery to Dilovod accounting.",
-      "cardTitle": "KAYER Checkout × DiloShop",
+      "cardTitle": "KAYER Checkout & Order Operations",
       "cardDesc": "External checkout and operations backend connecting LiqPay, Nova Poshta, B2B invoices, Shopify and Dilovod.",
-      "summary": "KAYER Checkout handles the customer journey: it validates the cart, collects contact and delivery details, accepts online payment or a B2B invoice order and creates a consistent Shopify order. DiloShop continues the internal workflow by mapping SKUs to Dilovod product numbers, synchronising orders, prices and inventory, and giving operators a queue, error log and controlled recovery actions.",
+      "summary": "KAYER Checkout handles the customer journey: it validates the cart, collects contact and delivery details, accepts online payment or a B2B invoice order and creates a consistent Shopify order. The order-operations backend maps SKUs to Dilovod product numbers, synchronises orders, prices and inventory, and gives operators a queue, error log and controlled recovery actions.",
       "beforeAfter": {
         "before": [
           "Payment, Shopify order, shipping and Dilovod document required separate checkpoints",
@@ -534,7 +534,7 @@
         "after": [
           "One traceable route from cart to accounting document",
           "Signed callbacks, idempotency, queues, retries and reconciliation",
-          "Checkout Admin and DiloShop /ops for daily operations and recovery"
+          "Checkout Admin and Order Operations /ops for daily operations and recovery"
         ]
       },
       "systemFlow": {
@@ -544,12 +544,12 @@
           "KAYER Checkout",
           "LiqPay or B2B invoice",
           "Shopify order",
-          "DiloShop queue and worker",
+          "Order operations queue and worker",
           "Dilovod documents and inventory"
         ]
       },
       "problem": "The Ukrainian order process required LiqPay and Monobank, Nova Poshta delivery, a separate B2B invoice path, accounting documents and Dilovod synchronisation. Each stage needed a shared order identity, verified events and a visible recovery path.",
-      "whatIDid": "I designed and built the external Next.js checkout, server-side cart validation, payment callbacks, Nova Poshta flow, B2B invoices and documents, Shopify order mapping and a protected operations panel. I also built DiloShop on FastAPI with HMAC-verified webhooks, a queue and worker, SKU mapping, order/price/stock synchronisation, retries, dead-letter states and an /ops dashboard.",
+      "whatIDid": "I designed and built the external Next.js checkout, server-side cart validation, payment callbacks, Nova Poshta flow, B2B invoices and documents, Shopify order mapping and a protected operations panel. I also built the order-operations backend on FastAPI with HMAC-verified webhooks, a queue and worker, SKU mapping, order/price/stock synchronisation, retries, dead-letter states and an /ops dashboard.",
       "result": "KAYER UA now has one operational route from cart to accounting. The normal flow carries order data into Dilovod, repeated events resolve through idempotency, and exceptions receive a status, audit record and controlled recovery action.",
       "nextSteps": [
         "Measure checkout conversion after a representative observation period",
@@ -558,11 +558,11 @@
         "Extend regression coverage for discounts, returns and complex B2B cases"
       ],
       "screenshotCaptions": [
-        "Order-to-accounting architecture: Shopify cart, checkout, payment, order, DiloShop queue and Dilovod.",
+        "Order-to-accounting architecture: Shopify cart, checkout, payment, order, operations queue and Dilovod.",
         "Desktop checkout demo with synthetic products and payment disabled.",
         "Mobile checkout demo with the sticky order action and the same three-step flow.",
         "Protected Checkout Admin entry screen; orders and customer data remain private.",
-        "Protected DiloShop /ops entry screen for queues, mapping and recovery tools."
+        "Protected order-operations /ops entry screen for queues, mapping and recovery tools."
       ],
       "role": [
         "Business-flow analysis and solution architecture",
@@ -575,7 +575,7 @@
       "ops": [
         "Customer flow: contact details, delivery and payment",
         "B2C acquiring and B2B invoice workflow",
-        "Shopify order to DiloShop queue to Dilovod sale order",
+        "Shopify order to operations queue to Dilovod sale order",
         "Price and inventory synchronisation with productNum to SKU mapping",
         "Admin and /ops tools for diagnosis and controlled recovery"
       ],
@@ -583,7 +583,7 @@
         "Shopify Admin GraphQL API and four order webhook topics",
         "LiqPay, Monobank and bank reconciliation",
         "Nova Poshta and Checkbox",
-        "Dilovod API and DiloShop workers",
+        "Dilovod API and order-operations workers",
         "Supabase Storage, Resend and Telegram operations"
       ],
       "seo": [

@@ -75,7 +75,7 @@ const accentGlow: Record<AccentKey, string> = {
 const cardStyle: Record<string, "vhs" | "tv" | "teletext" | "ad" | "win98"> = {
   "kayer-pl": "vhs",
   "kayer-ua": "vhs",
-  "diloshop-checkout": "vhs",
+  "kayer-checkout-operations": "vhs",
   "mnsk7-tools": "tv",
   popular: "teletext",
   alesyatakun: "ad",
@@ -87,7 +87,7 @@ const cardStyle: Record<string, "vhs" | "tv" | "teletext" | "ad" | "win98"> = {
 const projectServices: Record<string, ServiceSlug> = {
   "kayer-pl": "ecommerce",
   "kayer-ua": "ecommerce",
-  "diloshop-checkout": "ecommerce",
+  "kayer-checkout-operations": "ecommerce",
   "mnsk7-tools": "ecommerce",
   popular: "business",
   alesyatakun: "business",

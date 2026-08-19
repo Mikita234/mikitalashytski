@@ -149,8 +149,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "diloshop-checkout",
-    name: "KAYER CHECKOUT × DILOSHOP",
+    slug: "kayer-checkout-operations",
+    name: "KAYER CHECKOUT & ORDER OPERATIONS",
     domains: ["kayer.ua", "checkout.kayer.ua"],
     links: [{ label: "kayer.ua", href: "https://kayer.ua" }],
     accent: "cyan",
@@ -189,11 +189,11 @@ export const projects: Project[] = [
     hasScreenshotCaptions: true,
     screenshotFit: "contain",
     screenshots: [
-      "/cases/diloshop-checkout/system-flow.svg",
-      "/cases/diloshop-checkout/checkout-preview-desktop.webp",
-      "/cases/diloshop-checkout/checkout-preview-mobile.webp",
-      "/cases/diloshop-checkout/checkout-admin-login.webp",
-      "/cases/diloshop-checkout/diloshop-ops-login.webp",
+      "/cases/kayer-checkout-operations/system-flow.svg",
+      "/cases/kayer-checkout-operations/checkout-preview-desktop.webp",
+      "/cases/kayer-checkout-operations/checkout-preview-mobile.webp",
+      "/cases/kayer-checkout-operations/checkout-admin-login.webp",
+      "/cases/kayer-checkout-operations/order-operations-login.webp",
     ],
   },
   {

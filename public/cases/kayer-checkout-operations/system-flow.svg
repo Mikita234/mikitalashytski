@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">KAYER UA order-to-accounting flow</title>
-  <desc id="desc">Architecture diagram connecting Shopify cart, KAYER Checkout, payment and shipping, Shopify order, DiloShop queue and Dilovod accounting.</desc>
+  <desc id="desc">Architecture diagram connecting Shopify cart, KAYER Checkout, payment and shipping, Shopify order, the order operations queue and Dilovod accounting.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1017"/>
@@ -84,7 +84,7 @@
   <g transform="translate(890 590)">
     <rect width="270" height="180" rx="26" fill="#201c16" stroke="#f59e0b" stroke-width="2"/>
     <rect x="22" y="24" width="126" height="28" rx="14" fill="#6f4910"/>
-    <text x="85" y="43" text-anchor="middle" class="chip">05 DILOSHOP</text>
+    <text x="85" y="43" text-anchor="middle" class="chip">05 ORDER OPS</text>
     <text x="22" y="92" class="node-title">Queue + Worker</text>
     <text x="22" y="124" class="node-sub">HMAC · idempotency</text>
     <text x="22" y="150" class="node-sub">retry · dead-letter · /ops</text>

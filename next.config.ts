@@ -40,6 +40,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/:locale(en|pl|ru|uk)/projects/diloshop-checkout",
+        destination: "/:locale/projects/kayer-checkout-operations",
+        permanent: true,
+      },
+      {
+        source: "/projects/diloshop-checkout",
+        destination: "/projects/kayer-checkout-operations",
+        permanent: true,
+      },
+      {
         source: "/:locale(en|pl|ru|uk)/services/seo",
         destination: "/:locale/services/audit",
         permanent: true,
