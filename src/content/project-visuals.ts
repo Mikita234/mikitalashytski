@@ -78,6 +78,7 @@ export const projectVisuals: Record<
     accent: "#ff7a38",
     accentGlow: "rgba(255,122,56,0.35)",
     channel: "CH-06",
+    tvPreview: "/cases/flexiprzeprowadzki/client-feedback.png",
   },
   velixo: {
     domain: "velixo-five.vercel.app",
