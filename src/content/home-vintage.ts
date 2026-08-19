@@ -34,6 +34,15 @@ const vintageWorkEntries: VintageWorkEntry[] = [
     domain: "kayer.ua",
   },
   {
+    slug: "diloshop-checkout",
+    category: "ecommerce",
+    tags: ["Checkout", "Shopify", "Dilovod", "LiqPay", "Operations"],
+    status: "LIVE",
+    href: "/projects/diloshop-checkout",
+    style: "vhs",
+    domain: "checkout.kayer.ua",
+  },
+  {
     slug: "mnsk7-tools",
     category: "ecommerce",
     tags: ["Marketplace", "Ops", "Allegro", "E-commerce"],
@@ -124,6 +133,7 @@ export const vintageWorksHome = vintageWorkEntries.filter((w) =>
     "velixo",
     "popular",
     "kayer-pl",
+    "diloshop-checkout",
     "mnsk7-tools",
   ].includes(w.slug),
 );
@@ -144,6 +154,7 @@ export const vintageWorks = vintageWorkEntries;
 export const crtProjectChannels = [
   { slug: "kayer-pl" as const, label: "KAYER PL", href: "/projects/kayer-pl" },
   { slug: "kayer-ua" as const, label: "KAYER UA", href: "/projects/kayer-ua" },
+  { slug: "diloshop-checkout" as const, label: "CHECKOUT", href: "/projects/diloshop-checkout" },
   { slug: "popular" as const, label: "POET", href: "/projects/popular" },
   { slug: "mnsk7-tools" as const, label: "MNSK7", href: "/projects/mnsk7-tools" },
 ] as const;

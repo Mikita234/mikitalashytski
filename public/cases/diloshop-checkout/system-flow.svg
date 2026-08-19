@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">KAYER UA order-to-accounting flow</title>
+  <desc id="desc">Architecture diagram connecting Shopify cart, KAYER Checkout, payment and shipping, Shopify order, DiloShop queue and Dilovod accounting.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1017"/>
+      <stop offset="1" stop-color="#171222"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#8fa0b8"/>
+    </marker>
+    <style>
+      .eyebrow{font:600 18px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:4px;fill:#9aa7bc}
+      .title{font:800 54px Inter,Arial,sans-serif;fill:#f8fafc}
+      .sub{font:400 24px Inter,Arial,sans-serif;fill:#a8b1c1}
+      .node-title{font:700 25px Inter,Arial,sans-serif;fill:#f8fafc}
+      .node-sub{font:400 17px Inter,Arial,sans-serif;fill:#a8b1c1}
+      .chip{font:600 14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#dbeafe;letter-spacing:1px}
+      .line{stroke:#8fa0b8;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#596579;stroke-width:2;stroke-dasharray:8 10;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1210" cy="160" r="230" fill="#8b5cf6" opacity=".10" filter="url(#glow)"/>
+  <circle cx="380" cy="760" r="250" fill="#22d3ee" opacity=".08" filter="url(#glow)"/>
+
+  <text x="90" y="85" class="eyebrow">KAYER UA / SYSTEM CASE</text>
+  <text x="90" y="155" class="title">ORDER → PAYMENT → ACCOUNTING</text>
+  <text x="90" y="200" class="sub">One traceable flow from cart to accounting</text>
+
+  <path class="line" d="M310 390 H400"/>
+  <path class="line" d="M670 390 H760"/>
+  <path class="line" d="M1030 390 H1120"/>
+  <path class="line" d="M1370 485 C1370 620 1270 680 1160 680"/>
+  <path class="line" d="M890 680 H780"/>
+  <path class="dash" d="M400 680 C470 680 530 575 530 500"/>
+
+  <g transform="translate(70 300)">
+    <rect width="240" height="180" rx="26" fill="#171c26" stroke="#344055" stroke-width="2"/>
+    <rect x="22" y="24" width="78" height="28" rx="14" fill="#263247"/>
+    <text x="61" y="43" text-anchor="middle" class="chip">01 CART</text>
+    <text x="22" y="92" class="node-title">Shopify</text>
+    <text x="22" y="124" class="node-sub">Products · prices</text>
+    <text x="22" y="150" class="node-sub">customer context</text>
+  </g>
+
+  <g transform="translate(400 280)">
+    <rect width="270" height="220" rx="28" fill="#211933" stroke="#8b5cf6" stroke-width="3"/>
+    <rect x="24" y="24" width="118" height="28" rx="14" fill="#5b36a8"/>
+    <text x="83" y="43" text-anchor="middle" class="chip">02 CHECKOUT</text>
+    <text x="24" y="100" class="node-title">KAYER Checkout</text>
+    <text x="24" y="134" class="node-sub">Contacts · shipping</text>
+    <text x="24" y="162" class="node-sub">discounts · payment · B2B</text>
+    <text x="24" y="194" class="node-sub">server-side validation</text>
+  </g>
+
+  <g transform="translate(760 300)">
+    <rect width="270" height="180" rx="26" fill="#142229" stroke="#22d3ee" stroke-width="2"/>
+    <rect x="22" y="24" width="120" height="28" rx="14" fill="#12566a"/>
+    <text x="82" y="43" text-anchor="middle" class="chip">03 PAYMENT</text>
+    <text x="22" y="92" class="node-title">LiqPay / Bank</text>
+    <text x="22" y="124" class="node-sub">Signed callbacks</text>
+    <text x="22" y="150" class="node-sub">invoice + reconciliation</text>
+  </g>
+
+  <g transform="translate(1120 280)">
+    <rect width="250" height="220" rx="28" fill="#171c26" stroke="#4b5b72" stroke-width="2"/>
+    <rect x="22" y="24" width="112" height="28" rx="14" fill="#263247"/>
+    <text x="78" y="43" text-anchor="middle" class="chip">04 ORDER</text>
+    <text x="22" y="100" class="node-title">Shopify Order</text>
+    <text x="22" y="134" class="node-sub">Attributes · tags</text>
+    <text x="22" y="162" class="node-sub">metafields · status</text>
+    <text x="22" y="194" class="node-sub">Nova Poshta context</text>
+  </g>
+
+  <g transform="translate(890 590)">
+    <rect width="270" height="180" rx="26" fill="#201c16" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="22" y="24" width="126" height="28" rx="14" fill="#6f4910"/>
+    <text x="85" y="43" text-anchor="middle" class="chip">05 DILOSHOP</text>
+    <text x="22" y="92" class="node-title">Queue + Worker</text>
+    <text x="22" y="124" class="node-sub">HMAC · idempotency</text>
+    <text x="22" y="150" class="node-sub">retry · dead-letter · /ops</text>
+  </g>
+
+  <g transform="translate(510 590)">
+    <rect width="270" height="180" rx="26" fill="#171c26" stroke="#45b581" stroke-width="2"/>
+    <rect x="22" y="24" width="118" height="28" rx="14" fill="#15583c"/>
+    <text x="81" y="43" text-anchor="middle" class="chip">06 ACCOUNT</text>
+    <text x="22" y="92" class="node-title">Dilovod</text>
+    <text x="22" y="124" class="node-sub">saleOrder · documents</text>
+    <text x="22" y="150" class="node-sub">prices · inventory</text>
+  </g>
+
+  <g transform="translate(70 620)">
+    <rect width="330" height="120" rx="24" fill="#111720" stroke="#344055" stroke-width="2"/>
+    <text x="24" y="46" class="node-title">Reconciliation</text>
+    <text x="24" y="79" class="node-sub">Payments · orders · receipts</text>
+    <text x="24" y="105" class="node-sub">visible, retry-safe recovery</text>
+  </g>
+
+  <text x="90" y="835" class="eyebrow">SIGNED EVENTS · IDEMPOTENCY · RETRIES · AUDIT LOGS</text>
+</svg>

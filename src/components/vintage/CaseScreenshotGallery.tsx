@@ -8,6 +8,8 @@ interface CaseScreenshotGalleryProps {
   projectName: string;
   title: string;
   placeholderNote: string;
+  captions?: string[];
+  fit?: "cover" | "contain";
 }
 
 export function CaseScreenshotGallery({
@@ -15,6 +17,8 @@ export function CaseScreenshotGallery({
   projectName,
   title,
   placeholderNote,
+  captions,
+  fit = "cover",
 }: CaseScreenshotGalleryProps) {
   const [active, setActive] = useState(0);
   const [failed, setFailed] = useState<Record<number, boolean>>({});
@@ -22,6 +26,7 @@ export function CaseScreenshotGallery({
   if (!screenshots.length) return null;
 
   const current = screenshots[active];
+  const currentCaption = captions?.[active];
   const showPlaceholder = failed[active];
 
   return (
@@ -44,16 +49,34 @@ export function CaseScreenshotGallery({
               </p>
             </div>
           ) : (
-            <Image
-              src={current}
-              alt={`${projectName} screenshot ${active + 1}`}
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 768px) 100vw, 800px"
-              onError={() => setFailed((prev) => ({ ...prev, [active]: true }))}
-            />
+            <>
+              <Image
+                src={current}
+                alt={currentCaption ? "" : `${projectName} screenshot ${active + 1}`}
+                fill
+                className={fit === "contain" ? "object-contain" : "object-cover object-top"}
+                sizes="(max-width: 768px) 100vw, 800px"
+                onError={() => setFailed((prev) => ({ ...prev, [active]: true }))}
+              />
+              <a
+                href={current}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-10"
+                aria-label={currentCaption ?? `${projectName} screenshot ${active + 1}`}
+              >
+                <span className="absolute right-2 top-2 border border-white/30 bg-black/70 px-2 py-1 font-mono text-[9px] text-white">
+                  ↗
+                </span>
+              </a>
+            </>
           )}
         </div>
+        {currentCaption && (
+          <p className="border-x border-b border-[#808080] bg-white px-3 py-2 font-mono text-[10px] leading-relaxed text-[#202020]">
+            {currentCaption}
+          </p>
+        )}
         {screenshots.length > 1 && (
           <div className="mt-2 flex flex-wrap gap-2">
             {screenshots.map((src, i) => (
@@ -61,6 +84,7 @@ export function CaseScreenshotGallery({
                 key={src}
                 type="button"
                 onClick={() => setActive(i)}
+                aria-label={captions?.[i] ?? `${projectName} screenshot ${i + 1}`}
                 className={`border px-2 py-1 font-mono text-[9px] uppercase ${
                   i === active
                     ? "border-[#000080] bg-[#000080] text-white"

@@ -75,6 +75,7 @@ const accentGlow: Record<AccentKey, string> = {
 const cardStyle: Record<string, "vhs" | "tv" | "teletext" | "ad" | "win98"> = {
   "kayer-pl": "vhs",
   "kayer-ua": "vhs",
+  "diloshop-checkout": "vhs",
   "mnsk7-tools": "tv",
   popular: "teletext",
   alesyatakun: "ad",
@@ -86,6 +87,7 @@ const cardStyle: Record<string, "vhs" | "tv" | "teletext" | "ad" | "win98"> = {
 const projectServices: Record<string, ServiceSlug> = {
   "kayer-pl": "ecommerce",
   "kayer-ua": "ecommerce",
+  "diloshop-checkout": "ecommerce",
   "mnsk7-tools": "ecommerce",
   popular: "business",
   alesyatakun: "business",
@@ -120,6 +122,9 @@ export function VintageProjectContent({ project }: { project: Project }) {
   const integrations = t.raw("integrations") as string[];
   const seo = t.raw("seo") as string[];
   const ai = t.raw("ai") as string[];
+  const screenshotCaptions = project.hasScreenshotCaptions
+    ? (t.raw("screenshotCaptions") as string[])
+    : undefined;
 
   const showBeforeAfter = project.caseStudyBlocks?.includes("beforeAfter");
   const showSystemFlow = project.caseStudyBlocks?.includes("systemFlow");
@@ -356,6 +361,8 @@ export function VintageProjectContent({ project }: { project: Project }) {
             projectName={project.name}
             title={pp("screenshots")}
             placeholderNote={common("screenshotPlaceholder")}
+            captions={screenshotCaptions}
+            fit={project.screenshotFit}
           />
         )}
 

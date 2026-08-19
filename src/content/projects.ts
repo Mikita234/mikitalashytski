@@ -47,6 +47,9 @@ export interface Project {
   hasLivePreview?: boolean;
   /** Optional case-study blocks rendered from messages */
   caseStudyBlocks?: ("beforeAfter" | "systemFlow")[];
+  /** Localized captions are available under projects.<slug>.screenshotCaptions */
+  hasScreenshotCaptions?: boolean;
+  screenshotFit?: "cover" | "contain";
 }
 
 export const projects: Project[] = [
@@ -143,6 +146,54 @@ export const projects: Project[] = [
     screenshots: [
       "/cases/kayer/ua-gsc-28-days.png",
       "/cases/kayer/ua-gsc-3-months.png",
+    ],
+  },
+  {
+    slug: "diloshop-checkout",
+    name: "KAYER CHECKOUT × DILOSHOP",
+    domains: ["kayer.ua", "checkout.kayer.ua"],
+    links: [{ label: "kayer.ua", href: "https://kayer.ua" }],
+    accent: "cyan",
+    year: "2026 — now",
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+      "Shopify Admin API",
+      "LiqPay",
+      "Monobank",
+      "Nova Poshta",
+      "Checkbox",
+      "FastAPI",
+      "Python",
+      "SQLite",
+      "Dilovod API",
+      "Fly.io",
+      "Vercel",
+      "Railway",
+    ],
+    schema: ["SoftwareApplication", "WebApplication"],
+    metrics: [
+      { key: "systems", value: "6+", source: "ops" },
+      { key: "paymentPaths", value: "2", source: "ops" },
+      { key: "webhookTopics", value: "4", source: "ops" },
+      { key: "recovery", value: "retry-safe", source: "ops" },
+    ],
+    lists: ["role", "ops", "integrations", "seo", "ai"],
+    hasLivePreview: false,
+    caseStudyBlocks: ["beforeAfter", "systemFlow"],
+    hasScreenshotCaptions: true,
+    screenshotFit: "contain",
+    screenshots: [
+      "/cases/diloshop-checkout/system-flow.svg",
+      "/cases/diloshop-checkout/checkout-preview-desktop.webp",
+      "/cases/diloshop-checkout/checkout-preview-mobile.webp",
+      "/cases/diloshop-checkout/checkout-admin-login.webp",
+      "/cases/diloshop-checkout/diloshop-ops-login.webp",
     ],
   },
   {

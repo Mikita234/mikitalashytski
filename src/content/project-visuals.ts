@@ -1,6 +1,7 @@
 export type ProjectSlug =
   | "kayer-pl"
   | "kayer-ua"
+  | "diloshop-checkout"
   | "mnsk7-tools"
   | "popular"
   | "alesyatakun"
@@ -34,6 +35,14 @@ export const projectVisuals: Record<
     accent: "#a78bfa",
     accentGlow: "rgba(167,139,250,0.35)",
     channel: "CH-01B",
+  },
+  "diloshop-checkout": {
+    domain: "checkout.kayer.ua",
+    url: "https://kayer.ua",
+    accent: "#22d3ee",
+    accentGlow: "rgba(34,211,238,0.35)",
+    channel: "CH-01C",
+    tvPreview: "/cases/diloshop-checkout/checkout-preview-desktop.webp",
   },
   "mnsk7-tools": {
     domain: "mnsk7-tools.pl",

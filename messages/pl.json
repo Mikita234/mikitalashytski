@@ -519,6 +519,90 @@
       "cardTitle": "Astrologichnaya",
       "cardDesc": "Branding i strona projektu kreatywnego — w trakcie."
     },
+    "diloshop-checkout": {
+      "category": "E-commerce · Checkout · Automatyzacja operacji",
+      "tagline": "Jeden proces zamówienia KAYER UA: od koszyka Shopify przez lokalną płatność i dostawę do księgowości w Dilovod.",
+      "cardTitle": "KAYER Checkout × DiloShop",
+      "cardDesc": "Zewnętrzny checkout i backend operacyjny łączący LiqPay, Nova Poshta, faktury B2B, Shopify i Dilovod.",
+      "summary": "KAYER Checkout obsługuje ścieżkę klienta: weryfikuje koszyk, zbiera dane kontaktowe i dostawę, przyjmuje płatność online albo zamówienie B2B na podstawie faktury i tworzy poprawne zamówienie Shopify. DiloShop prowadzi dalszą obsługę: mapuje SKU na numery produktów Dilovod, synchronizuje zamówienia, ceny i stany oraz udostępnia operatorowi kolejkę, dziennik błędów i kontrolowane działania naprawcze.",
+      "beforeAfter": {
+        "before": [
+          "Płatność, zamówienie Shopify, dostawa i dokument Dilovod miały osobne punkty kontroli",
+          "Ponowione callbacki i webhooki wymagały ochrony przed wielokrotnym przetwarzaniem",
+          "Diagnostyka korzystała z logów kilku usług"
+        ],
+        "after": [
+          "Jedna śledzalna droga od koszyka do dokumentu księgowego",
+          "Podpisane callbacki, idempotencja, kolejki, ponowienia i uzgadnianie",
+          "Checkout Admin i DiloShop /ops do codziennej obsługi oraz odzyskiwania operacji"
+        ]
+      },
+      "systemFlow": {
+        "title": "Proces od zamówienia do księgowości",
+        "steps": [
+          "Koszyk Shopify",
+          "KAYER Checkout",
+          "LiqPay lub faktura B2B",
+          "Zamówienie Shopify",
+          "Kolejka i worker DiloShop",
+          "Dokumenty i stany w Dilovod"
+        ]
+      },
+      "problem": "Ukraiński proces zamówienia wymagał LiqPay i Monobank, dostawy Nova Poshta, osobnej ścieżki B2B z fakturą, dokumentów księgowych oraz synchronizacji z Dilovod. Każdy etap potrzebował wspólnego identyfikatora zamówienia, zweryfikowanych zdarzeń i widocznej procedury odzyskiwania.",
+      "whatIDid": "Zaprojektowałem i wdrożyłem zewnętrzny checkout w Next.js, serwerową weryfikację koszyka, callbacki płatnicze, proces Nova Poshta, faktury i dokumenty B2B, mapowanie zamówień Shopify oraz chroniony panel operacyjny. Zbudowałem także DiloShop w FastAPI: webhooki z weryfikacją HMAC, kolejkę i worker, mapowanie SKU, synchronizację zamówień, cen i stanów, ponowienia, dead-letter oraz panel /ops.",
+      "result": "KAYER UA ma jeden operacyjny proces od koszyka do księgowości. Standardowy przebieg przekazuje dane zamówienia do Dilovod, ponowione zdarzenia obsługuje idempotencja, a wyjątki otrzymują status, zapis audytowy i kontrolowane działanie naprawcze.",
+      "nextSteps": [
+        "Zmierzyć konwersję checkout po reprezentatywnym okresie obserwacji",
+        "Śledzić udział zamówień zakończonych w Dilovod automatycznie",
+        "Raportować medianę czasu od potwierdzenia płatności do dokumentu księgowego",
+        "Rozszerzyć testy regresji dla rabatów, zwrotów i złożonych przypadków B2B"
+      ],
+      "screenshotCaptions": [
+        "Architektura procesu: koszyk Shopify, checkout, płatność, zamówienie, kolejka DiloShop i Dilovod.",
+        "Demo checkout na desktopie z syntetycznymi produktami i wyłączoną płatnością.",
+        "Demo checkout na telefonie ze stałym przyciskiem zamówienia i tym samym procesem trzech kroków.",
+        "Chroniony ekran wejścia do Checkout Admin; zamówienia i dane klientów pozostają prywatne.",
+        "Chroniony ekran DiloShop /ops dla kolejek, mapowania i narzędzi odzyskiwania."
+      ],
+      "role": [
+        "Analiza procesu biznesowego i architektura rozwiązania",
+        "UX checkout na desktop i mobile",
+        "Shopify API, App Proxy, webhooki i mapowanie zamówień",
+        "Płatności, dostawa, dokumenty i uzgadnianie bankowe",
+        "Integracja Dilovod, mapowanie SKU, kolejki i workery",
+        "Bezpieczeństwo, obserwowalność, testy automatyczne i runbooki wdrożeniowe"
+      ],
+      "ops": [
+        "Ścieżka klienta: dane kontaktowe, dostawa i płatność",
+        "Płatność B2C oraz proces B2B na podstawie faktury",
+        "Zamówienie Shopify przez kolejkę DiloShop do sale order w Dilovod",
+        "Synchronizacja cen i stanów z mapowaniem productNum na SKU",
+        "Admin i /ops do diagnostyki oraz kontrolowanego odzyskiwania"
+      ],
+      "integrations": [
+        "Shopify Admin GraphQL API i cztery tematy webhooków zamówień",
+        "LiqPay, Monobank i uzgadnianie bankowe",
+        "Nova Poshta i Checkbox",
+        "Dilovod API i workery DiloShop",
+        "Supabase Storage, Resend i operacje Telegram"
+      ],
+      "seo": [
+        "Publiczne materiały pokazują syntetyczny checkout i chronione ekrany logowania",
+        "Zakres wyszukiwania: Shopify Ukraine checkout, LiqPay, Nova Poshta i integracja Dilovod",
+        "Panele produkcyjne pozostają prywatne, a wdrożenie opisuje publiczny case study"
+      ],
+      "ai": [
+        "Architektura i testy tworzą uporządkowany kontekst do bezpiecznej pracy z agentami",
+        "Runbooki oddzielają diagnostykę od działań produkcyjnych",
+        "Strukturalne logi i jawne statusy dostarczają agentom weryfikowalny kontekst systemu"
+      ],
+      "metrics": {
+        "systems": "kluczowych systemów w jednym procesie",
+        "paymentPaths": "ścieżki płatności: acquiring i faktura",
+        "webhookTopics": "tematy webhooków zamówień Shopify",
+        "recovery": "idempotencja, ponowienia i uzgadnianie"
+      }
+    },
     "kayer-pl": {
       "category": "E-commerce · B2B · Multi-rynek",
       "tagline": "Migracja i automatyzacja e-commerce dla wielojęzycznej marki beauty: Shopify, BaseLinker, workflow treści OpenAI, skrypty Python i adaptacja pod rynek ukraiński.",

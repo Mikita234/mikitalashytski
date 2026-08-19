@@ -38,6 +38,7 @@ function GenericPreview({ title, className }: { title: string; className: string
 
 function ScreenshotPreview({ slug, className }: { slug: ProjectSlug; className: string }) {
   const v = projectVisuals[slug];
+  const previewSrc = v.tvPreview ?? screenshotUrl(v.url, 640);
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
@@ -58,7 +59,7 @@ function ScreenshotPreview({ slug, className }: { slug: ProjectSlug; className: 
       <div className="browser-chrome__screen relative aspect-[16/10] bg-[#0a0a0a]">
         {!failed && (
           <Image
-            src={screenshotUrl(v.url, 640)}
+            src={previewSrc}
             alt={`Screenshot of ${v.domain}`}
             fill
             className={`object-cover object-top transition-opacity duration-500 ${
@@ -67,7 +68,7 @@ function ScreenshotPreview({ slug, className }: { slug: ProjectSlug; className: 
             sizes="(max-width: 768px) 50vw, 320px"
             onLoad={() => setLoaded(true)}
             onError={() => setFailed(true)}
-            unoptimized
+            unoptimized={!v.tvPreview}
           />
         )}
         {(!loaded || failed) && (
