@@ -194,6 +194,7 @@ export const projects: Project[] = [
       "/cases/kayer-checkout-operations/checkout-preview-mobile.webp",
       "/cases/kayer-checkout-operations/checkout-admin-login.webp",
       "/cases/kayer-checkout-operations/order-operations-login.webp",
+      "/cases/kayer-checkout-operations/order-operations-card.png",
     ],
   },
   {

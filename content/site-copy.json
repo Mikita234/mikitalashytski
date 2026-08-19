@@ -1132,7 +1132,8 @@
               "Desktop checkout demo with synthetic products and payment disabled.",
               "Mobile checkout demo with the sticky order action and the same three-step flow.",
               "Protected Checkout Admin entry screen; orders and customer data remain private.",
-              "Protected order-operations /ops entry screen for queues, mapping and recovery tools."
+              "Protected order-operations /ops entry screen for queues, mapping and recovery tools.",
+              "Telegram order card with payment, Shopify, Dilovod and Nova Poshta statuses in one view."
             ],
             "role": [
               "Business-flow analysis and solution architecture",
@@ -10168,7 +10169,8 @@
               "Demo checkout na desktopie z syntetycznymi produktami i wyłączoną płatnością.",
               "Demo checkout na telefonie ze stałym przyciskiem zamówienia i tym samym procesem trzech kroków.",
               "Chroniony ekran wejścia do Checkout Admin; zamówienia i dane klientów pozostają prywatne.",
-              "Chroniony ekran panelu obsługi zamówień /ops dla kolejek, mapowania i narzędzi odzyskiwania."
+              "Chroniony ekran panelu obsługi zamówień /ops dla kolejek, mapowania i narzędzi odzyskiwania.",
+              "Karta zamówienia w Telegramie pokazuje status płatności, Shopify, Dilovod i Nova Poshta w jednym widoku."
             ],
             "role": [
               "Analiza procesu biznesowego i architektura rozwiązania",
@@ -19198,7 +19200,8 @@
               "Демонстрационный checkout для desktop с синтетическими товарами и отключённой оплатой.",
               "Мобильный checkout с закреплённой кнопкой заказа и тем же процессом из трёх шагов.",
               "Защищённый вход в Checkout Admin; заказы и данные клиентов остаются приватными.",
-              "Защищённый вход в операционную панель заказов /ops для очередей, mapping и инструментов восстановления."
+              "Защищённый вход в операционную панель заказов /ops для очередей, mapping и инструментов восстановления.",
+              "Карточка заказа в Telegram показывает статусы оплаты, Shopify, Dilovod и Новой почты в одном экране."
             ],
             "role": [
               "Анализ бизнес-процесса и архитектура решения",
@@ -29344,7 +29347,8 @@
               "Демонстраційний checkout для desktop із синтетичними товарами та вимкненою оплатою.",
               "Мобільний checkout із закріпленою кнопкою замовлення та тим самим процесом із трьох кроків.",
               "Захищений вхід у Checkout Admin; замовлення та дані клієнтів залишаються приватними.",
-              "Захищений вхід в операційну панель замовлень /ops для черг, mapping та інструментів відновлення."
+              "Захищений вхід в операційну панель замовлень /ops для черг, mapping та інструментів відновлення.",
+              "Картка замовлення в Telegram показує статуси оплати, Shopify, Dilovod і Нової пошти в одному екрані."
             ],
             "role": [
               "Аналіз бізнес-процесу та архітектура рішення",

@@ -562,7 +562,8 @@
         "Demo checkout na desktopie z syntetycznymi produktami i wyłączoną płatnością.",
         "Demo checkout na telefonie ze stałym przyciskiem zamówienia i tym samym procesem trzech kroków.",
         "Chroniony ekran wejścia do Checkout Admin; zamówienia i dane klientów pozostają prywatne.",
-        "Chroniony ekran panelu obsługi zamówień /ops dla kolejek, mapowania i narzędzi odzyskiwania."
+        "Chroniony ekran panelu obsługi zamówień /ops dla kolejek, mapowania i narzędzi odzyskiwania.",
+        "Karta zamówienia w Telegramie pokazuje status płatności, Shopify, Dilovod i Nova Poshta w jednym widoku."
       ],
       "role": [
         "Analiza procesu biznesowego i architektura rozwiązania",

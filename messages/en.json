@@ -562,7 +562,8 @@
         "Desktop checkout demo with synthetic products and payment disabled.",
         "Mobile checkout demo with the sticky order action and the same three-step flow.",
         "Protected Checkout Admin entry screen; orders and customer data remain private.",
-        "Protected order-operations /ops entry screen for queues, mapping and recovery tools."
+        "Protected order-operations /ops entry screen for queues, mapping and recovery tools.",
+        "Telegram order card with payment, Shopify, Dilovod and Nova Poshta statuses in one view."
       ],
       "role": [
         "Business-flow analysis and solution architecture",
