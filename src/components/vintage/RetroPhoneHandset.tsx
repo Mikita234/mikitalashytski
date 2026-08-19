@@ -145,8 +145,9 @@ export function RetroPhoneHandset({
 
           {/* LCD display */}
           <rect x="24" y="42" width="24" height="14" rx="1" fill={`url(#${screen})`} stroke="#1e2830" strokeWidth="0.75" />
-          <rect x="25" y="43" width="22" height="3" rx="0.5" fill="rgba(80,200,120,0.08)" />
-          <rect x="25" y="48" width="14" height="1.5" rx="0.5" fill="rgba(80,200,120,0.05)" />
+          <rect x="25" y="43" width="22" height="3" rx="0.5" fill="rgba(80,200,120,0.1)" />
+          <text x="27" y="48.2" fill="#70f59a" fontSize="3.4" fontFamily="ui-monospace, monospace" fontWeight="700" letterSpacing="0.15">CALL</text>
+          <text x="27" y="53.2" fill="rgba(112,245,154,0.72)" fontSize="2.5" fontFamily="ui-monospace, monospace" fontWeight="500">READY</text>
 
           {/* Keypad 3×4 */}
           {keys.map((row, ri) =>
