@@ -184,7 +184,7 @@ export function RetroPhoneHandset({
 
           {/* Call / function buttons row */}
           <rect x="22" y="108" width="8" height="6" rx="1" fill="#1a3020" stroke="#2a5038" strokeWidth="0.5" />
-          <path d="M24.5 111.5 L26 113 L28.5 110" stroke="#4ade80" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+          <text x="26" y="112.2" textAnchor="middle" fill="#4ade80" fontSize="2.6" fontFamily="ui-monospace, monospace" fontWeight="700">CALL</text>
           <rect x="32" y="108" width="8" height="6" rx="1" fill={`url(#${btn})`} stroke="#44444e" strokeWidth="0.5" />
           <rect x="42" y="108" width="8" height="6" rx="1" fill="#301818" stroke="#502828" strokeWidth="0.5" />
           <path d="M44.5 111 L46 113 L47.5 111" stroke="#f87171" strokeWidth="0.8" fill="none" strokeLinecap="round" />
