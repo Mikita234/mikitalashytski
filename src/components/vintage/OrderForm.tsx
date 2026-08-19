@@ -22,7 +22,7 @@ function isOrderServiceKey(value: string | null): value is OrderServiceKey {
 export function OrderFormFallback() {
   return (
     <div
-      className="mx-auto h-[38rem] max-w-2xl animate-pulse border-2 border-white/30 bg-[#c0c0c0]/70"
+      className="mx-auto h-[38rem] w-full animate-pulse border-2 border-white/30 bg-[#c0c0c0]/70"
       aria-hidden
     />
   );
@@ -121,7 +121,7 @@ export function OrderForm() {
     "w-full border-2 border-t-[#404040] border-l-[#404040] border-b-white border-r-white bg-white px-2 py-1.5 font-mono text-sm text-black outline-none placeholder:text-black/45 focus:ring-1 focus:ring-[#000080]";
 
   return (
-    <div className="mx-auto max-w-2xl border-2 border-t-white border-l-white border-b-[#404040] border-r-[#404040] bg-[#c0c0c0] shadow-lg">
+    <div className="mx-auto w-full border-2 border-t-white border-l-white border-b-[#404040] border-r-[#404040] bg-[#c0c0c0] shadow-lg">
       <div className="flex items-center justify-between gap-3 bg-gradient-to-r from-[#000080] to-[#1084d0] px-2 py-1">
         <span className="font-mono text-xs font-bold text-white">
           {t("formTitle")}
